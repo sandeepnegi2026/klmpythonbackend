@@ -1,0 +1,104 @@
+import re
+
+SUBTOTAL_RE = re.compile(
+    r"^\s*(total|sub.?total|grand total|page total|sales amount|qty .*total|amount .*total|"
+    r"\*\* total|total of|last \d+ months|quantity|value in rs|net amount|total net|"
+    r"bills:|purchase detail|purchase amount|free amount|closing amount|order amount|"
+    r"total amount|bill no\.|o/s:|pending|authorized|for |powered|print health qrcode|marg erp)",
+    re.I,
+)
+
+SKIP_RE = re.compile(
+    r"^(stock & sales|stock and sale|stock statement|monthly sales|product stock report|"
+    r"item description|item cd|opening|name\s+pack|product\s+opening|srno|sr\.?no|"
+    r"company|mfg|from|vendor|contact|gstin|fssai|phone|licence|division|"
+    r"^\d+/\d+$|page \d|continued|---+|===+|report for|reorder|sapcode|"
+    r"non moving|purchase detail|supplier name|^\s*$)",
+    re.I, 
+)
+
+DATE_RE = re.compile(
+    r"(?P<start>\d{1,2}[-/]\w{2,3}[-/]?\d{2,4})\s*(?:-|to|\|)\s*(?P<end>\d{1,2}[-/]\w{2,3}[-/]?\d{2,4})",
+    re.I,
+)
+
+
+
+NUM_RE = re.compile(r"^-?\d+(?:\.\d+)?\.?$|^-$|^-----$")
+EXP_RE = re.compile(r"^\d{1,2}/\d{2,4}$")
+PACK_RE = re.compile(
+    r"^(?:\d+(?:\.\d+)?\s*)?(?:ML|GM|GMS|MG|TAB|CAP|SYP|CREAM|LOTION|PCS|BOX|KIT|SOAP|"
+    r"SACHET|OINT|DROP|DROPS|1\*\d+|\d+'?S|G|TUBE|SUSP|NOS|STR|LOT|PES|CRE|SOA)$",
+    re.I,
+)
+
+LAYOUT_LABELS = {
+    "medivision_stock_sales": "MediVision Platinum — Stock and Sales (Op/Purc/Scm/Sale/Scm/Closing + values, positional, PyMuPDF)",
+    "medtraders_sales_stock_statement": "Sales & Stock Statement (Medicine Traders / SwilERP)",
+    "stock_qoh_returns": "KLM Stock & Sales Statement Internal New (Ostk/Purc/Sale/SRet/PRet/Qoh+Value)",
+    "swil_stock_lastpurc": "SwilERP Sales & Stock Statement (Op.Bal/Receipt/LastPurc-date/Total/Issue/Closing/Dump)",
+    "stock_open_rec_adj_close": "Stock & Sales Statement (Open/Rec/Adj-/Adj+/Total/Sales/Close/Ord.Qty, dot-matrix)",
+    "stock_open_purch_miscout": "KLM Stock & Sales Statement (Purticular/Open/Purch/SalesRet/Sales&DC/Misc.Out/Close + Closing/Sales Value)",
+    "klm_stock_sales_month_repq": "KLM Stock & Sales Report (Month) — RepQ dialect: OpSt/PurQ/Sale/Free/RepQ/Stock/StockValue positional (JEYANTHI)",
+    "stock_batchwise_statement": "Stock & Sales Statement (batch-wise: Product/Packing/BATCH/EXP/Opening/Receipts/Total/Sales/Closing Stock/Closing Value, KLM division-banded)",
+    "klm_closing_stock_report": "KLM Closing Stock Report (SNO/Item/Pack/OpStk/PurQty+Value/SaleQty+Value/Free/ClStock+Value, positional)",
+    "marg_sale_closing_pdf": "Marg Stock & Sales Analysis (reduced Sale/Closing Qty+Value pairs, KLM division bands + supplier register excluded)",
+    "klm_stock_sale_prvsa": "KLM Stock & Sale Report (OpStk/Purch/PrvSa/Sales/Adj/Cl.St + P.price/Sales Valu, positional)",
+    "marg_monthly_ss_statement_pdf": "Marg/KLM Monthly Stock & Sales Statement (Open/Pur/GoodsRet/Sale/PurcRet/Balance, positional)",
+    "stock_open_rcpts_dualsales_pdf": "KLM Stock Report (Open/Receipt/L.Sales/Cur.Sls/Pur.Rtn/Sls.Rtn/Clos Qty+Amt, positional)",
+    "klm_stock_sales_month": "KLM Stock & Sales Report (Month) \u2014 OpSt/Pur/Sale/Free/Adj/Cl.S positional (per-division)",
+    "saleable_stock_qf": "Saleable Stock Report (pipe-delimited Opn/Rec/Issue/Bal Q+F)",
+    "pharmassist_stock_sale": "PharmAssist (C-Square) Stock & Sale Report (page-split Op/Pur/Sale/Bal, positional)",
+    "stock_sale_closing_pairs": "Marg Stock & Sales Analysis (Sale/Closing Qty+Value pairs)",
+    "klm_stock_sales_combined_pdf": "KLM Stock Sales Statement (Combined) \u2014 Prev.Sale/Open/Pur/Total Sale/Adj./Total Closing (positional, wrapped)",
+    "prompt_dstk_free_pdf": "Prompt ERP Stock Statement (Datewise) \u2014 free-carrying KLM variant (OpStk/Pur+Free/Sales+Free+Amt/ClStk+Amt, positional)",
+    "marg_movement_detail_sparse": "Marg Stock & Sales Analysis (movement detail, qty only, blank-omitted/sparse, positional)",
+    "marg_ss_statement_detailed": "Marg Stock & Sales Statement Detailed (Code+O.Bal/Purc/S.Ret/Sales/P.Ret/ClBal/Cl.Value)",
+    "simple4": "Busy/Tally Simple4",
+    "qty_value_total": "Qty+Value Pairs with Total Column",
+    "value_pairs": "Marg Qty-Value Pairs",
+    "marg_stock_summary": "Marg Stock Summary (Open/Pur/Ret/Receipts/Sales/Ret/Issue/Balance)",
+    "stock_open_pur_sale_free_current": "KLM Stock & Sales (Code/Open/Pur/Sale/Free/Current/Amount/Closing)",
+    "marg_stock_analysis_full": "Marg Stock & Sales Analysis (14-col Open/Pur/S-R/Repl/Total/Sales/Sample/P-R/Closing + M.Exp)",
+    "pharmassist_mfac": "PharmAssist (C-Square) Stock & Sales Mfac Group Wise (positional)",
+    "klm_venus_opstk_crqty": "Venus KLM Stock & Sale Statement (page-split OpStk/P.Qty/P.Sch/S.Qty/S.Sch/CrQty | ClStk/ClVal, glyph-descrambled positional)",
+    "marg_stock_recd_issued": "Marg Qty-only Stock & Sales (Opening/Recd/Issued/Cls, positional)",
+    "marg_stock_long": "Marg Long Stock Movements",
+    "marg_qty_value_wide": "Marg Qty-Value Wide",
+    "stock_simple_7col": "Simple Name/Pack/Open/Pur/Sales/Close",
+    "marg_lms_simple": "Marg LMS Simple",
+    "stock_rate_amount": "Rate + Amount Columns",
+    "dahod_marg": "Marg Item-Code Register",
+    "stock_receipt_replace": "Receipt/Replace Statement",
+    "pharma_bytes_itemcode": "Pharma Bytes Item-Code",
+    "saurashtra_monthly": "Logic ERP Monthly Sales & Stock",
+    "saurashtra_ss_report": "Logic ERP Monthly SS Report",
+    "venus_stock_statement": "Venus Stock Statement",
+    "marg_opstk_statement": "Marg OpStk Statement",
+    "marg_bordered": "Marg Bordered Table",
+    "marg_web_stock": "Marg Web Stock Report",
+    "prompt_bordered": "Prompt ERP Bordered",
+    "prompt": "Prompt ERP Text Statement",
+    "pks_data": "PKS Data ERP Stock Statement",
+    "technomax_stock": "Technomax Stock Statement",
+    "kluster_stock": "Kluster Software",
+    "dolphin_stock": "Dolphin ERP Stock Statement",
+    "toreo_stock": "Toreo ERP Stock Statement",
+    "siva_stock": "Siva Software Stock Report",
+    "stock_qoh": "KLM Stock & Sales Statement (Qoh)",
+    "stock_open_pur_sale_amt": "KLM Stock Register (Open/Pur/Sale/Amount)",
+    "stock_gdin": "KLM Stock & Sale (Gd.In / Gd.Out)",
+    "stock_oric_pairs": "Marg Stock & Sales Analysis (Qty/Value pairs)",
+    "disa_opbal_receipt_total_issue": "DISA Stock & Sales Statement (Op.Bal/Receipt/Issue)",
+    "marg_pds_replace": "Marg Product-Description Receipts (Replace+)",
+    "marg_open_pur_free_sale": "Marg Stock & Sales Analysis (Open/Pur/Free/Sale)",
+    "marg_movement_detail": "Marg Stock & Sales Analysis (movement detail, qty only)",
+    "saraswati_lstsl": "Busy Stock & Sales Report (LstSL/LstMove)",
+    "nagendra_rate_pairs": "Stock Statement (Rate + Qty/Value pairs)",
+    "swastik_particulars": "Particulars/Misc Stock Statement",
+    "marg_opqty": "Marg Stock & Sale Report (OPQTY/B_QTY)",
+    "stock_op_pur_total_sale_close": "Stock Statement (Op/Pur/Total/Sale/Close)",
+    "stock_received_issued": "Stock & Sales (Opening/Received/Issued/Closing)",
+    "stock_in_out_statement": "Stock Statement (Code + Stock-In/Out + monthly cols)",
+    "generic": "Generic Fallback",
+}

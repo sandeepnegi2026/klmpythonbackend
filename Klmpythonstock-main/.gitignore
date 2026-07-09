@@ -1,0 +1,17 @@
+# Environments
+.venv/
+env/
+
+# IDEs
+.cursor/
+.idea/
+.vscode/
+
+# Cache
+__pycache__/
+*.pyc
+
+# Local Data/Tests (Optional depending on your setup)
+data/
+tests/
+scripts/

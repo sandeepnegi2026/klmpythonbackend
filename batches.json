@@ -1,0 +1,12 @@
+{
+  "_comment": "Named drops of vendor samples. Add ONE entry per batch as new files arrive — never copy triage_batch.py. Run: python scripts/triage_batch.py --batch <name>. Folders are resolved relative to data_root (relative to the Python-Service-UI dir); absolute paths are also accepted.",
+  "data_root": "../../Data",
+  "batches": {
+    "26_june": [
+      { "folder": "New Data/26 June/party_wise-26 June/Pdf",          "route": "party_pdf"  },
+      { "folder": "New Data/26 June/party_wise-26 June/Excel",        "route": "party_xlsx" },
+      { "folder": "New Data/26 June/sales and stock -26 June/Pdf",    "route": "stock_pdf"  },
+      { "folder": "New Data/26 June/sales and stock -26 June/Excel",  "route": "stock_xlsx" }
+    ]
+  }
+}

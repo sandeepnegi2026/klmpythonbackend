@@ -1,0 +1,85 @@
+Reports root: D:\Devs\Reports\Data
+Mode: COMPARE to baselines
+
+[party_gj_pdf]
+  OK   AARCHI DIST-COSMOCOR.pdf rows=1
+  OK   AARCHI DIST-PEDIA.pdf rows=33
+  OK   DAHOD PHARMA-COSMO.pdf rows=3
+  OK   DAHOD PHARMA-COSMOCOR.pdf rows=6
+  OK   DAHOD PHARMA-COSMOQ.pdf rows=3
+  OK   DAHOD PHARMA-DERMA.pdf rows=12
+  OK   DAHOD PHARMA-DERMACOR.pdf rows=13
+  OK   DAHOD PHARMA-PEDIA.pdf rows=39
+  OK   DAHOD PHARMA-PHARMA.pdf rows=8
+  OK   MANISH MEDICAL-COSMO.pdf rows=10
+  OK   MANISH MEDICAL-COSMOCOR.pdf rows=25
+  OK   MANISH MEDICAL-COSMOQ.pdf rows=6
+  FAIL MANISH MEDICAL-DERMA.pdf
+       - sample_products: expected ['HBSONE-30GM CREAM KLM', 'Mfsone Cream 30 Gm', 'Mfsudif Cream 10 Gm', 'Nevlon Ad Moisturizing Lotion 150Ml', 'Nevlon Cream 100Gm'], got ['Hbsone Cream 30Gm', 'Mfsone Cream 30 Gm', 'Mfsudif Cream 10 Gm', 'Nevlon Ad Moisturizing Lotion 150Ml', 'Nevlon Cream 100Gm']
+  OK   MANISH MEDICAL-DERMACOR.pdf rows=21
+  OK   MANISH MEDICAL-PEDIA.pdf rows=13
+  OK   MANISH MEDICAL-PHARMA.pdf rows=18
+  OK   N K MEDICO-COSMO.pdf rows=27
+  OK   N K MEDICO-COSMOCOR.pdf rows=16
+  OK   N K MEDICO-COSMOQ.pdf rows=30
+  OK   N K MEDICO-DERMA.pdf rows=19
+  OK   N K MEDICO-DERMACOR.pdf rows=16
+  OK   N K MEDICO-PEDIA.pdf rows=117
+  OK   N K MEDICO-PHARMA.pdf rows=19
+  OK   OMKAR ENTERPRISE-COSMO.pdf rows=8
+  FAIL OMKAR ENTERPRISE-COSMOCOR.pdf
+       - amount_total: expected 16239.26, got 16362.12
+       - party_count: expected 3, got 4
+       - qty_total: expected 190.0, got 191.0
+       - row_count: expected 11, got 12
+       - sample_parties: expected ['AUM MEDICINES', 'SAI MEDICINES', 'SHREE MEDICAL STORE'], got ['AUM MEDICINES', 'JYOTI MEDICAL STORES', 'SAI MEDICINES', 'SHREE MEDICAL STORE']
+  OK   OMKAR ENTERPRISE-COSMOQ.pdf rows=13
+  OK   OMKAR ENTERPRISE-DERMA.pdf rows=16
+  FAIL OMKAR ENTERPRISE-DERMACOR.pdf
+       - amount_total: expected 22503.81, got 22908.44
+       - party_count: expected 4, got 5
+       - product_count: expected 7, got 8
+       - qty_total: expected 120.0, got 122.0
+       - row_count: expected 16, got 17
+       - sample_parties: expected ['AUM MEDICINES', 'SAI MEDICINES', 'SHREE JAY GOPAL MEDICAL STORE', 'SHREE MEDICAL STORE'], got ['AUM MEDICINES', 'JAY HIND MEDICAL STORES', 'SAI MEDICINES', 'SHREE JAY GOPAL MEDICAL STORE', 'SHREE MEDICAL STORE']
+       - sample_products: expected ['Dektop Cream 20Gm', 'Dektop Lotion 50Ml', 'Extend Hair Tablet', 'Folibild Tablets', 'Klm Klin Face Wash 100 Ml'], got ['Dektop Cream 20Gm', 'Dektop Lotion 50Ml', 'Extend Hair Tablet', 'Folibild Tablets', 'Kenz Sal Lotion 60 Ml']
+  OK   OMKAR ENTERPRISE-PEDIA.pdf rows=19
+  OK   OMKAR ENTERPRISE-PHARMA.pdf rows=37
+  OK   SAURASHTRA MEDISOLUTION-COSMO.pdf rows=78
+  OK   SAURASHTRA MEDISOLUTION-COSMOCOR.pdf rows=161
+  OK   SAURASHTRA MEDISOLUTION-COSMOQ.pdf rows=85
+  OK   SAURASHTRA MEDISOLUTION-DERMA.pdf rows=75
+  OK   SAURASHTRA MEDISOLUTION-DERMACOR.pdf rows=135
+  OK   SAURASHTRA MEDISOLUTION-OPHTHAL.pdf rows=0
+  OK   SAURASHTRA MEDISOLUTION-ORTHO.pdf rows=0
+  OK   SAURASHTRA MEDISOLUTION-OTHER.pdf rows=2
+  OK   SAURASHTRA MEDISOLUTION-PEDIA--FQty is empty.pdf rows=205
+  OK   SAURASHTRA MEDISOLUTION-PHARMA.pdf rows=149
+  OK   SHREE SAI SURGICAL-COSMO.pdf rows=8
+  OK   SHREE SAI SURGICAL-COSMOCOR.pdf rows=21
+  OK   SHREE SAI SURGICAL-DERMA.pdf rows=5
+  OK   SHREE SAI SURGICAL-DERMACOR.pdf rows=11
+  OK   SHREE SAI SURGICAL-PEDIA.pdf rows=34
+  OK   SHREE SAI SURGICAL-PHARMA.pdf rows=1
+
+[party_pp_pdf]
+  OK   AAGAM PHARMAKON-PHARMABYTE-SKY WAY-PP.pdf rows=10
+  OK   AKSHAR MEDICINE-NEOSOFT-PP.pdf rows=336
+  OK   ALL CARE MEDICINES-PROMPT-PP.pdf rows=30
+  OK   BASTAR PHARMA-MARG ERP-PP.PDF rows=81
+  FAIL CHIRAG PHARMA-PROMPT ERP-PP.pdf
+       - amount_total: expected 221226.71, got 221633.85
+       - area_count: expected 33, got 34
+       - party_count: expected 178, got 179
+       - qty_total: expected 1065.0, got 1067.0
+       - row_count: expected 507, got 508
+  OK   DHANRAJ AGENCY-MARG-PP.pdf rows=15
+  FAIL JANKI PHARMA-MARG ERP-PP.pdf
+       - sample_products: expected ['EKRAN HYDRA GEL', 'Ekran Aqua Gel 100Gm', 'Ekran Lotion 50G', 'Ekran Soft Silicon Sunscreen Gel 50G', 'Enzotret Tablet'], got ['Ekran Aqua Gel 100Gm', 'Ekran Lotion 50G', 'Ekran Soft Silicon Sunscreen Gel 50G', 'Ekran-80 Hydragel Sunscreen 50Gm', 'Enzotret Tablet']
+  OK   MANISH MEDICAL CORPORATION-TECHNOMAX-PP.pdf rows=144
+  OK   MARUTI PHARMA-MARG-PP.pdf rows=17
+  OK   SHRI SAI SURGICAL AGENCY-RAYMEDI GOFRUGAL-PP.pdf rows=8
+  OK   SOURABH MEDICOSE-PHARMA BYTES-PP.pdf rows=17
+
+============================================================
+Passed: 52  Failed: 5  Skipped (no baseline): 0

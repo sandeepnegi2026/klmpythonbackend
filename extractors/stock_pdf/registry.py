@@ -1,0 +1,137 @@
+from extractors.stock_pdf.layouts.dahod_marg import parse_dahod_marg
+from extractors.stock_pdf.layouts.generic import parse_generic
+from extractors.stock_pdf.layouts.marg_lms_simple import parse_marg_lms_simple
+from extractors.stock_pdf.layouts.marg_opstk_statement import parse_marg_opstk_statement
+from extractors.stock_pdf.layouts.marg_qty_value_wide import parse_marg_qty_value_wide
+from extractors.stock_pdf.layouts.marg_stock_long import parse_marg_stock_long
+from extractors.stock_pdf.layouts.pharma_bytes_itemcode import parse_pharma_bytes_itemcode
+from extractors.stock_pdf.layouts.saurashtra_monthly import parse_saurashtra_monthly
+from extractors.stock_pdf.layouts.saurashtra_ss_report import parse_saurashtra_ss_report
+from extractors.stock_pdf.layouts.qty_value_total import parse_qty_value_total
+from extractors.stock_pdf.layouts.simple4 import parse_simple4
+from extractors.stock_pdf.layouts.stock_rate_amount import parse_stock_rate_amount
+from extractors.stock_pdf.layouts.stock_receipt_replace import parse_stock_receipt_replace
+from extractors.stock_pdf.layouts.stock_simple_7col import parse_stock_simple_7col
+from extractors.stock_pdf.layouts.value_pairs import parse_value_pairs
+from extractors.stock_pdf.layouts.venus_stock_statement import parse_venus_stock_statement
+from extractors.stock_pdf.layouts.pks_data import parse_pks_data
+from extractors.stock_pdf.layouts.prompt import parse_prompt
+from extractors.stock_pdf.layouts.technomax import parse_technomax_stock
+from extractors.stock_pdf.layouts.kluster_stock import parse_kluster_stock
+from extractors.stock_pdf.layouts.dolphin import parse_dolphin_stock
+from extractors.stock_pdf.layouts.toreo import parse_toreo_stock
+from extractors.stock_pdf.layouts.siva_stock import parse_siva_stock
+from extractors.stock_pdf.layouts.stock_qoh import parse_stock_qoh
+from extractors.stock_pdf.layouts.stock_open_pur_sale_amt import parse_stock_open_pur_sale_amt
+from extractors.stock_pdf.layouts.stock_gdin import parse_stock_gdin
+from extractors.stock_pdf.layouts.stock_oric_pairs import parse_stock_oric_pairs
+from extractors.stock_pdf.layouts.disa_opbal_receipt_total_issue import parse_disa_opbal_receipt_total_issue
+from extractors.stock_pdf.layouts.marg_pds_replace import parse_marg_pds_replace
+from extractors.stock_pdf.layouts.marg_open_pur_free_sale import parse_marg_open_pur_free_sale
+from extractors.stock_pdf.layouts.marg_movement_detail import parse_marg_movement_detail
+from extractors.stock_pdf.layouts.saraswati_lstsl import parse_saraswati_lstsl
+from extractors.stock_pdf.layouts.nagendra_rate_pairs import parse_nagendra_rate_pairs
+from extractors.stock_pdf.layouts.swastik_particulars import parse_swastik_particulars
+from extractors.stock_pdf.layouts.marg_opqty import parse_marg_opqty
+from extractors.stock_pdf.layouts.stock_op_pur_total_sale_close import parse_stock_op_pur_total_sale_close
+from extractors.stock_pdf.layouts.stock_received_issued import parse_stock_received_issued
+from extractors.stock_pdf.layouts.stock_in_out_statement import parse_stock_in_out_statement
+from extractors.stock_pdf.layouts.marg_stock_summary import parse_marg_stock_summary
+from extractors.stock_pdf.layouts.stock_open_pur_sale_free_current import parse_stock_open_pur_sale_free_current
+from extractors.stock_pdf.layouts.marg_stock_analysis_full import parse_marg_stock_analysis_full
+from extractors.stock_pdf.layouts.pharmassist_mfac import parse_pharmassist_mfac
+from extractors.stock_pdf.layouts.marg_stock_recd_issued import parse_marg_stock_recd_issued
+from extractors.stock_pdf.layouts.klm_venus_opstk_crqty import parse_klm_venus_opstk_crqty
+
+from extractors.stock_pdf.layouts.klm_stock_sale_prvsa import parse_klm_stock_sale_prvsa
+from extractors.stock_pdf.layouts.marg_monthly_ss_statement_pdf import parse_marg_monthly_ss_statement_pdf
+from extractors.stock_pdf.layouts.stock_open_rcpts_dualsales_pdf import parse_stock_open_rcpts_dualsales_pdf
+from extractors.stock_pdf.layouts.klm_stock_sales_month import parse_klm_stock_sales_month
+from extractors.stock_pdf.layouts.saleable_stock_qf import parse_saleable_stock_qf
+from extractors.stock_pdf.layouts.pharmassist_stock_sale import parse_pharmassist_stock_sale
+from extractors.stock_pdf.layouts.stock_sale_closing_pairs import parse_stock_sale_closing_pairs
+from extractors.stock_pdf.layouts.klm_stock_sales_combined_pdf import parse_klm_stock_sales_combined_pdf
+from extractors.stock_pdf.layouts.prompt_dstk_free_pdf import parse_prompt_dstk_free_pdf
+from extractors.stock_pdf.layouts.marg_movement_detail_sparse import parse_marg_movement_detail_sparse
+from extractors.stock_pdf.layouts.marg_ss_statement_detailed import parse_marg_ss_statement_detailed
+
+from extractors.stock_pdf.layouts.klm_closing_stock_report import parse_klm_closing_stock_report
+from extractors.stock_pdf.layouts.marg_sale_closing_pdf import parse_marg_sale_closing_pdf
+
+from extractors.stock_pdf.layouts.medtraders_sales_stock_statement import parse_medtraders_sales_stock_statement
+from extractors.stock_pdf.layouts.medivision_stock_sales import parse_medivision_stock_sales
+
+from extractors.stock_pdf.layouts.stock_qoh_returns import parse_stock_qoh_returns
+from extractors.stock_pdf.layouts.stock_open_rec_adj_close import parse_stock_open_rec_adj_close
+from extractors.stock_pdf.layouts.swil_stock_lastpurc import parse_swil_stock_lastpurc
+from extractors.stock_pdf.layouts.stock_open_purch_miscout import parse_stock_open_purch_miscout
+from extractors.stock_pdf.layouts.klm_stock_sales_month_repq import parse_klm_stock_sales_month_repq
+from extractors.stock_pdf.layouts.stock_batchwise_statement import parse_stock_batchwise_statement
+
+TEXT_PARSERS = {
+    "medivision_stock_sales": parse_medivision_stock_sales,
+    "medtraders_sales_stock_statement": parse_medtraders_sales_stock_statement,
+    "stock_qoh_returns": parse_stock_qoh_returns,
+    "stock_open_rec_adj_close": parse_stock_open_rec_adj_close,
+    "swil_stock_lastpurc": parse_swil_stock_lastpurc,
+    "stock_open_purch_miscout": parse_stock_open_purch_miscout,
+    "klm_stock_sales_month_repq": parse_klm_stock_sales_month_repq,
+    "stock_batchwise_statement": parse_stock_batchwise_statement,
+    "klm_closing_stock_report": parse_klm_closing_stock_report,
+    "marg_sale_closing_pdf": parse_marg_sale_closing_pdf,
+    "klm_stock_sale_prvsa": parse_klm_stock_sale_prvsa,
+    "marg_monthly_ss_statement_pdf": parse_marg_monthly_ss_statement_pdf,
+"stock_open_rcpts_dualsales_pdf": parse_stock_open_rcpts_dualsales_pdf,
+    "klm_stock_sales_month": parse_klm_stock_sales_month,
+    "saleable_stock_qf": parse_saleable_stock_qf,
+"pharmassist_stock_sale": parse_pharmassist_stock_sale,
+    "stock_sale_closing_pairs": parse_stock_sale_closing_pairs,
+    "klm_stock_sales_combined_pdf": parse_klm_stock_sales_combined_pdf,
+"prompt_dstk_free_pdf": parse_prompt_dstk_free_pdf,
+    "marg_movement_detail_sparse": parse_marg_movement_detail_sparse,
+"marg_ss_statement_detailed": parse_marg_ss_statement_detailed,
+    "marg_stock_recd_issued": parse_marg_stock_recd_issued,
+    "marg_stock_summary": parse_marg_stock_summary,
+    "stock_open_pur_sale_free_current": parse_stock_open_pur_sale_free_current,
+    "marg_stock_analysis_full": parse_marg_stock_analysis_full,
+    "pharmassist_mfac": parse_pharmassist_mfac,
+    "klm_venus_opstk_crqty": parse_klm_venus_opstk_crqty,
+    "simple4": parse_simple4,
+    "qty_value_total": parse_qty_value_total,
+    "value_pairs": parse_value_pairs,
+    "marg_stock_long": parse_marg_stock_long,
+    "marg_qty_value_wide": parse_marg_qty_value_wide,
+    "stock_simple_7col": parse_stock_simple_7col,
+    "marg_lms_simple": parse_marg_lms_simple,
+    "stock_rate_amount": parse_stock_rate_amount,
+    "dahod_marg": parse_dahod_marg,
+    "stock_receipt_replace": parse_stock_receipt_replace,
+    "pharma_bytes_itemcode": parse_pharma_bytes_itemcode,
+    "saurashtra_monthly": parse_saurashtra_monthly,
+    "saurashtra_ss_report": parse_saurashtra_ss_report,
+    "venus_stock_statement": parse_venus_stock_statement,
+    "marg_opstk_statement": parse_marg_opstk_statement,
+    "prompt": parse_prompt,
+    "pks_data": parse_pks_data,
+    "technomax_stock": parse_technomax_stock,
+    "kluster_stock": parse_kluster_stock,
+    "dolphin_stock": parse_dolphin_stock,
+    "toreo_stock": parse_toreo_stock,
+    "siva_stock": parse_siva_stock,
+    "stock_qoh": parse_stock_qoh,
+    "stock_open_pur_sale_amt": parse_stock_open_pur_sale_amt,
+    "stock_gdin": parse_stock_gdin,
+    "stock_oric_pairs": parse_stock_oric_pairs,
+    "disa_opbal_receipt_total_issue": parse_disa_opbal_receipt_total_issue,
+    "marg_pds_replace": parse_marg_pds_replace,
+    "marg_open_pur_free_sale": parse_marg_open_pur_free_sale,
+    "marg_movement_detail": parse_marg_movement_detail,
+    "saraswati_lstsl": parse_saraswati_lstsl,
+    "nagendra_rate_pairs": parse_nagendra_rate_pairs,
+    "swastik_particulars": parse_swastik_particulars,
+    "marg_opqty": parse_marg_opqty,
+    "stock_op_pur_total_sale_close": parse_stock_op_pur_total_sale_close,
+    "stock_received_issued": parse_stock_received_issued,
+    "stock_in_out_statement": parse_stock_in_out_statement,
+    "generic": parse_generic,
+}
