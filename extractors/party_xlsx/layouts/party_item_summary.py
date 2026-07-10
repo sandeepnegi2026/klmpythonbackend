@@ -362,6 +362,12 @@ def parse_party_item_summary(rows):
     glued_towns = set() if (use_conv or use_area) else _glued_towns(rows, header_idx, vendor_c)
 
     def _set_party(text):
+        # "-KLM COSMOCOR"-style leading-hyphen band = the COMPANY/division sub-band
+        # printed under each party (Busy "Report For : SALE-S/R" grouping, UMA).
+        # It must never overwrite the party above it. Real party bands never start
+        # with "-" in this layout (the -L/-<area> conventions are trailing).
+        if text.lstrip().startswith("-"):
+            return None
         if use_conv:
             if _is_page_noise(text, vendor_c):
                 return None            # repeated header/title/vendor/footer — not a party

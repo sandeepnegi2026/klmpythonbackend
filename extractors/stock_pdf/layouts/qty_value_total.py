@@ -46,28 +46,47 @@ def parse_qty_value_total(text):
         if _skip(s):
             continue
         prod, tail, exp = _split_product_numbers(s)
-        # Structural lock: only rows carrying exactly the 9 movement numbers.
-        # This also drops the division bands (KLM BABY, ...) which carry none,
-        # while keeping KLM-branded product rows which carry all nine.
-        if not prod or len(tail) != 9:
+        # Structural lock: only rows carrying the movement numbers — 9 for the
+        # standalone-TOTAL_QTY export, or 8 for the ZISHAN "Sales & Stock
+        # Statement" sibling (4 qty/value pairs; its pair-2 value is the running
+        # TOTAL value = opening_val + receipt_val, so purchase_value is not
+        # emitted there). Bands/furniture carry no trailing numbers and drop out.
+        if not prod or len(tail) not in (8, 9):
             continue
         name, pack = _split_product_pack(prod)
         vals = _nums(tail)
-        if len(vals) != 9:
+        if len(vals) == 9:
+            r = {
+                "product_name": name,
+                "pack": pack,
+                "opening_stock": vals[0],
+                "opening_value": vals[1],
+                "purchase_stock": vals[2],
+                "purchase_value": vals[3],
+                "total_stock": vals[4],
+                "sales_qty": vals[5],
+                "sales_value": vals[6],
+                "closing_stock": vals[7],
+                "closing_stock_value": vals[8],
+            }
+        elif len(vals) == 8:
+            # OP q/v | Receipt qty + TOTAL value | Issue q/v | Closing q/v.
+            # Verified: Closing = OP + Receipt - Issue on every reference row
+            # (EKRAN SOFT: 24+98-122=0; HISTABIL M: 10+0-0=10) and the report's
+            # own TOTAL line (401+535-926=10).
+            r = {
+                "product_name": name,
+                "pack": pack,
+                "opening_stock": vals[0],
+                "opening_value": vals[1],
+                "purchase_stock": vals[2],
+                "sales_qty": vals[4],
+                "sales_value": vals[5],
+                "closing_stock": vals[6],
+                "closing_stock_value": vals[7],
+            }
+        else:
             continue
-        r = {
-            "product_name": name,
-            "pack": pack,
-            "opening_stock": vals[0],
-            "opening_value": vals[1],
-            "purchase_stock": vals[2],
-            "purchase_value": vals[3],
-            "total_stock": vals[4],
-            "sales_qty": vals[5],
-            "sales_value": vals[6],
-            "closing_stock": vals[7],
-            "closing_stock_value": vals[8],
-        }
         if exp:
             r["expiry"] = exp
         records.append(r)

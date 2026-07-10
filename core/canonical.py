@@ -69,8 +69,14 @@ STOCK_FIELDS = {
     # column and steals it into sales_return (a serial 1,2,3… added to closing wrecks
     # reconciliation). Real return columns still match via the specific synonyms below.
     "sales_return": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales return", "sale return", "sale ret", "sales ret", "s return", "sls return", "saleret", "salesret", "salesret.", "sales ret.", "srtot", "sr tot", "sretqty"]},
-    "closing_stock": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing", "closing qty", "cl stock", "cl qty", "closing bal", "closing balance", "closing stock", "c s", "cl", "balance", "closestock", "close", "c stk", "clstk", "curstk", "cur stk", "current stock", "cls stk", "cls stk qty", "clsg", "qoh", "qty on hand", "quantity on hand"]},
-    "closing_stock_value": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing stock value", "closing value", "closing amt", "cl stock value", "cl value", "balance value", "closing val", "cl val", "clval", "c val", "cl amt", "qoh value", "qohvalue"]},
+    # "bal qty" — CENTRAL AGENCIES (BlueFox) / C-Square "Stock And Sales" reports head the
+    # closing column "Bal." over a "Qty" sub-row ("Bal. Qty" = Balance qty = closing). The
+    # 2-token "bal qty" is specific (a bare "bal" would over-reach), and the disambiguated
+    # "Op Bal" / "Opening Balance" still bind opening_stock via their EXACT 1.0 match.
+    "closing_stock": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing", "closing qty", "cl stock", "cl qty", "closing bal", "closing balance", "closing stock", "c s", "cl", "balance", "bal qty", "closestock", "close", "c stk", "clstk", "curstk", "cur stk", "current stock", "cls stk", "cls stk qty", "clsg", "qoh", "qty on hand", "quantity on hand"]},
+    # "bal val" / "bal value" — CENTRAL's closing-value column "Bal.Val" (normalized
+    # "bal val"); without it the "value" substring mis-binds it to sales_value.
+    "closing_stock_value": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing stock value", "closing value", "closing amt", "cl stock value", "cl value", "balance value", "bal val", "bal value", "closing val", "cl val", "clval", "c val", "cl amt", "qoh value", "qohvalue"]},
     "hsn_code": {"scope": "stock", "type": "str", "required": False, "synonyms": ["hsn", "hsn code", "code", "product code", "pcod", "p cod"]},
     "batch_no": {"scope": "stock", "type": "str", "required": False, "synonyms": ["batch", "batch no", "lot"]},
     "expiry": {"scope": "stock", "type": "str", "required": False, "synonyms": ["expiry", "exp", "expiry date", "exp date", "m exp", "near exp", "nearexp"]},

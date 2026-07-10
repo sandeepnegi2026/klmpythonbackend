@@ -131,6 +131,22 @@ def detect_layout(rows):
     if _area_party_billwise_detect(rows):
         return "area_party_billwise"
 
+    # "Detailed Company Wise Area Wise Sales Report" (CHAITANYA / KLM) — company + bare-name party
+    # bands over a Bill No/Product/Qty/Free/Amount table. The party's text lands in col0 (the Bill
+    # No column) so the bare-band heuristics see it as a product row and the file falls to tabular
+    # (no party column -> RED). Title-gated ("area wise sales report"), so it diverts only this.
+    from extractors.party_xlsx.layouts.company_area_wise_sales import detect as _company_area_detect
+    if _company_area_detect(rows):
+        return "company_area_wise_sales"
+
+    # "Product-Customer Wise Sales" SwilERP Excel export (CAPITAL PHARMA / KLM) — DIVISION and
+    # PRODUCT bands (single-cell rows) over customer rows (Customer|Station|Qty|Sales Value). The
+    # product is a band, so tabular maps the four customer columns but leaves product_name empty
+    # -> RED. Gated on the SwilERP title + the exact Customer/Station/Qty/Sales-Value header.
+    from extractors.party_xlsx.layouts.product_customer_wise_sales_xlsx import detect as _prod_cust_ws_detect
+    if _prod_cust_ws_detect(rows):
+        return "product_customer_wise_sales_xlsx"
+
     # Wide "Companywise Customerwise" Logic-ERP export (customer band, far-apart cols).
     from extractors.party_xlsx.layouts.companywise_customerwise import detect as _companywise_detect
     if _companywise_detect(rows):
@@ -215,6 +231,14 @@ def detect_layout(rows):
     from extractors.party_xlsx.layouts.customer_company_itemwise import detect as _cci_detect
     if _cci_detect(rows):
         return "customer_company_itemwise"
+
+    # KLM "Company Party Wise Product Sale" (GARG DISTRIBUTOR) — 3-level banded:
+    # "KLM <DIV>" company bands + bare party bands over a single COMPANY / PARTY /
+    # PRODUCT column, so tabular can never bind party_name. Title + the exact
+    # RPL / NET AMT header cells gate it to this export alone.
+    from extractors.party_xlsx.layouts.company_party_product_xlsx import detect as _cpp_detect
+    if _cpp_detect(rows):
+        return "company_party_product_xlsx"
 
     # "PARTY+ITEM WISE SALE" columnar export (KAPOOR / Marg) — a flat table with a real
     # PARTY NAME column whose town is glued as a trailing "-<AREA>" suffix. Reuses tabular's

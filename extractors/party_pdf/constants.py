@@ -1,5 +1,6 @@
 FORMAT_REPORT_TYPE = {
     "medivision_sale_dc": "Party-wise Sales",
+    "product_customer_wise_sales": "Party-wise Sales",
     "klm_company_customer_invoice": "Party-wise Sales",
     "areawise_sales_billwise": "Party-wise Sales",
     "customer_product_sales": "Party-wise Sales",
@@ -49,12 +50,17 @@ FORMAT_REPORT_TYPE = {
 }
 
 FORMAT_LABELS = {
+    "bluefox_customerwise_sales": "Customerwise Sales Statement (BlueFox)",
+    "customer_product_wise_summary": "Customer-Wise Product-Wise Sales Summary (coded bands)",
+    "sale_register_detailed": "Marg — Sale Register Detailed (billwise)",
+    "areawise_sales_period": "Area Wise Sales Report (coded party bands, invoice rows)",
     "klm_company_customer_invoice": "KLM — Company, Customer and Invoice Sales",
     "areawise_sales_billwise": "Areawise Sales Report (KLM billwise, positional)",
     "customer_product_sales": "Customer & Product Sales (C.D. Associates)",
     "klm_party_wise_statement": "Party Wise Sales Statement (KLM, DEEPAA, positional)",
     "party_item_summary_sr_total": "Party/Item Wise Sales Summary (SALE/SR/TOTAL, AVR.RATE)",
     "medivision_sale_dc": "MediVision Platinum — Customer/Product-wise Sale-DC (positional, PyMuPDF)",
+    "product_customer_wise_sales": "Product-Customer Wise Sales (SwilERP, positional)",
     "marg_summary": "Marg — Sales Detail Summary",
     "marg_register": "Marg — Sales Register",
     "marg_register_itemwise": "Marg — Itemwise Register",

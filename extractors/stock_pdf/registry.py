@@ -16,6 +16,7 @@ from extractors.stock_pdf.layouts.value_pairs import parse_value_pairs
 from extractors.stock_pdf.layouts.venus_stock_statement import parse_venus_stock_statement
 from extractors.stock_pdf.layouts.pks_data import parse_pks_data
 from extractors.stock_pdf.layouts.prompt import parse_prompt
+from extractors.stock_pdf.layouts.prompt_datewise_favourite import parse_prompt_datewise_favourite
 from extractors.stock_pdf.layouts.technomax import parse_technomax_stock
 from extractors.stock_pdf.layouts.kluster_stock import parse_kluster_stock
 from extractors.stock_pdf.layouts.dolphin import parse_dolphin_stock
@@ -26,6 +27,8 @@ from extractors.stock_pdf.layouts.stock_open_pur_sale_amt import parse_stock_ope
 from extractors.stock_pdf.layouts.stock_gdin import parse_stock_gdin
 from extractors.stock_pdf.layouts.stock_oric_pairs import parse_stock_oric_pairs
 from extractors.stock_pdf.layouts.disa_opbal_receipt_total_issue import parse_disa_opbal_receipt_total_issue
+from extractors.stock_pdf.layouts.capital_stock_sale_stmt import parse_capital_stock_sale_stmt
+from extractors.stock_pdf.layouts.swil_stock_transfer import parse_swil_stock_transfer
 from extractors.stock_pdf.layouts.marg_pds_replace import parse_marg_pds_replace
 from extractors.stock_pdf.layouts.marg_open_pur_free_sale import parse_marg_open_pur_free_sale
 from extractors.stock_pdf.layouts.marg_movement_detail import parse_marg_movement_detail
@@ -42,6 +45,7 @@ from extractors.stock_pdf.layouts.marg_stock_analysis_full import parse_marg_sto
 from extractors.stock_pdf.layouts.pharmassist_mfac import parse_pharmassist_mfac
 from extractors.stock_pdf.layouts.marg_stock_recd_issued import parse_marg_stock_recd_issued
 from extractors.stock_pdf.layouts.klm_venus_opstk_crqty import parse_klm_venus_opstk_crqty
+from extractors.stock_pdf.layouts.dahod_stock_sale_stmt import parse_dahod_stock_sale_stmt
 
 from extractors.stock_pdf.layouts.klm_stock_sale_prvsa import parse_klm_stock_sale_prvsa
 from extractors.stock_pdf.layouts.marg_monthly_ss_statement_pdf import parse_marg_monthly_ss_statement_pdf
@@ -49,6 +53,7 @@ from extractors.stock_pdf.layouts.stock_open_rcpts_dualsales_pdf import parse_st
 from extractors.stock_pdf.layouts.klm_stock_sales_month import parse_klm_stock_sales_month
 from extractors.stock_pdf.layouts.saleable_stock_qf import parse_saleable_stock_qf
 from extractors.stock_pdf.layouts.pharmassist_stock_sale import parse_pharmassist_stock_sale
+from extractors.stock_pdf.layouts.pharmassist_stock_sale_single import parse_pharmassist_stock_sale_single
 from extractors.stock_pdf.layouts.stock_sale_closing_pairs import parse_stock_sale_closing_pairs
 from extractors.stock_pdf.layouts.klm_stock_sales_combined_pdf import parse_klm_stock_sales_combined_pdf
 from extractors.stock_pdf.layouts.prompt_dstk_free_pdf import parse_prompt_dstk_free_pdf
@@ -67,8 +72,16 @@ from extractors.stock_pdf.layouts.swil_stock_lastpurc import parse_swil_stock_la
 from extractors.stock_pdf.layouts.stock_open_purch_miscout import parse_stock_open_purch_miscout
 from extractors.stock_pdf.layouts.klm_stock_sales_month_repq import parse_klm_stock_sales_month_repq
 from extractors.stock_pdf.layouts.stock_batchwise_statement import parse_stock_batchwise_statement
+from extractors.stock_pdf.layouts.central_stock_sales import parse_central_stock_sales
+from extractors.stock_pdf.layouts.stock_lstsl import parse_stock_lstsl
+from extractors.stock_pdf.layouts.product_wise_stock_sale_profit import (
+    parse_product_wise_stock_sale_profit,
+)
 
 TEXT_PARSERS = {
+    "stock_lstsl": parse_stock_lstsl,
+    "product_wise_stock_sale_profit": parse_product_wise_stock_sale_profit,
+    "central_stock_sales": parse_central_stock_sales,
     "medivision_stock_sales": parse_medivision_stock_sales,
     "medtraders_sales_stock_statement": parse_medtraders_sales_stock_statement,
     "stock_qoh_returns": parse_stock_qoh_returns,
@@ -85,6 +98,7 @@ TEXT_PARSERS = {
     "klm_stock_sales_month": parse_klm_stock_sales_month,
     "saleable_stock_qf": parse_saleable_stock_qf,
 "pharmassist_stock_sale": parse_pharmassist_stock_sale,
+    "pharmassist_stock_sale_single": parse_pharmassist_stock_sale_single,
     "stock_sale_closing_pairs": parse_stock_sale_closing_pairs,
     "klm_stock_sales_combined_pdf": parse_klm_stock_sales_combined_pdf,
 "prompt_dstk_free_pdf": parse_prompt_dstk_free_pdf,
@@ -96,6 +110,7 @@ TEXT_PARSERS = {
     "marg_stock_analysis_full": parse_marg_stock_analysis_full,
     "pharmassist_mfac": parse_pharmassist_mfac,
     "klm_venus_opstk_crqty": parse_klm_venus_opstk_crqty,
+    "dahod_stock_sale_stmt": parse_dahod_stock_sale_stmt,
     "simple4": parse_simple4,
     "qty_value_total": parse_qty_value_total,
     "value_pairs": parse_value_pairs,
@@ -112,6 +127,7 @@ TEXT_PARSERS = {
     "venus_stock_statement": parse_venus_stock_statement,
     "marg_opstk_statement": parse_marg_opstk_statement,
     "prompt": parse_prompt,
+    "prompt_datewise_favourite": parse_prompt_datewise_favourite,
     "pks_data": parse_pks_data,
     "technomax_stock": parse_technomax_stock,
     "kluster_stock": parse_kluster_stock,
@@ -123,6 +139,8 @@ TEXT_PARSERS = {
     "stock_gdin": parse_stock_gdin,
     "stock_oric_pairs": parse_stock_oric_pairs,
     "disa_opbal_receipt_total_issue": parse_disa_opbal_receipt_total_issue,
+    "capital_stock_sale_stmt": parse_capital_stock_sale_stmt,
+    "swil_stock_transfer": parse_swil_stock_transfer,
     "marg_pds_replace": parse_marg_pds_replace,
     "marg_open_pur_free_sale": parse_marg_open_pur_free_sale,
     "marg_movement_detail": parse_marg_movement_detail,

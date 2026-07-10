@@ -8,6 +8,17 @@ def detect_excel_layout(rows):
     single_col = bool(populated) and all(
         sum(1 for c in row if str(c).strip()) <= 1 for row in populated
     )
+    # "Replicated single-column": the same fixed-width TEXT line stored as ONE merged cell that
+    # the .xlsx unmerge spreads across many IDENTICAL columns, so `single_col` above reads False
+    # even though every row carries just one logical value. Detected when MOST populated rows have
+    # >=2 non-empty cells that are all identical. A genuine grid (distinct product/pack/number
+    # cells) never trips this — only its few full-width title rows are identical, far below half.
+    _repl = sum(
+        1 for row in populated
+        if sum(1 for c in row if str(c).strip()) >= 2
+        and len({str(c).strip() for c in row if str(c).strip()}) == 1
+    )
+    replicated_single = bool(populated) and _repl >= max(3, len(populated) // 2)
     # Marg/KLM PALANPUR "MONTHLY STOCK & SALES STATEMENT" (.xls), banded by Make/division.
     # Sparse positional grid: Code | * | Product | Pack | Opening | Purchase | Goods Ret. |
     # Total In Qty | Sale | Purc. Ret. | Balance | Order 1 (Qty/Free) | Order 2 (Qty/Free) |
@@ -33,6 +44,12 @@ def detect_excel_layout(rows):
     # stock xlsx/xls in New_Data, so it cannot steal any other vendor's grid.
     if "rcpts" in flat and "l.sales" in flat and "cur.sls." in flat and "clos.(qty" in flat:
         return "stock_open_rcpts_dualsales_xlsx"
+    # KLM "Sales && Stock Statement Group..." (GARG DISTRIBUTOR): OP/PUR/Total/CL
+    # qty+amt grid whose "Total" column is really the SALES movement (OP + PUR -
+    # Total = CL on every row). The generic tabular reader leaves sales unbound ->
+    # 100% SANITY_FAILED. The exact compact header run is unique to this export.
+    if "opqtyopamtpurqtypuramttotalqtytotalamtclqtyclamt" in flat:
+        return "stock_op_pur_total_cl_xlsx"
     # Marg (ERP9+) "STOCK & SALES ANALYSIS" qty+value single-column TEXT dump (AGARTALA /
     # GLOBE). Same single-column shape as marg_stock_analysis_text but carrying the shorter
     # OPENING/RECEIPT/ISSUE/CLOSING/DUMP qty+value block (9 numeric cols) instead of the
@@ -57,6 +74,19 @@ def detect_excel_layout(rows):
         and "m.exp" not in flat
     ):
         return "marg_stock_open_rcpt_issue_xls"
+    # D.S.PHARMA (KLM .xlsx): a single-column Marg "STOCK & SALES ANALYSIS" qty+value TEXT dump
+    # stored as ONE merged cell that the unmerge replicates across every column (so single_col is
+    # False and the grid gate below would wrongly claim it). Same OPENING/RECEIPT/ISSUE/CLOSING +
+    # DUMP block as marg_stock_analysis_qv but with a 10th trailing analytics column. Keyed on the
+    # replicated-single-column shape + the RECEIPT/ISSUE/DUMP header trio; the genuine DERMA grid
+    # is NOT replicated so it still falls to the grid gate, and AGARTALA/GLOBE qv is a true
+    # one-cell dump (not replicated) so it stays on marg_stock_analysis_qv. MUST precede the grid.
+    if (
+        replicated_single and "itemdescription" in flat and "receipt" in flat
+        and "issue" in flat and "closing" in flat and "opening" in flat and "dump" in flat
+        and "m.exp" not in flat
+    ):
+        return "marg_stock_analysis_qv_dumpext"
     # DERMA DISTRIBUTORS (KLM "ALL DIVISION STOCK STATEMENT" .xls): the GRID twin of the
     # single-column marg_stock_analysis_qv above — the same Marg "STOCK & SALES ANALYSIS"
     # OPENING/RECEIPT/ISSUE/CLOSING + DUMP qty+value block, but each value in its own physical
@@ -71,6 +101,20 @@ def detect_excel_layout(rows):
         and "closing" in flat and "opening" in flat and "dump" in flat and "m.exp" not in flat
     ):
         return "marg_stock_analysis_qv_grid"
+    # CHAITANYA PHARMA (custom KLM ERP) "Stock and Sales Report For Month" grid with an OFFSET
+    # two-row header: the GROUP row (Opening/Purchase/SaleS/Closing) has no "Product Name" cell,
+    # so the generic `tabular` reader binds it as the header, never maps product_name, and
+    # extracts 0 rows. A positional parser reads the fixed columns. Keyed on the compact combo
+    # "stock and sales report" title + Product Name + the LMS column + the P.Return/Sale Return
+    # sub-labels — unique to this KLM export (klm_lifecare_stock keys on the parenthesised
+    # "stockandsalesreport(month)" + LastSalesQty history, which this file lacks), so it steals
+    # nothing.
+    if (
+        "stockandsalesreport" in flat and "productname" in flat and "lms" in flat
+        and "p.return" in flat and "salereturn" in flat and "opening" in flat
+        and "closing" in flat
+    ):
+        return "marg_stock_sales_lms_xls"
     # KLM own-vendor "Stock sales statement(Combined)" grid (VISION HEALTHCARE
     # HOLDINGS). Header: Product Name | Pack | Rate | Prev.Sale | Opening | Purchase |
     # Total Sale | Sale Value | Adj. | Total Closing | Closing Value. The informational
@@ -327,4 +371,26 @@ def detect_excel_layout(rows):
     # generic tabular (no synonym), so closing never reconciles. Unique abbrev header set.
     if "clqty" in flat and "clvalue" in flat and "st(out)" in flat and "sivalue" in flat and "pival" in flat:
         return "klm_op_pi_clqty_xlsx"
+    # TIRUPATI MEDICOSE "STOCK & SALES" grid: NAME|PACK|OPEN|PURCHASE|LASTPERIOD|SALES|SALEAMT|
+    # CLOSING|CLOSEAMT|NEAREXP|SAPCODE. Generic `tabular` reads the movement fine but leaks the
+    # per-company "AMOUNT" subtotals and the "KLM LAB <div>" bands as products, and drops CLOSEAMT.
+    # Keyed on the SALEAMT+CLOSEAMT+SAPCODE abbreviation set (unique to this KLM export), so it
+    # cannot steal any other stock grid. Placed just before the tabular fallback.
+    if "saleamt" in flat and "closeamt" in flat and "sapcode" in flat:
+        return "klm_stock_sales_saleamt"
+    # CHOUDHARY MEDICAL AGENCIES (KLM "KLM_COSMO_ORTHO.XLS"): a clean Open/Receipt/Issue/Closing
+    # qty+value grid whose header uses the underscored abbreviations item_name | op_stock |
+    # op_value | rec_qty | rec_value | iss_qty | iss_value | clos_qty | clos_value. The shared
+    # header-synonym "contains" heuristic collapses every *_value column onto sales_value and
+    # both iss_qty/clos_qty onto sales_qty, so the generic `tabular` mapper never binds
+    # closing_stock / closing_stock_value / purchase_value -> closing reads all-zero and every
+    # stocked row fails sanity. A dedicated positional parser maps these exact abbreviations so
+    # receipt->purchase, issue->sales and closing reconciles. Keyed on the op_stock + rec_qty +
+    # iss_qty + clos_qty underscore set (disjoint from the KLM op_stk/pr_rec/cl_stk and
+    # op_bal/cl_bal families), so it cannot steal any other stock grid.
+    if (
+        "op_stock" in flat and "rec_qty" in flat and "iss_qty" in flat
+        and "clos_qty" in flat
+    ):
+        return "stock_op_rec_iss_clos_grid"
     return "tabular"

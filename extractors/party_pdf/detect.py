@@ -17,6 +17,14 @@ def detect_format(text, n_rects, n_lines):
         return "profitmaker"
     if "partynameitemnamequantityfreeamount" in tl_compact:
         return "sale_register_consolidated"
+    # SwilERP "Product-Customer Wise Sales" (CAPITAL PHARMA AGENCIES): product
+    # bands with per-customer rows (Customer | Station | Qty | Sales Value).
+    # Positional — word x0 slices the columns the flat text can't.
+    if (
+        "product-customerwisesales" in tl_compact
+        and "customerstationqty.salesvalue" in tl_compact
+    ):
+        return "product_customer_wise_sales"
     # AGARTALA PHARMA "AREA / ITEM WISE SALES SUMMARY": party bands prefixed with '-', header
     # DESCRIPTION QTY. FREE RATE AMOUNT. The 5S PHARMA area_item_summary variant carries an
     # extra '( % )' discount column, so the paren-guard keeps those on area_item_summary below.
@@ -42,6 +50,12 @@ def detect_format(text, n_rects, n_lines):
         return "marg_sale_details"
     if n_rects > 50 and re.search(r"from:\s*\d{2}/\d{2}", tl):
         return "marg_bordered_billwise" if "bill no" in tl else "marg_bordered"
+    # MAHESH "Customer-Wise Product-Wise Sales Summary": coded customer bands
+    # ("A004 <NAME>,<CITY>") with per-product AGGREGATE rows (no bill numbers) —
+    # the Unisolve billwise parser 0-rows it. Gate on its unique compact column
+    # header; must precede the broader unisolve title rule below.
+    if "codecustomername&cityprd.codeproductname" in tl_compact:
+        return "customer_product_wise_summary"
     if "customer-wise product-wise" in tl and "----" in t:
         return "unisolve"
     if "item / item wise" in tl or "item/item wise" in tl:
@@ -206,4 +220,34 @@ def detect_format(text, n_rects, n_lines):
     # QTY VALUE DISC NET AMT; positional). Tail-placed.
     if "partywisesalesstatement" in cfull and "itemnamerepfreqtyvaluediscnetamt" in cfull:
         return "klm_party_wise_statement"
+    # CENTRAL AGENCIES "Areawise Sales Statment" (KLM billwise, text/plumber).
+    # Signature = its unique compact column header; "codecustomernamerepcode"
+    # collides with no other layout. Tail-placed so every existing rule wins.
+    if "billnobilldatecodecustomernamerepcodeproductname" in cfull:
+        return "areawise_sales_statement"
+    # VASAVI MEDICARE "Area Wise Sales Report for the period of <ISO> and
+    # <ISO>": "<CODE> - <PARTY>, <AREA>-<PIN>" bands + invoice rows. Signature =
+    # title + its compact column header. Tail-placed. (The JEYANTHI
+    # areawise_sales_billwise gate needs a DIFFERENT column header, no overlap.)
+    if (
+        "areawisesalesreportfortheperiodof" in cfull
+        and "sr.codeproductnamepackingbatchno.qtyfqtysch" in cfull
+    ):
+        return "areawise_sales_period"
+    # VIJAY MEDICAL "SALE REGISTER DETAILED" (Marg billwise): "PARTY NAME - X"
+    # bands, SNO|BILL DATE|BILL NO.|ITEM|LOT|QTY|FREE|RATE/UNIT|NET AMOUNT rows.
+    # Signature = title + its compact header run. Tail-placed.
+    if (
+        "saleregisterdetailed" in cfull
+        and "billdatebillno.itemname" in cfull
+    ):
+        return "sale_register_detailed"
+    # BlueFox Systems "Customerwise Sales Statement on <Month>/<Year>" (FATIMA
+    # HEALTHCARE): "<PARTY>,<TOWN>" bands -> bill rows. Signature = title + its
+    # compact column header (both required). Tail-placed so existing rules win.
+    if (
+        "customerwisesalesstatementon" in cfull
+        and "billdatebillnoproductpackingqtyfreeamount" in cfull
+    ):
+        return "bluefox_customerwise_sales"
     return "unknown"

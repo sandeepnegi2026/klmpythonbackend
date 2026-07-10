@@ -27,6 +27,21 @@ def detect_layout(text, n_rects):
     # tests match the header value block) — needs a positional parser (blank cells).
     if "recd.qty" in low and "clsqty" in low:
         return "marg_stock_recd_issued"
+    # CENTRAL AGENCIES (BlueFox) "Stock And Sales Report" — dense 14-column text
+    # table banded by "KLM <DIV>". Gate on the report title + the unique 'BR/E'
+    # (Return Breakage/Expiry) column + the compact 'Sale Value F.Value Qty Bal.Val'
+    # header tail; this token set appears in no other stock layout, so it can only
+    # catch these files (which otherwise fall through to 'generic' and lose every
+    # comma-grouped value row). FATIMA HEALTHCARE ships the identical BlueFox
+    # export titled "Stock And Sales from <date> to <date>" (no "Report"), hence
+    # the second title form — still gated by both unique header tokens.
+    _c_central = low.replace(" ", "")
+    if (
+        ("stockandsalesreport" in _c_central or "stockandsalesfrom" in _c_central)
+        and "br/e" in _c_central
+        and "salevaluef.valueqtybal.val" in _c_central
+    ):
+        return "central_stock_sales"
     # Medicine Traders (Ajmer) SwilERP "Sales & Stock Statement": PRODUCT NAME | PACKING
     # | Op.Bal. | Receipt | Free Q | Total | Issue | Free Q | Closing. Two separate Free-Q
     # columns (receipt-free inflow, issue-free outflow) around a printed Total cross-check,
@@ -47,6 +62,18 @@ def detect_layout(text, n_rects):
     # LastPurc). MUST precede the coarse simple4/op.bal rules below.
     if "sales & stock statement" in low and "lastpurc" in low:
         return "swil_stock_lastpurc"
+    # BIDYA PHARMA SwilERP "Sales & Stock Statement": the richest column set of the
+    # family — it breaks out TRANSFER-IN (Transin) and TRANSFER-OUT (TranOut) stock
+    # movements, with a Qty+Value pair per measure (Op|Receipt|Transin|Total|Issue|
+    # TranOut|Closing|Dump|Near). Its header carries "opening bal"+"receipt/pur"+
+    # "issue/sales"+"closing bala", so the coarse qty_value_total rule below claims it
+    # and mis-maps the 7 Qty/Value pairs -> 100% false SANITY_FAILED. The tokens
+    # 'transin'/'tranout' are unique to this export (absent from the lastpurc and
+    # medtraders siblings, which are gated above), so this gate cannot steal them, and
+    # it MUST precede the qty_value_total rule. Reconcile folds Transin -> purchase_free
+    # (inflow) and TranOut -> sales_free (outflow): closing = Op+Rec+Trin-Iss-TrOut.
+    if "sales & stock statement" in low and "transin" in low and "tranout" in low:
+        return "swil_stock_transfer"
     # DEEPA(A) AGENCIES dot-matrix "STOCK AND SALES STATEMENT" (KLM): header run
     # OPEN/REC-/ADJ(-)/ADJ(+)/TOTAL/SALES/CLOSE/ORD.QTY. 'ORD.QTY' + the 'REC- ADJ ADJ'
     # run appear in no other stock layout; without this gate the coarse simple4 rule below
@@ -163,6 +190,23 @@ def detect_layout(text, n_rects):
     # safe to gate high with zero risk of stealing other vendors.
     if "saleablestockreport" in low.replace(" ", "") and "(q+f)" in low.replace(" ", ""):
         return "saleable_stock_qf"
+    # PharmAssist (C-Square) 'Stock and Sale Report' — SINGLE-PAGE wide variant
+    # (DELTA PHARMA; one file per KLM division: COSMO/DERMA/PED/PHARMA...). The whole
+    # column band prints on one page with a bare "Item Pack" header (NO Item Code/Item
+    # Name), so the page-split gate below (which requires item code+item name) skips it,
+    # and it lacks the literal 'name'/'purchase' header tokens for stock_simple_7col, so
+    # it currently falls to 'generic' and mis-reconciles. The wide header carries the
+    # unique 'BrBsc' column, which appears in NO other stock layout (the page-split
+    # sibling uses a bare 'Br'), so gating on 'brbsc' + the 'Stock and Sale Report'
+    # title + the 'PharmAssist' watermark cannot steal any other vendor. Blank interior
+    # cells + glyph-interleaved name/pack -> needs a positional parser. MUST precede the
+    # page-split gate and the coarse stock_simple_7col/generic rules below.
+    if (
+        "stock and sale report" in low
+        and "pharmassist" in low
+        and "brbsc" in low.replace(" ", "")
+    ):
+        return "pharmassist_stock_sale_single"
     # PharmAssist (C-Square) 'Stock and Sale Report' — HORIZONTAL PAGE-SPLIT sibling of
     # pharmassist_mfac. The column band is split across two physical pages per logical
     # "Page N of M": LEFT page = Item Code/Name/Pack/Apr/Mar/Op./Pur/SP/Sale/SVal/SS,
@@ -266,6 +310,14 @@ def detect_layout(text, n_rects):
     ):
         return "marg_ss_statement_detailed"
 
+    # VIJAY MEDICAL "PRODUCT WISE STOCK AND SALE -WITH PROFIT" (Marg ruled
+    # register): SNO | ITEM | PACK/SIZE | OPENING STOCK-1 | PURCHASE-1 |
+    # NET SALE-1 | SALE VALUE TOTAL | CLOSING STOCK | CLOSING VALUE (PUR RATE)
+    # with blank-when-zero interior cells -> positional right-edge parse.
+    # The compact title is unique; MUST precede the coarse n_rects ->
+    # marg_bordered rule below (the ruled page carries >400 rects).
+    if "productwisestockandsale" in _compact and "profit" in _compact:
+        return "product_wise_stock_sale_profit"
     if n_rects > 100 and "stock statement report" in low:
         return "marg_bordered"
     if n_rects > 100 and "product stock report" in low:
@@ -302,6 +354,19 @@ def detect_layout(text, n_rects):
         return "stock_open_pur_sale_amt"
     if "op.bal." in low and "receipt" in low and "issue" in low and "shelf" in low and "msr" in low:
         return "disa_opbal_receipt_total_issue"
+    # CAPITAL PHARMA AGENCIES (KLM) 'Sales & Stock Statement': clean five-qty layout
+    # PRODUCT NAME | PACKING | Op.Bal. | Receipt | Total | Issue | Closing (Balance),
+    # NO Shelf-ID/Tax-Rate/MSR columns (the DISA sibling above carries those and is
+    # already claimed). Its title contains the substring "stock statement" and the body
+    # has "product", so without this gate it falls through to the coarse "stock statement"
+    # + "product" -> simple4 rule, which pops only the FIRST four of the five numbers
+    # (Total -> sales_qty, Issue -> closing_stock) and DROPS the real Closing -> ~58%
+    # false SANITY_FAILED. The compact header run "op.bal.receipttotalissueclosing" is
+    # unique to this qty-only KLM export (DISA appends "msr-price"; medtraders/swil break
+    # the run with "freeq"/"lastpurc"), so it cannot steal other vendors. Reconcile is
+    # Closing = Op.Bal + Receipt - Issue (Total is the ignored Op+Receipt cross-check).
+    if "op.bal.receipttotalissueclosing" in low.replace(" ", ""):
+        return "capital_stock_sale_stmt"
     if "lstmove" in low:
         return "saraswati_lstsl"
     # SARASWATI 'Stock & Sales Report' 8-column variant WITHOUT the LstMove date
@@ -347,6 +412,24 @@ def detect_layout(text, n_rects):
         and "closing" in low
     ):
         return "marg_stock_analysis_full"
+    # VISHWAKARMA MEDICAL AGENCY variant: the IDENTICAL 14-col STOCK & SALES ANALYSIS
+    # full-movement layout (OPENING | PURCHASE Qty/Free | S/R | REPL/OTHER | TOTAL |
+    # SALES Qty/Free | STOCK-OTHER | SAMPLE | P/R | REPL/OTHER | CLOSING) but WITHOUT the
+    # trailing M.EXP column, so the m.exp gate above misses it and it falls to the coarse
+    # marg_stock_long rule (which maps only opening/sale/repl -> 97% false SANITY_FAILED).
+    # The S/R + P/R + SAMPLE movement set under a 'STOCK & SALES ANALYSIS' title is unique
+    # to this Marg full-movement family; requiring the title keeps it off marg_stock_long
+    # and the qty-only movement siblings (marg_movement_detail, gated above on
+    # 'purchasesreturnothers', is unaffected — this header has 'purchase s/r repl', not
+    # 'purchases return others'). Same parser handles both (M.EXP is optional there).
+    if (
+        "stock & sales analysis" in low
+        and "s/r" in low
+        and "p/r" in low
+        and "sample" in low
+        and "closing" in low
+    ):
+        return "marg_stock_analysis_full"
 
     if "stock statement" in low and "receipt" in low and "replace" in low:
         return "stock_receipt_replace"
@@ -369,6 +452,12 @@ def detect_layout(text, n_rects):
         and "balance" in low
     ):
         return "marg_stock_summary"
+    # NOTE: do NOT add a dedicated rule for the VIPIN "ITEM DESCRIPTION RATE
+    # OPENING..CLOSING DUMP" qty+value PDF: the JINDAL/SHRIJI (M.EXP) and 5S
+    # PHARMA exports share the same compact header but a different row shape,
+    # and a 10-cell-pop parser regressed 15 working value_pairs files
+    # (closing totals collapsed). value_pairs handles the family; VIPIN's two
+    # digit-ending-name rows stay an honest AMBER.
     if (
         "rate" in low
         and "opening" in low
@@ -446,6 +535,15 @@ def detect_layout(text, n_rects):
     if "stock statement" in low and ("product" in low or "opening" in low):
         if "opening" in low and "purchase" in low and "lms" in low:
             return "marg_lms_simple"
+        # Prompt 'Stock Statement (Datewise)' 4-pure-qty variant (DEV MEDICAL AGENCY):
+        # OpStk|Pur|Sales|ClStk (all Qty) then an Amount column then A3Mn|Favourite.
+        # Here ClStk is the closing stock; the base `prompt` mapping reads closing from
+        # tail index 5, which in THIS export is the A3Mn (3-month avg qty) -> ~98% false
+        # SANITY_FAILED. The 'Favourite' column is unique to this variant (no other Prompt
+        # export carries it), so it cannot steal the base-prompt files. MUST precede the
+        # base `prompt` rule below.
+        if "opstk" in low and "a3mn" in low and "favourite" in low:
+            return "prompt_datewise_favourite"
         if "opstk" in low and "pur" in low and "a3mn" in low:
             return "prompt"
         if "stock statement for company" in low and "pks data" in low:
@@ -459,6 +557,16 @@ def detect_layout(text, n_rects):
         return "venus_stock_statement"
     if "stock and sales report" in low and "dec" in low and "jan" in low:
         return "venus_stock_statement"
+    # DAHOD PHARMAKON "Stock and Sale Statement" — SINGLE-PAGE glyph-interleaved sibling of
+    # the Venus (klm_venus_opstk_crqty) export. Venus has the SAME columns but splits them
+    # across two physical pages (…CrQty | CrSchQty ClStk ClVal Order), so in Venus text
+    # "CrQty" and "ClStk" are never adjacent; DAHOD prints the whole band on one line, so
+    # its compact header carries "crqtyclstkclval" contiguously (and it has NO CrSchQty).
+    # The page-split klm_venus parser mis-reads DAHOD's single-page rows (closing lands
+    # nowhere -> ClStk 0 -> false 100% SANITY_FAILED), so this MUST precede that rule.
+    if ("stock and sale statement" in low and "opstk" in low
+            and "crqtyclstkclval" in low.replace(" ", "")):
+        return "dahod_stock_sale_stmt"
     # Venus KLM "Stock and Sale Statement" — a page-split, glyph-interleaved sibling of
     # marg_opstk_statement whose closing (ClStk/ClVal) is on a paired right page. It is
     # distinguished by the CrQty column AND the ABSENCE of a StkAd column (marg_opstk
@@ -469,6 +577,16 @@ def detect_layout(text, n_rects):
         return "klm_venus_opstk_crqty"
     if "stock and sale statement" in low and "opstk" in low:
         return "marg_opstk_statement"
+    # MAHESH "Stock & Sales Report for the month": Product Name | Pack | LstSL |
+    # Open | Recd. | Sales | Close | Order | Pend — exactly SEVEN stat cells, no
+    # trailing Stk.Value. The extra LstSL column shifts the coarse simple4
+    # mapping one cell left (opening<-LstSL, sales<-Recd.), so this must precede
+    # the "stock & sales" -> simple4 rule below. The gate is the full contiguous
+    # 7-col header run, which the 8-col (Stk.Value — saraswati_lstsl, caught
+    # earlier anyway) and 9-col (extra Issue) Micropro siblings both break.
+    if ("lstslopenrecd.salescloseorderpend" in low.replace(" ", "")
+            and "stk.value" not in low):
+        return "stock_lstsl"
     if "stock & sales" in low:
         if "- prev* max*" in low:
             return "technomax_stock"

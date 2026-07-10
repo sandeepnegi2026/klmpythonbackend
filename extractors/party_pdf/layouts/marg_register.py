@@ -57,6 +57,25 @@ def _marg_register_item_match(s):
             "date": inv_only.group(3),
             "tail": inv_only.group(4),
         }
+    # Spaced GST+Batch variant (DAHOD PHARMAKON "Mf-Customer-Itemwise"): the item
+    # row prints GST, Batch and InvNo as SEPARATE space-delimited tokens
+    # ("ZYCOZOL-XL CREAM 5.00 HY505 SZ6253 09-05-26 2. 500.00") instead of gluing
+    # the GST onto the batch. Tried LAST, so every line the three patterns above
+    # already match is byte-for-byte unaffected; the required dd-mm-yy date +
+    # uppercase batch token keep it off party/total/heading lines.
+    spaced_prod = re.match(
+        r"^(.+?)\s+([\d.]+)\s+([A-Z][A-Z0-9]+)\s+(\S+)\s+(\d{2}-\d{2}-\d{2})\s+(.+)$",
+        s,
+    )
+    if spaced_prod:
+        return {
+            "product": spaced_prod.group(1).strip(),
+            "gst": spaced_prod.group(2),
+            "batch": spaced_prod.group(3),
+            "inv_no": spaced_prod.group(4),
+            "date": spaced_prod.group(5),
+            "tail": spaced_prod.group(6),
+        }
     return None
 
 
@@ -69,6 +88,13 @@ def _marg_register_party_parts(raw_line):
     area = parts[1]
     area = re.sub(r"\s+[A-Z]?\d{4,6}\s+", " ", area).strip()
     area = re.sub(r"\s+", " ", area)
+    # DAHOD "NAME, - A01652 - amt amt": the 2nd comma-part is only the customer
+    # code between dashes, so once the code is stripped nothing but "- -" remains.
+    # Blank any area left with no letters (a real town/area always has letters);
+    # a genuine area name is untouched.
+    area = area.strip(" -")
+    if not re.search(r"[A-Za-z]", area):
+        area = ""
     return name, area
 
 

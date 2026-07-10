@@ -17,6 +17,10 @@ from extractors.stock_xlsx.layouts.stock_open_rcpts_dualsales_xlsx import parse_
 from extractors.stock_xlsx.layouts.marg_stock_analysis_qv import parse_marg_stock_analysis_qv
 from extractors.stock_xlsx.layouts.marg_stock_open_rcpt_issue_xls import parse_marg_stock_open_rcpt_issue_xls
 from extractors.stock_xlsx.layouts.marg_stock_analysis_qv_grid import parse_marg_stock_analysis_qv_grid
+from extractors.stock_xlsx.layouts.marg_stock_analysis_qv_dumpext import parse_marg_stock_analysis_qv_dumpext
+from extractors.stock_xlsx.layouts.klm_stock_sales_saleamt import parse_klm_stock_sales_saleamt
+from extractors.stock_xlsx.layouts.stock_op_rec_iss_clos_grid import parse_stock_op_rec_iss_clos_grid
+from extractors.stock_xlsx.layouts.marg_stock_sales_lms_xls import parse_marg_stock_sales_lms_xls
 from extractors.stock_xlsx.layouts.klm_stock_sales_combined_xlsx import parse_klm_stock_sales_combined_xlsx
 from extractors.stock_xlsx.layouts.prompt_dstk_free_xlsx import parse_prompt_dstk_free_xlsx
 
@@ -34,8 +38,10 @@ from extractors.stock_xlsx.layouts.marg_sale_closing_grid_xlsx import parse_marg
 from extractors.stock_xlsx.layouts.marg_stock_analysis_wide_xlsx import parse_marg_stock_analysis_wide_xlsx
 from extractors.stock_xlsx.layouts.klm_sale_dtl_xlsx import parse_klm_sale_dtl_xlsx
 from extractors.stock_xlsx.layouts.klm_op_pi_clqty_xlsx import parse_klm_op_pi_clqty_xlsx
+from extractors.stock_xlsx.layouts.stock_op_pur_total_cl_xlsx import parse_stock_op_pur_total_cl_xlsx
 
 PARSERS = {
+    "stock_op_pur_total_cl_xlsx": parse_stock_op_pur_total_cl_xlsx,
     "klm_venus_opstk_crqty": parse_klm_venus_opstk_crqty,
     "marg_sale_closing_grid_xlsx": parse_marg_sale_closing_grid_xlsx,
     "marg_stock_analysis_wide_xlsx": parse_marg_stock_analysis_wide_xlsx,
@@ -52,6 +58,10 @@ PARSERS = {
 "marg_stock_analysis_qv": parse_marg_stock_analysis_qv,
     "marg_stock_open_rcpt_issue_xls": parse_marg_stock_open_rcpt_issue_xls,
     "marg_stock_analysis_qv_grid": parse_marg_stock_analysis_qv_grid,
+    "marg_stock_analysis_qv_dumpext": parse_marg_stock_analysis_qv_dumpext,
+    "klm_stock_sales_saleamt": parse_klm_stock_sales_saleamt,
+    "stock_op_rec_iss_clos_grid": parse_stock_op_rec_iss_clos_grid,
+    "marg_stock_sales_lms_xls": parse_marg_stock_sales_lms_xls,
     "klm_stock_sales_combined_xlsx": parse_klm_stock_sales_combined_xlsx,
     "prompt_dstk_free_xlsx": parse_prompt_dstk_free_xlsx,
     "marg_stock_analysis_text": parse_marg_stock_analysis_text,

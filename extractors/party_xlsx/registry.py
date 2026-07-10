@@ -3,6 +3,8 @@ from extractors.party_xlsx.layouts.area_item_sales_summary import parse_area_ite
 from extractors.party_xlsx.layouts.item_item_sales_summary import parse_item_item_sales_summary
 from extractors.party_xlsx.layouts.item_item_sales_summary_text import parse_item_item_sales_summary_text
 from extractors.party_xlsx.layouts.area_party_billwise import parse_area_party_billwise
+from extractors.party_xlsx.layouts.company_area_wise_sales import parse_company_area_wise_sales
+from extractors.party_xlsx.layouts.product_customer_wise_sales_xlsx import parse_product_customer_wise_sales_xlsx
 from extractors.party_xlsx.layouts.companywise_customerwise import parse_companywise_customerwise
 from extractors.party_xlsx.layouts.customer_company_itemwise import parse_customer_company_itemwise
 from extractors.party_xlsx.layouts.customer_product_banded import parse_customer_product_banded
@@ -32,8 +34,10 @@ from extractors.party_xlsx.layouts.product_areawise_pivot import parse_product_a
 
 from extractors.party_xlsx.layouts.customer_items_new_xlsx import parse_customer_items_new_xlsx
 from extractors.party_xlsx.layouts.company_customer_itemwise_banded import parse_company_customer_itemwise_banded
+from extractors.party_xlsx.layouts.company_party_product_xlsx import parse_company_party_product_xlsx
 
 PARSERS = {
+    "company_party_product_xlsx": parse_company_party_product_xlsx,
     "customer_items_new_xlsx": parse_customer_items_new_xlsx,
     "company_customer_itemwise_banded": parse_company_customer_itemwise_banded,
     "area_item_sales_summary": parse_area_item_sales_summary,
@@ -57,6 +61,8 @@ PARSERS = {
     "party_item_wise_sale": parse_party_item_wise_sale,
     "partywise_band": parse_partywise_band,
     "area_party_billwise": parse_area_party_billwise,
+    "company_area_wise_sales": parse_company_area_wise_sales,
+    "product_customer_wise_sales_xlsx": parse_product_customer_wise_sales_xlsx,
     "companywise_customerwise": parse_companywise_customerwise,
     "salesmen_partywise": parse_salesmen_partywise,
     "party_item_summary": parse_party_item_summary,

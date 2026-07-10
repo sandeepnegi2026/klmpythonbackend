@@ -61,8 +61,19 @@ from extractors.party_pdf.layouts.areawise_sales_billwise import parse_areawise_
 from extractors.party_pdf.layouts.customer_product_sales import parse_customer_product_sales
 from extractors.party_pdf.layouts.klm_party_wise_statement import parse_klm_party_wise_statement
 from extractors.party_pdf.layouts.party_item_summary_sr_total import parse_party_item_summary_sr_total
+from extractors.party_pdf.layouts.areawise_sales_statement import parse_areawise_sales_statement
+from extractors.party_pdf.layouts.product_customer_wise_sales import parse_product_customer_wise_sales
+from extractors.party_pdf.layouts.bluefox_customerwise_sales import parse_bluefox_customerwise_sales
+from extractors.party_pdf.layouts.customer_product_wise_summary import parse_customer_product_wise_summary
+from extractors.party_pdf.layouts.sale_register_detailed import parse_sale_register_detailed
+from extractors.party_pdf.layouts.areawise_sales_period import parse_areawise_sales_period
 
 PARSERS = {
+    "sale_register_detailed": parse_sale_register_detailed,
+    "areawise_sales_period": parse_areawise_sales_period,
+    "customer_product_wise_summary": parse_customer_product_wise_summary,
+    "bluefox_customerwise_sales": parse_bluefox_customerwise_sales,
+    "product_customer_wise_sales": parse_product_customer_wise_sales,
     "medivision_sale_dc": parse_medivision_sale_dc,
     "area_item_sales_summary": parse_area_item_sales_summary,
     "klm_company_customer_invoice": parse_klm_company_customer_invoice,
@@ -70,6 +81,7 @@ PARSERS = {
     "customer_product_sales": parse_customer_product_sales,
     "klm_party_wise_statement": parse_klm_party_wise_statement,
     "party_item_summary_sr_total": parse_party_item_summary_sr_total,
+    "areawise_sales_statement": parse_areawise_sales_statement,
     "klm_customer_company_product": parse_klm_customer_company_product,
     "klm_customer_vs_item": parse_klm_customer_vs_item,
     "klm_customer_vs_item_summary": parse_klm_customer_vs_item_summary,

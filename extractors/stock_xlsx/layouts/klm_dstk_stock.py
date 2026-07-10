@@ -78,6 +78,11 @@ def parse_klm_dstk_stock(rows):
             "company", "division", "manufacturer",
         )):
             continue
+        # trailing report furniture: "Medica Ultimate (+91-022-4747-4747)" software
+        # credit + "(Report End) (247 Records)" marker — both print in the product
+        # column as all-zero phantom rows (the DOSHI "last two rows" defect).
+        if pl.startswith("(report end") or "medica ultimate" in pl or "+91-" in pl:
+            continue
         if pl.replace(".", "", 1).replace(",", "").isdigit():
             continue
         records.append(record)

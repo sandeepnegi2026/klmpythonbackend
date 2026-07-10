@@ -77,10 +77,20 @@ def parse_marg_stock_analysis_qv_grid(rows):
     if header_idx is None:
         return [], {}
 
+    # DIKSHA sibling: an extra RATE column sits between ITEM DESCRIPTION and the
+    # OPENING block, shifting every movement column one to the right. Derive the
+    # shift from where the 'OPENING' label actually sits in the header row (the
+    # base DERMA grid has it at col1 -> shift 0, so its parse is unchanged).
+    shift = 0
+    for j, c in enumerate(rows[header_idx]):
+        if "opening" in cell_text(c).strip().lower():
+            shift = j - _OPEN_Q
+            break
+
     records = []
     for raw_row in rows[header_idx + 1:]:
         cells = [cell_text(c) for c in raw_row] if raw_row else []
-        if len(cells) <= _CLOSE_V:
+        if len(cells) <= _CLOSE_V + shift:
             continue  # a short line (page title / company banner) — no movement columns
         name_cell = cells[0].strip()
         if not name_cell or SUBTOTAL_RE.match(name_cell):
@@ -92,8 +102,8 @@ def parse_marg_stock_analysis_qv_grid(rows):
         # The sole structural gate: a real product row prints a numeric (or bare-dash nil)
         # OPENING and CLOSING quantity. Bands, page titles, TOTAL lines, and the supplier /
         # debit-note ledger (col1 is a DATE) all fail this and are dropped.
-        opening = _num_or_nil(cells[_OPEN_Q])
-        closing = _num_or_nil(cells[_CLOSE_Q])
+        opening = _num_or_nil(cells[_OPEN_Q + shift])
+        closing = _num_or_nil(cells[_CLOSE_Q + shift])
         if opening is None or closing is None:
             continue
 
@@ -102,15 +112,15 @@ def parse_marg_stock_analysis_qv_grid(rows):
             "product_name": name,
             "pack": pack,
             "opening_stock": opening,
-            "opening_value": _num_or_nil(cells[_OPEN_V]) or "0",
-            "purchase_stock": _num_or_nil(cells[_RECV_Q]) or "0",
-            "purchase_value": _num_or_nil(cells[_RECV_V]) or "0",
-            "sales_qty": _num_or_nil(cells[_ISSUE_Q]) or "0",
-            "sales_value": _num_or_nil(cells[_ISSUE_V]) or "0",
+            "opening_value": _num_or_nil(cells[_OPEN_V + shift]) or "0",
+            "purchase_stock": _num_or_nil(cells[_RECV_Q + shift]) or "0",
+            "purchase_value": _num_or_nil(cells[_RECV_V + shift]) or "0",
+            "sales_qty": _num_or_nil(cells[_ISSUE_Q + shift]) or "0",
+            "sales_value": _num_or_nil(cells[_ISSUE_V + shift]) or "0",
             "closing_stock": closing,
-            "closing_stock_value": _num_or_nil(cells[_CLOSE_V]) or "0",
+            "closing_stock_value": _num_or_nil(cells[_CLOSE_V + shift]) or "0",
         }
-        dump = _num_or_nil(cells[_DUMP_Q]) if len(cells) > _DUMP_Q else None
+        dump = _num_or_nil(cells[_DUMP_Q + shift]) if len(cells) > _DUMP_Q + shift else None
         if dump not in (None, "0", "0.0"):
             record.setdefault("extra_data", {})["dump_qty"] = dump
         records.append(record)

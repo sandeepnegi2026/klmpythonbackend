@@ -75,6 +75,53 @@ def parse_billwise(text):
     def is_mfg(s):
         return s.upper().replace(' ', '').startswith("KLM")
 
+    def _recover_qfr_a(s, amt, nums):
+        """Layout A: recover (qty, free, rate) from the run after the bill date.
+
+        Plain rows keep their integer tokens ("... 11/05/26 4 0 82.16 322.08").
+        Letter-spaced rows glue the whole run into one digit blob after _despace
+        ("3 0 1 2 9 . 0 0 3 7 9 . 2 7" -> "30129.00379.27"): peel the trailing
+        Amount, then split the remainder into <qty><free><rate> by testing every
+        split against qty*rate ~= amount (invoices discount up to ~6%). Returns
+        blanks when no split is confident — exactly the previous behaviour.
+        """
+        md = re.search(r"\d{2}/\d{2}/\d{2}", s)
+        if not md:
+            return "", "", ""
+        seg = s[md.end():]
+        mp = re.match(r"\s+(\d+)\s+(\d+)\s+(-?[\d,]+\.\d{2})\s", seg + " ")
+        if mp:
+            return mp.group(1), mp.group(2), mp.group(3).replace(",", "")
+        # glued path: cut off the intact trailing Value token, digits-only blob
+        mfin = list(NUM.finditer(seg))
+        if len(mfin) < 2:
+            return "", "", ""
+        blob = re.sub(r"[^0-9.]", "", seg[: mfin[-1].start()])
+        a = "%.2f" % amt
+        if blob.endswith(a) and len(blob) > len(a):
+            blob = blob[: -len(a)]
+        best = None
+        for cut in range(1, min(6, len(blob))):
+            rate_s = blob[-(cut + 3):]
+            if not re.fullmatch(r"\d{1,5}\.\d{2}", rate_s):
+                continue
+            qf = blob[: -(cut + 3)]
+            if not qf.isdigit() or not qf:
+                continue
+            for i in range(1, len(qf) + 1):
+                qty_s, free_s = qf[:i], qf[i:] or "0"
+                qty_v, rate_v = int(qty_s), float(rate_s)
+                if qty_v < 1 or rate_v <= 0:
+                    continue
+                if int(free_s) > qty_v * 5 + 10:
+                    continue
+                err = abs(qty_v * rate_v - amt) / max(amt, 0.01)
+                if err <= 0.10 and (best is None or err < best[0]):
+                    best = (err, qty_s, str(int(free_s)), rate_s)
+        if best:
+            return best[1], best[2], best[3]
+        return "", "", ""
+
     if layout == "A":
         for s in lines:
             if is_noise(s):
@@ -94,7 +141,9 @@ def parse_billwise(text):
                 mi = re.search(r"([A-Z]/\s*\d+|M/\s*\d+)", s)
                 inv = mi.group(1).replace(' ', '') if mi else ""
                 md = re.search(r"\d{2}/\d{2}/\d{2}", s)
-                rows.append([party, prod, inv, md.group(0) if md else "", "", "", "", "%.2f" % amt])
+                qty, free, rate = _recover_qfr_a(s, amt, nums)
+                rows.append([party, prod, inv, md.group(0) if md else "",
+                             qty, free, rate, "%.2f" % amt])
             elif not is_mfg(s) and not nums:
                 party = s
         return headers, rows
