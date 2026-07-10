@@ -268,6 +268,50 @@ def _pack_correct(master, size):
     return cand
 
 
+def _prefer_full_name(raw_full, full, stub):
+    """Decide whether the FULL pre-strip name's fuzzy match should replace the stub
+    match. The pack-strip can drop a STRENGTH/variant token ("KL CLAV 625 TAB" ->
+    stub "KL CLAV" -> wrong "Klclav Ds"); the full name still matches "Klclav-625
+    Tablets". Adopt the full match ONLY when the raw supports it:
+      (a) every NUMBER in the matched name appears in the raw — blocks wrong
+          strength/size drift (adopting a 250ml/375 when the raw says 100ml/625);
+      (b) the matched product's leading brand word appears in the raw (de-spaced) —
+          blocks wrong-brand drift (Onitraz -> Zoritraz).
+    Both must hold, so on any doubt the stub match is kept (no change)."""
+    if not full or full is stub:
+        return False
+    fc = full.get("canonical_name", "")
+    sc = stub.get("canonical_name", "") if stub else ""   # stub may be None (no stub match)
+    raw_norm = _normalize_name(raw_full)
+
+    def _strength_nums(text):
+        # Numbers that are STRENGTH/count tokens, i.e. NOT part of a pack SIZE
+        # ("Ga-12 Cream 30Gm" -> {12}: 12 is strength, 30 is the 30gm size). Pack
+        # size is the raw column's job (often omitted from the name) and is handled
+        # by _pack_correct, so it must not gate this decision.
+        t = _normalize_name(text)
+        size = {m.group(1) for m in _SIZE_RE.finditer(t)}
+        return set(re.findall(r"\d+", t)) - size
+
+    full_s, stub_s, raw_s = _strength_nums(fc), _strength_nums(sc), _strength_nums(raw_norm)
+    # (a) every STRENGTH number in the matched name must appear in the raw — blocks
+    #     wrong-strength drift (adopting Klclav-375 when the raw says 625).
+    if not full_s.issubset(raw_s):
+        return False
+    # (b) the match must RECOVER a strength the stub lacks (the token the pack-strip
+    #     peeled off). Blocks arbitrary same-brand swaps on no-strength variants
+    #     (Kid Dt <-> Ds) and pure size variants (left to _pack_correct).
+    if not (full_s - stub_s):
+        return False
+    # (c) the matched product's brand word must appear in the raw (de-spaced) —
+    #     blocks wrong-brand drift (Onitraz -> Zoritraz).
+    toks = _normalize_name(fc).split()
+    brand = toks[0] if toks else ""
+    if brand and brand not in raw_norm.replace(" ", ""):
+        return False
+    return True
+
+
 def enrich_rows_with_master(rows):
     """
     Takes a list of canonical rows and enriches them using the product master catalog.
@@ -301,6 +345,19 @@ def enrich_rows_with_master(rows):
             else:
                 master = normalize_product(raw_name)
                 _seen[raw_name] = master
+            # Full-name preference: the stub can lose a strength/variant token that
+            # the pack-strip peeled off. If the FULL pre-strip name fuzzy-matches a
+            # product the raw genuinely supports (brand + all numbers present), trust
+            # it over the stub. Gated by _prefer_full_name so wrong-brand/wrong-size
+            # drift is rejected. Memoized on the prestrip key.
+            if prestrip:
+                if prestrip in _seen:
+                    full = _seen[prestrip]
+                else:
+                    full = normalize_product(prestrip)
+                    _seen[prestrip] = full
+                if _prefer_full_name(prestrip, full, master):
+                    master = full
         # Size-aware variant correction: keep the confident brand match, but if the
         # row's extracted pack size names a different same-brand sibling, snap to it.
         # Size is read from the full pre-strip name first (it still carries the token),

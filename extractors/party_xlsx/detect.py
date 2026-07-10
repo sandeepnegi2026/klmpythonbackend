@@ -159,6 +159,15 @@ def detect_layout(rows):
     if _item_item_sales_detect(rows):
         return "item_item_sales_summary"
 
+    # Same "ITEM / ITEM WISE SALES SUMMARY" report but the single-column (fixed-width TEXT) variant
+    # (M/S BURIMAA / KLM): every row is one space-padded cell (ncols==1) and it carries an extra
+    # "AMOUNT ( % )" column. Gated single-column — the whole DESCRIPTION..AMOUNT header lives in
+    # col0 alone (the columnar sibling above spreads it across real cells and carries no "%"), so
+    # the two never collide; otherwise it falls to marg_busy, which reads 0 rows from the glued cell.
+    from extractors.party_xlsx.layouts.item_item_sales_summary_text import detect as _item_item_text_detect
+    if _item_item_text_detect(rows):
+        return "item_item_sales_summary_text"
+
     # "PARTY / ITEM WISE SALES SUMMARY" — Busy text export, party band + space-padded
     # product lines in a single (or merged) column. Checked before marg_busy, which
     # would otherwise claim it on the shared "description"+"qty" signal but cannot read

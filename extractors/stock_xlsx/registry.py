@@ -15,6 +15,8 @@ from extractors.stock_xlsx.layouts.klm_detailed_stock import parse_klm_detailed_
 from extractors.stock_xlsx.layouts.marg_monthly_ss_statement_xlsx import parse_marg_monthly_ss_statement_xlsx
 from extractors.stock_xlsx.layouts.stock_open_rcpts_dualsales_xlsx import parse_stock_open_rcpts_dualsales_xlsx
 from extractors.stock_xlsx.layouts.marg_stock_analysis_qv import parse_marg_stock_analysis_qv
+from extractors.stock_xlsx.layouts.marg_stock_open_rcpt_issue_xls import parse_marg_stock_open_rcpt_issue_xls
+from extractors.stock_xlsx.layouts.marg_stock_analysis_qv_grid import parse_marg_stock_analysis_qv_grid
 from extractors.stock_xlsx.layouts.klm_stock_sales_combined_xlsx import parse_klm_stock_sales_combined_xlsx
 from extractors.stock_xlsx.layouts.prompt_dstk_free_xlsx import parse_prompt_dstk_free_xlsx
 
@@ -48,6 +50,8 @@ PARSERS = {
 "marg_monthly_ss_statement_xlsx": parse_marg_monthly_ss_statement_xlsx,
     "stock_open_rcpts_dualsales_xlsx": parse_stock_open_rcpts_dualsales_xlsx,
 "marg_stock_analysis_qv": parse_marg_stock_analysis_qv,
+    "marg_stock_open_rcpt_issue_xls": parse_marg_stock_open_rcpt_issue_xls,
+    "marg_stock_analysis_qv_grid": parse_marg_stock_analysis_qv_grid,
     "klm_stock_sales_combined_xlsx": parse_klm_stock_sales_combined_xlsx,
     "prompt_dstk_free_xlsx": parse_prompt_dstk_free_xlsx,
     "marg_stock_analysis_text": parse_marg_stock_analysis_text,

@@ -1,6 +1,7 @@
 from extractors.party_xlsx.header_detect import detect_header_row
 from extractors.party_xlsx.layouts.area_item_sales_summary import parse_area_item_sales_summary
 from extractors.party_xlsx.layouts.item_item_sales_summary import parse_item_item_sales_summary
+from extractors.party_xlsx.layouts.item_item_sales_summary_text import parse_item_item_sales_summary_text
 from extractors.party_xlsx.layouts.area_party_billwise import parse_area_party_billwise
 from extractors.party_xlsx.layouts.companywise_customerwise import parse_companywise_customerwise
 from extractors.party_xlsx.layouts.customer_company_itemwise import parse_customer_company_itemwise
@@ -37,6 +38,7 @@ PARSERS = {
     "company_customer_itemwise_banded": parse_company_customer_itemwise_banded,
     "area_item_sales_summary": parse_area_item_sales_summary,
     "item_item_sales_summary": parse_item_item_sales_summary,
+    "item_item_sales_summary_text": parse_item_item_sales_summary_text,
     "product_areawise_pivot": parse_product_areawise_pivot,
     "areawise_partywise_summary_xlsx": parse_areawise_partywise_summary_xlsx,
     "marg_sales_analysis_xlsx": parse_marg_sales_analysis_xlsx,

@@ -9,7 +9,7 @@ from extractors.stock_xlsx.header_fields import (
 from extractors.stock_xlsx.layouts.html_stock import parse_html_stock_table
 from extractors.stock_xlsx.postprocess import cast_numbers, sanity_warnings
 from extractors.stock_xlsx.registry import parse_rows
-from extractors.stock_xlsx.xlsx_io import load_rows, workbook_kind
+from extractors.stock_xlsx.xlsx_io import load_data_sheets, workbook_kind
 
 
 def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
@@ -19,7 +19,8 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
     warnings = []
     layout = "tabular"
     sheet_name = None
-    rows = []
+    preview = ""
+    pages_meta = []  # (page_no, line_count, char_count) per sheet/page
     sanity = {"checked": 0, "failed": 0, "passed": 0, "pass_rate": 0.0}
     try:
         kind = workbook_kind(file_bytes, filename)
@@ -31,19 +32,50 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
             preview = "\n".join(
                 line.strip() for line in text.splitlines() if line.strip()
             )[:4000]
+            fields = extract_header_fields(rows)
+            for row in records:
+                for key, value in fields.items():
+                    row.setdefault(key, value)
+            detected.update(header_detected_from_fields(fields))
+            pages_meta.append((sheet_name or "html", len(rows), len(preview)))
         else:
-            sheet_name, rows = load_rows(file_bytes, filename, settings.get("sheet_name"))
-            layout = detect_excel_layout(rows) if rows else "tabular"
-            records, detected = parse_rows(rows, layout, settings.get("header_row"))
-            if layout == "tabular" and not records:
-                warnings.append("No stock header row found.")
-            # Preview = first 80 rows PLUS the tail (totals/footer region) of any larger
-            # sheet, disjointly. A big book (e.g. 300 rows) prints its grand-totals in the
-            # last rows; keeping them lets the triage value-corroboration / total-reconcile
-            # checks see the printed control totals instead of losing them past row 80.
-            head = rows[:80]
-            tail = rows[80:][-12:]
-            preview = "\n".join("\t".join(row) for row in head + tail)
+            # A workbook may hold one data tab per division (COSMO, DERMA, ...). Parse EACH
+            # tab on its own -- so every tab keeps its title/header at row 0 exactly as the
+            # parsers expect -- then merge the clean records. load_data_sheets returns a
+            # single tab for ordinary single-sheet books, so that path stays byte-identical.
+            sheets = load_data_sheets(file_bytes, filename, settings.get("sheet_name"))
+            records, detected, sheet_names, layouts, preview_parts = [], {}, [], [], []
+            for name, srows in sheets:
+                sheet_layout = detect_excel_layout(srows) if srows else "tabular"
+                recs, det = parse_rows(srows, sheet_layout, settings.get("header_row"))
+                if sheet_layout == "tabular" and not recs:
+                    warnings.append("No stock header row found.")
+                # Report-period / header fields are per-tab; stamp them on that tab's rows.
+                fields = extract_header_fields(srows)
+                for row in recs:
+                    for key, value in fields.items():
+                        row.setdefault(key, value)
+                if det and not detected:
+                    detected = dict(det)
+                detected.update(header_detected_from_fields(fields))
+                records.extend(recs)
+                sheet_names.append(name)
+                layouts.append(sheet_layout)
+                # Preview = first 80 rows PLUS the tail (totals/footer region) of each tab,
+                # disjointly, so the triage value-corroboration / total-reconcile checks see
+                # every division's printed control totals instead of losing them past row 80.
+                part = "\n".join(
+                    "\t".join(row) for row in (srows[:80] + srows[80:][-12:])
+                )
+                preview_parts.append(part)
+                pages_meta.append((name, len(srows), len(part)))
+            preview = "\n".join(preview_parts)
+            sheet_name = ",".join(sheet_names)
+            layout = (
+                layouts[0]
+                if len(set(layouts)) <= 1 and layouts
+                else ("mixed" if layouts else "tabular")
+            )
     except Exception as exc:
         return {
             "rows": [],
@@ -54,12 +86,6 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
             "elapsed_ms": int((time.perf_counter() - started) * 1000),
         }
 
-    fields = extract_header_fields(rows)
-    for row in records:
-        for key, value in fields.items():
-            row.setdefault(key, value)
-    detected.update(header_detected_from_fields(fields))
-    
     from core.pack_match import extract_pack_from_product
     from core.product_master import enrich_rows_with_master
     
@@ -87,18 +113,20 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
     warnings.extend(sanity_warnings_list)
     if not records and layout != "html_stock":
         warnings.append(f"No stock rows extracted (layout={layout}, sheet={sheet_name}).")
+    pages = [
+        {
+            "page_no": page_no,
+            "char_count": char_count,
+            "line_count": line_count,
+            "rect_count": 0,
+            "table_bboxes": [],
+        }
+        for page_no, line_count, char_count in pages_meta
+    ]
     return {
         "rows": records,
         "headers_detected": detected,
-        "pages": [
-            {
-                "page_no": sheet_name or "html",
-                "char_count": len(preview),
-                "line_count": len(rows),
-                "rect_count": 0,
-                "table_bboxes": [],
-            }
-        ],
+        "pages": pages,
         "raw_text": preview,
         "warnings": warnings,
         "sanity": sanity,

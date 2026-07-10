@@ -142,6 +142,29 @@ def _band_location(raw, col):
     return ""
 
 
+def _is_merged_furniture(raw):
+    """A merged banner/footer row repeats the SAME text across every populated cell — the vendor
+    header block, or a trailing "Generated at 2026-06-27 12:13:05 by MAIN using MediVision
+    Platinum" / "Powered by …" line the ERP writes into all columns. A real band or product row
+    never carries 3+ identical populated cells (its name/qty/amount always differ), so this can
+    only drop furniture, never data. Catches the merged variant the single-cell value-empty and
+    bare-band gates miss (here the footer fills the voucher AND qty/amount columns)."""
+    populated = [cell_text(c).strip() for c in raw if cell_text(c).strip()]
+    return len(populated) >= 3 and len(set(populated)) == 1
+
+
+def _scheme_qty_idx(headers):
+    """Index of a scheme/free QUANTITY column ("Scm qty", "Scheme Qty") — the free-goods count
+    that MediVision / KLM ERPs print as its own column (core maps it to raw_scm_qty, so free_qty
+    is otherwise lost). Excludes "Scm disc" (a monetary scheme discount, not a quantity). Returns
+    None when there is no such column, so files without one keep their exact current behaviour."""
+    for i, h in enumerate(headers):
+        t = str(h).lower()
+        if ("scm" in t or "scheme" in t) and ("qty" in t or "quantity" in t) and "disc" not in t:
+            return i
+    return None
+
+
 def _is_bare_band(raw, voucher_idx):
     """A row with text in col0 but every invoice (voucher) column empty is a band.
 
@@ -176,6 +199,12 @@ def parse_customer_product_banded(rows):
     # last non-empty value (and its address) down onto the blank rows. Gated on the column
     # being present, so band-style files (which have no party_name column) are untouched.
     party_col = col.get("party_name")
+    # Scheme/free quantity column ("Scm qty"): core maps it to raw_scm_qty, so free_qty is dropped.
+    # When it exists and no real free_qty column was mapped, carry it into free_qty (so free
+    # reconciles to the report's own per-party "Free" subtotal). Gated on the column existing —
+    # files without a scheme column are untouched.
+    scm_idx = _scheme_qty_idx(headers)
+    free_from_scheme = scm_idx is not None and "free_qty" not in col
 
     records = []
     current_party = ""
@@ -184,6 +213,8 @@ def parse_customer_product_banded(rows):
     col_loc = ""
     for raw in rows[header_idx + 1 :]:
         if not raw:
+            continue
+        if _is_merged_furniture(raw):
             continue
         first = cell_text(raw[0])
 
@@ -225,10 +256,16 @@ def parse_customer_product_banded(rows):
         # ALL empty for this row, it is a report footer/branding line (e.g. "Powered By
         # SwilERP for Retail…" printed after the grand total in its own single cell) that
         # merely looks like a product. Gated on those columns being present, so files without
-        # a qty/amount column are unaffected.
+        # a qty/amount column are unaffected. EXCEPTION: a scheme-only FREE-goods line (free
+        # goods have no sale value but a positive scheme qty) is printed on its own row — keep
+        # those so free_qty reconciles to the band's Free subtotal (footers carry no scheme qty).
+        scheme_qty = cell_text(raw[scm_idx]) if scm_idx is not None and scm_idx < len(raw) else ""
+        has_scheme = scheme_qty.strip() not in ("", "0", "0.0", "-")
         value_cols = [k for k in ("qty", "amount") if k in col]
-        if value_cols and all(not cell_text(record.get(k, "")) for k in value_cols):
+        if value_cols and all(not cell_text(record.get(k, "")) for k in value_cols) and not has_scheme:
             continue
+        if free_from_scheme:
+            record["free_qty"] = raw[scm_idx] if (scm_idx is not None and scm_idx < len(raw)) else ""
         # Columnar carry-down: remember the last non-empty party (and address) from the
         # party_name column and fill it onto the blank continuation rows below it.
         if party_col is not None:

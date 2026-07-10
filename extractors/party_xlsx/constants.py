@@ -46,6 +46,7 @@ LAYOUT_LABELS = {
     "party_item_wise_sale": "Party+Item Wise Sale (Columnar, Hyphen Area)",
     "area_item_sales_summary": "Area/Item Wise Sales Summary (Text)",
     "item_item_sales_summary": "Item/Item Wise Sales Summary (Product-Banded, Columnar)",
+    "item_item_sales_summary_text": "Item/Item Wise Sales Summary (Product-Banded, Text)",
     "tabular": "Generic Tabular",
     "unknown": "Unknown",
 }

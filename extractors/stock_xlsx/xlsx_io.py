@@ -1,5 +1,6 @@
 import io
 from pathlib import Path
+from statistics import median
 
 import pandas as pd
 from openpyxl import load_workbook
@@ -7,6 +8,12 @@ from openpyxl import load_workbook
 from core.header_match import match_header
 
 from extractors.stock_xlsx.parse_common import cell_text
+
+# A tab is kept as a real data sheet when its score is at least this fraction of the MEDIAN
+# tab score. Division-per-tab books (COSMO/DERMA/...) all score in one band so the whole
+# cluster passes (median, unlike max, is not skewed by one outlier-high tab); a stray
+# blank/summary tab scores far below the median and is dropped.
+KEEP_RATIO = 0.6
 
 
 def workbook_kind(file_bytes, filename=""):
@@ -103,3 +110,44 @@ def load_rows(file_bytes, filename, requested_sheet=None):
         if requested_sheet == sheet:
             break
     return best[0], best[1]
+
+
+def load_data_sheets(file_bytes, filename, requested_sheet=None):
+    """Return ``[(sheet_name, rows), ...]`` for every genuine data tab of the workbook.
+
+    A multi-tab workbook (e.g. one tab per division) must have ALL its data tabs
+    extracted, not just the single best-scoring tab that ``load_rows`` returns. The same
+    ``sheet_score`` heuristic tells real report tabs from blank/summary tabs:
+      * an explicit ``requested_sheet``  -> just that tab (UI dropdown override);
+      * <= 1 non-empty tab, or nothing scores -> the single best tab (``load_rows`` parity,
+        so unknown formats never accidentally multi-merge);
+      * otherwise every tab scoring at least ``KEEP_RATIO`` of the MEDIAN tab score, in
+        workbook order (median, not max, so one outlier-high tab can't evict the cluster).
+    """
+    kind = workbook_kind(file_bytes, filename)
+    if kind == ".xlsx":
+        try:
+            file_bytes = unmerge_xlsx(file_bytes)
+        except Exception:
+            pass
+    xls, _ = read_sheets(file_bytes, filename)
+    if requested_sheet and requested_sheet in xls.sheet_names:
+        rows = sheet_rows(xls.parse(requested_sheet, header=None))
+        return [(requested_sheet, rows)] if rows else []
+    scored = []
+    for sheet in xls.sheet_names:
+        rows = sheet_rows(xls.parse(sheet, header=None))
+        if not rows:
+            continue
+        scored.append((sheet, rows, sheet_score(rows)))
+    if not scored:
+        return []
+    best = max(score for _, _, score in scored)
+    if best <= 0 or len(scored) == 1:
+        # Can't distinguish data from noise (or only one tab): keep the single best, which
+        # max() picks as the first among ties -- exactly load_rows()'s strict-greater choice.
+        top = max(scored, key=lambda item: item[2])
+        return [(top[0], top[1])]
+    ref = median([score for _, _, score in scored if score > 0])
+    keep = [(sheet, rows) for sheet, rows, score in scored if score > 0 and score >= ref * KEEP_RATIO]
+    return keep or [(scored[0][0], scored[0][1])]

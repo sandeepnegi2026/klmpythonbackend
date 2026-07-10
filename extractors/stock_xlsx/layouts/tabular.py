@@ -68,7 +68,12 @@ def records_from_rows(rows, header_idx):
         # sub-report header "Itemname Batch Expiry Qty ..." reprinted below the
         # stock table (its quantity cells map to labels and come out all-zero).
         pl = product.lower().strip()
-        if pl.startswith("company") or pl.startswith("division") or pl.startswith("manufacturer") or pl.startswith("values") or pl.startswith("total") or pl.startswith("item name") or pl.startswith("itemname") or pl.startswith("product name") or pl.startswith("productname") or pl.startswith("supplier") or pl.startswith("sr.no") or pl.startswith("s.no"):
+        if pl.startswith("company") or pl.startswith("division") or pl.startswith("manufacturer") or pl.startswith("values") or pl.startswith("total") or pl.startswith("item name") or pl.startswith("itemname") or pl.startswith("product name") or pl.startswith("productname") or pl.startswith("supplier") or pl.startswith("purchase invoice") or pl.startswith("sale invoice") or pl.startswith("sr.no") or pl.startswith("s.no"):
+            continue
+        # Skip a pure separator / rule line (product name is only dashes/underscores/
+        # asterisks/punctuation, e.g. the "--------------------" divider printed under an
+        # appended purchase-invoice register) — a real product always has a letter or digit.
+        if pl and not any(ch.isalnum() for ch in pl):
             continue
         # Skip a column-header row reprinted at a page break (product cell == the
         # detected header's product-column text, e.g. repeated "ITEM DESCRIPTION").

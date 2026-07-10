@@ -44,6 +44,33 @@ def detect_excel_layout(rows):
         and "closing" in flat and "dump" in flat and "m.exp" not in flat
     ):
         return "marg_stock_analysis_qv"
+    # BURIMAA MEDICAL AGENCY (KLM .xls): the 8-column sibling of marg_stock_analysis_qv above —
+    # the same single-column Marg "STOCK & SALES ANALYSIS" qty+value TEXT dump with
+    # OPENING/RECEIPT/ISSUE/CLOSING groups, but WITHOUT the trailing DUMP column (8 numeric cols,
+    # not 9). The qv gate above requires "dump"; this one requires its ABSENCE, so the two are
+    # disjoint, and the "m.exp" clause keeps the 14-column movement sibling
+    # (marg_stock_analysis_text) off it. single_col guarantees it cannot catch any real grid, and
+    # the RECEIPT+ISSUE header trio is unique to this KLM text-dump family — so it steals nothing.
+    if (
+        single_col and "itemdescription" in flat and "receipt" in flat and "issue" in flat
+        and "closing" in flat and "opening" in flat and "dump" not in flat
+        and "m.exp" not in flat
+    ):
+        return "marg_stock_open_rcpt_issue_xls"
+    # DERMA DISTRIBUTORS (KLM "ALL DIVISION STOCK STATEMENT" .xls): the GRID twin of the
+    # single-column marg_stock_analysis_qv above — the same Marg "STOCK & SALES ANALYSIS"
+    # OPENING/RECEIPT/ISSUE/CLOSING + DUMP qty+value block, but each value in its own physical
+    # column (NOT single_col). The generic `tabular` reader mostly works but loses the value
+    # columns AND emits trailing phantom rows from the appended SUPPLIER/DEBIT-NOTE ledger and
+    # page-break title lines. A positional parser bounds the stock grid (col1/col7 must be a
+    # numeric-or-nil qty). Keyed on the RECEIPT+ISSUE+DUMP header trio in a GRID (not single_col);
+    # the single-col qv sibling above already claimed the text-dump form, so the two are disjoint,
+    # and DUMP is unique to this Marg report family so it cannot steal any other stock grid.
+    if (
+        not single_col and "itemdescription" in flat and "receipt" in flat and "issue" in flat
+        and "closing" in flat and "opening" in flat and "dump" in flat and "m.exp" not in flat
+    ):
+        return "marg_stock_analysis_qv_grid"
     # KLM own-vendor "Stock sales statement(Combined)" grid (VISION HEALTHCARE
     # HOLDINGS). Header: Product Name | Pack | Rate | Prev.Sale | Opening | Purchase |
     # Total Sale | Sale Value | Adj. | Total Closing | Closing Value. The informational

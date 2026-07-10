@@ -26,6 +26,8 @@ LAYOUT_LABELS = {
     "marg_monthly_ss_statement_xlsx": "\"marg_monthly_ss_statement_xlsx\": \"Marg Monthly Stock & Sales Statement (KLM Palanpur)\",",
     "stock_open_rcpts_dualsales_xlsx": "\"stock_open_rcpts_dualsales_xlsx\": \"KLM Stock (Open/Rcpts/L.Sales/Cur.Sls + split Clos.Qty&Amt)\",",
     "marg_stock_analysis_qv": "\"marg_stock_analysis_qv\": \"Marg Stock & Sales Analysis (single-column qty+value)\",",
+    "marg_stock_open_rcpt_issue_xls": "Marg Stock & Sales Analysis (single-column Open/Receipt/Issue/Closing qty+value, BURIMAA)",
+    "marg_stock_analysis_qv_grid": "Marg Stock & Sales Analysis (Open/Receipt/Issue/Closing+Dump qty+value grid, DERMA DISTRIBUTORS)",
     "klm_stock_sales_combined_xlsx": "KLM Stock Sales Statement (Combined)",
     "prompt_dstk_free_xlsx": "\"prompt_dstk_free_xlsx\": \"Prompt ERP Stock Statement (Datewise) \u2014 KLM\",",
     "marg_stock_wide": "Marg ERP Wide Stock Report",
