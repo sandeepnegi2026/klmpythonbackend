@@ -30,6 +30,7 @@ _COL_MAP = {
     "swq": "sales_return",          # NOTE: SWQ is 0 in every sampled row; mapping is
     "swv": "sales_return_value",    # plausible but UNVERIFIED by reconciliation.
     "stock": "closing_stock",
+    "stoc": "closing_stock",         # truncated closing-qty header (KISHORE PHARMACEUTICALS)
     "stockv": "closing_stock_value",
     # NOTE: LZSTK / Mar / Apr / EXP3M / EXP6M are aging/analytics columns, deliberately
     # NOT mapped — LZSTK ("last/aged stock") is a SUBSET of closing, not the closing itself.

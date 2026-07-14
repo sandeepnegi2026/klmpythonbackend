@@ -8,6 +8,17 @@ from extractors.stock_xlsx.parse_common import cell_text, is_subtotal
 _DATE_RE = re.compile(r"^\s*\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\s*$")
 # canonical fields that are always pure quantities (a date here ⇒ not a stock row)
 _QTY_FIELDS = ("opening_stock", "closing_stock", "sales_qty", "purchase_stock")
+# Marg "STOCK & SALE STATEMENT" grand-total FOOTER lines printed under the grid, where the
+# whole label+value lands in the product column with every quantity column zero, e.g.
+# "OPENING :   73755.58", "PURCHASE :   43553.69", "SALES :   35306.18", "UC SALE :  11904.97",
+# "CL.STK.:   80910.39", "Opening/Purchase/Closing On SaleRate: ...", "MR.Balance:  0.00". A real
+# product name is never a bare movement keyword immediately followed by a colon, so this signature
+# (keyword, optional " On SaleRate", optional trailing dots, then ':') is unique to these rows.
+_STOCK_TOTALS_FOOTER_RE = re.compile(
+    r"^(opening|purchase|sale|sales|uc\s*sale|cl\.?\s*stk|closing|mr\.?\s*balance)"
+    r"(\s+on\s+sale\s*rate)?[.\s]*:",
+    re.I,
+)
 
 
 def _is_section_header(raw_row):
@@ -69,6 +80,10 @@ def records_from_rows(rows, header_idx):
         # stock table (its quantity cells map to labels and come out all-zero).
         pl = product.lower().strip()
         if pl.startswith("company") or pl.startswith("division") or pl.startswith("manufacturer") or pl.startswith("values") or pl.startswith("total") or pl.startswith("item name") or pl.startswith("itemname") or pl.startswith("product name") or pl.startswith("productname") or pl.startswith("supplier") or pl.startswith("purchase invoice") or pl.startswith("sale invoice") or pl.startswith("sr.no") or pl.startswith("s.no"):
+            continue
+        # Skip Marg grand-total footer lines ("OPENING : 73755.58", "CL.STK.: 80910.39",
+        # "Closing On SaleRate: 94044.7") that print the whole label+value in the product cell.
+        if _STOCK_TOTALS_FOOTER_RE.match(pl):
             continue
         # Skip a pure separator / rule line (product name is only dashes/underscores/
         # asterisks/punctuation, e.g. the "--------------------" divider printed under an

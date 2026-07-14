@@ -10,12 +10,12 @@ from extractors.stock_pdf.parse_common import (
 _MAX_COLS = 7
 
 
-def _split_qoh_line(s):
+def _split_qoh_line(s, max_cols=_MAX_COLS):
     """Split one raw statement line into (product+pack text, [column floats]).
 
     Walk tokens from the RIGHT, cleaning each per-token watermark glyph and
     dropping lone watermark letters (e.g. '... 0 0 F 0.00 393'), collecting up to
-    ``_MAX_COLS`` numeric columns. Everything left of the run — product words plus
+    ``max_cols`` numeric columns. Everything left of the run — product words plus
     the pack, including a bare-number pack like '10' — is returned RAW so the pack
     is never mangled. Returns (None, []) when the line is not a data row (too few
     numeric columns, e.g. the header or a division band).
@@ -25,7 +25,7 @@ def _split_qoh_line(s):
         return None, []
     vals = []
     i = len(toks) - 1
-    while i >= 0 and len(vals) < _MAX_COLS:
+    while i >= 0 and len(vals) < max_cols:
         t = toks[i]
         c = _clean_number_token(t)
         if _is_num(c):
@@ -64,14 +64,29 @@ def parse_stock_qoh(text):
     'HERPIVAL-1 3' AND dropped rows whose Value glyph (e.g. '1039T.50') broke the
     numeric tail — both corrected here.
     """
+    # S N MEDICALS prints an extra zero-padded Cat.log catalog code between Product and
+    # O.Stk. On rows whose trailing Age cell is blank the right-anchored window slides one
+    # slot left and absorbs Cat.log as opening_stock. When the header carries 'Cat.log', pop
+    # one extra column and drop a leading catalog code detected by the Tot identity
+    # (O.Stk + Purc == Tot). Non-Cat.log vendors keep the strict 7-column window untouched.
+    has_catlog = "cat.log" in text.lower() or "catlog" in text.lower().replace(" ", "")
+    max_cols = _MAX_COLS + 1 if has_catlog else _MAX_COLS
+
     records = []
     for line in text.splitlines():
         s = line.strip()
         if _skip_line(s):
             continue
-        prod, vals = _split_qoh_line(s)
+        prod, vals = _split_qoh_line(s, max_cols)
         if not prod:
             continue
+        if (
+            has_catlog
+            and len(vals) >= 4
+            and abs(vals[0] + vals[1] - vals[2]) > 0.5
+            and abs(vals[1] + vals[2] - vals[3]) <= 0.5
+        ):
+            vals = vals[1:]  # vals[0] was the Cat.log code; O.Stk+Purc==Tot confirms the shift
         name, pack = _split_product_pack(prod)
         n = len(vals)
         records.append({

@@ -33,6 +33,19 @@ PACK_RE = re.compile(
 )
 
 LAYOUT_LABELS = {
+    "stock_sales_statement_adjmt_positional": "STOCK & SALES STATEMENT (SREE SUPREME/ANANDH DOSPrinter; grouped OPENING/RECEIPT/SALES-LAST-QTY-FREE/ADJMT/CLOSING-QTY-FREE-VALUE, positional, dashes=nil)",
+    "stock_oric_receipt_qtyonly": "Marg Stock & Sales Analysis (Opening/Issue/Closing qty+value pairs, RECEIPT qty-only) — AMRITA COSMOCOR",
+    "swil_recv_issue_stock": "SwilERP Sales & Stock Statement — 9-col Op.Bal/Receipt/Retrn/Total/Issue/Retrn/Closing/Dump/Near (JAY SHREE)",
+    "klm_stock_sales_month_tots": "KLM Stock & Sales Report (Month) — TotS/Sale_Val dialect: Op.Qt/Purch/Free/C_Sal/Free/Repl/Adj/Tot.S/Sale_Val positional (VASAN, per-division)",
+    "purani_mfr_stock_sales_pdf": "PURANI HOSPITAL SUPPLIES MFR Stock & Sales (HTML-print PDF, positional)",
+    "klm_stock_sales_month_netstock": "KLM Stock & Sales Report (Month) — NetStock dialect: Opening/Pure/ILast/Sale/Free/Rpl/Total/NetStockVal/SaleNet@Pur positional (BIOLEND)",
+    "klm_stock_sales_month_rcpt": "KLM Stock & Sale Report (Month) — Rcpt dialect: OpStk/Rcpt/sales/Cl.S/StkValu/SalValu positional (SHIVASAKTHI)",
+    "klm_stock_sales_analysis_pcode": "PRABHAT AGENCY — KLM Stock & Sales Analysis (P.Code, text)",
+    "klm_stock_sales_small_pdf": "KLM Stock Sales Statement (Small) — Rate/Openin/Reciept/Sales/Free/SalesRt/Closing positional (MUDRAA/WARAD, wrapped)",
+    "medichem_ss_expiry": "MEDICHEM Stock & Sales Statement — Opening/Sales/Purchase/Closing + Expiry (14-token per-division)",
+    "meyon_prevmonth_stock": "MEYON DRUGS Stock Statement (Prev.month Sales/Rate/Op_Stk/Rcpts/P.Ret/Sales/Hos.Sal/Brk/Repl/Cl_Stk/Value, positional per-division)",
+    "smartpharma_sas": "SmartPharma360 Stock And Sales Report (Open/Pur/Sales/SaleRet/Closing Qty+Value pairs, KLM, SRI BABA)",
+    "csquare_manufacturerwise_stock_sales": "UNIVERSAL DRUG LINES — C-Square Manufacturerwise Stock and Sales (trailing-8 anchor)",
     "medivision_stock_sales": "MediVision Platinum — Stock and Sales (Op/Purc/Scm/Sale/Scm/Closing + values, positional, PyMuPDF)",
     "central_stock_sales": "CENTRAL AGENCIES (BlueFox) Stock And Sales Report (dense 14-col LMS/Op/Pur+F/Sale+F/Repl/Ret.BR/E/Adj/SaleValue/Bal.Qty+Val, KLM division-banded)",
     "medtraders_sales_stock_statement": "Sales & Stock Statement (Medicine Traders / SwilERP)",

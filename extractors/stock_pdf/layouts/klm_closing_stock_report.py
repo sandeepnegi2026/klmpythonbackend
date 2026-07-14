@@ -126,10 +126,13 @@ def parse_klm_closing_stock_report(text, file_bytes=None):
                     continue
 
                 # Skip the printed grand-total footer: it has NO serial and NO
-                # item name (just the summed numbers on the last line).
+                # item name (just the summed numbers on the last line). Word-boundary
+                # + serial-aware: a real SKU "EXTEND TOTALE 10TAB" (SNO 33) carries a
+                # serial, so only a serial-less "total" line is the footer (substring
+                # "total" alone dropped that genuine product row and its 827.98 value).
                 name = " ".join(name_toks).strip()
                 low = name.lower()
-                if "total" in low or low.startswith("page") or low.startswith("company"):
+                if (re.search(r"\btotal\b", low) and not has_serial) or low.startswith("page") or low.startswith("company"):
                     continue
                 if not name and not has_serial:
                     continue

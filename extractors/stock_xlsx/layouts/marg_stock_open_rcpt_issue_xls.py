@@ -62,6 +62,11 @@ def _split_name_pack(text):
 def parse_marg_stock_open_rcpt_issue_xls(rows):
     records = []
     header_seen = False
+    # D.D. ENTERPRISE ships the DUMP-bearing export whose 'DUMP' group caption is truncated off
+    # the header, leaving an orphan 9th 'QTY.' on the sub-header line. Its data rows carry 8
+    # movement numbers + a trailing DUMP qty; taking nums[-8:] would shift every field one slot
+    # left. When the orphan 'QTY.' is present, read the FIRST 8 (movement) and stash the DUMP.
+    orphan_dump = False
     for row in rows:
         # Join every cell so the reader works whether the report is a true single-column dump
         # (one nbsp-padded cell) or a lightly-gridded variant of the same export.
@@ -76,6 +81,10 @@ def parse_marg_stock_open_rcpt_issue_xls(rows):
         if not header_seen:
             continue  # address / phone / GSTIN / title banner above the first header
         if low.startswith("qty.") or low.startswith("value in rs"):
+            # sub-header "QTY. VALUE ... QTY." — an extra trailing QTY. (more QTY than VALUE
+            # tokens) is the truncated DUMP column caption.
+            if low.startswith("qty.") and low.count("qty") > low.count("value"):
+                orphan_dump = True
             continue  # the second header line (QTY. VALUE ...) or a rupee subtotal caption
 
         toks = stripped.split()
@@ -89,9 +98,20 @@ def parse_marg_stock_open_rcpt_issue_xls(rows):
         if len(nums) < _NCOLS:
             continue  # a section title ("KLM COSMO"), "Continued"/"Page", or any non-data line
 
-        cols = nums[-_NCOLS:]
-        # Numerics beyond the 8-column block are trailing product tokens (e.g. "IMXIA 5").
-        product_full = " ".join(toks + nums[:-_NCOLS]).strip()
+        dump = None
+        if orphan_dump:
+            # trailing run = 8 movement numbers + optional DUMP; any leading extras are
+            # name digits that glued onto the numeric run.
+            move_len = 9 if len(nums) >= 9 else 8
+            lead = nums[: len(nums) - move_len]
+            movement = nums[len(nums) - move_len:]
+            cols = movement[:_NCOLS]
+            dump = movement[_NCOLS] if len(movement) > _NCOLS else None
+            product_full = " ".join(toks + lead).strip()
+        else:
+            cols = nums[-_NCOLS:]
+            # Numerics beyond the 8-column block are trailing product tokens (e.g. "IMXIA 5").
+            product_full = " ".join(toks + nums[:-_NCOLS]).strip()
         if not product_full:
             continue
         plow = product_full.lower()
@@ -111,6 +131,8 @@ def parse_marg_stock_open_rcpt_issue_xls(rows):
             "closing_stock": cols[6],
             "closing_stock_value": cols[7],
         }
+        if dump not in (None, "", "-", "0", "0.0"):
+            record.setdefault("extra_data", {})["dump_qty"] = dump
         if expiry:
             record["expiry"] = expiry
         records.append(record)

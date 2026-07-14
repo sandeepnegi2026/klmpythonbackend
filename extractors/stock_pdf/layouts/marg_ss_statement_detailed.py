@@ -67,23 +67,33 @@ def parse_marg_ss_statement_detailed(text):
         if not prod:
             continue
         vals = _nums(tail)
-        if len(vals) < 10:
+        if len(vals) >= 10:
+            # SRI DURGA 10-col: O.Bal Purc S.Ret Total Sales P.Ret Total ClBal Cl.Value Age
+            v = vals[-10:]
+            opening, purchase, sret, sales, pret, closing, closval = (
+                v[0], v[1], v[2], v[4], v[5], v[7], v[8],
+            )
+        elif len(vals) == 9:
+            # PADMAJA 9-col: O.Bal Purches Sal.Ret Total Sales Pur.Ret Cl.Bal Cl.Value Age
+            v = vals
+            opening, purchase, sret, sales, pret, closing, closval = (
+                v[0], v[1], v[2], v[4], v[5], v[6], v[7],
+            )
+        else:
             continue
-        # take the last 10 columns (guard against a stray leading number in the tail)
-        vals = vals[-10:]
         name, pack = _split_product_pack(_strip_item_code(prod))
         if not name:
             continue
         r = {
             "product_name": name,
             "pack": pack,
-            "opening_stock": vals[0],       # O.Bal
-            "purchase_stock": vals[1],      # Purc
-            "sales_return": vals[2],        # S.Ret (inflow)
-            "sales_qty": vals[4],           # Sales (outflow)
-            "purchase_return": vals[5],     # P.Ret (outflow)
-            "closing_stock": vals[7],       # ClBal (real closing qty)
-            "closing_stock_value": vals[8], # Cl.Value (rupees)
+            "opening_stock": opening,       # O.Bal
+            "purchase_stock": purchase,     # Purc
+            "sales_return": sret,           # S.Ret (inflow)
+            "sales_qty": sales,             # Sales (outflow)
+            "purchase_return": pret,        # P.Ret (outflow)
+            "closing_stock": closing,       # ClBal (real closing qty)
+            "closing_stock_value": closval, # Cl.Value (rupees)
         }
         if exp:
             r["expiry"] = exp

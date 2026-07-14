@@ -1,4 +1,8 @@
 from extractors.stock_xlsx.header_fields import detect_header_row
+from extractors.stock_xlsx.layouts.klm_op_pi_sale_cl_value_xlsx import parse_klm_op_pi_sale_cl_value_xlsx
+from extractors.stock_xlsx.layouts.stock_sales_analysis_oic_xlsx import parse_stock_sales_analysis_oic_xlsx
+from extractors.stock_xlsx.layouts.stock_sales_analysis_wide_xlsx import parse_stock_sales_analysis_wide_xlsx
+from extractors.stock_xlsx.layouts.gs_stock_sales_wide27_xlsx import parse_gs_stock_sales_wide27_xlsx
 from extractors.stock_xlsx.layouts.marg_opstk_curstk import parse_marg_opstk_curstk
 from extractors.stock_xlsx.layouts.marg_stock_wide import parse_marg_stock_wide
 from extractors.stock_xlsx.layouts.tabular import records_from_rows
@@ -40,7 +44,16 @@ from extractors.stock_xlsx.layouts.klm_sale_dtl_xlsx import parse_klm_sale_dtl_x
 from extractors.stock_xlsx.layouts.klm_op_pi_clqty_xlsx import parse_klm_op_pi_clqty_xlsx
 from extractors.stock_xlsx.layouts.stock_op_pur_total_cl_xlsx import parse_stock_op_pur_total_cl_xlsx
 
+from extractors.stock_xlsx.layouts.central_stock_and_sales_xls import parse_central_stock_and_sales_xls
+from extractors.stock_xlsx.layouts.klm_mfr_op_pq_clqty_xlsx import parse_klm_mfr_op_pq_clqty_xlsx
+
 PARSERS = {
+    "klm_op_pi_sale_cl_value_xlsx": parse_klm_op_pi_sale_cl_value_xlsx,
+    "stock_sales_analysis_oic_xlsx": parse_stock_sales_analysis_oic_xlsx,
+    "stock_sales_analysis_wide_xlsx": parse_stock_sales_analysis_wide_xlsx,
+    "gs_stock_sales_wide27_xlsx": parse_gs_stock_sales_wide27_xlsx,
+    "central_stock_and_sales_xls": parse_central_stock_and_sales_xls,
+    "klm_mfr_op_pq_clqty_xlsx": parse_klm_mfr_op_pq_clqty_xlsx,
     "stock_op_pur_total_cl_xlsx": parse_stock_op_pur_total_cl_xlsx,
     "klm_venus_opstk_crqty": parse_klm_venus_opstk_crqty,
     "marg_sale_closing_grid_xlsx": parse_marg_sale_closing_grid_xlsx,

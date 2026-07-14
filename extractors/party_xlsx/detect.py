@@ -147,6 +147,31 @@ def detect_layout(rows):
     if _prod_cust_ws_detect(rows):
         return "product_customer_wise_sales_xlsx"
 
+    # G.S. DISTRIBUTORS "<Division>-Sales Report" (KCOSMO/KDERMA/KPED/...) — customer is a
+    # bare BAND row (header Product Name|Qty|Free|GrsAmt|Area City, NO party column). tabular
+    # maps the product columns but never binds party_name -> RED. Gated on the banded GrsAmt +
+    # Area City header WITHOUT a party_name column, so a columnar sibling with a real Customer
+    # Name column (Kishore) stays on tabular.
+    from extractors.party_xlsx.layouts.customer_product_banded_grsamt import detect as _cpb_grsamt_detect
+    if _cpb_grsamt_detect(rows):
+        return "customer_product_banded_grsamt"
+
+    # NAVNEET "Customer + Product Wise Sale (Summary)" — same banded shape as the G.S.
+    # reader but Area-FIRST columns (Area|Product Name|Qty|Free|GrsAmt, no 'Area City').
+    from extractors.party_xlsx.layouts.customer_product_banded_area_first import detect as _cpb_area_first_detect
+    if _cpb_area_first_detect(rows):
+        return "customer_product_banded_area_first"
+
+    # "Customer-wise, product-wise sale/DC summary" — MediVision Platinum Excel export
+    # (BLUMAX / KLM). Two-level banded: the CUSTOMER is a band row (its division cell blank,
+    # Qty/Amount = subtotals) over product lines carrying a non-blank division code. No party
+    # column -> tabular maps Particulars->product_name and never attaches party_name (RED).
+    # Title-gated on the distinct "customerwiseproductwisesaledcsummary" token, so it claims
+    # only this report; placed with the other title-gated MediVision/KLM XLSX layouts.
+    from extractors.party_xlsx.layouts.customer_product_sale_dc_summary import detect as _cust_prod_dc_detect
+    if _cust_prod_dc_detect(rows):
+        return "customer_product_sale_dc_summary"
+
     # Wide "Companywise Customerwise" Logic-ERP export (customer band, far-apart cols).
     from extractors.party_xlsx.layouts.companywise_customerwise import detect as _companywise_detect
     if _companywise_detect(rows):
@@ -157,6 +182,13 @@ def detect_layout(rows):
     if _salesmen_detect(rows):
         return "salesmen_partywise"
 
+    # "Manufacturer Wise Item Wise (Secondary Sales)" XLSX (SHRI JAYANTHI PHARMA / KLM) — banded
+    # by manufacturer, fixed-header-index mapped (single-letter Q/F/R headers don't map via the
+    # shared synonym set). Title token 'manufacturerwiseitemwise' + the invno/batch/rate/val/sman
+    # header set is unique; placed above area_item_sales_summary and the marg_busy/tabular fallbacks.
+    from extractors.party_xlsx.layouts.manufacturer_itemwise_secondary_xlsx import detect as _mfr_itemwise_secondary_detect
+    if _mfr_itemwise_secondary_detect(rows):
+        return "manufacturer_itemwise_secondary_xlsx"
     # "AREA / ITEM WISE SALES SUMMARY" — the XLS twin of the party_pdf layout of the same
     # name (AGARTALA / KLM). Space-padded text, one line per cell, party bands prefixed
     # with '-'. Title-gated ("area item wise sales summary" + the four-column
@@ -175,6 +207,13 @@ def detect_layout(rows):
     if _item_item_sales_detect(rows):
         return "item_item_sales_summary"
 
+    # "Customer Vs Groups Report" — KLM / KRISHNA MEDICAL single-column TEXT export flattened
+    # into col0 with many shredded sale lines. Emits recoverable clean detail rows PLUS a
+    # per-item rollup remainder so division value totals reconcile. Title + compact header gated,
+    # unique to this export; placed above the coarse marg_busy/tabular fallthroughs.
+    from extractors.party_xlsx.layouts.klm_customer_vs_groups_text import detect as _klm_cvg_text_detect
+    if _klm_cvg_text_detect(rows):
+        return "klm_customer_vs_groups_text"
     # Same "ITEM / ITEM WISE SALES SUMMARY" report but the single-column (fixed-width TEXT) variant
     # (M/S BURIMAA / KLM): every row is one space-padded cell (ncols==1) and it carries an extra
     # "AMOUNT ( % )" column. Gated single-column — the whole DESCRIPTION..AMOUNT header lives in
@@ -184,6 +223,14 @@ def detect_layout(rows):
     if _item_item_text_detect(rows):
         return "item_item_sales_summary_text"
 
+    # "Customer & Product Analysis" — single-column (fixed-width TEXT) banded party report
+    # (SRI POORNA / KLM). The whole Inv.No..Value header + "Customer :" bands live in col0
+    # alone (ncols==1), so the columnar customer_product_banded style-1 gate never fires.
+    # Gated single-column on the header run + title + a "Customer :" band; placed here so it
+    # beats party_item_summary/marg_busy and the style-1 customer_product_banded/tabular fallbacks.
+    from extractors.party_xlsx.layouts.customer_product_banded_text import detect as _cpb_text_detect
+    if _cpb_text_detect(rows):
+        return "customer_product_banded_text"
     # "PARTY / ITEM WISE SALES SUMMARY" — Busy text export, party band + space-padded
     # product lines in a single (or merged) column. Checked before marg_busy, which
     # would otherwise claim it on the shared "description"+"qty" signal but cannot read
@@ -192,6 +239,13 @@ def detect_layout(rows):
     if _party_item_summary_detect(rows):
         return "party_item_summary"
 
+    # "Item VS Parties Wise Sale Scheme Register" — product-banded party register (indent lost
+    # by the xlsx loader). Separates bands from party rows by the invariant band.Amount ==
+    # sum of the following party rows' Amounts. Bands are subtotals (not emitted). Title tokens
+    # 'itemvsparties' unique; placed just above the product_party_banded block.
+    from extractors.party_xlsx.layouts.item_vs_parties_scheme_register import detect as _item_vs_parties_detect
+    if _item_vs_parties_detect(rows):
+        return "item_vs_parties_scheme_register"
     # "Product + Party Wise List Report" — Product|Free|SaleQty.|ReturnQty|Amount columns
     # with the party as a name-only band row (numbers blank) and 'Party Total:' subtotals.
     # Header-gated on the distinctive raw tokens plus the band structure, so it cannot

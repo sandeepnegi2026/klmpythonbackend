@@ -68,7 +68,41 @@ from extractors.party_pdf.layouts.customer_product_wise_summary import parse_cus
 from extractors.party_pdf.layouts.sale_register_detailed import parse_sale_register_detailed
 from extractors.party_pdf.layouts.areawise_sales_period import parse_areawise_sales_period
 
+from extractors.party_pdf.layouts.shivasakthi_areawise_billwise import parse_shivasakthi_areawise_billwise
+from extractors.party_pdf.layouts.vasan_areawise_billwise import parse_vasan_areawise_billwise
+from extractors.party_pdf.layouts.backbone_mfr_sales_detail import parse_backbone_mfr_sales_detail
+from extractors.party_pdf.layouts.klm_group_vs_customer import parse_klm_group_vs_customer
+from extractors.party_pdf.layouts.customer_item_wise_sale import parse_customer_item_wise_sale
+from extractors.party_pdf.layouts.kapoor_party_itemwise_sale import parse_kapoor_party_itemwise_sale
+from extractors.party_pdf.layouts.smartpharma_customer_company_sales import parse_smartpharma_customer_company_sales
+from extractors.party_pdf.layouts.marg_sale_summary_party import parse_marg_sale_summary_party
+from extractors.party_pdf.layouts.areawise_sales_statement_packing import parse_areawise_sales_statement_packing
+from extractors.party_pdf.layouts.prompt_billwise_mixed import parse_prompt_billwise_mixed
+from extractors.party_pdf.layouts.sales_statement_summary_itemwise import parse_sales_statement_summary_itemwise
+from extractors.party_pdf.layouts.mfacwise_custwise_itemwise import parse_mfacwise_custwise_itemwise
+from extractors.party_pdf.layouts.prodcust_wise_billwise import parse_prodcust_wise_billwise, parse_areaprod_wise_billwise
+from extractors.party_pdf.layouts.customer_product_wise_packing import parse_customer_product_wise_packing
+from extractors.party_pdf.layouts.party_item_summary_qtyfree import parse_party_item_summary_qtyfree
+from extractors.party_pdf.layouts.areawise_sales_statement_banded import parse_areawise_sales_statement_banded
+
 PARSERS = {
+    "sales_statement_summary_itemwise": parse_sales_statement_summary_itemwise,
+    "mfacwise_custwise_itemwise": parse_mfacwise_custwise_itemwise,
+    "prodcust_wise_billwise": parse_prodcust_wise_billwise,
+    "areaprod_wise_billwise": parse_areaprod_wise_billwise,
+    "customer_product_wise_packing": parse_customer_product_wise_packing,
+    "party_item_summary_qtyfree": parse_party_item_summary_qtyfree,
+    "areawise_sales_statement_banded": parse_areawise_sales_statement_banded,
+    "areawise_sales_statement_packing": parse_areawise_sales_statement_packing,
+    "prompt_billwise_mixed": parse_prompt_billwise_mixed,
+    "shivasakthi_areawise_billwise": parse_shivasakthi_areawise_billwise,
+    "vasan_areawise_billwise": parse_vasan_areawise_billwise,
+    "backbone_mfr_sales_detail": parse_backbone_mfr_sales_detail,
+    "klm_group_vs_customer": parse_klm_group_vs_customer,
+    "customer_item_wise_sale": parse_customer_item_wise_sale,
+    "kapoor_party_itemwise_sale": parse_kapoor_party_itemwise_sale,
+    "smartpharma_customer_company_sales": parse_smartpharma_customer_company_sales,
+    "marg_sale_summary_party": parse_marg_sale_summary_party,
     "sale_register_detailed": parse_sale_register_detailed,
     "areawise_sales_period": parse_areawise_sales_period,
     "customer_product_wise_summary": parse_customer_product_wise_summary,

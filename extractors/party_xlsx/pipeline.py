@@ -4,6 +4,10 @@ from core.pack_match import extract_pack_from_product
 from core.product_master import enrich_rows_with_master
 from extractors.party_xlsx.constants import LAYOUT_LABELS
 from extractors.party_xlsx.detect import detect_layout
+from extractors.party_xlsx.layouts.swil_html_billwise import (
+    detect as detect_swil_html_billwise,
+    parse_swil_html_billwise,
+)
 from extractors.party_xlsx.postprocess import cast_numbers
 from extractors.party_xlsx.registry import parse_rows
 from extractors.party_xlsx.xlsx_io import load_data_sheets
@@ -14,6 +18,13 @@ def extract(file_bytes, settings=None):
     settings = settings or {}
     filename = settings.get("filename", "")
     warnings = []
+    # SwilERP party-billwise exports ship as an HTML document saved with a .xls
+    # extension; pandas/xlrd read them as 0 rows (-> RED SCANNED_OR_EMPTY). Route them,
+    # BEFORE the spreadsheet reader, to the dedicated HTML parser. The gate fires only on
+    # HTML bytes carrying the SwilERP party-billwise header (Customer Name + BillNo +
+    # Total Sales), so a real .xlsx/.xls never enters this branch and stays byte-identical.
+    if detect_swil_html_billwise(file_bytes):
+        return _extract_html(file_bytes, started)
     try:
         sheets = load_data_sheets(file_bytes, filename, settings.get("sheet_name"))
     except Exception as exc:
@@ -101,5 +112,59 @@ def extract(file_bytes, settings=None):
             "layout": layout,
             "layout_label": LAYOUT_LABELS.get(layout, layout),
             "sheet": sheet_name,
+        },
+    }
+
+
+def _extract_html(file_bytes, started):
+    """Parse a SwilERP party-billwise HTML-in-.xls export, then run the SAME postprocess
+    (pack split -> master enrichment -> cast_numbers -> enforce_schema) as the spreadsheet
+    path so the records are shaped identically to every other party_xlsx layout."""
+    from core.canonical import enforce_schema
+
+    layout = "swil_html_billwise"
+    warnings = []
+    records, detected = parse_swil_html_billwise(file_bytes)
+
+    for row in records:
+        if "product_name" in row:
+            raw_full_name = str(row["product_name"])
+            base_name, extracted_pack = extract_pack_from_product(raw_full_name)
+            row["product_name"] = base_name
+            if base_name != raw_full_name:
+                row.setdefault("_prestrip_name", raw_full_name)
+            if not row.get("pack") and extracted_pack:
+                row["pack"] = extracted_pack
+
+    records = enrich_rows_with_master(records)
+    cast_numbers(records)
+    enforce_schema(records, "party")
+
+    if not records:
+        warnings.append(f"No party rows extracted (layout={layout}).")
+
+    text = file_bytes.decode("utf-8-sig", errors="replace")
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    preview = "\n".join(lines)[:4000]
+    pages = [
+        {
+            "page_no": "html",
+            "char_count": len(preview),
+            "line_count": len(lines),
+            "rect_count": 0,
+            "table_bboxes": [],
+        }
+    ]
+    return {
+        "rows": records,
+        "headers_detected": detected,
+        "pages": pages,
+        "raw_text": preview,
+        "warnings": warnings,
+        "elapsed_ms": int((time.perf_counter() - started) * 1000),
+        "debug": {
+            "layout": layout,
+            "layout_label": LAYOUT_LABELS.get(layout, layout),
+            "sheet": "html",
         },
     }

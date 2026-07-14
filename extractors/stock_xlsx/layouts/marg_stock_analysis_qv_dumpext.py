@@ -53,6 +53,10 @@ def _row_text(row):
 def parse_marg_stock_analysis_qv_dumpext(rows):
     records = []
     header_seen = False
+    # SHARMA MEDICAL HALL prints a RATE column between ITEM DESCRIPTION and OPENING, so its
+    # 10-number tail is RATE + 8 canonical + DUMP (not the D.S.PHARMA 8 + DUMP + analytics).
+    # Gate strictly on the header RATE token so the default binding stays untouched.
+    has_rate = False
     for row in rows:
         stripped = _row_text(row).strip() if row else ""
         if not stripped or set(stripped) <= set("-= "):
@@ -60,6 +64,8 @@ def parse_marg_stock_analysis_qv_dumpext(rows):
         low = stripped.lower()
         if "item description" in low and "opening" in low:
             header_seen = True
+            ridx = low.find("rate")
+            has_rate = 0 <= ridx < low.find("opening")
             continue
         if not header_seen:
             continue
@@ -84,18 +90,22 @@ def parse_marg_stock_analysis_qv_dumpext(rows):
         if is_subtotal(product) or plow.startswith("total") or plow == "quantity":
             continue
 
+        # RATE variant (SHARMA): cols = RATE, open q/v, rcpt q/v, issue q/v, clos q/v, DUMP.
+        base = 1 if has_rate else 0
         record = {
             "product_name": product,
-            "opening_stock": cols[0],
-            "opening_value": cols[1],
-            "purchase_stock": cols[2],   # RECEIPT qty
-            "purchase_value": cols[3],   # RECEIPT value
-            "sales_qty": cols[4],        # ISSUE qty
-            "sales_value": cols[5],      # ISSUE value
-            "closing_stock": cols[6],
-            "closing_stock_value": cols[7],
+            "opening_stock": cols[base + 0],
+            "opening_value": cols[base + 1],
+            "purchase_stock": cols[base + 2],   # RECEIPT qty
+            "purchase_value": cols[base + 3],   # RECEIPT value
+            "sales_qty": cols[base + 4],        # ISSUE qty
+            "sales_value": cols[base + 5],      # ISSUE value
+            "closing_stock": cols[base + 6],
+            "closing_stock_value": cols[base + 7],
         }
-        dump = cols[8]                   # cols[9] is the trailing analytics column (ignored)
+        if has_rate:
+            record["rate"] = cols[0]
+        dump = cols[base + 8]            # default: cols[9] trailing analytics (ignored)
         if dump not in ("", "-", "0", "0.0"):
             record.setdefault("extra_data", {})["dump_qty"] = dump
         if expiry:

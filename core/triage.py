@@ -42,11 +42,13 @@ from core.scoring import coverage as _coverage
 # ALL core fields all-zero == no numeric data at all -> RED.
 # An entry is either a single field (must be populated) or a tuple of
 # interchangeable fields — a dimension satisfied if ANY member is populated. A
-# party's value column legitimately surfaces as amount OR taxable_value OR rate
-# (product-wise *summary* layouts carry only qty+amount, no per-unit rate / pre-tax
-# value), so requiring all three would falsely flag every such report.
+# party's value column legitimately surfaces as amount OR taxable_value OR rate OR
+# net_amount (some Party/Item summaries print only a "SL+SR NET AMOUNT" / "NET AMOUNT"
+# money column, which canonicalizes to net_amount — KHURANA, SHRI RAM JEE), so
+# requiring the amount/taxable/rate trio would falsely flag those fully-reconciling
+# reports as CORE_FIELD_EMPTY.
 CORE_NUMERIC = {
-    "party": ["qty", ("amount", "taxable_value", "rate")],
+    "party": ["qty", ("amount", "taxable_value", "rate", "net_amount")],
     "stock": ["opening_stock", "sales_qty", "closing_stock"],
 }
 
@@ -536,6 +538,52 @@ def value_total_corroborated(result, report_type):
     return False
 
 
+# A report whose printed grand-total footer prints all-zero values ("Opening Value :
+# 0.00 ... Closing Value : 0.00", "Total : 0") is a genuine no-movement / empty source,
+# NOT a mis-mapped column. Match total-LABEL -> number pairs (the labels sit before a
+# ':' / '=' which product-row numbers never do), and return True only when at least one
+# such printed total is found and EVERY one is zero. Used to keep an all-zero-but-faithful
+# extraction out of COLUMN_MISALIGNMENT RED — a real misalignment prints its non-zero
+# totals here, so it fails this test and stays RED.
+_TOTAL_LABEL_RE = re.compile(
+    r"(?:opening|closing|sale[s]?|purchase|purch|stock|balance|receipt|issue|net)\s*"
+    r"(?:value|val|stk|qty|bal|amount|amt)?\s*[:=]\s*([\d,]+(?:\.\d+)?)",
+    re.I,
+)
+
+
+def printed_totals_all_zero(result) -> bool:
+    raw = result.get("raw_text") or ""
+    # (a) "Total Value" / "Grand Total" footer BLOCK (HTML-print exports print
+    # "Opening Stock 0 Purchase Value 0 ... Closing Stock Value 0" with NO colon).
+    # Scan only the tail AFTER the last such marker so product rows above are excluded,
+    # and drop trailing browser/page chrome ("about:blank 1/1") whose page numbers are
+    # not totals. All-zero tail => genuine empty source.
+    low = raw.lower()
+    marker = max(low.rfind("total value"), low.rfind("grand total"))
+    if marker != -1:
+        tail = raw[marker:]
+        for stop in ("about:blank", "\x0c", "page "):
+            i = tail.lower().find(stop)
+            if i != -1:
+                tail = tail[:i]
+        tail_nums = re.findall(r"[\d,]+(?:\.\d+)?", tail)
+        if tail_nums:
+            try:
+                if all(float(n.replace(",", "")) == 0.0 for n in tail_nums):
+                    return True
+            except ValueError:
+                pass
+    # (b) labelled "Opening Value : 0.00 ... Closing Value : 0.00" footer (colon/equals form).
+    nums = _TOTAL_LABEL_RE.findall(raw)
+    if not nums:
+        return False
+    try:
+        return all(float(n.replace(",", "")) == 0.0 for n in nums)
+    except ValueError:
+        return False
+
+
 def run_checks(result, report_type, coverage_chips=None):
     """Bundle every cross-check into one dict (cheap; no re-parse)."""
     chips = coverage_chips if coverage_chips is not None else _coverage(result, report_type)
@@ -557,6 +605,7 @@ def run_checks(result, report_type, coverage_chips=None):
         "constant_core_columns": constant_core_columns(result, report_type),
         "total_reconcile": report_total_reconcile(result, report_type),
         "value_corroborated": value_total_corroborated(result, report_type),
+        "printed_totals_all_zero": printed_totals_all_zero(result),
         # Canonical fields the SOURCE actually carries (headers_detected maps raw header
         # -> canonical, so its values are the columns the report really printed). Distinct
         # from enforce_schema's back-filled zeros: a core field absent here has NO column
@@ -646,15 +695,36 @@ def decide(score, coverage_chips, checks, report_type):
         return _verdict("RED", "UNKNOWN_LAYOUT",
                         "File has text but 0 rows were extracted — layout not recognized. Build a parser for it.", True)
     if checks["data_missing"]:
-        field = checks["data_missing"][0]
-        return _verdict("RED", f"MISSING_REQUIRED_FIELD:{field}",
-                        f"Required data field '{field}' was never extracted.", True)
+        dm = checks["data_missing"]
+        # A party-level roll-up (e.g. Marg "SALE SUMMARY") prints party + amount with NO
+        # product column at all, so product_name is legitimately absent from the SOURCE
+        # (not in detected_fields) — the same principle CORE_FIELD_EMPTY uses for a blank
+        # column. Fall through to an AMBER review instead of RED, but ONLY when product_name
+        # is the sole missing hard field, it has no column in the source, and the other hard
+        # field (party_name) IS present — a real dropped-product bug keeps product_name in
+        # detected_fields and still REDs.
+        _rollup = (report_type == "party" and dm == ["product_name"]
+                   and "product_name" not in checks["detected_fields"]
+                   and "party_name" in checks["detected_fields"])
+        if not _rollup:
+            field = dm[0]
+            return _verdict("RED", f"MISSING_REQUIRED_FIELD:{field}",
+                            f"Required data field '{field}' was never extracted.", True)
     core_pop = checks["core_numeric_population"]
     not_extracted = [f for f, r in core_pop.items() if r < T["core_nonzero_min"]]
     if core_pop and len(not_extracted) == len(core_pop):
-        return _verdict("RED", "COLUMN_MISALIGNMENT",
-                        "No numeric data extracted — every core numeric "
-                        f"({', '.join(core_pop)}) is zero/empty. Likely wrong column mapping or route.", True)
+        # Every core numeric column is zero/empty. Distinguish a genuine no-movement /
+        # all-zero source (an empty division stock statement whose OWN printed grand-total
+        # footer reads 0.00) from a real column misalignment: a real misalignment drops
+        # NON-zero data that the vendor's printed totals still show, so its footer is NOT
+        # all-zero. Only RED without positive proof the source itself is zero (printed
+        # totals all zero, or the value total corroborates); a faithfully-empty report falls
+        # through to the AMBER CORE_FIELD_EMPTY signal below (which already leads with
+        # "extraction is correct — these columns are blank in the source").
+        if not (checks.get("printed_totals_all_zero") or checks.get("value_corroborated")):
+            return _verdict("RED", "COLUMN_MISALIGNMENT",
+                            "No numeric data extracted — every core numeric "
+                            f"({', '.join(core_pop)}) is zero/empty. Likely wrong column mapping or route.", True)
     sanity = checks["sanity"]
     sanity_red_hit = (sanity and sanity["effective_pass_rate"] is not None
                       and sanity["effective_pass_rate"] < T["sanity_red"])

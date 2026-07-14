@@ -7,6 +7,7 @@ from extractors.stock_xlsx.header_fields import (
     header_detected_from_fields,
 )
 from extractors.stock_xlsx.layouts.html_stock import parse_html_stock_table
+from extractors.stock_xlsx.layouts.purani_mfr_stock_sales import parse_purani_mfr_stock_sales
 from extractors.stock_xlsx.postprocess import cast_numbers, sanity_warnings
 from extractors.stock_xlsx.registry import parse_rows
 from extractors.stock_xlsx.xlsx_io import load_data_sheets, workbook_kind
@@ -26,8 +27,17 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
         kind = workbook_kind(file_bytes, filename)
         if kind == ".html":
             text = file_bytes.decode("utf-8-sig", errors="replace")
-            records, detected = parse_html_stock_table(file_bytes)
-            layout = "html_stock"
+            # PURANI HOSPITAL SUPPLIES "MFR Stock and Sales Report" ships an 18-col HTML-in-.xls
+            # (Particulars|Pack|O.St|Pur|Free|PRtn|Mon|C.St|...) that the legacy html_stock reader
+            # cannot column-split. Route it to the dedicated parser; tokens 'mfr stock and sales
+            # report'/'prtn'/'mbmon' appear in no other html_stock export, so nothing else is stolen.
+            low = text.lower()
+            if "mfr stock and sales report" in low or ("particulars" in low and "prtn" in low and "mbmon" in low):
+                records, detected = parse_purani_mfr_stock_sales(file_bytes)
+                layout = "purani_mfr_stock_sales"
+            else:
+                records, detected = parse_html_stock_table(file_bytes)
+                layout = "html_stock"
             rows = [[line.strip()] for line in text.splitlines() if line.strip()][:150]
             preview = "\n".join(
                 line.strip() for line in text.splitlines() if line.strip()

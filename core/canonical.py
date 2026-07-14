@@ -56,15 +56,26 @@ STOCK_FIELDS = {
     "pack": {"scope": "stock", "type": "str", "required": True, "synonyms": ["pack", "packing", "size", "uom", "unit", "packsize"]},
     "opening_stock": {"scope": "stock", "type": "num", "required": True, "synonyms": ["opening", "opening qty", "op stock", "op qty", "opening bal", "opening balance", "opening stock", "o s", "op", "op bal", "open", "opstk"]},
     "purchase_stock": {"scope": "stock", "type": "num", "required": True, "synonyms": ["purchase", "purchase qty", "pur qty", "purch", "receipt", "received", "recd", "inward", "pur stock", "purchases", "purchase stock", "in", "rcvd qty", "p qty", "receive", "receive qty", "receive quantity", "recp", "inw qty", "purstk", "purtot", "pur tot", "rcpts", "receipts", "purc"]},
-    "purchase_free": {"scope": "stock", "type": "num", "required": True, "synonyms": ["purchase free", "pur free", "free purchase", "pur fr", "p free", "purch free", "scheme purchase", "receipt free", "purscm", "pur scm"]},
+    # "purfree" — Marg glued "PURFREE QTY" header (LAXMI): "purfree qty" contains-matches this
+    # (0.88, earlier field) so it binds purchase_free, freeing the real sale-free column. Do
+    # NOT add the spaced "purfree qty"/"pur free qty" — those contain the substring "free qty",
+    # which would steal a bare "FREE QTY" sales-free column (SHRI RAM) into purchase_free.
+    "purchase_free": {"scope": "stock", "type": "num", "required": True, "synonyms": ["purchase free", "pur free", "free purchase", "pur fr", "p free", "purch free", "scheme purchase", "receipt free", "purscm", "pur scm", "purfree"]},
     "purchase_return": {"scope": "stock", "type": "num", "required": True, "synonyms": ["purchase return", "pur return", "pur ret", "p return", "purch return", "prchs return", "pr return", "prtot", "pr tot", "b e pr", "pretqty"]},
-    "sales_qty": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales qty", "sale qty", "sold qty", "sales quantity", "issue", "issued", "outward", "sale", "sales", "net sales qty", "sales stock", "out", "issue qty", "s qty", "s.qty", "saletot", "sale tot"]},
-    "sales_value": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales value", "sale value", "sales amt", "sales amount", "sale amt", "net sales", "sales val", "sale amount", "value", "s val", "saleamt", "saleval", "sale val", "salev", "gross amount", "grs amt", "sa val", "sa value"]},
+    # "sl qty" — SHRI RAM JEE "SL QTY" sales column (fuzzy <0.62 vs every synonym, so it fell
+    # to raw_ while "NET SALE VALUE" stole sales_qty via the 0.88 "sale" contains rule). Exact.
+    "sales_qty": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales qty", "sale qty", "sold qty", "sales quantity", "issue", "issued", "outward", "sale", "sales", "net sales qty", "sales stock", "out", "issue qty", "s qty", "s.qty", "saletot", "sale tot", "sl qty"]},
+    "sales_value": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales value", "sale value", "sales amt", "sales amount", "sale amt", "net sales", "sales val", "sale amount", "value", "s val", "saleamt", "saleval", "sale val", "salev", "gross amount", "grs amt", "sa val", "sa value", "net sale value"]},
     # "scm" (MediVision "Scm" scheme/free column) -> sales_free. NOTE this layout prints
     # TWO identical "Scm" columns (purchase-scheme + sales-scheme); a flat header can't tell
     # them apart, so header matching binds only one — the positional medivision_stock_sales
     # parser is what splits them correctly. Bare "scm" was previously unmatched in stock.
-    "sales_free": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales free", "sale free", "free sales", "sale fr", "s free", "scheme qty", "sch qty", "scheme", "s sch", "free", "slscm", "sl scm", "scm"]},
+    # "salefr" — Marg glued "SaleFr" header (AMBIKA family): only spaced "sale fr" existed,
+    # so the glued form lost to sales_qty's "sale" 0.88 contains-steal and sales_free went 0
+    # on every row. Exact 1.0 fixes it; 6-char but used for EXACT match, not fuzzy.
+    # "sale free qty" — LAXMI "SALE FREE QTY": ties sales_qty (0.88 via "sale") and loses the
+    # used-key race to the "SALE-1" column; the exact token lifts it to 1.0 so it binds here.
+    "sales_free": {"scope": "stock", "type": "num", "required": True, "synonyms": ["sales free", "sale free", "free sales", "sale fr", "s free", "scheme qty", "sch qty", "scheme", "s sch", "free", "slscm", "sl scm", "scm", "salefr", "sale free qty"]},
     # bare "sr" removed as a synonym — it exact-matches the ubiquitous "Sr." serial-number
     # column and steals it into sales_return (a serial 1,2,3… added to closing wrecks
     # reconciliation). Real return columns still match via the specific synonyms below.
@@ -76,7 +87,9 @@ STOCK_FIELDS = {
     "closing_stock": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing", "closing qty", "cl stock", "cl qty", "closing bal", "closing balance", "closing stock", "c s", "cl", "balance", "bal qty", "closestock", "close", "c stk", "clstk", "curstk", "cur stk", "current stock", "cls stk", "cls stk qty", "clsg", "qoh", "qty on hand", "quantity on hand"]},
     # "bal val" / "bal value" — CENTRAL's closing-value column "Bal.Val" (normalized
     # "bal val"); without it the "value" substring mis-binds it to sales_value.
-    "closing_stock_value": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing stock value", "closing value", "closing amt", "cl stock value", "cl value", "balance value", "bal val", "bal value", "closing val", "cl val", "clval", "c val", "cl amt", "qoh value", "qohvalue"]},
+    # "closing value pur rate" — SHRI RAM JEE "CLOSING VALUE(PUR RATE)" normalizes to this;
+    # without the exact token "value" mis-binds it to sales_value. Multi-token exact.
+    "closing_stock_value": {"scope": "stock", "type": "num", "required": True, "synonyms": ["closing stock value", "closing value", "closing amt", "cl stock value", "cl value", "balance value", "bal val", "bal value", "closing val", "cl val", "clval", "c val", "cl amt", "qoh value", "qohvalue", "closing value pur rate"]},
     "hsn_code": {"scope": "stock", "type": "str", "required": False, "synonyms": ["hsn", "hsn code", "code", "product code", "pcod", "p cod"]},
     "batch_no": {"scope": "stock", "type": "str", "required": False, "synonyms": ["batch", "batch no", "lot"]},
     "expiry": {"scope": "stock", "type": "str", "required": False, "synonyms": ["expiry", "exp", "expiry date", "exp date", "m exp", "near exp", "nearexp"]},

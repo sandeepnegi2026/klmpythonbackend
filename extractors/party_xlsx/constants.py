@@ -1,6 +1,6 @@
 import re
 
-SUBTOTAL_RE = re.compile(r"^\s*(total|sub.?total|grand total|party\s*total|customer\s*total|cus\.?\s*total|net amount|print health qrcode|marg erp|opening value|closing value|sales value|report date|sales$|mg\d+)\b", re.I)
+SUBTOTAL_RE = re.compile(r"^\s*(total|sub.?total|grand total|party\s*total|customer\s*total|company\s*total|cus\.?\s*total|net amount|print health qrcode|marg erp|opening value|closing value|sales value|report date|sales$|mg\d+)\b", re.I)
 PARTY_BAND_RE = re.compile(r"^[A-Z0-9][A-Z0-9\s&.,()\-/'\"]+$")
 SKIP_ROW_RE = re.compile(r"^(\+|\-|\.|->\d+)$", re.I)
 # A band/section header that introduces a customer group, e.g. "Customer :AISHWARI"
@@ -13,11 +13,19 @@ ADDR_BAND_RE = re.compile(r"^\s*add(?:ress)?\s*[:\-]\s*(.+)$", re.IGNORECASE)
 # "Total : 5586.29". Deliberately stricter than SUBTOTAL_RE so a customer whose name merely
 # starts with a total-ish word (e.g. "TOTAL CARE PHARMA", "SALES INDIA") is NOT dropped.
 BARE_TOTAL_RE = re.compile(
-    r"^\s*(grand\s*total|sub\s*-?\s*total|total|net\s+amount|opening\s+value|closing\s+value|sales\s+value)\s*[:\-]?\s*[\d.,]*$",
+    r"^\s*(customer\s+sub\s*-?\s*total|area\s*total|grand\s*total|sub\s*-?\s*total|total|net\s+amount|opening\s+value|closing\s+value|sales\s+value)\s*[:\-]?\s*[\d.,]*$",
     re.IGNORECASE,
 )
 
 LAYOUT_LABELS = {
+    "customer_product_banded_grsamt": "Customer/Product-wise Sale Report — banded (Product/Qty/Free/GrsAmt/Area City; party in band rows) — G.S. DISTRIBUTORS",
+    "customer_product_banded_area_first": "Customer + Product Wise Sale Summary — banded, Area-first (Area/Product/Qty/Free/GrsAmt; party in band rows) — NAVNEET",
+    "swil_html_billwise": "SwilERP Party Billwise (HTML-in-.xls)",
+    "customer_product_sale_dc_summary": "Customer-wise Product-wise Sale/DC Summary (MediVision, Banded XLSX)",
+    "klm_customer_vs_groups_text": "KRISHNA MEDICAL — Customer Vs Groups Report (KLM, single-column text)",
+    "item_vs_parties_scheme_register": "Item VS Parties Wise Sale Scheme Register (Product-Banded)",
+    "customer_product_banded_text": "Customer & Product Analysis (Customer-Banded, Text)",
+    "manufacturer_itemwise_secondary_xlsx": "Shri Jayanthi Pharma — Manufacturer Wise Item Wise (Secondary Sales) XLSX (banded, index-mapped)",
     "customer_items_new_xlsx": "Customer & Items New (banded, Area-glued)",
     "company_customer_itemwise_banded": "Company - Customer - Item Wise Sale (banded)",
     "product_areawise_pivot": "Product-wise Area-wise Sale/DC Summary (Pivot Unpivot)",

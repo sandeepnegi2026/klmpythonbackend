@@ -8,10 +8,20 @@ import re
 
 _NUM = r"[\d,]+\.\d+"
 _ROW = re.compile(rf"^(.+?)\s*,(.+?)\s+({_NUM})\s+({_NUM})\s+({_NUM})\s*$")
+# KHATTAR variant: extra AVG.RATE column -> 4 numbers (qty, free, rate, amount), and the
+# qty/free may print as integers, so allow an optional decimal.
+_NUM2 = r"[\d,]+(?:\.\d+)?"
+_ROW4 = re.compile(rf"^(.+?)\s*,(.+?)\s+({_NUM2})\s+({_NUM2})\s+({_NUM2})\s+({_NUM2})\s*$")
 
 
 def parse_sale_register_consolidated(text):
-    H = ["Party Name", "Area", "Product Name", "Qty", "Free", "Amount"]
+    avg_rate = "avg.rate" in text.lower() or "avg. rate" in text.lower()
+    if avg_rate:
+        H = ["Party Name", "Area", "Product Name", "Qty", "Free", "Rate", "Amount"]
+        row_re = _ROW4
+    else:
+        H = ["Party Name", "Area", "Product Name", "Qty", "Free", "Amount"]
+        row_re = _ROW
     rows = []
     for raw in text.split("\n"):
         s = raw.strip()
@@ -19,7 +29,7 @@ def parse_sale_register_consolidated(text):
             continue
         if s.lower().startswith(("party name", "sale register", "from ", "page", "grand total")):
             continue
-        m = _ROW.match(s)
+        m = row_re.match(s)
         if not m:
             continue
         party = m.group(1).strip()
@@ -27,7 +37,6 @@ def parse_sale_register_consolidated(text):
         product = product.strip()
         if len(party) < 2 or len(product) < 2:
             continue
-        rows.append([party, area, product,
-                     m.group(3).replace(",", ""), m.group(4).replace(",", ""),
-                     m.group(5).replace(",", "")])
+        nums = [g.replace(",", "") for g in m.groups()[2:]]
+        rows.append([party, area, product] + nums)
     return H, rows

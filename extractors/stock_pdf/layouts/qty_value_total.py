@@ -40,6 +40,16 @@ def parse_qty_value_total(text):
     Differs from value_pairs (4 clean qty/value pairs = 8 numbers) by the extra
     standalone TOTAL_QTY column (= opening + receipt) between receipt and issue.
     """
+    # Two extended tails, each gated on a header token unique to its export so no
+    # existing 8/9-number file changes:
+    #   10 numbers — GEETA appends a NEAR-EXPIRY count after Closing (drop vals[9]).
+    #   11/12 numbers — SIDDHI appends Dump Stock + MSR Price (drop vals[9], vals[10];
+    #     a 12-tail carries a stray name digit, so take the LAST 11).
+    low = text.lower()
+    _c = low.replace(" ", "")
+    has_near = "closingbalanear" in _c or "nearexp" in _c or "n.e.value" in _c
+    has_dump_msr = "dump" in _c and "msr" in _c
+
     records = []
     for line in text.splitlines():
         s = line.strip()
@@ -51,10 +61,17 @@ def parse_qty_value_total(text):
         # Statement" sibling (4 qty/value pairs; its pair-2 value is the running
         # TOTAL value = opening_val + receipt_val, so purchase_value is not
         # emitted there). Bands/furniture carry no trailing numbers and drop out.
-        if not prod or len(tail) not in (8, 9):
+        if not prod or len(tail) not in (8, 9, 10, 11, 12):
             continue
         name, pack = _split_product_pack(prod)
         vals = _nums(tail)
+        if len(vals) == 10 and has_near:
+            # OpQ OpV RcptQ RcptV TotalQ IssQ IssV ClosQ ClosV NearExp -> map first 9.
+            vals = vals[:9]
+        elif len(vals) in (11, 12) and has_dump_msr:
+            # ...ClosQ ClosV Dump MSR (12: stray glued name digit leads) -> LAST 11,
+            # then keep the 9 movement numbers (drop Dump vals[9] and MSR vals[10]).
+            vals = vals[-11:][:9]
         if len(vals) == 9:
             r = {
                 "product_name": name,

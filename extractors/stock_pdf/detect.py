@@ -14,12 +14,34 @@ def detect_layout(text, n_rects):
         return "dolphin_stock"
     if "opstk" in low and "purch" in low and "in/ot" in low:
         return "toreo_stock"
+    # MEYON DRUGS 'Stock Statement for the month of ...' — per-division KLM
+    # export with a wrapped 3-line header (Prev.month Sales / Items Packing Rate
+    # Op_Stk Rcpts P.Ret Sales Hos.Sal Brk Repl Cl_Stk Value / APR MAY). Most of
+    # the 8 movement cells are blank per row so the flat text collapses and the
+    # generic fallback mis-binds; a positional x-bucket parser is needed. The
+    # underscore tokens 'op_stk'/'cl_stk' appear in NO other stock_pdf gate; the
+    # combination op_stk+rcpts+hos.sal+cl_stk is unique to this vendor (kluster's
+    # 'hos.sales'+'lms' rule below cannot fire — this header has no LMS column).
+    if "op_stk" in low and "rcpts" in low and "hos.sal" in low and "cl_stk" in low:
+        return "meyon_prevmonth_stock"
     if "hos.sales" in low and "lms" in low:
         return "kluster_stock"
     # PharmAssist (C-Square) 'Stock and Sales Mfac Group Wise Report' — glyph-interleaved
     # text needs positional (x-coordinate) parsing. Title token is unique to this export.
     if "mfac group wise" in low:
         return "pharmassist_mfac"
+    # C-Square 'Manufacturerwise Stock and Sales Report' (UNIVERSAL DRUG LINES, TIRUR):
+    # Item|Pack|L.Sale|SaleRate|Op.Qty|Pur.Qty|Sal.Qty|Sal.Val|Cr.Qty|Adj|Bal.Qty|Bal.Val,
+    # banded by 'Manufacture: KLM LABORATORIES <DIV> DIV.'. The leading Item/Pack/L.Sale/
+    # SaleRate glyph-interleave in the text layer, so a trailing-8-numeric anchor is used.
+    # The compact title 'manufacturerwisestockandsalesreport' + the exact header run
+    # 'op.qtypur.qtysal.qtysal.valcr.qtyadjbal.qtybal.val' is unique to this C-Square export
+    # (no other stock_pdf gate references 'manufacturerwise' or this Op/Pur/Sal.Val/Bal.Val
+    # header run), so it cannot steal other vendors. MUST precede the generic fallthrough.
+    _c_mfrw = low.replace(" ", "")
+    if ("manufacturerwisestockandsalesreport" in _c_mfrw
+            and "op.qtypur.qtysal.qtysal.valcr.qtyadjbal.qtybal.val" in _c_mfrw):
+        return "csquare_manufacturerwise_stock_sales"
     # Marg qty-only 'Stock and Sales' group-wise report (BASHA, KAMAKSHI): 4 qty
     # columns Opening Qty / Recd.Qty / Issued Qty / ClsQty with blank interior cells
     # and a header value-totals block. 'recd.qty'+'clsqty' is unique to this export;
@@ -35,6 +57,17 @@ def detect_layout(text, n_rects):
     # comma-grouped value row). FATIMA HEALTHCARE ships the identical BlueFox
     # export titled "Stock And Sales from <date> to <date>" (no "Report"), hence
     # the second title form — still gated by both unique header tokens.
+    # SmartPharma360 'Stock And Sales Report' (SRI BABA MEDICAL DISTRIBUTORS, KLM):
+    # header Product Name|Pack|Open stock|Opening Value|Pur.Total|Pur.Value|Sales Total|
+    # Sale Value|sale ret total|sale ret val.|Closing qty|Closing Value|Age (10 movement/value
+    # cols + Age, 11 numeric tokens/row, all printed). The coarse 'generic' fallback mis-binds
+    # the interleaved value columns into qty fields. Gate on the unique header run
+    # 'openstockopeningvaluepur.totalpur.value' + 'saleretval' (also the smartpharma360
+    # watermark) — absent from every other stock layout; the BlueFox central_stock_sales export
+    # below is additionally gated on 'br/e', absent here. MUST precede that rule.
+    if ("openstockopeningvaluepur.totalpur.value" in low.replace(" ", "")
+            and "saleretval" in low.replace(" ", "")):
+        return "smartpharma_sas"
     _c_central = low.replace(" ", "")
     if (
         ("stockandsalesreport" in _c_central or "stockandsalesfrom" in _c_central)
@@ -42,6 +75,17 @@ def detect_layout(text, n_rects):
         and "salevaluef.valueqtybal.val" in _c_central
     ):
         return "central_stock_sales"
+    # MEDICHEM PHARMA (Haridwar, KLM ERP) "Stock and Sales Statement from <d> to <d>"
+    # — one file per KLM division. Sales columns are printed BEFORE purchase columns and
+    # every zero cell prints an explicit '-', giving a fixed 14-numeric-token tail per row
+    # (Opening | Sales Qty/Free/Amount/Return | Purchase Qty/Free/Amount/Return | Other |
+    # Closing Bal/Amount | Expiry In/Out). Generic mis-binds these (Sales->purchase, closing
+    # lands on the always-dash Expiry-Out). The header run "Other Closing Closing Expiry
+    # Expiry" (compact 'otherclosingclosingexpiryexpiry') is unique to this export and
+    # appears in no other stock layout. MUST precede the coarse simple4/generic fallthroughs.
+    _comp_mch = low.replace(" ", "")
+    if "stockandsalesstatement" in _comp_mch and "otherclosingclosingexpiryexpiry" in _comp_mch:
+        return "medichem_ss_expiry"
     # Medicine Traders (Ajmer) SwilERP "Sales & Stock Statement": PRODUCT NAME | PACKING
     # | Op.Bal. | Receipt | Free Q | Total | Issue | Free Q | Closing. Two separate Free-Q
     # columns (receipt-free inflow, issue-free outflow) around a printed Total cross-check,
@@ -131,6 +175,18 @@ def detect_layout(text, n_rects):
         and "issue" not in low
     ):
         return "marg_sale_closing_pdf"
+    # KLM 'Stock And Sale Report(Month)' — Rcpt dialect (SHREE SHIVASAKTHI
+    # MEDICAL). Sibling of klm_stock_sales_month / klm_stock_sales_month_repq;
+    # header 'Product Name Pack OpStk Rcpt Apr2 May2 sales Cl.S StkValu SalValu
+    # Expiry Age' (title says 'Sale' not 'Sales', has no PrvSa/RepQ tokens).
+    # Zero cells blank out + right-aligned => positional x-bucket parser. Gate
+    # on the compact header run 'opstkrcpt' + 'cl.sstkvalusalvalu' (unique to
+    # this export; the two prev-month cols Apr2/May2 rename monthly so they are
+    # NOT gated). Must precede the prvsa rule below and the generic fallthrough.
+    _comp_rcpt = low.replace(" ", "")
+    if ("stockandsalereport(month)" in _comp_rcpt and "opstkrcpt" in _comp_rcpt
+            and "cl.sstkvalusalvalu" in _comp_rcpt):
+        return "klm_stock_sales_month_rcpt"
     # Marg (KLM) "Stock and Sale Report" (SRI SENTHIL MEDICAL AGENCIES):
     # Product Name|Pack|OpStk|Purch|PrvSa|Sales|Adj|Cl.St|P.price|Sales Valu|Age.
     # Interior qty cells (PrvSa/Sales/Adj/Cl.St) blank out for no-movement rows,
@@ -174,11 +230,31 @@ def detect_layout(text, n_rects):
     # Blank zero-cells + mixed left/right alignment => positional parser. 'repq'/'stockvaluelpd'
     # appear in no other gate; the sibling below requires 'opstpursalefreeadjcl.s' which this
     # dialect lacks (mutually exclusive). MUST precede the sibling.
+    # KLM 'Stock And Sales Report(Month)' — TotS/Sale_Val dialect (VASAN MEDICAL
+    # AGENCIES; one report per division). Header: 'ProductName Pack Op.Qt Purch Free
+    # AprP_ MayL_ C_Sal Free Repl Adj Tot.S Sale_Val' (two prev-month cols AprP_/MayL_
+    # rename monthly, NOT gated). Zero cells blank out + right-aligned => positional
+    # x-bucket parser. Gate on 'op.qtpurchfree' + 'tot.ssale_val' + title; disjoint from
+    # the sibling KLM-month dialects (opstpursalefreeadjcl.s / opstpurq / openingpureilast
+    # / opstkrcpt). MUST precede those siblings and the coarse fallbacks below.
+    _comp_tots = low.replace(" ", "")
+    if ("stockandsalesreport(month)" in _comp_tots and "op.qtpurchfree" in _comp_tots
+            and "tot.ssale_val" in _comp_tots):
+        return "klm_stock_sales_month_tots"
     _comp_repq = low.replace(" ", "")
     if ("stockandsalesreport(month)" in _comp_repq and "opstpurq" in _comp_repq
             and "repqsalevalue" in _comp_repq and "stockvaluelpd" in _comp_repq):
         return "klm_stock_sales_month_repq"
     compact = low.replace(" ", "")
+    # KLM 'Stock And Sales Report(Month)' — NetStock dialect (BIOLEND): header
+    # 'Opening Pure ILast Sale Free Rpl Total NetStock Val SaleNet@Pur'. Positional
+    # x-bucket parser (blank zero cells). Tokens 'openingpureilast'/'netstock'/'@pur'
+    # appear in no other gate and are disjoint from the repq/opstpursalefreeadjcl.s
+    # siblings; MUST precede the n_rects>400 -> marg_bordered rule (each page has 443
+    # rects) and the klm_stock_sales_month sibling below.
+    if ("stockandsalesreport(month)" in compact and "openingpureilast" in compact
+            and "netstock" in compact and "@pur" in compact):
+        return "klm_stock_sales_month_netstock"
     if "stockandsalesreport(month)" in compact and "opstpursalefreeadjcl.s" in compact:
         return "klm_stock_sales_month"
     # Saleable Stock Report (SURANA DRUG DISTRIBUTORS): pipe-delimited text PDF,
@@ -201,10 +277,23 @@ def detect_layout(text, n_rects):
     # title + the 'PharmAssist' watermark cannot steal any other vendor. Blank interior
     # cells + glyph-interleaved name/pack -> needs a positional parser. MUST precede the
     # page-split gate and the coarse stock_simple_7col/generic rules below.
+    # NEW SUJITH PHARMA ships the SINGLE-PAGE PharmAssist export with a bare "Br" column
+    # (no Bsc), so 'brbsc' is absent; but the wide right-block header (BVal/SVal/Order/Adj)
+    # is present and unique to this single-page family. Accept it as an alternative to
+    # 'brbsc'. 'item code'/'item name' ABSENT keeps it off the page-split sibling below.
     if (
         "stock and sale report" in low
         and "pharmassist" in low
-        and "brbsc" in low.replace(" ", "")
+        and (
+            "brbsc" in low.replace(" ", "")
+            or (
+                "bval" in low.replace(" ", "")
+                and "sval" in low.replace(" ", "")
+                and "order" in low.replace(" ", "")
+                and "adj" in low.replace(" ", "")
+                and "item code" not in low
+            )
+        )
     ):
         return "pharmassist_stock_sale_single"
     # PharmAssist (C-Square) 'Stock and Sale Report' — HORIZONTAL PAGE-SPLIT sibling of
@@ -267,6 +356,18 @@ def detect_layout(text, n_rects):
         and "totalsale" in _compact
     ):
         return "klm_stock_sales_combined_pdf"
+    # KLM "Stock Sales Statement (Small)" wrapped positional export (MUDRAA/WARAD):
+    # Rate|Openin|Reciept|Sales|Free|SalesRt|Closing (note the vendor's misspellings
+    # 'Reciept'/'SalesRt'). Numbers wrap their low-order digits onto continuation lines,
+    # so a positional x-bucket parser is required. The compact title 'stocksalesstatement
+    # small' + the misspelled 'reciept'+'salesrt' tokens are unique to this KLM export
+    # (mutually exclusive with combined_pdf's 'statement(combined)'), so it steals nothing.
+    if (
+        "stocksalesstatementsmall" in _compact
+        and "reciept" in _compact
+        and "salesrt" in _compact
+    ):
+        return "klm_stock_sales_small_pdf"
     # Prompt ERP "Stock Statement (Datewise)" — free-carrying KLM variant (V.G.RAJA).
     # Same Prompt export as `prompt`, but the numeric sub-header carries dedicated
     # Pur.Free + Sales.Free columns plus a Sales Amount and a Closing Amount:
@@ -300,12 +401,15 @@ def detect_layout(text, n_rects):
     # so the coarse `stock & sales`->simple4 rule would mis-map it. The compact title
     # "stock&salesstatementdetailed" (or the O.Bal+Purc+S.Ret+ClBal+Cl.Value column set)
     # is unique to this export, so this must precede every coarse "stock & sales" rule.
+    # PADMAJA is the 9-column sibling: header 'O.Bal Purches Sal.Ret Total Sales Pur.Ret
+    # Cl.Bal Cl.Value Age' (ONE Total, and dotted Sal.Ret/Cl.Bal spellings), so accept the
+    # 'sal.ret'/'cl.bal' variants alongside SRI DURGA's 's.ret'/'clbal'.
     _compact = low.replace(" ", "")
     if "stock&salesstatementdetailed" in _compact or (
         "o.bal" in _compact
         and "purc" in _compact
-        and "s.ret" in _compact
-        and "clbal" in _compact
+        and ("s.ret" in _compact or "sal.ret" in _compact)
+        and ("clbal" in _compact or "cl.bal" in _compact)
         and "cl.value" in _compact
     ):
         return "marg_ss_statement_detailed"
@@ -324,6 +428,17 @@ def detect_layout(text, n_rects):
         return "marg_web_stock"
     if n_rects > 100 and "stock statement" in low:
         return "prompt_bordered"
+    # PURANI HOSPITAL SUPPLIES "MFR Stock and Sales Report" — HTML-print-to-PDF twin of
+    # the stock_xlsx purani_mfr_stock_sales layout (one PDF per KLM division). Every cell
+    # is boxed (>400 rects) so the n_rects>400 -> marg_bordered catch-all below steals it
+    # and mis-binds -> SANITY_FAILED. The 18-col table right-aligns every number and wraps
+    # each product name over several lines, so a positional (word x1) parser is required.
+    # The compact header run 'o.stpurfreeprtnmbmonlmonmonc.st' is unique to this Purani
+    # export; paired with the 'mfr stock and sales report' title it cannot steal any other
+    # vendor. MUST precede the n_rects>400 rule below.
+    if ("mfr stock and sales report" in low
+            and "o.stpurfreeprtnmbmonlmonmonc.st" in low.replace(" ", "")):
+        return "purani_mfr_stock_sales_pdf"
     if n_rects > 400:
         return "marg_bordered"
 
@@ -452,6 +567,15 @@ def detect_layout(text, n_rects):
         and "balance" in low
     ):
         return "marg_stock_summary"
+    # SRI SHIRIDI SAI "STOCK AND SALES STATEMENT" free-goods variant: Item Name | Pack |
+    # Opening | Received | Free | Issued | Free | Closing | Free (7 qty numbers/row). It
+    # carries 'Opening Value'/'Sales Value On prate' summary tokens that spuriously trip the
+    # loose value_pairs rule below (rate+opening+issue+value), whose >=8-number parser then
+    # yields 0 rows -> generic mis-bind. The existing marg_open_pur_free_sale parser binds
+    # all 7 columns correctly (Received->purchase, Issued->sales); gate on the unique
+    # 'received free'+'issued free' run and route here BEFORE value_pairs.
+    if "item name" in low and "received free" in low and "issued free" in low:
+        return "marg_open_pur_free_sale"
     # NOTE: do NOT add a dedicated rule for the VIPIN "ITEM DESCRIPTION RATE
     # OPENING..CLOSING DUMP" qty+value PDF: the JINDAL/SHRIJI (M.EXP) and 5S
     # PHARMA exports share the same compact header but a different row shape,
@@ -495,6 +619,13 @@ def detect_layout(text, n_rects):
         and "closing" in low
     ):
         return "stock_open_pur_sale_free_current"
+    # SREE SUPREME / ANANDH DOSPrinter "STOCK & SALES STATEMENT" — grouped two-row
+    # header OPENING/RECEIPT/SALES(LAST,QTY,FREE)/ADJMT/CLOSING(QTY,FREE,VALUE)/AGE.
+    # Every zero cell prints '-' so token counts vary -> needs a positional parser.
+    # The doubled sub-header run is unique to this export; MUST precede stock_simple_7col
+    # (which otherwise maps closing_stock <- SALES-LAST and fails sanity).
+    if "qtyqtyfreelastqtyfreestockqtyfreevaluedays" in re.sub(r"\s+", "", low):
+        return "stock_sales_statement_adjmt_positional"
     if (
         "name" in low
         and "pack" in low
@@ -522,12 +653,30 @@ def detect_layout(text, n_rects):
         and "closing bala" in low
     ):
         return "qty_value_total"
+    # AMRITA "STOCK & SALES ANALYSIS" — qty-only-Receipt variant (COSMOCOR division): the
+    # RECEIPT group has a QTY column ONLY, giving 7 numeric cells/row (Opening q/v, Receipt q,
+    # Issue q/v, Closing q/v). Its Issue+Closing tail satisfies the stock_oric_pairs gate below,
+    # which then expects a paired Receipt value and shifts every column -> sanity 0.0. The full
+    # sub-header run 'qty.valueqty.qty.valueqty.value' is NOT a substring of the paired run
+    # 'qty.valueqty.valueqty.valueqty.value', so it can't steal the paired AMRITA files. MUST
+    # precede stock_oric_pairs.
+    if (
+        "stock & sales analysis" in low
+        and "qty.valueqty.qty.valueqty.value" in low.replace(" ", "")
+    ):
+        return "stock_oric_receipt_qtyonly"
     if (
         "opening" in low
         and "receipt" in low
         and "issue" in low
         and "closing" in low
-        and "qty. value qty. value" in low
+        # whitespace-tolerant: D.D. ENTERPRISE keeps multi-space column gaps in the
+        # "QTY.     VALUE     QTY.     VALUE" sub-header, so the single-spaced literal
+        # misses it and it falls to the coarse simple4 rule (reads 8-num rows as 4).
+        and (
+            "qty. value qty. value" in low
+            or "qty.valueqty.value" in low.replace(" ", "")
+        )
     ):
         return "stock_oric_pairs"
     if "opening" in low and "receipt" in low and "issue" in low and "closing" in low:
@@ -548,6 +697,17 @@ def detect_layout(text, n_rects):
             return "prompt"
         if "stock statement for company" in low and "pks data" in low:
             return "pks_data"
+        # SwilERP 'Sales & Stock Statement' 9-column Receipt/Issue/Retrn dialect (JAY
+        # SHREE): Op.Bal|Receipt|Retrn|Total|Issue|Retrn|Closing|Dump|Near. Its header
+        # says 'Op.Bal.' (not 'opening'), so it reaches this coarse rule which would pop
+        # only the first 4 of the 9 numbers. The doubled Retrn + Total run is shared with
+        # the 7-column sibling of this SwilERP family (PRAKASH MED. AGENCY: same header
+        # WITHOUT the trailing Dump/Near, which stays on simple4), so gate additionally on
+        # 'dumpnear' — the two extra columns that make this the 9-number dialect our
+        # parser reads.
+        _swil = low.replace(" ", "")
+        if "receiptretrntotalissueretrnclosing" in _swil and "dumpnear" in _swil:
+            return "swil_recv_issue_stock"
         return "simple4"
     if "monthly sales and stock" in low:
         return "saurashtra_monthly"
@@ -601,5 +761,18 @@ def detect_layout(text, n_rects):
 
     if re.search(r"s\.?no\s+product\s+name\s+packing\s+opening\s+purchas", low):
         return "siva_stock"
+
+    # KLM 'STOCK AND SALES ANALYSIS' — P.Code-led per-division statement (PRABHAT
+    # AGENCY). Header: P.Code ITEM NAME PACK OP. Pur. SP P.Ret SALE SS S.Ret Adj.
+    # Cls.Stk <M1> <M2>. Clean text, fixed 11-token stat tail (blanks print '-').
+    # Trailing two columns are prev-month sales whose labels rename per period, so
+    # drop them positionally. The 'p.code'+'cls.stk'+'s.ret'+'adj.' column vocabulary
+    # under the 'stock and sales analysis' title (word AND, not ampersand) is unique to
+    # this KLM export — both PRABHAT files currently fall to 'generic'. MUST precede it.
+    _comp_pcode = low.replace(" ", "")
+    if ("stock and sales analysis" in low and "p.code" in low
+            and "cls.stk" in _comp_pcode and "s.ret" in _comp_pcode
+            and "adj." in _comp_pcode):
+        return "klm_stock_sales_analysis_pcode"
 
     return "generic"

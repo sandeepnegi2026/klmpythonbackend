@@ -39,6 +39,23 @@ def records_from_mapped(headers, rows, header_idx):
             and any(BARE_TOTAL_RE.match(str(cell).strip()) for cell in raw_row)
         ):
             continue
+        # An UNLABELED totals footer (KHURANA, SHRI RAM JEE) prints only numbers with no
+        # party, product OR serial identity at all — [None,None,None,qty,free,amount,None] —
+        # so the label-based guards above never fire and carry-down would stamp it a phantom
+        # sale, exactly doubling the file totals. No real sale line lacks all three identities,
+        # so drop a row whose own party, product and invoice cells are blank while a mapped
+        # numeric column is populated. Runs before carry-down.
+        if (
+            not party_value
+            and not str(record.get("product_name", "")).strip()
+            and not str(record.get("invoice_number", "")).strip()
+        ):
+            numeric_keys = [
+                k for k in ("qty", "free_qty", "amount", "net_amount", "taxable_value")
+                if k in record
+            ]
+            if numeric_keys and any(str(record.get(k, "")).strip() for k in numeric_keys):
+                continue
         location_value = str(
             record.get("party_location") or record.get("party_area") or ""
         ).strip()

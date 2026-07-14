@@ -1,5 +1,7 @@
 from extractors.stock_pdf.layouts.dahod_marg import parse_dahod_marg
 from extractors.stock_pdf.layouts.generic import parse_generic
+from extractors.stock_pdf.layouts.stock_sales_statement_adjmt_positional import parse_stock_sales_statement_adjmt_positional
+from extractors.stock_pdf.layouts.stock_oric_receipt_qtyonly import parse_stock_oric_receipt_qtyonly
 from extractors.stock_pdf.layouts.marg_lms_simple import parse_marg_lms_simple
 from extractors.stock_pdf.layouts.marg_opstk_statement import parse_marg_opstk_statement
 from extractors.stock_pdf.layouts.marg_qty_value_wide import parse_marg_qty_value_wide
@@ -78,7 +80,32 @@ from extractors.stock_pdf.layouts.product_wise_stock_sale_profit import (
     parse_product_wise_stock_sale_profit,
 )
 
+from extractors.stock_pdf.layouts.klm_stock_sales_month_netstock import parse_klm_stock_sales_month_netstock
+from extractors.stock_pdf.layouts.klm_stock_sales_month_rcpt import parse_klm_stock_sales_month_rcpt
+from extractors.stock_pdf.layouts.klm_stock_sales_analysis_pcode import parse_klm_stock_sales_analysis_pcode
+from extractors.stock_pdf.layouts.klm_stock_sales_small_pdf import parse_klm_stock_sales_small_pdf
+from extractors.stock_pdf.layouts.medichem_ss_expiry import parse_medichem_ss_expiry
+from extractors.stock_pdf.layouts.meyon_prevmonth_stock import parse_meyon_prevmonth_stock
+from extractors.stock_pdf.layouts.smartpharma_sas import parse_smartpharma_sas
+from extractors.stock_pdf.layouts.csquare_manufacturerwise_stock_sales import parse_csquare_manufacturerwise_stock_sales
+from extractors.stock_pdf.layouts.klm_stock_sales_month_tots import parse_klm_stock_sales_month_tots
+from extractors.stock_pdf.layouts.purani_mfr_stock_sales_pdf import parse_purani_mfr_stock_sales_pdf
+from extractors.stock_pdf.layouts.swil_recv_issue_stock import parse_swil_recv_issue_stock
+
 TEXT_PARSERS = {
+    "stock_sales_statement_adjmt_positional": parse_stock_sales_statement_adjmt_positional,
+    "stock_oric_receipt_qtyonly": parse_stock_oric_receipt_qtyonly,
+    "swil_recv_issue_stock": parse_swil_recv_issue_stock,
+    "klm_stock_sales_month_tots": parse_klm_stock_sales_month_tots,
+    "purani_mfr_stock_sales_pdf": parse_purani_mfr_stock_sales_pdf,
+    "klm_stock_sales_month_netstock": parse_klm_stock_sales_month_netstock,
+    "klm_stock_sales_month_rcpt": parse_klm_stock_sales_month_rcpt,
+    "klm_stock_sales_analysis_pcode": parse_klm_stock_sales_analysis_pcode,
+    "klm_stock_sales_small_pdf": parse_klm_stock_sales_small_pdf,
+    "medichem_ss_expiry": parse_medichem_ss_expiry,
+    "meyon_prevmonth_stock": parse_meyon_prevmonth_stock,
+    "smartpharma_sas": parse_smartpharma_sas,
+    "csquare_manufacturerwise_stock_sales": parse_csquare_manufacturerwise_stock_sales,
     "stock_lstsl": parse_stock_lstsl,
     "product_wise_stock_sale_profit": parse_product_wise_stock_sale_profit,
     "central_stock_sales": parse_central_stock_sales,

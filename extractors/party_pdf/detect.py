@@ -17,6 +17,10 @@ def detect_format(text, n_rects, n_lines):
         return "profitmaker"
     if "partynameitemnamequantityfreeamount" in tl_compact:
         return "sale_register_consolidated"
+    # KHATTAR "SALE REGISTER CONSOLIDATED" variant with an extra AVG.RATE column
+    # (PARTY NAME ITEM NAME QUANTITY FREE AVG.RATE AMOUNT -> 4 numbers/row).
+    if "partynameitemnamequantityfreeavg.rateamount" in tl_compact:
+        return "sale_register_consolidated"
     # SwilERP "Product-Customer Wise Sales" (CAPITAL PHARMA AGENCIES): product
     # bands with per-customer rows (Customer | Station | Qty | Sales Value).
     # Positional — word x0 slices the columns the flat text can't.
@@ -66,6 +70,18 @@ def detect_format(text, n_rects, n_lines):
     # 282 busy_tally files carry the same title but none carry 'avr.rate'. MUST precede busy_tally.
     if "party/itemwisesalessummary" in tl_compact and "avr.rate" in tl_compact:
         return "party_item_summary_sr_total"
+    # AMRITA "PARTY / ITEM WISE SALES SUMMARY" QTY+FREE-only variant (header
+    # 'D E S C R I P T I O N QTY. FREE' — NO rate/amount/value column). Both
+    # party_item_summary_nofree (needs money tokens) and busy_tally 0-row it.
+    # The 'freerateamount' exclusion protects the area_item_sales_summary sibling
+    # (its header contains 'descriptionqty.free' as a substring). MUST precede busy_tally.
+    if (
+        "party/itemwisesalessummary" in tl_compact
+        and "descriptionqty.free" in tl_compact
+        and "descriptionqty.freerateamount" not in tl_compact
+        and "avr.rate" not in tl_compact
+    ):
+        return "party_item_summary_qtyfree"
     if "party / item wise" in tl or "party/item" in tl:
         return "busy_tally"
     if (
@@ -87,6 +103,15 @@ def detect_format(text, n_rects, n_lines):
         and "statement" not in tl_compact
     ):
         return "prompt_free_qty"
+    # Prompt ERP "Normal" party-billwise, mixed-case BillRef variant (SHRI ASHOK
+    # "klm party"). Same header/structure as prompt_normal but BillRefs are Cash/1130,
+    # Credit-L/196, Credit-O/261 (mixed/lower-case), which prompt_normal's uppercase-only
+    # regex 0-rows. Gated on the mixed-case token; MUST precede the prompt_normal rule.
+    if (
+        "productpackbillrefdatemrpbatchqtyfreerateamount" in tl_compact
+        and (re.search(r"cash/\d", tl) or "credit-" in tl)
+    ):
+        return "prompt_billwise_mixed"
     if re.search(r"(normal|party)\s+from:", tl) and (
         "billref" in tl_compact or "bill ref" in tl
     ):
@@ -172,6 +197,22 @@ def detect_format(text, n_rects, n_lines):
         and "invoiceinvoiceproductnamepackingbatchquantityfreepricevaluediscount" in cfull
     ):
         return "klm_company_customer_invoice"
+    # SmartPharma360 "Customer-Company wise Product Sales" (KLM): Company Name: bands ->
+    # per-invoice rows (Inv.No|InvDate|Product Name|Batch|Qty|Free|Rate|Value). Distinct
+    # header from the klm_company_customer_invoice sibling above. Tail-placed.
+    if (
+        "customer-companywiseproductsales" in cfull
+        and "inv.no.invdateproductnamebatchqtyfreeratevalue" in cfull
+    ):
+        return "smartpharma_customer_company_sales"
+    # SRI SHIRIDI SAI "Group Vs Customer Details" (KLM): product item-line + number-line
+    # merged per row, customer-code paren bands. Distinct from klm_customer_vs_item below
+    # (which needs 'customervsitemdetails'); tokens unique. Tail-placed.
+    if (
+        "groupvscustomerdetails" in cfull
+        and "towndatenumberbatchmrpqtyfreereplacerategrossvaluenetvalue" in cfull
+    ):
+        return "klm_group_vs_customer"
     if (
         "customervsitemdetails" in cfull
         and "itemnameitemtownbilldatebillno" in cfull
@@ -212,6 +253,26 @@ def detect_format(text, n_rects, n_lines):
         and "productnamecustomernamebillnumberbilldatpackquanfreereplsalesvalue" in cfull
     ):
         return "areawise_sales_billwise"
+    # SHREE SHIVASAKTHI MEDICAL AGENCIES "Areawise Sales Report" (KLM billwise,
+    # monospace DOS export): CUSTOMER bands -> bill/item rows -> Customer Sub
+    # Total + bare-7-num roll-up echoes. Different column order from JEYANTHI
+    # (bill-first with customer BAND vs product-first with customer COLUMN), so
+    # its header token is unique. Tail-placed so every existing rule wins first.
+    if (
+        "areawisesalesreport" in cfull
+        and "billnumberbilldatepproductnamepackingquantfreeqdsalevaluetaxamounetamountrep" in cfull
+    ):
+        return "shivasakthi_areawise_billwise"
+    # VASAN MEDICAL AGENCIES "Areawise Sales Report ... for <DIV> KLM LABORATORIES
+    # PVT LTD": PRODUCT-FIRST billwise, AREA/CUSTOMER/TOWN carried in a positional
+    # BAND (split by word x0), free/scheme qty in 'Free' col, 'Repl' always '-'.
+    # Its column header differs from JEYANTHI's (packi/billnumber/qty/free/repl/
+    # saleval) so no overlap. Tail-placed.
+    if (
+        "areawisesalesreport" in cfull
+        and "productnamepackibillnumberbilldateqtyfreereplsaleval" in cfull
+    ):
+        return "vasan_areawise_billwise"
     # C.D. ASSOCIATES "Customer & Product Sales" (Customer:<name> City:<city> bands, MP#####
     # invoice rows). Tail-placed so every existing rule wins first.
     if "customer&productsales" in cfull and "inv.nodateproductpackbatchqtyfreeratevalue" in cfull:
@@ -223,8 +284,24 @@ def detect_format(text, n_rects, n_lines):
     # CENTRAL AGENCIES "Areawise Sales Statment" (KLM billwise, text/plumber).
     # Signature = its unique compact column header; "codecustomernamerepcode"
     # collides with no other layout. Tail-placed so every existing rule wins.
+    # CENTRAL DISTRIBUTORS "Areawise Sales Statment" — Packing-column variant of the
+    # CENTRAL AGENCIES areawise_sales_statement: header carries an explicit "Packing"
+    # column and the Rep Code is an alphabetic rep *name*, so the numeric-rep
+    # areawise_sales_statement parser reads 0 rows. Its header token is a SUPERSET of the
+    # plain gate below, so it MUST precede it.
+    if "billnobilldatecodecustomernamerepcodeproductnamepackingqtyfreeqty" in cfull:
+        return "areawise_sales_statement_packing"
     if "billnobilldatecodecustomernamerepcodeproductname" in cfull:
         return "areawise_sales_statement"
+    # CENTRAL AGENCIES "Areawise Sales Statement" — AREA+CUSTOMER banded BlueFox variant
+    # (KLM COSMO): NO Code/Customer Name/Rep Code column, so its header reads
+    # 'billnobilldateproductname...' (not 'billnobilldatecodecustomername...'). Mutually
+    # exclusive with the two gates above; party comes from the comma-bearing customer sub-band.
+    if (
+        "areawisesalesstatement" in cfull
+        and "billnobilldateproductnamepackingqtyfreeqtyamount" in cfull
+    ):
+        return "areawise_sales_statement_banded"
     # VASAVI MEDICARE "Area Wise Sales Report for the period of <ISO> and
     # <ISO>": "<CODE> - <PARTY>, <AREA>-<PIN>" bands + invoice rows. Signature =
     # title + its compact column header. Tail-placed. (The JEYANTHI
@@ -250,4 +327,50 @@ def detect_format(text, n_rects, n_lines):
         and "billdatebillnoproductpackingqtyfreeamount" in cfull
     ):
         return "bluefox_customerwise_sales"
+    # PURANI HOSPITAL SUPPLIES "BackBone MFR Sales Detail Report" (11-col lattice):
+    # Product|BillNo/Date|Customer|City|Batch|Expiry|Qty|Free|Rpl|PTR|Total Sales.
+    # Positional lattice parser + straddle recovery. Tail-placed.
+    if (
+        "mfrsalesdetailreport" in cfull
+        and "productnamebillno/datecustomernamecitybatchexpiryqtyfreeqty" in cfull
+    ):
+        return "backbone_mfr_sales_detail"
+    # RAKESH MEDICAL STORES (Shimla) LOGIC ERP "CUSTOMER+ITEM WISE SALE". Positional;
+    # '+' title distinguishes it from the hyphen 'customer-itemwisesale' rule above.
+    if "customer+itemwisesale" in cfull and "customernameitemname" in cfull:
+        return "customer_item_wise_sale"
+    # KAPOOR MEDICAL STORE "PARTY+ITEM WISE SALE" (Marg billwise, positional): PARTY
+    # NAME bands -> SNO|BILL NO|BILL DATE|ITEM|QTY|[FREE]|EXPIRY|MRP|GROSS|NET rows.
+    if (
+        "party+itemwisesale" in cfull
+        and "billno.billdateitemname" in cfull
+    ):
+        return "kapoor_party_itemwise_sale"
+    # UNIVERSAL MEDICAL AGENCY Marg "SALE SUMMARY" party-level roll-up (text): one row
+    # per party "<PARTY> <int-May> <TotalValue>". Month-agnostic gate; 'salesummary'
+    # (single 's') is NOT a substring of company_party_summary's 'salessummary'.
+    if "salesummary" in cfull and "totalvalue" in cfull and "netsales" in cfull:
+        return "marg_sale_summary_party"
+    # KRISHNA SAI "Sales Statement Summary" (KLM division reports). ITEM-primary rows;
+    # gated on title + its exact compact ITEM-first column header (distinct from the
+    # PARTY-first sale_register 'partynameitemname...').
+    if (
+        "salesstatementsummary" in cfull
+        and "itemnamepartynamequantityfreesaleamounttaxamount" in cfull
+    ):
+        return "sales_statement_summary_itemwise"
+    # BALAJI "Mfacwise Custwise Areawise Itemwise Report" (KLM COSMO). Single unique token.
+    if "mfacwisecustwiseareawiseitemwisereport" in cfull:
+        return "mfacwise_custwise_itemwise"
+    # SREE SUPREME (NAMAKKAL) KLM CASMO DOS exports — two sibling positional billwise
+    # reports. Slash/dot tokens are distinct from the hyphenated product/customer gates.
+    if "prod/cust.wisesales" in cfull and "inv.noinv.datecustomernameplaceqtyfreereplratevalue" in cfull:
+        return "prodcust_wise_billwise"
+    if "area-prod-wisesales" in cfull and "productnamepackginv.noinv.dateqtyfreereplvalue" in cfull:
+        return "areaprod_wise_billwise"
+    # Agrawal "Customer-Product wise Sales": CODE-NAME party headings + product rows
+    # 'Product Name Packing Qty. Freeqty Value' (no product-code column, so distinct
+    # from customer_product_grouped's 'productcodeproductnamepacking' gate above).
+    if "customer-productwisesales" in cfull and "productnamepackingqty.freeqtyvalue" in cfull:
+        return "customer_product_wise_packing"
     return "unknown"

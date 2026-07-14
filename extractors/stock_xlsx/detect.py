@@ -278,6 +278,26 @@ def detect_excel_layout(rows):
         and "stkad" not in flat
     ):
         return "klm_venus_opstk_crqty"
+    # KLM "STOCK & SALES ANALYSIS" single-column TEXT dump — REDUCED 4-column form (AMETOMBI):
+    # header 'ITEM DESCRIPTION OPENING RECEIPT ISSUE CLOSING M.EXP'. Only 4 movement columns, so
+    # the 14-number marg_stock_analysis_text parser drops every row. Gated on RECEIPT+ISSUE with
+    # NO 'dump'/'purchases'; verified to match only the 2 AMETOMBI books. MUST precede the fallback.
+    if (
+        single_col and "itemdescription" in flat and "receipt" in flat and "issue" in flat
+        and "closing" in flat and "m.exp" in flat and "dump" not in flat
+        and "purchases" not in flat
+    ):
+        return "stock_sales_analysis_oic_xlsx"
+    # KLM "STOCK & SALES ANALYSIS" single-column TEXT dump — WIDE movement grid (KRISHNA PHARMA):
+    # OPENING/PURCHASES/SALE-RETURN/OTHERS/TOTAL/SALES/PURCH-RETURN/OTHERS/CLOSING/RE-ORDER.
+    # Gated on the distinctive PURCHASES + REPL./ + RE-ORDER tokens and the ABSENCE of 'receipt',
+    # disjoint from the OIC gate above; verified to match only the KRISHNA PHARMA book.
+    if (
+        single_col and "itemdescription" in flat and "purchases" in flat and "repl./" in flat
+        and "reorder" in flat and "m.exp" in flat and "closing" in flat
+        and "receipt" not in flat
+    ):
+        return "stock_sales_analysis_wide_xlsx"
     if single_col and "itemdescription" in flat and "m.exp" in flat and "opening" in flat:
         return "marg_stock_analysis_text"
     # KLM "DETAILED" stock statement (VENKATA SAI) — a grid pairing a "Free" column after
@@ -367,6 +387,15 @@ def detect_excel_layout(rows):
     # tabular reader fuzz-binds it to closing_value). Unique underscore-abbrev header set.
     if "sale_qty" in flat and "op_bal" in flat and "cl_bal" in flat and "sret_qty" in flat and "bon_qty" in flat:
         return "klm_sale_dtl_xlsx"
+    # DHRUVI HEALTH CARE (klm.xlsx) 'OP/OPVal/PI/PIVal/Sale/SI Value/CLQty/CLValue' grid —
+    # the OUT-less sibling of klm_op_pi_clqty_xlsx (NO ST(Out)/ST Value column). PI has no
+    # synonym so generic tabular drops it -> closing never reconciles. Requires the value set
+    # AND the ABSENCE of st(out), keeping it disjoint from the ST(Out)-bearing sibling below.
+    if (
+        "clqty" in flat and "clvalue" in flat and "sivalue" in flat
+        and "pival" in flat and "opval" in flat and "st(out)" not in flat
+    ):
+        return "klm_op_pi_sale_cl_value_xlsx"
     # DHRUVI KLM 'OP/PI/Sale/ST(Out)/CLQty' export: PI (purchase) and ST(Out) are dropped by
     # generic tabular (no synonym), so closing never reconciles. Unique abbrev header set.
     if "clqty" in flat and "clvalue" in flat and "st(out)" in flat and "sivalue" in flat and "pival" in flat:
@@ -393,4 +422,34 @@ def detect_excel_layout(rows):
         and "clos_qty" in flat
     ):
         return "stock_op_rec_iss_clos_grid"
+    # CENTRAL DISTRIBUTORS (KLM custom ERP) "Stock And Sales Report" 22-col exact-header .xls:
+    # ProductCode|ProductName|...|PurchFreeQty|SaleQty|FreeQty|Sl.Ret.Qty|BR/E/D/R|Repl|AdjQty|
+    # Cl.Stock|Sales Value|... The generic tabular reader maps ProductCode->product_name and
+    # then skips all 157 rows. A header-driven positional parser binds only known columns
+    # (folding signed AdjQty). Keyed on productcode+purchfreeqty+sl.ret.qty+br/e/d/r+adjqty+
+    # cl.stock — unique to this export, so it cannot steal any other grid.
+    if (
+        "productcode" in flat and "productname" in flat and "purchfreeqty" in flat
+        and "sl.ret.qty" in flat and "br/e/d/r" in flat and "adjqty" in flat
+        and "cl.stock" in flat
+    ):
+        return "central_stock_and_sales_xls"
+    # SHRI JAYANTHI "MFR Wise Stock and Sales" abbreviated Op/PQ/Fr/SQ/Fr1/Rp2/.../Cl Qty export
+    # (.xls holding .xlsx). Generic tabular mis-binds PR->rate / ST->gst_rate and leaks value
+    # footers as phantoms. Keyed on the Fr1/Rp2 dual-rate run + PQ/Fr/Rp/SQ header block —
+    # unique to this export (distinct from the DHRUVI klm_op_pi_clqty_xlsx 'st(out)'/'pival' gate).
+    if "fr1rp2" in flat and "pqfrrpsq" in flat and "srpradjstclqty" in flat:
+        return "klm_mfr_op_pq_clqty_xlsx"
+    # G.S. DISTRIBUTORS "KLM-STOCK AND SALES STATEMENT" wide 28-col grid:
+    # PCode|Product Name|Packing|OPSTK|PURC|SALE|STOCK|...|PURCV|SALEV|...|EXSTKV|...|
+    # STK120|Parent Manufacturer|... Generic tabular mis-binds the many columns (bare
+    # PURC/SALE have no synonym; STOCK is the closing qty). Keyed on the movement/value run
+    # plus the distinctive EXSTKV + Parent Manufacturer columns — matches 1/359 corpus files;
+    # disjoint from the clqty/clvalue and saleamt sibling gates above.
+    if (
+        "opstk" in flat and "purc" in flat and "sale" in flat and "stock" in flat
+        and "purcv" in flat and "salev" in flat and "exstkv" in flat
+        and "parentmanufacturer" in flat
+    ):
+        return "gs_stock_sales_wide27_xlsx"
     return "tabular"

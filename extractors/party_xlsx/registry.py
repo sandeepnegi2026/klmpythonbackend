@@ -5,6 +5,8 @@ from extractors.party_xlsx.layouts.item_item_sales_summary_text import parse_ite
 from extractors.party_xlsx.layouts.area_party_billwise import parse_area_party_billwise
 from extractors.party_xlsx.layouts.company_area_wise_sales import parse_company_area_wise_sales
 from extractors.party_xlsx.layouts.product_customer_wise_sales_xlsx import parse_product_customer_wise_sales_xlsx
+from extractors.party_xlsx.layouts.customer_product_banded_grsamt import parse_customer_product_banded_grsamt
+from extractors.party_xlsx.layouts.customer_product_banded_area_first import parse_customer_product_banded_area_first
 from extractors.party_xlsx.layouts.companywise_customerwise import parse_companywise_customerwise
 from extractors.party_xlsx.layouts.customer_company_itemwise import parse_customer_company_itemwise
 from extractors.party_xlsx.layouts.customer_product_banded import parse_customer_product_banded
@@ -36,7 +38,20 @@ from extractors.party_xlsx.layouts.customer_items_new_xlsx import parse_customer
 from extractors.party_xlsx.layouts.company_customer_itemwise_banded import parse_company_customer_itemwise_banded
 from extractors.party_xlsx.layouts.company_party_product_xlsx import parse_company_party_product_xlsx
 
+from extractors.party_xlsx.layouts.klm_customer_vs_groups_text import parse_klm_customer_vs_groups_text
+from extractors.party_xlsx.layouts.item_vs_parties_scheme_register import parse_item_vs_parties_scheme_register
+from extractors.party_xlsx.layouts.customer_product_banded_text import parse_customer_product_banded_text
+from extractors.party_xlsx.layouts.manufacturer_itemwise_secondary_xlsx import parse_manufacturer_itemwise_secondary_xlsx
+from extractors.party_xlsx.layouts.customer_product_sale_dc_summary import parse_customer_product_sale_dc_summary
+
 PARSERS = {
+    "customer_product_banded_grsamt": parse_customer_product_banded_grsamt,
+    "customer_product_banded_area_first": parse_customer_product_banded_area_first,
+    "customer_product_sale_dc_summary": parse_customer_product_sale_dc_summary,
+    "klm_customer_vs_groups_text": parse_klm_customer_vs_groups_text,
+    "item_vs_parties_scheme_register": parse_item_vs_parties_scheme_register,
+    "customer_product_banded_text": parse_customer_product_banded_text,
+    "manufacturer_itemwise_secondary_xlsx": parse_manufacturer_itemwise_secondary_xlsx,
     "company_party_product_xlsx": parse_company_party_product_xlsx,
     "customer_items_new_xlsx": parse_customer_items_new_xlsx,
     "company_customer_itemwise_banded": parse_company_customer_itemwise_banded,

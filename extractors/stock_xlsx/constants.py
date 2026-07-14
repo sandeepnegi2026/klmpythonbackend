@@ -12,6 +12,13 @@ SUBTOTAL_RE = re.compile(
 
 
 LAYOUT_LABELS = {
+    "klm_op_pi_sale_cl_value_xlsx": "KLM Stock & Sales (OP/PI/Sale/CLQty qty+value, no-OUT) — DHRUVI klm.xlsx",
+    "gs_stock_sales_wide27_xlsx": "G.S. DISTRIBUTORS — KLM Stock & Sales Statement (wide 28-col OPSTK/PURC/SALE/STOCK + PURCV/SALEV grid)",
+    "stock_sales_analysis_oic_xlsx": "KLM Stock & Sales Analysis (single-col Opening/Receipt/Issue/Closing) — AMETOMBI",
+    "stock_sales_analysis_wide_xlsx": "KLM Stock & Sales Analysis (single-col wide Open/Purchase/SaleRet/Total/Sales/PurchRet/Closing) — KRISHNA PHARMA",
+    "central_stock_and_sales_xls": "CENTRAL DISTRIBUTORS — KLM Stock And Sales Report (exact-header .xls)",
+    "klm_mfr_op_pq_clqty_xlsx": "KLM MFR Wise Stock & Sales (Op/PQ/Fr/SQ/Cl Qty, JAYANTHI)",
+    "purani_mfr_stock_sales": "PURANI HOSPITAL SUPPLIES — MFR Stock and Sales Report (18-col HTML-in-.xls, current-month per division)",
     "klm_venus_opstk_crqty": "KLM Venus Stock & Sale (OpStk/CrQty scheme, banded)",
     "marg_sale_closing_grid_xlsx": "Marg Stock & Sales Analysis (clean Sale/Closing qty+value grid, BALLRI)",
     "marg_stock_analysis_wide_xlsx": "Marg Stock & Sales Analysis (spelled-out wide 2-row grid, arrow separators)",

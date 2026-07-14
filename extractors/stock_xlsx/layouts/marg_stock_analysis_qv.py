@@ -48,6 +48,10 @@ def _is_num_tok(tok):
 def parse_marg_stock_analysis_qv(rows):
     records = []
     header_seen = False
+    # R.K.MEDICOS prints a RATE column before OPENING and a CHAL column after DUMP, so its
+    # tail is 11 numbers (RATE + 8 canonical + DUMP + CHAL). Gate strictly on the header RATE
+    # token so the default 9-column (AGARTALA/GLOBE) binding is untouched.
+    has_rate = False
     for row in rows:
         # Join every cell so the reader works whether the report is a true single-column
         # dump (one nbsp-padded cell) or a lightly-gridded variant of the same export.
@@ -58,6 +62,8 @@ def parse_marg_stock_analysis_qv(rows):
         low = stripped.lower()
         if "item description" in low and "opening" in low:
             header_seen = True
+            ridx = low.find("rate")
+            has_rate = 0 <= ridx < low.find("opening")
             continue
         if not header_seen:
             continue
@@ -72,32 +78,36 @@ def parse_marg_stock_analysis_qv(rows):
         nums.reverse()
         # Normalise bare-dash nil markers to "0" so downstream casting reads them as 0.
         nums = ["0" if set(n) == {"-"} else n for n in nums]
-        if len(nums) < _NCOLS:
+        ncols = 11 if has_rate else _NCOLS
+        if len(nums) < ncols:
             continue  # a section title ("KLM COSMO") or any non-data line
 
-        cols = nums[-_NCOLS:]
-        # Numerics beyond the 9-column block are trailing product tokens (e.g. "IMXIA 5").
-        product = " ".join(toks + nums[:-_NCOLS]).strip()
+        cols = nums[-ncols:]
+        # Numerics beyond the block are trailing product tokens (e.g. "IMXIA 5").
+        product = " ".join(toks + nums[:-ncols]).strip()
         if not product:
             continue
         plow = product.lower()
         if plow.startswith("value in rs") or plow == "quantity" or plow.startswith("total"):
             continue  # per-group / grand-total subtotal line ("TOTAL <9 totals>")
 
+        base = 1 if has_rate else 0   # RATE variant: cols[0]=RATE, movement shifts +1
         record = {
             "product_name": product,
-            "opening_stock": cols[0],
-            "opening_value": cols[1],
-            "purchase_stock": cols[2],   # RECEIPT qty
-            "purchase_value": cols[3],   # RECEIPT value
-            "sales_qty": cols[4],        # ISSUE qty
-            "sales_value": cols[5],      # ISSUE value
-            "closing_stock": cols[6],
-            "closing_stock_value": cols[7],
+            "opening_stock": cols[base + 0],
+            "opening_value": cols[base + 1],
+            "purchase_stock": cols[base + 2],   # RECEIPT qty
+            "purchase_value": cols[base + 3],   # RECEIPT value
+            "sales_qty": cols[base + 4],        # ISSUE qty
+            "sales_value": cols[base + 5],      # ISSUE value
+            "closing_stock": cols[base + 6],
+            "closing_stock_value": cols[base + 7],
         }
-        # cols[8] is DUMP (damaged/expired, non-movement) — kept out of the sanity equation,
-        # stashed for reference only.
-        dump = cols[8]
+        if has_rate:
+            record["rate"] = cols[0]
+        # DUMP (damaged/expired, non-movement) — kept out of the sanity equation, stashed for
+        # reference only. RATE variant drops the trailing CHAL column (cols[10]).
+        dump = cols[base + 8]
         if dump not in ("", "-", "0", "0.0"):
             record.setdefault("extra_data", {})["dump_qty"] = dump
         if expiry:

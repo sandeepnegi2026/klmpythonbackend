@@ -55,7 +55,10 @@ def parse_stock_op_pur_total_cl_xlsx(rows):
         if name_idx >= len(cells):
             continue
         name = cells[name_idx].strip()
-        if not name or is_subtotal(name):
+        # Per-division subtotals print as "TOTAL:40" (caught by is_subtotal); the final
+        # grand-total row prints as "GTotal:176" (Grand Total, no space) which is_subtotal
+        # misses because it neither starts with "total" nor "grand total".
+        if not name or is_subtotal(name) or name.lstrip().lower().startswith("gtotal"):
             continue
         record = {}
         for i, field in col_field.items():
