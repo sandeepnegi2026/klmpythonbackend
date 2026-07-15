@@ -116,6 +116,7 @@ LAYOUT_LABELS = {
     "disa_opbal_receipt_total_issue": "DISA Stock & Sales Statement (Op.Bal/Receipt/Issue)",
     "capital_stock_sale_stmt": "KLM Sales & Stock Statement (Op.Bal/Receipt/Total/Issue/Closing, qty-only, CAPITAL PHARMA)",
     "swil_stock_transfer": "SwilERP Sales & Stock Statement (Op/Receipt/Transin/Total/Issue/TranOut/Closing Qty+Value + Dump, BIDYA PHARMA)",
+    "swil_stock_company_summary": "SwilERP Sales & Stock Statement Company [Summary] (code + OP/IN/OP+IN/OUT+Amt/CL+Amt, RAOUSHAN PHARMA)",
     "marg_pds_replace": "Marg Product-Description Receipts (Replace+)",
     "marg_open_pur_free_sale": "Marg Stock & Sales Analysis (Open/Pur/Free/Sale)",
     "marg_movement_detail": "Marg Stock & Sales Analysis (movement detail, qty only)",

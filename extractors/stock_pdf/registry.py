@@ -37,6 +37,7 @@ from extractors.stock_pdf.layouts.stock_oric_pairs import parse_stock_oric_pairs
 from extractors.stock_pdf.layouts.disa_opbal_receipt_total_issue import parse_disa_opbal_receipt_total_issue
 from extractors.stock_pdf.layouts.capital_stock_sale_stmt import parse_capital_stock_sale_stmt
 from extractors.stock_pdf.layouts.swil_stock_transfer import parse_swil_stock_transfer
+from extractors.stock_pdf.layouts.swil_stock_company_summary import parse_swil_stock_company_summary
 from extractors.stock_pdf.layouts.marg_pds_replace import parse_marg_pds_replace
 from extractors.stock_pdf.layouts.marg_open_pur_free_sale import parse_marg_open_pur_free_sale
 from extractors.stock_pdf.layouts.marg_movement_detail import parse_marg_movement_detail
@@ -182,6 +183,7 @@ TEXT_PARSERS = {
     "disa_opbal_receipt_total_issue": parse_disa_opbal_receipt_total_issue,
     "capital_stock_sale_stmt": parse_capital_stock_sale_stmt,
     "swil_stock_transfer": parse_swil_stock_transfer,
+    "swil_stock_company_summary": parse_swil_stock_company_summary,
     "marg_pds_replace": parse_marg_pds_replace,
     "marg_open_pur_free_sale": parse_marg_open_pur_free_sale,
     "marg_movement_detail": parse_marg_movement_detail,

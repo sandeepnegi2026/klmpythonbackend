@@ -1,4 +1,5 @@
 FORMAT_REPORT_TYPE = {
+    "company_party_product_sale": "Party-wise Sales",
     "partywise_sales_summary": "Party-wise Sales",
     "customer_invoice_itemwise_sale": "Party-wise Sales",
     "sales_statement_summary_itemwise": "Party-wise Sales",
@@ -69,6 +70,7 @@ FORMAT_REPORT_TYPE = {
 }
 
 FORMAT_LABELS = {
+    "company_party_product_sale": "Company Party Wise Product Sale Report (RAOUSHAN / KLM, company>party>product bands)",
     "partywise_sales_summary": "Partywise Sales Summary (KAKADE / KLM, party-header running totals over product lines)",
     "customer_invoice_itemwise_sale": "Customer - Invoice - Item Wise Sale (MALU MEDICO / KLM, Marg billwise)",
     "sales_statement_summary_itemwise": "Sales Statement Summary (itemwise, KLM — KRISHNA SAI)",

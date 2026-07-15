@@ -126,6 +126,17 @@ def detect_layout(text, n_rects):
     # (inflow) and TranOut -> sales_free (outflow): closing = Op+Rec+Trin-Iss-TrOut.
     if "sales & stock statement" in low and "transin" in low and "tranout" in low:
         return "swil_stock_transfer"
+    # RAOUSHAN PHARMA SwilERP "Sales & Stock Statement Company [Summary]": a
+    # division-summary dialect with a leading item CODE and the header run
+    # NO | PRODUCT/COMPANY | OP QTY | IN QTY | OP+IN QTY | OUT QTY | OUT AMT | CL QTY |
+    # CL AMT. Its title carries the substring "stock statement" and the header has
+    # "product", so without this gate it falls through to the coarse "stock statement"
+    # + "product" -> simple4 rule, which mis-maps the 7-number tail (OP+IN cross-check
+    # -> a movement col) -> ~54% false SANITY_FAILED. The token "op+in" is unique to
+    # this export (no other stock layout prints an OP+IN column), so it cannot steal any
+    # sibling. Reconcile is closing = OP + IN - OUT.
+    if "sales & stock statement" in low and "op+in" in low:
+        return "swil_stock_company_summary"
     # Marg "Sales & Stock Statement" (banner "Page No.1 Sales & Stock Statement
     # (From .. Upto ..)"), division-banded (KLM <DIV>). Two variants of ONE family:
     #   NARROW (KAMLAWATI): 11 qty/value cols — Op q/v | Receipt q/v | Total | Issue

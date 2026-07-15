@@ -29,6 +29,10 @@ def detect_format(text, n_rects, n_lines):
         and "customerstationqty.salesvalue" in tl_compact
     ):
         return "product_customer_wise_sales"
+    # "Company Party Wise Product Sale Report" (RAOUSHAN PHARMA, KLM): COMPANY
+    # band -> PARTY heading -> product rows (Product | Qty | Free | Amt).
+    if "company/party/productqtyfreeamt" in tl_compact:
+        return "company_party_product_sale"
     # AGARTALA PHARMA "AREA / ITEM WISE SALES SUMMARY": party bands prefixed with '-', header
     # DESCRIPTION QTY. FREE RATE AMOUNT. The 5S PHARMA area_item_summary variant carries an
     # extra '( % )' discount column, so the paren-guard keeps those on area_item_summary below.
