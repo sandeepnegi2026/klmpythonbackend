@@ -62,6 +62,32 @@ def _header_idx(rows):
     return None
 
 
+def _is_columnar_header(rows):
+    """True when the DESCRIPTION..AMOUNT header is spread across SEPARATE real cells
+    (the columnar signature), rather than glued into a single space-padded text cell.
+
+    This is the invariant that tells this columnar reader from its single-column TEXT
+    sibling (``item_item_sales_summary_text``): here QTY./FREE/RATE/AMOUNT each sit in
+    their own cell, so ``compact(col0)`` alone is just "description"; in the TEXT export
+    the whole header lives in col0 (``compact(col0)`` already carries the numeric labels).
+    Used so a ``( % )`` percentage column can be accepted for the COLUMNAR family (KASERA
+    DRUG "KLM ALL DIVISON PARTY WISE") without letting the TEXT variant leak in.
+    """
+    idx = _header_idx(rows)
+    if idx is None:
+        return False
+    row = rows[idx]
+    if not row or "descriptionqtyfreerateamount" in compact(cell_text(row[0])):
+        # col0 alone already holds the full header run -> single glued cell (TEXT variant).
+        return False
+    labelled = sum(
+        1
+        for c in row
+        if compact(cell_text(c)) in ("qty", "free", "rate", "amount")
+    )
+    return labelled >= 3
+
+
 def detect(rows):
     head = compact(" ".join(" ".join(cell_text(c) for c in r) for r in rows[:15]))
     # Title token — "ITEM / ITEM WISE SALES SUMMARY" compacts to this. It does NOT contain the
@@ -71,10 +97,15 @@ def detect(rows):
         return False
     if "descriptionqtyfreerateamount" not in head:
         return False
-    # Paren-guard, mirroring the AREA/percent-column variant: this four-numeric-column report
-    # carries no "( % )" discount column.
+    # Paren-guard, mirroring the AREA/percent-column variant: the four-numeric-column report
+    # carries no "( % )" discount column. EXCEPTION (additive, gated): a genuinely COLUMNAR
+    # export (KASERA DRUG "KLM ALL DIVISON PARTY WISE") may print a trailing "( % )" column and
+    # is still this layout — its header sits in separate real cells (``_is_columnar_header``),
+    # which the single-column TEXT sibling (that the "%" guard was meant to protect) never does.
+    # So the "%" rejection applies ONLY when the header is NOT columnar, leaving the TEXT variant
+    # and every existing "%"-free file untouched.
     raw_head = " ".join(" ".join(cell_text(c) for c in r) for r in rows[:15])
-    if "%" in raw_head:
+    if "%" in raw_head and not _is_columnar_header(rows):
         return False
     return True
 

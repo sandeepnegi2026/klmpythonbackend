@@ -1,0 +1,27 @@
+{
+  "file": "[Sample]_REPORT_1_SHREE_BALAJI_MEDICAL_AGENCIES_party_product_xlsx.xlsx",
+  "route": "party_xlsx",
+  "row_count": 209,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 70,
+  "area_count": 19,
+  "product_count": 69,
+  "sample_parties": [
+    "AADHAAR MEDICAL & GENRAL STORE",
+    "ABHISHEK HEALTH CARE",
+    "ANNU MEDICAL STORE",
+    "ARADHANA MEDICOSE",
+    "BALAJI MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Dektop Lotion 50Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 1149.23,
+  "amount_total": 207264.64
+}

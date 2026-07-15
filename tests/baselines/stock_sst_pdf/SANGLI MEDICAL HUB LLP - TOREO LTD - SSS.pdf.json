@@ -1,0 +1,17 @@
+{
+  "file": "SANGLI MEDICAL HUB LLP - TOREO LTD - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "toreo_stock",
+  "product_count": 32,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "closing_stock_total": 229.0
+}

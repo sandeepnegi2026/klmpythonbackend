@@ -14,6 +14,14 @@ def detect_layout(text, n_rects):
         return "dolphin_stock"
     if "opstk" in low and "purch" in low and "in/ot" in low:
         return "toreo_stock"
+    # SAI KRISHNA (KLM ERP) 'STOCK AND SALES ANALYSIS' 9-col movement statement:
+    # OPENING PURCHASE S.RETURN OTHERS(in) SUB TOTAL SALE P.RETURN OTHERS(out) CLOSING
+    # (every zero cell prints '-'). Coarse simple4/stock_simple_7col drop the outflow
+    # columns -> false SANITY_FAILED. The compact run 'subtotalsalep.returnothersclosing'
+    # (mid-table SUB TOTAL + doubled OTHERS + S.RETURN) is in NO other gate. MUST precede
+    # every coarse rule below.
+    if "subtotalsalep.returnothersclosing" in low.replace(" ", ""):
+        return "stock_ss_analysis_sret_others"
     # MEYON DRUGS 'Stock Statement for the month of ...' — per-division KLM
     # export with a wrapped 3-line header (Prev.month Sales / Items Packing Rate
     # Op_Stk Rcpts P.Ret Sales Hos.Sal Brk Repl Cl_Stk Value / APR MAY). Most of
@@ -118,6 +126,23 @@ def detect_layout(text, n_rects):
     # (inflow) and TranOut -> sales_free (outflow): closing = Op+Rec+Trin-Iss-TrOut.
     if "sales & stock statement" in low and "transin" in low and "tranout" in low:
         return "swil_stock_transfer"
+    # Marg "Sales & Stock Statement" (banner "Page No.1 Sales & Stock Statement
+    # (From .. Upto ..)"), division-banded (KLM <DIV>). Two variants of ONE family:
+    #   NARROW (KAMLAWATI): 11 qty/value cols — Op q/v | Receipt q/v | Total | Issue
+    #     q/v | Closing q/v | NearExpiry | MSR. Compact tail 'closingclosingbalanearmsr'
+    #     is unique to the narrow export.
+    #   WIDE (KALYANI): 15 cols — adds ReturnToCOM (purchase_return) + RetFromCustomer
+    #     (sales_return) + Expiry/Breakage (exp_damage); gated on 'retreturntocom' +
+    #     'retfromcustomerexpiryexpiryclosing' (both absent from the narrow export).
+    # Both currently mis-route to the coarse qty_value_total / stock_simple_7col rules
+    # below, which drop Value into Qty fields -> 100% false SANITY_FAILED. Gate tokens are
+    # corpus-unique (0/1040 Data PDFs); MUST precede qty_value_total/simple4/stock_simple_7col.
+    _c_mss = low.replace(" ", "")
+    if "sales & stock statement" in low and (
+        "closingclosingbalanearmsr" in _c_mss
+        or ("retreturntocom" in _c_mss and "retfromcustomerexpiryexpiryclosing" in _c_mss)
+    ):
+        return "marg_sales_stock_statement"
     # DEEPA(A) AGENCIES dot-matrix "STOCK AND SALES STATEMENT" (KLM): header run
     # OPEN/REC-/ADJ(-)/ADJ(+)/TOTAL/SALES/CLOSE/ORD.QTY. 'ORD.QTY' + the 'REC- ADJ ADJ'
     # run appear in no other stock layout; without this gate the coarse simple4 rule below
@@ -439,6 +464,17 @@ def detect_layout(text, n_rects):
     if ("mfr stock and sales report" in low
             and "o.stpurfreeprtnmbmonlmonmonc.st" in low.replace(" ", "")):
         return "purani_mfr_stock_sales_pdf"
+    # KAKADE AGENCIES "Stock and Sales Statement" (Marg/MVGold browser-print export;
+    # timestamp masthead "6/29/26, 5:49 PM Stock and Sales Statement"). 14 trailing
+    # numeric cols: Opst|Purc|S.R.|Sale q/v|P.R.|Exp+Non-Mov purc/sale|Closing q/v|Near.Exp.
+    # Every cell is boxed (>400 rects) so the marg_bordered catch-all below steals it and
+    # mis-reads sale/closing -> SANITY_FAILED. Positional 14-count parser (needs file_bytes).
+    # The compact run 'opstpurcs.r.' + 'near.exp' under the 'stockandsalesstatement' title
+    # is corpus-unique (0/1040 Data PDFs); MUST precede the n_rects>400 -> marg_bordered rule.
+    _comp_kak = low.replace(" ", "")
+    if ("stockandsalesstatement" in _comp_kak and "opstpurcs.r." in _comp_kak
+            and "near.exp" in _comp_kak):
+        return "marg_stock_sales_expiry_positional"
     if n_rects > 400:
         return "marg_bordered"
 
@@ -482,6 +518,13 @@ def detect_layout(text, n_rects):
     # Closing = Op.Bal + Receipt - Issue (Total is the ignored Op+Receipt cross-check).
     if "op.bal.receipttotalissueclosing" in low.replace(" ", ""):
         return "capital_stock_sale_stmt"
+    # SHANTI MEDICOS SwilERP 'Sales & Stock Statement' — capital_stock_sale_stmt family
+    # (Op.Bal/Receipt/Total/Issue/Closing) with TWO extra interior columns Free Q + Expiry
+    # Breakage inserted between Issue and Closing (7 qty numbers/row). Base simple4 pops only
+    # the first 4 -> Total->sales_qty, Issue->closing -> false SANITY_FAILED. The compact run
+    # 'op.bal.receipttotalissuefreeqexpiryclosing' is corpus-unique (capital lacks 'freeqexpiry').
+    if "op.bal.receipttotalissuefreeqexpiryclosing" in low.replace(" ", ""):
+        return "stock_opbal_free_expiry"
     if "lstmove" in low:
         return "saraswati_lstsl"
     # SARASWATI 'Stock & Sales Report' 8-column variant WITHOUT the LstMove date
@@ -509,6 +552,14 @@ def detect_layout(text, n_rects):
         return "stock_op_pur_total_sale_close"
     if "received" in low and "issued" in low and "rplqty" in low:
         return "stock_received_issued"
+    # KLM LABS (DERMA) 'STOCK & SALES STATEMENT' two-page receive/close statement (SHREE
+    # DURGESHWARI). PAGE 1 = OPENING/PURCHASE/SALE RETURN/REPLACE+/TOTAL RECEIVE; PAGE 2 (no
+    # names) = SALE/P/R/REPLACE+/CLOSING/RATE. The receipts-only marg_pds_replace sibling below
+    # shares the page-1 'replace+' header and would steal it. The page-2 header run
+    # 'salep/rreplace+closing' is unique to this two-page statement. Scan the FULL text (not the
+    # 3000-char `low`) so a long page 1 cannot push page-2 header out of the window. MUST precede.
+    if "salep/rreplace+closing" in text.lower().replace(" ", ""):
+        return "klm_ss_statement_receive_close"
     # marg sub-families: must beat the coarse marg_stock_long rule below
     if "replace+" in low or ("product description" in low and "opening" in low and "replace" in low):
         return "marg_pds_replace"
@@ -626,6 +677,26 @@ def detect_layout(text, n_rects):
     # (which otherwise maps closing_stock <- SALES-LAST and fails sanity).
     if "qtyqtyfreelastqtyfreestockqtyfreevaluedays" in re.sub(r"\s+", "", low):
         return "stock_sales_statement_adjmt_positional"
+    # Marg "STOCK AND SALES ANALYSIS" — AVA/Apr/OP.BAL/.../B.Sale/SALE/BAL + BVAL/SVAL
+    # column variant (MALU MEDICO PVT LTD, Sangli; KLM division-banded). Header:
+    #   ITEM NAME PACK AVA Apr OP.BAL PUR. PR. ADJ. SR. B.Sale SALE BAL BVAL SVAL N.MOV REMARKS
+    # Every zero cell prints '-' and numbers are right-aligned, so the flat text
+    # collapses -> the coarse stock_simple_7col rule below (name/pack/open/purchase/
+    # closing all present) mis-binds sales/closing onto the always-'-' cells
+    # (sales_qty=0, closing~0, 0% sanity). Needs a POSITIONAL x-bucket parser.
+    # This is a distinct column family from the ampersand-titled marg_stock_analysis_*
+    # variants (S/R P/R SAMPLE M.EXP) — this one uses the word "AND" and a B.Sale/
+    # SALE/BAL/BVAL/SVAL tail. Gate on 'stockandsalesanalysis' + the compact header run
+    # 'b.salesalebalbvalsval' (+ 'avaaprop.bal'); this token set is corpus-unique
+    # (0/1040 Data PDFs) and appears in no other stock layout, so it cannot steal any
+    # other vendor. MUST precede the coarse stock_simple_7col rule below.
+    _comp_ava = low.replace(" ", "")
+    if (
+        "stockandsalesanalysis" in _comp_ava
+        and "b.salesalebalbvalsval" in _comp_ava
+        and "avaaprop.bal" in _comp_ava
+    ):
+        return "marg_stock_ava_bval_sval"
     if (
         "name" in low
         and "pack" in low
@@ -769,6 +840,16 @@ def detect_layout(text, n_rects):
     # drop them positionally. The 'p.code'+'cls.stk'+'s.ret'+'adj.' column vocabulary
     # under the 'stock and sales analysis' title (word AND, not ampersand) is unique to
     # this KLM export — both PRABHAT files currently fall to 'generic'. MUST precede it.
+    # KLM 'STOCK AND SALES ANALYSIS' — division-banded movement statement, NO P.Code
+    # (SANTOSH ENTERPRISES). Header OPENING PURCHASE FREE P.RETURN FREE SALE FREE S.RETURN
+    # FREE OTHERS CLOSING (11 qty cols, '-'=0). Without this it falls to 'generic', which
+    # maps sales_qty<-PURCHASE-FREE and DROPS SALE -> 100% false SANITY_FAILED. The compact
+    # run 'openingpurchasefreep.returnfreesalefrees.returnfreeothersclosing' is unique to this
+    # KLM export; mutually exclusive with the P.Code sibling below (needs 'p.code').
+    if ("stock and sales analysis" in low
+            and "openingpurchasefreep.returnfreesalefrees.returnfreeothersclosing"
+            in low.replace(" ", "")):
+        return "klm_stock_sales_analysis_movement"
     _comp_pcode = low.replace(" ", "")
     if ("stock and sales analysis" in low and "p.code" in low
             and "cls.stk" in _comp_pcode and "s.ret" in _comp_pcode

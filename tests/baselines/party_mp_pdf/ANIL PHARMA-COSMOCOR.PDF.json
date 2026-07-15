@@ -1,0 +1,27 @@
+{
+  "file": "ANIL PHARMA-COSMOCOR.PDF",
+  "route": "party_pdf",
+  "row_count": 57,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally_itemwise",
+  "party_count": 27,
+  "area_count": 13,
+  "product_count": 16,
+  "sample_parties": [
+    "AJAY MED STO C/O BIMR CAMPUS",
+    "AMAR MEDICAL AND SURGICAL",
+    "ARPIT MEDICAL STORE",
+    "BABA GARGAJ MEDICAL STORE",
+    "CHIRAYU M/STO CITY CENTER"
+  ],
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm"
+  ],
+  "qty_total": 363.0,
+  "amount_total": 58019.87
+}

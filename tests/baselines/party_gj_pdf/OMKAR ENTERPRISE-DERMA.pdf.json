@@ -1,0 +1,26 @@
+{
+  "file": "OMKAR ENTERPRISE-DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 4,
+  "area_count": 1,
+  "product_count": 5,
+  "sample_parties": [
+    "AMBICA MEDICAL STORE",
+    "AUM MEDICINES",
+    "SAI MEDICINES",
+    "SHREE MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Onitraz 100Mg 1*30 Capsules",
+    "Onitraz Forte Capsules 1*10 Capsules",
+    "Xerolene Max Cream 100 Gm",
+    "Zoritraz Forte Capsule 1*10 Cap"
+  ],
+  "qty_total": 310.0,
+  "amount_total": 55180.15
+}

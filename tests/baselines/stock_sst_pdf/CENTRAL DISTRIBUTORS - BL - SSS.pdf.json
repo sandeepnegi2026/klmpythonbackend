@@ -1,0 +1,17 @@
+{
+  "file": "CENTRAL DISTRIBUTORS - BL - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 21,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 274.0
+}

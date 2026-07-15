@@ -1,0 +1,17 @@
+{
+  "file": "SAURASHTRA MEDISOLUTION - DERMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 20,
+  "warnings_count": 2,
+  "headers_detected_count": 16,
+  "detected_format": "saurashtra_ss_report",
+  "product_count": 20,
+  "sample_products": [
+    "10CAP 0 SUDIF",
+    "Canrolfin Cream 15 Gm",
+    "Folibild Tablets",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 612.0
+}

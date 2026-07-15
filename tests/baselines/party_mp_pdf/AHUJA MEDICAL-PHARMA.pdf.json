@@ -1,0 +1,27 @@
+{
+  "file": "AHUJA MEDICAL-PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 23,
+  "area_count": 5,
+  "product_count": 18,
+  "sample_parties": [
+    "AMAR MEDICAL STORES",
+    "ARJUN MEDICAL STORES",
+    "CHANDRA MEDICAL STORES",
+    "GIRISH MEDICAL&GENERAL STORES",
+    "GOURAV MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 278.0,
+  "amount_total": 53467.87
+}

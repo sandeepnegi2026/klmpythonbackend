@@ -440,6 +440,19 @@ def parse_party_item_summary(rows):
                 split = _set_party(text)
                 if split is not None:
                     current_party, current_loc = split
+            elif toks and re.search(r"[A-Za-z]", " ".join(toks)):
+                # A party band whose name carries a trailing MARG party-code number
+                # (e.g. "AGRAWAL CHEMIST U N-INDORE 3", "ALSHIFA CHEMIST-INDORE 8"):
+                # popping the trailing digit(s) leaves 1-2 numbers, fewer than a real
+                # product line's >=3 value columns (QTY/RATE/AMOUNT at minimum, +FREE here).
+                # Those bands previously fell through and were DROPPED, losing the party and
+                # all its products. A genuine product line always has >=3 trailing numbers, so
+                # this branch cannot steal one. Restore the FULL band text (name + code) as
+                # the party via the normal band handler.
+                if not _is_total_label(text) and not _is_page_noise(text, vendor_c):
+                    split = _set_party(text)
+                    if split is not None:
+                        current_party, current_loc = split
         else:
             # real columns: description in the first cell, figures in the rest
             product = _ws(cells[0])

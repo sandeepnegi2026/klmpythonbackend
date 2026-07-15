@@ -5,6 +5,7 @@ from extractors.party_xlsx.layouts.item_item_sales_summary_text import parse_ite
 from extractors.party_xlsx.layouts.area_party_billwise import parse_area_party_billwise
 from extractors.party_xlsx.layouts.company_area_wise_sales import parse_company_area_wise_sales
 from extractors.party_xlsx.layouts.product_customer_wise_sales_xlsx import parse_product_customer_wise_sales_xlsx
+from extractors.party_xlsx.layouts.company_area_customer_product_wise import parse_company_area_customer_product_wise
 from extractors.party_xlsx.layouts.customer_product_banded_grsamt import parse_customer_product_banded_grsamt
 from extractors.party_xlsx.layouts.customer_product_banded_area_first import parse_customer_product_banded_area_first
 from extractors.party_xlsx.layouts.companywise_customerwise import parse_companywise_customerwise
@@ -43,8 +44,18 @@ from extractors.party_xlsx.layouts.item_vs_parties_scheme_register import parse_
 from extractors.party_xlsx.layouts.customer_product_banded_text import parse_customer_product_banded_text
 from extractors.party_xlsx.layouts.manufacturer_itemwise_secondary_xlsx import parse_manufacturer_itemwise_secondary_xlsx
 from extractors.party_xlsx.layouts.customer_product_sale_dc_summary import parse_customer_product_sale_dc_summary
+from extractors.party_xlsx.layouts.customer_item_invoicewise_banded import parse_customer_item_invoicewise_banded
+from extractors.party_xlsx.layouts.item_customerwise_sale import parse_item_customerwise_sale
+from extractors.party_xlsx.layouts.areacity_wise_sale_pivot import parse_areacity_wise_sale_pivot
+from extractors.party_xlsx.layouts.party_discount_summary_xlsx import parse_party_discount_summary as parse_party_discount_summary_xlsx
+from extractors.party_xlsx.layouts.marg_outward_detail_partywise import parse_marg_outward_detail_partywise
 
 PARSERS = {
+    "customer_item_invoicewise_banded": parse_customer_item_invoicewise_banded,
+    "item_customerwise_sale": parse_item_customerwise_sale,
+    "areacity_wise_sale_pivot": parse_areacity_wise_sale_pivot,
+    "party_discount_summary_xlsx": parse_party_discount_summary_xlsx,
+    "marg_outward_detail_partywise": parse_marg_outward_detail_partywise,
     "customer_product_banded_grsamt": parse_customer_product_banded_grsamt,
     "customer_product_banded_area_first": parse_customer_product_banded_area_first,
     "customer_product_sale_dc_summary": parse_customer_product_sale_dc_summary,
@@ -78,6 +89,7 @@ PARSERS = {
     "area_party_billwise": parse_area_party_billwise,
     "company_area_wise_sales": parse_company_area_wise_sales,
     "product_customer_wise_sales_xlsx": parse_product_customer_wise_sales_xlsx,
+    "company_area_customer_product_wise": parse_company_area_customer_product_wise,
     "companywise_customerwise": parse_companywise_customerwise,
     "salesmen_partywise": parse_salesmen_partywise,
     "party_item_summary": parse_party_item_summary,

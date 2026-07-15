@@ -13,6 +13,7 @@ from extractors.stock_xlsx.layouts.fawin_stock import parse_fawin_stock
 from extractors.stock_xlsx.layouts.marg_erp9_movement import parse_marg_erp9_movement
 from extractors.stock_xlsx.layouts.marg_stock_sale_band import parse_marg_stock_sale_band
 from extractors.stock_xlsx.layouts.klm_dstk_stock import parse_klm_dstk_stock
+from extractors.stock_xlsx.layouts.marg_designer_compute_stock import parse_marg_designer_compute_stock
 from extractors.stock_xlsx.layouts.marg_stock_analysis_text import parse_marg_stock_analysis_text
 from extractors.stock_xlsx.layouts.klm_detailed_stock import parse_klm_detailed_stock
 
@@ -46,8 +47,14 @@ from extractors.stock_xlsx.layouts.stock_op_pur_total_cl_xlsx import parse_stock
 
 from extractors.stock_xlsx.layouts.central_stock_and_sales_xls import parse_central_stock_and_sales_xls
 from extractors.stock_xlsx.layouts.klm_mfr_op_pq_clqty_xlsx import parse_klm_mfr_op_pq_clqty_xlsx
+from extractors.stock_xlsx.layouts.klm_stock_sale_gdout_xlsx import parse_klm_stock_sale_gdout
+from extractors.stock_xlsx.layouts.marg_sale_closing_text_xlsx import parse_marg_sale_closing_text_xlsx
+from extractors.stock_xlsx.layouts.marg_stock_ss_full_movement_xls import parse_marg_stock_ss_full_movement_xls
 
 PARSERS = {
+    "klm_stock_sale_gdout_xlsx": parse_klm_stock_sale_gdout,
+    "marg_sale_closing_text_xlsx": parse_marg_sale_closing_text_xlsx,
+    "marg_stock_ss_full_movement_xls": parse_marg_stock_ss_full_movement_xls,
     "klm_op_pi_sale_cl_value_xlsx": parse_klm_op_pi_sale_cl_value_xlsx,
     "stock_sales_analysis_oic_xlsx": parse_stock_sales_analysis_oic_xlsx,
     "stock_sales_analysis_wide_xlsx": parse_stock_sales_analysis_wide_xlsx,
@@ -88,6 +95,7 @@ PARSERS = {
     "marg_erp9_movement": parse_marg_erp9_movement,
     "marg_stock_sale_band": parse_marg_stock_sale_band,
     "klm_dstk_stock": parse_klm_dstk_stock,
+    "marg_designer_compute_stock": parse_marg_designer_compute_stock,
 }
 
 

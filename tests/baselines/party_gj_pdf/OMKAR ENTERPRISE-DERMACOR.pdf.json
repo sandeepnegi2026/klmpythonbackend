@@ -1,0 +1,27 @@
+{
+  "file": "OMKAR ENTERPRISE-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 5,
+  "area_count": 1,
+  "product_count": 8,
+  "sample_parties": [
+    "AUM MEDICINES",
+    "JAY HIND MEDICAL STORES",
+    "SAI MEDICINES",
+    "SHREE JAY GOPAL MEDICAL STORE",
+    "SHREE MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "qty_total": 122.0,
+  "amount_total": 22908.44
+}

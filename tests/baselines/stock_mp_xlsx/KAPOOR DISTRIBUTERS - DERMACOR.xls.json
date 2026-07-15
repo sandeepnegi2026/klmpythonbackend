@@ -1,0 +1,17 @@
+{
+  "file": "KAPOOR DISTRIBUTERS - DERMACOR.xls",
+  "route": "stock_xlsx",
+  "row_count": 33,
+  "warnings_count": 24,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 33,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets"
+  ],
+  "closing_stock_total": 388.0
+}

@@ -1,0 +1,27 @@
+{
+  "file": "RACHIT MEDICAL-DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 17,
+  "area_count": 3,
+  "product_count": 10,
+  "sample_parties": [
+    "BHARAT MEDICAL STORE",
+    "HOSPITECH MEDICAL AND SURGICAL AGENCY",
+    "KRISHNA MEDICAL STORE",
+    "NEHA MEDICAL STORE",
+    "PALAK PHARMA"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Cream 100Gm",
+    "Nevlon Glo Syndet Bar"
+  ],
+  "qty_total": 125.0,
+  "amount_total": 28605.58
+}

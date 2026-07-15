@@ -1,0 +1,27 @@
+{
+  "file": "DUTT MEDICAL AGENCY-PAINKILLER-PP.xlsx",
+  "route": "party_xlsx",
+  "row_count": 57,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "painkiller_partywise",
+  "party_count": 26,
+  "area_count": 10,
+  "product_count": 11,
+  "sample_parties": [
+    "(DUTT)WALK IN CUSTOMER-BCH",
+    "ANMOL CHEMIST-SHOPNO 29 ANMOL PLAZA SHOPPING CENT",
+    "CARE PHARMACY-SHOP NO 2 MARIAM COMPLEX BESIDE NOV",
+    "CHILD CARE PHARMACY-401",
+    "DEROL CHEMIST (DEROL)-SHOP NO 4SMALL CENTRE"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Kofcatch Ls 100Ml Junior",
+    "Sacctik Gg Sachets",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 0.0,
+  "amount_total": 0.0
+}

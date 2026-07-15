@@ -4,14 +4,24 @@ import re
 def _split_dp_party(heading):
     """Split a SwilERP "Customer-Product wise Sales" heading of the form
     "<CODE>-<NAME>,<TOWN>[,(phone)]" into (name, town). The town is the first
-    comma-segment after the name; trailing phone/paren junk is dropped. Names in
-    this format carry no internal comma, so a first-comma split is safe. Falls
-    back to (heading, "") when there's no comma or no letter-bearing town."""
+    comma-segment after the name; trailing phone/paren junk is dropped.
+
+    FIX (SATYAM): the CODE segment (before the first '-') may itself contain
+    commas/dots (e.g. "AM..,-ABHISHEK MEDICAL,DHANBAD", "MC,.-MAYALOK MEDICAL").
+    A naive first-comma split then truncates the code and drops the name. Anchor
+    the town split at the first comma at/after the first '-' so the code is kept
+    whole and the town is the first comma-segment following the name. Falls back
+    to (heading, "") when there's no comma-after-dash or no letter-bearing town."""
     s = heading.strip()
     if "," not in s:
         return s, ""
-    head, _, tail = s.partition(",")
-    name = head.strip()
+    dash = s.find("-")
+    csearch = dash if dash != -1 else 0
+    ci = s.find(",", csearch)
+    if ci == -1:
+        return s, ""
+    name = s[:ci].strip()
+    tail = s[ci + 1:]
     town = tail.split(",")[0]
     town = re.sub(r"\(.*$", "", town).strip().strip(" ,()")
     if not re.search(r"[A-Za-z]", town):
@@ -131,7 +141,12 @@ def parse_simple_party_itemwise(text):
         skip_re = re.compile(r'^\s*(-{3,}|\*+|Page No\.|TOTAL\b|GRAND TOTAL|Product Code\s|.*Customer-Product wise|Powered By|\.\.\.Continued|FY\s*:)', re.I)
         trail3 = re.compile(r'^(\S+)\s+(.*?\S)\s+(' + NUM + r')\s+(' + NUM + r')\s+(' + NUM + r')\s*$')
         trail2 = re.compile(r'^(\S+)\s+(.*?\S)\s+(' + NUM + r')\s+(' + NUM + r')\s*$')
-        party_re = re.compile(r'^[A-Za-z0-9./]{2,10}-.+')
+        # FIX (SATYAM): allow ',' in the CODE segment (and widen 10->12) so
+        # headings like "AM..,-ABHISHEK MEDICAL,..." / "MC,.-MAYALOK MEDICAL,..." /
+        # "SB,,-SHREE BALAJEE MEDIMART,..." are recognised as party headings
+        # instead of being swallowed into the previous party's rows. The trailing
+        # numeric-value guard still keeps product rows out.
+        party_re = re.compile(r'^[A-Za-z0-9.,/]{2,12}-.+')
         for ln in lines:
             s = ln.strip()
             if not s: continue

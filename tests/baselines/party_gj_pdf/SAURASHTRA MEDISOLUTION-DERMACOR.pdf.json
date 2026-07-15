@@ -1,0 +1,27 @@
+{
+  "file": "SAURASHTRA MEDISOLUTION-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 135,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "logic_erp",
+  "party_count": 81,
+  "area_count": 52,
+  "product_count": 19,
+  "sample_parties": [
+    "A ROY AND CO",
+    "AAKASHDEEP CHEMIST",
+    "ACES MEDICALS",
+    "ADHYAMAHESHWAR CHEM AND DRUG",
+    "ANAND PHARMACY"
+  ],
+  "sample_products": [
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair 1*30 Tablets",
+    "Extend Hair Tablet",
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml"
+  ],
+  "qty_total": 252.0,
+  "amount_total": 48826.87
+}

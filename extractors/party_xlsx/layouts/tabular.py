@@ -4,6 +4,36 @@ from extractors.party_xlsx.constants import BARE_TOTAL_RE
 from extractors.party_xlsx.parse_common import is_subtotal
 
 
+def _nonzero(value):
+    """True when a cell holds a non-empty, non-zero numeric quantity."""
+    text = str(value).strip()
+    if not text:
+        return False
+    try:
+        return float(text) != 0
+    except (TypeError, ValueError):
+        return False
+
+
+def _is_numeric_cell(val):
+    """True if the cell parses as a real number (ignoring commas / trailing symbols).
+
+    SwilERP/Marg sale lines always print a numeric GrsAmt (the value). Footer trailer
+    rows put non-numeric TEXT there ("For Satara Pharma", "Authorised Signatory"), so a
+    non-numeric amount on an otherwise product-less row flags a trailer, not a sale."""
+    s = str(val).strip()
+    if not s:
+        return False
+    s = s.replace(",", "").rstrip("#%").strip()
+    if not s:
+        return False
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+
 def records_from_mapped(headers, rows, header_idx):
     header_map = map_headers(headers, "party")
     detected = {raw: info["canonical"] for raw, info in header_map.items()}
@@ -39,6 +69,23 @@ def records_from_mapped(headers, rows, header_idx):
             and any(BARE_TOTAL_RE.match(str(cell).strip()) for cell in raw_row)
         ):
             continue
+        # SwilERP / Marg TRAILER rows (SATARA PHARMA "Medica Ultimate (+91-...)" / "(Report End)
+        # (N Records)") print a caption in the Inv No cell and a non-numeric label in the GrsAmt
+        # (amount) cell — ['Medica Ultimate (...)', '', ..., 'For Satara Pharma'] — every other
+        # cell blank. party/product are blank so carry-down stamps the previous customer, and
+        # because invoice_number + amount are both populated (with TEXT), the all-blank guards
+        # below and the value-less guard both miss it, so the trailer ships as a phantom sale
+        # (2 fake party rows per file). Gate: NO product, NO real qty, and the amount cell is
+        # NON-NUMERIC — a real sale line always carries a numeric GrsAmt, so this cannot drop
+        # one. Runs before carry-down so the trailer never inherits a party.
+        if (
+            not str(record.get("product_name", "")).strip()
+            and not _is_numeric_cell(record.get("qty", ""))
+            and "amount" in record
+            and str(record.get("amount", "")).strip()
+            and not _is_numeric_cell(record.get("amount", ""))
+        ):
+            continue
         # An UNLABELED totals footer (KHURANA, SHRI RAM JEE) prints only numbers with no
         # party, product OR serial identity at all — [None,None,None,qty,free,amount,None] —
         # so the label-based guards above never fire and carry-down would stamp it a phantom
@@ -70,15 +117,38 @@ def records_from_mapped(headers, rows, header_idx):
         product = str(record.get("product_name", "")).strip()
         if is_subtotal(product):
             continue
+        # A genuine FREE-GOODS / scheme line (SIDDHARTH DRUGS Outward Detail: PRATHAM PHARMA
+        # "ONITRAZ SB 1" inv 25910) prints a real party, a real product, a real invoice number
+        # and a non-zero Free qty but leaves Qty and NetAmt blank (the paid units sit on a
+        # sibling line of the same invoice). It is a real sale row (it moved 4 free units) and
+        # dropping it under-counts both the row count and the Free total (699->698 rows, free
+        # 36->32). Keep such a row before the value-less-band guard below can discard it.
+        is_free_only_line = (
+            "free_qty" in record
+            and _nonzero(record.get("free_qty"))
+            and bool(product)
+            and bool(str(record.get("invoice_number", "")).strip())
+        )
         # Drop a value-less "band" row: a "Product wise sale list" (VISION HEALTHCARE) prints
         # each customer name as a header ROW in the Product column with no qty and no value —
         # the real party already sits in the Customer column of every product line below it, so
         # this row is noise (blank/carried party, customer-name-as-product). A row whose mapped
         # qty/amount columns are ALL empty is never a sale line. Gated on those columns existing,
-        # and placed after the carry-down above so a real party band still propagates.
+        # and placed after the carry-down above so a real party band still propagates. A
+        # free-only scheme line (see is_free_only_line) is exempt: it carries a non-zero Free
+        # and a real invoice, so it is a sale, not a noise band.
         value_keys = [k for k in ("qty", "amount") if k in record]
-        if value_keys and all(not str(record.get(k, "")).strip() for k in value_keys):
+        if (
+            value_keys
+            and all(not str(record.get(k, "")).strip() for k in value_keys)
+            and not is_free_only_line
+        ):
             continue
-        if record.get("product_name") or record.get("invoice_number") or record.get("qty"):
+        if (
+            record.get("product_name")
+            or record.get("invoice_number")
+            or record.get("qty")
+            or is_free_only_line
+        ):
             records.append(record)
     return records, detected

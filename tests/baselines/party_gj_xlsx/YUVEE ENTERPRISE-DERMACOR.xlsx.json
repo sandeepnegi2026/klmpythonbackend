@@ -1,0 +1,27 @@
+{
+  "file": "YUVEE ENTERPRISE-DERMACOR.xlsx",
+  "route": "party_xlsx",
+  "row_count": 60,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 38,
+  "area_count": 16,
+  "product_count": 20,
+  "sample_parties": [
+    "24 HOURS MEDICAL.DUNGARPUR",
+    "24 KALAK MEDICAL BHILODA.",
+    "24 KALAK MEDICAL STORES.IDAR",
+    "AARAM MEDICAL STORES",
+    "AARAMBH MEDICINES"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "qty_total": 279.0,
+  "amount_total": 60619.0
+}

@@ -1,0 +1,27 @@
+{
+  "file": "MARUTI PHARMA-DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 10,
+  "sample_parties": [
+    "BHARAT MEDICAL STORE",
+    "DOSHI CHEMIST",
+    "GUPTA MEDICAL STORES",
+    "JANSEVA CHEMIST",
+    "MAA GAYATRI MEDICAL"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "NEVLON MOIS. CREAM",
+    "NEVLON SOAP",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Nevlon Lotion 100Ml"
+  ],
+  "qty_total": 92.0,
+  "amount_total": 18971.05
+}

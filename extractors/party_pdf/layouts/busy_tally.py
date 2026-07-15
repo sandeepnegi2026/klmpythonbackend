@@ -3,6 +3,25 @@ import re
 from extractors.party_pdf.party_area import extract_party_and_area
 
 
+def _split_party_area(cur_raw):
+    """extract_party_and_area(busy_tally) splits on the LAST '-', so a heading
+    whose area carries a numeric locality suffix ("ADITYA MEDICALS-PATNA-2",
+    "MEENA MEDICAL HALL-PATNA 20") lands as name="...-PATNA"/area="2" (or
+    name="...", area="PATNA 20"). Recover the intended split: the tail after the
+    LAST '-' of shape "<CITY>[<sep><digits>]" is the area. Only re-splits
+    headings that match this exact numeric-locality shape, so normal alpha-area
+    headings fall through to the shared helper untouched."""
+    m = re.match(
+        r"^(?P<name>.+?)\s*-\s*(?P<area>[A-Z][A-Za-z]*(?:[ -]\d+)?)$", cur_raw
+    )
+    if m and re.search(r"\d", m.group("area")):
+        name = m.group("name").strip()
+        area = re.sub(r"\s*-\s*", "-", m.group("area").strip())
+        if name:
+            return name, area
+    return extract_party_and_area(cur_raw, "busy_tally")
+
+
 def parse_busy_tally(text):
     H = ["Party Name", "Area", "Product Name", "Qty", "Free", "Rate", "Amount", "Vendor Name"]
     pat6 = re.compile(r"^(.+?)\s+(\d+)\s+([\d-]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*$")
@@ -57,6 +76,15 @@ def parse_busy_tally(text):
     if vendor_line:
         skips.append(vendor_line[:20])
     pat_code_party = re.compile(r"^\d{3,6}\s+([A-Z].*?)\s*$")
+    # Numeric-locality / leading-dot party heading, e.g. "ASHOK MEDICAL HALL-
+    # PATNA-4", "MEENA MEDICAL HALL-PATNA 20", ".RAKESH AGENCY-PATNA-4". The
+    # tail after the LAST hyphen is a COMPACT alpha city + optional numeric
+    # suffix, which a multi-clause vendor address ("...BLOCK-C, DAWA BAZAR,
+    # UJJAIN (M.P.) 456010") can never match.
+    pat_numeric_area_party = re.compile(
+        r"^[.A-Z0-9][A-Z0-9\s&.,()\[\]/*'_-]+-[A-Z][A-Za-z]*(?:[ -]\d+)?$"
+    )
+    _money_anywhere = re.compile(r"\d+\.\d{2}")
     for line in text.split("\n"):
         # (cid:N) is a raw-glyph artifact; pdf_io normally decodes it upstream, but
         # strip any literal residue here too so direct callers behave the same.
@@ -77,6 +105,50 @@ def parse_busy_tally(text):
         if re.match(r"^[A-Z0-9][A-Z0-9\s&.,()\[\]/*'_-]+-[A-Z][A-Z0-9\[\]]+$", s):
             cur_raw = s
             continue
+        # NAME-AREA-<DAYTAG/SEC> party band carrying DIGITS/parens in the trailing
+        # segments, e.g. "AMIT MEDICAL STORE-SEC-4-SEC-4",
+        # "CUB PHARMACY PLUS-SEC-31-MONDAY(DLF,CP)",
+        # "DELHI CHILDREN CLINIC-OLD RLY-TUESDAY(JR,RR)". The alpha-area bands
+        # above reject these (their AREA class forbids digits/parens) so the
+        # heading fell through to the data patterns (which it also fails),
+        # silently keeping cur_raw on the PREVIOUS party -> the first such party
+        # is dropped entirely (empty party_name) and every product under a later
+        # such heading inherits the WRONG party. Tightly gated so it can never
+        # swallow a multi-clause vendor ADDRESS line ("231, 2ND FLOOR, BLOCK-C,
+        # DAWA BAZAR, UJJAIN (M.P.) 456010") or a product row
+        # ("NIOCLEAN AD 15GM 0 0 0.00"): require a LETTER first char (addresses
+        # start with a house-number digit), an internal hyphen, NO decimal money
+        # anywhere (product rows carry a X.XX amount), and NO comma OUTSIDE
+        # parentheses (addresses use comma-separated clauses; day-tags keep their
+        # comma inside "(DLF,CP)"), plus NOT a data-row pattern.
+        if (
+            "-" in s
+            and re.match(r"^[A-Z][A-Z0-9\s&.,()\[\]/*'_-]*-[A-Z0-9][A-Z0-9\s&.,()\[\]/*'_-]*$", s)
+            and "," not in re.sub(r"\([^)]*\)", "", s)
+            and not _money_anywhere.search(s)
+            and not pat6.match(s)
+            and not pat5.match(s)
+            and not pat6_frac.match(s)
+            and not pat5_frac.match(s)
+            and len(s) > 5
+        ):
+            cur_raw = s
+            continue
+        # NAME-AREA party band whose AREA carries a numeric locality suffix
+        # ("ASHOK MEDICAL HALL-PATNA-4", "MEENA MEDICAL HALL-PATNA 20") or begins
+        # with a leading account dot (".RAKESH AGENCY-PATNA-4"). The alpha-only
+        # bands above require an ALL-alpha area, so these were skipped and their
+        # rows absorbed into the previous party. Gated on NO decimal money + NOT a
+        # data row; the COMPACT alpha-city+optnum tail anchor keeps multi-clause
+        # addresses out (their post-hyphen tail is not a single city token).
+        if (
+            not _money_anywhere.search(s)
+            and not pat6.match(s)
+            and not pat5.match(s)
+            and pat_numeric_area_party.match(s)
+        ):
+            cur_raw = s
+            continue
         if (
             re.match(r"^[A-Z][A-Z\s&.,()\[\]/-]+$", s)
             and not pat6.match(s)
@@ -95,7 +167,7 @@ def parse_busy_tally(text):
         if has_pct:
             m = pat6.match(s)
             if m:
-                name, area = extract_party_and_area(cur_raw, "busy_tally")
+                name, area = _split_party_area(cur_raw)
                 rows.append(
                     [
                         name,
@@ -112,7 +184,7 @@ def parse_busy_tally(text):
                 continue
         m5 = pat5.match(s)
         if m5:
-            name, area = extract_party_and_area(cur_raw, "busy_tally")
+            name, area = _split_party_area(cur_raw)
             rows.append(
                 [
                     name,
@@ -132,7 +204,7 @@ def parse_busy_tally(text):
         # the row stays with its party (see has_int_row note above).
         mf = pat6_frac.match(s) if has_pct else pat5_frac.match(s)
         if mf:
-            name, area = extract_party_and_area(cur_raw, "busy_tally")
+            name, area = _split_party_area(cur_raw)
             free = mf.group(3)
             rows.append(
                 [

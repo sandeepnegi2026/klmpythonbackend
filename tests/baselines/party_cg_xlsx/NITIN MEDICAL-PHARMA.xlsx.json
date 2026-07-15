@@ -1,0 +1,27 @@
+{
+  "file": "NITIN MEDICAL-PHARMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 333,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 121,
+  "area_count": 44,
+  "product_count": 35,
+  "sample_parties": [
+    "24x7 Medical Shop",
+    "24x7 Medical Stores",
+    "AASTHA MEDICAL HALL",
+    "ANAND MEDICAL",
+    "ANIKA TRADER"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 1351.0,
+  "amount_total": 183016.9
+}

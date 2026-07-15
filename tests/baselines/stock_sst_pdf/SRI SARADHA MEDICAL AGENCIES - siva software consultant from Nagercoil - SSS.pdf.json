@@ -1,0 +1,17 @@
+{
+  "file": "SRI SARADHA MEDICAL AGENCIES - siva software consultant from Nagercoil - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 2,
+  "headers_detected_count": 9,
+  "detected_format": "siva_stock",
+  "product_count": 14,
+  "sample_products": [
+    "EKRAN 80 SUN SCREEN",
+    "EKRAN SOFT S.SC GEL",
+    "Ekran Aqua Gel 100Gm",
+    "Glutaderm Plus Tablets",
+    "Histabil Tablet 1*10 Tab"
+  ],
+  "closing_stock_total": 179.0
+}

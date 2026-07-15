@@ -1,0 +1,17 @@
+{
+  "file": "AKASH MEDICOSE - MARG ERP - SSS.XLS",
+  "route": "stock_xlsx",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 14,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 67.0
+}

@@ -61,19 +61,27 @@ def parse_marg_opstk_curstk(rows):
         if not rich and pur == 0 and col.get("curstk") is not None:
             pur, pur_free_inline = split_plus_qty(at(raw_row, "curstk"))
 
+        # Sale cell may be a glued 'sale+free' token (e.g. '29+2'), like the
+        # Opstk/CurStk columns; split it. Plain numeric cells split cleanly to
+        # (n, 0.0), so this is byte-identical to the old to_number path for them.
+        sale_qty, sale_free_inline = split_plus_qty(at(raw_row, "sale"))
+
         rec = {
             "product_name": product,
             "pack": cell_text(at(raw_row, "pack")),
             "opening_stock": op,
             "purchase_stock": pur,
-            "sales_qty": to_number(at(raw_row, "sale")) or 0.0,
+            "sales_qty": sale_qty,
             "closing_stock_value": to_number(at(raw_row, "stkval")),
         }
         if rich:
             close, _ = split_plus_qty(at(raw_row, "curstk"))
             rec["closing_stock"] = close
             rec["purchase_free"] = to_number(at(raw_row, "pfree")) or 0.0
-            rec["sales_free"] = to_number(at(raw_row, "sfree")) or 0.0
+            # Prefer the dedicated SFree column; if blank, fall back to the
+            # inline '+free' folded into the glued Sale cell.
+            _sf = to_number(at(raw_row, "sfree"))
+            rec["sales_free"] = _sf if _sf else sale_free_inline
             rec["purchase_return"] = to_number(at(raw_row, "purret")) or 0.0
             if col.get("salval") is not None:
                 rec["sales_value"] = to_number(at(raw_row, "salval")) or 0.0
@@ -82,6 +90,8 @@ def parse_marg_opstk_curstk(rows):
                 rec.setdefault("extra_data", {})["adjustment"] = adj
         else:
             rec["purchase_free"] = pur_free_inline
+            if sale_free_inline:
+                rec["sales_free"] = sale_free_inline
         records.append(rec)
     detected = {
         "Product Name": "product_name",

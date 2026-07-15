@@ -1,0 +1,22 @@
+{
+  "file": "BHAGYODAY AGENCIES-PHARMA.XLS",
+  "route": "party_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 35,
+  "detected_format": "marg_register_excel",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 3,
+  "sample_parties": [
+    "DR BHAGIRATH RAJESHKUMAR PATEL HUF",
+    "RAVI AGENCY"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Nevlon Acne Soap 75Gm",
+    "Nevsoft Cleansing Lotion 125 Ml"
+  ],
+  "qty_total": 54.0,
+  "amount_total": 11412.95
+}

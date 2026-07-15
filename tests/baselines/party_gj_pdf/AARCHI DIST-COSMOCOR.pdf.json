@@ -1,0 +1,19 @@
+{
+  "file": "AARCHI DIST-COSMOCOR.pdf",
+  "route": "party_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "marg_bordered_billwise",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "MARUTI MEDICAL"
+  ],
+  "sample_products": [
+    "Zydip Lotion 50 Ml"
+  ],
+  "qty_total": 9.0,
+  "amount_total": 0.0
+}

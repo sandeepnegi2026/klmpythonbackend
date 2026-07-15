@@ -1,0 +1,17 @@
+{
+  "file": "YUVEE ENTERPRISE - DERMA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 38,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 33,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 1206.0
+}

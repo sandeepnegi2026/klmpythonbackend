@@ -1,0 +1,27 @@
+{
+  "file": "YUVEE ENTERPRISE-DERMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 56,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 30,
+  "area_count": 13,
+  "product_count": 23,
+  "sample_parties": [
+    "24 KALAK AKSHAR MEDICAL",
+    "24 KALAK KRISHNA MEDICAL STORE",
+    "24 KALAK MEDICAL KHEDBRAHMA",
+    "24 KALAK MEDICAL STORES.IDAR",
+    "AARAM MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet"
+  ],
+  "qty_total": 425.0,
+  "amount_total": 59260.0
+}

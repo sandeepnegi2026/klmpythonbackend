@@ -1,0 +1,17 @@
+{
+  "file": "AYACHI MEDICAL STORES - DERMACOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_op_rec_iss_clos_grid",
+  "product_count": 34,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 641.0
+}

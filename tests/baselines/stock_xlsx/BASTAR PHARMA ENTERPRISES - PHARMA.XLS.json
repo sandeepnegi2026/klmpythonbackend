@@ -1,0 +1,17 @@
+{
+  "file": "BASTAR PHARMA ENTERPRISES - PHARMA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 42,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 41,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 1020.0
+}

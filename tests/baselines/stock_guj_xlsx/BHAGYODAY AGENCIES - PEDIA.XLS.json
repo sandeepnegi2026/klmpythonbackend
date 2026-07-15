@@ -1,0 +1,17 @@
+{
+  "file": "BHAGYODAY AGENCIES - PEDIA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 42,
+  "detected_format": "tabular",
+  "product_count": 10,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Histabil Oral Solution",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 19.0
+}

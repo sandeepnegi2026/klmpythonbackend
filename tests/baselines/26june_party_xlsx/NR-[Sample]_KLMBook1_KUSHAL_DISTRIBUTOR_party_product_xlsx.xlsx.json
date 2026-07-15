@@ -1,0 +1,27 @@
+{
+  "file": "NR-[Sample]_KLMBook1_KUSHAL_DISTRIBUTOR_party_product_xlsx.xlsx",
+  "route": "party_xlsx",
+  "row_count": 424,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 146,
+  "area_count": 16,
+  "product_count": 111,
+  "sample_parties": [
+    "7MG PHARMACY",
+    "AASHIRWAD MEDICOS(MADARI)",
+    "ABHINANDAN MEDICALS AMBAMATA",
+    "AGARWAL MEDICAL STORE",
+    "AGARWAL MEDICALS(PN)"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 2421.5,
+  "amount_total": 346740.05
+}

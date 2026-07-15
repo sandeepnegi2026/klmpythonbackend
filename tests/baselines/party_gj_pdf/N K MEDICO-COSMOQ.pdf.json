@@ -1,0 +1,27 @@
+{
+  "file": "N K MEDICO-COSMOQ.pdf",
+  "route": "party_pdf",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "marg_bordered_billwise",
+  "party_count": 11,
+  "area_count": 6,
+  "product_count": 8,
+  "sample_parties": [
+    "A1 MEDICAL",
+    "DHYEY MEDICAL STORE",
+    "DR. ANUPAM'S SKIN FIRS",
+    "DR. CHETNA SAVAJ",
+    "DR. DIPALI PATOLIYA"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 425.0,
+  "amount_total": 0.0
+}

@@ -1,0 +1,27 @@
+{
+  "file": "NEELRAJ AGENCIES-PHARMA.PDF",
+  "route": "party_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 18,
+  "area_count": 6,
+  "product_count": 13,
+  "sample_parties": [
+    "AAKESH MEDICAL & GENRAL STORES",
+    "ANJALI MEDICAL STORES",
+    "CASH RECEIVED",
+    "LIFE CARE MEDICAL",
+    "NARMADA MEDICAL"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 93.0,
+  "amount_total": 17508.5
+}

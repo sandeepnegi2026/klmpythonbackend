@@ -1,0 +1,17 @@
+{
+  "file": "VISNAGAR MEDICAL STORES - PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 39,
+  "warnings_count": 15,
+  "headers_detected_count": 6,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 38,
+  "sample_products": [
+    "105,106,109,110,ANAND MARKET,FIRST FLOOR,OPP.M.N.COLLEGE ROAD Ph:02765",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 1778.0
+}

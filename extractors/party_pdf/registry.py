@@ -4,6 +4,8 @@ from extractors.party_pdf.layouts.busy_tally import (
 )
 from extractors.party_pdf.layouts.custom_pharma import parse_custom_pharma
 from extractors.party_pdf.layouts.logic_erp import parse_logic_erp
+from extractors.party_pdf.layouts.partywise_sales_summary import parse_partywise_sales_summary
+from extractors.party_pdf.layouts.customer_invoice_itemwise_sale import parse_customer_invoice_itemwise_sale
 from extractors.party_pdf.layouts.marg_bordered import parse_marg_bordered
 from extractors.party_pdf.layouts.marg_bordered_billwise import (
     parse_marg_bordered_billwise,
@@ -86,6 +88,8 @@ from extractors.party_pdf.layouts.party_item_summary_qtyfree import parse_party_
 from extractors.party_pdf.layouts.areawise_sales_statement_banded import parse_areawise_sales_statement_banded
 
 PARSERS = {
+    "partywise_sales_summary": parse_partywise_sales_summary,
+    "customer_invoice_itemwise_sale": parse_customer_invoice_itemwise_sale,
     "sales_statement_summary_itemwise": parse_sales_statement_summary_itemwise,
     "mfacwise_custwise_itemwise": parse_mfacwise_custwise_itemwise,
     "prodcust_wise_billwise": parse_prodcust_wise_billwise,

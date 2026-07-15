@@ -19,6 +19,24 @@ _STOCK_TOTALS_FOOTER_RE = re.compile(
     r"(\s+on\s+sale\s*rate)?[.\s]*:",
     re.I,
 )
+# Non-product accounting adjustment line printed at the bottom of a KLM "order
+# format" stock sheet, e.g. "REBATE & DISCOUNT (GST)", "REBATE & DISCOUNT GST 18",
+# "REABET&DISCOUNT", "REBEATE & DISCOUNT 5% GS". Every quantity/value column is
+# zero — it is a rebate/discount footer, never a real product — so the generic
+# tabular reader must drop it, otherwise it lands as an unmatched all-zero phantom
+# that holds the whole invoice in review. Keyed on a rebate spelling (rebate /
+# rebeate / reabet) immediately followed by "discount"; no medicine name matches
+# this, so it steals nothing (verified: 0 hits across the 95-file stock_xlsx corpus).
+_REBATE_DISCOUNT_RE = re.compile(r"^(rebate|rebeate|reabet)\W*(and\W*)?discount", re.I)
+# Page-break header line reprinted mid-report by Marg, e.g. a row
+# ["STOCK & SALES ANALYSIS", "", "", "", "Page No..4"]. The title lands in the
+# product column and the "Page No.." token in a trailing cell, so the row has 2
+# non-empty cells (escapes the non_empty<=1 drop) that DIFFER (escapes the merged
+# _is_section_header drop), while every quantity cell is empty => an all-zero
+# phantom that steals the LAST data-row slot. A real product row never carries a
+# "Page No" page marker in any cell, so keying on that token skips only these
+# page-break banners and steals nothing.
+_PAGE_MARKER_RE = re.compile(r"page\s*no", re.I)
 
 
 def _is_section_header(raw_row):
@@ -72,6 +90,12 @@ def records_from_rows(rows, header_idx):
         # Skip merged-cell section headers (all cells identical)
         if _is_section_header(raw_row):
             continue
+        # Skip a page-break header banner reprinted mid-report ("STOCK & SALES
+        # ANALYSIS ... Page No..4"): the report title lands in the product column
+        # and a "Page No.." token in a trailing cell, giving a 2-cell all-zero row
+        # that otherwise steals the last data-row slot.
+        if any(_PAGE_MARKER_RE.search(cell_text(c)) for c in raw_row if cell_text(c)):
+            continue
         # Skip rows where product starts with known section markers.
         # "total"/"itemname"/"productname" cover glued footers/headers that the
         # word-boundary-anchored SUBTOTAL_RE misses: e.g. the per-company footer
@@ -81,9 +105,23 @@ def records_from_rows(rows, header_idx):
         pl = product.lower().strip()
         if pl.startswith("company") or pl.startswith("division") or pl.startswith("manufacturer") or pl.startswith("values") or pl.startswith("total") or pl.startswith("item name") or pl.startswith("itemname") or pl.startswith("product name") or pl.startswith("productname") or pl.startswith("supplier") or pl.startswith("purchase invoice") or pl.startswith("sale invoice") or pl.startswith("sr.no") or pl.startswith("s.no"):
             continue
+        # Skip the Logic-ERP "Stock And Sales" summary-footer control band. After the product
+        # grid the ERP prints a "SummaryFooter" sentinel, then a header row
+        # "Summary | OpStockValue | Purchase | SR | Sales | ClStockValue | LM SalValue | ..."
+        # and two value rows ("Goods Value | ..." / "Amount | ..."). The header row's product
+        # cell is a glued stock-value label (OpStockValue/ClStockValue), never a medicine, and
+        # its quantity columns are text ("SR"/"Sales") that come out all-zero -> a phantom. (The
+        # two value rows already drop out as numeric-named; the sentinel row has an empty product
+        # cell.) Keyed on the "Summary" SlNo cell or the glued label, so no real product matches.
+        if cell_text(raw_row[0]).strip().lower() == "summary" or pl.replace(" ", "") in ("opstockvalue", "clstockvalue"):
+            continue
         # Skip Marg grand-total footer lines ("OPENING : 73755.58", "CL.STK.: 80910.39",
         # "Closing On SaleRate: 94044.7") that print the whole label+value in the product cell.
         if _STOCK_TOTALS_FOOTER_RE.match(pl):
+            continue
+        # Skip a rebate/discount(-GST) accounting adjustment footer line ("REBATE &
+        # DISCOUNT (GST)", "REBATE & DISCOUNT GST 18") — a non-product all-zero row.
+        if _REBATE_DISCOUNT_RE.match(pl):
             continue
         # Skip a pure separator / rule line (product name is only dashes/underscores/
         # asterisks/punctuation, e.g. the "--------------------" divider printed under an

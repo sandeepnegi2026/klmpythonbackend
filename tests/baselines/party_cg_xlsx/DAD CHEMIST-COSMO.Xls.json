@@ -1,0 +1,27 @@
+{
+  "file": "DAD CHEMIST-COSMO.Xls",
+  "route": "party_xlsx",
+  "row_count": 68,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 23,
+  "area_count": 4,
+  "product_count": 22,
+  "sample_parties": [
+    "AAROGYAM PHARMACY",
+    "AUM MEDICOSE & GENERAL STORES",
+    "Akash Pharmacy shop",
+    "CHAUHAN MEDICOSE",
+    "COUNTER SALES A/C.     ."
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Histabil 40Mg Tablets 1*10 Tab"
+  ],
+  "qty_total": 283.0,
+  "amount_total": 70101.96
+}

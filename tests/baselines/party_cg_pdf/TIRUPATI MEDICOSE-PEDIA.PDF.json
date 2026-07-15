@@ -1,0 +1,27 @@
+{
+  "file": "TIRUPATI MEDICOSE-PEDIA.PDF",
+  "route": "party_pdf",
+  "row_count": 242,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_sale_details",
+  "party_count": 95,
+  "area_count": 34,
+  "product_count": 35,
+  "sample_parties": [
+    "Aarunya Medical Stores",
+    "Aastha Pharmacy",
+    "Agrasen Medical Stores",
+    "Agrawal Medical Stores",
+    "Ajay Medical Stores Kohka"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 1597.0,
+  "amount_total": 201563.62
+}

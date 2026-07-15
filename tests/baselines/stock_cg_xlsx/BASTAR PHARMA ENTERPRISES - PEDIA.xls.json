@@ -1,0 +1,17 @@
+{
+  "file": "BASTAR PHARMA ENTERPRISES - PEDIA.xls",
+  "route": "stock_xlsx",
+  "row_count": 44,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 41,
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 2202.0
+}

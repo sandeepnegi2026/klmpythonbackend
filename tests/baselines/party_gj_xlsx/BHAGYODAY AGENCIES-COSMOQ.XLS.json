@@ -1,0 +1,20 @@
+{
+  "file": "BHAGYODAY AGENCIES-COSMOQ.XLS",
+  "route": "party_xlsx",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 35,
+  "detected_format": "marg_register_excel",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 2,
+  "sample_parties": [
+    "DR BHAGIRATH RAJESHKUMAR PATEL HUF"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 6.0,
+  "amount_total": 3011.92
+}

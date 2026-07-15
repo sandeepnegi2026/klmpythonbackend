@@ -1,0 +1,27 @@
+{
+  "file": "OMKAR ENTERPRISE-PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 6,
+  "area_count": 2,
+  "product_count": 7,
+  "sample_parties": [
+    "ANGEL MEDICAL STORE",
+    "AUM MEDICINES",
+    "DARSHAN CHEMIST",
+    "PRANVI MEDICAL STORE",
+    "SAI MEDICINES"
+  ],
+  "sample_products": [
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Massage Oil 100Ml",
+    "Sofidew Cream 100Gm",
+    "Sofidew Shampoo 100Ml",
+    "Sofikid Drops With Dha 30Ml"
+  ],
+  "qty_total": 155.0,
+  "amount_total": 20050.89
+}

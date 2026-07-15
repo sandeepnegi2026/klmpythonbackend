@@ -1,0 +1,17 @@
+{
+  "file": "ARCHI DISTRIBUTOR - COSMO.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "marg_web_stock",
+  "product_count": 11,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 80.0
+}

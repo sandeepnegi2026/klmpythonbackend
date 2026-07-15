@@ -1,0 +1,27 @@
+{
+  "file": "AYACHI MEDICAL-DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 19,
+  "area_count": 9,
+  "product_count": 18,
+  "sample_parties": [
+    "AADHYA PHARMACY",
+    "AARVI MEDICOSE",
+    "AKHIL MEDICAL STORE",
+    "ARIHANT MEDICAL STORES",
+    "DEEPAK MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm"
+  ],
+  "qty_total": 316.0,
+  "amount_total": 81106.34
+}

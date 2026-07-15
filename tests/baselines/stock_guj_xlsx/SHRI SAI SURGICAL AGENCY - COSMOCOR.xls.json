@@ -1,0 +1,17 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY - COSMOCOR.xls",
+  "route": "stock_xlsx",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_opstk_curstk",
+  "product_count": 26,
+  "sample_products": [
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 397.0
+}

@@ -94,8 +94,13 @@ def parse_prompt_normal(text):
     # DB-SR-T/, CA-T/, GCN-D/ ...). Date: dd-mm-yyyy or dd/mm/yyyy. Broadening
     # these two only ADDS matches inside the otherwise-rigid 9-field structure;
     # the original DB-T/M/DB-SR-T + slash-date inputs still match unchanged.
+    # Qty/Free groups allow an OPTIONAL decimal part (e.g. 5.5, 0.5, 2.5) so
+    # fractional-strip / half-scheme rows are captured. Previously (-?\d+)/(\d+)
+    # dropped any line whose qty or free was a decimal, silently losing rows
+    # and undercounting the party/grand totals. Adding (?:\.\d+)? is purely
+    # additive: existing integer qty/free inputs still match unchanged.
     pat = re.compile(
-        r"^(.+?)\s+([A-Z]+(?:-[A-Z]+)*/\d+)\s+(\d{1,2}[-/]\d{1,2}[-/]\d{4})\s+([\d.]+)\s+(\S+)\s+(-?\d+)\s+(\d+)\s+([\d.-]+)\s+([\d.-]+)\s*$"
+        r"^(.+?)\s+([A-Z]+(?:-[A-Z]+)*/\d+)\s+(\d{1,2}[-/]\d{1,2}[-/]\d{4})\s+([\d.]+)\s+(\S+)\s+(-?\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+([\d.-]+)\s+([\d.-]+)\s*$"
     )
     rows, cur_raw = [], []
     skip_pf = [

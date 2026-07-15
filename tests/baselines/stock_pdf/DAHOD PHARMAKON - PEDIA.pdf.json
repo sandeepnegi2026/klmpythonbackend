@@ -1,0 +1,17 @@
+{
+  "file": "DAHOD PHARMAKON - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 33,
+  "warnings_count": 9,
+  "headers_detected_count": 11,
+  "detected_format": "dahod_marg",
+  "product_count": 28,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol-D Capsules",
+    "Evaklin Medicated Wash",
+    "Fentispor Capsule"
+  ],
+  "closing_stock_total": 425.0
+}

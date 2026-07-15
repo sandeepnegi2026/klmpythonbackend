@@ -20,6 +20,15 @@ def _despace(s):
 
 NUM = re.compile(r"-?\d[\d,]*\.\d{2}")
 
+# Layout C row tail: QTY (int)  FREE (int or '-')  RATE (dd.dd)  VALUE (dd.dd),
+# anchored at EOL. Used to recover the integer Qty and '-'/int Free that the
+# decimal-only NUM regex cannot see. Preserves the negative sign on sales-return
+# qty so grand totals reconcile.
+_TAIL_C = re.compile(
+    r"(?P<qty>-?\d+)\s+(?P<free>-|\d+)\s+"
+    r"(?P<rate>-?[\d,]*\.\d{2})\s+(?P<val>-?[\d,]*\.\d{2})\s*$"
+)
+
 # A wrapped product-name tail (dosage form) or a bare pack line is a data-row
 # continuation, NOT a party heading. Used to stop such lines becoming fake
 # parties (e.g. "NEVSOFT CLEANSING" wraps to "LOTION"; "100ML" pack tails).
@@ -216,7 +225,7 @@ def parse_billwise(text):
         return headers, rows
 
     if layout == "C":
-        for s in lines:
+        for _idx, s in enumerate(lines):
             if is_noise(s):
                 continue
             if s.startswith("CUSTOMER"):
@@ -227,7 +236,7 @@ def parse_billwise(text):
                     name = re.sub(r"\s+\d+$", "", name)
                     party = name.strip()
                 continue
-            if s.startswith("GRAND") or s.startswith("DATE ") or s.startswith("COMPANY") or s.startswith("ITEM-BILL") or "SANTOSH ENTER" in s.upper() or "KESHO RAM" in s.upper():
+            if s.startswith("GRAND") or s.startswith("DATE ") or s.startswith("COMPANY") or s.startswith("ITEM-BILL") or s.startswith("CUSTOMER TOTAL") or "SANTOSH ENTER" in s.upper() or "KESHO RAM" in s.upper():
                 continue
             nums = NUM.findall(s)
             if len(nums) >= 2:
@@ -238,7 +247,18 @@ def parse_billwise(text):
                 else:
                     dt, inv, rest = "", "", s
                 prod = re.split(r"\s+-?\d", rest)[0].strip()
-                rows.append([party, prod, inv, dt, "", "", "", "%.2f" % val])
+                # Recover integer Qty / '-'|int Free / Rate that the decimal-only
+                # NUM regex misses. Tail-anchored on the RAW (non-despaced) line,
+                # because _despace glues the single-digit Qty/Free pair ("5 1"
+                # -> "51"). Falls back to blanks (prior behaviour) when the row
+                # does not end in the expected shape.
+                qty = free = rate = ""
+                mt = _TAIL_C.search(raw_lines[_idx].strip())
+                if mt:
+                    qty = mt.group("qty")
+                    free = "0" if mt.group("free") == "-" else str(int(mt.group("free")))
+                    rate = "%.2f" % float(mt.group("rate").replace(",", ""))
+                rows.append([party, prod, inv, dt, qty, free, rate, "%.2f" % val])
         return headers, rows
 
     if layout == "D":

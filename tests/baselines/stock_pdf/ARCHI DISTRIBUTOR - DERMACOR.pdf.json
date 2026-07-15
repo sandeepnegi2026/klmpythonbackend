@@ -1,0 +1,17 @@
+{
+  "file": "ARCHI DISTRIBUTOR - DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 2,
+  "headers_detected_count": 14,
+  "detected_format": "marg_web_stock",
+  "product_count": 15,
+  "sample_products": [
+    "Episert Cream 10 Gm",
+    "Extend Capsules",
+    "Extend D3 Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Plus Tablets"
+  ],
+  "closing_stock_total": 105.0
+}

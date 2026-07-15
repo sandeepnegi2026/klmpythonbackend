@@ -1,0 +1,17 @@
+{
+  "file": "VISNAGAR MEDICAL STORES - DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 20,
+  "warnings_count": 4,
+  "headers_detected_count": 5,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 19,
+  "sample_products": [
+    "105,106,109,110,ANAND MARKET,FIRST FLOOR,OPP.M.N.COLLEGE ROAD Ph:02765",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets"
+  ],
+  "closing_stock_total": 372.0
+}

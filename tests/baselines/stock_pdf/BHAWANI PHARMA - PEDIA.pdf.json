@@ -1,0 +1,17 @@
+{
+  "file": "BHAWANI PHARMA - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 50,
+  "warnings_count": 4,
+  "headers_detected_count": 10,
+  "detected_format": "stock_simple_7col",
+  "product_count": 47,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 37343.25
+}

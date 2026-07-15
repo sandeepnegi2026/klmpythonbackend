@@ -18,6 +18,11 @@ BARE_TOTAL_RE = re.compile(
 )
 
 LAYOUT_LABELS = {
+    "customer_item_invoicewise_banded": "Customer Item - Invoice Wise — banded (party in merged CUSTOMER:...CITY band rows; Item Name/Qty/Value; KLM)",
+    "item_customerwise_sale": "Item Wise - Customer Wise Sale (Item-Banded, Customer detail)",
+    "areacity_wise_sale_pivot": "AreaCity Wise Sale Report (Pivot unpivot, AC-grid + legend)",
+    "party_discount_summary_xlsx": "Party Discount Summary on Sales (Text)",
+    "marg_outward_detail_partywise": "Marg Outward Detail Partywise Sale",
     "customer_product_banded_grsamt": "Customer/Product-wise Sale Report — banded (Product/Qty/Free/GrsAmt/Area City; party in band rows) — G.S. DISTRIBUTORS",
     "customer_product_banded_area_first": "Customer + Product Wise Sale Summary — banded, Area-first (Area/Product/Qty/Free/GrsAmt; party in band rows) — NAVNEET",
     "swil_html_billwise": "SwilERP Party Billwise (HTML-in-.xls)",
@@ -46,6 +51,7 @@ LAYOUT_LABELS = {
     "area_party_billwise": "Area/Party/Billwise Register",
     "company_area_wise_sales": "Company Wise Area Wise Sales (Bill-wise, Banded)",
     "product_customer_wise_sales_xlsx": "Product-Customer Wise Sales (SwilERP, Banded XLSX)",
+    "company_area_customer_product_wise": "Company/Area/Customer/Product Wise Sales (Col-0 Band)",
     "companywise_customerwise": "Companywise Customerwise (Wide)",
     "salesmen_partywise": "Salesmen-wise (Customer-Banded)",
     "party_item_summary": "Party/Item-wise Sales Summary (Text)",

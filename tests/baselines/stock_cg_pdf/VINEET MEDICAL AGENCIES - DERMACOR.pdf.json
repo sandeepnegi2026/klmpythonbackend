@@ -1,0 +1,17 @@
+{
+  "file": "VINEET MEDICAL AGENCIES - DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 32,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "closing_stock_total": 299.0
+}

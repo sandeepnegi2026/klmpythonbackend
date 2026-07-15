@@ -1,0 +1,17 @@
+{
+  "file": "ANJALI PHARMACEUTICALS DISTRI. - PROMPT ERP - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 20,
+  "headers_detected_count": 11,
+  "detected_format": "prompt",
+  "product_count": 28,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 35124.0
+}

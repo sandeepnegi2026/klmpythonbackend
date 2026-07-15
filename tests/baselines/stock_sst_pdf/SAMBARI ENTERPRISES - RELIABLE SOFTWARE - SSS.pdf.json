@@ -1,0 +1,17 @@
+{
+  "file": "SAMBARI ENTERPRISES - RELIABLE SOFTWARE - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 12,
+  "headers_detected_count": 26,
+  "detected_format": "marg_bordered",
+  "product_count": 12,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Intense Moisturizing Lotion 150Ml"
+  ],
+  "closing_stock_total": 620.0
+}

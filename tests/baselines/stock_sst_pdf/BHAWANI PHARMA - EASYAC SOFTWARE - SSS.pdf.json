@@ -1,0 +1,17 @@
+{
+  "file": "BHAWANI PHARMA - EASYAC SOFTWARE - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_lms_simple",
+  "product_count": 28,
+  "sample_products": [
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet"
+  ],
+  "closing_stock_total": 490.0
+}

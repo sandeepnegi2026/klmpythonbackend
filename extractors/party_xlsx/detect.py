@@ -147,6 +147,14 @@ def detect_layout(rows):
     if _prod_cust_ws_detect(rows):
         return "product_customer_wise_sales_xlsx"
 
+    # "Salesmen wise Report" (SAFE LIFE / KLM) — SwilERP export with a Manufacturer/Division band
+    # + Area City/Product Name/PCode/Qty columns. Its GrsAmt + Area City header (no party column)
+    # ALSO matches customer_product_banded_grsamt below, which mis-reads it positionally, so this
+    # tightly title-gated ('salesmen wise') check MUST run first.
+    from extractors.party_xlsx.layouts.salesmen_partywise import detect as _salesmen_detect_pre
+    if _salesmen_detect_pre(rows):
+        return "salesmen_partywise"
+
     # G.S. DISTRIBUTORS "<Division>-Sales Report" (KCOSMO/KDERMA/KPED/...) — customer is a
     # bare BAND row (header Product Name|Qty|Free|GrsAmt|Area City, NO party column). tabular
     # maps the product columns but never binds party_name -> RED. Gated on the banded GrsAmt +
@@ -171,6 +179,43 @@ def detect_layout(rows):
     from extractors.party_xlsx.layouts.customer_product_sale_dc_summary import detect as _cust_prod_dc_detect
     if _cust_prod_dc_detect(rows):
         return "customer_product_sale_dc_summary"
+
+    # KLM "Customer Item - Invoice Wise" party export (SANTOSH ENTERPRISES) — merged-cell
+    # CUSTOMER bands (party+code+CITY written into every column) over a Date/Item Name/Qty/
+    # Value table. customer_product_banded's merged-furniture guard eats the band and its
+    # style-1 gate needs a 'Product Name' header. Title-gated on unique 'customeriteminvoicewise'.
+    from extractors.party_xlsx.layouts.customer_item_invoicewise_banded import detect as _cii_banded_detect
+    if _cii_banded_detect(rows):
+        return "customer_item_invoicewise_banded"
+
+    # "Item Wise - Customer Wise Sale" (SAI KRISHNA / KLM) — product is a col0 band row
+    # ("Item :<name>  PACK :<pack>") over CUSTOMER detail rows. The Item/PACK band leaks into
+    # every tabular field (fmt None). Title-gated on unique 'itemwisecustomerwisesale'.
+    from extractors.party_xlsx.layouts.item_customerwise_sale import detect as _item_custws_detect
+    if _item_custws_detect(rows):
+        return "item_customerwise_sale"
+
+    # "AreaCity Wise Sale Report" — Marg (SHREE UNITED / KLM) product-wise PIVOT whose total
+    # qty is spread across generically-headed AC1..ACn per-area quantity columns (area names in
+    # a bottom legend). Currently falls to tabular with no party column -> RED. Gated on unique
+    # 'areacitywisesalereport' title token + the AC-grid header.
+    from extractors.party_xlsx.layouts.areacity_wise_sale_pivot import detect as _areacity_pivot_detect
+    if _areacity_pivot_detect(rows):
+        return "areacity_wise_sale_pivot"
+
+    # "PARTY DISCOUNT SUMMARY ON SALES" — Busy/Marg single-column TEXT export (SAM MEDICOS /
+    # KLM). Party is a bare name band; each product line carries 8 trailing discount numbers.
+    # marg_busy reads 0 rows from the single text cell. Title-gated on 'partydiscountsummary'.
+    from extractors.party_xlsx.layouts.party_discount_summary_xlsx import detect as _party_disc_summary_detect
+    if _party_disc_summary_detect(rows):
+        return "party_discount_summary_xlsx"
+
+    # Marg "Outward Detail(s)" party-wise sale export (SATARA PHARMA / KLM). Columnar table that
+    # tabular maps correctly but leaves footer noise rows + blank product on continuation rows.
+    # Title-gated on the unique 'outwarddetail' token + a columnar party/product/qty header.
+    from extractors.party_xlsx.layouts.marg_outward_detail_partywise import detect as _marg_outward_detail_detect
+    if _marg_outward_detail_detect(rows):
+        return "marg_outward_detail_partywise"
 
     # Wide "Companywise Customerwise" Logic-ERP export (customer band, far-apart cols).
     from extractors.party_xlsx.layouts.companywise_customerwise import detect as _companywise_detect
@@ -262,6 +307,16 @@ def detect_layout(rows):
     from extractors.party_xlsx.layouts.customer_product_wise_band import detect as _cpw_band_detect
     if _cpw_band_detect(rows):
         return "customer_product_wise_band"
+
+    # "Company/Area/Customer/Product Wise Sales" — Logic-ERP export (SHRI SAI / KLM) whose party
+    # is a lone column-0 band "CUSTOMER NAME : NAME-AREA-CITY" over a PRODUCT C/PRODUCT NAME/QTY/
+    # FREE QT/GOODS VALU/PRATE table. Also claimed by partywise_band on the shared "customer
+    # product wise" title, but its band lives in col 0 (not the Name/product column) and its
+    # "CUSTOMER NAME :" prefix isn't matched -> empty party_name. Checked before partywise_band;
+    # gated on title + the PRODUCT-NAME/QTY/PRATE header + a CUSTOMER NAME band.
+    from extractors.party_xlsx.layouts.company_area_customer_product_wise import detect as _cacpw_detect
+    if _cacpw_detect(rows):
+        return "company_area_customer_product_wise"
 
     # "Customer / Company / Itemwise Sales" — MARG/KLM export (MANISH) banded
     # Location->Series->Customer->Company. Title-gated so it diverts only this specific

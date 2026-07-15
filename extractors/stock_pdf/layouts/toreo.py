@@ -1,8 +1,38 @@
+import re
+
 from extractors.stock_pdf.parse_common import _clean_number_token, _is_num, _to_number
+
+# <digits> <one letter> <digits>, no dot anywhere -> two glyph-glued integer columns
+# (e.g. the always-'0' IN/OT glued to the closing STOCK: '0a6' -> '0','6').
+_GLUED_INTCOL_RE = re.compile(r"^(\d+)[A-Za-z](\d+)$")
+
+# A glued pack-unit token that carries no space before its unit letters, e.g.
+# '10G' '50G' '30GM' '20GM' '150ML' '100MG'. _clean_number_token would strip the
+# trailing unit and mis-read it as a data column ('10G'->'10'), shifting the whole
+# numeric tail left. These belong to the PACK, not the numeric run, so the tail
+# walk must STOP here. Anchored to real pharma pack units so a plain digit column
+# ('10','50') is never caught.
+_PACK_UNIT_TOKEN_RE = re.compile(r"^\d+(?:GM|ML|MG|KG|GML|MLL|LTR|G|L)$", re.I)
 
 
 def _num(v):
     return _to_number(_clean_number_token(v)) or 0.0
+
+
+def _unglue_intcols(tokens):
+    """Split any <int><letter><int> token (glyph-glued adjacent integer columns)
+    into its two halves. Leaves every other token untouched."""
+    out = []
+    for t in tokens:
+        m = _GLUED_INTCOL_RE.match(t)
+        # Only split when the token is NOT already a plain number — i.e. it
+        # genuinely carries a stray letter between two integer groups.
+        if m and not _is_num(t):
+            out.append(m.group(1))
+            out.append(m.group(2))
+        else:
+            out.append(t)
+    return out
 
 
 def parse_toreo_stock(text):
@@ -31,14 +61,18 @@ def parse_toreo_stock(text):
         if "gstin" in low or "email" in low or "from date" in low:
             continue
 
-        tokens = line.split()
+        tokens = _unglue_intcols(line.split())
         if len(tokens) < 7:
             continue
 
         # collect the trailing numeric run (glyph-tolerant), stopping at the pack unit
         i = len(tokens) - 1
         vals = []
-        while i >= 0 and _is_num(_clean_number_token(tokens[i])):
+        while (
+            i >= 0
+            and _is_num(_clean_number_token(tokens[i]))
+            and not _PACK_UNIT_TOKEN_RE.match(tokens[i])
+        ):
             vals.insert(0, _num(tokens[i]))
             i -= 1
         if i < 0 or len(vals) < 7:

@@ -33,6 +33,12 @@ PACK_RE = re.compile(
 )
 
 LAYOUT_LABELS = {
+    "marg_sales_stock_statement": "Marg Sales & Stock Statement (Op/Receipt/Issue/Closing Qty+Value; WIDE adds ReturnToCOM/RetFromCustomer/Expiry) — NARROW+WIDE, positional",
+    "marg_stock_sales_expiry_positional": "Marg/MVGold Stock and Sales Statement (Opst/Purc/S.R./Sale+Val/P.R./Exp+Non-Mov/Closing+Val/Near.Exp, 14-col positional, per-division)",
+    "klm_stock_sales_analysis_movement": "KLM Stock & Sales Analysis (division-banded 11-col movement: Opening/Purchase+Free/P.Return+Free/Sale+Free/S.Return+Free/Others/Closing, qty-only)",
+    "stock_opbal_free_expiry": "KLM Sales & Stock Statement (Op.Bal/Receipt/Total/Issue/FreeQ/Expiry/Closing, qty-only)",
+    "stock_ss_analysis_sret_others": "KLM Stock And Sales Analysis (Opening/Purchase/S.Return/Others-in/SubTotal/Sale/P.Return/Others-out/Closing, 9-col movement, dashes=nil)",
+    "klm_ss_statement_receive_close": "KLM Stock & Sales Statement (Receive/Close, 2-page)",
     "stock_sales_statement_adjmt_positional": "STOCK & SALES STATEMENT (SREE SUPREME/ANANDH DOSPrinter; grouped OPENING/RECEIPT/SALES-LAST-QTY-FREE/ADJMT/CLOSING-QTY-FREE-VALUE, positional, dashes=nil)",
     "stock_oric_receipt_qtyonly": "Marg Stock & Sales Analysis (Opening/Issue/Closing qty+value pairs, RECEIPT qty-only) — AMRITA COSMOCOR",
     "swil_recv_issue_stock": "SwilERP Sales & Stock Statement — 9-col Op.Bal/Receipt/Retrn/Total/Issue/Retrn/Closing/Dump/Near (JAY SHREE)",
@@ -75,6 +81,7 @@ LAYOUT_LABELS = {
     "marg_stock_summary": "Marg Stock Summary (Open/Pur/Ret/Receipts/Sales/Ret/Issue/Balance)",
     "stock_open_pur_sale_free_current": "KLM Stock & Sales (Code/Open/Pur/Sale/Free/Current/Amount/Closing)",
     "marg_stock_analysis_full": "Marg Stock & Sales Analysis (14-col Open/Pur/S-R/Repl/Total/Sales/Sample/P-R/Closing + M.Exp)",
+    "marg_stock_ava_bval_sval": "Marg Stock And Sales Analysis (AVA/Apr/OP.BAL/PUR./PR./ADJ./SR./B.Sale/SALE/BAL + BVAL/SVAL, positional, MALU MEDICO)",
     "pharmassist_mfac": "PharmAssist (C-Square) Stock & Sales Mfac Group Wise (positional)",
     "klm_venus_opstk_crqty": "Venus KLM Stock & Sale Statement (page-split OpStk/P.Qty/P.Sch/S.Qty/S.Sch/CrQty | ClStk/ClVal, glyph-descrambled positional)",
     "dahod_stock_sale_stmt": "DAHOD PHARMAKON Stock & Sale Statement (SINGLE-page OpStk/P.Qty/P.Val/P.Sch/S.Qty/S.Sch/S.Val/CrQty/ClStk/ClVal/Order, right-edge x1 positional)",

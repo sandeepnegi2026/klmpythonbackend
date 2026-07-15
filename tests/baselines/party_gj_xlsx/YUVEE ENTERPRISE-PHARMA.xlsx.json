@@ -1,0 +1,27 @@
+{
+  "file": "YUVEE ENTERPRISE-PHARMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 46,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 26,
+  "area_count": 9,
+  "product_count": 23,
+  "sample_parties": [
+    "24 KALAK MEDICAL STORES.IDAR",
+    "AARAMBH MEDICINES",
+    "ANCHIT MEDICINES AND .VIJAYNAG",
+    "BALAJI CHEMIST..AROGYANAGAR",
+    "BHARAT MEDICAL & PROV.STORES"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 275.0,
+  "amount_total": 39678.0
+}

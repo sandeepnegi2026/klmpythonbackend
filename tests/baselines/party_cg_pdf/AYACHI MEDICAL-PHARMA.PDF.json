@@ -1,0 +1,27 @@
+{
+  "file": "AYACHI MEDICAL-PHARMA.PDF",
+  "route": "party_pdf",
+  "row_count": 77,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 23,
+  "area_count": 11,
+  "product_count": 30,
+  "sample_parties": [
+    "AADHYA PHARMACY",
+    "AARVI MEDICOSE",
+    "AKHIL MEDICAL STORE",
+    "ARIHANT MEDICAL STORE",
+    "DEVI MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 1123.0,
+  "amount_total": 133975.83
+}

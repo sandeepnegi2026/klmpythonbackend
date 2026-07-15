@@ -1,0 +1,26 @@
+{
+  "file": "SHREE SAI SURGICAL-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "wep_legacy",
+  "party_count": 8,
+  "area_count": 5,
+  "product_count": 4,
+  "sample_parties": [
+    "AMBICA MEDICAL AND GENERAL STORES",
+    "DR.MANISH PATEL",
+    "KOHINOOR MEDICAL AND GENERAL STORE",
+    "PREM MEDICAL AND GENERAL STORE",
+    "SHIVAM MEDICAL AND GENERAL STORES"
+  ],
+  "sample_products": [
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 150 Ml",
+    "Lulizol Cream 10 Gm",
+    "Melapik Hq Cream 20 Gm"
+  ],
+  "qty_total": 13.0,
+  "amount_total": 2396.05
+}

@@ -1,0 +1,27 @@
+{
+  "file": "BHAGYODAY AGENCIES-COSMOCOR.XLS",
+  "route": "party_xlsx",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 35,
+  "detected_format": "marg_register_excel",
+  "party_count": 6,
+  "area_count": 4,
+  "product_count": 9,
+  "sample_parties": [
+    "ANGIRA MEDICINES",
+    "DR BHAGIRATH RAJESHKUMAR PATEL HUF",
+    "JIYA MEDICAL STORE",
+    "PRAKASH HEALTHCARE",
+    "RAVI AGENCY"
+  ],
+  "sample_products": [
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Niogenta F Cream 20 Gm",
+    "Niosol Ointment 30 Gm",
+    "Niosol-F Cream 20 Gm"
+  ],
+  "qty_total": 37.0,
+  "amount_total": 7257.98
+}

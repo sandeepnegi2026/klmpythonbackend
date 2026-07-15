@@ -1,0 +1,23 @@
+{
+  "file": "BHAGYODAY AGENCIES-PEDIA.XLS",
+  "route": "party_xlsx",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 35,
+  "detected_format": "marg_register_excel",
+  "party_count": 4,
+  "area_count": 4,
+  "product_count": 2,
+  "sample_parties": [
+    "DR BHAGIRATH RAJESHKUMAR PATEL HUF",
+    "MAHAVIR MEDICAL STORES",
+    "NUTAN MEDICAL &PROVISON STORE",
+    "PRADHANMANTRI BHARTIAYA JAN AUSHADHI KENDRA"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 11.0,
+  "amount_total": 1167.59
+}

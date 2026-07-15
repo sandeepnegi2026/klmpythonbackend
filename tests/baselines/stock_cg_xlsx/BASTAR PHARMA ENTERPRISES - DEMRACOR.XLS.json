@@ -1,0 +1,17 @@
+{
+  "file": "BASTAR PHARMA ENTERPRISES - DEMRACOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 35,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "closing_stock_total": 528.0
+}

@@ -1,0 +1,17 @@
+{
+  "file": "PARTH AGENCY - INFOSOFT - SSS.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 23,
+  "warnings_count": 12,
+  "headers_detected_count": 22,
+  "detected_format": "tabular",
+  "product_count": 23,
+  "sample_products": [
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niofine Dusting Powder 75Gm",
+    "Niofine Forte Tablet 1*7 Tablets"
+  ],
+  "closing_stock_total": 534.0
+}

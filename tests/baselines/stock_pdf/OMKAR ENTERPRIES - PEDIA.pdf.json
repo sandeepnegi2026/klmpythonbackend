@@ -1,0 +1,17 @@
+{
+  "file": "OMKAR ENTERPRIES - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 45,
+  "warnings_count": 20,
+  "headers_detected_count": 11,
+  "detected_format": "prompt",
+  "product_count": 44,
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 48819.0
+}

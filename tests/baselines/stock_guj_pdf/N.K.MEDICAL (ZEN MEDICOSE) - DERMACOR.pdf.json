@@ -1,0 +1,17 @@
+{
+  "file": "N.K.MEDICAL (ZEN MEDICOSE) - DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 32,
+  "sample_products": [
+    "DEKTOP 20GM CREAM.",
+    "DEKTOP 50ML LOTION.",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair 1*30 Tablets"
+  ],
+  "closing_stock_total": 943.0
+}

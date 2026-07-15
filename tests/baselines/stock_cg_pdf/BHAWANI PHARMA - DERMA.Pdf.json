@@ -1,0 +1,17 @@
+{
+  "file": "BHAWANI PHARMA - DERMA.Pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 1,
+  "headers_detected_count": 9,
+  "detected_format": "marg_lms_simple",
+  "product_count": 30,
+  "sample_products": [
+    "Abc",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 474.0
+}

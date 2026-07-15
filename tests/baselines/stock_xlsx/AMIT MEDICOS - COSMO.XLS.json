@@ -1,0 +1,17 @@
+{
+  "file": "AMIT MEDICOS - COSMO.XLS",
+  "route": "stock_xlsx",
+  "row_count": 46,
+  "warnings_count": 33,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 45,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "closing_stock_total": 917.0
+}

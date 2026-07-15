@@ -155,6 +155,20 @@ def detect_format(text, n_rects, n_lines):
         and "areaitemwise" not in cfull
     ):
         return "party_item_summary_nofree"
+    # Value-bearing FREE variant of PARTY / ITEM WISE SALES SUMMARY: header
+    # 'DESCRIPTION QTY. FREE RATE AMOUNT' compacts to 'descriptionqty.freerateamount'
+    # (FREE between QTY. and RATE), which the plain nofree gate above rejects (needs
+    # 'descriptionqty.rateamount', not a substring of the FREE variant). The
+    # party_item_summary_qtyfree gate earlier already excludes this token. Reuses the
+    # party_item_summary_nofree parser, which handles the FREE column + '.PARTY-AREA' headings.
+    if (
+        "d e s c r i p t i o n" in tfull
+        and "party/itemwisesalessummary" in cfull
+        and "descriptionqty.freerateamount" in cfull
+        and "areaitemwise" not in cfull
+        and "avr.rate" not in cfull
+    ):
+        return "party_item_summary_nofree"
     # --- Tail layouts from the second workflow sweep (each verified to match only
     #     its own currently-"unknown" file; placed last so existing rules win). ---
     if "companywisecustomerwisereport" in cfull:
@@ -373,4 +387,23 @@ def detect_format(text, n_rects, n_lines):
     # from customer_product_grouped's 'productcodeproductnamepacking' gate above).
     if "customer-productwisesales" in cfull and "productnamepackingqty.freeqtyvalue" in cfull:
         return "customer_product_wise_packing"
+    # KAKADE AGENCIES "Partywise Sales Summary" (Marg/MVGold HTML->PDF): one block per
+    # party — a PARTY header line carrying the block's running Qty/Amount totals, then its
+    # PRODUCT lines. Six trailing cols Qty|Sch Qty|Sch Amt|ID Amt|Amount|Amount-ID; the
+    # 'Amount - ID' column is unique to this export. Tail-placed (before 'unknown') so every
+    # existing rule wins first; matches only files currently falling through to unknown.
+    if (
+        "partywisesalessummary" in cfull
+        and "particularsqtyschqtyschamtidamtamountamount-id" in cfull
+    ):
+        return "partywise_sales_summary"
+    # MALU MEDICO Marg "CUSTOMER - INVOICE - ITEM WISE SALE" (KLM billwise): CUSTOMER band
+    # -> per-invoice sub-band (date + SB/no + taxable/GST/invoice value) -> item lines
+    # (COMPNAME PACK ITEM BATCH QTY SCM% RATE MRP NETAMT). Title + its exact compact column
+    # header are corpus-unique (0/1083 PDFs). Tail-placed (before 'unknown').
+    if (
+        "customer-invoice-itemwisesale" in cfull
+        and "compnamepackitemnamebatchqty.scm%ratemrpnetamt" in cfull
+    ):
+        return "customer_invoice_itemwise_sale"
     return "unknown"

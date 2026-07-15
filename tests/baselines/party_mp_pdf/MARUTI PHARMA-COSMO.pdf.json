@@ -1,0 +1,27 @@
+{
+  "file": "MARUTI PHARMA-COSMO.pdf",
+  "route": "party_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 6,
+  "sample_parties": [
+    "AJAY MEDICAL STORE",
+    "AROGYAM HEALTH SHOPEE",
+    "BHARAT MEDICAL STORE",
+    "JANSEVA CHEMIST",
+    "PATEL MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Histabil 40Mg Tablets 1*10 Tab",
+    "Histabil Tablet 1*10 Tab",
+    "Imxia F",
+    "Imxia Yuth Solution 60 Ml"
+  ],
+  "qty_total": 40.0,
+  "amount_total": 17801.98
+}

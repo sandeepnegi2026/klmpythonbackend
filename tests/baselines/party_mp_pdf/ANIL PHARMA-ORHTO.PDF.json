@@ -1,0 +1,23 @@
+{
+  "file": "ANIL PHARMA-ORHTO.PDF",
+  "route": "party_pdf",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally_itemwise",
+  "party_count": 4,
+  "area_count": 3,
+  "product_count": 2,
+  "sample_parties": [
+    "CHANDEL MEDICAL STORE",
+    "MANISH M/S THATIPUR",
+    "THE SKIN SHOPEE PHARMACY.",
+    "VERMA MEDICAL"
+  ],
+  "sample_products": [
+    "Klflam-Sp Tablet",
+    "Klm-D3 60K Capsules (1*8 Cap)"
+  ],
+  "qty_total": 28.0,
+  "amount_total": 3675.63
+}

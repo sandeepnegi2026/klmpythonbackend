@@ -1,0 +1,17 @@
+{
+  "file": "AMIT MEDICOS - PHARMA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 53,
+  "warnings_count": 32,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 45,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 1822.0
+}

@@ -1,0 +1,27 @@
+{
+  "file": "GANESH MEDICAL-DERMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 16,
+  "area_count": 3,
+  "product_count": 11,
+  "sample_parties": [
+    "AARSHVI PHARMACY (ANAND)",
+    "AFYA MEDICAL STORE",
+    "ARORA MEDICAL STORE",
+    "D H PHARMACY",
+    "DR.NIRAJ DHINOJA"
+  ],
+  "sample_products": [
+    "Imxia F",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Cream 50Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 56.0,
+  "amount_total": 14274.49
+}

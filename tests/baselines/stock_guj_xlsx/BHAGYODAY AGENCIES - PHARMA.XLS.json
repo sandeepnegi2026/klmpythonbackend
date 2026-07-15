@@ -1,0 +1,17 @@
+{
+  "file": "BHAGYODAY AGENCIES - PHARMA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 20,
+  "warnings_count": 2,
+  "headers_detected_count": 42,
+  "detected_format": "tabular",
+  "product_count": 20,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine Lot 50Gm Tube"
+  ],
+  "closing_stock_total": 140.0
+}

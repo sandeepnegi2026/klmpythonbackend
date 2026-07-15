@@ -1,0 +1,27 @@
+{
+  "file": "NEELRAJ AGENCIES-PEDIA-GYNEC.PDF",
+  "route": "party_pdf",
+  "row_count": 59,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 30,
+  "area_count": 7,
+  "product_count": 21,
+  "sample_parties": [
+    "AARTI MEDICAL STORES",
+    "AASHIRWAD MEDICAL STORES",
+    "AASTHA PHARMACY",
+    "AJAY CHEMIST",
+    "ANJALI MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Histabil-M Suspension 60Ml",
+    "Klm D3 Nano Drops",
+    "Klm D3 Nano Shots"
+  ],
+  "qty_total": 260.0,
+  "amount_total": 28633.36
+}

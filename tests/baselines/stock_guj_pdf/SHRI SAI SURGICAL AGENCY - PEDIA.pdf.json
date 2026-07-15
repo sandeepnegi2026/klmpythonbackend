@@ -1,0 +1,17 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_receipt_replace",
+  "product_count": 6,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Massage Oil 100Ml",
+    "Sofidew Baby Powder 100G",
+    "Sofirash Cream 30 Gm"
+  ],
+  "closing_stock_total": 44.0
+}

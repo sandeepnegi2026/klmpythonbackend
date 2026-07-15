@@ -102,8 +102,15 @@ def parse_klm_customer_vs_item_summary(text, file_bytes=None):
             last_was_product = False
             continue
 
-        # a genuine product row: >=4 trailing numbers with a name in front
-        if n >= 4 and name:
+        # a genuine product row: >=3 trailing numbers with a name in front.
+        #
+        # The narrow "Group/ Name S.Qty S.Free Sale Value Total Value" export
+        # (KAMAKSHI MEDICAL EMPORIUM) suppresses a ZERO S.Free, so most product
+        # lines print only 3 numbers (S.Qty, Sale Value, Total Value). Accept
+        # them with free=0. When S.Free is present the line carries 4 numbers
+        # (S.Qty, S.Free, Sale Value, Total Value). The 5+-number branch retains
+        # the wider NetQty+Free header handling for sibling exports.
+        if n >= 3 and name:
             qty = _to_num(trail[0])
             if n >= 5:
                 free = _to_num(trail[1])
@@ -112,9 +119,12 @@ def parse_klm_customer_vs_item_summary(text, file_bytes=None):
                 # prefer derived free when the net column corroborates it
                 if abs((qty + free) - net) > 0.01 and net > 0:
                     free = net - qty
-            else:  # n == 4 -> S.Qty, NetQty+Free, Sale Value, Total (free suppressed)
+            elif n == 4:  # S.Qty, S.Free, Sale Value, Total Value
+                free = _to_num(trail[1])
+                amount = _to_num(trail[-2])   # Sale Value (== Total)
+            else:  # n == 3 -> S.Qty, Sale Value, Total Value (S.Free suppressed)
                 free = 0.0
-                amount = _to_num(trail[-2])
+                amount = _to_num(trail[-2])   # Sale Value (== Total)
             rows.append([
                 party,
                 name,

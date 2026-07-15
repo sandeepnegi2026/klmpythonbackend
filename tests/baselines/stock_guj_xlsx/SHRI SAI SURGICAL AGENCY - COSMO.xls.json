@@ -1,0 +1,17 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY - COSMO.xls",
+  "route": "stock_xlsx",
+  "row_count": 18,
+  "warnings_count": 2,
+  "headers_detected_count": 8,
+  "detected_format": "marg_opstk_curstk",
+  "product_count": 15,
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Enzotret Tablet",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 245.0
+}

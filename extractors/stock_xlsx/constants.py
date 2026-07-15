@@ -12,6 +12,10 @@ SUBTOTAL_RE = re.compile(
 
 
 LAYOUT_LABELS = {
+    "marg_designer_compute_stock": "Marg Report-Designer raw compute-column stock export (compute_NNNN movement + c_name_item names; reconcile-verified map) — BALAJI",
+    "klm_stock_sale_gdout_xlsx": "KLM Stock and Sale for Company (Op.Stk./PuScm/GD In/Trfr Out/GD OUT/Sl Scm/Cl Stk, per-division) — SHRI VENKATESH",
+    "marg_sale_closing_text_xlsx": "Marg Stock & Sales Analysis (reduced Sale/Closing qty+value, single-column text dump)",
+    "marg_stock_ss_full_movement_xls": "Marg Stock & Sales Analysis (full 15-col Opening/Purchase/Free/Total/Sales/Free/Balance + Rate/Value grid) — SHAH ENTERPRISES",
     "klm_op_pi_sale_cl_value_xlsx": "KLM Stock & Sales (OP/PI/Sale/CLQty qty+value, no-OUT) — DHRUVI klm.xlsx",
     "gs_stock_sales_wide27_xlsx": "G.S. DISTRIBUTORS — KLM Stock & Sales Statement (wide 28-col OPSTK/PURC/SALE/STOCK + PURCV/SALEV grid)",
     "stock_sales_analysis_oic_xlsx": "KLM Stock & Sales Analysis (single-col Opening/Receipt/Issue/Closing) — AMETOMBI",

@@ -1,0 +1,27 @@
+{
+  "file": "[Sample]_KLM2_PATEL_MEDICAL_AGENCIES_party_product_pdf.pdf",
+  "route": "party_pdf",
+  "row_count": 136,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 56,
+  "area_count": 11,
+  "product_count": 35,
+  "sample_parties": [
+    "ABC PLUS PHRMACY",
+    "AGRAVAL MEDICAL CENTER(N)",
+    "AGRAWAL MEDICINES",
+    "AKSHAR MEDICINES",
+    "APNA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 573.0,
+  "amount_total": 103842.33
+}

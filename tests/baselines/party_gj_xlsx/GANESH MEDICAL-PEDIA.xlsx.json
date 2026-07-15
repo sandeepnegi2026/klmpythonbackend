@@ -1,0 +1,27 @@
+{
+  "file": "GANESH MEDICAL-PEDIA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 14,
+  "area_count": 6,
+  "product_count": 9,
+  "sample_parties": [
+    "DR.PRUTHVIRAJ  ZALA",
+    "DR.RAJATBHAI R PARIKH",
+    "HEALTHCARE MEDICAL STORES",
+    "HOLY BASIL MEDICAL STORES",
+    "KASHYAP MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Desosoft Lotion 30 Ml",
+    "Klclav Kid Dt Tablets",
+    "Klm D3 Nano Drops",
+    "Kofcatch Ls 100Ml Junior",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 180.0,
+  "amount_total": 18914.58
+}

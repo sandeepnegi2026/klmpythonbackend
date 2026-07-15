@@ -1,0 +1,17 @@
+{
+  "file": "N.K.MEDICAL (ZEN MEDICOSE) - PEDIA.PDF",
+  "route": "stock_pdf",
+  "row_count": 44,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 40,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab"
+  ],
+  "closing_stock_total": 2674.0
+}

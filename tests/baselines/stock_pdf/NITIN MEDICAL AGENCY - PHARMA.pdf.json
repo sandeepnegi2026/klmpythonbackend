@@ -1,0 +1,17 @@
+{
+  "file": "NITIN MEDICAL AGENCY - PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_rate_amount",
+  "product_count": 40,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 2005.0
+}

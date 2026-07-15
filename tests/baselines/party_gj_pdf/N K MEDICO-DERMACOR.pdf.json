@@ -1,0 +1,27 @@
+{
+  "file": "N K MEDICO-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "marg_bordered_billwise",
+  "party_count": 11,
+  "area_count": 5,
+  "product_count": 5,
+  "sample_parties": [
+    "DARSHAK MEDICAL STO",
+    "DEVAM MEDICAL STORE",
+    "DHYEY MEDICAL STORE",
+    "DR. NANCY BUTANI",
+    "DR. RAHUL BABUBHAI"
+  ],
+  "sample_products": [
+    "KLMKLIN 100ML F/W",
+    "Klm C 20 Serum 15Ml",
+    "Melapik Ever New Cream 20 Gm",
+    "Nioglow Foaming Face Wash 60Ml",
+    "Tecum 0.1 % Ointment 10 Gm"
+  ],
+  "qty_total": 336.0,
+  "amount_total": 0.0
+}

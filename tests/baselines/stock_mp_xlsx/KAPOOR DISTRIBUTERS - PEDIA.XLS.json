@@ -1,0 +1,17 @@
+{
+  "file": "KAPOOR DISTRIBUTERS - PEDIA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 44,
+  "warnings_count": 34,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 42,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol-D Capsules"
+  ],
+  "closing_stock_total": 1727.0
+}

@@ -1,0 +1,17 @@
+{
+  "file": "SOURABH MEDICOSE - PHARMA BYTES - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 8,
+  "headers_detected_count": 10,
+  "detected_format": "pharma_bytes_itemcode",
+  "product_count": 12,
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niosol Ointment 30 Gm",
+    "Niosol-F Cream 20 Gm"
+  ],
+  "closing_stock_total": 110.0
+}

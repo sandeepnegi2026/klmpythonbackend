@@ -1,0 +1,17 @@
+{
+  "file": "VISNAGAR MEDICAL STORES - COSMOCOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 14,
+  "headers_detected_count": 5,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 28,
+  "sample_products": [
+    "105,106,109,110,ANAND MARKET,FIRST FLOOR,OPP.M.N.COLLEGE ROAD Ph:02765",
+    "Amoclafix-625 Tablets",
+    "Ezacne Sachet 30*5 Gm",
+    "KL CEPO TABLET",
+    "Melboost Nxt Tablet"
+  ],
+  "closing_stock_total": 781.0
+}

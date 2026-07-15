@@ -1,0 +1,27 @@
+{
+  "file": "MANISH MEDICAL CORPORATION-TECHNOMAX-PP.pdf",
+  "route": "party_pdf",
+  "row_count": 144,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "technomax_free_qty",
+  "party_count": 39,
+  "area_count": 25,
+  "product_count": 44,
+  "sample_parties": [
+    "AMBIKA MEDICAL STORE",
+    "APANI DAVA KI DUKAN",
+    "APNA MEDICAL STORES",
+    "DEVAKI PHARMACY",
+    "DR.AKBAR ANSARI"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Episert Cream 30 Gm",
+    "Extend Capsules"
+  ],
+  "qty_total": 2475.0,
+  "amount_total": 0.0
+}

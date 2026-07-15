@@ -1,0 +1,17 @@
+{
+  "file": "AHUJA MEDICAL AGENCY (KATNI) - PEDIA.PDF",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_movement_detail",
+  "product_count": 22,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Fentispor Capsule"
+  ],
+  "closing_stock_total": 391.0
+}

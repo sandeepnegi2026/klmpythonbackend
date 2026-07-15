@@ -28,6 +28,35 @@ The extractor engine (`core/` + `extractors/`) is duplicated in two sibling fold
    ```
 4. Re-run the regression suite (§10) on `Backends/` before deploying.
 
+### 0.1 A green test in `Python-Service-UI/` does NOT prove `Backends/` will run
+
+Mirroring the code is necessary but **not sufficient**. The two folders are byte-identical **only** in `core/` + `extractors/` — everything around the engine differs, and those differences are exactly what break a live deploy. A passing PSUI test never exercises them.
+
+- **Extraction _results_ transfer for free.** Byte-identical code + same input file = identical rows/totals (deterministic). You do **not** need to re-verify per-file extraction correctness on `Backends/` — a file that extracts right in PSUI extracts right in `Backends/`.
+- **The _runtime_ does NOT transfer.** PSUI runs locally (Windows, your installed packages, Streamlit `app.py`). `Backends/` runs in a **Linux Docker container** that does a fresh `pip install -r Backends/requirements.txt` and serves via **FastAPI `main.py` → `pdf_spike.py`**. A PSUI test touches none of that.
+
+What a green PSUI run silently misses — each fails **only** on `Backends/`:
+
+| Gap | How it bites in production | Cheap guard |
+|---|---|---|
+| New `import` not added to **`Backends/requirements.txt`** | container lacks the package → `uvicorn main:app` boots into `ModuleNotFoundError` → **whole service down** | `cd Backends && python -c "import main"` |
+| Changed `extract()` output contract / canonical key | `app.py` copes but `pdf_spike.py` reads the old shape → HTTP returns empty/wrong; PSUI never ran this path | one real `/extract` call |
+| Case-sensitive import or path (`import Constants` vs `constants.py`) | fine on Windows/PSUI, `ModuleNotFoundError` on the Linux container | Docker build |
+| New `data/*` asset a layout loads, `.py` mirrored but file not | works from `PSUI/data/`, missing under `Backends/` at runtime | import smoke + `/extract` |
+
+**The failure mode is usually a TOTAL outage** (container won't start) — not a graceful per-file miss.
+
+**RULE: after mirroring, never deploy on the strength of a PSUI-only test — run at minimum a boot smoke test on `Backends/`.**
+
+```bash
+cd Backends && python -c "import main"     # all engine + service imports resolve in the deploy tree
+# gold standard — validate the actual shipping artifact:
+docker build -t be . && docker run -p 8000:8000 be
+#   then hit /healthz and one real /extract
+```
+
+When adding a new layout, also confirm before deploy: (a) any new third-party dependency is in `Backends/requirements.txt`, and (b) any new `data/` asset exists under `Backends/`.
+
 ---
 
 ## 1. Mandatory workflow (every change)
@@ -45,6 +74,8 @@ The extractor engine (`core/` + `extractors/`) is duplicated in two sibling fold
    python scripts/regression_test.py --suite party_cg_pdf --update
    ```
 7. **Never “fix one file” by breaking detection for others** — re-test the whole affected suite.
+
+**Exception — presentation-only changes skip regression (still mirror them).** The suite snapshots metrics computed from the extracted **row dicts** (`row_count`, `product_count`, totals, `detected_format`) and never touches the display/export layer — it doesn't call `rows_to_dataframe`, `build_csv`, or `build_xlsx`. So a change that only affects how already-extracted rows are *presented* — column order/labels in `core/io_helpers.py`, download formatting — cannot move any baseline, and steps 5–6 add no signal. Such a change **must still be mirrored to `Backends/`** (production serves `Backends/`; keep the two trees byte-identical), but a regression run is not required. If unsure whether a change is truly presentation-only (i.e. it might alter which rows/values are produced), run the suite — it's cheap insurance.
 
 ---
 

@@ -249,6 +249,15 @@ def detect_excel_layout(rows):
     # ('Online Purchase Import') carries the word 'purchase' so the sale_closing gate below
     # (which forbids 'purchase') never fires. Requiring the clean 'qty.' sub-label keeps it
     # off the merged S.M. MEDICAL file. MUST precede the marg_sale_closing_xlsx gate.
+    # Marg reduced SALE/CLOSING report exported as a single-column fixed-width TEXT dump
+    # (SAM MEDICOS, KLM_S_S.XL.XLS): the whole line sits in ONE nbsp-padded cell, so both
+    # cell-splitting grid siblings extract 0 rows. Same '===SALE=== ==CLOSING==' banner but
+    # single_col=True (the grid siblings never are). MUST precede both grid gates below.
+    if (
+        single_col and "===sale===" in flat and "==closing==" in flat
+        and "itemdescription" in flat and "opening" not in flat
+    ):
+        return "marg_sale_closing_text_xlsx"
     if (
         "===sale===" in flat and "==closing==" in flat and "itemdescription" in flat
         and "qty." in flat and "opening" not in flat
@@ -312,6 +321,16 @@ def detect_excel_layout(rows):
         return "venus_stock_excel"
     if "stockreport" in flat and "itemname" in flat and "srno" in flat and "batch" in flat:
         return "infosoft_stock"
+    # Marg (ERP 9+) 'STOCK & SALES ANALYSIS' FULL-movement GRID (SHAH ENTERPRISES .XLS),
+    # division-banded, 15-col two-row header with blank spacer columns. tabular loses the
+    # trailing STOCK Value col (closing_val==0 -> RED) AND leaks the appended 'PURCHASE DETAIL'
+    # supplier ledger as fake products. Keyed on the signed Marg abbreviations -PurRet + +Repl +
+    # -Return under the title + ITEM NAME header — unique to this full-movement export.
+    if (
+        "stock&salesanalysis" in flat and "itemname" in flat
+        and "-purret" in flat and "+repl" in flat and "-return" in flat
+    ):
+        return "marg_stock_ss_full_movement_xls"
     if "stockreport" in flat and "itemname" in flat and "opening" in flat:
         return "marg_stock_wide"
     if "productname" in flat and "opstk" in flat and "curstk" in flat:
@@ -452,4 +471,19 @@ def detect_excel_layout(rows):
         and "parentmanufacturer" in flat
     ):
         return "gs_stock_sales_wide27_xlsx"
+    # KLM "Stock and Sale for Company: <DIVISION>" grid (SHRI VENKATESH, one .xlsx per division).
+    # Header: Product|Pack|Op.Stk.|Purch.|PuScm|GD In|Total|Sale|PTS Sl|Trfr Out|GD OUT|Sl Scm|Cl
+    # Stk. The generic tabular mapper drops the OUT-flow columns (Trfr Out/GD OUT/PTS Sl) and
+    # mis-binds PuScm to sales_free, so dispatch/transfer rows fail sanity. Keyed on the
+    # puscm+gdout+slscm+clstk token set, unique to this KLM export.
+    if "puscm" in flat and "gdout" in flat and "clstk" in flat and "slscm" in flat:
+        return "klm_stock_sale_gdout_xlsx"
+    # Marg "Report Designer" raw compute-column export (BALAJI): movement columns carry
+    # internal IDs compute_0003..0027 (no display template applied) so the generic tabular
+    # reader finds no stock header -> 0 rows. Product names live in c_name_item. Keyed on
+    # the exact designer signature (c_item_code + the compute run + c_name_item), which no
+    # templated report can match; the reconcile-verified compute->field map lives in the
+    # layout module.
+    if "c_item_code" in flat and "c_name_item" in flat and "compute_0022" in flat:
+        return "marg_designer_compute_stock"
     return "tabular"

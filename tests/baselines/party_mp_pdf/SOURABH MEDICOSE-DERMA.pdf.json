@@ -1,0 +1,27 @@
+{
+  "file": "SOURABH MEDICOSE-DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_summary",
+  "party_count": 19,
+  "area_count": 9,
+  "product_count": 11,
+  "sample_parties": [
+    "AAROGYA MEDICAL STORE MANDSAUR(M.P)",
+    "CENTRAL MEDICAL STORS",
+    "CITY MEDICOSE MANDSAUR",
+    "DHAKAD MEDICAL STORE",
+    "DHAKAD MEDICOSE"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "qty_total": 83.0,
+  "amount_total": 13842.83
+}

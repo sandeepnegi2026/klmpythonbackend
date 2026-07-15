@@ -1,0 +1,17 @@
+{
+  "file": "AMIT MEDICOS - PEDIA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 55,
+  "warnings_count": 25,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 45,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 1515.0
+}

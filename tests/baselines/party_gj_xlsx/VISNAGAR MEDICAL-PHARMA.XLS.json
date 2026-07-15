@@ -1,0 +1,27 @@
+{
+  "file": "VISNAGAR MEDICAL-PHARMA.XLS",
+  "route": "party_xlsx",
+  "row_count": 67,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_register_excel",
+  "party_count": 22,
+  "area_count": 14,
+  "product_count": 23,
+  "sample_parties": [
+    "AANJANEYA CHEMIST",
+    "ALSHIFA MEDICAL & PRO.STORES",
+    "AMBICA MEDICAL AGENCY - DBT",
+    "BARODAWALA CHEMIST",
+    "DR.AKASH J. DARJI"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 760.0,
+  "amount_total": 98151.19
+}

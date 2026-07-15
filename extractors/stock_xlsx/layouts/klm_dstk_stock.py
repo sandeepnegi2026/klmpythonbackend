@@ -20,6 +20,7 @@ from extractors.stock_xlsx.parse_common import cell_text, is_subtotal
 # all-zero IN/OUT transfer columns) is deliberately omitted so it cannot steal a field.
 _COL_MAP = {
     "product name": "product_name",
+    "product na": "product_name",   # truncated product-name header (SAFE LIFE STOCK_AND_SALES)
     "packing": "pack",
     "packi": "pack",                # truncated header in the qty-only PEDIA variant
     "pcod": "hsn_code",

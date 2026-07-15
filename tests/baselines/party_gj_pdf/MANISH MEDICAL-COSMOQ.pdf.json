@@ -1,0 +1,25 @@
+{
+  "file": "MANISH MEDICAL-COSMOQ.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "party_count": 3,
+  "area_count": 3,
+  "product_count": 6,
+  "sample_parties": [
+    "DEVAM MEDICAL STORES",
+    "NILKANTH MEDICAL",
+    "TREATWAVE PHARMA"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 135.0,
+  "amount_total": 0.0
+}

@@ -1,0 +1,17 @@
+{
+  "file": "DAHOD PHARMAKON - DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 26,
+  "warnings_count": 7,
+  "headers_detected_count": 8,
+  "detected_format": "dahod_marg",
+  "product_count": 24,
+  "sample_products": [
+    "EXTENED",
+    "Eberfine Lot 50Gm Tube",
+    "Episert Cream 20 Gm",
+    "Extend Capsules",
+    "Extend Hair Tablet"
+  ],
+  "closing_stock_total": 230.0
+}

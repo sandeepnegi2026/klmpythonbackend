@@ -1,0 +1,27 @@
+{
+  "file": "N K MEDICO-DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "marg_bordered_billwise",
+  "party_count": 9,
+  "area_count": 5,
+  "product_count": 9,
+  "sample_parties": [
+    "DEVAM MEDICAL STORE",
+    "DR. RUPAL A SATANI",
+    "DR. VIJAY GOHIL",
+    "KANHA PHARMACY",
+    "KRUSHNA MEDICAL"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "NEVLON 50GM",
+    "NEVLON AD 150ML",
+    "NI WADI KATARGAM,SURAT",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 202.0,
+  "amount_total": 0.0
+}

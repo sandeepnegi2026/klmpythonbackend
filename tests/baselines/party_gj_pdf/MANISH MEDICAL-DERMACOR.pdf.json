@@ -1,0 +1,27 @@
+{
+  "file": "MANISH MEDICAL-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "party_count": 8,
+  "area_count": 7,
+  "product_count": 11,
+  "sample_parties": [
+    "DEVAM MEDICAL STORES",
+    "JANKI MEDICINES",
+    "NILKANTH MEDICAL",
+    "NU MEDICALS",
+    "SHIFA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "DEKTOP 50ML",
+    "Extend Capsules",
+    "KLIN-AHA-100GM FACE WASH",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Tablet 1*10 Tablets"
+  ],
+  "qty_total": 426.0,
+  "amount_total": 0.0
+}

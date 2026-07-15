@@ -1,0 +1,27 @@
+{
+  "file": "VINEET MEDICAL-COSMOQ.PDF",
+  "route": "party_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 7,
+  "area_count": 2,
+  "product_count": 7,
+  "sample_parties": [
+    "AMIT MEDICAL STORES",
+    "GAYATRI MEDICAL STORES [DR RIT",
+    "JAI MATA DI MEDI.& JAN.",
+    "KANHA MEDICAL STORE",
+    "NISHANT MEDICOSE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 91.0,
+  "amount_total": 34202.19
+}

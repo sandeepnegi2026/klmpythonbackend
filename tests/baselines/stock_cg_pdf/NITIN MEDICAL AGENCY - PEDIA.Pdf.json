@@ -1,0 +1,17 @@
+{
+  "file": "NITIN MEDICAL AGENCY - PEDIA.Pdf",
+  "route": "stock_pdf",
+  "row_count": 46,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_rate_amount",
+  "product_count": 45,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 2706.0
+}

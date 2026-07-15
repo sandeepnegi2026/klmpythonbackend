@@ -1,0 +1,17 @@
+{
+  "file": "AYACHI MEDICAL STORES - COSMO.XLS",
+  "route": "stock_xlsx",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_op_rec_iss_clos_grid",
+  "product_count": 30,
+  "sample_products": [
+    "EKRAN 80 SPF LOTION",
+    "EKRAN SOFT GEL",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Lotion 50G"
+  ],
+  "closing_stock_total": 592.0
+}

@@ -1,0 +1,17 @@
+{
+  "file": "NITIN MEDICAL AGENCY - COSMOCOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_rate_amount",
+  "product_count": 30,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 776.0
+}

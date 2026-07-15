@@ -1,0 +1,17 @@
+{
+  "file": "N.K.MEDICAL (ZEN MEDICOSE) - COSMOCOR.PDF",
+  "route": "stock_pdf",
+  "row_count": 33,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 32,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "EPISERT 30GM CREAM.",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 949.0
+}

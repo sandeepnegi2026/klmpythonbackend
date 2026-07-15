@@ -1,0 +1,17 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY - COSMOQ.xls",
+  "route": "stock_xlsx",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_opstk_curstk",
+  "product_count": 5,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "closing_stock_total": 34.0
+}

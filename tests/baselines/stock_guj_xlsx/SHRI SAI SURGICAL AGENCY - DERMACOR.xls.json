@@ -1,0 +1,17 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY - DERMACOR.xls",
+  "route": "stock_xlsx",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_opstk_curstk",
+  "product_count": 31,
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "I-Extend Tablet",
+    "KLIN AHA GEL-100GM",
+    "KLIN FOAMING GEL-50GM(AHA)"
+  ],
+  "closing_stock_total": 455.0
+}

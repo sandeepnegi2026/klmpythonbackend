@@ -1,0 +1,25 @@
+{
+  "file": "SHRIJI MEDICAL-PEDIA.PDF",
+  "route": "party_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 3,
+  "area_count": 3,
+  "product_count": 6,
+  "sample_parties": [
+    "ACHLESWAR MEDICAL STORE",
+    "KRISHNA MEDICAL",
+    "VINAY MEDICAL STORE(LAHAR)"
+  ],
+  "sample_products": [
+    "Klm D3 Nano Drops 30Ml",
+    "Sacctik Plus 1*10 Bottle",
+    "Sofibar Syndet Bar",
+    "Sofidew Resyl Lotion 50 Ml",
+    "Sofidoxim Ds"
+  ],
+  "qty_total": 241.0,
+  "amount_total": 24811.46
+}

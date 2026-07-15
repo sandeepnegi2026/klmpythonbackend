@@ -1,0 +1,17 @@
+{
+  "file": "DAHOD PHARMAKON - DERMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 8,
+  "headers_detected_count": 8,
+  "detected_format": "dahod_marg",
+  "product_count": 21,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 241.0
+}

@@ -1,7 +1,13 @@
 from extractors.stock_pdf.layouts.dahod_marg import parse_dahod_marg
 from extractors.stock_pdf.layouts.generic import parse_generic
+from extractors.stock_pdf.layouts.marg_sales_stock_statement import parse_marg_sales_stock_statement
+from extractors.stock_pdf.layouts.marg_stock_sales_expiry_positional import parse_marg_stock_sales_expiry_positional
 from extractors.stock_pdf.layouts.stock_sales_statement_adjmt_positional import parse_stock_sales_statement_adjmt_positional
 from extractors.stock_pdf.layouts.stock_oric_receipt_qtyonly import parse_stock_oric_receipt_qtyonly
+from extractors.stock_pdf.layouts.klm_stock_sales_analysis_movement import parse_klm_stock_sales_analysis_movement
+from extractors.stock_pdf.layouts.stock_opbal_free_expiry import parse_stock_opbal_free_expiry
+from extractors.stock_pdf.layouts.stock_ss_analysis_sret_others import parse_stock_open_pur_sret_others_subtotal as parse_stock_ss_analysis_sret_others
+from extractors.stock_pdf.layouts.klm_ss_statement_receive_close import parse_klm_ss_statement_receive_close
 from extractors.stock_pdf.layouts.marg_lms_simple import parse_marg_lms_simple
 from extractors.stock_pdf.layouts.marg_opstk_statement import parse_marg_opstk_statement
 from extractors.stock_pdf.layouts.marg_qty_value_wide import parse_marg_qty_value_wide
@@ -91,10 +97,18 @@ from extractors.stock_pdf.layouts.csquare_manufacturerwise_stock_sales import pa
 from extractors.stock_pdf.layouts.klm_stock_sales_month_tots import parse_klm_stock_sales_month_tots
 from extractors.stock_pdf.layouts.purani_mfr_stock_sales_pdf import parse_purani_mfr_stock_sales_pdf
 from extractors.stock_pdf.layouts.swil_recv_issue_stock import parse_swil_recv_issue_stock
+from extractors.stock_pdf.layouts.marg_stock_ava_bval_sval import parse_marg_stock_ava_bval_sval
 
 TEXT_PARSERS = {
+    "marg_stock_ava_bval_sval": parse_marg_stock_ava_bval_sval,
+    "marg_sales_stock_statement": parse_marg_sales_stock_statement,
+    "marg_stock_sales_expiry_positional": parse_marg_stock_sales_expiry_positional,
     "stock_sales_statement_adjmt_positional": parse_stock_sales_statement_adjmt_positional,
     "stock_oric_receipt_qtyonly": parse_stock_oric_receipt_qtyonly,
+    "klm_stock_sales_analysis_movement": parse_klm_stock_sales_analysis_movement,
+    "stock_opbal_free_expiry": parse_stock_opbal_free_expiry,
+    "stock_ss_analysis_sret_others": parse_stock_ss_analysis_sret_others,
+    "klm_ss_statement_receive_close": parse_klm_ss_statement_receive_close,
     "swil_recv_issue_stock": parse_swil_recv_issue_stock,
     "klm_stock_sales_month_tots": parse_klm_stock_sales_month_tots,
     "purani_mfr_stock_sales_pdf": parse_purani_mfr_stock_sales_pdf,

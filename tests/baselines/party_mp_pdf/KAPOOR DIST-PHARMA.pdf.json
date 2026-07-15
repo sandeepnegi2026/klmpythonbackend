@@ -1,0 +1,27 @@
+{
+  "file": "KAPOOR DIST-PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 131,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 76,
+  "area_count": 15,
+  "product_count": 32,
+  "sample_parties": [
+    "AGRAWAL MEDICAL STORES",
+    "AHLAWAT MEDICOSE BILHARI",
+    "AKSHAT MEDICAL STORES SAHUJI",
+    "AMIT MEDICAL",
+    "AMRAT MEDICAL KANCHGHAR"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 652.0,
+  "amount_total": 89342.51
+}

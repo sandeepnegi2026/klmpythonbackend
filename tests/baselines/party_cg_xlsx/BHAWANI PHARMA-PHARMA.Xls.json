@@ -1,0 +1,27 @@
+{
+  "file": "BHAWANI PHARMA-PHARMA.Xls",
+  "route": "party_xlsx",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 23,
+  "area_count": 13,
+  "product_count": 16,
+  "sample_parties": [
+    "ADILAXMI MEDICAL STORES",
+    "BHARAT MEDICAL STORES",
+    "BHARAT MEDICOSE",
+    "Balaji Medical Sec 10",
+    "Bharat Medical Hall Branch"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Vita Syrup 200Ml"
+  ],
+  "qty_total": 253.0,
+  "amount_total": 44369.24
+}

@@ -1,0 +1,17 @@
+{
+  "file": "VINEET MEDICAL AGENCIES - COSMO.pdf",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "simple4",
+  "product_count": 21,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 244.0
+}

@@ -1,0 +1,17 @@
+{
+  "file": "BHAWANI PHARMA - COSMOQ.Pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_lms_simple",
+  "product_count": 15,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmo Q Serum",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 168.0
+}

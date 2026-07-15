@@ -1,0 +1,17 @@
+{
+  "file": "DAHOD PHARMAKON - PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 7,
+  "headers_detected_count": 9,
+  "detected_format": "dahod_marg",
+  "product_count": 27,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "closing_stock_total": 305.0
+}

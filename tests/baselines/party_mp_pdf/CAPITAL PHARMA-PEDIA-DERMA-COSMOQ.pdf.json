@@ -1,0 +1,27 @@
+{
+  "file": "CAPITAL PHARMA-PEDIA-DERMA-COSMOQ.pdf",
+  "route": "party_pdf",
+  "row_count": 142,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 39,
+  "area_count": 35,
+  "product_count": 58,
+  "sample_parties": [
+    "ABHISEK MED STORE",
+    "ADITYA MEDICAL STORE",
+    "AGARWAL MEDICAL",
+    "ASTHA MEDICAL AND GENRAL STORE",
+    "BAJRANG MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "qty_total": 503.0,
+  "amount_total": 98612.39
+}

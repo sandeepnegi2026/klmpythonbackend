@@ -1,0 +1,27 @@
+{
+  "file": "JYOTI MEDICAL-ALL DIVISION.PDF",
+  "route": "party_pdf",
+  "row_count": 294,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 67,
+  "area_count": 14,
+  "product_count": 78,
+  "sample_parties": [
+    "ADARSH MEDICAL STORE",
+    "AKOTIYA MEDICAL STORE",
+    "ANKIT MEDICAL STORES",
+    "APNA MEDICAL STORE",
+    "APOLLO MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Episert Cream 30 Gm"
+  ],
+  "qty_total": 979.0,
+  "amount_total": 168511.01
+}
