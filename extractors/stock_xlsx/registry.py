@@ -16,6 +16,8 @@ from extractors.stock_xlsx.layouts.klm_dstk_stock import parse_klm_dstk_stock
 from extractors.stock_xlsx.layouts.marg_designer_compute_stock import parse_marg_designer_compute_stock
 from extractors.stock_xlsx.layouts.marg_stock_analysis_text import parse_marg_stock_analysis_text
 from extractors.stock_xlsx.layouts.klm_detailed_stock import parse_klm_detailed_stock
+from extractors.stock_xlsx.layouts.klm_mfac_group_wise_stock import parse_klm_mfac_group_wise_stock
+from extractors.stock_xlsx.layouts.klm_opstk_apr_may_curstk_xls import parse_klm_opstk_apr_may_curstk_xls
 
 from extractors.stock_xlsx.layouts.marg_monthly_ss_statement_xlsx import parse_marg_monthly_ss_statement_xlsx
 from extractors.stock_xlsx.layouts.stock_open_rcpts_dualsales_xlsx import parse_stock_open_rcpts_dualsales_xlsx
@@ -52,6 +54,8 @@ from extractors.stock_xlsx.layouts.marg_sale_closing_text_xlsx import parse_marg
 from extractors.stock_xlsx.layouts.marg_stock_ss_full_movement_xls import parse_marg_stock_ss_full_movement_xls
 
 PARSERS = {
+    "klm_mfac_group_wise_stock": parse_klm_mfac_group_wise_stock,
+    "klm_opstk_apr_may_curstk_xls": parse_klm_opstk_apr_may_curstk_xls,
     "klm_stock_sale_gdout_xlsx": parse_klm_stock_sale_gdout,
     "marg_sale_closing_text_xlsx": parse_marg_sale_closing_text_xlsx,
     "marg_stock_ss_full_movement_xls": parse_marg_stock_ss_full_movement_xls,

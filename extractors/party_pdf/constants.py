@@ -1,5 +1,11 @@
 FORMAT_REPORT_TYPE = {
+    "klm_sales_detail_register": "Party-wise Sales",
+    "customer_product_analysis_dash": "Party-wise Sales",
+    "product_party_wise_freeamt": "Party-wise Sales",
     "company_party_product_sale": "Party-wise Sales",
+    "party_sale_report": "Party-wise Sales",
+    "customerwise_billwise_itemwise": "Party-wise Sales",
+    "metro_orion_product_analysis": "Party-wise Sales",
     "partywise_sales_summary": "Party-wise Sales",
     "customer_invoice_itemwise_sale": "Party-wise Sales",
     "sales_statement_summary_itemwise": "Party-wise Sales",
@@ -70,7 +76,13 @@ FORMAT_REPORT_TYPE = {
 }
 
 FORMAT_LABELS = {
+    "klm_sales_detail_register": "KLM Sales Detail Register (Mf-Customerwise) — SrNo-first amount-bearing (AAGAM / VISNAGAR)",
+    "customer_product_analysis_dash": "Customer & Product Analysis — dash-date dialect (C.D. PHARMA / KLM)",
+    "product_party_wise_freeamt": "Marg Product + Party Wise List — Free/FreeAmt/SaleQty/Amount/TotalAmt 5-col (MANISH / KLM)",
     "company_party_product_sale": "Company Party Wise Product Sale Report (RAOUSHAN / KLM, company>party>product bands)",
+    "party_sale_report": "METRO Party Sale Report (banded party; 3-num Scm Qty / 2-num dialects)",
+    "customerwise_billwise_itemwise": "Customerwise Billwise Itemwise Report (HERITAGE MARKTEERS / KLM; division>customer bands>product-first billwise rows)",
+    "metro_orion_product_analysis": "METRO Party Product Analysis (Orion; PARTY bands -> product rows w/ REPL column)",
     "partywise_sales_summary": "Partywise Sales Summary (KAKADE / KLM, party-header running totals over product lines)",
     "customer_invoice_itemwise_sale": "Customer - Invoice - Item Wise Sale (MALU MEDICO / KLM, Marg billwise)",
     "sales_statement_summary_itemwise": "Sales Statement Summary (itemwise, KLM — KRISHNA SAI)",

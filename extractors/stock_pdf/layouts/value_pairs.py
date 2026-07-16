@@ -25,6 +25,13 @@ from extractors.stock_pdf.parse_common import (
 _SPACED_PACK_RE = re.compile(r"(?<=\s)(\d+)\s+([*xX])\s+(\d+)(?=\s)")
 
 
+def _pairs_reconcile(vals, o):
+    """opening + receipt - issue == closing at alignment offset `o` (2% tol)."""
+    if len(vals) < o + 7:
+        return False
+    return abs((vals[o] + vals[o + 2] - vals[o + 4]) - vals[o + 6]) <= max(abs(vals[o + 6]), 1.0) * 0.02
+
+
 def parse_value_pairs(text):
     """Marg Qty-Value Pairs: product [RATE] OPEN_QTY OPEN_VAL RECEIPT_QTY RECEIPT_VAL ISSUE_QTY ISSUE_VAL CLOSE_QTY CLOSE_VAL [DUMP] [M.EXP]"""
     records = []
@@ -45,6 +52,32 @@ def parse_value_pairs(text):
         offset = 0
         if len(vals) >= 9 and vals[0] > 0:
             offset = 1
+        # Bare-digit pack ("NEVLON AD MOST. LOTION 150 335.59 - 0.00 ...") swallowed into
+        # the numeric tail fabricates a leading value read as RATE, shifting every column
+        # (56% of rows fail reconciliation). Reconcile-guided repair (same idiom as
+        # stock_oric_pairs): only when a leading value WAS taken as rate (offset==1), the
+        # swallowed token is a bare integer, and the default alignment FAILS the identity
+        # opening+receipt-issue=closing, return that token to the pack and realign. Decimal
+        # rates (e.g. "335.59") never satisfy tail[0].isdigit(), so genuine rate rows are
+        # untouched; a row that already reconciles at offset 1 never enters the branch.
+        if (
+            offset == 1
+            and len(vals) >= 10
+            and len(vals) == len(tail)
+            and tail[0].isdigit()          # bare-INTEGER pack candidate
+            and "." in tail[1]             # the REAL rate (a decimal) sits right after it;
+                                           # a genuine integer rate (MELBOOST "10") is followed
+                                           # by an integer qty, so this rejects it
+            and not _pairs_reconcile(vals, offset)
+        ):
+            cand = _nums(tail[1:])
+            cand_off = 1 if (len(cand) >= 9 and cand[0] > 0) else 0
+            # Only accept the repair when returning the bare token to the pack makes the row
+            # actually reconcile — otherwise leave the baseline alignment untouched.
+            if len(cand) >= 8 and _pairs_reconcile(cand, cand_off):
+                name, pack = _split_product_pack(prod + " " + tail[0])
+                vals = cand
+                offset = cand_off
         r = {
             "product_name": name,
             "pack": pack,

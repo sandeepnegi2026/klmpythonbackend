@@ -130,16 +130,23 @@ def extract_pdf(pdf_bytes):
             # heading). When the primary returns NOTHING, retry with a more
             # tolerant sibling. Guarded on an EMPTY result, so every file the
             # primary already parses is byte-for-byte unaffected.
+            # Each entry is an ORDERED list of tolerant siblings tried in turn until
+            # one yields rows. marg_register's blank-amount register falls to
+            # prathna_register; its SrNo-first AMOUNT-bearing twin (AAGAM / VISNAGAR)
+            # is rejected by prathna's $-anchored regex and is caught by the
+            # klm_sales_detail_register sibling next. Order matters: prathna is tried
+            # FIRST so every file it already parses is byte-for-byte unaffected.
             _FALLBACKS = {
-                "busy_tally": "party_item_summary_nofree",
-                "busy_tally_itemwise": "party_item_summary_nofree",
-                "marg_register": "prathna_register",
-                "marg_register_itemwise": "prathna_register",
+                "busy_tally": ("party_item_summary_nofree",),
+                "busy_tally_itemwise": ("party_item_summary_nofree",),
+                "marg_register": ("prathna_register", "klm_sales_detail_register"),
+                "marg_register_itemwise": ("prathna_register", "klm_sales_detail_register"),
             }
             if not r and fmt in _FALLBACKS:
-                alt_key = _FALLBACKS[fmt]
-                alt = PARSERS.get(alt_key)
-                if alt is not None:
+                for alt_key in _FALLBACKS[fmt]:
+                    alt = PARSERS.get(alt_key)
+                    if alt is None:
+                        continue
                     h2, r2 = alt(full_text)
                     if r2:
                         h, r = h2, r2
@@ -149,6 +156,7 @@ def extract_pdf(pdf_bytes):
                         result["auto_report_type"] = FORMAT_REPORT_TYPE.get(
                             fmt, "Party-wise Sales"
                         )
+                        break
             result["parsed_headers"] = h
             result["parsed_rows"] = r
         except Exception as e:

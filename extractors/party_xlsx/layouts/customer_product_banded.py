@@ -153,6 +153,22 @@ def _is_merged_furniture(raw):
     return len(populated) >= 3 and len(set(populated)) == 1
 
 
+def _is_merged_customer_band(raw):
+    """A merged-across-columns row whose single repeated text is a "Customer:/Party:" band
+    (smartpharma360 "Customer-Company wise Product Sales", micropro "Customer-Wise Product-Wise
+    Sales"). The party is a merged cell spanning the whole table width, so unmerge replicates it
+    into every column and _is_merged_furniture would drop it BEFORE the band branch runs, blanking
+    the party for the whole group. Distinguish it from true furniture: identical populated cells,
+    the text matches CUSTOMER_BAND_RE, and the captured name has >=3 letters (a real firm name,
+    not a stray label). Furniture lines ("Generated at …", "Powered by …") never match, so they
+    still drop."""
+    populated = [cell_text(c).strip() for c in raw if cell_text(c).strip()]
+    if len(populated) < 3 or len(set(populated)) != 1:
+        return False
+    band = CUSTOMER_BAND_RE.match(populated[0])
+    return bool(band) and len(re.findall(r"[A-Za-z]", band.group(1))) >= 3
+
+
 def _scheme_qty_idx(headers):
     """Index of a scheme/free QUANTITY column ("Scm qty", "Scheme Qty") — the free-goods count
     that MediVision / KLM ERPs print as its own column (core maps it to raw_scm_qty, so free_qty
@@ -214,7 +230,7 @@ def parse_customer_product_banded(rows):
     for raw in rows[header_idx + 1 :]:
         if not raw:
             continue
-        if _is_merged_furniture(raw):
+        if _is_merged_furniture(raw) and not _is_merged_customer_band(raw):
             continue
         first = cell_text(raw[0])
 

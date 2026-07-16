@@ -2,8 +2,8 @@
   "file": "VENUS PHARMA - PEDIA.XLSX",
   "route": "stock_xlsx",
   "row_count": 168,
-  "warnings_count": 51,
-  "headers_detected_count": 9,
+  "warnings_count": 21,
+  "headers_detected_count": 13,
   "detected_format": "venus_stock_excel",
   "product_count": 164,
   "sample_products": [

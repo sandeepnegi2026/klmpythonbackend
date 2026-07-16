@@ -18,6 +18,12 @@ BARE_TOTAL_RE = re.compile(
 )
 
 LAYOUT_LABELS = {
+    "areawise_sales_statement": "Areawise Sales Statement — BlueFox bill-wise, AREA/PARTY column-index bands (TELY DRUGS / KLM)",
+    "bhaskara_code_customer_banded": "Customer & Product — Code:/Customer: banded, qty-only (BHASKARA / KLM)",
+    "klm_order_form_xlsx": "KLM Product Order Form — ordered-lines only, qty-only (PHARMA ASIA / KLM)",
+    "klm_warehouse_pincode_sale_dump": "KLM Warehouse/Pincode raw sale dump — positional DB fields (ARYAN WELLNESS / KLM)",
+    "retailer_band_cgst_sgst": "KLM LAB per-division sale — Retailer: banded, Name=product, CGSTRs/SGSTRs (THANE / KLM)",
+    "outward_detail_firm_partywise": "Marg Outward Detail(s) — firm-level (no customer column; party=firm) (DEEPALI / KLM)",
     "customer_item_invoicewise_banded": "Customer Item - Invoice Wise — banded (party in merged CUSTOMER:...CITY band rows; Item Name/Qty/Value; KLM)",
     "item_customerwise_sale": "Item Wise - Customer Wise Sale (Item-Banded, Customer detail)",
     "areacity_wise_sale_pivot": "AreaCity Wise Sale Report (Pivot unpivot, AC-grid + legend)",
@@ -33,6 +39,8 @@ LAYOUT_LABELS = {
     "manufacturer_itemwise_secondary_xlsx": "Shri Jayanthi Pharma — Manufacturer Wise Item Wise (Secondary Sales) XLSX (banded, index-mapped)",
     "customer_items_new_xlsx": "Customer & Items New (banded, Area-glued)",
     "company_customer_itemwise_banded": "Company - Customer - Item Wise Sale (banded)",
+    "company_customer_itemwise_area": "Company - Customer - Item Wise Sale (banded, Area; PONDY / no Barcoode)",
+    "csquare_raw_invoice": "C-Square Raw DB-Field Invoice Dump (positional; n_srno/d_inv_date/repeated c_name; HERITAGE MARKTEERS)",
     "product_areawise_pivot": "Product-wise Area-wise Sale/DC Summary (Pivot Unpivot)",
     "areawise_partywise_summary_xlsx": "Areawise Partywise Sales Summary (Paren Qty/Free)",
     "marg_sales_analysis_xlsx": "MARG Sales Analysis (Party, XLSX)",

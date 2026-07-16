@@ -91,6 +91,20 @@ def parse_busy_tally(text):
         s = re.sub(r"\(cid:\d+\)", "", line).strip()
         if not s or any(s.startswith(sk) for sk in skips):
             continue
+        # Busy/Marg flags a "new"/starred customer with a single leading '*' on
+        # the party heading ("*MANNI MEDICAL HALL-JABALPUR."); sibling headings
+        # carry none, so only the first party is starred and every band branch
+        # below (first char [A-Z0-9]/[.A-Z0-9]) rejects it -> its rows inherit the
+        # empty/previous party. Strip that one marker so the '*' isn't kept in the
+        # name and the NAME-AREA checks see the bare heading. Guarded: a letter
+        # must follow (so '***' separators — already skipped — and starred numeric
+        # rows can't match) and the line must NOT be a data row (data rows keep
+        # their leading '*' inside the product name via pat*).
+        m_star = re.match(r"^\*\s*([A-Za-z].*)$", s)
+        if m_star and not (
+            pat6.match(s) or pat5.match(s) or pat6_frac.match(s) or pat5_frac.match(s)
+        ):
+            s = m_star.group(1).strip()
         # Party heading prefixed with a numeric account code, e.g.
         # "00350 SAIF MEMORIAL M/S STORE KALABURAG" (Busy/Tally code-prefixed
         # parties). Strip the code; guard against numeric data rows.

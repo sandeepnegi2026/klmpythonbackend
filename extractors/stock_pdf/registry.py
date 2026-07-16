@@ -47,10 +47,12 @@ from extractors.stock_pdf.layouts.swastik_particulars import parse_swastik_parti
 from extractors.stock_pdf.layouts.marg_opqty import parse_marg_opqty
 from extractors.stock_pdf.layouts.stock_op_pur_total_sale_close import parse_stock_op_pur_total_sale_close
 from extractors.stock_pdf.layouts.stock_received_issued import parse_stock_received_issued
+from extractors.stock_pdf.layouts.klm_received_issued_stmt import parse_klm_received_issued_stmt
 from extractors.stock_pdf.layouts.stock_in_out_statement import parse_stock_in_out_statement
 from extractors.stock_pdf.layouts.marg_stock_summary import parse_marg_stock_summary
 from extractors.stock_pdf.layouts.stock_open_pur_sale_free_current import parse_stock_open_pur_sale_free_current
 from extractors.stock_pdf.layouts.marg_stock_analysis_full import parse_marg_stock_analysis_full
+from extractors.stock_pdf.layouts.klm_stock_sales_analysis_free import parse_klm_stock_sales_analysis_free
 from extractors.stock_pdf.layouts.pharmassist_mfac import parse_pharmassist_mfac
 from extractors.stock_pdf.layouts.marg_stock_recd_issued import parse_marg_stock_recd_issued
 from extractors.stock_pdf.layouts.klm_venus_opstk_crqty import parse_klm_venus_opstk_crqty
@@ -100,7 +102,24 @@ from extractors.stock_pdf.layouts.purani_mfr_stock_sales_pdf import parse_purani
 from extractors.stock_pdf.layouts.swil_recv_issue_stock import parse_swil_recv_issue_stock
 from extractors.stock_pdf.layouts.marg_stock_ava_bval_sval import parse_marg_stock_ava_bval_sval
 
+from extractors.stock_pdf.layouts.klm_lmsale_receipts_age import parse_klm_lmsale_receipts_age
+from extractors.stock_pdf.layouts.klm_stock_sales_inout_expiry import parse_klm_stock_sales_inout_expiry
+from extractors.stock_pdf.layouts.stock_unit_op_purc_sale_cl import parse_stock_unit_op_purc_sale_cl
+from extractors.stock_pdf.layouts.stock_sale_stmt_stkad import parse_stock_sale_stmt_stkad
+from extractors.stock_pdf.layouts.stock_opbal_issue_expiry_near import parse_stock_opbal_issue_expiry_near
+from extractors.stock_pdf.layouts.stock_item_desc_oric_movement import parse_stock_item_desc_oric_movement
+from extractors.stock_pdf.layouts.medivision_company_stock_sales import parse_medivision_company_stock_sales
+from extractors.stock_pdf.layouts.prompt_datewise_amount_cols import parse_prompt_datewise_amount_cols
+
 TEXT_PARSERS = {
+    "klm_lmsale_receipts_age": parse_klm_lmsale_receipts_age,
+    "klm_stock_sales_inout_expiry": parse_klm_stock_sales_inout_expiry,
+    "stock_unit_op_purc_sale_cl": parse_stock_unit_op_purc_sale_cl,
+    "stock_sale_stmt_stkad": parse_stock_sale_stmt_stkad,
+    "stock_opbal_issue_expiry_near": parse_stock_opbal_issue_expiry_near,
+    "stock_item_desc_oric_movement": parse_stock_item_desc_oric_movement,
+    "medivision_company_stock_sales": parse_medivision_company_stock_sales,
+    "prompt_datewise_amount_cols": parse_prompt_datewise_amount_cols,
     "marg_stock_ava_bval_sval": parse_marg_stock_ava_bval_sval,
     "marg_sales_stock_statement": parse_marg_sales_stock_statement,
     "marg_stock_sales_expiry_positional": parse_marg_stock_sales_expiry_positional,
@@ -110,6 +129,7 @@ TEXT_PARSERS = {
     "stock_opbal_free_expiry": parse_stock_opbal_free_expiry,
     "stock_ss_analysis_sret_others": parse_stock_ss_analysis_sret_others,
     "klm_ss_statement_receive_close": parse_klm_ss_statement_receive_close,
+    "klm_received_issued": parse_klm_received_issued_stmt,
     "swil_recv_issue_stock": parse_swil_recv_issue_stock,
     "klm_stock_sales_month_tots": parse_klm_stock_sales_month_tots,
     "purani_mfr_stock_sales_pdf": parse_purani_mfr_stock_sales_pdf,
@@ -150,6 +170,7 @@ TEXT_PARSERS = {
     "marg_stock_summary": parse_marg_stock_summary,
     "stock_open_pur_sale_free_current": parse_stock_open_pur_sale_free_current,
     "marg_stock_analysis_full": parse_marg_stock_analysis_full,
+    "klm_stock_sales_analysis_free": parse_klm_stock_sales_analysis_free,
     "pharmassist_mfac": parse_pharmassist_mfac,
     "klm_venus_opstk_crqty": parse_klm_venus_opstk_crqty,
     "dahod_stock_sale_stmt": parse_dahod_stock_sale_stmt,

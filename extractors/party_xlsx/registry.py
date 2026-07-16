@@ -37,6 +37,8 @@ from extractors.party_xlsx.layouts.product_areawise_pivot import parse_product_a
 
 from extractors.party_xlsx.layouts.customer_items_new_xlsx import parse_customer_items_new_xlsx
 from extractors.party_xlsx.layouts.company_customer_itemwise_banded import parse_company_customer_itemwise_banded
+from extractors.party_xlsx.layouts.company_customer_itemwise_area import parse_company_customer_itemwise_area
+from extractors.party_xlsx.layouts.csquare_raw_invoice_dump import parse_csquare_raw_invoice_dump
 from extractors.party_xlsx.layouts.company_party_product_xlsx import parse_company_party_product_xlsx
 
 from extractors.party_xlsx.layouts.klm_customer_vs_groups_text import parse_klm_customer_vs_groups_text
@@ -50,7 +52,20 @@ from extractors.party_xlsx.layouts.areacity_wise_sale_pivot import parse_areacit
 from extractors.party_xlsx.layouts.party_discount_summary_xlsx import parse_party_discount_summary as parse_party_discount_summary_xlsx
 from extractors.party_xlsx.layouts.marg_outward_detail_partywise import parse_marg_outward_detail_partywise
 
+from extractors.party_xlsx.layouts.areawise_sales_statement import parse_areawise_sales_statement
+from extractors.party_xlsx.layouts.bhaskara_code_customer_banded import parse_bhaskara_code_customer_banded
+from extractors.party_xlsx.layouts.klm_order_form_xlsx import parse_klm_order_form_xlsx
+from extractors.party_xlsx.layouts.klm_warehouse_pincode_sale_dump import parse_klm_warehouse_pincode_sale_dump
+from extractors.party_xlsx.layouts.retailer_band_cgst_sgst import parse_retailer_band_cgst_sgst
+from extractors.party_xlsx.layouts.outward_detail_firm_partywise import parse_outward_detail_firm_partywise
+
 PARSERS = {
+    "areawise_sales_statement": parse_areawise_sales_statement,
+    "bhaskara_code_customer_banded": parse_bhaskara_code_customer_banded,
+    "klm_order_form_xlsx": parse_klm_order_form_xlsx,
+    "klm_warehouse_pincode_sale_dump": parse_klm_warehouse_pincode_sale_dump,
+    "retailer_band_cgst_sgst": parse_retailer_band_cgst_sgst,
+    "outward_detail_firm_partywise": parse_outward_detail_firm_partywise,
     "customer_item_invoicewise_banded": parse_customer_item_invoicewise_banded,
     "item_customerwise_sale": parse_item_customerwise_sale,
     "areacity_wise_sale_pivot": parse_areacity_wise_sale_pivot,
@@ -66,6 +81,8 @@ PARSERS = {
     "company_party_product_xlsx": parse_company_party_product_xlsx,
     "customer_items_new_xlsx": parse_customer_items_new_xlsx,
     "company_customer_itemwise_banded": parse_company_customer_itemwise_banded,
+    "company_customer_itemwise_area": parse_company_customer_itemwise_area,
+    "csquare_raw_invoice": parse_csquare_raw_invoice_dump,
     "area_item_sales_summary": parse_area_item_sales_summary,
     "item_item_sales_summary": parse_item_item_sales_summary,
     "item_item_sales_summary_text": parse_item_item_sales_summary_text,

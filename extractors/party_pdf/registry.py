@@ -87,9 +87,22 @@ from extractors.party_pdf.layouts.customer_product_wise_packing import parse_cus
 from extractors.party_pdf.layouts.party_item_summary_qtyfree import parse_party_item_summary_qtyfree
 from extractors.party_pdf.layouts.areawise_sales_statement_banded import parse_areawise_sales_statement_banded
 from extractors.party_pdf.layouts.company_party_product_sale import parse_company_party_product_sale
+from extractors.party_pdf.layouts.party_sale_report import parse_party_sale_report
+from extractors.party_pdf.layouts.customerwise_billwise_itemwise import parse_customerwise_billwise_itemwise
+from extractors.party_pdf.layouts.party_product_analysis_orion import parse_party_product_analysis_orion
+
+from extractors.party_pdf.layouts.klm_sales_detail_register import parse_klm_sales_detail_register
+from extractors.party_pdf.layouts.customer_product_analysis_dash import parse_customer_product_analysis_dash
+from extractors.party_pdf.layouts.product_party_wise_freeamt import parse_product_party_wise_freeamt
 
 PARSERS = {
+    "klm_sales_detail_register": parse_klm_sales_detail_register,
+    "customer_product_analysis_dash": parse_customer_product_analysis_dash,
+    "product_party_wise_freeamt": parse_product_party_wise_freeamt,
     "company_party_product_sale": parse_company_party_product_sale,
+    "party_sale_report": parse_party_sale_report,
+    "customerwise_billwise_itemwise": parse_customerwise_billwise_itemwise,
+    "metro_orion_product_analysis": parse_party_product_analysis_orion,
     "partywise_sales_summary": parse_partywise_sales_summary,
     "customer_invoice_itemwise_sale": parse_customer_invoice_itemwise_sale,
     "sales_statement_summary_itemwise": parse_sales_statement_summary_itemwise,

@@ -3,24 +3,47 @@ import re
 from extractors.stock_xlsx.parse_common import cell_text, is_subtotal
 
 
+# Header token (lower, spaces AND dots removed) -> canonical field. The KLM Venus export
+# prints DOTTED headers "P.Qty"/"S.Qty"/"S.Val"; the old code stripped only spaces, so
+# "p.qty" != "pqty" and purchase/sales/sales-value came out EMPTY (every movement row then
+# failed the identity). Stripping dots too binds them. The scheme/return/adjustment columns
+# (P.Sch/S.Sch/CrQty/DbQty/StkAd) are added with their reconciliation-verified signs so the
+# identity op + P.Qty + P.Sch - S.Qty - S.Sch + StkAd == ClStk holds (AAGAM 71/71 rows).
+_VENUS_COLS = {
+    "item": "product_name", "itemname": "product_name",
+    "opstk": "opening_stock",
+    "pqty": "purchase_stock", "psch": "purchase_free",
+    "sqty": "sales_qty", "ssch": "sales_free", "sval": "sales_value",
+    "crqty": "sales_return",        # credit note (goods back in, +sr)
+    "dbqty": "purchase_return",     # debit note (goods to supplier, -pr)
+    "stkad": "shortage",            # signed stock adjustment (triage's adjusted base +shortage)
+    "clstk": "closing_stock", "clval": "closing_stock_value",
+}
+_VENUS_DISPLAY = {
+    "product_name": "Item", "opening_stock": "OpStk", "purchase_stock": "P.Qty",
+    "purchase_free": "P.Sch", "sales_qty": "S.Qty", "sales_free": "S.Sch",
+    "sales_value": "S.Val", "sales_return": "CrQty", "purchase_return": "DbQty",
+    "shortage": "StkAd", "closing_stock": "ClStk", "closing_stock_value": "ClVal",
+}
+
+
 def parse_venus_stock_excel(rows):
     header_idx = None
     col = {}
     for idx, row in enumerate(rows[:150]):
         for j, cell in enumerate(row):
-            key = cell_text(cell).lower().replace(" ", "")
-            # Some Venus-shaped exports label the product column "Item Name"
-            # (-> "itemname") instead of bare "Item"; treat it as the item col.
-            if key == "itemname":
-                key = "item"
-            if key in {"item", "opstk", "pqty", "sqty", "sval", "clstk", "clval"}:
-                col[key] = j
-        if "opstk" in col and "item" in col:
+            key = cell_text(cell).lower().replace(" ", "").replace(".", "")
+            canon = _VENUS_COLS.get(key)
+            # First occurrence wins: StkAd repeats across two adjacent columns holding the
+            # same value; binding once avoids double-counting the adjustment.
+            if canon and canon not in col:
+                col[canon] = j
+        if "opening_stock" in col and "product_name" in col:
             header_idx = idx
             break
     if header_idx is None:
         return [], {}
-    item_col = col.get("item", 6)
+    item_col = col["product_name"]
     records = []
     for raw_row in rows[header_idx + 1 :]:
         product = cell_text(raw_row[item_col] if item_col < len(raw_row) else "")
@@ -30,36 +53,11 @@ def parse_venus_stock_excel(rows):
             continue
         if len(product) < 4:
             continue
-        records.append(
-            {
-                "product_name": product,
-                "opening_stock": raw_row[col["opstk"]]
-                if col.get("opstk") is not None and col["opstk"] < len(raw_row)
-                else "",
-                "purchase_stock": raw_row[col["pqty"]]
-                if col.get("pqty") is not None and col["pqty"] < len(raw_row)
-                else "",
-                "sales_qty": raw_row[col["sqty"]]
-                if col.get("sqty") is not None and col["sqty"] < len(raw_row)
-                else "",
-                "sales_value": raw_row[col["sval"]]
-                if col.get("sval") is not None and col["sval"] < len(raw_row)
-                else "",
-                "closing_stock": raw_row[col["clstk"]]
-                if col.get("clstk") is not None and col["clstk"] < len(raw_row)
-                else "",
-                "closing_stock_value": raw_row[col["clval"]]
-                if col.get("clval") is not None and col["clval"] < len(raw_row)
-                else "",
-            }
-        )
-    detected = {
-        "Item": "product_name",
-        "OpStk": "opening_stock",
-        "P.Qty": "purchase_stock",
-        "S.Qty": "sales_qty",
-        "S.Val": "sales_value",
-        "ClStk": "closing_stock",
-        "ClVal": "closing_stock_value",
-    }
+        record = {"product_name": product}
+        for canon, j in col.items():
+            if canon == "product_name":
+                continue
+            record[canon] = raw_row[j] if j < len(raw_row) else ""
+        records.append(record)
+    detected = {_VENUS_DISPLAY[canon]: canon for canon in col}
     return records, detected

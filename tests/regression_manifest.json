@@ -1,6 +1,8 @@
 {
   "reports_root": "../../Data",
-  "exclude_contains": ["need review"],
+  "exclude_contains": [
+    "need review"
+  ],
   "suites": {
     "26june_party_pdf": {
       "route": "party_pdf",
@@ -130,6 +132,42 @@
       "route": "stock_xlsx",
       "description": "Stock & Sales Excel — MP region",
       "glob": "Sales Reports Wise/MP/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "15july_party_pdf": {
+      "route": "party_pdf",
+      "files": [
+        "New Data/15 July/party_pdf/COSMO Q.pdf",
+        "New Data/15 July/party_pdf/COSMOCOR__COSMOCOR AWS.pdf",
+        "New Data/15 July/party_pdf/COSMOCOR__COSMOCOR MAY.pdf",
+        "New Data/15 July/party_pdf/KLM COSMO COR.pdf",
+        "New Data/15 July/party_pdf/Party_Product_Analysis_63.pdf"
+      ]
+    },
+    "15july_party_xlsx": {
+      "route": "party_xlsx",
+      "files": [
+        "New Data/15 July/party_xlsx/COSMOCOR__COSMOCOR.XLSX",
+        "New Data/15 July/party_xlsx/COSMOCOR__PONDY - COSMOCOR.xlsx",
+        "New Data/15 July/party_xlsx/KLM 1.xlsx",
+        "New Data/15 July/party_xlsx/comppartysale2.xls",
+        "New Data/15 July/party_xlsx/customer-company_wise_product_sales__reps_.xlsx"
+      ]
+    },
+    "15july_stock_pdf": {
+      "route": "stock_pdf",
+      "files": [
+        "New Data/15 July/stock_pdf/KLM COSMOCOR DIV SEC SALES STAT WISE JUNE 26.pdf",
+        "New Data/15 July/stock_pdf/klm cosmo may-26 sale.pdf",
+        "New Data/15 July/stock_pdf/klm may-2.pdf"
+      ]
+    },
+    "15july_stock_xlsx": {
+      "route": "stock_xlsx",
+      "files": [
+        "New Data/15 July/stock_xlsx/KLM LAB PVT LTD DERMACOR_MAY.XLSX",
+        "New Data/15 July/stock_xlsx/STOCK_AND_SALES_STATEMENT_06 07 26_Arvind_Jadhav.xlsx",
+        "New Data/15 July/stock_xlsx/klm sst-1.XLSX"
+      ]
     }
   }
 }

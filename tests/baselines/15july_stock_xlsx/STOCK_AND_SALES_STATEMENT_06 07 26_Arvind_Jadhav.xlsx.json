@@ -1,0 +1,17 @@
+{
+  "file": "STOCK_AND_SALES_STATEMENT_06 07 26_Arvind_Jadhav.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 63,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 63,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 1823.0
+}

@@ -8,6 +8,12 @@ import re
 
 _DATE = re.compile(r"^\d{1,2}/\d{1,2}/\d{2,4}$")
 _CUST = re.compile(r"^Customer\s*:\s*(.+?)(?:\s+Area\s*:\s*(.+))?$")
+# Some PROFITMAKER exports (S V PHARMA) prefix the division on the SAME band line:
+# "Company :KLM COSMO Q DIVISION Customer :DR. M . AISWARYA". The _CUST regex is
+# anchored at ^Customer so it never matches and every party stays blank. This gate
+# fires ONLY when the line begins with "Company :" and carries "Customer :" after it.
+_COMPANY_CUST = re.compile(
+    r"^Company\s*:\s*(.+?)\s+Customer\s*:\s*(.+?)(?:\s+Area\s*:\s*(.+))?$")
 _NUM_LEAD = re.compile(r"^[\d,]*\.?\d")
 
 # normalized header token -> (canonical key, is_numeric_column)
@@ -107,6 +113,11 @@ def parse_profitmaker(text):
         if cust:
             party = cust.group(1).strip()
             area = (cust.group(2) or "").strip()
+            continue
+        combo = _COMPANY_CUST.match(s)
+        if combo:
+            party = combo.group(2).strip()
+            area = (combo.group(3) or "").strip()
             continue
         if s.startswith(("Total", "Grand Total", "From ", "Page", "Inv.No", "FeedNo")):
             continue

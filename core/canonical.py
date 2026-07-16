@@ -30,7 +30,10 @@ PARTY_FIELDS = {
     # on that header and loses the tie (strict >, qty is the earlier field), leaving the
     # column unmapped. "scch" appears in no other header corpus-wide (113-header cache sweep
     # + 67-file party_xlsx regression re-sim: zero other mappings change).
-    "free_qty": {"scope": "line_item", "type": "num", "required": False, "synonyms": ["free", "scheme qty", "sch qty", "free qty", "freeqty", "s qty", "fqty", "scch qty", "n scch qty", "schm", "schm."]},
+    # "total scm" (MediVision columnar sale/DC exports): the scheme-qty TOTAL column.
+    # Without the exact hit it contains-matches amount's "total" synonym at 0.88 and,
+    # sitting one column before "Total amt", STEALS the amount binding (JAGNATH family).
+    "free_qty": {"scope": "line_item", "type": "num", "required": False, "synonyms": ["free", "scheme qty", "sch qty", "free qty", "freeqty", "s qty", "fqty", "scch qty", "n scch qty", "schm", "schm.", "total scm"]},
     "rate": {"scope": "line_item", "type": "num", "required": True, "synonyms": ["rate", "price", "mrp rate"]},
     "sales_rate": {"scope": "line_item", "type": "num", "required": False, "synonyms": ["s rate", "sale rate", "selling rate", "sales rate"]},
     "purchase_rate": {"scope": "line_item", "type": "num", "required": False, "synonyms": ["purchase rate", "pur rate", "p rate"]},

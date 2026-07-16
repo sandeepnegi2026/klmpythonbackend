@@ -5,6 +5,50 @@ def detect_format(text, n_rects, n_lines):
     t = text[:2000]
     tl = t.lower()
     tl_compact = re.sub(r"\s+", "", tl)
+    # --- 15July KLM Class-B overrides ------------------------------------------
+    # These three files carry a generic report title (Sales Detail Register /
+    # Customer & Product Analysis / Product + Party Wise List) that otherwise
+    # matches the marg_register / profitmaker / marg_bordered rules below, but
+    # their specific column layout makes those parsers return 0 rows (RED). Each
+    # override is keyed on the file's EXACT compact column-header run — verified
+    # corpus-unique so it only ever reclaims its own currently-RED files (the
+    # full regression holds). Matched over the FULL text since the column header
+    # can sit past the first 2000 chars on long reports.
+    _cfull = re.sub(r"\s+", "", text.lower())
+    # AAGAM / VISNAGAR "Sales Detail Register (Mf-Customerwise)" — the SrNo-first
+    # AMOUNT-bearing variant. It shares the exact column header of its blank-amount
+    # sibling prathna_register, so the header token alone cannot separate them;
+    # the discriminator is the BODY: this variant has detail rows ending in TWO
+    # decimals (Sale Rate + Amount) after a trailing-dot Qty, whereas prathna's
+    # Amount column is blank so its rows end in a single decimal (Rate only).
+    # Requiring an amount-bearing row keeps PRATHNA out of this gate (it falls
+    # through to the marg_register -> prathna_register fallback in pdf_io). The
+    # `[^\S\n]` (horizontal-whitespace) spacing pins the two-decimal run to ONE
+    # line so a wrapped value on the next line can't forge a false match.
+    if (
+        "srnodateitemnamebatchnoqtyschqty" in _cfull
+        and re.search(
+            r"(?m)^\w[\w-]*[^\S\n]+\d{2}-\d{2}-\d{4}[^\S\n]+.+?\d+\.[^\S\n]+"
+            r"[\d,]+\.\d{2,}[^\S\n]+[\d,]+\.\d{2,}[^\S\n]*$",
+            text,
+        )
+    ):
+        return "klm_sales_detail_register"
+    # C.D. PHARMA: DASH-date dialect of "Customer & Product Analysis"; the
+    # profitmaker sibling's row gate needs SLASH dates so it 0-rows this. Require
+    # the exact header AND a dash-dated invoice detail row so a genuine
+    # (slash-dated) profitmaker file never diverts here.
+    if (
+        "inv.nodateproductpackbatchqtyfreeratevalue" in _cfull
+        and re.search(r"(?m)^[A-Za-z]{0,4}\d[\w-]*\s+\d{2}-\d{2}-\d{4}\s", text)
+    ):
+        return "customer_product_analysis_dash"
+    # MANISH: 5-number "Product + Party Wise List" (Free/FreeAmt./SaleQty./Amount/
+    # TotalAmt). marg_bordered claims it first (rects + "from:"); the 4-number
+    # product_party_wise_list sibling (AKSHAR) has header "productfreesaleqty..."
+    # with NO "freeamt", so this token cleanly separates the two.
+    if "productfreefreeamt.saleqty" in _cfull:
+        return "product_party_wise_freeamt"
     # SIND DISTRIBUTORS "MediVision Platinum" customer-wise/product-wise sale-DC.
     # Adobe-UTF-8 CID font — pdfminer yields nothing; pdf_io falls back to PyMuPDF
     # and this positional parser reads word x-coords via fitz. Title signature is
@@ -410,4 +454,32 @@ def detect_format(text, n_rects, n_lines):
         and "compnamepackitemnamebatchqty.scm%ratemrpnetamt" in cfull
     ):
         return "customer_invoice_itemwise_sale"
+    # METRO MEDICAL AGENCIES "Party Sale Report" — banded party layout. BOTH the party
+    # heading and item rows end in numbers; the first numeric row after a header is the
+    # party (running qty/amount totals), following rows are its items until the sums close.
+    # Two dialects: 3-num "Particulars Address/unit Qty Scm Qty Amount" and 2-num
+    # "Particulars Qty Amount". Gate = "Party Sale Report" title + exact header run
+    # (corpus-unique). Tail-placed so every existing rule wins first.
+    if "partysalereport" in cfull and (
+        ("particularsaddress" in cfull and "scmqtyamount" in cfull)
+        or "particularsqtyamount" in cfull
+    ):
+        return "party_sale_report"
+    # HERITAGE MARKTEERS "Customerwise Billwise Itemwise Report": division band ->
+    # customer band ("<code> <PARTY>,<addr town>") -> product-first billwise rows
+    # (Bill No | Date | Item | Qty | Free | Rate | Value). Title + exact compact header
+    # are corpus-unique.
+    if (
+        "customerwisebillwiseitemwisereport" in cfull
+        and "billnodateitemdescriptionqtyfreeratevalue" in cfull
+    ):
+        return "customerwise_billwise_itemwise"
+    # METRO "Party Product Analysis" (Orion): "PARTY : <name> Ph:.. <town>" bands ->
+    # product rows with header 'CODE PRODUCT NAME PACK QTY FREE REPL VALUE' (REPL is a
+    # replacement-qty column). Title + this exact compact header co-occur only here.
+    if (
+        "partyproductanalysis" in cfull
+        and "codeproductnamepackqtyfreereplvalue" in cfull
+    ):
+        return "metro_orion_product_analysis"
     return "unknown"

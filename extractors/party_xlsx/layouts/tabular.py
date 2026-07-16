@@ -1,7 +1,28 @@
+import re
+
 from core.header_match import map_headers
 
 from extractors.party_xlsx.constants import BARE_TOTAL_RE
 from extractors.party_xlsx.parse_common import is_subtotal
+
+# A "Group Totals" / "Grand Totals" register footer (TANISHQ "Sales Register Customer/Company")
+# whose label sits in the leading (Date) cell. Anchored to the whole cell — a real customer or
+# product name is never exactly this — and only consulted on a row whose own party AND product
+# cells are both blank, so it can never drop a real sale line.
+_GROUP_TOTAL_RE = re.compile(r"^(group|grand)\s*totals?\s*[:\-]?\s*[\d.,]*$", re.IGNORECASE)
+
+
+def _is_merged_section_header(raw_row):
+    """True for a merged-cell section/customer band spanning every column.
+
+    When Excel unmerges such a cell, pandas fills all columns with the identical value, so every
+    populated cell is the same string (CITY DISTRIBUTORS "CUSTOMER : 3B01 ROHINI MEDICOS 02  ADDRESS:
+    ...  City : DELHI"). A real sale line always has distinct values across its columns
+    (product != qty != amount), so requiring >=2 populated cells that are ALL identical cannot drop
+    one — the customer already sits in the CUSTOMER NAME column of every product line below.
+    """
+    nonempty = [str(c).strip() for c in raw_row if str(c).strip()]
+    return len(nonempty) >= 2 and len(set(nonempty)) == 1
 
 
 def _nonzero(value):
@@ -48,6 +69,9 @@ def records_from_mapped(headers, rows, header_idx):
                 record[key] = raw_row[idx] if idx < len(raw_row) else ""
         if not any(str(v).strip() for v in record.values()):
             continue
+        # Skip a merged-cell section/customer band spanning every column (see helper).
+        if _is_merged_section_header(raw_row):
+            continue
         party_value = str(record.get("party_name", "")).strip()
         # A "Grand Total" / "Total" footer row carries figures (so the qty guard below would
         # keep it) but its Customer column is a bare total label. Skip it up front so it is not
@@ -67,6 +91,20 @@ def records_from_mapped(headers, rows, header_idx):
             not party_value
             and not str(record.get("product_name", "")).strip()
             and any(BARE_TOTAL_RE.match(str(cell).strip()) for cell in raw_row)
+        ):
+            continue
+        # A "Group Totals" / "Grand Totals" register footer prints the label in the leading
+        # (Date) cell with the Customer/Item cells blank, but a Doc-No RANGE in the invoice
+        # column ("TDB-1461 To TDB-2180") keeps it past the unlabeled-totals guard below, so
+        # carry-down would stamp the previous customer and ship it as a phantom all-zero sale
+        # (TANISHQ "last row"). BARE_TOTAL_RE above does not cover "group total" nor the plural
+        # "Totals", so match them here. Gated on both own identity cells being blank, so no real
+        # sale line — which always carries a product — can be dropped.
+        if (
+            not party_value
+            and not str(record.get("product_name", "")).strip()
+            and raw_row
+            and _GROUP_TOTAL_RE.match(str(raw_row[0]).strip())
         ):
             continue
         # SwilERP / Marg TRAILER rows (SATARA PHARMA "Medica Ultimate (+91-...)" / "(Report End)

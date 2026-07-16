@@ -1,0 +1,17 @@
+{
+  "file": "KLM COSMOCOR DIV SEC SALES STAT WISE JUNE 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 26,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 26,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Ezacne Sachet 30*5 Gm",
+    "Imxia Pro Serum 60Ml",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 118.0
+}

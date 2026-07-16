@@ -24,7 +24,52 @@ def workbook_kind(file_bytes, filename=""):
     return Path(filename).suffix.lower() if filename else ".xlsx"
 
 
+# Excel-2003 "XML Spreadsheet" exports ship as plain SpreadsheetML text with a .xls
+# extension; both pandas engines reject XML, so this path previously raised and the
+# file triaged as SCANNED_OR_EMPTY with 0 rows. The byte signature below (XML
+# declaration + Excel.Sheet progid) never occurs in a real .xls/.xlsx/HTML export,
+# so previously-readable workbooks never enter the conversion branch.
+_SPREADSHEETML_MARK = b'mso-application progid="Excel.Sheet"'
+
+
+def _spreadsheetml_to_xlsx(file_bytes):
+    """Convert SpreadsheetML Worksheet/Table/Row/Cell into real .xlsx bytes."""
+    import xml.etree.ElementTree as ET
+
+    from openpyxl import Workbook
+
+    ns = "{urn:schemas-microsoft-com:office:spreadsheet}"
+    root = ET.fromstring(file_bytes)
+    book = Workbook()
+    book.remove(book.active)
+    for ws_el in root.findall(f"{ns}Worksheet"):
+        title = (ws_el.get(f"{ns}Name") or f"Sheet{len(book.sheetnames) + 1}")[:31]
+        sheet = book.create_sheet(title=title)
+        table = ws_el.find(f"{ns}Table")
+        if table is None:
+            continue
+        r = 0
+        for row_el in table.findall(f"{ns}Row"):
+            r = int(row_el.get(f"{ns}Index", r + 1))
+            c = 0
+            for cell_el in row_el.findall(f"{ns}Cell"):
+                c = int(cell_el.get(f"{ns}Index", c + 1))
+                span = int(cell_el.get(f"{ns}MergeAcross", 0))
+                data = cell_el.find(f"{ns}Data")
+                text = "" if data is None else "".join(data.itertext())
+                if text:
+                    # replicate across the merge span, like unmerge_openpyxl does
+                    for col in range(c, c + span + 1):
+                        sheet.cell(row=r, column=col, value=text)
+                c += span
+    buffer = io.BytesIO()
+    book.save(buffer)
+    return buffer.getvalue()
+
+
 def read_sheets(file_bytes, filename=""):
+    if file_bytes[:256].lstrip().startswith(b"<?xml") and _SPREADSHEETML_MARK in file_bytes[:512]:
+        file_bytes = _spreadsheetml_to_xlsx(file_bytes)
     ext = workbook_kind(file_bytes, filename)
     engines = ["openpyxl", "xlrd"] if ext == ".xlsx" else ["xlrd", "openpyxl"]
     last_error = None

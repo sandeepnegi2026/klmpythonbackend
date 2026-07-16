@@ -57,6 +57,20 @@ def _brand_key(name):
     toks = [t for t in norm.split() if t not in _FORM_WORDS]
     return " ".join(toks).strip()
 
+
+# A pack column that LEADS with a standalone multi-digit STRENGTH followed by a
+# separate strip-count NUMBER ("1000 3'S", "500 10*10") is a mis-split: the leading
+# number is really a STRENGTH that belongs to the product name, stranded here by
+# a layout whose name/pack boundary broke before a strength that lacked a form
+# word ("HERPIVAL 1000 3'S" -> name "HERPIVAL" + pack "1000 3'S"). The trailing
+# \d (another number) is what separates a stranded strength (TWO numbers: strength
+# + strip count) from an ordinary single-number pack: "10 STP" (10 strips), "50 ML"
+# (50 ml size), "10 TAB" all have ONE number after the space that is a UNIT WORD,
+# not a strip count, so they must NOT fire (they would wrongly snap "Klclav Kid Dt"
+# with pack "10 STP" to a "Klclav Ds" sibling). Size packs ('30ml','50 ml') are
+# _pack_correct's job. 2-4 digits so plain strip counts never lead.
+_PACK_STRENGTH_RE = re.compile(r"^\s*(\d{2,4})\s+\d")
+
 _PRODUCT_MASTER = None
 # Derived indexes, built once from the catalog (see _build_indexes):
 #   _NORM_INDEX : list of (product, [normalized_candidate, ...])  — precomputed so the
@@ -268,6 +282,40 @@ def _pack_correct(master, size):
     return cand
 
 
+def _recover_pack_strength(raw_name, pack_txt, master):
+    """Strength stranded in the pack column. A layout can split "HERPIVAL 1000 3'S"
+    into name "HERPIVAL" + pack "1000 3'S", so the bare name snaps to the DEFAULT
+    strength sibling ("Herpival-500") while the real strength (1000) sits unused in
+    the pack. When the pack LEADS with a standalone multi-digit strength the name
+    lacks, re-match on "name + pack" and adopt the result ONLY when it is a
+    different SAME-BRAND product (never cross-brand, never enriches an unmatched
+    row). Returns the corrected sibling, or None to keep the base match.
+
+    Note mg<->G equivalence (1000mg == "1 G"): the strength need not appear literally
+    in the sibling's canonical — the re-match resolves it via the sibling's synonyms
+    ("HERPIVAL 1000 3"), so the gate is the SAME-BRAND + different-result outcome,
+    not a literal strength check on the canonical."""
+    if master is None or not pack_txt:
+        return None
+    m = _PACK_STRENGTH_RE.match(str(pack_txt))
+    if not m:
+        return None
+    strength = m.group(1)
+    if strength in re.findall(r"\d+", _normalize_name(raw_name)):
+        return None  # strength already in the name -> nothing was stranded
+    cand = normalize_product(f"{raw_name} {pack_txt}")
+    if cand is None:
+        return None
+    mc = master.get("canonical_name", "")
+    cc = cand.get("canonical_name", "")
+    if cc == mc:
+        return None  # augmented name resolves to the same product -> no change
+    mb, cb = _normalize_name(mc).split(), _normalize_name(cc).split()
+    if not mb or not cb or mb[0] != cb[0]:
+        return None  # different brand word -> refuse (only strength should differ)
+    return cand
+
+
 def _prefer_full_name(raw_full, full, stub):
     """Decide whether the FULL pre-strip name's fuzzy match should replace the stub
     match. The pack-strip can drop a STRENGTH/variant token ("KL CLAV 625 TAB" ->
@@ -358,6 +406,16 @@ def enrich_rows_with_master(rows):
                     _seen[prestrip] = full
                 if _prefer_full_name(prestrip, full, master):
                     master = full
+        # Strength stranded in the pack column: when no full pre-strip name was
+        # stashed, a layout may have split off a STRENGTH into the pack ("HERPIVAL
+        # 1000 3'S" -> name "HERPIVAL" + pack "1000 3'S"), so the bare name snapped
+        # to the default sibling. Re-match on name+pack and snap to the correct
+        # same-brand strength variant. Only fires without a prestrip (the prestrip
+        # path already carries the full name).
+        if master is not None and not prestrip:
+            recovered = _recover_pack_strength(raw_name, row.get("pack"), master)
+            if recovered is not None:
+                master = recovered
         # Size-aware variant correction: keep the confident brand match, but if the
         # row's extracted pack size names a different same-brand sibling, snap to it.
         # Size is read from the full pre-strip name first (it still carries the token),

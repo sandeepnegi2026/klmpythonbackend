@@ -50,10 +50,24 @@ def parse_klm_dstk_stock(rows):
     if header_idx is None:
         return [], {}
 
+    # The Medica Ultimate 28-column PCode-led variant (header carries "LastPurc" AND
+    # "Manufacturer / Division") uses its trailing IN/OUT columns for REAL inter-branch
+    # transfers (nonzero), unlike the SATARA-style variant where they are all-zero and
+    # would steal purchase/sales. Only for that exact signature, map IN->sales_return
+    # (inflow, +sr) and OUT->purchase_return (outflow, -pr) so the identity reconciles.
+    # Verified 100% on the D-PLUS / Arvind_Jadhav family; the SATARA variant lacks these
+    # two header tokens so its IN/OUT stay unmapped exactly as before.
+    _cells_lc = [cell_text(c).lower().strip() for c in rows[header_idx]]
+    _col_map = _COL_MAP
+    if "lastpurc" in _cells_lc and "manufacturer / division" in _cells_lc:
+        _col_map = dict(_COL_MAP)
+        _col_map["in"] = "sales_return"
+        _col_map["out"] = "purchase_return"
+
     col_to_canonical = {}
     detected = {}
     for i, cell in enumerate(rows[header_idx]):
-        key = _COL_MAP.get(cell_text(cell).lower().strip())
+        key = _col_map.get(cell_text(cell).lower().strip())
         if key and key not in col_to_canonical.values():
             col_to_canonical[i] = key
             detected[cell_text(cell)] = key

@@ -134,9 +134,12 @@ def discover_folder(folder: Path):
         # Skip OCR-track quarantine and misfile quarantine folders: their files are
         # not live report slots (a "_misfiled_dups"/"_misfiled_reloc" copy is a
         # relocated redundant/misfiled file, kept only for reversibility). Routing
-        # them by filename hint would re-triage them as spurious REDs.
+        # them by filename hint would re-triage them as spurious REDs. A "wrong"
+        # segment is the scanned/junk quarantine folder (same rationale).
+        parts = {p.lower() for p in f.parts}
         if f.is_file() and f.suffix.lower() in exts \
-                and "need reviews" not in low and "_misfiled" not in low:
+                and "need reviews" not in low and "_misfiled" not in low \
+                and "wrong" not in parts:
             yield route_for_path(f), f
 
 

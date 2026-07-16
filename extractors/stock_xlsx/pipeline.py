@@ -74,9 +74,24 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
                 # Preview = first 80 rows PLUS the tail (totals/footer region) of each tab,
                 # disjointly, so the triage value-corroboration / total-reconcile checks see
                 # every division's printed control totals instead of losing them past row 80.
-                part = "\n".join(
-                    "\t".join(row) for row in (srows[:80] + srows[80:][-12:])
-                )
+                head_tail = srows[:80] + srows[80:][-12:]
+                # A Prompt "Stock Statement (Datewise)" packs ALL 5-7 KLM divisions into ONE
+                # sheet, each ending with its own mid-sheet "Total:"/"Amount:" footer pair. The
+                # head+tail preview drops those interior footers, so triage's total-reconcile
+                # can't see them and flags a spurious TOTAL_MISMATCH though extraction is perfect.
+                # Additively re-include ONLY the per-division footer LABEL rows from the dropped
+                # middle, in document order. Gated on this exact layout + a sheet long enough to
+                # have a dropped middle, so every other layout/short sheet stays byte-identical.
+                if sheet_layout == "prompt_dstk_free_xlsx" and len(srows) > 92:
+                    import re as _re
+                    _foot = _re.compile(r"^(?:grand\s*total|total|amount)\s*:?\s*$", _re.I)
+                    kept_mid = [
+                        row for row in srows[80: len(srows) - 12]
+                        if any(_foot.match(cell.strip()) for cell in row if cell.strip())
+                    ]
+                    if kept_mid:
+                        head_tail = srows[:80] + kept_mid + srows[80:][-12:]
+                part = "\n".join("\t".join(row) for row in head_tail)
                 preview_parts.append(part)
                 pages_meta.append((name, len(srows), len(part)))
             preview = "\n".join(preview_parts)

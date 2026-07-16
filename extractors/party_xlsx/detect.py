@@ -78,6 +78,15 @@ def _has_columnar_party_header(rows):
 
 
 def detect_layout(rows):
+    # C-Square raw DB-field invoice dump (HERITAGE MARKTEERS / KLM per-division books). The
+    # header row is the underlying view's literal column names and repeats 'c_name' four times
+    # (item / pack / customer / firm), so text-keyed map_headers clobbers them and the customer
+    # column is dropped -> RED. Parsed POSITIONALLY. Gated on the exact raw-field header run
+    # (n_srno + d_inv_date + c_cust_code + >=3 c_name cells), which no other corpus file carries.
+    # FIRST so no coarse tabular fallback grabs it.
+    from extractors.party_xlsx.layouts.csquare_raw_invoice_dump import detect as _csquare_raw_detect
+    if _csquare_raw_detect(rows):
+        return "csquare_raw_invoice"
     # "Selected sale types, companies: product-wise, area-wise sale/DC summary" — KLM/Marg
     # (MediVision Platinum) product-wise / area-wise sale PIVOT (FLORA AGENCIES). One row per
     # product; the sale is spread across repeated `<AREA> qty` + `<AREA> amt` column PAIRS
@@ -330,6 +339,15 @@ def detect_layout(rows):
     if _ccib_detect(rows):
         return "company_customer_itemwise_banded"
 
+    # YOGIRAM "COMPANY-CUSTOMER-ITEM WISE SALE" PONDY export — the NO-"Barcoode" sibling of
+    # company_customer_itemwise_banded. Party sits in a col0 "[ <code> ] <NAME>" band (Area in
+    # col2); item lines carry a numeric raw item code in col0. Gated on the title + exact
+    # "Party Name | Item Name | Area" header run WITHOUT "Barcoode" + a "[ <code> ] <NAME>"
+    # band, so it claims only this export (its 'Barcoode' twin stays on the banded sibling above).
+    from extractors.party_xlsx.layouts.company_customer_itemwise_area import detect as _cciw_area_detect
+    if _cciw_area_detect(rows):
+        return "company_customer_itemwise_area"
+
     # UNITED "Customer & Items New" — "Customer Name: <name> Area: <town>" glued in one col0
     # band cell (the shared CUSTOMER_BAND_RE rejects "Customer Name:", and the band sits in
     # the Inv-No voucher column so the bare-band fallback never fires). Title-gated.
@@ -356,6 +374,33 @@ def detect_layout(rows):
     from extractors.party_xlsx.layouts.party_item_wise_sale import detect as _piws_detect
     if _piws_detect(rows):
         return "party_item_wise_sale"
+
+    # --- 15July KLM party_xlsx layouts. Each currently falls through EVERY specific
+    #     check above to the generic tabular/marg_busy fallback and lands RED (no
+    #     party_name). Placed here — after all specific detectors, before the coarse
+    #     fallbacks — so none of them can preempt an existing layout; each detect() is
+    #     tightly title/header-gated to its own export (verified corpus-unique). ---
+    from extractors.party_xlsx.layouts.areawise_sales_statement import detect as _awss_xlsx_detect
+    if _awss_xlsx_detect(rows):
+        return "areawise_sales_statement"
+    from extractors.party_xlsx.layouts.bhaskara_code_customer_banded import detect as _bhaskara_detect
+    if _bhaskara_detect(rows):
+        return "bhaskara_code_customer_banded"
+    from extractors.party_xlsx.layouts.klm_order_form_xlsx import detect as _klm_order_detect
+    if _klm_order_detect(rows):
+        return "klm_order_form_xlsx"
+    from extractors.party_xlsx.layouts.klm_warehouse_pincode_sale_dump import detect as _klm_warehouse_detect
+    if _klm_warehouse_detect(rows):
+        return "klm_warehouse_pincode_sale_dump"
+    from extractors.party_xlsx.layouts.retailer_band_cgst_sgst import detect as _retailer_band_detect
+    if _retailer_band_detect(rows):
+        return "retailer_band_cgst_sgst"
+    # DEEPALI "Outward Detail(s)" firm-level sale (NO customer column) — sibling of
+    # marg_outward_detail_partywise above, which needs a party column this file lacks;
+    # placed after it so that sibling is never diverted.
+    from extractors.party_xlsx.layouts.outward_detail_firm_partywise import detect as _outward_firm_detect
+    if _outward_firm_detect(rows):
+        return "outward_detail_firm_partywise"
 
     compact_text = compact(" ".join(" ".join(row) for row in rows[:150]))
     if (

@@ -59,6 +59,14 @@ def parse_wep_legacy(text):
 
 def _parse_wep_rich(text, H):
     """RATHNA product-level WEP variant (decimal qty + mid-row date/invno)."""
+    # This variant's _RICH_ROW already CAPTURES the invoice date (group 6) and invoice
+    # number (group 7); the original builder discarded both, so a customer who reorders
+    # the same product with identical qty/free/amount on several June invoices collapsed
+    # into byte-identical rows (false DUPLICATE_ROWS). Emit the two captured fields —
+    # "Invoice Date"/"Invoice No" exact-map to invoice_date/invoice_number (no new
+    # synonyms) — so each invoice line stays distinct. Extended header is local to this
+    # variant; the plain WEP path is untouched.
+    H2 = H + ["Invoice Date", "Invoice No"]
     rows, cur_raw = [], ""
     for line in text.split("\n"):
         s = line.strip().rstrip("*'").strip()
@@ -86,6 +94,8 @@ def _parse_wep_rich(text, H):
                 m.group(5),               # Goods Value <- Amount (canonical amount)
                 "",                       # PRate
                 m.group(8),               # Value(PRate) <- printed Goods Value
+                m.group(6),               # Invoice Date (dd/Mon/yyyy)
+                m.group(7),               # Invoice No (RS004353)
             ]
         )
-    return H, rows
+    return H2, rows

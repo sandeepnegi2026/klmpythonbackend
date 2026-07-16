@@ -63,6 +63,49 @@ def records_from_rows(rows, header_idx):
     # …but build the rows by COLUMN INDEX so a header text repeated across merged columns
     # (e.g. 5x "ITEM DESCRIPTION") can no longer clobber product_name and drop every row.
     by_index = map_headers_indexed(headers, "stock")
+    # Marg "STOCK & SALE STATEMENT" prints four movement columns the canonical matcher
+    # cannot bind — CRESTK (credit-note goods received back = inflow, +sr), UCSTK (UC-sale
+    # channel = outflow, -sf), CLMSTK (claim = outflow, folds via -exp_damage), DBSTK
+    # (debit-note returned to supplier = outflow, -pr). Unbound, they fall to raw_* and are
+    # dropped, so every row with a nonzero movement fails the stock identity (SANITY_PARTIAL).
+    # Gate on the EXACT 8-token Marg-SST signature (openstk+purstk+salestk+closestk plus the
+    # four extras — a combination present in no other corpus file) and bind each extra column
+    # by exact normalized header text, mirroring the stock_op_rec_iss_clos_grid exact-abbrev
+    # precedent. Verified: signs reconcile 100% of nonzero-movement rows on the A.S DISTRIBUTOR
+    # family. Files without this exact signature never enter the branch (stays byte-identical).
+    _sst_norm = lambda h: cell_text(h).strip().lower().replace(" ", "")
+    _sst_headers = {_sst_norm(h) for h in headers}
+    if {"openstk", "purstk", "salestk", "closestk",
+            "crestk", "ucstk", "clmstk", "dbstk"} <= _sst_headers:
+        _sst_extra = {"crestk": "sales_return", "ucstk": "sales_free",
+                      "clmstk": "exp_damage", "dbstk": "purchase_return"}
+        _bound = set(by_index.values())
+        for _i, _h in enumerate(headers):
+            _canon = _sst_extra.get(_sst_norm(_h))
+            if _canon and _canon not in _bound:
+                by_index[_i] = _canon
+                detected[str(_h)] = _canon
+                _bound.add(_canon)
+    # M.M.TRADER "Stock And Sales Report(Month)" ERP prints its closing QUANTITY under the
+    # header 'TotalStock' (which binds canonical total_stock, so closing_stock is never set
+    # and every moving row fails the identity op+pur-sale=closing). When no closing column is
+    # otherwise bound and an exact 'TotalStock' header exists, rebind that column to
+    # closing_stock. The same sheet mislabels value columns: the real 'SaleValue' is dropped
+    # while 'AdjustmentValue' contains-steals sales_value — rebind exact 'SaleValue' too.
+    # Gated on exact header text 'totalstock' (present in no other corpus file), so nothing
+    # else is touched; verified identity reconciles 100% across the 9 M.M.TRADER divisions.
+    else:
+        _mmt = [cell_text(h).strip().lower().replace(" ", "") for h in headers]
+        if "totalstock" in _mmt and "closing_stock" not in by_index.values():
+            _ci = _mmt.index("totalstock")
+            by_index[_ci] = "closing_stock"
+            detected[str(headers[_ci])] = "closing_stock"
+            if "salevalue" in _mmt:
+                for _i in [i for i, k in list(by_index.items()) if k == "sales_value"]:
+                    del by_index[_i]
+                _si = _mmt.index("salevalue")
+                by_index[_si] = "sales_value"
+                detected[str(headers[_si])] = "sales_value"
     # the product-column header text ("ITEM DESCRIPTION"), so page-break repeats of the
     # column header — which map every quantity cell to a label and come out all-zero —
     # can be recognised and skipped.

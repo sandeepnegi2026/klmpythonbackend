@@ -30,6 +30,14 @@ _COL_MAP = {
     "compute_0027": "opening_value",
     "compute_0003": "purchase_stock",
     "compute_0004": "purchase_value",
+    # HERITAGE MARKTEERS exports populate two movement columns the BALAJI sample never
+    # carried data in: compute_0005 = purchase FREE qty (goods-in scheme, +pf) and
+    # compute_0020 = a signed transfer/adjustment qty mapped to canonical `shortage`
+    # (triage's adjusted identity is base - exp_damage + shortage, so it rescues rows
+    # exactly). Keyed by exact compute-id, so files not carrying these columns are
+    # unaffected; verified the identity reconciles on the HERITAGE COSMOCOR/… family.
+    "compute_0005": "purchase_free",
+    "compute_0020": "shortage",
     "compute_0006": "sales_qty",
     "compute_0007": "sales_value",
     "compute_0008": "purchase_return",

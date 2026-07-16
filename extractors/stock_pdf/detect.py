@@ -10,6 +10,51 @@ def detect_layout(text, n_rects):
     # other vendor; MUST precede the coarse "stock and sales" -> simple4 rules below.
     if "medivision" in low and "stock and sales" in low and "companies:" in low:
         return "medivision_stock_sales"
+    # --- 15July KLM stock_pdf layouts. Each currently mis-routes (to generic /
+    #     simple4 / prompt / marg_opstk) and lands RED; each gate keys on a compact
+    #     header run UNIQUE to its export (verified — the full regression holds), so
+    #     it reclaims only its own files. Placed high so the coarse fallbacks below
+    #     cannot grab them first. ---
+    _c15 = low.replace(" ", "")
+    # JAGNATH per-division MediVision "Stock and Sales" — singular "Company:" band
+    # (+Purc & prev-month sale cols). The SIND "Companies:" whole-report sibling above
+    # returns first, so this only catches the per-division dialect. Positional (PyMuPDF x1).
+    if ("medivision" in low and "stock and sales" in low and "company:" in low
+            and "companies:" not in low):
+        return "medivision_company_stock_sales"
+    # HEMA SUNDHAR: Code/LM-SALE/Receipts/AGE dialect — the "…Closing Closing AGE"
+    # terminus is disjoint from the batch-wise "…Closing Closing Value" sibling.
+    if "openingreceiptstotalsalesclosingclosingage" in _c15:
+        return "klm_lmsale_receipts_age"
+    # THANE xtraRepStockAndSales: Op Bal|Purc|Sale|Sal Val|In/Out|Stk|Stk Val|3M
+    # (signed In/Out stock adjustment). Positional (PyMuPDF).
+    if "purcsalesalval" in _c15 and "in/out" in low:
+        return "klm_stock_sales_inout_expiry"
+    # METRO MEDICAL AGENCIES_: Product Name|Unit|Pack desc|Op|Purc|Sale|Cl qty — 4 qty
+    # cols, NO value column.
+    if "unitpackdescoppurcsalecl" in _c15:
+        return "stock_unit_op_purc_sale_cl"
+    # AGARWAL: Op.Bal.|Receipt|Total|Issue|Expiry|Closing|Near (Expiry=outflow, Near
+    # dropped). The "…Total Issue Expiry Closing Near" run appears in no other layout.
+    if "totalissueexpiryclosingnear" in _c15:
+        return "stock_opbal_issue_expiry_near"
+    # AAGAM pharmabyte single-page "Stock and Sale Statement" — doubled scheme run
+    # P.Val/P.Sch/S.Qty/S.Sch/S.Val WITH a StkAd column and NO CrQty. The StkAd gate is
+    # required: the StkAd-LESS pharmabyte siblings (VISNAGAR-COSMO/AAGAM-SSS/... ) already
+    # parse on marg_opstk_statement below and MUST stay there, and this parser mis-reads a
+    # StkAd-less body — so only the StkAd-bearing export is reclaimed. Overrides marg_opstk.
+    if ("p.valp.schs.qtys.schs.val" in _c15 and "stkad" in _c15
+            and "crqty" not in _c15):
+        return "stock_sale_stmt_stkad"
+    # NOTE: two builder layouts for this batch are intentionally NOT gated here.
+    #  * stock_item_desc_oric_movement (AMETOMBI): its header (ITEM DESCRIPTION OPENING
+    #    RECEIPT ISSUE CLOSING M.EXP) is byte-identical to ~38 simple4/stock_oric_pairs
+    #    baselines (ANIL, KRISHNA CARE, VINEET, MARUTI, …), so no header token can
+    #    separate them and this parser mis-reads those files. AMETOMBI stays on simple4.
+    #  * prompt_datewise_amount_cols (OMKAR/PATEL/SHAH): its sub-header run
+    #    ('qtyqtyqtyamountqtyamount' / '…freeinstqtyamount') is byte-identical to the base
+    #    `prompt` baselines (OMKAR-PEDIA, ALL CARE, ANJALI, …) which `prompt` parses
+    #    correctly. These files stay on the base `prompt` layout.
     if "liquidation" in low and "sh.exp" in low:
         return "dolphin_stock"
     if "opstk" in low and "purch" in low and "in/ot" in low:
@@ -578,6 +623,26 @@ def detect_layout(text, n_rects):
         return "marg_open_pur_free_sale"
     if "stock & sales analysis" in low and "purchasesreturnothers" in low.replace(" ", ""):
         return "marg_movement_detail"
+    # KLM 'STOCK & SALES ANALYSIS (KLM <DIV>)' per-company export with a
+    # "Reorder : Sale X .." option (VANDANA MEDICAL AGENCIES). SAME 14-col
+    # S/R P/R SAMPLE M.EXP structure as marg_stock_analysis_full (SIDDHIVINAYAK)
+    # below, but this vendor prints WHOLE-unit free goods and shows PURCHASE and
+    # FREE as separate columns, so folding them (17+3 -> 20) reads wrong to the
+    # user. The dedicated layout breaks purchase_free/sales_free out into their own
+    # canonical fields. Distinguished from SIDDHIVINAYAK by BOTH the company-in-
+    # parens title run "stock & sales analysis (klm" AND the "reorder :" option
+    # token — SIDDHIVINAYAK's title ("STOCK & SALES ANALYSIS 01-05-2026 - ...")
+    # carries NEITHER, so it stays on marg_stock_analysis_full (its half-unit free
+    # goods require the fold). MUST precede the marg_stock_analysis_full gates below.
+    if (
+        "stock & sales analysis (klm" in low
+        and "reorder :" in low
+        and "s/r" in low
+        and "p/r" in low
+        and "sample" in low
+        and "m.exp" in low
+    ):
+        return "klm_stock_sales_analysis_free"
     # Marg 'STOCK & SALES ANALYSIS' full-movement variant (SIDDHIVINAYAK): 14 cols with
     # S/R, SAMPLE, P/R and a trailing M.EXP. That column set is unique to this export and
     # must beat the coarse marg_stock_long ("opening"+"sale"+"repl") rule below.
@@ -708,6 +773,19 @@ def detect_layout(text, n_rects):
         and "avaaprop.bal" in _comp_ava
     ):
         return "marg_stock_ava_bval_sval"
+    # A.K. MEDICAL / SRI LAKSHMI ANNAPURNA "STOCK AND SALES STATEMENT" (KLM ERP) — two
+    # header-driven variants currently mis-detected as the coarse stock_simple_7col below.
+    # AGE variant header ends 'Opening Received Issued Closing AGE'; VALUE variant is
+    # 'Opening Received Issued Value Closing SReturn PReturn free'. Gate on the title plus
+    # each variant's exact compact header run; the bare KRISHNA stock_received_issued header
+    # ('...Received Issued Closing') has NEITHER token so it is not stolen. MUST precede the
+    # coarse stock_simple_7col rule.
+    _c_klmri = low.replace(" ", "")
+    if "stockandsalesstatement" in _c_klmri and (
+        ("openingreceivedissued" in _c_klmri and "closingage" in _c_klmri)
+        or "valueclosingsreturnpreturnfree" in _c_klmri
+    ):
+        return "klm_received_issued"
     if (
         "name" in low
         and "pack" in low

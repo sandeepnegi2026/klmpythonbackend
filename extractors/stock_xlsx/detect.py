@@ -333,6 +333,13 @@ def detect_excel_layout(rows):
         return "marg_stock_ss_full_movement_xls"
     if "stockreport" in flat and "itemname" in flat and "opening" in flat:
         return "marg_stock_wide"
+    # R.K. PHARMA KLM "Stock and Sales Statement For Company: <DIV>" .xls — Opstk|Pur|Apr|
+    # May|Sale|CurStk|StkVal|... The Apr/May prior-month history columns distinguish it from
+    # plain marg_opstk_curstk below (which mis-handles this shape: never binds CurStk closing
+    # and corrupts Pur). MUST precede that rule.
+    if ("productname" in flat and "opstk" in flat and "apr" in flat
+            and "may" in flat and "curstk" in flat):
+        return "klm_opstk_apr_may_curstk_xls"
     if "productname" in flat and "opstk" in flat and "curstk" in flat:
         return "marg_opstk_curstk"
     if "ostk" in flat and "purtot" in flat and "saletot" in flat and "qoh" in flat:
@@ -486,4 +493,12 @@ def detect_excel_layout(rows):
     # layout module.
     if "c_item_code" in flat and "c_name_item" in flat and "compute_0022" in flat:
         return "marg_designer_compute_stock"
+    # NOTE: klm_mfac_group_wise_stock (ANNAPURNA C-Square "Stock and Sales Mfac Group Wise
+    # Report") is intentionally NOT gated. MINERVA STORES ships the IDENTICAL C-Square report
+    # (same "stockandsalesmfacgroupwisereport" title + Item/Bal/BVal/SVal header) but a wider
+    # 59-col variant that the ANNAPURNA-tuned positional parser only reads to AMBER (53 rows
+    # mis-reconcile) — the only header difference is the prior-month labels (apr/may vs
+    # jan/feb), which rename monthly, so no stable token separates them. Gating would break
+    # MINERVA's frozen baseline, so ANNAPURNA stays on tabular. (The parser file is retained
+    # for a future width-robust revision.)
     return "tabular"

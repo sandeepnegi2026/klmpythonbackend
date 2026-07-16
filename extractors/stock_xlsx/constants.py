@@ -12,6 +12,8 @@ SUBTOTAL_RE = re.compile(
 
 
 LAYOUT_LABELS = {
+    "klm_mfac_group_wise_stock": "KLM C-Square PharmAssist Stock and Sales Mfac Group Wise Report (sparse positional Item/Op/Pur/SP/Sale/SS/Cr/Db/Adj/Bal/BVal/SVal) — ANNAPURNA",
+    "klm_opstk_apr_may_curstk_xls": "KLM Stock and Sales Statement per-division (Opstk/Pur/Apr/May/Sale/CurStk/StkVal, prior-month history dropped) — R.K. PHARMA",
     "marg_designer_compute_stock": "Marg Report-Designer raw compute-column stock export (compute_NNNN movement + c_name_item names; reconcile-verified map) — BALAJI",
     "klm_stock_sale_gdout_xlsx": "KLM Stock and Sale for Company (Op.Stk./PuScm/GD In/Trfr Out/GD OUT/Sl Scm/Cl Stk, per-division) — SHRI VENKATESH",
     "marg_sale_closing_text_xlsx": "Marg Stock & Sales Analysis (reduced Sale/Closing qty+value, single-column text dump)",
