@@ -33,7 +33,7 @@ H = ['Party Name', 'Area', 'Product Name', 'Packing', 'Bill No', 'Bill Date',
 
 _ROW = re.compile(
     r'^(\d{2}/\d{2}/\d{4})\s+'      # 1 Bill Date
-    r'(\d+)\s+'                     # 2 Bill No
+    r'([\w-]+)\s+'                  # 2 Bill No (digits OR alnum-hyphen e.g. MP-9819)
     r'(.*?)\s+'                     # 3 Product text (packing glued at tail)
     r'(\d+)'                        # 4 Qty
     r'(?:\s+(\d+))?\s+'             # 5 Free (blank when zero)

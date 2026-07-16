@@ -59,7 +59,34 @@ from extractors.party_xlsx.layouts.klm_warehouse_pincode_sale_dump import parse_
 from extractors.party_xlsx.layouts.retailer_band_cgst_sgst import parse_retailer_band_cgst_sgst
 from extractors.party_xlsx.layouts.outward_detail_firm_partywise import parse_outward_detail_firm_partywise
 
+# --- 15 July RED-cluster parsers (batch 2) ---------------------------------
+from extractors.party_xlsx.layouts.r15_klm_item_party_sales_statement import parse_klm_item_party_sales_statement
+from extractors.party_xlsx.layouts.r15_ascent_warehouse_customer_sale_dump import parse_r15_ascent_warehouse_customer_sale_dump
+from extractors.party_xlsx.layouts.r15_klm_party_product_wise_sales_xlsx import parse_klm_party_product_wise_sales_xlsx
+from extractors.party_xlsx.layouts.r15_mfg_product_customer_wise_pcode import parse_mfg_product_customer_wise_pcode
+from extractors.party_xlsx.layouts.r15_customer_product_wise_sales_swil import parse_r15_customer_product_wise_sales_swil
+from extractors.party_xlsx.layouts.r15_sales_detail_mf_customer_itemwise import parse_sales_detail_mf_customer_itemwise
+from extractors.party_xlsx.layouts.r15_customer_product_analysis_split_batchtail import parse_r15_customer_product_analysis_split_batchtail
+from extractors.party_xlsx.layouts.r15_company_customer_monthwise_sales import parse_company_customer_monthwise_sales
+from extractors.party_xlsx.layouts.r15_party_product_wise_sales_klm import parse_party_product_wise_sales_klm
+from extractors.party_xlsx.layouts.r15_area_customer_company_product_sales import parse_area_customer_company_product_sales
+from extractors.party_xlsx.layouts.r15_company_product_wise_sales_custband import parse_company_product_wise_sales_custband
+from extractors.party_xlsx.layouts.r15_product_customer_sale_dc_summary import parse_product_customer_sale_dc_summary
+
 PARSERS = {
+    # --- 15 July RED-cluster parsers (batch 2) ---
+    "klm_item_party_sales_statement": parse_klm_item_party_sales_statement,
+    "r15_ascent_warehouse_customer_sale_dump": parse_r15_ascent_warehouse_customer_sale_dump,
+    "r15_klm_party_product_wise_sales_xlsx": parse_klm_party_product_wise_sales_xlsx,
+    "mfg_product_customer_wise_pcode": parse_mfg_product_customer_wise_pcode,
+    "r15_customer_product_wise_sales_swil": parse_r15_customer_product_wise_sales_swil,
+    "sales_detail_mf_customer_itemwise": parse_sales_detail_mf_customer_itemwise,
+    "r15_customer_product_analysis_split_batchtail": parse_r15_customer_product_analysis_split_batchtail,
+    "company_customer_monthwise_sales": parse_company_customer_monthwise_sales,
+    "klm_party_product_wise_sales": parse_party_product_wise_sales_klm,
+    "r15_area_customer_company_product_sales": parse_area_customer_company_product_sales,
+    "r15_company_product_wise_sales_custband": parse_company_product_wise_sales_custband,
+    "product_customer_sale_dc_summary": parse_product_customer_sale_dc_summary,
     "areawise_sales_statement": parse_areawise_sales_statement,
     "bhaskara_code_customer_banded": parse_bhaskara_code_customer_banded,
     "klm_order_form_xlsx": parse_klm_order_form_xlsx,

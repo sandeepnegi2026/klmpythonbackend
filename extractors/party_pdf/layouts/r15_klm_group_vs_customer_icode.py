@@ -45,8 +45,9 @@ import pdfplumber
 #   Rate          -> rate
 #   NValue        -> amount    (base value = BQty * Rate, self-checks on every row)
 #   NetValue      -> net_amount
-# Icode/Ipack are the item code + pack; kept for the product but not mapped onto
-# any numeric slot. Party sale report -> only the sales side exists.
+# Ipack -> Pack. Icode (the KLM internal item code) is used ONLY to find the
+# item/party column edge that strips the overlap-glued icode glyphs off the
+# party name; it is not emitted. Party sale report -> only the sales side exists.
 #
 # Reconcile: NValue == round(BQty * Rate, 2) on every priced row (verified 0
 # fails on the source), and the printed page-footer total row (bare
@@ -57,8 +58,7 @@ H = [
     "Party Name",
     "Location",
     "Product Name",
-    "Icode",
-    "Ipack",
+    "Pack",
     "Date",
     "Invoice Number",
     "Batch",
@@ -214,16 +214,12 @@ def parse_r15_klm_group_vs_customer_icode(text, file_bytes=None):
                     continue
 
                 # ---- data row (date-anchored) ------------------------------
+                # The item/icode column edge is what strips the overlap-glued
+                # icode glyphs OFF the party name, leaving a clean party. The
+                # Icode value itself (KLMDS/KLKD3...) is the KLM internal item
+                # code and is NOT emitted (product identity is product_name).
                 cols = _bucketize(line)
                 party = re.sub(r"\s{2,}", " ", cols["item"].strip())
-                icode = cols["icode"].strip()
-                # The overlap edge can pull one party glyph into the icode. KLM
-                # item codes always begin "KL" -> trim any leading noise so the
-                # icode reads clean (KOLMDS/AKLMDS -> KLMDS). No effect on any
-                # numeric slot; Icode is a plain label column.
-                _kl = icode.find("KL")
-                if _kl > 0:
-                    icode = icode[_kl:]
                 ipack = cols["ipack"].strip()
                 town = cols["town"].strip()
                 date_tokens = [t for t in cols["date"].split() if _DATE.match(t)]
@@ -252,7 +248,6 @@ def parse_r15_klm_group_vs_customer_icode(text, file_bytes=None):
                     party,
                     town,
                     product,
-                    icode,
                     ipack,
                     date,
                     bill,

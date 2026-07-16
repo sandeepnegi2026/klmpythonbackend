@@ -3,17 +3,17 @@
   "route": "party_xlsx",
   "row_count": 2041,
   "warnings_count": 0,
-  "headers_detected_count": 52,
-  "detected_format": "marg_register_excel",
-  "party_count": 330,
-  "area_count": 93,
+  "headers_detected_count": 7,
+  "detected_format": "sales_detail_mf_customer_itemwise",
+  "party_count": 336,
+  "area_count": 15,
   "product_count": 210,
   "sample_parties": [
     "A2Y PHARMA",
-    "AAGAM MEDICAL STORE",
-    "AAKASH MEDICINES",
-    "AAMIR MEDICAL",
-    "AANGAN PHARMACY"
+    "AAGAM MEDICAL STORE (NARANPURA)",
+    "AAKASH MEDICINES (VASTRAPUR)",
+    "AAMIR MEDICAL (JAMALPUR)",
+    "AAMIR MEDICAL (JUHAPURA)"
   ],
   "sample_products": [
     "Blemguard Face Serum 30Ml",

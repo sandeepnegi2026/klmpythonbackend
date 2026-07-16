@@ -95,7 +95,62 @@ from extractors.party_pdf.layouts.klm_sales_detail_register import parse_klm_sal
 from extractors.party_pdf.layouts.customer_product_analysis_dash import parse_customer_product_analysis_dash
 from extractors.party_pdf.layouts.product_party_wise_freeamt import parse_product_party_wise_freeamt
 
+# --- 15 July RED-cluster parsers (batch 2) ---------------------------------
+from extractors.party_pdf.layouts.r15_rpdrugs_dealer_partywise import parse_r15_rpdrugs_dealer_partywise
+from extractors.party_pdf.layouts.r15_smartpharma_cust_company_url import parse_smartpharma_cust_company_url
+from extractors.party_pdf.layouts.r15_product_party_wise_freeamt3 import parse_product_party_wise_freeamt3
+from extractors.party_pdf.layouts.r15_saleregister_allparty_freeqty import parse_r15_saleregister_allparty_freeqty
+from extractors.party_pdf.layouts.r15_hmrs_klm_party_product_areawise import parse_r15_hmrs_klm_party_product_areawise
+from extractors.party_pdf.layouts.r15_laxmi_itemwise_free_goods import parse_laxmi_itemwise_free_goods
+from extractors.party_pdf.layouts.r15_maruti_klm_batchwise_mf_customer import parse_r15_maruti_klm_batchwise_mf_customer
+from extractors.party_pdf.layouts.r15_naik_party_sale_purchase import parse_naik_party_sale_purchase
+from extractors.party_pdf.layouts.r15_klm_customerwise_offtake import parse_r15_klm_customerwise_offtake
+from extractors.party_pdf.layouts.r15_nilkanth_product_summary_pack import parse_r15_nilkanth_product_summary_pack
+from extractors.party_pdf.layouts.r15_pharmaplus_productwise_customer_wrapped import parse_r15_pharmaplus_productwise_customer_wrapped
+from extractors.party_pdf.layouts.r15_smartpharma_cust_company_pack_disc import parse_smartpharma_cust_company_pack_disc
+from extractors.party_pdf.layouts.r15_profitmaker_area_customer_company_product import parse_profitmaker_area_customer_company_product
+from extractors.party_pdf.layouts.r15_medivision_sale_dc_summary import parse_r15_medivision_sale_dc_summary
+from extractors.party_pdf.layouts.r15_ramesh_partywise_itemwise_pack import parse_r15_ramesh_partywise_itemwise_pack
+from extractors.party_pdf.layouts.r15_klm_salestatement_scheme import parse_klm_salestatement_scheme
+from extractors.party_pdf.layouts.r15_saiganesh_product_pack_batch_qtyfree import parse_r15_saiganesh_product_pack_batch_qtyfree
+from extractors.party_pdf.layouts.r15_santram_customerwise_itemwise_qty import parse_r15_santram_customerwise_itemwise_qty
+from extractors.party_pdf.layouts.r15_ishwar_customer_product_pack_bij import parse_r15_ishwar_customer_product_pack_bij
+from extractors.party_pdf.layouts.r15_marg_mf_customer_sales_summary import parse_r15_marg_mf_customer_sales_summary
+from extractors.party_pdf.layouts.r15_klm_group_vs_customer_icode import parse_r15_klm_group_vs_customer_icode
+from extractors.party_pdf.layouts.r15_product_party_wise_totqty_gst import parse_product_party_wise_totqty_gst
+from extractors.party_pdf.layouts.r15_success_areawise_report import parse_success_areawise_report
+from extractors.party_pdf.layouts.r15_company_item_wise_sales_summary import parse_company_item_wise_sales_summary
+from extractors.party_pdf.layouts.r15_suntraders_saleby_party_docno import parse_r15_suntraders_saleby_party_docno
+from extractors.party_pdf.layouts.r15_klm_sales_detail_areawise import parse_r15_klm_sales_detail_areawise
+
 PARSERS = {
+    # --- 15 July RED-cluster parsers (batch 2) ---
+    "r15_klm_sales_detail_areawise": parse_r15_klm_sales_detail_areawise,
+    "r15_rpdrugs_dealer_partywise": parse_r15_rpdrugs_dealer_partywise,
+    "smartpharma_cust_company_url": parse_smartpharma_cust_company_url,
+    "product_party_wise_freeamt3": parse_product_party_wise_freeamt3,
+    "r15_saleregister_allparty_freeqty": parse_r15_saleregister_allparty_freeqty,
+    "r15_hmrs_klm_party_product_areawise": parse_r15_hmrs_klm_party_product_areawise,
+    "laxmi_itemwise_free_goods": parse_laxmi_itemwise_free_goods,
+    "maruti_klm_batchwise_mf_customer": parse_r15_maruti_klm_batchwise_mf_customer,
+    "naik_party_sale_purchase": parse_naik_party_sale_purchase,
+    "klm_customerwise_offtake": parse_r15_klm_customerwise_offtake,
+    "nilkanth_product_summary_pack": parse_r15_nilkanth_product_summary_pack,
+    "r15_pharmaplus_productwise": parse_r15_pharmaplus_productwise_customer_wrapped,
+    "smartpharma_cust_company_pack_disc": parse_smartpharma_cust_company_pack_disc,
+    "r15_profitmaker_area_ccp": parse_profitmaker_area_customer_company_product,
+    "medivision_sale_dc_summary": parse_r15_medivision_sale_dc_summary,
+    "r15_ramesh_partywise_itemwise_pack": parse_r15_ramesh_partywise_itemwise_pack,
+    "klm_salestatement_scheme": parse_klm_salestatement_scheme,
+    "saiganesh_product_pack_batch": parse_r15_saiganesh_product_pack_batch_qtyfree,
+    "santram_customerwise_itemwise_qty": parse_r15_santram_customerwise_itemwise_qty,
+    "r15_ishwar_customer_product_pack_bij": parse_r15_ishwar_customer_product_pack_bij,
+    "r15_marg_mf_customer_sales_summary": parse_r15_marg_mf_customer_sales_summary,
+    "r15_klm_group_vs_customer_icode": parse_r15_klm_group_vs_customer_icode,
+    "product_party_wise_totqty_gst": parse_product_party_wise_totqty_gst,
+    "success_areawise_report": parse_success_areawise_report,
+    "company_item_wise_sales_summary": parse_company_item_wise_sales_summary,
+    "suntraders_saleby_party_docno": parse_r15_suntraders_saleby_party_docno,
     "klm_sales_detail_register": parse_klm_sales_detail_register,
     "customer_product_analysis_dash": parse_customer_product_analysis_dash,
     "product_party_wise_freeamt": parse_product_party_wise_freeamt,

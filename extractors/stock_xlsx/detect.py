@@ -331,12 +331,36 @@ def detect_excel_layout(rows):
         and "-purret" in flat and "+repl" in flat and "-return" in flat
     ):
         return "marg_stock_ss_full_movement_xls"
+    # Marg Wide Stock Report — 5-valuation Opening sub-header (Qty+MRP+PRate+LP+PTR Value).
+    # The coarse marg_stock_wide rule below (stockreport+itemname+opening) would claim it first
+    # but only handles a narrow "Qty Value" group; this contiguous run cannot appear there.
+    if ("qtymrpvaluepratevaluelpvalueptrvalue" in flat
+            and "stockreport" in flat and "itemname" in flat):
+        return "marg_stock_wide_multival_xls"
     if "stockreport" in flat and "itemname" in flat and "opening" in flat:
         return "marg_stock_wide"
     # R.K. PHARMA KLM "Stock and Sales Statement For Company: <DIV>" .xls — Opstk|Pur|Apr|
     # May|Sale|CurStk|StkVal|... The Apr/May prior-month history columns distinguish it from
     # plain marg_opstk_curstk below (which mis-handles this shape: never binds CurStk closing
     # and corrupts Pur). MUST precede that rule.
+    # --- KLM full-movement per-division .xls variants that share R.K.'s apr/may title tokens
+    #     but carry PFree/PurRet/SFree/Adj columns the klm_opstk_apr_may_curstk_xls parser
+    #     silently drops (0 rows / mis-reconcile). Each MUST precede that rule. Mutually
+    #     disjoint: SENTHIL has SRetun; RATHNA has apr|may + no SRetun; SHRI SAI carries the
+    #     paired contiguous opstk|pur|pfree|sale|sfree|curstk run (no PurRet between). ---
+    # SHRI SAI SURGICAL — paired inline-free (n+free) export.
+    if "productname" in flat and "opstkpurpfreesalesfreecurstk" in flat:
+        return "klm_ss_paired_opstk_pfree_sfree_curstk_xls"
+    # SENTHIL — Mar/Apr history with SRetun column.
+    if ("productname" in flat and "opstk" in flat and "pfree" in flat
+            and "purret" in flat and "sfree" in flat and "sretun" in flat
+            and "curstk" in flat):
+        return "r15_klm_ss_pfree_purret_marapr_curstk_xls"
+    # RATHNA — Apr|May history, PFree|PurRet, no SRetun.
+    if ("productname" in flat and "pfreepurret" in flat and "aprmay" in flat
+            and "sfree" in flat and "curstk" in flat
+            and "sretun" not in flat and "sreturn" not in flat):
+        return "klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls"
     if ("productname" in flat and "opstk" in flat and "apr" in flat
             and "may" in flat and "curstk" in flat):
         return "klm_opstk_apr_may_curstk_xls"
@@ -501,4 +525,55 @@ def detect_excel_layout(rows):
     # jan/feb), which rename monthly, so no stable token separates them. Gating would break
     # MINERVA's frozen baseline, so ANNAPURNA stays on tabular. (The parser file is retained
     # for a future width-robust revision.)
+
+    # ===== 15 July RED-cluster tabular overrides (batch 2) =====================
+    # Each currently falls through to the generic `tabular` reader, which mis-binds a
+    # value column into a qty slot (or drops the closing col) and fails sanity even
+    # though the SOURCE reconciles. Every gate keys on a compact header run unique to
+    # its export; `flat` and `single_col` are already computed at the top of the fn.
+    # JEEVAN DEEP — Sales And Stock (Detail) Unit1/Unit2 wide.
+    if ("nametodisplaymarketinggroupopstock(unit1)" in flat
+            and "cl.stockason(unit1)" in flat and "issuelocationtransfer(unit1)" in flat):
+        return "klm_ss_detail_unit1unit2_intransit_xls"
+    # MANDAL — Sales And Stock (Summary) OpStock/In Stock/Out Stock grid.
+    if "productstrengthopstockopvalueinstockinstockvalueoutstockoutstockvalue" in flat:
+        return "marg_sales_stock_summary_opstock_instock_outstock_xls"
+    # SHIVA KRUPA — PRODUCT DESCRIPTION / dual REPLACE+OTHERS / TOTAL RECEIVE (scan first 20 rows).
+    _flat_head = " ".join(" ".join(str(c) for c in row) for row in rows[:20]).lower().replace(" ", "").replace("\n", "")
+    if ("productdescriptionopeningstockpurchasequantitysalereturnquantity" in _flat_head
+            and "totalreceive" in _flat_head):
+        return "klm_ss_stmt_prod_desc"
+    # SRI LAKSHMI ANNAPURNA — Item/Opening/Received/Issued/Value/Closing/SReturn/PReturn/free.
+    if "openingreceivedissuedvalueclosingsreturnpreturnfree" in flat:
+        return "r15_klm_item_recd_issued_sreturn_preturn_free_xls"
+    # NOTE: r15_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls (VENUS PHARMA) is NOT gated:
+    # BHAGYODAY AGENCIES ships the byte-identical header (Op./Pur/SP/Sale/SS/Cr./Db./Adj./C Stk)
+    # but a SPARSE body (many zero-movement rows) that this parser DROPS (18 real rows -> 6),
+    # whereas the generic `tabular` reads BHAGYODAY perfectly (18/18). No header token separates
+    # the dense VENUS export from the sparse BHAGYODAY one, so VENUS stays on tabular (RED).
+    # HMRS / ATLANTA — OPSTK/PURC/PSCH/IN/SALE/SSCH/OUT/STOCK scheme+transfer grid.
+    if ("opstkpurcpschinsalesschoutstock" in flat and "stockandsalestatement" in flat):
+        return "r15_klm_opstk_psch_in_ssch_out_stock_xls"
+    # RAPID MEDICO — Marg Normal Stock Statement, split 2-row header (qty-only).
+    if ("sr.productnamepackstkqtytotalqtystk" in flat
+            and "openrecpothrsalesothrclsg" in flat):
+        return "marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls"
+    # PARAS — KLM Monthly S&S Opening/Inward/Sales/Other/Closing per-division.
+    if "openinginwardsalesotherclosing" in flat:
+        return "klm_monthly_ss_opening_inward_sales_other_closing_xls"
+    # ALL CARE — Prompt Datewise Sales-Free + ClStk(Qty/Amount), order(s) tail, no favourite.
+    if ("stockstatement(datewise)" in flat and "opstk" in flat and "clstk" in flat
+            and "order(s)" in flat and "free" in flat and "inst" in flat
+            and "favourite" not in flat):
+        return "prompt_dstk_salesfree_order_xls"
+    # KUSHAL — KLM S&S Analysis 5-cell grid (CLOSING cell = qty+value glued). Grid, has OPENING.
+    if (not single_col and "itemdescriptionopeningreceiptissueclosing" in flat
+            and "m.exp" not in flat and "mexp" not in flat and "dump" not in flat
+            and "purchases" not in flat and "reorder" not in flat):
+        return "r15_klm_ss_analysis_oic_dualclose_grid_xls"
+    # KLM S&S Analysis reduced Receipt/Issue/Closing grid (NO opening/purchase; grid).
+    if (not single_col and "itemdescriptionreceiptissueclosing" in flat
+            and "opening" not in flat and "purchase" not in flat
+            and "m.exp" not in flat and "dump" not in flat and "===sale===" not in flat):
+        return "r15_stock_receipt_issue_closing_grid_xls"
     return "tabular"

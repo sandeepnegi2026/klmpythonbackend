@@ -21,7 +21,7 @@ _ITEM_MAX = 210
 _PACK_MAX = 262
 _BATCH_MAX = 336  # x0 >= this is the trailing numeric region
 
-_DATE = re.compile(r"^\d{2}/\d{2}/\d{4}$")
+_DATE = re.compile(r"^\d{2}[-/]\d{2}[-/]\d{4}$")  # accept dd/mm/yyyy AND dd-mm-yyyy (PARAS)
 _DEC = re.compile(r"^\d+\.\d{2}$")
 _INT = re.compile(r"^\d+$")
 _CTRL = re.compile(

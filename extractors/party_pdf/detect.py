@@ -88,18 +88,52 @@ def detect_format(text, n_rects, n_lines):
         return "area_item_sales_summary"
     if "d e s c r i p t i o n" in tl and re.search(r"area\s*/\s*item\s*wise", tl):
         return "area_item_summary"
+    # BHAGYODAY "Sales Detail Register (Mf-Areawise)" — MF/Area/Customer banded
+    # per-invoice sales, 2-digit-year rows. Sibling of klm_sales_detail_register
+    # (Mf-Customerwise); neither the itemwise nor the mf-customer register gate matches it.
+    if "sales detail register" in tl and "mf-areawise" in tl:
+        return "r15_klm_sales_detail_areawise"
     if "sales detail register" in tl and (
         "itemwise-customerwise" in tl or "mf-itemwise" in tl
     ):
         return "marg_register_itemwise"
+    # SOURABH MEDICOSE "Sales Detail Summary (Mf-Customer-Itemwise)" — DATELESS,
+    # item-code-bearing Sale/Pur/MRP-amount variant; the generic title routes it
+    # to marg_summary (0 rows / RED). Keyed on the EXACT compact column header
+    # (corpus-unique), so it only reclaims its own RED file. MUST precede marg_summary.
+    if "itemnameitemcodeqtysaleamountpuramtschqtymrpamt" in _cfull:
+        return "r15_marg_mf_customer_sales_summary"
     if "sales detail summary" in tl and (
         "mf-customer" in tl or "mf - customer" in tl
     ):
         return "marg_summary"
+    # MARUTI "Sales Detail Register (Mf-Customer-Itemwise, Batchwise)" — the generic
+    # title routes it to marg_register below (0 rows / RED); this exact contiguous
+    # column-header run (Item Batch Qty S.Qty S.Rate MRP Amount) is unique. MUST precede marg_register.
+    if "itembatchqtys.qtys.ratemrpamount" in _cfull:
+        return "maruti_klm_batchwise_mf_customer"
     if "sales detail register" in tl and "mf-customer" in tl:
         return "marg_register"
     if "sale details" in tl and n_lines > 5:
         return "marg_sale_details"
+    # AARCHI / ARCHI DISTRIBUTOR: 3-number "Product + Party Wise List"
+    # (Free/SaleQty./Amount). marg_bordered claims it first (rects + "from:"); the
+    # 4-num product_party_wise_list sibling (AKSHAR) compacts to
+    # "productfreesaleqty.returnqty.amount" and the 5-num product_party_wise_freeamt
+    # (MANISH) has "freeamt", so this exact run separates all three. MUST precede marg_bordered.
+    if "productfreesaleqty.amount" in _cfull:
+        return "product_party_wise_freeamt3"
+    # STOCKWELL PHARMA: 8-number "Product + Party Wise List" (Free/SaleQty./ReturnQty/
+    # TotalQty/Amount/TotalAmt/GSTAmt./GrossAmt.). Longer than every sibling token so
+    # it cannot steal them; the 4-num AKSHAR parser 0-rows it. MUST precede marg_bordered.
+    if "productfreesaleqty.returnqtytotalqtyamounttotalamtgstamt.grossamt." in _cfull:
+        return "product_party_wise_totqty_gst"
+    # AKSHAR / N.K.MEDICO "Product + Party Wise List Report" (4-num Free/SaleQty/
+    # ReturnQty/Amount): the ruled export has huge n_rects so marg_bordered grabs it
+    # before the title-keyed product_party_wise_list gate further down. Route by the
+    # title here first — product_party_wise_list parses it cleanly (492/284 rows).
+    if "product+partywiselist" in _cfull:
+        return "product_party_wise_list"
     if n_rects > 50 and re.search(r"from:\s*\d{2}/\d{2}", tl):
         return "marg_bordered_billwise" if "bill no" in tl else "marg_bordered"
     # MAHESH "Customer-Wise Product-Wise Sales Summary": coded customer bands
@@ -108,6 +142,19 @@ def detect_format(text, n_rects, n_lines):
     # header; must precede the broader unisolve title rule below.
     if "codecustomername&cityprd.codeproductname" in tl_compact:
         return "customer_product_wise_summary"
+    # SHREE ISHWAR MEDICAL AGENCY "Customer-Wise Product-Wise Sales" variant: shares
+    # the unisolve title AND its header column run, but its rows use a non-standard
+    # "BIJ <invno>" invoice-type that parse_unisolve 0-rows, and it has NO trailing
+    # "Prod.Dis" column (which the standard unisolve variant — e.g. ANAND MEDICAL —
+    # carries). The plain header token is a SUBSTRING of the Prod.Dis variant, so
+    # the exclusion + the BIJ body-row guard are BOTH required to avoid stealing the
+    # GREEN unisolve baselines. MUST precede the broad unisolve title rule.
+    if (
+        "productnamepackinv/dmnodatebatchno.qtyfreeratevalue" in tl_compact
+        and "qtyfreeratevalueprod.dis" not in tl_compact
+        and re.search(r"(?m)\bBIJ\s+\d", text)
+    ):
+        return "r15_ishwar_customer_product_pack_bij"
     if "customer-wise product-wise" in tl and "----" in t:
         return "unisolve"
     if "item / item wise" in tl or "item/item wise" in tl:
@@ -141,6 +188,12 @@ def detect_format(text, n_rects, n_lines):
         return "customer_itemwise_series"
     if "customer / company / itemwise" in tl:
         return "logic_erp"
+    # NAIK AGENCIES "PARTY WISE SALE/PURCHASE REPORT" — WEP-style challan/bill item
+    # register banded by party. Its header ("...PRODUCT CODE/ NAME PACKING BATCH NO.
+    # EXP.DT. QTY FREE RATE AMOUNT") is caught by the coarse ("product c" + "====")
+    # wep_legacy rule whose row regex 0-rows this dialect (RED). MUST precede wep_legacy.
+    if "packingbatchno.exp.dt.qtyfree" in _cfull:
+        return "naik_party_sale_purchase"
     if "product c" in tl and "====" in t:
         return "wep_legacy"
     if n_rects > 5 and re.search(r"from:\s*\d{2}/\d{2}", tl):
@@ -229,12 +282,23 @@ def detect_format(text, n_rects, n_lines):
         return "laxmi_mfac"
     if "billnodateproductnam" in cfull and "qty.fr.sch.qty" in cfull:
         return "shree_nath_billwise"
+    # LAXMI "Itemwise Sales / Free Goods" (division+item banded) — also matches the
+    # generic rp_pharma_itemwise title rule, but its glyph-corrupted compact header
+    # token is specific and must win first. MUST precede rp_pharma_itemwise.
+    if "bielxlpdntobilldtsm" in cfull:
+        return "laxmi_itemwise_free_goods"
     if "itemwise sales details" in tfull and "party code & name" in tfull:
         return "rp_pharma_itemwise"
     if "companywiseareawisesalesdetail" in cfull:
         return "companywise_areawise"
     if "datebillnoproducthsnpack" in cfull:
         return "navkar_productwise"
+    # KLM "Sales Statement" (bill-wise, scheme qty — KLM BILL WISE) shares the EXACT
+    # column header of bajaj_salestatement ("BILL NO. PARTY NAME AMOUNT DISCOUNT NET
+    # AMT TAX PAYABLE DR/CR NET AMOUNT"), so no detect token can separate them. Its
+    # scheme-qty body layout makes parse_bajaj_salestatement return 0 rows, so it is
+    # handled by the pdf_io 0-row fallback (bajaj_salestatement -> klm_salestatement_scheme)
+    # instead — bajaj files that parse normally are byte-for-byte unaffected.
     if "salesstatement" in cfull and "partynameamountdiscountnetamt" in cfull:
         return "bajaj_salestatement"
     if "billdatepartynameitemnametotalpacks" in cfull:
@@ -262,6 +326,16 @@ def detect_format(text, n_rects, n_lines):
     # SmartPharma360 "Customer-Company wise Product Sales" (KLM): Company Name: bands ->
     # per-invoice rows (Inv.No|InvDate|Product Name|Batch|Qty|Free|Rate|Value). Distinct
     # header from the klm_company_customer_invoice sibling above. Tail-placed.
+    # SmartPharma360 "Customer-Company wise Product Sales" — URL variant (ABHIRAM):
+    # rows have NO leading company prefix, SI-AB-26-... invoices, and a trailing
+    # 'Invoice URL' column. Its token is a strict SUPERSET of the sibling's (adds
+    # 'invoiceurl'), so it MUST be tested BEFORE the sibling; SRI BABA (no URL) is
+    # not stolen.
+    if (
+        "customer-companywiseproductsales" in cfull
+        and "inv.no.invdateproductnamebatchqtyfreeratevalueinvoiceurl" in cfull
+    ):
+        return "smartpharma_cust_company_url"
     if (
         "customer-companywiseproductsales" in cfull
         and "inv.no.invdateproductnamebatchqtyfreeratevalue" in cfull
@@ -482,4 +556,75 @@ def detect_format(text, n_rects, n_lines):
         and "codeproductnamepackqtyfreereplvalue" in cfull
     ):
         return "metro_orion_product_analysis"
+
+    # ===== 15 July RED-cluster Class-A tail gates (batch 2) =====================
+    # Every one of these files currently falls through EVERY rule above to
+    # "unknown", so placing them here cannot reroute any working file. Tokens are
+    # matched over the FULL compact text (cfull) since headers can sit past 2000
+    # chars. The generic-header nilkanth gate is placed LAST.
+    # R.P.DRUGS "klmpartywise" dealer statement — no header row; structural gate.
+    if (
+        "w.e.f." in _cfull
+        and re.search(r"(?im)^\s*dealer:.+:", text)
+        and re.search(r"(?m)^\s*\d+:.+?\s+[\d,]+\.\d+\s+[\d,]+\.\d+\s+\d+N\s*$", text)
+    ):
+        return "r15_rpdrugs_dealer_partywise"
+    # MediVision "Platinum" sale/DC SUMMARY sibling of medivision_sale_dc (details).
+    if "customer-wise,product-wisesale/dcsummary" in cfull:
+        return "medivision_sale_dc_summary"
+    # SRI SUBRAHMANYA "Group Vs Customer Details" — PRODUCT-banded Icode/Ipack dialect.
+    if "groupvscustomerdetails" in cfull and "icodeipacktowndocdatebillnobatch" in cfull:
+        return "r15_klm_group_vs_customer_icode"
+    # PURUSHOTHAM "Area Wise Customer, Company And Product Sales" (PROFITMAKER, positional).
+    if (
+        "areawisecustomer,companyandproductsales" in cfull
+        and "productnameqtyfreegrossnetamount" in cfull
+    ):
+        return "r15_profitmaker_area_ccp"
+    # SmartPharma360 Packing/Mrp/Discount variant (PRUDHVI) — superset header of the sibling.
+    if (
+        "customer-companywiseproductsales" in cfull
+        and "inv.no.invdateproductnamepackingbatchmrpqtyfreeratediscountvalue" in cfull
+    ):
+        return "smartpharma_cust_company_pack_disc"
+    # SUDHIR "COMPANY / ITEM WISE SALES SUMMARY" — division>party>product, disc% col.
+    if (
+        "company/itemwisesalessummary" in cfull
+        and "descriptionqty.freerateamount(%)" in cfull
+    ):
+        return "company_item_wise_sales_summary"
+    # HMRS PHARMA CARE "Party / Product (Area Wise)" — Free col printed but never filled.
+    if (
+        "pcodeproductnameinvnoareacityinvdateqtyfreegrsamtmanufacturer" in _cfull
+        and re.search(r"(?m)^\d{3,7}\s+.*?\d{2}/\d{2}/\d{4}\s+\d+\s+[\d,]+\.\d+", text)
+    ):
+        return "r15_hmrs_klm_party_product_areawise"
+    # PHARMA + plus "Product wise sale list" — narrow wrapped columns; positional.
+    if "datbillproducthpabatcex.qty.freremrratval" in cfull:
+        return "r15_pharmaplus_productwise"
+    # SUN TRADER "List of Sale By Party" (Data Spec).
+    if "qtyfreemrppurateratevaluenetrateamount" in _cfull:
+        return "suntraders_saleby_party_docno"
+    # BHOOLA "SALES REGISTER [ALL PARTY WITH ALL PRODUCTS]" — Free-Qty/Free-Value split.
+    if "productnamefreeqtyfreevalueqtytotalqtyamount" in _cfull:
+        return "r15_saleregister_allparty_freeqty"
+    # SANTRAM "Customerwise Itemwise" — Mkt By/Division/Code/Item/Packing.
+    if "sr.mktbydivisioncodeitemnamepacking" in _cfull:
+        return "santram_customerwise_itemwise_qty"
+    # SUCCESS PHARMAA "Areawise Sales Report" — truncated fixed-width header; positional.
+    if "productnamepackiquanfreereplnetamoun" in _cfull:
+        return "success_areawise_report"
+    # SAI GANESH "SALES REPORT" — product/pack/batch, MRP column; positional.
+    if "productpackbatchqtyfreemrprateamount" in _cfull:
+        return "saiganesh_product_pack_batch"
+    # RAMESH MEDICAL "PARTYWISE/ITEMWISE SALE" — packing glued in name; Qty/Free/Tot.Qty./Value.
+    if "packingquantityfreetot.qty.value" in cfull:
+        return "r15_ramesh_partywise_itemwise_pack"
+    # KLM "Item-wise Customer-wise Offtake" — Company>Product>Customer rows.
+    if "itemdescriptiontotalbonusquantityrateamountamount" in cfull:
+        return "klm_customerwise_offtake"
+    # NILKANTH "Product Summary" — generic Product/Pack/Qty/Free/Rate/Amount header;
+    # positional. Placed LAST so every more-specific gate above wins first.
+    if "productpackqtyfreerateamount" in cfull:
+        return "nilkanth_product_summary_pack"
     return "unknown"

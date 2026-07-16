@@ -3,8 +3,8 @@
   "route": "stock_xlsx",
   "row_count": 37,
   "warnings_count": 0,
-  "headers_detected_count": 8,
-  "detected_format": "marg_opstk_curstk",
+  "headers_detected_count": 11,
+  "detected_format": "klm_ss_paired_opstk_pfree_sfree_curstk_xls",
   "product_count": 31,
   "sample_products": [
     "Extend Hair Tablet",
@@ -13,5 +13,5 @@
     "KLIN AHA GEL-100GM",
     "KLIN FOAMING GEL-50GM(AHA)"
   ],
-  "closing_stock_total": 455.0
+  "closing_stock_total": 486.0
 }

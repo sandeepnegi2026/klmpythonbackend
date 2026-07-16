@@ -389,6 +389,11 @@ def detect_layout(rows):
     from extractors.party_xlsx.layouts.klm_order_form_xlsx import detect as _klm_order_detect
     if _klm_order_detect(rows):
         return "klm_order_form_xlsx"
+    # ASCENT WELLNESS warehouse/customer sale dump — more-specific sibling of the ARYAN
+    # klm_warehouse_pincode dump below (has customer_id/customer_name); MUST precede it.
+    from extractors.party_xlsx.layouts.r15_ascent_warehouse_customer_sale_dump import detect as _ascent_wh_detect
+    if _ascent_wh_detect(rows):
+        return "r15_ascent_warehouse_customer_sale_dump"
     from extractors.party_xlsx.layouts.klm_warehouse_pincode_sale_dump import detect as _klm_warehouse_detect
     if _klm_warehouse_detect(rows):
         return "klm_warehouse_pincode_sale_dump"
@@ -401,6 +406,47 @@ def detect_layout(rows):
     from extractors.party_xlsx.layouts.outward_detail_firm_partywise import detect as _outward_firm_detect
     if _outward_firm_detect(rows):
         return "outward_detail_firm_partywise"
+
+    # ===== 15 July RED-cluster party_xlsx layouts (batch 2) =====================
+    # Each currently mis-routes to a coarse fallback below (painkiller_partywise /
+    # marg_register_excel / customer_product_banded / tabular / unknown) and lands RED.
+    # Every detect() is self-contained + title/header-gated to its own export; pre-verified
+    # mutually exclusive (0 cross-matches) and collision-free vs the party_xlsx baselines.
+    # Placed here — after the specific detectors, before the coarse fallbacks.
+    from extractors.party_xlsx.layouts.r15_klm_party_product_wise_sales_xlsx import detect as _d35
+    if _d35(rows):
+        return "r15_klm_party_product_wise_sales_xlsx"
+    from extractors.party_xlsx.layouts.r15_party_product_wise_sales_klm import detect as _d73
+    if _d73(rows):
+        return "klm_party_product_wise_sales"
+    from extractors.party_xlsx.layouts.r15_sales_detail_mf_customer_itemwise import detect as _d59
+    if _d59(rows):
+        return "sales_detail_mf_customer_itemwise"
+    from extractors.party_xlsx.layouts.r15_customer_product_wise_sales_swil import detect as _d53
+    if _d53(rows):
+        return "r15_customer_product_wise_sales_swil"
+    from extractors.party_xlsx.layouts.r15_product_customer_sale_dc_summary import detect as _d85
+    if _d85(rows):
+        return "product_customer_sale_dc_summary"
+    from extractors.party_xlsx.layouts.r15_customer_product_analysis_split_batchtail import detect as _d69
+    if _d69(rows):
+        return "r15_customer_product_analysis_split_batchtail"
+    from extractors.party_xlsx.layouts.r15_company_customer_monthwise_sales import detect as _d70
+    if _d70(rows):
+        return "company_customer_monthwise_sales"
+    from extractors.party_xlsx.layouts.r15_area_customer_company_product_sales import detect as _d82
+    if _d82(rows):
+        return "r15_area_customer_company_product_sales"
+    from extractors.party_xlsx.layouts.r15_company_product_wise_sales_custband import detect as _d83
+    if _d83(rows):
+        return "r15_company_product_wise_sales_custband"
+    from extractors.party_xlsx.layouts.r15_mfg_product_customer_wise_pcode import detect as _d39
+    if _d39(rows):
+        return "mfg_product_customer_wise_pcode"
+    # KLM MARG Item/Party-wise Sales Statement — single-column fixed-width text-in-xlsx.
+    _h20 = compact(" ".join(" ".join(r) for r in rows[:25]))
+    if "salesstatementfrom" in _h20 and "itemnamepartynametransactioninvoice" in _h20:
+        return "klm_item_party_sales_statement"
 
     compact_text = compact(" ".join(" ".join(row) for row in rows[:150]))
     if (

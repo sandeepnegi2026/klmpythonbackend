@@ -1,17 +1,17 @@
 {
   "file": "GAYATRI PHARMA DISTRIBUTORS -  TECNOMAX - SSS.pdf",
   "route": "stock_pdf",
-  "row_count": 152,
+  "row_count": 66,
   "warnings_count": 0,
-  "headers_detected_count": 13,
-  "detected_format": "prompt_bordered",
-  "product_count": 133,
+  "headers_detected_count": 9,
+  "detected_format": "r15_monthly_ss_inward_other_closing",
+  "product_count": 65,
   "sample_products": [
-    "Blemguard Face Serum 30Ml",
     "Blemguard-Tx Face Serum 30Ml",
-    "Canrolfin Cream 15 Gm",
-    "Cetalore 10 Tablets 1*10 Tablets",
-    "Cetalore-M Suspension 60Ml"
+    "Cosmoq Facewash Gel 100G",
+    "Dektop Lotion 50Ml",
+    "Desosoft Lotion 30 Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
   ],
   "closing_stock_total": 665.0
 }

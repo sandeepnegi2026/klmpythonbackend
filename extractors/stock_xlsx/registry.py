@@ -53,7 +53,40 @@ from extractors.stock_xlsx.layouts.klm_stock_sale_gdout_xlsx import parse_klm_st
 from extractors.stock_xlsx.layouts.marg_sale_closing_text_xlsx import parse_marg_sale_closing_text_xlsx
 from extractors.stock_xlsx.layouts.marg_stock_ss_full_movement_xls import parse_marg_stock_ss_full_movement_xls
 
+# --- 15 July RED-cluster parsers (batch 2) ---------------------------------
+from extractors.stock_xlsx.layouts.r15_klm_ss_pfree_purret_marapr_curstk_xls import parse_klm_ss_pfree_purret_marapr_curstk_xls
+from extractors.stock_xlsx.layouts.r15_prompt_dstk_salesfree_order_xls import parse_prompt_dstk_salesfree_order_xls
+from extractors.stock_xlsx.layouts.r15_marg_stock_wide_multival_xls import parse_marg_stock_wide_multival_xls
+from extractors.stock_xlsx.layouts.r15_klm_opstk_psch_in_ssch_out_stock_xls import parse_klm_opstk_psch_in_ssch_out_stock_xls
+from extractors.stock_xlsx.layouts.r15_klm_ss_detail_unit1unit2_intransit_xls import parse_klm_ss_detail_unit1unit2_intransit_xls
+from extractors.stock_xlsx.layouts.r15_stock_receipt_issue_closing_grid_xls import parse_stock_receipt_issue_closing_grid_xls
+from extractors.stock_xlsx.layouts.r15_klm_ss_analysis_oic_dualclose_grid_xls import parse_klm_ss_analysis_oic_dualclose_grid_xls
+from extractors.stock_xlsx.layouts.r15_marg_sales_stock_summary_opstock_instock_outstock_xls import parse_marg_sales_stock_summary_opstock_instock_outstock_xls
+from extractors.stock_xlsx.layouts.r15_klm_monthly_ss_opening_inward_sales_other_closing_xls import parse_klm_monthly_ss_opening_inward_sales_other_closing_xls
+from extractors.stock_xlsx.layouts.r15_marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls import parse_marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls
+from extractors.stock_xlsx.layouts.r15_klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls import parse_klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls
+from extractors.stock_xlsx.layouts.r15_klm_ss_stmt_prod_desc_totrecv_replace_xls import parse_klm_ss_stmt_prod_desc
+from extractors.stock_xlsx.layouts.r15_klm_ss_paired_opstk_pfree_sfree_curstk_xls import parse_klm_ss_paired_opstk_pfree_sfree_curstk_xls
+from extractors.stock_xlsx.layouts.r15_klm_item_recd_issued_sreturn_preturn_free_xls import parse_klm_item_recd_issued_sreturn_preturn_free_xls
+from extractors.stock_xlsx.layouts.r15_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls import parse_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls
+
 PARSERS = {
+    # --- 15 July RED-cluster parsers (batch 2) ---
+    "r15_klm_ss_pfree_purret_marapr_curstk_xls": parse_klm_ss_pfree_purret_marapr_curstk_xls,
+    "prompt_dstk_salesfree_order_xls": parse_prompt_dstk_salesfree_order_xls,
+    "marg_stock_wide_multival_xls": parse_marg_stock_wide_multival_xls,
+    "r15_klm_opstk_psch_in_ssch_out_stock_xls": parse_klm_opstk_psch_in_ssch_out_stock_xls,
+    "klm_ss_detail_unit1unit2_intransit_xls": parse_klm_ss_detail_unit1unit2_intransit_xls,
+    "r15_stock_receipt_issue_closing_grid_xls": parse_stock_receipt_issue_closing_grid_xls,
+    "r15_klm_ss_analysis_oic_dualclose_grid_xls": parse_klm_ss_analysis_oic_dualclose_grid_xls,
+    "marg_sales_stock_summary_opstock_instock_outstock_xls": parse_marg_sales_stock_summary_opstock_instock_outstock_xls,
+    "klm_monthly_ss_opening_inward_sales_other_closing_xls": parse_klm_monthly_ss_opening_inward_sales_other_closing_xls,
+    "marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls": parse_marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls,
+    "klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls": parse_klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls,
+    "klm_ss_stmt_prod_desc": parse_klm_ss_stmt_prod_desc,
+    "klm_ss_paired_opstk_pfree_sfree_curstk_xls": parse_klm_ss_paired_opstk_pfree_sfree_curstk_xls,
+    "r15_klm_item_recd_issued_sreturn_preturn_free_xls": parse_klm_item_recd_issued_sreturn_preturn_free_xls,
+    "r15_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls": parse_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls,
     "klm_mfac_group_wise_stock": parse_klm_mfac_group_wise_stock,
     "klm_opstk_apr_may_curstk_xls": parse_klm_opstk_apr_may_curstk_xls,
     "klm_stock_sale_gdout_xlsx": parse_klm_stock_sale_gdout,

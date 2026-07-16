@@ -8,6 +8,11 @@ def detect_layout(text, n_rects):
     # the parser re-reads word x-coords via fitz (right-aligned numbers, blank cells).
     # "medivision" + "stock and sales" + "companies:" is unique — cannot steal any
     # other vendor; MUST precede the coarse "stock and sales" -> simple4 rules below.
+    # RAJU PHARMA MediVision "Stock and Sales" — WIDER Add/Less adjustment grid. Shares
+    # "medivision"+"stock and sales"+"companies:" with the SIND sibling below, so it MUST
+    # precede that rule; the "Add qty Less qty Add val Less val" run is absent from SIND.
+    if "salesavaladdqtylessqtyaddvallessvalclqtyclval" in low.replace(" ", ""):
+        return "medivision_stock_sales_addless"
     if "medivision" in low and "stock and sales" in low and "companies:" in low:
         return "medivision_stock_sales"
     # --- 15July KLM stock_pdf layouts. Each currently mis-routes (to generic /
@@ -55,6 +60,98 @@ def detect_layout(text, n_rects):
     #    ('qtyqtyqtyamountqtyamount' / '…freeinstqtyamount') is byte-identical to the base
     #    `prompt` baselines (OMKAR-PEDIA, ALL CARE, ANJALI, …) which `prompt` parses
     #    correctly. These files stay on the base `prompt` layout.
+    # ===== 15 July RED-cluster Class-B overrides (batch 2) =====================
+    # Each file currently mis-routes to a coarse fallback below (simple4 / generic /
+    # stock_qoh / marg_stock_long / qty_value_total / prompt / toreo / marg_opstk) and
+    # lands RED. Every gate keys on a compact header run (spaces-stripped `_c15`,
+    # first 3000 chars) UNIQUE to its export, so it reclaims only its own files; the
+    # full regression + 15July sentinels hold. Ordered so superset tokens win first.
+    # SmartPharma360 reps 13-col (superset of the tstock variant below — MUST precede it).
+    if "o.stkt.stockpurcpurc.retreplace.s.qtys.free" in _c15:
+        return "smartpharma_reps_ostk_replace"
+    if "o.stkt.stockpurcpurc.retreplace." in _c15:
+        return "klm_smartpharma_stocksale_tstock"
+    # PHARMA ASIA (SimpleFormat) — requires the "(simpleformat)" banner; MUST precede the
+    # coded dualvalue sibling whose 'closingsalesvaluestockvalue' token is a substring here.
+    if ("openingreceiptsalesclosingsalesvaluestockvalue" in _c15
+            and "(simpleformat)" in _c15):
+        return "r15_pharma_asia_simpleformat"
+    # NOTE: r15_klm_pharmaasia_code_open_recv_sales_close_dualvalue (PHARMA ASIA KLM DERMA)
+    # is intentionally NOT gated: the source PDF's product-description glyphs are scrambled
+    # (the header itself renders as "DesPcarcipktiinogn"), so the positional parser garbles
+    # every product name ("CANROLFIN1 C5GREMA M") despite a clean reconcile — no better than
+    # the generic fallback. That file stays RED (unrecoverable source glyphs).
+    # HMRS PCode positional (OPSTK PURC PSCH IN SALE SSCH OUT STOCK).
+    if "opstkpurcpschinsalesschoutstock" in _c15:
+        return "klm_pcode_opstk_psch_ssch_positional"
+    # NU SRI SHYAM Marg "Sales And Stock (Detail)" tri-page (OpStock OpValue PurchaseQty).
+    if "opstockopvaluepurchaseqty" in _c15:
+        return "nu_srishyam_sales_stock_detail"
+    # SUDHA ENTERPRISES page-split (doubled RECEIVE header + bare right-page header).
+    if ("openingopeningreceivereceiveissue" in _c15
+            and "issueclosingclosingexpiry" in _c15):
+        return "sudha_open_recv_issue_close_split"
+    # AKSHAR 7-col (garbled 'Purchase FreTeotal' run).
+    if "purchasepurchasefreteotalsales" in _c15:
+        return "akshar_open_pur_free_total_sale_free_close"
+    # KLM Qoh paired qty+value (ABHIRAM) — require the 'qoh' terminus so the SRI BABA
+    # smartpharma sibling (same 'purc.tot purc value sales' run but a Closing/returns
+    # terminus and NO Qoh column) is left on its own baseline.
+    if "purc.totpurcvaluesales" in _c15 and "qoh" in low:
+        return "stock_qoh_paired_value"
+    # KLM Sales & Stock Qty+Value dual Free-Q (two Free-Q cells in Receipt AND Issue).
+    if "freeqreceipt/purtotalissuefreeqissue/sales" in _c15:
+        return "klm_ss_qty_value_dualfree"
+    # GAYATRI Monthly S&S (Inward/Other/Closing — 'purchase' leaks from the footer).
+    if "packingopeninginwardsalesotherclosing" in _c15:
+        return "r15_monthly_ss_inward_other_closing"
+    # LAXMI KLM LAB 5-col positional (Opening Receipt Sales Closing StockValue).
+    if "openingreceiptsalesclosingstockvalue" in _c15:
+        return "r15_klm_lab_open_recv_sales_close_value_positional"
+    # NAIK 'STOCK & SALES REGISTER' 17-col positional (back-to-back Receipt/Receipt Free).
+    if "receiptreceiptfreetotalsaleinst.freegoodssaleg.r.close" in _c15.replace("\n", ""):
+        return "r15_klm_ss_register_receipt_inst_gr_positional"
+    # NAVKAR two-page split ('Prev.Last Prev.Sal Opening Purchase P.Free' page-0 header).
+    if "prev.lastprev.salopeningpurchasep.free" in _c15:
+        return "r15_klm_ss_prevlast_twopage_positional"
+    # JAY AMBE Monthly S&S short (Goods Ret. + Total, no Order cols).
+    if ("openingpurchasegoodsret.totalsalepurc.ret.balance" in _c15
+            and "monthly stock & sales statement" in low):
+        return "r15_jayambe_monthly_ss_balance"
+    # M.M.TRADERS 'Stock and Sales Report (Month)' — 31-col full-word (SaleQuantity/ILast).
+    if ("stockandsalesreport(month)" in _c15 and "packopeningstock" in _c15
+            and "salequantity" in _c15 and "ilastsalesqty" in _c15):
+        return "klm_ss_month_totalstock_ilast_positional"
+    # SAMBARI 'Stock sales statement(Combined)' FLAT pipe render — discriminated from the
+    # VISION wrapped-grid sibling (same header) by many clean 10+-pipe DATA lines (full text).
+    if ("statement(combined)" in _c15 and "stocksalesstatement" in _c15
+            and "totalclosing" in _c15 and "closingvalue" in _c15 and "totalsale" in _c15
+            and sum(1 for _l in text.splitlines() if _l.count("|") >= 10) >= 5):
+        return "klm_ss_combined_pipe_flat"
+    # METRO Sales & Stock Statement — trailing single-letter 'C' value column
+    # ("...Sales Cl Bal C"). Exclude the METRO "Divisionwise" sibling whose header is
+    # "...Sales Cl Bal CP" (compact 'salesclbalcp'): that variant parses cleanly on
+    # stock_op_pur_total_sale_close, whereas this glyph parser mis-reconciles it.
+    if "salesclbalc" in _c15 and "salesclbalcp" not in _c15:
+        return "metro_sales_stock_statement_glyph"
+    # BHAGYODAY KLM 'Stock and Sales report' sparse Mar/Apr movement block — shares Venus's
+    # column header, separated by the Mar/Apr prev-month pair and the absence of 'dec'.
+    if ("cr.db.adj.cstkcval" in _c15 and "maraprop." in _c15 and "dec" not in low):
+        return "klm_ss_marapr_positional"
+    # NOTE: prompt_datewise_pack_free_inst (SHAH 'klm all') is intentionally NOT gated:
+    # its sub-header run "free inst qty amount a3mn" is shared by ordinary KLM Prompt
+    # datewise files (e.g. 'klm div.pdf') that the base `prompt` parser handles fine, and
+    # this variant parser turns those AMBER files RED. Only SHAH's bare-number-Pack body
+    # actually needs it, and that is not separable by a header token — so SHAH stays on
+    # base `prompt` (RED), like the batch-1 prompt_datewise_amount_cols revert.
+    # NOTE: marg_item_opstk_pval_psch_sval (VISNAGAR MF070) is intentionally NOT gated:
+    # its positional parser GLYPH-INTERLEAVES the item code into the product name
+    # ("MKVFELS0MK91R.." for "EKRAN"), on both the target AND the VISNAGAR/AAGAM
+    # marg_opstk_statement baselines it would reclaim, so despite a higher reconcile it
+    # is a name-quality REGRESSION. Those files stay on marg_opstk_statement (clean names).
+    # MEDICA Ultimate Stock Statement — APR/MAR trailing-month run (toreo has FEB/JAN).
+    if "stkvalaprmar" in _c15:
+        return "medica_stock_apr_mar"
     if "liquidation" in low and "sh.exp" in low:
         return "dolphin_stock"
     if "opstk" in low and "purch" in low and "in/ot" in low:

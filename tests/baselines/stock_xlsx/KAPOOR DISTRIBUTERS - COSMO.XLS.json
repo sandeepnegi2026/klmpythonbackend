@@ -2,9 +2,9 @@
   "file": "KAPOOR DISTRIBUTERS - COSMO.XLS",
   "route": "stock_xlsx",
   "row_count": 32,
-  "warnings_count": 20,
+  "warnings_count": 0,
   "headers_detected_count": 12,
-  "detected_format": "tabular",
+  "detected_format": "klm_ss_stmt_prod_desc",
   "product_count": 32,
   "sample_products": [
     "Ekran 30 Silicon Sunscreen Gel 30G",

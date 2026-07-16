@@ -3,17 +3,17 @@
   "route": "party_xlsx",
   "row_count": 57,
   "warnings_count": 0,
-  "headers_detected_count": 5,
-  "detected_format": "painkiller_partywise",
+  "headers_detected_count": 12,
+  "detected_format": "r15_klm_party_product_wise_sales_xlsx",
   "party_count": 26,
-  "area_count": 10,
+  "area_count": 7,
   "product_count": 11,
   "sample_parties": [
-    "(DUTT)WALK IN CUSTOMER-BCH",
-    "ANMOL CHEMIST-SHOPNO 29 ANMOL PLAZA SHOPPING CENT",
-    "CARE PHARMACY-SHOP NO 2 MARIAM COMPLEX BESIDE NOV",
-    "CHILD CARE PHARMACY-401",
-    "DEROL CHEMIST (DEROL)-SHOP NO 4SMALL CENTRE"
+    "(DUTT)WALK IN CUSTOMER",
+    "ANMOL CHEMIST",
+    "CARE PHARMACY",
+    "CHILD CARE PHARMACY",
+    "DEROL CHEMIST (DEROL)"
   ],
   "sample_products": [
     "Desosoft Cream 10 Gm",
@@ -22,6 +22,6 @@
     "Sacctik Gg Sachets",
     "Sofibar Syndet Bar"
   ],
-  "qty_total": 0.0,
-  "amount_total": 0.0
+  "qty_total": 239.0,
+  "amount_total": 28713.41
 }

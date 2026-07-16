@@ -141,6 +141,10 @@ def extract_pdf(pdf_bytes):
                 "busy_tally_itemwise": ("party_item_summary_nofree",),
                 "marg_register": ("prathna_register", "klm_sales_detail_register"),
                 "marg_register_itemwise": ("prathna_register", "klm_sales_detail_register"),
+                # KLM BILL WISE "Sales Statement" shares bajaj's exact header but its
+                # scheme-qty body makes parse_bajaj return 0 rows; every genuine bajaj
+                # file parses (rows>0) so it never reaches this fallback.
+                "bajaj_salestatement": ("klm_salestatement_scheme",),
             }
             if not r and fmt in _FALLBACKS:
                 for alt_key in _FALLBACKS[fmt]:

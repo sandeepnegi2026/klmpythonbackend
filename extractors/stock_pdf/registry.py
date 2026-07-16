@@ -111,7 +111,56 @@ from extractors.stock_pdf.layouts.stock_item_desc_oric_movement import parse_sto
 from extractors.stock_pdf.layouts.medivision_company_stock_sales import parse_medivision_company_stock_sales
 from extractors.stock_pdf.layouts.prompt_datewise_amount_cols import parse_prompt_datewise_amount_cols
 
+# --- 15 July RED-cluster parsers (batch 2) ---------------------------------
+from extractors.stock_pdf.layouts.metro_sales_stock_statement_glyph import parse_metro_sales_stock_statement_glyph
+from extractors.stock_pdf.layouts.r15_stock_qoh_paired_value import parse_stock_qoh_paired_value
+from extractors.stock_pdf.layouts.r15_akshar_open_pur_free_total_sale_free_close import parse_akshar_open_pur_free_total_sale_free_close
+from extractors.stock_pdf.layouts.r15_klm_stock_sales_marapr_positional import parse_r15_klm_stock_sales_marapr_positional
+from extractors.stock_pdf.layouts.r15_klm_ss_qty_value_dualfree import parse_klm_ss_qty_value_dualfree
+from extractors.stock_pdf.layouts.r15_monthly_ss_inward_other_closing import parse_r15_monthly_ss_inward_other_closing
+from extractors.stock_pdf.layouts.r15_klm_pcode_opstk_psch_ssch_positional import parse_klm_pcode_opstk_psch_ssch_positional
+from extractors.stock_pdf.layouts.r15_jayambe_monthly_ss_balance import parse_jayambe_monthly_ss_balance
+from extractors.stock_pdf.layouts.r15_klm_lab_open_recv_sales_close_value_positional import parse_r15_klm_lab_open_recv_sales_close_value_positional
+from extractors.stock_pdf.layouts.r15_klm_ss_month_totalstock_ilast_positional import parse_r15_klm_ss_month_totalstock_ilast_positional
+from extractors.stock_pdf.layouts.r15_klm_ss_register_receipt_inst_gr_positional import parse_r15_klm_ss_register_receipt_inst_gr_positional
+from extractors.stock_pdf.layouts.r15_klm_ss_prevlast_twopage_positional import parse_r15_klm_ss_prevlast_twopage_positional
+from extractors.stock_pdf.layouts.r15_nu_srishyam_sales_stock_detail_tripage import parse_r15_nu_srishyam_sales_stock_detail_tripage
+from extractors.stock_pdf.layouts.r15_klm_pharmaasia_code_open_recv_sales_close_dualvalue import parse_r15_klm_pharmaasia_code_open_recv_sales_close_dualvalue
+from extractors.stock_pdf.layouts.r15_pharma_asia_simpleformat import parse_r15_pharma_asia_simpleformat
+from extractors.stock_pdf.layouts.r15_smartpharma_reps_ostk_replace import parse_smartpharma_reps_ostk_replace
+from extractors.stock_pdf.layouts.r15_klm_smartpharma_stocksale_tstock import parse_klm_smartpharma_stocksale_tstock
+from extractors.stock_pdf.layouts.r15_medica_stock_apr_mar import parse_medica_stock_apr_mar
+from extractors.stock_pdf.layouts.r15_medivision_stock_sales_addless import parse_r15_medivision_stock_sales_addless
+from extractors.stock_pdf.layouts.r15_klm_ss_combined_pipe_flat import parse_klm_ss_combined_pipe_flat
+from extractors.stock_pdf.layouts.r15_prompt_datewise_pack_free_inst import parse_prompt_datewise_pack_free_inst
+from extractors.stock_pdf.layouts.r15_sudha_open_recv_issue_close_split import parse_r15_sudha_open_recv_issue_close_split
+from extractors.stock_pdf.layouts.r15_marg_item_opstk_pval_psch_sval import parse_marg_item_opstk_pval_psch_sval
+
 TEXT_PARSERS = {
+    # --- 15 July RED-cluster parsers (batch 2) ---
+    "metro_sales_stock_statement_glyph": parse_metro_sales_stock_statement_glyph,
+    "stock_qoh_paired_value": parse_stock_qoh_paired_value,
+    "akshar_open_pur_free_total_sale_free_close": parse_akshar_open_pur_free_total_sale_free_close,
+    "klm_ss_marapr_positional": parse_r15_klm_stock_sales_marapr_positional,
+    "klm_ss_qty_value_dualfree": parse_klm_ss_qty_value_dualfree,
+    "r15_monthly_ss_inward_other_closing": parse_r15_monthly_ss_inward_other_closing,
+    "klm_pcode_opstk_psch_ssch_positional": parse_klm_pcode_opstk_psch_ssch_positional,
+    "r15_jayambe_monthly_ss_balance": parse_jayambe_monthly_ss_balance,
+    "r15_klm_lab_open_recv_sales_close_value_positional": parse_r15_klm_lab_open_recv_sales_close_value_positional,
+    "klm_ss_month_totalstock_ilast_positional": parse_r15_klm_ss_month_totalstock_ilast_positional,
+    "r15_klm_ss_register_receipt_inst_gr_positional": parse_r15_klm_ss_register_receipt_inst_gr_positional,
+    "r15_klm_ss_prevlast_twopage_positional": parse_r15_klm_ss_prevlast_twopage_positional,
+    "nu_srishyam_sales_stock_detail": parse_r15_nu_srishyam_sales_stock_detail_tripage,
+    "r15_klm_pharmaasia_code_open_recv_sales_close_dualvalue": parse_r15_klm_pharmaasia_code_open_recv_sales_close_dualvalue,
+    "r15_pharma_asia_simpleformat": parse_r15_pharma_asia_simpleformat,
+    "smartpharma_reps_ostk_replace": parse_smartpharma_reps_ostk_replace,
+    "klm_smartpharma_stocksale_tstock": parse_klm_smartpharma_stocksale_tstock,
+    "medica_stock_apr_mar": parse_medica_stock_apr_mar,
+    "medivision_stock_sales_addless": parse_r15_medivision_stock_sales_addless,
+    "klm_ss_combined_pipe_flat": parse_klm_ss_combined_pipe_flat,
+    "prompt_datewise_pack_free_inst": parse_prompt_datewise_pack_free_inst,
+    "sudha_open_recv_issue_close_split": parse_r15_sudha_open_recv_issue_close_split,
+    "marg_item_opstk_pval_psch_sval": parse_marg_item_opstk_pval_psch_sval,
     "klm_lmsale_receipts_age": parse_klm_lmsale_receipts_age,
     "klm_stock_sales_inout_expiry": parse_klm_stock_sales_inout_expiry,
     "stock_unit_op_purc_sale_cl": parse_stock_unit_op_purc_sale_cl,

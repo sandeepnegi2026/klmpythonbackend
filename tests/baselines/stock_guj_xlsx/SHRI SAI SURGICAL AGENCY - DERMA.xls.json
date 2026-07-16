@@ -3,8 +3,8 @@
   "route": "stock_xlsx",
   "row_count": 18,
   "warnings_count": 2,
-  "headers_detected_count": 8,
-  "detected_format": "marg_opstk_curstk",
+  "headers_detected_count": 11,
+  "detected_format": "klm_ss_paired_opstk_pfree_sfree_curstk_xls",
   "product_count": 17,
   "sample_products": [
     "Canrolfin Cream 30 Gm",
@@ -13,5 +13,5 @@
     "Nevlon Caloe Lotion 60Ml",
     "Nevlon Cream 100Gm"
   ],
-  "closing_stock_total": 185.0
+  "closing_stock_total": 207.0
 }

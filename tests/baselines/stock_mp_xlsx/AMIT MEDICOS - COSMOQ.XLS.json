@@ -2,9 +2,9 @@
   "file": "AMIT MEDICOS - COSMOQ.XLS",
   "route": "stock_xlsx",
   "row_count": 14,
-  "warnings_count": 13,
+  "warnings_count": 0,
   "headers_detected_count": 13,
-  "detected_format": "tabular",
+  "detected_format": "klm_ss_stmt_prod_desc",
   "product_count": 13,
   "sample_products": [
     "Blemguard Face Serum 30Ml",
