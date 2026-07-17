@@ -28,12 +28,29 @@ Text-based (flat) layout: every column is printed on every row (no blank interio
 no glyph interleaving), so a line/token parse is sufficient — no positional pass
 needed. Modelled on stock_open_pur_sale_free_current.py.
 """
+import re
+
 from extractors.stock_pdf.parse_common import (
     _nums,
     _skip_line,
     _split_product_numbers,
     _split_product_pack,
 )
+
+
+def _uses_item_codes(text):
+    """True only for the SRI DURGA export, which prints a leading KLM item code
+    before each product name. Its column header reads
+    ``Product Name Pack O.Bal Purc S.Ret ...`` — the words ``Pack`` (not
+    ``Packing``) and ``Purc`` (not ``Rcpts``/``Purches``) are unique to it.
+
+    The header-identical siblings (PADMAJA / AUM / S V PHARMA) carry NO leading
+    code: their first token IS the product name, so stripping it there corrupts
+    the name (``APOPYBUSH SYP`` -> ``SYP``). Gate the code-strip on SRI DURGA's
+    exact header so only its files are stripped. Verified over every marg_ss file
+    in the corpus: all 5 SRI DURGA files match, none of the siblings do.
+    """
+    return bool(re.search(r"\bpack\s+o\.?bal\s+purc\b", text[:1500], re.I))
 
 
 def _strip_item_code(prod):
@@ -59,6 +76,7 @@ def _strip_item_code(prod):
 
 def parse_marg_ss_statement_detailed(text):
     records = []
+    strip_codes = _uses_item_codes(text)
     for line in text.splitlines():
         s = line.strip()
         if _skip_line(s):
@@ -81,7 +99,8 @@ def parse_marg_ss_statement_detailed(text):
             )
         else:
             continue
-        name, pack = _split_product_pack(_strip_item_code(prod))
+        name, pack = _split_product_pack(
+            _strip_item_code(prod) if strip_codes else prod)
         if not name:
             continue
         r = {

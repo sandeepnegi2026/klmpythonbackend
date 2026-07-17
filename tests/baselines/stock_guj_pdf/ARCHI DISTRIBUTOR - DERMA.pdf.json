@@ -1,11 +1,11 @@
 {
   "file": "ARCHI DISTRIBUTOR - DERMA.pdf",
   "route": "stock_pdf",
-  "row_count": 17,
-  "warnings_count": 1,
+  "row_count": 27,
+  "warnings_count": 2,
   "headers_detected_count": 13,
   "detected_format": "marg_web_stock",
-  "product_count": 14,
+  "product_count": 22,
   "sample_products": [
     "Canrolfin Cream 15 Gm",
     "Canrolfin Cream 30 Gm",
@@ -13,6 +13,6 @@
     "Mfsone Cream 30 Gm",
     "Mfsudif Cream 10 Gm"
   ],
-  "closing_stock_total": 18.0,
+  "closing_stock_total": 53.0,
   "rate_total": 0.0
 }

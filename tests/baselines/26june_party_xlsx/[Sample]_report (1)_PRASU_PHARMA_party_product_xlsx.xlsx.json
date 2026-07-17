@@ -1,13 +1,13 @@
 {
   "file": "[Sample]_report (1)_PRASU_PHARMA_party_product_xlsx.xlsx",
   "route": "party_xlsx",
-  "row_count": 265,
+  "row_count": 333,
   "warnings_count": 0,
   "headers_detected_count": 23,
   "detected_format": "tabular",
-  "party_count": 74,
-  "area_count": 49,
-  "product_count": 104,
+  "party_count": 80,
+  "area_count": 51,
+  "product_count": 112,
   "sample_parties": [
     "A TO Z PHARMA*NASHIK",
     "AASTHA MEDICAL & GEN STORES",
@@ -17,13 +17,13 @@
   ],
   "sample_products": [
     "Blemguard Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
     "Cetalore-M Suspension 60Ml",
     "Cosmoq Brightening Serum 30Ml",
-    "Cosmoq Conditioner 150Gm",
-    "Cosmoq Oc Moisturizing Gel 60G"
+    "Cosmoq Conditioner 150Gm"
   ],
   "qty_total": 3047.0,
   "amount_total": 0.0,
-  "rate_total": 52948.13,
-  "purchase_rate_total": 47795.68
+  "rate_total": 65341.11,
+  "purchase_rate_total": 58978.74
 }

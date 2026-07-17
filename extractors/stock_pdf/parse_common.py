@@ -105,3 +105,21 @@ def _skip_line(s):
     if re.match(r"^[\d\s\-]+$", s):
         return True
     return False
+
+
+def _zero_row_is_product(name) -> bool:
+    """Whether an all-zero (no-movement) row is a real catalog SKU worth keeping.
+
+    Several stock layouts list products the distributor stocks that simply had no
+    movement in the period (all qty columns 0, often only a rate printed) — those
+    are real rows and should be kept for completeness. A positional parser can,
+    however, mis-capture a header/footer ADDRESS or contact block as a zero row.
+    Real product names carry no comma and no shop/plot/property/phone token, so
+    keep a named row unless it looks like such an address fragment.
+    """
+    name = str(name or "").strip()
+    if sum(c.isalpha() for c in name) < 3:
+        return False
+    if "," in name:
+        return False
+    return not re.search(r"\b(shop|plot|property|phone)\b", name, re.I)

@@ -7,6 +7,16 @@ def _marg_register_tail(tail):
     nums = [n.rstrip(".") for n in re.findall(r"[\d.]+", tail or "")]
     qty = nums[0] if nums else ""
     amount = nums[-1] if len(nums) >= 2 else ""
+    # A glyph-scrambled export can glue a salesman's phone onto the amount
+    # ("...293.05CHIRAG-9825522022"), so the trailing token is a bare 6+ digit
+    # integer — never a real line amount (those carry paise decimals and are far
+    # smaller). Fall back to the last decimal-bearing number, which is the amount.
+    # Surgical: verified to change ONLY these phone-glued rows and leave every
+    # clean marg_register file (incl. the DAHOD baselines) byte-for-byte identical.
+    if amount and "." not in amount and len(amount) >= 6:
+        decimals = [n for n in nums if "." in n]
+        if decimals:
+            amount = decimals[-1]
     s_qty = disc = sch = ""
     if len(nums) == 3:
         s_qty = nums[1]

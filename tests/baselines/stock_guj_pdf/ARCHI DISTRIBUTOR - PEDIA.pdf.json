@@ -1,11 +1,11 @@
 {
   "file": "ARCHI DISTRIBUTOR - PEDIA.pdf",
   "route": "stock_pdf",
-  "row_count": 19,
-  "warnings_count": 3,
+  "row_count": 53,
+  "warnings_count": 8,
   "headers_detected_count": 14,
   "detected_format": "marg_web_stock",
-  "product_count": 18,
+  "product_count": 43,
   "sample_products": [
     "Argicyne Sachets 6Gm",
     "Cutiheal Cream 15Gm",
@@ -13,6 +13,6 @@
     "Desosoft Lotion 30 Ml",
     "Essfol Tablet 1*10 Tab"
   ],
-  "closing_stock_total": 404.0,
+  "closing_stock_total": 1245.0,
   "rate_total": 0.0
 }

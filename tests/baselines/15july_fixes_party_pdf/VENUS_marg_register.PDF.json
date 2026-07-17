@@ -1,0 +1,29 @@
+{
+  "file": "VENUS_marg_register.PDF",
+  "route": "party_pdf",
+  "row_count": 1682,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_register",
+  "party_count": 332,
+  "area_count": 323,
+  "product_count": 206,
+  "sample_parties": [
+    "37",
+    "AADITYA PHARMACY (VASNA)",
+    "AAGAM MEDICAL STORE (NARANPURA)",
+    "AAKASH MEDICINES (VASTRAPUR)",
+    "AAMIR MEDICAL (JAMALPUR)"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 20037.0,
+  "amount_total": 3149111.3,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

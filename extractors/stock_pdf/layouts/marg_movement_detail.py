@@ -3,6 +3,7 @@ from extractors.stock_pdf.parse_common import (
     _skip_line,
     _split_product_numbers,
     _split_product_pack,
+    _zero_row_is_product,
 )
 
 
@@ -62,10 +63,13 @@ def parse_marg_movement_detail(text):
         w = _pick_stock_window(vals)
         (opening, purchases, pur_return, pur_others, total,
          sales, sal_return, sal_others, closing) = w
-        # skip phantom all-zero stock rows (only a rate may be printed)
-        if opening == 0 and purchases == 0 and sales == 0 and closing == 0:
-            continue
         name, pack = _split_product_pack(prod)
+        # Keep genuine zero-activity catalog SKUs: a named product the distributor
+        # lists that simply had no movement this period (often only a rate printed).
+        # Only drop a nameless / address phantom.
+        if (opening == 0 and purchases == 0 and sales == 0 and closing == 0
+                and not _zero_row_is_product(name)):
+            continue
         # Fold all stock-reducing adjustments into purchase_return so that
         # opening + purchase - purchase_return - sales + sales_return == closing,
         # anchored on the ERP's own printed TOTAL.

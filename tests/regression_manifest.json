@@ -170,6 +170,25 @@
         "New Data/15 July/stock_xlsx/STOCK_AND_SALES_STATEMENT_06 07 26_Arvind_Jadhav.xlsx",
         "New Data/15 July/stock_xlsx/klm sst-1.XLSX"
       ]
+    },
+    "15july_fixes_stock_pdf": {
+      "route": "stock_pdf",
+      "description": "Regression lock for the 15 July stock fixes: marg_ss header-gated code strip (SRI DURGA codes stripped vs S V PHARMA names intact), and the marg_movement_detail(_sparse) + pharmassist_stock_sale zero-activity-SKU keep (address phantoms still dropped).",
+      "files": [
+        "../New_Data/_regression_fixtures/15july_fixes/SRIDURGA_marg_ss_KLM_PEDIA.pdf",
+        "../New_Data/_regression_fixtures/15july_fixes/SVPHARMA_marg_ss_PEDIA.pdf",
+        "../New_Data/_regression_fixtures/15july_fixes/VYANKATESH_marg_movement_detail.pdf",
+        "../New_Data/_regression_fixtures/15july_fixes/KP_marg_movement_sparse.pdf",
+        "../New_Data/_regression_fixtures/15july_fixes/SWETA_pharmassist_stock_sale.pdf"
+      ]
+    },
+    "15july_fixes_party_pdf": {
+      "route": "party_pdf",
+      "description": "Regression lock for the 15 July party fixes: bharat_saleregister wrapped-row carry-forward (reconciles to printed Grand Total) and the marg_register phone-in-amount guard (VENUS).",
+      "files": [
+        "../New_Data/_regression_fixtures/15july_fixes/BHARAT_saleregister.pdf",
+        "../New_Data/_regression_fixtures/15july_fixes/VENUS_marg_register.PDF"
+      ]
     }
   }
 }
