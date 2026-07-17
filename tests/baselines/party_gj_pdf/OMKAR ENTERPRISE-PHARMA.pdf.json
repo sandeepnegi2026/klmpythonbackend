@@ -1,0 +1,28 @@
+{
+  "file": "OMKAR ENTERPRISE-PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 4,
+  "area_count": 1,
+  "product_count": 13,
+  "sample_parties": [
+    "AUM MEDICINES",
+    "PRADHAN MANTRI JAN AUSHADHI KENDRA",
+    "SAI MEDICINES",
+    "SHREE MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Eberfine-M Cream 15G",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kentruff Lotion 75 Ml",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "qty_total": 755.0,
+  "amount_total": 83998.61,
+  "rate_total": 5660.4,
+  "purchase_rate_total": 0.0
+}

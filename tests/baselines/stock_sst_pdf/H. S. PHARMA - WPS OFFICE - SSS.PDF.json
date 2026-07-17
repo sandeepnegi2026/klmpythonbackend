@@ -1,0 +1,18 @@
+{
+  "file": "H. S. PHARMA - WPS OFFICE - SSS.PDF",
+  "route": "stock_pdf",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 35,
+  "sample_products": [
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "GLUTATHION TAB 1-10TAB",
+    "Glutaderm Tablets"
+  ],
+  "closing_stock_total": 285.0,
+  "rate_total": 0.0
+}

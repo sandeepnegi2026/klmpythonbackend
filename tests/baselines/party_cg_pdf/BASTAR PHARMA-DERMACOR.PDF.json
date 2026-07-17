@@ -1,0 +1,29 @@
+{
+  "file": "BASTAR PHARMA-DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 72,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 27,
+  "area_count": 9,
+  "product_count": 22,
+  "sample_parties": [
+    "AKKY MEDICAL STORE",
+    "BIBHAS MEDICAL STORE",
+    "DURGA MEDICOSE",
+    "FUTURE PHARMA MEDICOSE",
+    "GANESH MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "qty_total": 478.0,
+  "amount_total": 106330.2,
+  "rate_total": 17082.66,
+  "purchase_rate_total": 0.0
+}

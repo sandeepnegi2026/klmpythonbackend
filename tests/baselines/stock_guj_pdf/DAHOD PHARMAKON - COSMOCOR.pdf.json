@@ -1,0 +1,18 @@
+{
+  "file": "DAHOD PHARMAKON - COSMOCOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 13,
+  "sample_products": [
+    "Klcepo 200 Tablets",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm"
+  ],
+  "closing_stock_total": 167.0,
+  "rate_total": 0.0
+}

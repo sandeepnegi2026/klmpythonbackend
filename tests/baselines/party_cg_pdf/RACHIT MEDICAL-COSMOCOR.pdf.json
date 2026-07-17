@@ -1,0 +1,29 @@
+{
+  "file": "RACHIT MEDICAL-COSMOCOR.pdf",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 18,
+  "area_count": 2,
+  "product_count": 11,
+  "sample_parties": [
+    "ADARSH MEDICAL STORE",
+    "ANSHU MEDICOSE",
+    "ANU MEDICAL STORE",
+    "AROGYA MEDICAL STORE",
+    "AYAN MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets"
+  ],
+  "qty_total": 294.0,
+  "amount_total": 28395.66,
+  "rate_total": 3754.1,
+  "purchase_rate_total": 0.0
+}

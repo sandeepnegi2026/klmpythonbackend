@@ -1,0 +1,205 @@
+Reports root: D:\Devs\Reports\Data
+Mode: COMPARE to baselines
+
+[26june_party_pdf]
+  OK   [Sample]_1_MAHALAXMI_DISTRIBUTORS_party_product_pdf.pdf rows=18
+  FAIL [Sample]_2_MAHALAXMI_DISTRIBUTORS_party_product_pdf.pdf
+       - sample_parties: expected ['ADITYA MEDICAL STORES', 'DR.AMBRESH.S.BADAD GULABRGA', 'M/S MAISALGE MEDICAL', 'MAHALAXMI PHARMA', 'OWAIS MEDICAL STORE'], got ['ADITYA MEDICAL STORES', 'DR.AMBRESH.S.BADAD GULABRGA', 'M/S MAISALGE MEDICAL &GENERAL STO', 'MAHALAXMI PHARMA', 'OWAIS MEDICAL STORE']
+
+[party_cg_pdf]
+  OK   AYACHI MEDICAL-COSMO.PDF rows=27
+  OK   AYACHI MEDICAL-COSMOCOR.PDF rows=25
+  OK   AYACHI MEDICAL-COSMOQ.PDF rows=3
+  OK   AYACHI MEDICAL-DERMA.PDF rows=24
+  OK   AYACHI MEDICAL-DERMACOR.PDF rows=40
+  OK   AYACHI MEDICAL-PEDIA.pdf rows=121
+  OK   AYACHI MEDICAL-PHARMA.PDF rows=77
+  OK   BASTAR PHARMA-COSMO.PDF rows=62
+  OK   BASTAR PHARMA-COSMOCOR.PDF rows=82
+  OK   BASTAR PHARMA-COSMOQ.PDF rows=23
+  OK   BASTAR PHARMA-DERMA.PDF rows=36
+  OK   BASTAR PHARMA-DERMACOR.PDF rows=72
+  OK   BASTAR PHARMA-PEDIA.pdf rows=157
+  OK   BASTAR PHARMA-PHARMA.PDF rows=117
+  OK   JINDAL MEDICAL-COSMO-COSMOCOR-DERMA-DERMACOR.pdf rows=51
+  OK   JINDAL MEDICAL-COSMOQ.PDF rows=6
+  OK   JINDAL MEDICAL-PHARMA.PDF rows=25
+  OK   KRISHNA CARE-COSMO.pdf rows=13
+  OK   KRISHNA CARE-COSMOCOR.pdf rows=11
+  FAIL KRISHNA CARE-COSMOQ.PDF
+       - sample_products: expected ['Cosmoq Ac Sunscreen Gel 60G', 'Keramate Hair Colour (Natural Black) 60Gm + 60Gm'], got ['Cosmoq Ac Sunscreen Gel 60G', 'Keramate Hair Colour (Natural Brown) 60Gm+60Gm']
+  OK   KRISHNA CARE-PHARMA.PDF rows=24
+  OK   KRISHNA KARE-DERMA.PDF rows=7
+  OK   KRISHNA KARE-DERMACOR.PDF rows=3
+  OK   RACHIT MEDICAL-COSMO.pdf rows=43
+  OK   RACHIT MEDICAL-COSMOCOR.pdf rows=24
+  OK   RACHIT MEDICAL-COSMOQ.pdf rows=7
+  OK   RACHIT MEDICAL-DERMA.pdf rows=24
+  OK   RACHIT MEDICAL-DERMACOR.pdf rows=52
+  OK   RACHIT MEDICAL-GYNEC.PDF rows=2
+  OK   RACHIT MEDICAL-PEDIA.PDF rows=60
+  OK   RACHIT MEDICAL-PHARMA.pdf rows=44
+  OK   TIRUPATI MEDICOS-COSMOCOR.PDF rows=76
+  OK   TIRUPATI MEDICOS-COSMOQ.PDF rows=24
+  OK   TIRUPATI MEDICOSE-PEDIA.PDF rows=242
+  OK   TIRUPATI MEDICOSE-PHARMA.PDF rows=136
+  OK   VINEET MEDICAL-COSMO-COSMOCOR-DERMA-DERMACOR.pdf rows=57
+  OK   VINEET MEDICAL-COSMOQ.PDF rows=12
+  OK   VINEET MEDICAL-PEDIA.PDF rows=51
+  OK   VINEET MEDICAL-PHARMA.PDF rows=35
+
+[party_gj_pdf]
+  OK   AARCHI DIST-COSMOCOR.pdf rows=1
+  OK   AARCHI DIST-PEDIA.pdf rows=33
+  OK   DAHOD PHARMA-COSMO.pdf rows=3
+  OK   DAHOD PHARMA-COSMOCOR.pdf rows=6
+  OK   DAHOD PHARMA-COSMOQ.pdf rows=3
+  OK   DAHOD PHARMA-DERMA.pdf rows=12
+  OK   DAHOD PHARMA-DERMACOR.pdf rows=13
+  OK   DAHOD PHARMA-PEDIA.pdf rows=39
+  OK   DAHOD PHARMA-PHARMA.pdf rows=8
+  OK   MANISH MEDICAL-COSMO.pdf rows=10
+  OK   MANISH MEDICAL-COSMOCOR.pdf rows=25
+  OK   MANISH MEDICAL-COSMOQ.pdf rows=6
+  FAIL MANISH MEDICAL-DERMA.pdf
+       - sample_products: expected ['HBSONE-30GM CREAM KLM', 'Mfsone Cream 30 Gm', 'Mfsudif Cream 10 Gm', 'Nevlon Ad Moisturizing Lotion 150Ml', 'Nevlon Cream 100Gm'], got ['Hbsone Cream 30Gm', 'Mfsone Cream 30 Gm', 'Mfsudif Cream 10 Gm', 'Nevlon Ad Moisturizing Lotion 150Ml', 'Nevlon Cream 100Gm']
+  OK   MANISH MEDICAL-DERMACOR.pdf rows=21
+  OK   MANISH MEDICAL-PEDIA.pdf rows=13
+  OK   MANISH MEDICAL-PHARMA.pdf rows=18
+  OK   N K MEDICO-COSMO.pdf rows=27
+  OK   N K MEDICO-COSMOCOR.pdf rows=16
+  OK   N K MEDICO-COSMOQ.pdf rows=30
+  FAIL N K MEDICO-DERMA.pdf
+       - product_count: expected 9, got 8
+       - sample_products: expected ['Mfsone Cream 30 Gm', 'NEVLON 50GM', 'NEVLON AD 150ML', 'NI WADI KATARGAM,SURAT', 'Nevlon Ad Moisturizing Lotion 150Ml'], got ['Mfsone Cream 30 Gm', 'NEVLON 50GM', 'NI WADI KATARGAM,SURAT', 'Nevlon Ad Moisturizing Lotion 150Ml', 'Nevlon Caloe Lotion 100Ml']
+  OK   N K MEDICO-DERMACOR.pdf rows=16
+  OK   N K MEDICO-PEDIA.pdf rows=117
+  OK   N K MEDICO-PHARMA.pdf rows=19
+  OK   OMKAR ENTERPRISE-COSMO.pdf rows=8
+  OK   OMKAR ENTERPRISE-COSMOCOR.pdf rows=11
+  OK   OMKAR ENTERPRISE-COSMOQ.pdf rows=13
+  OK   OMKAR ENTERPRISE-DERMA.pdf rows=16
+  OK   OMKAR ENTERPRISE-DERMACOR.pdf rows=16
+  OK   OMKAR ENTERPRISE-PEDIA.pdf rows=19
+  OK   OMKAR ENTERPRISE-PHARMA.pdf rows=37
+  OK   SAURASHTRA MEDISOLUTION-COSMO.pdf rows=78
+  OK   SAURASHTRA MEDISOLUTION-COSMOCOR.pdf rows=161
+  OK   SAURASHTRA MEDISOLUTION-COSMOQ.pdf rows=85
+  OK   SAURASHTRA MEDISOLUTION-DERMA.pdf rows=75
+  OK   SAURASHTRA MEDISOLUTION-DERMACOR.pdf rows=135
+  OK   SAURASHTRA MEDISOLUTION-OPHTHAL.pdf rows=0
+  OK   SAURASHTRA MEDISOLUTION-ORTHO.pdf rows=0
+  OK   SAURASHTRA MEDISOLUTION-OTHER.pdf rows=2
+  OK   SAURASHTRA MEDISOLUTION-PEDIA--FQty is empty.pdf rows=205
+  OK   SAURASHTRA MEDISOLUTION-PHARMA.pdf rows=149
+  FAIL SHREE SAI SURGICAL-COSMO.pdf
+       - product_count: expected 3, got 4
+       - sample_products: expected ['Ekran Soft Silicon Sunscreen Gel 50G', 'Herpival-1 G Tablets 1*3 Tablets', 'Kojitin Ultra Emulgel 20Gm'], got ['Ekran 30 Silicon Sunscreen Gel 30G', 'Ekran Soft Silicon Sunscreen Gel 50G', 'Herpival-1 G Tablets 1*3 Tablets', 'Kojitin Ultra Emulgel 20Gm']
+  OK   SHREE SAI SURGICAL-COSMOCOR.pdf rows=21
+  OK   SHREE SAI SURGICAL-DERMA.pdf rows=5
+  OK   SHREE SAI SURGICAL-DERMACOR.pdf rows=11
+  OK   SHREE SAI SURGICAL-PEDIA.pdf rows=34
+  OK   SHREE SAI SURGICAL-PHARMA.pdf rows=1
+
+[party_mp_pdf]
+  OK   AHUJA MEDICAL-COSMO.pdf rows=18
+  OK   AHUJA MEDICAL-COSMOCOR.pdf rows=35
+  OK   AHUJA MEDICAL-COSMOQ.pdf rows=4
+  OK   AHUJA MEDICAL-DERMA.pdf rows=13
+  OK   AHUJA MEDICAL-DERMACOR.pdf rows=52
+  OK   AHUJA MEDICAL-PEDIA.PDF rows=40
+  OK   AHUJA MEDICAL-PHARMA.pdf rows=45
+  OK   AMIT MEDICOS-COSMOCOR.PDF rows=333
+  OK   AMIT MEDICOS-COSMOQ.pdf rows=49
+  OK   AMIT MEDICOS-DERMA.PDF rows=184
+  OK   AMIT MEDICOS-DERMACOR.PDF rows=246
+  OK   AMIT MEDICOS-PEDIA.PDF rows=292
+  OK   AMIT MEDICOS-PHARMA.PDF rows=196
+  OK   ANAND MEDICAL-COSMOQ.pdf rows=14
+  OK   ANAND MEDICAL-PEDIA.PDF rows=104
+  OK   ANAND MEDICAL-PHARMA.PDF rows=58
+  OK   ANIL PHARMA-COSMO.PDF rows=54
+  OK   ANIL PHARMA-COSMOCOR.PDF rows=57
+  OK   ANIL PHARMA-COSMOQ.pdf rows=36
+  FAIL ANIL PHARMA-DERMA.PDF
+       - product_count: expected 14, got 13
+  OK   ANIL PHARMA-DERMACOR.PDF rows=66
+  OK   ANIL PHARMA-ORHTO.PDF rows=4
+  OK   ANIL PHARMA-PEDIA.PDF rows=41
+  OK   CAPITAL PHARMA-PEDIA-DERMA-COSMOQ.pdf rows=115
+  OK   CAPITAL PHARMA-PHARMA.pdf rows=33
+  OK   JYOTI MEDICAL-ALL DIVISION.PDF rows=285
+  OK   JYOTI MEDICAL-COSMOQ.pdf rows=9
+  OK   JYOTI MEDICAL-GYNEC.PDF rows=3
+  OK   JYOTI MEDICAL-PEDIA.PDF rows=51
+  OK   JYOTI MEDICAL-PHARMA.PDF rows=83
+  OK   KAPOOR DIST-COSMO.pdf rows=47
+  OK   KAPOOR DIST-COSMOCOR.pdf rows=76
+  OK   KAPOOR DIST-DERMA.pdf rows=52
+  OK   KAPOOR DIST-DERMACOR.pdf rows=83
+  OK   KAPOOR DIST-PEDIA-GYNEC.PDF rows=137
+  OK   KAPOOR DIST-PHARMA.pdf rows=130
+  OK   LAV KUSH-COSMO.PDF rows=30
+  OK   LAV KUSH-COSMOCOR.PDF rows=44
+  OK   LAV KUSH-COSMOQ.pdf rows=12
+  OK   LAV KUSH-DERMA.PDF rows=31
+  OK   LAV KUSH-DERMACOR.PDF rows=24
+  OK   MAA SARDA-COSMO.pdf rows=53
+  OK   MAA SARDA-COSMOCOR.pdf rows=34
+  OK   MAA SARDA-DERMA.pdf rows=29
+  OK   MAA SARDA-DERMACOR.pdf rows=51
+  OK   MAA SARDA-PEDIA.pdf rows=40
+  OK   MAA SARDA-PHARMA.pdf rows=62
+  OK   MARUTI PHARMA-COSMO.pdf rows=9
+  OK   MARUTI PHARMA-COSMOCOR.pdf rows=10
+  OK   MARUTI PHARMA-COSMOQ.pdf rows=8
+  OK   MARUTI PHARMA-DERMA.pdf rows=14
+  OK   MARUTI PHARMA-DERMACOR.pdf rows=19
+  OK   MARUTI PHARMA-PEDIA-GYNEC.pdf rows=6
+  OK   MARUTI PHARMA-PHARMA.pdf rows=6
+  OK   NEELRAJ AGENCIES-ALL DIVISION.PDF rows=128
+  OK   NEELRAJ AGENCIES-COSMOQ.pdf rows=3
+  OK   NEELRAJ AGENCIES-PEDIA-GYNEC.PDF rows=59
+  OK   NEELRAJ AGENCIES-PHARMA.PDF rows=29
+  OK   SHRIJI MEDICAL-COSMO1.pdf rows=2
+  OK   SHRIJI MEDICAL-COSMO2.pdf rows=3
+  OK   SHRIJI MEDICAL-COSMOQ.pdf rows=2
+  OK   SHRIJI MEDICAL-DERMA.pdf rows=2
+  OK   SHRIJI MEDICAL-DERMA1.pdf rows=3
+  OK   SHRIJI MEDICAL-PEDIA.PDF rows=7
+  OK   SOURABH MEDICOSE-COSMO.pdf rows=16
+  OK   SOURABH MEDICOSE-COSMOCOR.pdf rows=32
+  OK   SOURABH MEDICOSE-DERMA.pdf rows=25
+  OK   SOURABH MEDICOSE-DERMACOR.pdf rows=19
+  OK   SOURABH MEDICOSE-PEDIA.pdf rows=59
+
+[party_xlsx]
+  OK   BHAGYODAY AGENCIES-COSMO-bad.XLS rows=4
+  OK   BHAWANI PHARMA-COSMO_party wise.xls rows=5
+  OK   GANESH MEDICAL-DERMA.xlsx rows=21
+  OK   MAA SARDA-COSMOQ.xlsx rows=46
+  OK   NANDINI DIST-PEDIA.xls rows=19
+  OK   NITIN AGENCY-COSMOQ.Xls rows=43
+  OK   VISNAGAR MEDICAL-DERMACOR.XLS rows=19
+  OK   YUVEE ENTERPRISE-COSMOCOR.xlsx rows=52
+
+[party_pp_pdf]
+  OK   AAGAM PHARMAKON-PHARMABYTE-SKY WAY-PP.pdf rows=10
+  OK   AKSHAR MEDICINE-NEOSOFT-PP.pdf rows=336
+  OK   ALL CARE MEDICINES-PROMPT-PP.pdf rows=30
+  OK   BASTAR PHARMA-MARG ERP-PP.PDF rows=81
+  OK   CHIRAG PHARMA-PROMPT ERP-PP.pdf rows=507
+  OK   DHANRAJ AGENCY-MARG-PP.pdf rows=15
+  FAIL JANKI PHARMA-MARG ERP-PP.pdf
+       - sample_products: expected ['EKRAN HYDRA GEL', 'Ekran Aqua Gel 100Gm', 'Ekran Lotion 50G', 'Ekran Soft Silicon Sunscreen Gel 50G', 'Enzotret Tablet'], got ['Ekran Aqua Gel 100Gm', 'Ekran Lotion 50G', 'Ekran Soft Silicon Sunscreen Gel 50G', 'Ekran-80 Hydragel Sunscreen 50Gm', 'Enzotret Tablet']
+  OK   MANISH MEDICAL CORPORATION-TECHNOMAX-PP.pdf rows=144
+  OK   MARUTI PHARMA-MARG-PP.pdf rows=17
+  FAIL SHRI SAI SURGICAL AGENCY-RAYMEDI GOFRUGAL-PP.pdf
+       - product_count: expected 3, got 4
+       - sample_products: expected ['Ekran Soft Silicon Sunscreen Gel 50G', 'Herpival-1 G Tablets 1*3 Tablets', 'Kojitin Ultra Emulgel 20Gm'], got ['Ekran 30 Silicon Sunscreen Gel 30G', 'Ekran Soft Silicon Sunscreen Gel 50G', 'Herpival-1 G Tablets 1*3 Tablets', 'Kojitin Ultra Emulgel 20Gm']
+  OK   SOURABH MEDICOSE-PHARMA BYTES-PP.pdf rows=17
+
+[party_pp_xlsx]
+WARNING *** OLE2 inconsistency: SSCS size is 0 but SSAT size is non-zero
+  OK   BHOOLA DISTRIBUTORS-JAIMINI SOFTWARE-PP.xls rows=19
+  OK   DUTT MEDICAL AGENCY-PAINKILLER-PP.xlsx rows=57

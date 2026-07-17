@@ -1,0 +1,18 @@
+{
+  "file": "MARUTI PHARMA - PHARMA.PDF",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 30,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Total 1*15 Tab"
+  ],
+  "closing_stock_total": 682.0,
+  "rate_total": 0.0
+}

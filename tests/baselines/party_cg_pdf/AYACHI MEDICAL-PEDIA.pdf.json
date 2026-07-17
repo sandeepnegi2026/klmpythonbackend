@@ -1,0 +1,29 @@
+{
+  "file": "AYACHI MEDICAL-PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 121,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 40,
+  "area_count": 15,
+  "product_count": 33,
+  "sample_parties": [
+    "AADHYA PHARMACY",
+    "AADHYA PHARMACY 2",
+    "AARVI MEDICOSE",
+    "AARYA MEDICOSE",
+    "AKHIL MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 2846.0,
+  "amount_total": 199881.35,
+  "rate_total": 13891.75,
+  "purchase_rate_total": 0.0
+}

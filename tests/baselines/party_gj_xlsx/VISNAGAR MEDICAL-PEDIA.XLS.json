@@ -1,0 +1,29 @@
+{
+  "file": "VISNAGAR MEDICAL-PEDIA.XLS",
+  "route": "party_xlsx",
+  "row_count": 123,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_register_excel",
+  "party_count": 34,
+  "area_count": 12,
+  "product_count": 27,
+  "sample_parties": [
+    "AKSHAR PHARMACY",
+    "DARSH MEDICAL STORE",
+    "DR.ATISH J. PATEL",
+    "DR.HIREN PRAJAPATI",
+    "DR.HIREN SONI"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Fentispor Capsule",
+    "Histabil-M Suspension 60Ml"
+  ],
+  "qty_total": 1714.0,
+  "amount_total": 156256.39,
+  "rate_total": 14078.54,
+  "purchase_rate_total": 0.0
+}

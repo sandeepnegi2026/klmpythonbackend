@@ -1,0 +1,18 @@
+{
+  "file": "ANIL PHARMA DISTRIBUTORS - PEDIA.PDF",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 3,
+  "headers_detected_count": 10,
+  "detected_format": "simple4",
+  "product_count": 24,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Essfol Tablet 1*10 Tab",
+    "Fentispor Capsule",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 291.0,
+  "rate_total": 0.0
+}

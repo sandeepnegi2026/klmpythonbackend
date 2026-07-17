@@ -1,0 +1,29 @@
+{
+  "file": "ANAND MEDICAL-COSMOQ.pdf",
+  "route": "party_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "unisolve",
+  "party_count": 10,
+  "area_count": 10,
+  "product_count": 9,
+  "sample_parties": [
+    "ANISH MEDICAL STORES",
+    "DHANVI MEDICAL STORES",
+    "HEALTHCARE-MEDICAL STORE",
+    "KANTILAL & BROTHERS",
+    "KANTILAL MEDICAL & SURGICALS"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 57.0,
+  "amount_total": 19817.04,
+  "rate_total": 5170.39,
+  "purchase_rate_total": 0.0
+}

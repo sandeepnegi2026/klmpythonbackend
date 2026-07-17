@@ -1,0 +1,18 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY - PHARMA.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_ss_paired_opstk_pfree_sfree_curstk_xls",
+  "product_count": 18,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 280.0,
+  "rate_total": 2224.51
+}

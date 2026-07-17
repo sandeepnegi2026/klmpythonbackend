@@ -1,0 +1,18 @@
+{
+  "file": "ANANDH PHARMACEUTICALS - MR.SIVASHANKAR SOFTWARE - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 84,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_sales_statement_adjmt_positional",
+  "product_count": 82,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 847.0,
+  "rate_total": 0.0
+}

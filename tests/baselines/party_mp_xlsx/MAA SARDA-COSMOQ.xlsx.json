@@ -1,0 +1,29 @@
+{
+  "file": "MAA SARDA-COSMOQ.xlsx",
+  "route": "party_xlsx",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 15,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "ANU MEDICAL STORE",
+    "CHITRANSH MEDICAL WAIDHAN",
+    "CHITRANSH PHARMACEY AND SURGICAL",
+    "DR.MITTAL",
+    "DR.NITIN GUPTA"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 788.0,
+  "amount_total": 304030.89,
+  "rate_total": 18214.9,
+  "purchase_rate_total": 0.0
+}

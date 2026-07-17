@@ -1,0 +1,29 @@
+{
+  "file": "NITIN AGENCY-COSMOQ.Xls",
+  "route": "party_xlsx",
+  "row_count": 43,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 24,
+  "area_count": 19,
+  "product_count": 11,
+  "sample_parties": [
+    "24x7 Medical Stores",
+    "ANAND MEDICAL",
+    "APOLLO PHARMACIES LIMITED",
+    "Ahuja Medical Store",
+    "Anand Medico"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 102.0,
+  "amount_total": 47272.42,
+  "rate_total": 20121.25,
+  "purchase_rate_total": 0.0
+}

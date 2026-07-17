@@ -1,0 +1,24 @@
+{
+  "file": "AYACHI MEDICAL-COSMOQ.PDF",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 3,
+  "sample_parties": [
+    "AARVI MEDICOSE",
+    "NEW BHARAT MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Scarcote Gel 15Gm"
+  ],
+  "qty_total": 27.0,
+  "amount_total": 10837.13,
+  "rate_total": 1147.39,
+  "purchase_rate_total": 0.0
+}

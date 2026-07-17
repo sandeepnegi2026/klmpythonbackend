@@ -1,0 +1,24 @@
+{
+  "file": "DAHOD PHARMA-COSMOQ.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_register",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 3,
+  "sample_parties": [
+    "CHIRANJIVI MEDICAL AND GENERAL STORE",
+    "DIVYANSHI PHARMACY"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 15.0,
+  "amount_total": 6905.04,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

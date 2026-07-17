@@ -1,0 +1,28 @@
+{
+  "file": "OMKAR ENTERPRISE-COSMOCOR.pdf",
+  "route": "party_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 4,
+  "area_count": 1,
+  "product_count": 7,
+  "sample_parties": [
+    "AUM MEDICINES",
+    "JYOTI MEDICAL STORES",
+    "SAI MEDICINES",
+    "SHREE MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Nioclean Gel 20 Gm",
+    "Niosol-F Cream 10 Gm",
+    "Zydip Lotion 50 Ml"
+  ],
+  "qty_total": 191.0,
+  "amount_total": 16362.12,
+  "rate_total": 1513.42,
+  "purchase_rate_total": 0.0
+}

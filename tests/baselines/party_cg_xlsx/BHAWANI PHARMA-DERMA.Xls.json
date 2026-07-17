@@ -1,0 +1,29 @@
+{
+  "file": "BHAWANI PHARMA-DERMA.Xls",
+  "route": "party_xlsx",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 9,
+  "area_count": 9,
+  "product_count": 9,
+  "sample_parties": [
+    "AMIT MEDICAL STORE",
+    "GUPTA MEDICAL STORES",
+    "JAIN MEDICIN HOUSE",
+    "JAIN MEDICOSE (P.C.)",
+    "NAVKAR MEDICOSE"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "NEVLON BODY LOTION",
+    "NEVLON SOAP",
+    "Nevlon Cream 100Gm",
+    "Onitraz Sb 65"
+  ],
+  "qty_total": 20.0,
+  "amount_total": 3271.04,
+  "rate_total": 1822.07,
+  "purchase_rate_total": 0.0
+}

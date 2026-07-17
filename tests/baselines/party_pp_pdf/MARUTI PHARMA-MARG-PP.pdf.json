@@ -1,0 +1,29 @@
+{
+  "file": "MARUTI PHARMA-MARG-PP.pdf",
+  "route": "party_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "AROGYAM HEALTH SHOPEE",
+    "BHARAT MEDICAL STORE",
+    "DOSHI CHEMIST",
+    "DR. MUKESH",
+    "JANSEVA CHEMIST"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Histabil 40Mg Tablets 1*10 Tab",
+    "Histabil Tablet 1*10 Tab"
+  ],
+  "qty_total": 79.0,
+  "amount_total": 25654.92,
+  "rate_total": 5608.39,
+  "purchase_rate_total": 0.0
+}

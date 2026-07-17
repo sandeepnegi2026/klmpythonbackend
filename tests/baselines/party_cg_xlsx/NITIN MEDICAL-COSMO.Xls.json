@@ -1,0 +1,29 @@
+{
+  "file": "NITIN MEDICAL-COSMO.Xls",
+  "route": "party_xlsx",
+  "row_count": 122,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 59,
+  "area_count": 26,
+  "product_count": 28,
+  "sample_parties": [
+    "24x7 Medical Shop",
+    "AGRAWAL MEDICOSE",
+    "Arvind Medical Store",
+    "BAJRANG MEDICOSE",
+    "Bharat Medical Store"
+  ],
+  "sample_products": [
+    "EKRAN SOFT (SPF50)",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Enzotret Tablet"
+  ],
+  "qty_total": 295.0,
+  "amount_total": 89966.17,
+  "rate_total": 46572.48,
+  "purchase_rate_total": 0.0
+}

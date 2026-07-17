@@ -1,0 +1,17 @@
+{
+  "file": "KAPOOR DISTRIBUTERS - COSMOQ.XLS",
+  "route": "stock_xlsx",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_ss_stmt_prod_desc",
+  "product_count": 4,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "KERAMATE-NATURAL BLACK"
+  ],
+  "closing_stock_total": 12.0,
+  "rate_total": 2016.31
+}

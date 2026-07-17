@@ -1,0 +1,29 @@
+{
+  "file": "MANISH MEDICAL-COSMOCOR.pdf",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "party_count": 11,
+  "area_count": 9,
+  "product_count": 14,
+  "sample_parties": [
+    "ASHOK MEDICAL&GAN STORES",
+    "DEVAM MEDICAL STORES",
+    "JANKI MEDICINES",
+    "MARUTI MEDICAL STORES",
+    "NILKANTH MEDICAL"
+  ],
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Melboost Tablets",
+    "Nioclean Gel 20 Gm",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm"
+  ],
+  "qty_total": 392.0,
+  "amount_total": 0.0,
+  "rate_total": 4150.59,
+  "purchase_rate_total": 3735.53
+}

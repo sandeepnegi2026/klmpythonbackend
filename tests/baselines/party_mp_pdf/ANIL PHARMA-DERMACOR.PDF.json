@@ -1,0 +1,29 @@
+{
+  "file": "ANIL PHARMA-DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 66,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally_itemwise",
+  "party_count": 26,
+  "area_count": 12,
+  "product_count": 17,
+  "sample_parties": [
+    "AJAY MED STO C/O BIMR CAMPUS",
+    "BABA GARGAJ MEDICAL STORE",
+    "BABA M/S D D NAGAR",
+    "CARE MEDICAL",
+    "CHANDEL MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap"
+  ],
+  "qty_total": 441.0,
+  "amount_total": 88397.87,
+  "rate_total": 13771.13,
+  "purchase_rate_total": 0.0
+}

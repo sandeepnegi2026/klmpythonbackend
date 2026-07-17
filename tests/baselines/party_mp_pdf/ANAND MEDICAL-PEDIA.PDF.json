@@ -1,0 +1,29 @@
+{
+  "file": "ANAND MEDICAL-PEDIA.PDF",
+  "route": "party_pdf",
+  "row_count": 106,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "unisolve",
+  "party_count": 21,
+  "area_count": 20,
+  "product_count": 21,
+  "sample_parties": [
+    "ANISH MEDICAL STORES",
+    "ASHIRWAD MEDICAL STORES",
+    "BARASKAR MEDICAL STORES",
+    "BARASKARE MEDICAL AGENCY",
+    "BHAWANI MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klclav Es Oral Suspension 50Ml"
+  ],
+  "qty_total": 761.5,
+  "amount_total": 115282.25,
+  "rate_total": 17783.05,
+  "purchase_rate_total": 0.0
+}

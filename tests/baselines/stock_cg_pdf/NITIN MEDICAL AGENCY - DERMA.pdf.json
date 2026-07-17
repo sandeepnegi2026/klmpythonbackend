@@ -1,0 +1,18 @@
+{
+  "file": "NITIN MEDICAL AGENCY - DERMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_rate_amount",
+  "product_count": 29,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Klcepo 200 Tablets",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 796.0,
+  "rate_total": 5983.4
+}

@@ -1,0 +1,18 @@
+{
+  "file": "CHANDUKA AGENCIES PVT. LTD. (KYAL AGENCE) - EASYSOL - SSS.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 170,
+  "warnings_count": 1,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 148,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 1037.0,
+  "rate_total": 0.0
+}

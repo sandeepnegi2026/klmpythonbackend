@@ -1,0 +1,29 @@
+{
+  "file": "DAHOD PHARMA-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_register",
+  "party_count": 10,
+  "area_count": 9,
+  "product_count": 6,
+  "sample_parties": [
+    "ASMA MEDICAL & PRO STORE (NEW)",
+    "BABJI CLINIC",
+    "BALAJI MEDICAL AND GENERAL STORE",
+    "DIVYANSHI PHARMACY",
+    "DR.CHANDRAKANT JATWA"
+  ],
+  "sample_products": [
+    "Kenz Sal Lotion 60 Ml",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml",
+    "Lulizol Cream 20 Gm",
+    "Sebozit Gel 30G"
+  ],
+  "qty_total": 45.0,
+  "amount_total": 11040.58,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

@@ -1,0 +1,29 @@
+{
+  "file": "MAA SARDA-COSMO.pdf",
+  "route": "party_pdf",
+  "row_count": 54,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 22,
+  "area_count": 1,
+  "product_count": 17,
+  "sample_parties": [
+    "ANU MEDICAL STORE",
+    "ASHI MEDICAL",
+    "AYANSH MEDICOZ",
+    "CITY MEDICAL STORE",
+    "DASANI MEDICOSE(S)"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Histabil 40Mg Tablets 1*10 Tab",
+    "Histabil Tablet 1*10 Tab"
+  ],
+  "qty_total": 334.0,
+  "amount_total": 103102.85,
+  "rate_total": 18781.06,
+  "purchase_rate_total": 0.0
+}

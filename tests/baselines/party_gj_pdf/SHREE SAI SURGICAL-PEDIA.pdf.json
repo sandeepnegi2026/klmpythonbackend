@@ -1,0 +1,29 @@
+{
+  "file": "SHREE SAI SURGICAL-PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "wep_legacy",
+  "party_count": 15,
+  "area_count": 10,
+  "product_count": 14,
+  "sample_parties": [
+    "AADHYA PHARMACY",
+    "AMBICA MEDICAL AND GENERAL STORES",
+    "APNA MEDICAL & GENERAL STORES",
+    "APNA MEDICOS",
+    "ARBUDA MA MEDICAL & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Mupisoft Ointment 5 Gm",
+    "Sacctik Plus 1*10 Bottle"
+  ],
+  "qty_total": 253.0,
+  "amount_total": 23945.97,
+  "rate_total": 4201.93,
+  "purchase_rate_total": 0.0
+}

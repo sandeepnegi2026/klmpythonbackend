@@ -1,0 +1,29 @@
+{
+  "file": "NANDINI DIST-PHARMA.xls",
+  "route": "party_xlsx",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 6,
+  "area_count": 5,
+  "product_count": 5,
+  "sample_parties": [
+    "ARATI PHARMA",
+    "DR",
+    "MADHAV MEDICAL AND PRO.STORES",
+    "NINA MEDICINES",
+    "POOJAN MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Ga-12 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10",
+    "Klmite Soap",
+    "Melapik Tx Tablets"
+  ],
+  "qty_total": 77.0,
+  "amount_total": 10454.02,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

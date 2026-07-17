@@ -1,0 +1,29 @@
+{
+  "file": "BHAWANI PHARMA-PEDIA.Xls",
+  "route": "party_xlsx",
+  "row_count": 126,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 34,
+  "area_count": 18,
+  "product_count": 29,
+  "sample_parties": [
+    "BHARAT MEDICOSE",
+    "City Healthcare Medical Kohka",
+    "Colors Pharmacy",
+    "DURGA MEDICAL STORES",
+    "Dr Dadsena Saraipali"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Evaklin Medicated Wash",
+    "Fentispor Capsule",
+    "Klclav Ds"
+  ],
+  "qty_total": 1643.0,
+  "amount_total": 214168.07,
+  "rate_total": 18964.76,
+  "purchase_rate_total": 0.0
+}

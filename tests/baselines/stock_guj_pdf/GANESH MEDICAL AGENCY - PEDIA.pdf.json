@@ -1,0 +1,18 @@
+{
+  "file": "GANESH MEDICAL AGENCY - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "prompt_bordered",
+  "product_count": 18,
+  "sample_products": [
+    "-",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Es Oral Suspension 50Ml",
+    "Klclav Kid Dt Tablets"
+  ],
+  "closing_stock_total": 137.0,
+  "rate_total": 0.0
+}

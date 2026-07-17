@@ -1,0 +1,10 @@
+Reports root: D:\Devs\Reports\Data
+Mode: COMPARE to baselines
+
+[26june_party_pdf]
+  OK   [Sample]_1_MAHALAXMI_DISTRIBUTORS_party_product_pdf.pdf rows=18
+  FAIL [Sample]_2_MAHALAXMI_DISTRIBUTORS_party_product_pdf.pdf
+       - sample_parties: expected ['ADITYA MEDICAL STORES', 'DR.AMBRESH.S.BADAD GULABRGA', 'M/S MAISALGE MEDICAL', 'MAHALAXMI PHARMA', 'OWAIS MEDICAL STORE'], got ['ADITYA MEDICAL STORES', 'DR.AMBRESH.S.BADAD GULABRGA', 'M/S MAISALGE MEDICAL &GENERAL STO', 'MAHALAXMI PHARMA', 'OWAIS MEDICAL STORE']
+
+============================================================
+Passed: 1  Failed: 1  Skipped (no baseline): 0

@@ -1,0 +1,22 @@
+{
+  "file": "SHRIJI MEDICAL-COSMO1.pdf",
+  "route": "party_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 2,
+  "sample_parties": [
+    "ACHLESWAR MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Klm-D3 60K Capsules (1*8 Cap)"
+  ],
+  "qty_total": 90.0,
+  "amount_total": 15966.94,
+  "rate_total": 342.45,
+  "purchase_rate_total": 0.0
+}

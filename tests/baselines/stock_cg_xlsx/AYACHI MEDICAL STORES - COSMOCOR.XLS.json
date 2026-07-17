@@ -1,0 +1,18 @@
+{
+  "file": "AYACHI MEDICAL STORES - COSMOCOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_op_rec_iss_clos_grid",
+  "product_count": 30,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet"
+  ],
+  "closing_stock_total": 654.0,
+  "rate_total": 0.0
+}

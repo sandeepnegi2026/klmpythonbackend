@@ -1,0 +1,29 @@
+{
+  "file": "BASTAR PHARMA-PHARMA.PDF",
+  "route": "party_pdf",
+  "row_count": 117,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 37,
+  "area_count": 12,
+  "product_count": 36,
+  "sample_parties": [
+    "ALKA MEDICALS",
+    "ASHA MEDICAL STORE",
+    "AYUSH MEDICAL STORES",
+    "BALAJI MEDICAL STORE",
+    "DR. R.K. BHOI"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 1263.0,
+  "amount_total": 155995.17,
+  "rate_total": 17443.14,
+  "purchase_rate_total": 0.0
+}

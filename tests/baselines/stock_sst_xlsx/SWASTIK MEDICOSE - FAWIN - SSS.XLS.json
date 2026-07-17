@@ -1,0 +1,18 @@
+{
+  "file": "SWASTIK MEDICOSE - FAWIN - SSS.XLS",
+  "route": "stock_xlsx",
+  "row_count": 55,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_stock",
+  "product_count": 54,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Folibild Tablets"
+  ],
+  "closing_stock_total": 286.0,
+  "rate_total": 0.0
+}

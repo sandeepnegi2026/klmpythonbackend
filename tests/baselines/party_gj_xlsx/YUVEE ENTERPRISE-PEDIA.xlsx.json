@@ -1,0 +1,29 @@
+{
+  "file": "YUVEE ENTERPRISE-PEDIA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 144,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 73,
+  "area_count": 15,
+  "product_count": 25,
+  "sample_parties": [
+    "24 HOURS MEDICAL.DUNGARPUR",
+    "24 KALAK AKSHAR MEDICAL",
+    "24 KALAK KRISHNA MEDICAL STORE",
+    "24 KALAK MEDICAL BHILODA.",
+    "24 KALAK MEDICAL KHEDBRAHMA"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds"
+  ],
+  "qty_total": 1451.0,
+  "amount_total": 144779.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

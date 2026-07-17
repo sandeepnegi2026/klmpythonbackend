@@ -1,0 +1,29 @@
+{
+  "file": "AMIT MEDICOS-DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 255,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 164,
+  "area_count": 29,
+  "product_count": 32,
+  "sample_parties": [
+    "A PHARMA (WELLNESS FOREVER)",
+    "AARYA JANAROGYAM (DRAVID NAGAR",
+    "AASTHA PHARMACY",
+    "AGRAWAL AGENCIES (TEL.NAGAR)",
+    "AJAY MEIDCAL STORE (J.M )"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "qty_total": 755.25,
+  "amount_total": 138903.5,
+  "rate_total": 46515.01,
+  "purchase_rate_total": 0.0
+}

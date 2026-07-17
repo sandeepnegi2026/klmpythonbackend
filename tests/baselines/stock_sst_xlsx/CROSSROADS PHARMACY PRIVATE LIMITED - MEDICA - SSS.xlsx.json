@@ -1,0 +1,18 @@
+{
+  "file": "CROSSROADS PHARMACY PRIVATE LIMITED - MEDICA - SSS.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 20,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml"
+  ],
+  "closing_stock_total": 623.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "ARCHI DISTRIBUTOR - COSMOCOR.PDF",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 4,
+  "headers_detected_count": 15,
+  "detected_format": "marg_web_stock",
+  "product_count": 31,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets"
+  ],
+  "closing_stock_total": 324.0,
+  "rate_total": 0.0
+}

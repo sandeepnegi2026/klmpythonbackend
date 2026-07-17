@@ -1,0 +1,29 @@
+{
+  "file": "DAD CHEMIST-DERMA.Xls",
+  "route": "party_xlsx",
+  "row_count": 59,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 17,
+  "area_count": 3,
+  "product_count": 17,
+  "sample_parties": [
+    "ASHTAVINAYAK MEDICAL STORE",
+    "AUM MEDICOSE & GENERAL STORES",
+    "CHAUHAN MEDICOSE",
+    "Dev Medical & General Stores",
+    "Discount Medical Store"
+  ],
+  "sample_products": [
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 262.0,
+  "amount_total": 74489.78,
+  "rate_total": 16037.33,
+  "purchase_rate_total": 0.0
+}

@@ -1,0 +1,29 @@
+{
+  "file": "MODI PHARMA-DATA SPEC SOFTWARE-PP.xlsx",
+  "route": "party_xlsx",
+  "row_count": 144,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "data_spec_sale_by_item",
+  "party_count": 28,
+  "area_count": 16,
+  "product_count": 38,
+  "sample_parties": [
+    "Ahan Pharmacy",
+    "Ashu Medico",
+    "Astha Medical",
+    "Astha Pharmacy",
+    "Atul Medical Stores"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "qty_total": 1045.0,
+  "amount_total": 163914.09,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

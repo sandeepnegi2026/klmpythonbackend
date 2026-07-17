@@ -1,0 +1,29 @@
+{
+  "file": "AHUJA MEDICAL-DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 52,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 35,
+  "area_count": 7,
+  "product_count": 15,
+  "sample_parties": [
+    "ABHI MEDICAL & GENERAL STORES",
+    "AMAR MEDICAL STORES",
+    "ARJUN MEDICAL STORES",
+    "CHANDRA MEDICAL STORES",
+    "DURGA MEDICOSE"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "I-Extend Tablet",
+    "KLIN AHA(PINK)F/W* 100'GM",
+    "KLM KLIN(GREEN)F/W 100'GM"
+  ],
+  "qty_total": 157.0,
+  "amount_total": 27664.98,
+  "rate_total": 9332.01,
+  "purchase_rate_total": 0.0
+}

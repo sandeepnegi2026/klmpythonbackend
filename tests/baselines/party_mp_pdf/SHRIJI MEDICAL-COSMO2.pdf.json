@@ -1,0 +1,24 @@
+{
+  "file": "SHRIJI MEDICAL-COSMO2.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 3,
+  "area_count": 2,
+  "product_count": 2,
+  "sample_parties": [
+    "ACHLESWAR MEDICAL STORE",
+    "MAHIMA MEDICAL STORE",
+    "VERMA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Niosalic Lotion 50Ml"
+  ],
+  "qty_total": 64.0,
+  "amount_total": 10884.32,
+  "rate_total": 462.25,
+  "purchase_rate_total": 0.0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "BHAWANI PHARMA - PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 42,
+  "warnings_count": 1,
+  "headers_detected_count": 9,
+  "detected_format": "marg_lms_simple",
+  "product_count": 40,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfin Lotion",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 866.0,
+  "rate_total": 0.0
+}

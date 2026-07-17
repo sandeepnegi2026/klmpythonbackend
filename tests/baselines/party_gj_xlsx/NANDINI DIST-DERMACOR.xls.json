@@ -1,0 +1,29 @@
+{
+  "file": "NANDINI DIST-DERMACOR.xls",
+  "route": "party_xlsx",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 9,
+  "area_count": 6,
+  "product_count": 9,
+  "sample_parties": [
+    "DELUX CHEMIST-KADI",
+    "DR.PARESH THAKKAR-BHABHAR",
+    "MADHAV MEDICAL AND PRO.STORES",
+    "NAKSH PHARMACY",
+    "NINA MEDICINES"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Kenz Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "qty_total": 232.0,
+  "amount_total": 47522.43,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

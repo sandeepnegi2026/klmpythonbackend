@@ -1,0 +1,101 @@
+# Synonyms NOT seeded into product_aliases (with reasons)
+# 17 ambiguous (claimed by >1 product), 78 redundant (== a product normalized_name)
+
+## AMBIGUOUS
+canrolfin cream	[('DERMA', 'BP00035/01'), ('DERMA', 'BP00035/02')]
+canrolfin crm	[('DERMA', 'BP00035/01'), ('DERMA', 'BP00035/02')]
+eberfine cream	[('PHARMA', 'BP00039/01'), ('PHARMA', 'BP00039/02')]
+ekran aqua gel	[('COSMO', 'BP00139/03'), ('COSMO', 'BP300015/01')]
+imxia xl serum	[('COSMO', 'BP00069/01'), ('COSMO', 'BP00069/02')]
+klm c 1000	[('PHARMA', 'KLM 09'), ('PHARMA', 'KLM010')]
+klm c 1000 tab	[('PHARMA', 'KLM 09'), ('PHARMA', 'KLM010')]
+klm c 1000 tabs	[('PHARMA', 'KLM 09'), ('PHARMA', 'KLM010')]
+klm c1000 tablet	[('PHARMA', 'KLM 09'), ('PHARMA', 'KLM010')]
+klmc 1000	[('PHARMA', 'KLM 09'), ('PHARMA', 'KLM010')]
+kojitin ultra emulgel	[('COSMO', 'BP00135/01'), ('COSMO', 'BP300038/02')]
+lulizol cream	[('DERMACOR', 'BP00011/03'), ('DERMACOR', 'BP00011/04')]
+melboost solution	[('COSMOCOR', 'MELBOOST3'), ('COSMOCOR', 'MELBOOST5')]
+nevlon caloe lotion	[('DERMA', 'BP00072/01'), ('DERMA', 'BP00072/02')]
+nevlon cream	[('DERMA', 'BP00040/02'), ('DERMA', 'BP00040/03')]
+nevlon intense moisturizing lotion	[('DERMA', 'BP00173/03'), ('DERMA', 'BP00173/07')]
+priloderm gel	[('COSMOQ', 'PRILODERM01'), ('COSMOQ', 'PRILODERM03')]
+
+## REDUNDANT
+blemguard face serum 30ml	(Blemguard Face Serum 30ml.)
+blemguard tx face serum 30ml	(Blemguard-TX Face Serum 30ml.)
+cetalore m suspension 60ml	(Cetalore M Suspension 60ml)
+cetalore m tablet	(Cetalore M Tablet)
+cosmoq ac 50 sunscreen gel 60gm	(CosmoQ AC-50 Sunscreen Gel 60gm)
+cosmoq ac sunscreen gel 60g	(CosmoQ AC Sunscreen Gel 60G.)
+cosmoq brightening serum 30ml	(CosmoQ Brightening Serum 30ml.)
+cosmoq conditioner 150gm	(CosmoQ Conditioner 150gm.)
+cosmoq facewash gel 100g	(CosmoQ Facewash Gel 100G.)
+cosmoq moisturizing cream 50g	(CosmoQ Moisturizing Cream 50G..)
+cosmoq oc moisturizing gel 60g	(CosmoQ OC Moisturizing Gel 60G.)
+cosmoq shampoo 200ml	(CosmoQ Shampoo 200ml.)
+cosmoq under eye serum 15ml	(CosmoQ Under Eye Serum 15ml.)
+ekran 30 silicon sunscreen gel 30g	(Ekran 30 Silicon Sunscreen Gel 30g.)
+ekran 30 silicon sunscreen gel 50gm	(EKRAN 30 SILICON SUNSCREEN GEL 50GM)
+ekran aqua gel 50gm	(Ekran Aqua Gel 50gm.)
+ekran ms gel 50gm	(Ekran MS Gel 50gm.)
+episert cream 20 gm	(episert cream 20 gm)
+essfol d capsules	(ESSFOL D CAPSULES)
+hicosyn 25 tablets	(HICOSYN 25 TABLETS)
+histabil m tablets	(HISTABIL-M TABLETS)
+humisoft soap	(HUMISOFT SOAP)
+i extend tablet	(I EXTEND TABLET)
+imxia 10	(IMXIA-10)
+imxia 5	(IMXIA-5 %)
+imxia at	(Imxia AT)
+imxia plus shampoo 150 ml	(Imxia Plus Shampoo 150 ml.)
+imxia pro serum 60ml	(Imxia Pro Serum 60ml.)
+imxia xl serum 30ml	(Imxia XL Serum 30ml)
+imxia xl serum 60ml	(Imxia XL Serum 60ml)
+klm c 20 gel	(KLM C 20 GEL)
+klm fx 120 tablet	(KLM FX-120 TABLET)
+klm klin aha face wash 100 ml	(KLM Klin Aha Face Wash 100 ml.)
+klm klin aha face wash 150 ml	(KLM Klin Aha Face Wash 150 ml.)
+klm klin aha face wash 50ml	(KLM Klin Aha Face Wash 50ml)
+klm klin face wash 100 ml	(KLM Klin Face Wash 100 ml.)
+klm klin face wash 150 ml	(KLM Klin Face Wash 150 ml.)
+klm klin face wash 50ml	(klm klin face wash 50ml)
+kofcatch ls plus 100ml	(KOFCATCH LS PLUS 100ML)
+kojitin emulgel 15gm	(Kojitin Emulgel 15gm.)
+kortuf 6	(KORTUF 6)
+koxituf mr tablets	(KOXITUF MR TABLETS)
+lulizol cream 10 gm	(lulizol cream 10 gm)
+naditret cream 10g	(NADITRET+ CREAM 10G)
+nevlon ad moisturizing lotion 150ml	(Nevlon AD Moisturizing Lotion 150ml.)
+nevlon caloe lotion 100ml	(NEVLON CALOE LOTION 100ML)
+nevlon caloe lotion 60ml	(NEVLON CALOE LOTION 60ML)
+nevlon intense moisturizing lotion 150ml	(Nevlon Intense Moisturizing Lotion 150ml..)
+nevlon intense moisturizing lotion 300ml	(Nevlon Intense Moisturizing Lotion 300ml.)
+nevlon xl lotion 250ml	(nevlon xl lotion 250ml)
+nioglow foaming face wash 60ml	(Nioglow Foaming Face Wash 60ml.)
+niosol f cream 20 gm	(Niosol F Cream 20 GM)
+razuur dsr capsules 1 10	(Razuur DSR Capsules 1*10)
+resoten 10	(RESOTEN-10)
+sebozit gel 30g	(Sebozit Gel 30g.)
+sofidew baby massage oil 100ml	(Sofidew Baby Massage Oil 100ml.)
+sofidew cream 100gm	(Sofidew Cream 100gm..)
+sofidew lotion 100ml	(Sofidew Lotion 100ml)
+sofidew resyl lotion 50 ml	(Sofidew Resyl Lotion 50 ml.)
+sofidew shampoo 100ml	(Sofidew Shampoo 100ml)
+sofikenz soap 50g	(SOFIKENZ SOAP 50g)
+sofikid 1 30 gummy pouches	(sofikid 1 30 gummy pouches)
+sofikid syrup 200ml	(SOFIKID SYRUP 200ML)
+soriban 100 softgel capsules	(SORIBAN 100 SOFTGEL CAPSULES)
+soriban 50 softgel capsules	(SORIBAN 50 SOFTGEL CAPSULES)
+strianil gel cream 50g	(Strianil Gel Cream 50g.)
+tecum 0 03 ointment 10 gm	(Tecum 0.03 Ointment 10 GM)
+timview b eye drops 5ml	(TIMVIEW B EYE DROPS 5ML)
+trunex 0 025 gel 30gm	(Trunex 0.025 Gel 30gm)
+trunex 0 05 gel 30gm	(Trunex 0.05 Gel 30gm)
+tyrolite cream 15gm	(Tyrolite Cream 15gm.)
+xerolene cream 50gm	(Xerolene Cream 50gm.)
+xerolene max cream 100 gm	(Xerolene Max Cream 100 Gm.)
+ximplus 100 dry syrup 30ml	(XIMPLUS 100 DRY SYRUP 30ML)
+ximplus 100 dt tablets	(XIMPLUS 100 DT TABLETS)
+ximplus 200 tablets	(XIMPLUS 200 TABLETS)
+zydip c cream 20 gm	(Zydip C Cream 20 Gm)
+zydip lotion 100ml	(Zydip Lotion (100ml))

@@ -1,0 +1,29 @@
+{
+  "file": "RACHIT MEDICAL-PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 23,
+  "area_count": 3,
+  "product_count": 15,
+  "sample_parties": [
+    "ADARSH MEDICAL STORE",
+    "ANSHU MEDICOSE",
+    "ANU MEDICAL STORE",
+    "AROGYA MEDICAL STORE",
+    "BHARAT MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 515.0,
+  "amount_total": 53467.43,
+  "rate_total": 8346.18,
+  "purchase_rate_total": 0.0
+}

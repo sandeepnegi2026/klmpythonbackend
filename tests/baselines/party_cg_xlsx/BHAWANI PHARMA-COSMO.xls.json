@@ -1,0 +1,29 @@
+{
+  "file": "BHAWANI PHARMA-COSMO.xls",
+  "route": "party_xlsx",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 5,
+  "area_count": 3,
+  "product_count": 5,
+  "sample_parties": [
+    "Janta Medical Stores Bhilai-3",
+    "Medicare Pharmacy Durg",
+    "Mr Rahul Patley",
+    "Prachi Medicose",
+    "Rajhera Medical Store P.C.Durg"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 100Gm",
+    "Imxia 2%",
+    "Imxia F",
+    "Klm-D3 60K Capsules (1*8 Cap)",
+    "Kojitin Ultra Emulgel 20Gm"
+  ],
+  "qty_total": 8.0,
+  "amount_total": 2571.39,
+  "rate_total": 1627.37,
+  "purchase_rate_total": 0.0
+}

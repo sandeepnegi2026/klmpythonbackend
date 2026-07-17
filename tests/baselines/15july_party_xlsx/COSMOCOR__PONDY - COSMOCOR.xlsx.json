@@ -1,0 +1,29 @@
+{
+  "file": "COSMOCOR__PONDY - COSMOCOR.xlsx",
+  "route": "party_xlsx",
+  "row_count": 177,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "company_customer_itemwise_area",
+  "party_count": 93,
+  "area_count": 86,
+  "product_count": 30,
+  "sample_parties": [
+    "ABIRAMY MEDICALS",
+    "ABIRAMY PHARMACEUTICALS",
+    "AMBAL MEDICALS",
+    "ANAS MEDICALS",
+    "ARUL MANGAI MEDICALS"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "qty_total": 902.0,
+  "amount_total": 158451.51,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

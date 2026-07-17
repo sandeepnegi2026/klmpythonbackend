@@ -1,0 +1,18 @@
+{
+  "file": "SOURABH MEDICOSE - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 19,
+  "warnings_count": 9,
+  "headers_detected_count": 10,
+  "detected_format": "pharma_bytes_itemcode",
+  "product_count": 18,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash",
+    "Kofcatch Ls 100Ml Junior"
+  ],
+  "closing_stock_total": 295.0,
+  "rate_total": 0.0
+}

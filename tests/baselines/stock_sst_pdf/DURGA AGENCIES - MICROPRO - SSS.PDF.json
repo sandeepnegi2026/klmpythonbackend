@@ -1,0 +1,18 @@
+{
+  "file": "DURGA AGENCIES - MICROPRO - SSS.PDF",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "stock_lstsl",
+  "product_count": 15,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 236.0,
+  "rate_total": 0.0
+}

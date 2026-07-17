@@ -1,0 +1,18 @@
+{
+  "file": "VISNAGAR MEDICAL STORES - PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 40,
+  "sample_products": [
+    "105,106,109,110,ANAND MARKET,FIRST FLOOR,OPP.M.N.COLLEGE ROAD Ph:02765",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 2108.0,
+  "rate_total": 0.0
+}

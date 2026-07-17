@@ -1,0 +1,18 @@
+{
+  "file": "AYACHI MEDICAL STORES - DERMA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_op_rec_iss_clos_grid",
+  "product_count": 25,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "closing_stock_total": 389.0,
+  "rate_total": 0.0
+}

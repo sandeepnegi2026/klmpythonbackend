@@ -1,0 +1,18 @@
+{
+  "file": "N.K.MEDICAL (ZEN MEDICOSE) - COSMO.PDF",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 2,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 30,
+  "sample_products": [
+    "EKRAN AQUA SUNSCREEN GEL.",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 645.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,29 @@
+{
+  "file": "MAA SARDA-DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 19,
+  "area_count": 1,
+  "product_count": 12,
+  "sample_parties": [
+    "ADITYA MEDICAL STORE",
+    "ANU MEDICAL STORE",
+    "ANUJ KUMAR JAIN",
+    "AYANSH MEDICOZ",
+    "CITY MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Klm-D3 60K Capsules (1*8 Cap)",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Intense Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 394.0,
+  "amount_total": 76742.78,
+  "rate_total": 7361.39,
+  "purchase_rate_total": 0.0
+}

@@ -1,0 +1,25 @@
+{
+  "file": "OMKAR ENTERPRISE-COSMO.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 3,
+  "area_count": 1,
+  "product_count": 3,
+  "sample_parties": [
+    "AUM MEDICINES",
+    "SAI MEDICINES",
+    "SHUBHAM MEDICINES"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Histabil Tablet 1*10 Tab",
+    "Nervilift-Nt Tablets"
+  ],
+  "qty_total": 85.0,
+  "amount_total": 18303.9,
+  "rate_total": 1774.15,
+  "purchase_rate_total": 0.0
+}

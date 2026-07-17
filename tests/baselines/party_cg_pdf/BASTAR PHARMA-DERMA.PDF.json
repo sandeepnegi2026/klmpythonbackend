@@ -1,0 +1,29 @@
+{
+  "file": "BASTAR PHARMA-DERMA.PDF",
+  "route": "party_pdf",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 17,
+  "area_count": 3,
+  "product_count": 18,
+  "sample_parties": [
+    "ASHA MEDICAL STORE",
+    "DURGA MEDICOSE",
+    "FUTURE PHARMA MEDICOSE",
+    "GANESH MEDICAL STORES",
+    "JYOTI MEDICOSE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 276.0,
+  "amount_total": 47173.55,
+  "rate_total": 7083.38,
+  "purchase_rate_total": 0.0
+}

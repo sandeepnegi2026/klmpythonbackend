@@ -1,0 +1,18 @@
+{
+  "file": "AYACHI MEDICAL STORES - COSMOQ.PDF",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 16,
+  "detected_format": "marg_qty_value_wide",
+  "product_count": 11,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 123.0,
+  "rate_total": 0.0
+}

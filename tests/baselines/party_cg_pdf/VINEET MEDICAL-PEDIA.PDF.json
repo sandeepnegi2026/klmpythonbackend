@@ -1,0 +1,29 @@
+{
+  "file": "VINEET MEDICAL-PEDIA.PDF",
+  "route": "party_pdf",
+  "row_count": 51,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 31,
+  "area_count": 16,
+  "product_count": 23,
+  "sample_parties": [
+    "AASHEE PHARMACY",
+    "AGRAWAL MEDICARE",
+    "AJAY MEDICAL STORES",
+    "AMAN MEDICAL STORES",
+    "AMIT MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash"
+  ],
+  "qty_total": 1037.0,
+  "amount_total": 160212.06,
+  "rate_total": 7324.47,
+  "purchase_rate_total": 0.0
+}

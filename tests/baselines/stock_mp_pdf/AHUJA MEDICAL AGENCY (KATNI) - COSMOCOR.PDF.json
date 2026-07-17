@@ -1,0 +1,18 @@
+{
+  "file": "AHUJA MEDICAL AGENCY (KATNI) - COSMOCOR.PDF",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_movement_detail",
+  "product_count": 22,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm"
+  ],
+  "closing_stock_total": 279.0,
+  "rate_total": 0.0
+}

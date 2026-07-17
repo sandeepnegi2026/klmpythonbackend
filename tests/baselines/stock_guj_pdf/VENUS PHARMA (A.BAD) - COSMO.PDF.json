@@ -1,0 +1,18 @@
+{
+  "file": "VENUS PHARMA (A.BAD) - COSMO.PDF",
+  "route": "stock_pdf",
+  "row_count": 244,
+  "warnings_count": 20,
+  "headers_detected_count": 8,
+  "detected_format": "venus_stock_statement",
+  "product_count": 234,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 12317.0,
+  "rate_total": 0.0
+}

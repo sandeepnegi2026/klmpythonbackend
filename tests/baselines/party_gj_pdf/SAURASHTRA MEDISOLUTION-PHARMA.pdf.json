@@ -1,0 +1,29 @@
+{
+  "file": "SAURASHTRA MEDISOLUTION-PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 149,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "logic_erp",
+  "party_count": 86,
+  "area_count": 59,
+  "product_count": 26,
+  "sample_parties": [
+    "A P MEDICAL STORE",
+    "A ROY AND CO",
+    "AAIJI MEDI & GEN STORE",
+    "ACES MEDICALS",
+    "AKSHAR MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm"
+  ],
+  "qty_total": 930.0,
+  "amount_total": 109970.98,
+  "rate_total": 25681.83,
+  "purchase_rate_total": 0.0
+}

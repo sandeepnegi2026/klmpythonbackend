@@ -1,0 +1,18 @@
+{
+  "file": "SRI SAI HARSHINI MEDICA - ESSEL SOFTWARE - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 28,
+  "warnings_count": 16,
+  "headers_detected_count": 10,
+  "detected_format": "stock_simple_7col",
+  "product_count": 28,
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 0.0
+}

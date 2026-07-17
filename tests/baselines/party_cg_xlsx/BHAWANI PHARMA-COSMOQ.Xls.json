@@ -1,0 +1,29 @@
+{
+  "file": "BHAWANI PHARMA-COSMOQ.Xls",
+  "route": "party_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 8,
+  "area_count": 4,
+  "product_count": 7,
+  "sample_parties": [
+    "Bharat Medical Hall Branch",
+    "Dr Deepa Meghani",
+    "Dr Meenal Choubey Rjn",
+    "GANESH MEDICAL STORE",
+    "GANESH MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 69.0,
+  "amount_total": 29371.03,
+  "rate_total": 7266.09,
+  "purchase_rate_total": 0.0
+}

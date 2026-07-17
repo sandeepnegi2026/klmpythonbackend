@@ -1,0 +1,29 @@
+{
+  "file": "AYACHI MEDICAL-COSMO.PDF",
+  "route": "party_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 16,
+  "area_count": 8,
+  "product_count": 14,
+  "sample_parties": [
+    "AARVI MEDICOSE",
+    "AKHIL MEDICAL STORE",
+    "ARIHANT MEDICAL STORE",
+    "DINESH MEDICAL STORE",
+    "GOEL MEDICAL AND GENERAL STORE"
+  ],
+  "sample_products": [
+    "EKRAN 80 SPF LOTIO",
+    "EKRAN SOFT GEL",
+    "Enzotret Tablet",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Histabil 40Mg Tablets 1*10 Tab"
+  ],
+  "qty_total": 273.0,
+  "amount_total": 53102.81,
+  "rate_total": 5895.69,
+  "purchase_rate_total": 0.0
+}

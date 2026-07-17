@@ -1,0 +1,175 @@
+{
+  "reports_root": "../../Data",
+  "exclude_contains": [
+    "need review"
+  ],
+  "suites": {
+    "26june_party_pdf": {
+      "route": "party_pdf",
+      "description": "New Data 26 June — Party PDF (curated verified samples)",
+      "files": [
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_1_MAHALAXMI_DISTRIBUTORS_party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_2_MAHALAXMI_DISTRIBUTORS_party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_KLM P_SHREE_BALAJI_MEDICAL_AGENCIES_party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_KLM STATEMENT PDF_PRATHNA_UNITY_PHARMA_LLP_party_product_pdf.PDF",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_KLM2_PATEL_MEDICAL_AGENCIES_party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_Product wise sale list For the period  01-05-2026 - 31-05-2026KLMPDF_NAVKAR_APOTEK_LLP__SHREE_AGENCIES__party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_report_BAJAJ_CHEMIST_party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/[Sample]_report_KUSHAL_DISTRIBUTOR_party_product_pdf.pdf",
+        "New Data/26 June/party_wise-26 June/Pdf/PEDIA_[Sample]_KLM PEDIA MAY P_VIPIN_MEDICAL_AGENCY_party_product_pdf.pdf"
+      ]
+    },
+    "26june_party_xlsx": {
+      "route": "party_xlsx",
+      "description": "New Data 26 June — Party Excel (curated verified samples: MARG ERP 9+ merged-band 'PARTY / ITEM WISE SALES SUMMARY')",
+      "files": [
+        "New Data/26 June/party_wise-26 June/Excel/[Sample]_REPORT_1_SHREE_BALAJI_MEDICAL_AGENCIES_party_product_xlsx.xlsx",
+        "New Data/26 June/party_wise-26 June/Excel/NR-[Sample]_KLMBook1_KUSHAL_DISTRIBUTOR_party_product_xlsx.xlsx",
+        "New Data/26 June/party_wise-26 June/Excel/[Sample]_report (1)_PRASU_PHARMA_party_product_xlsx.xlsx",
+        "New Data/26 June/party_wise-26 June/Excel/[Sample]_KLM SALE PRODUCTWISE_ANAGHA_PHARMACEUTICALS_party_product_xlsx.xlsx"
+      ]
+    },
+    "newdata_stock_pdf": {
+      "route": "stock_pdf",
+      "description": "New Data — Stock PDF (curated verified samples; append as reviewed). Vendor-folder prefixes (Ok-/OK-/ok-) are resolved automatically, so paths use the plain vendor name.",
+      "files": [
+        "../New_Data/AKSHAR MEDICINE/Stock report/KLM S 06.pdf",
+        "../New_Data/AMIT PHARMA/Stock report/StockReport1024325-Jun-2026-14-58-3.pdf",
+        "../New_Data/MANISH MEDICAL CORPORATION/Stock report/klm statement.pdf",
+        "../New_Data/M_S. SIDDHI VINAYAK ASSOCIATES/Stock report/KLM PDF 2.pdf",
+        "../New_Data/UNITED MEDICAL AGENCIES/Stock report/KLM May-26 Sale And Stock Stam.pdf"
+      ]
+    },
+    "party_cg_pdf": {
+      "route": "party_pdf",
+      "description": "Party-wise Sales PDF — CG region (Busy/Tally, Marg, etc.)",
+      "glob": "Party Wise/CG/*.{pdf,PDF}"
+    },
+    "party_gj_pdf": {
+      "route": "party_pdf",
+      "description": "Party-wise Sales PDF — GJ region",
+      "glob": "Party Wise/GJ/*.{pdf,PDF}"
+    },
+    "party_mp_pdf": {
+      "route": "party_pdf",
+      "description": "Party-wise Sales PDF — MP region",
+      "glob": "Party Wise/MP/*.{pdf,PDF}"
+    },
+    "party_xlsx": {
+      "route": "party_xlsx",
+      "description": "Party-wise Sales Excel — mixed layouts",
+      "glob": "Party Wise/Partty-diff/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "party_pp_pdf": {
+      "route": "party_pdf",
+      "description": "Party-wise Sales PDF — PP new formats",
+      "glob": "Party Wise/PP/*.{pdf,PDF}"
+    },
+    "party_pp_xlsx": {
+      "route": "party_xlsx",
+      "description": "Party-wise Sales Excel — PP new formats",
+      "glob": "Party Wise/PP/*.{xlsx,xls,XLSX,XLS,Xls}"
+    },
+    "party_cg_xlsx": {
+      "route": "party_xlsx",
+      "description": "Party-wise Sales Excel — CG region",
+      "glob": "Party Wise/CG/*.{xlsx,xls,XLSX,XLS,Xls}"
+    },
+    "party_gj_xlsx": {
+      "route": "party_xlsx",
+      "description": "Party-wise Sales Excel — GJ region",
+      "glob": "Party Wise/GJ/*.{xlsx,xls,XLSX,XLS,Xls}"
+    },
+    "party_mp_xlsx": {
+      "route": "party_xlsx",
+      "description": "Party-wise Sales Excel — MP region",
+      "glob": "Party Wise/MP/*.{xlsx,xls,XLSX,XLS,Xls}"
+    },
+    "stock_pdf": {
+      "route": "stock_pdf",
+      "description": "Stock & Sales PDF",
+      "glob": "Sales Reports Wise/Sales Diff/*.{pdf,PDF}"
+    },
+    "stock_xlsx": {
+      "route": "stock_xlsx",
+      "description": "Stock & Sales Excel",
+      "glob": "Sales Reports Wise/Sales Diff/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "stock_sst_pdf": {
+      "route": "stock_pdf",
+      "description": "Stock & Sales PDF — SST new formats",
+      "glob": "Sales Reports Wise/SST/*.{pdf,PDF,Pdf}"
+    },
+    "stock_sst_xlsx": {
+      "route": "stock_xlsx",
+      "description": "Stock & Sales Excel — SST new formats",
+      "glob": "Sales Reports Wise/SST/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "stock_cg_pdf": {
+      "route": "stock_pdf",
+      "description": "Stock & Sales PDF — CG region",
+      "glob": "Sales Reports Wise/CG/*.{pdf,PDF,Pdf}"
+    },
+    "stock_cg_xlsx": {
+      "route": "stock_xlsx",
+      "description": "Stock & Sales Excel — CG region",
+      "glob": "Sales Reports Wise/CG/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "stock_guj_pdf": {
+      "route": "stock_pdf",
+      "description": "Stock & Sales PDF — GUJ region",
+      "glob": "Sales Reports Wise/GUJ/*.{pdf,PDF,Pdf}"
+    },
+    "stock_guj_xlsx": {
+      "route": "stock_xlsx",
+      "description": "Stock & Sales Excel — GUJ region",
+      "glob": "Sales Reports Wise/GUJ/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "stock_mp_pdf": {
+      "route": "stock_pdf",
+      "description": "Stock & Sales PDF — MP region",
+      "glob": "Sales Reports Wise/MP/*.{pdf,PDF,Pdf}"
+    },
+    "stock_mp_xlsx": {
+      "route": "stock_xlsx",
+      "description": "Stock & Sales Excel — MP region",
+      "glob": "Sales Reports Wise/MP/*.{xlsx,xls,XLSX,XLS}"
+    },
+    "15july_party_pdf": {
+      "route": "party_pdf",
+      "files": [
+        "New Data/15 July/party_pdf/COSMO Q.pdf",
+        "New Data/15 July/party_pdf/COSMOCOR__COSMOCOR AWS.pdf",
+        "New Data/15 July/party_pdf/COSMOCOR__COSMOCOR MAY.pdf",
+        "New Data/15 July/party_pdf/KLM COSMO COR.pdf",
+        "New Data/15 July/party_pdf/Party_Product_Analysis_63.pdf"
+      ]
+    },
+    "15july_party_xlsx": {
+      "route": "party_xlsx",
+      "files": [
+        "New Data/15 July/party_xlsx/COSMOCOR__COSMOCOR.XLSX",
+        "New Data/15 July/party_xlsx/COSMOCOR__PONDY - COSMOCOR.xlsx",
+        "New Data/15 July/party_xlsx/KLM 1.xlsx",
+        "New Data/15 July/party_xlsx/comppartysale2.xls",
+        "New Data/15 July/party_xlsx/customer-company_wise_product_sales__reps_.xlsx"
+      ]
+    },
+    "15july_stock_pdf": {
+      "route": "stock_pdf",
+      "files": [
+        "New Data/15 July/stock_pdf/KLM COSMOCOR DIV SEC SALES STAT WISE JUNE 26.pdf",
+        "New Data/15 July/stock_pdf/klm cosmo may-26 sale.pdf",
+        "New Data/15 July/stock_pdf/klm may-2.pdf"
+      ]
+    },
+    "15july_stock_xlsx": {
+      "route": "stock_xlsx",
+      "files": [
+        "New Data/15 July/stock_xlsx/KLM LAB PVT LTD DERMACOR_MAY.XLSX",
+        "New Data/15 July/stock_xlsx/STOCK_AND_SALES_STATEMENT_06 07 26_Arvind_Jadhav.xlsx",
+        "New Data/15 July/stock_xlsx/klm sst-1.XLSX"
+      ]
+    }
+  }
+}

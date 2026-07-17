@@ -1,0 +1,18 @@
+{
+  "file": "MERCURY AGENCIES - KLUSTER SOFTWARE - SSS.pdf",
+  "route": "stock_pdf",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "kluster_stock",
+  "product_count": 41,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "closing_stock_total": 603.0,
+  "rate_total": 0.0
+}

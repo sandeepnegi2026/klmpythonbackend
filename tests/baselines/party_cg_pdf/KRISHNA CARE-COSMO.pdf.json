@@ -1,0 +1,29 @@
+{
+  "file": "KRISHNA CARE-COSMO.pdf",
+  "route": "party_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 7,
+  "area_count": 4,
+  "product_count": 7,
+  "sample_parties": [
+    "ABHISEK MEDICAL STORE KUDEKELA",
+    "AMAN MEDICAL STORE RAIGARH",
+    "DEEPAK MEDICAL RAIGARH",
+    "KANHA MEDICOSE MAIN HOSP RGH",
+    "MARUTI MEDICAL STORE RGH"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Histabil Tablet 1*10 Tab"
+  ],
+  "qty_total": 53.0,
+  "amount_total": 16777.59,
+  "rate_total": 3408.3,
+  "purchase_rate_total": 0.0
+}

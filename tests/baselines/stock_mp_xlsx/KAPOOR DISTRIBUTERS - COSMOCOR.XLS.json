@@ -1,0 +1,18 @@
+{
+  "file": "KAPOOR DISTRIBUTERS - COSMOCOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_ss_stmt_prod_desc",
+  "product_count": 31,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 835.0,
+  "rate_total": 4502.91
+}

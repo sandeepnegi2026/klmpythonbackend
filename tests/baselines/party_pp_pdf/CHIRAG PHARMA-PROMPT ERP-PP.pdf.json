@@ -1,0 +1,29 @@
+{
+  "file": "CHIRAG PHARMA-PROMPT ERP-PP.pdf",
+  "route": "party_pdf",
+  "row_count": 508,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 179,
+  "area_count": 34,
+  "product_count": 97,
+  "sample_parties": [
+    "AAIJI MEDICAL & GEN.STORES",
+    "AARADHANA MEDICAL STORE",
+    "AASTHA MEDICAL & GENERAL",
+    "AMBICA MEDICAL STORE.",
+    "ANJANI MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 1067.0,
+  "amount_total": 221633.85,
+  "rate_total": 102303.25,
+  "purchase_rate_total": 0.0
+}

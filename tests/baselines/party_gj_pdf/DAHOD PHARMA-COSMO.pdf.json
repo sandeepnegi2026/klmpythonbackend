@@ -1,0 +1,23 @@
+{
+  "file": "DAHOD PHARMA-COSMO.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_register",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 2,
+  "sample_parties": [
+    "DR.MOHABAT D BARIA",
+    "DWARKESH MEDICAL DAHOD"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 100Gm",
+    "Zycozol-Xl Cream 50 Gm"
+  ],
+  "qty_total": 21.0,
+  "amount_total": 5546.55,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}
