@@ -1,0 +1,30 @@
+{
+  "file": "REPORT.pdf",
+  "route": "party_pdf",
+  "row_count": 399,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "leo_companywise_areawise_billwise",
+  "party_count": 154,
+  "area_count": 100,
+  "product_count": 102,
+  "sample_parties": [
+    "AJI MEDICALS",
+    "AKSHAYA COMMUNITY PHARMACY",
+    "AMMA MEDICALS",
+    "ANGAMALY SEVANA MEDICALS",
+    "ANTONIO HEALING PHARMA CHITTARIKKAL"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "COSMOQ HAIR CONDITIONER 15E0FG5M12 08-27",
+    "COSMOQ HAIR CONDITIONER 15E0FG5M14 11-27",
+    "COSMOQ SERUM 30ML ED509 08-27",
+    "COSMOQ SERUM 30ML ED512 10-27"
+  ],
+  "qty_total": 1159.0,
+  "amount_total": 225969.14,
+  "rate_total": 108592.02,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

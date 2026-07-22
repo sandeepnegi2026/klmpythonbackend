@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA DIVISION-2.Pdf",
+  "route": "party_pdf",
+  "row_count": 92,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 41,
+  "area_count": 0,
+  "product_count": 31,
+  "sample_parties": [
+    "ADITYA PHARMACY City :RAJAHMUNDRY",
+    "AMMAJI MEDICALS. City :RAJAHMUNDRY",
+    "ANITHA MEDICALS. City :RAJAHMUNDRY",
+    "BHAVYASRI PHARMACY. City :RAJAHMUNDRY",
+    "CENTRAL MEDICAL STORES City :RAJAHMUNDRY"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 556.0,
+  "amount_total": 106567.92,
+  "rate_total": 18205.72,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

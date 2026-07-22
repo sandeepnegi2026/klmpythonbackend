@@ -1,0 +1,28 @@
+{
+  "file": "klm pd jun 26 _1_.xlsx",
+  "route": "party_xlsx",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_customer_vs_groups_text",
+  "party_count": 3,
+  "area_count": 3,
+  "product_count": 5,
+  "sample_parties": [
+    "BHAVYASRI PHARMACY",
+    "MAHALAKSHMI MEDICALS",
+    "SAI CHANDU MED &GENRAL"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Powder 100G",
+    "Sofidew Cream 100Gm"
+  ],
+  "qty_total": 88.0,
+  "amount_total": 11549.15,
+  "rate_total": 2862.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

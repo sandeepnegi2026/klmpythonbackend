@@ -1,0 +1,30 @@
+{
+  "file": "SA KLM_Product wise sale list For the period  01-05-2026 - 31-05-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 65,
+  "warnings_count": 0,
+  "headers_detected_count": 33,
+  "detected_format": "tabular",
+  "party_count": 34,
+  "area_count": 20,
+  "product_count": 22,
+  "sample_parties": [
+    "BEWELL MEDICAL",
+    "DAPOLI MEDICALS",
+    "DEVANSH MEDICAL",
+    "DIAMOND MED. & GEN. STORES.",
+    "DR.SHRIRAJ MILIND RAUT.B.A.M.S."
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 181.0,
+  "amount_total": 22395.09,
+  "rate_total": 9309.8,
+  "purchase_rate_total": 8378.65,
+  "line_unexplained": 1
+}

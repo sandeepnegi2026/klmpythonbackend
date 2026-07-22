@@ -1,0 +1,18 @@
+{
+  "file": "PEDIA__PEDIA MAY.PDF",
+  "route": "stock_pdf",
+  "row_count": 49,
+  "warnings_count": 3,
+  "headers_detected_count": 8,
+  "detected_format": "simple4",
+  "product_count": 47,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 1909.0,
+  "rate_total": 0.0
+}

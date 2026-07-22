@@ -1,0 +1,19 @@
+{
+  "file": "Sales And Stock _Detail_ -2.xls",
+  "route": "stock_xlsx",
+  "row_count": 162,
+  "warnings_count": 51,
+  "headers_detected_count": 20,
+  "detected_format": "tabular",
+  "product_count": 157,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CANROLFIN-30GM-CREAM 30 GM(KLM*024)",
+    "COSMO-Q-EYE SERUM 15ML(10009269)",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 1225.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

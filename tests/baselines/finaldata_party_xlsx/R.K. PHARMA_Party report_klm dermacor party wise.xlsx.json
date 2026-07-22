@@ -1,0 +1,30 @@
+{
+  "file": "klm dermacor party wise.xlsx",
+  "route": "party_xlsx",
+  "row_count": 74,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "r15_company_product_wise_sales_custband",
+  "party_count": 34,
+  "area_count": 14,
+  "product_count": 21,
+  "sample_parties": [
+    "ARUNA MED&GEN STORES",
+    "B R P MEDICALS",
+    "DHANALAKSHMI MED& GEN STORES",
+    "HAASINI MEDICALS",
+    "HARI MEDICAL & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 589.0,
+  "amount_total": 116225.95,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

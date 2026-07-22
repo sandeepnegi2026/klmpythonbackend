@@ -1,0 +1,18 @@
+{
+  "file": "NAIK AGENCIES.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 29,
+  "warnings_count": 8,
+  "headers_detected_count": 17,
+  "detected_format": "tabular",
+  "product_count": 27,
+  "sample_products": [
+    "BILL NO.",
+    "CLOSING AMOUNT",
+    "EKRAN SPF-70 CREAM",
+    "EKRAN SPF/30 LOTION",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "closing_stock_total": 332.0,
+  "rate_total": 7849.09
+}

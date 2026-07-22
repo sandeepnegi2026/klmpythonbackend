@@ -53,6 +53,14 @@ _SKIP_SUBSTR = (
 
 _E_WATERMARK_RE = re.compile(r"^(\d+)[eE](\d+)$")
 
+# Pack-unit token with a watermark 'e' bled between the unit and the FIRST data
+# column, e.g. 'KLM D3 NANO SHOTS 5MLe40 ...' where '5ML' is the pack and '40' is
+# OPSTK. Unlike _E_WATERMARK_RE (pure <digit>e<digit>), this token carries a real
+# pack-unit suffix, so it needs splitting into ['5ML','40'] BEFORE the number run.
+_PACK_E_DATA_RE = re.compile(
+    r"^(\d+(?:GM|ML|MG|KG|GML|MLL|LTR|G|L))[eE](\d+)$", re.I
+)
+
 
 def _num(v):
     # '4e0' is a single value 40 with an 'e' bled *inside* it by the diagonal
@@ -76,6 +84,12 @@ def _unglue(tokens):
     """
     out = []
     for t in tokens:
+        pe = _PACK_E_DATA_RE.match(t)
+        if pe:
+            # '5MLe40' -> '5ML' (pack unit, stops the number run) + '40' (OPSTK)
+            out.append(pe.group(1))
+            out.append(pe.group(2))
+            continue
         m = _GLUED_INTCOL_RE.match(t)
         if m and not _is_num(t):
             out.append(m.group(1))

@@ -41,6 +41,7 @@ script runs offline against local files today.)
 from __future__ import annotations
 
 import argparse
+import os
 import csv
 import hashlib
 import html
@@ -356,7 +357,8 @@ def main() -> int:
     ap.add_argument("--route", choices=sorted(ROUTES), help="Required with --folder")
     ap.add_argument("--batches", default=str(ROOT / "batches.json"), help="Batch registry file (used with --batch)")
     ap.add_argument("--out", default=None, help="Output directory (default: _triage, or _triage/<batch>)")
-    ap.add_argument("--workers", type=int, default=1, help="Parallel worker processes")
+    ap.add_argument("--workers", type=int, default=min(16, max(1, (os.cpu_count() or 4) - 2)),
+                    help="Parallel worker processes (default: auto = min(16, cores-2))")
     ap.add_argument("--refresh", action="store_true", help="Ignore the cache and re-extract every file")
     args = ap.parse_args()
 

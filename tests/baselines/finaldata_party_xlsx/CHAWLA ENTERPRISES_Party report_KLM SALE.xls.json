@@ -1,0 +1,30 @@
+{
+  "file": "KLM SALE.xls",
+  "route": "party_xlsx",
+  "row_count": 66,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 17,
+  "area_count": 9,
+  "product_count": 40,
+  "sample_parties": [
+    "AHUJA MEDICAL STORE",
+    "ANIL @ CO.",
+    "AULAKH HOSPITAL",
+    "DHILLON PHARMACY",
+    "DR MANSI KANSAL"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 30 Gm",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "qty_total": 1276.0,
+  "amount_total": 240758.35,
+  "rate_total": 13993.79,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

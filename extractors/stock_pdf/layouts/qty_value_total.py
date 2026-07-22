@@ -72,6 +72,33 @@ def parse_qty_value_total(text):
             # ...ClosQ ClosV Dump MSR (12: stray glued name digit leads) -> LAST 11,
             # then keep the 9 movement numbers (drop Dump vals[9] and MSR vals[10]).
             vals = vals[-11:][:9]
+        elif len(vals) in (10, 11, 12) and not has_near and not has_dump_msr:
+            # Bare-number PACK (tablets/capsules: "ENZOTRET 10", "ONITRAZ CAP 10")
+            # or a name-strength ("RESOTEN 20 10") that _split_product_numbers pulled
+            # into the number tail as LEADING extra(s). GM/ML packs keep a unit letter
+            # and stay in the name, so only unit-less packs leak here. The 9 movement
+            # columns are always the TRAILING 9; the leading number(s) are pack/size.
+            #
+            # SAFETY (reconcile-gated): accept ONLY if the trailing 9 satisfy this
+            # layout's own identities  Total == Opening + Receipt  AND
+            # Closing == Opening + Receipt - Sales. If the extra had instead been a
+            # TRAILING column (e.g. an un-flagged Age/value), the trailing-9 window is
+            # shifted and these identities fail, so the row drops EXACTLY as before.
+            # This branch fires only for 10/11-number rows with no near/dump header —
+            # cases the parser currently drops outright — so it can only RECOVER rows
+            # and can never alter one already extracted by the 8/9/near/dump paths.
+            n_lead = len(vals) - 9
+            cand = vals[-9:]
+            lead_toks = tail[:n_lead]
+            if (all("." not in t and "," not in t for t in lead_toks)   # pack/size are integers
+                    and abs(cand[4] - (cand[0] + cand[2])) < 0.5        # Total == Op + Receipt
+                    and abs(cand[7] - (cand[0] + cand[2] - cand[5])) < 0.5):  # Close == Op+Rec-Sale
+                if not pack and lead_toks:
+                    pack = lead_toks[-1]              # last leaked number is the PACK
+                if n_lead > 1:                        # earlier leaked number(s) = name strength
+                    name = (name + " " + " ".join(lead_toks[:-1])).strip()
+                vals = cand
+            # else: vals stays length 10/11 -> falls through to the else below (dropped)
         if len(vals) == 9:
             r = {
                 "product_name": name,

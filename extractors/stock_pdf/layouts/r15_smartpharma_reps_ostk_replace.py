@@ -55,7 +55,7 @@ from extractors.stock_pdf.parse_common import (
     _to_number,
 )
 
-_NUM = re.compile(r"^-?\d+(?:\.\d+)?$")
+_NUM = re.compile(r"^-?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?$|^-?\d+(?:\.\d+)?$")
 # A bare-numeric or size-style pack that may sit immediately before the data window.
 _PACK_TOK = re.compile(r"^(?:\d+|\d*\*\d+|\d+(?:\.\d+)?[A-Za-z]+|[A-Za-z]+\d*)$")
 

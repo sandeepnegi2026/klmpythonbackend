@@ -169,12 +169,28 @@ def test_text_but_no_rows_is_unknown_layout():
     assert b == "RED" and code == "UNKNOWN_LAYOUT"
 
 
-def test_missing_product_name_is_red():
+def test_rollup_no_product_column_is_amber():
+    # Party roll-up: product_name empty AND no product column in the source (Item header
+    # absent from detected_fields). We can't tell a legit party-total roll-up from a broken
+    # one, so it must NOT auto-pass GREEN and must NOT hard-reject a possibly-legit roll-up
+    # -> AMBER for a human glance. (Regression guard for the GREEN false-pass the cross-check
+    # caught: a product-less roll-up used to land GREEN.)
     rows = party_rows()
     for r in rows:
         r["product_name"] = ""
     res = party_result(rows)
-    res["headers_detected"].pop("Item", None)  # no header match either
+    res["headers_detected"].pop("Item", None)  # no product column detected
+    b, code = bucket(res, "party")
+    assert b == "AMBER" and code == "PRODUCT_ROLLUP"
+
+
+def test_missing_product_name_with_column_is_red():
+    # A real dropped-product bug: the product column WAS detected (Item header present) but
+    # every value is empty -> the parser lost the products -> RED, never treated as a roll-up.
+    rows = party_rows()
+    for r in rows:
+        r["product_name"] = ""
+    res = party_result(rows)  # keep the Item header -> product_name IS in detected_fields
     b, code = bucket(res, "party")
     assert b == "RED" and code.startswith("MISSING_REQUIRED_FIELD")
 
@@ -343,6 +359,143 @@ def test_duplicate_rows_is_amber():
     assert b == "AMBER" and code in ("DUPLICATE_ROWS", "CONSTANT_COLUMN")
 
 
+def cosmo_style_result(mismatch_rows=5, n=20):
+    """COSMO 'Stock sales statement Small' shape: per-unit Rate + quantity columns,
+    NO per-row value column, and a printed rupee grand total the vendor computed as
+    Σ rate×closing. `mismatch_rows` rows carry the vendor's own +5 closing surplus
+    (free/scheme goods added to closing with no receipt), so quantity reconciliation
+    fails on them while the extraction is byte-faithful."""
+    rows = []
+    rate_total = 0.0
+    for i in range(n):
+        op, pur, sal = 10 + i, 5 + (i % 3), 7 + (i % 4)
+        cl = op + pur - sal + (5 if i < mismatch_rows else 0)
+        rate = 100.0 + i
+        rate_total += rate * cl
+        rows.append({
+            "product_name": _name(i), "pack": "10",
+            "opening_stock": str(op), "purchase_stock": str(pur),
+            "purchase_free": "0", "purchase_return": "0",
+            "sales_qty": str(sal), "sales_value": "0",
+            "sales_free": "0", "sales_return": "0",
+            "closing_stock": str(cl), "closing_stock_value": "0",
+            "rate": str(rate),
+            "vendor_name": "ACME", "report_start_date": "2026-05-01",
+            "report_end_date": "2026-05-31", "division": "COSMO",
+        })
+    return {
+        "rows": rows,
+        "headers_detected": {"Product Name": "product_name", "Rate": "rate",
+                             "Opening": "opening_stock", "Reciept": "purchase_stock",
+                             "Sales": "sales_qty", "Closing": "closing_stock"},
+        "raw_text": ("stock sales statement small for the period\n"
+                     + "\n".join(f"{r['product_name']} 10 {r['rate']} {r['opening_stock']} "
+                                 f"{r['purchase_stock']} {r['sales_qty']} {r['closing_stock']}"
+                                 for r in rows)
+                     + f"\nGrand Total : {round(rate_total, 2)}\n"),
+        "warnings": [],
+        "sanity": {"pass_rate": (n - mismatch_rows) / n},
+    }
+
+
+def test_cosmo_rate_qty_proof_downgrades_red_to_amber():
+    # The COSMO false-RED: quantity reconcile fails on 25% of rows (vendor's own
+    # surplus), no per-row value column exists, but Σ rate×closing matches the
+    # printed rupee grand total — proof the columns are mapped right. Must land
+    # AMBER SANITY_VALUE_OK leading with "Extraction is correct", never RED.
+    v = verdict(cosmo_style_result(), "stock")
+    assert v["bucket"] == "AMBER" and v["reason_code"] == "SANITY_VALUE_OK", v
+    assert v["reason"].startswith("Extraction is correct"), v["reason"]
+    assert v["extraction_ok"] is True, v
+    # both percentages present: extraction % and the vendor data-mismatch %
+    assert "25%" in v["reason"], v["reason"]
+
+
+def test_cosmo_without_printed_total_stays_red():
+    # Same file WITHOUT the printed grand total: no proof -> the quantity failure
+    # keeps its RED (a genuine misalignment must never be whitewashed).
+    res = cosmo_style_result()
+    res["raw_text"] = res["raw_text"].rsplit("Grand Total", 1)[0]
+    v = verdict(res, "stock")
+    assert v["bucket"] == "RED" and v["reason_code"] == "SANITY_FAILED", v
+    assert v["reason"].startswith("Extraction is NOT correct"), v["reason"]
+    assert v["extraction_ok"] is False, v
+
+
+# --------------------------------------------------------------------------- #
+# row completeness — the census behind "all N of N rows captured"
+# --------------------------------------------------------------------------- #
+def party_result_with_grid_text(extra_lines=0):
+    """Party rows plus a raw_text grid carrying one census-visible line per row,
+    plus `extra_lines` product-looking lines that match NO extracted row."""
+    res = party_result()
+    lines = ["party wise sales register"]
+    for r in res["rows"]:
+        lines.append(f"{r['product_name']} {r['qty']} {r['rate']} {r['taxable_value']}")
+    for i in range(extra_lines):
+        lines.append(f"ZZGHOSTLINE UNCAPTURED {i} 99 123.45")
+    res["raw_text"] = "\n".join(lines)
+    return res
+
+
+def test_census_complete_claims_all_rows():
+    res = party_result_with_grid_text()
+    q = build_quality(res, "party")
+    rc = q["checks"]["row_completeness"]
+    assert rc["expected"] == 15 and rc["matched"] == 15, rc
+    assert "all 15 of 15" in q["triage"]["reason"], q["triage"]["reason"]
+
+
+def test_census_gap_never_alarms_or_claims():
+    # A census gap is noise far more often than a real drop (measured on the
+    # standing corpus: 365 flagged files, ALL noise — addresses/footers/banners),
+    # so it must neither flip the verdict nor put a scary partial % in the
+    # message. The gap data stays in checks["row_completeness"] for auditors;
+    # a real drop is still caught by TOTAL_MISMATCH via the printed total.
+    res = party_result_with_grid_text(extra_lines=4)  # 4 of 19 lines unmatched
+    q = build_quality(res, "party")
+    v = q["triage"]
+    assert v["reason_code"] != "MISSING_ROWS", v
+    assert "all 15 of 15" not in v["reason"], v["reason"]
+    assert "% —" not in v["reason"].split(".")[1] if "Extraction:" in v["reason"] else True
+    rc = q["checks"]["row_completeness"]
+    assert rc["expected"] == 19 and rc["matched"] == 15, rc  # data kept for audits
+
+
+def test_census_gap_with_total_proof_still_confirms_completeness():
+    # The printed grand total matches our summed amounts -> mathematically no
+    # value-carrying row was dropped; the 4 unmatched lines are census noise and
+    # the message may still confirm nothing is missing.
+    res = party_result_with_grid_text(extra_lines=4)
+    total = sum(float(r["taxable_value"]) for r in res["rows"])
+    res["raw_text"] += f"\nGrand Total : {total:.2f}"
+    v = verdict(res, "party")
+    assert v["reason_code"] != "MISSING_ROWS", v
+    assert "printed grand total" in v["reason"], v["reason"]
+    # HONEST claim: the printed-total proof covers only value-bearing rows (a dropped
+    # zero-value row is invisible to the total), so the message must NOT over-claim
+    # "no data row is missing" — it says "no value-bearing row is missing".
+    assert "no value-bearing row is missing" in v["reason"], v["reason"]
+    assert "no data row is missing" not in v["reason"], v["reason"]
+
+
+# --------------------------------------------------------------------------- #
+# extraction_ok — the machine-readable verdict driving the 4-state badge
+# --------------------------------------------------------------------------- #
+def test_extraction_ok_none_on_unproven_amber():
+    res = party_result(party_value_mostly_zero_rows())  # partial column, no proof
+    res["raw_text"] = "party wise sales register"
+    v = verdict(res, "party")
+    assert v["bucket"] == "AMBER" and v["extraction_ok"] is None, v
+    assert v["reason"].startswith("Extraction needs a quick check"), v["reason"]
+
+
+def test_extraction_ok_false_on_red():
+    v = verdict({"rows": [], "headers_detected": {}, "raw_text": "", "warnings": []}, "stock")
+    assert v["bucket"] == "RED" and v["extraction_ok"] is False, v
+    assert v["reason"].startswith("Extraction is NOT correct"), v["reason"]
+
+
 # --------------------------------------------------------------------------- #
 # GREEN — clean extraction (needs a catalog to clear the master gate)
 # --------------------------------------------------------------------------- #
@@ -353,9 +506,77 @@ def test_clean_stock_is_green():
 
 
 @pytest.mark.skipif(not _HAVE_CATALOG, reason="product_master catalog unavailable")
+def test_green_says_extraction_correct():
+    v = verdict(stock_result(), "stock")
+    assert v["bucket"] == "GREEN" and v["reason_code"] == "CLEAN", v
+    assert v["reason"].startswith("Extraction is correct"), v["reason"]
+    assert v["extraction_ok"] is True, v
+
+
+@pytest.mark.skipif(not _HAVE_CATALOG, reason="product_master catalog unavailable")
 def test_clean_party_is_green():
     b, code = bucket(party_result(), "party")
     assert b == "GREEN" and code == "CLEAN"
+
+
+def _lossy_line_audit():
+    return {
+        "applicable": True,
+        "counts": {"lines": 260, "noise": 5, "total": 3, "context": 2,
+                   "context_unclaimed": 0, "data": 200, "claimed": 150,
+                   "unexplained": 50},
+        "unexplained_ratio": 0.25,
+        "unexplained_sample": ["DROPPED 5.00AB123 SZ1 09-05-26 5. 123.45X"],
+    }
+
+
+def test_unaccounted_lines_shadow_by_default():
+    """Gate default is SHADOW: a lossy ledger must not change the verdict."""
+    import core.triage as T
+    res = party_result()
+    res["line_audit"] = _lossy_line_audit()
+    old = T._LEDGER_GATE
+    T._LEDGER_GATE = False
+    try:
+        b, code = bucket(res, "party")
+    finally:
+        T._LEDGER_GATE = old
+    assert code != "UNACCOUNTED_LINES"
+
+
+def test_unaccounted_lines_fires_when_gated():
+    """With the gate on, unexplained source lines cap the verdict at AMBER
+    UNACCOUNTED_LINES with extraction_ok=None (never 'Extraction is correct')."""
+    import core.triage as T
+    res = party_result()
+    res["line_audit"] = _lossy_line_audit()
+    old = T._LEDGER_GATE
+    T._LEDGER_GATE = True
+    try:
+        v = verdict(res, "party")
+    finally:
+        T._LEDGER_GATE = old
+    assert v["bucket"] == "AMBER"
+    assert v["reason_code"] == "UNACCOUNTED_LINES"
+    assert v["extraction_ok"] is None
+    assert not v["reason"].startswith("Extraction is correct")
+
+
+def test_unaccounted_lines_quiet_below_thresholds():
+    """A handful of unexplained lines (below min_lines/ratio) never fires."""
+    import core.triage as T
+    res = party_result()
+    la = _lossy_line_audit()
+    la["counts"]["unexplained"] = 2
+    la["unexplained_ratio"] = 0.01
+    res["line_audit"] = la
+    old = T._LEDGER_GATE
+    T._LEDGER_GATE = True
+    try:
+        b, code = bucket(res, "party")
+    finally:
+        T._LEDGER_GATE = old
+    assert code != "UNACCOUNTED_LINES"
 
 
 if __name__ == "__main__":

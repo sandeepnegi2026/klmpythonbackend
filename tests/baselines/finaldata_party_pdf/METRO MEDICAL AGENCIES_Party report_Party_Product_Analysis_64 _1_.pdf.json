@@ -1,0 +1,30 @@
+{
+  "file": "Party_Product_Analysis_64 _1_.pdf",
+  "route": "party_pdf",
+  "row_count": 164,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "metro_orion_product_analysis",
+  "party_count": 97,
+  "area_count": 37,
+  "product_count": 34,
+  "sample_parties": [
+    "AAIJEE CHEMIST(E) ****(STATION)",
+    "AKSHAY MEDICAL AGENCY",
+    "AMBAJI MEDICAL&GEN STORE(AVINA)",
+    "AMBAJI MEDICAL(WEST)",
+    "ANIL MEDICAL & GEN STORES"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 655.0,
+  "amount_total": 193071.17,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 20
+}

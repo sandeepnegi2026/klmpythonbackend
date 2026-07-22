@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK AND SALES.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 217,
+  "warnings_count": 9,
+  "headers_detected_count": 11,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 205,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 3210.0,
+  "rate_total": 0.0,
+  "line_unexplained": 12
+}

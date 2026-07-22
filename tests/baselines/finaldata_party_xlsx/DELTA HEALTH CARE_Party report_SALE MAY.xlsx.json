@@ -1,0 +1,30 @@
+{
+  "file": "SALE MAY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 232,
+  "warnings_count": 0,
+  "headers_detected_count": 19,
+  "detected_format": "tabular",
+  "party_count": 87,
+  "area_count": 12,
+  "product_count": 60,
+  "sample_parties": [
+    "AAROGYAMM PHARMA AND TRADING CO",
+    "ACTIVE INDIA PHARMACY          SEC-3",
+    "AGGARWAL MEDICAL STORE         OLD MKT",
+    "AHUJA MEDICAL STORE            SEC-3",
+    "AHUJA MEDICOS                  SEC-8"
+  ],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Dektop Cream 20Gm",
+    "EXTEND SOFTGEL",
+    "Ekran Aqua Gel 50Gm",
+    "Extend Hair 1*30 Gummy Pouches"
+  ],
+  "qty_total": 920.5,
+  "amount_total": 161816.31,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

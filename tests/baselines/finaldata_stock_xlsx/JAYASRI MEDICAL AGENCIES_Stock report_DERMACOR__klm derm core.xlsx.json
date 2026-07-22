@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__klm derm core.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 45,
+  "warnings_count": 23,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 39,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "EXTEND SOFYGEL CAP",
+    "Extend Eva Capsules",
+    "Extend Hair 1*30 Gummy Pouches"
+  ],
+  "closing_stock_total": 960.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

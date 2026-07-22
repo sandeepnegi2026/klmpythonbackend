@@ -100,7 +100,11 @@ def parse_siva_stock(text):
             if pending_text and records:
                 records[-1]["product_name"] += " " + pending_text
                 pending_text = ""
-            break
+            # A mid-file footer (per-page "Total :" / "Powered by" / "Page N") must
+            # NOT abort the whole parse, or every data row on later pages is dropped.
+            # This branch is checked BEFORE _SERNO_RE below, so the footer line itself
+            # is still fully rejected (never emitted as a data row); skip only it.
+            continue
 
         m = _SERNO_RE.match(line)
         if m:

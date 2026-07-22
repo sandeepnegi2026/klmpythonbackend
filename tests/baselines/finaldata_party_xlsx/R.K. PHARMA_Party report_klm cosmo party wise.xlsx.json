@@ -1,0 +1,22 @@
+{
+  "file": "klm cosmo party wise.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "r15_company_product_wise_sales_custband",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "MOTHER MEDICAL AND FANCY STORES"
+  ],
+  "sample_products": [
+    "Imxia Xl Serum 60Ml"
+  ],
+  "qty_total": 5.0,
+  "amount_total": 4813.55,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

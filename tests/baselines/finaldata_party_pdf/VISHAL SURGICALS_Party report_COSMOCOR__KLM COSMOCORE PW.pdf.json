@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR__KLM COSMOCORE PW.pdf",
+  "route": "party_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "AARYA MEDICAL & GEN STORE",
+    "CITY CENTRAL MEDICAL HALL",
+    "KAMALA MEDICAL HALL",
+    "LALITHA MED & GEN STORES",
+    "NARAYAN MEDICALS"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "qty_total": 340.0,
+  "amount_total": 96382.82,
+  "rate_total": 8013.52,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

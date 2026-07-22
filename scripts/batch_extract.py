@@ -63,7 +63,11 @@ PER_FILE_TIMEOUT_S = 600.0
 # Core modules that actually participate in extraction (imported by the pipelines).
 # Triage/quality/scoring are deliberately excluded so tuning them does not force a
 # full re-extract of the batch.
-_EXTRACTION_CORE = ("canonical.py", "header_match.py", "pack_match.py", "product_master.py")
+_EXTRACTION_CORE = ("canonical.py", "header_match.py", "line_ledger.py",
+                    "pack_match.py", "product_master.py")
+# Core modules that affect ONE route family only (so editing them busts just that
+# family's cache, never the other). party_filter is imported solely by the party pipelines.
+_ROUTE_ONLY_CORE = {"party": ("party_filter.py",)}
 
 
 def report_type(route: str) -> str:
@@ -105,7 +109,9 @@ def _route_sources(route: str):
         if rdir.exists():
             yield from sorted(rdir.rglob("*.py"))       # this route's package only
     core = ROOT / "core"
-    for name in _EXTRACTION_CORE:
+    family = report_type(route)  # "party" | "stock"
+    names = tuple(_EXTRACTION_CORE) + _ROUTE_ONLY_CORE.get(family, ())
+    for name in names:
         p = core / name
         if p.exists():
             yield p

@@ -1,0 +1,19 @@
+{
+  "file": "STOCK_AND_SALES_STATEMENT_23 06 26_klm stock st may.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 246,
+  "warnings_count": 43,
+  "headers_detected_count": 9,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 243,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 10763.0,
+  "rate_total": 0.0,
+  "line_unexplained": 4
+}

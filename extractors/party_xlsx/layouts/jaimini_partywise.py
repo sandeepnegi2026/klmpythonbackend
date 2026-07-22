@@ -26,7 +26,7 @@ def parse_jaimini_partywise(rows):
         if is_subtotal(product):
             continue
         qty = cell_text(raw_row[3] if len(raw_row) > 3 else "")
-        if not is_numeric_qty(qty):
+        if not is_numeric_qty(qty.replace(",", "")):
             current_party = (
                 product.rstrip("[]").split("[")[0].strip() if product else product
             )

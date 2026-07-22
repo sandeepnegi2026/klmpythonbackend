@@ -1,0 +1,30 @@
+{
+  "file": "KLM PDF.pdf",
+  "route": "party_pdf",
+  "row_count": 325,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally_itemwise",
+  "party_count": 100,
+  "area_count": 17,
+  "product_count": 90,
+  "sample_parties": [
+    "AAI",
+    "AAIJEE MEDICAL STORE",
+    "ADARSH MEDICAL STORE",
+    "ASHOK MEDICAL",
+    "ASHOK MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 1522.0,
+  "amount_total": 270449.3,
+  "rate_total": 63193.1,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

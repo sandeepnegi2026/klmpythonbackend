@@ -1,0 +1,18 @@
+{
+  "file": "ilovepdf_merged _2_.pdf",
+  "route": "stock_pdf",
+  "row_count": 168,
+  "warnings_count": 6,
+  "headers_detected_count": 11,
+  "detected_format": "marg_bordered",
+  "product_count": 106,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 2124.0,
+  "rate_total": 0.0
+}

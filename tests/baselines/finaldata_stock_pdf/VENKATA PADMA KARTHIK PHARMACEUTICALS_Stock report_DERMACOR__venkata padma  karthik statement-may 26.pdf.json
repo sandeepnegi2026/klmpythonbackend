@@ -1,0 +1,18 @@
+{
+  "file": "DERMACOR__venkata padma  karthik statement-may 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 11,
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "closing_stock_total": 14.0,
+  "rate_total": 0.0
+}

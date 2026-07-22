@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__SUDHA PARTY.PDF",
+  "route": "party_pdf",
+  "row_count": 96,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 66,
+  "area_count": 18,
+  "product_count": 23,
+  "sample_parties": [
+    "A TO Z PHARMA",
+    "AJIT MEDICALS",
+    "AKRITI MEDICAL HALL",
+    "AL SHIFA MEDICAL",
+    "ALI MEDICAL HALL KANTATOL"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Gold Soft Gelatin Capsules",
+    "Extend Total 1*15 Tab"
+  ],
+  "qty_total": 267.0,
+  "amount_total": 44138.88,
+  "rate_total": 17737.35,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

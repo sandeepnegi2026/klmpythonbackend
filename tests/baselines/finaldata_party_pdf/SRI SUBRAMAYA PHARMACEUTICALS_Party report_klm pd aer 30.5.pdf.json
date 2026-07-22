@@ -1,0 +1,30 @@
+{
+  "file": "klm pd aer 30.5.pdf",
+  "route": "party_pdf",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "r15_klm_group_vs_customer_icode",
+  "party_count": 10,
+  "area_count": 5,
+  "product_count": 11,
+  "sample_parties": [
+    "GOUTHMI MEDICALS (A20)",
+    "KANYAKA MEDICAL&GEN STO",
+    "KUMARI MEDICALS & GENER",
+    "LIFE MEDICALS (A12)",
+    "SRI DHARMA SAI MEDICAL ST"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klm D3 Nano Drops",
+    "Mupisoft Ointment 5 Gm",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 173.0,
+  "amount_total": 21825.79,
+  "rate_total": 5367.9,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

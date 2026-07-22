@@ -1,0 +1,18 @@
+{
+  "file": "DERMACOR__dermacor.PDF",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_month_prv2",
+  "product_count": 21,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Plus Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml"
+  ],
+  "closing_stock_total": 311.0,
+  "rate_total": 0.0
+}

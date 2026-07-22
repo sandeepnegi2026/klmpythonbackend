@@ -1,0 +1,30 @@
+{
+  "file": "KLM SALE PRODUCTWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1107,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "customer_product_banded",
+  "party_count": 211,
+  "area_count": 123,
+  "product_count": 147,
+  "sample_parties": [
+    "AAI ANUSUYA MEDICAL STORES",
+    "AAKASH MEDICAL STORES",
+    "ACHAL GABHANE",
+    "ADITYA MEDICAL &GENERAL STORES",
+    "ADVYA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 4855.0,
+  "amount_total": 804920.49,
+  "rate_total": 223714.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

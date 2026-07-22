@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR__prashant_cosmocor_may 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 25,
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "closing_stock_total": 1073.0,
+  "rate_total": 0.0
+}

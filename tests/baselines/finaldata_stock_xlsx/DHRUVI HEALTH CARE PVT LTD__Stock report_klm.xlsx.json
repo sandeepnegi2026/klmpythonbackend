@@ -1,0 +1,19 @@
+{
+  "file": "klm.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 112,
+  "warnings_count": 45,
+  "headers_detected_count": 13,
+  "detected_format": "klm_op_pi_sale_cl_value_xlsx",
+  "product_count": 112,
+  "sample_products": [
+    "COSMOQ 200ML SHAMPOO",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Brightening Serum 30Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 2053.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "DERMACOR__KLM DERMACORE-06.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "swil_stock_company_summary",
+  "product_count": 30,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Plus Tablets"
+  ],
+  "closing_stock_total": 60.0,
+  "rate_total": 0.0
+}

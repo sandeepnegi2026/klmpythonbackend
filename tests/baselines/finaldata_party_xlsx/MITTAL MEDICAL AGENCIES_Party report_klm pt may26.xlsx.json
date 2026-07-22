@@ -1,0 +1,30 @@
+{
+  "file": "klm pt may26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1749,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 254,
+  "area_count": 50,
+  "product_count": 214,
+  "sample_parties": [
+    "ABHIJEET MEDICAL",
+    "ADARSH MEDI & GEN STORES",
+    "ADITI MEDICAL STORES",
+    "AGRAWAL MEDICAL",
+    "AGRAWAL MEDICAL & GEN STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 11508.0,
+  "amount_total": 1765098.9,
+  "rate_total": 332709.12,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

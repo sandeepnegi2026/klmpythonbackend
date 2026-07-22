@@ -1,0 +1,18 @@
+{
+  "file": "DERMACOR__DERMACOR STOCK.pdf",
+  "route": "stock_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 29,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "closing_stock_total": 333.0,
+  "rate_total": 0.0
+}

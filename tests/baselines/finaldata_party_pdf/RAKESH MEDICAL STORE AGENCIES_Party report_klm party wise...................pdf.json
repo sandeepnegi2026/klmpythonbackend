@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise...................pdf",
+  "route": "party_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_item_wise_sale",
+  "party_count": 14,
+  "area_count": 0,
+  "product_count": 9,
+  "sample_parties": [
+    "ALL WELL CHEMISTS KUSUMPTI -KASUMPT",
+    "AREA MANAGER (ARKI ) -solan",
+    "AREA MANAGER HPSCS DDUH -SHIMLA",
+    "CHAUHAN MEDICOS LAKKAR BAZAR -SHIMLA",
+    "DEEP MEDICAL STORE - N R H -SHIMLA"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Ekran Aqua Gel 100Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "KLM CUTIHEAL CREAM | KLM HISTABIL M SUS.. | KLM NIOCLEAN AD GEL",
+    "Kojitin Emulgel 15Gm"
+  ],
+  "qty_total": 129.58,
+  "amount_total": 25027.58,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 12
+}

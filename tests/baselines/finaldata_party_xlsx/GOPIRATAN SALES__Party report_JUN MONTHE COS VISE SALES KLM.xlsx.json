@@ -1,0 +1,30 @@
+{
+  "file": "JUN MONTHE COS VISE SALES KLM.xlsx",
+  "route": "party_xlsx",
+  "row_count": 467,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "customer_product_banded",
+  "party_count": 95,
+  "area_count": 86,
+  "product_count": 133,
+  "sample_parties": [
+    "A.N.TAMBOLI MEDICAL  HINGANGHA",
+    "AADYA MEDICAL WARDHA",
+    "AASHIRWAD MEDICALS WARDHA",
+    "ADARSHA MEDICALS WAIGAON",
+    "AMOL MEDICALS    WARDHA"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 2759.0,
+  "amount_total": 466219.85,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

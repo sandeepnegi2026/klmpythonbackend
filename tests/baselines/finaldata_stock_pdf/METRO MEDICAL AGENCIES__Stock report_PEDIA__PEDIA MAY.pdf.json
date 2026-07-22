@@ -1,0 +1,18 @@
+{
+  "file": "PEDIA__PEDIA MAY.pdf",
+  "route": "stock_pdf",
+  "row_count": 57,
+  "warnings_count": 3,
+  "headers_detected_count": 9,
+  "detected_format": "stock_unit_op_purc_sale_cl",
+  "product_count": 50,
+  "sample_products": [
+    ".SOFIDEW BABY LOTION",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 1213.0,
+  "rate_total": 0.0
+}

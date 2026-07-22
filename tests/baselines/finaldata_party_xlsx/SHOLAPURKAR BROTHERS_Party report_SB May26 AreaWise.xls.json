@@ -1,0 +1,30 @@
+{
+  "file": "SB May26 AreaWise.xls",
+  "route": "party_xlsx",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "partywise_band",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 10,
+  "sample_parties": [
+    "AKSHATA MEDICAL CENTRE",
+    "MAHALDAR MED CENTRE",
+    "MAYURI JAJU  DR  +",
+    "MULWAD DRUG HOUSE",
+    "PRABHA MED STORES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Kenz Soap"
+  ],
+  "qty_total": 128.0,
+  "amount_total": 34659.81,
+  "rate_total": 2556.26,
+  "purchase_rate_total": 2300.61,
+  "line_unexplained": 1
+}

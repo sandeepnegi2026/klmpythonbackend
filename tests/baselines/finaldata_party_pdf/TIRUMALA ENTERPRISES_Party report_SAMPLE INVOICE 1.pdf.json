@@ -1,0 +1,26 @@
+{
+  "file": "SAMPLE INVOICE 1.pdf",
+  "route": "party_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "tax_invoice",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "SHANKAR MEDICAL STORES"
+  ],
+  "sample_products": [
+    "A10L0GMASU NENWWDT0021ER 1/2P8 CEBHYTDRAI CRREAMU 100MGM",
+    "ANASURE 5% 60ML SUN SXH0309A",
+    "DERMADEW BACT SOAP 75GM H&H B094",
+    "FUNGICROS CREAM 30GM SUN ZNC0057",
+    "HALOSALY OINT 20GMS ICL 213"
+  ],
+  "qty_total": 66.0,
+  "amount_total": 12682.43,
+  "rate_total": 2642.56,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

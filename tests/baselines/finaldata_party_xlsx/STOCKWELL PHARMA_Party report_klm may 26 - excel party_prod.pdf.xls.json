@@ -1,0 +1,30 @@
+{
+  "file": "klm may 26 - excel party_prod.pdf.xls",
+  "route": "party_xlsx",
+  "row_count": 180,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_party_banded",
+  "party_count": 83,
+  "area_count": 5,
+  "product_count": 84,
+  "sample_parties": [
+    "ABHINANDAN PHARMACY 16.RUBY COMPLEX,SHANTADEVI,NAVSARI,",
+    "ADARSH CHEMIST BHATAR 5 SHIV DARSHAN APPARTMENTNR SHITAL SHOPPING SQUAREBHATAR ROAD,SURAT",
+    "ADITYA MEDICAL AND PRO STORES 2,UMANG,18,PRENA NGR.TADWADIRANDER ROAD,",
+    "ADITYA MEDICINE POINT 4,PRASANG APARTMENTCITY LIGHT MAIN",
+    "AMIT MEDICAL STORES BHAGAL 9/467 WADI FALIYA , MAIN ROAD,NEAR CANARA BANKSURAT"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 363.0,
+  "amount_total": 53010.84,
+  "rate_total": 28246.28,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

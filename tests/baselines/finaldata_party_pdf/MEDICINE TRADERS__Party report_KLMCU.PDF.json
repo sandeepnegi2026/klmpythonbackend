@@ -1,0 +1,30 @@
+{
+  "file": "KLMCU.PDF",
+  "route": "party_pdf",
+  "row_count": 861,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 213,
+  "area_count": 20,
+  "product_count": 131,
+  "sample_parties": [
+    "102858-CHARBHUJA MEDICAL STORE.",
+    "103221-MANOJ MEDICALS AND GENERAL",
+    "106277-S 2 MEDICAL AGENCIES",
+    "11-SANSKAAR MEDICAL & GENERAL STORE",
+    "110315-HUSSAIN MEDICAL AND GENERAL STORE"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 4938.0,
+  "amount_total": 846532.79,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

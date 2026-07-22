@@ -1,0 +1,30 @@
+{
+  "file": "4.pdf",
+  "route": "party_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 7,
+  "area_count": 7,
+  "product_count": 6,
+  "sample_parties": [
+    "AL-DAWAA PHARMA",
+    "CHITOOR MEDICALS[190033]",
+    "MARBASIL MEDICALS",
+    "SASTHA MEDICALS",
+    "SRM MEDICALS, KANNADIKADD"
+  ],
+  "sample_products": [
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Sudif Cream 10 Gm",
+    "Xerolene Cream 50Gm"
+  ],
+  "qty_total": 27.0,
+  "amount_total": 7723.97,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

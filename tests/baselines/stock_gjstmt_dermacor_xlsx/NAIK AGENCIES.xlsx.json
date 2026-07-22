@@ -1,0 +1,18 @@
+{
+  "file": "NAIK AGENCIES.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 39,
+  "warnings_count": 4,
+  "headers_detected_count": 17,
+  "detected_format": "tabular",
+  "product_count": 33,
+  "sample_products": [
+    "BILL NO.",
+    "CLOSING AMOUNT",
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules"
+  ],
+  "closing_stock_total": 220.0,
+  "rate_total": 4196.6
+}

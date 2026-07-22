@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmo-q may-26 partiwise.pdf",
+  "route": "party_pdf",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_group_vs_customer",
+  "party_count": 5,
+  "area_count": 2,
+  "product_count": 9,
+  "sample_parties": [
+    "GV MEDICAL & FANCY",
+    "M P R MEDICALS",
+    "SABHAREESH LIFE MEDI CARE PHARMACY",
+    "SAI REKHA MEDICALS",
+    "UMA MAHESWARA MEDICAL&FANCY"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 80.0,
+  "amount_total": 38709.99,
+  "rate_total": 11747.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

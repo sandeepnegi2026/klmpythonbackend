@@ -1,0 +1,18 @@
+{
+  "file": "KLM STOCK N SALE MONTH JUNE2026.PDF",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 1,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 30,
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "ECRAN SOFT SUNSCREEN GEL",
+    "Ekran Aqua Gel 100Gm",
+    "Extend Hair Tablet",
+    "Hbsalic Ointment 20Gm"
+  ],
+  "closing_stock_total": 1178.0,
+  "rate_total": 6861.95
+}

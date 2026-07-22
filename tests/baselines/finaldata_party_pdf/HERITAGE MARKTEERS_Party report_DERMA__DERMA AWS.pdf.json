@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA AWS.pdf",
+  "route": "party_pdf",
+  "row_count": 78,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customerwise_billwise_itemwise",
+  "party_count": 29,
+  "area_count": 28,
+  "product_count": 16,
+  "sample_parties": [
+    "ADITYA MEDICALS (SURYA CLINIC)",
+    "ANJAN MEDICALS & GEN STORES",
+    "ANJANI PHARMA (DR PRATHIBHA )",
+    "AROGYA MEDICAL AND GENERAL STORES",
+    "B.M. TEJAS MEDICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "qty_total": 754.0,
+  "amount_total": 156244.74,
+  "rate_total": 16661.07,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

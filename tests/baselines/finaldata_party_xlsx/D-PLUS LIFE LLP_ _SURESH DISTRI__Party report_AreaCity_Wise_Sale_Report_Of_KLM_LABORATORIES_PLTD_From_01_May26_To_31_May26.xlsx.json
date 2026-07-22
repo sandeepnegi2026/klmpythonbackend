@@ -1,0 +1,29 @@
+{
+  "file": "AreaCity_Wise_Sale_Report_Of_KLM_LABORATORIES_PLTD_From_01_May26_To_31_May26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1234,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "areacity_wise_sale_pivot",
+  "party_count": 56,
+  "area_count": 56,
+  "product_count": 184,
+  "sample_parties": [
+    "AANGAON BHIWANDI",
+    "AMBADI BHIWANDI",
+    "AMBERNATH E AMBERNATH",
+    "AMBERNATH W AMBERNATH",
+    "ASANGAON SHAHPUR"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "qty_total": 3263.0,
+  "amount_total": 570005.23,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

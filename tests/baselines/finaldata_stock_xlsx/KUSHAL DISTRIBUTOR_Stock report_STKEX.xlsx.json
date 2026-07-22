@@ -1,0 +1,19 @@
+{
+  "file": "STKEX.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 192,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_klm_ss_analysis_oic_dualclose_grid_xls",
+  "product_count": 187,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 7527.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

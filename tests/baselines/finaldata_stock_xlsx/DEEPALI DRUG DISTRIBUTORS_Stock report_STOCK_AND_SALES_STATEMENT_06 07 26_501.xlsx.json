@@ -1,0 +1,19 @@
+{
+  "file": "STOCK_AND_SALES_STATEMENT_06 07 26_501.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 241,
+  "warnings_count": 50,
+  "headers_detected_count": 13,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 234,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 7767.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

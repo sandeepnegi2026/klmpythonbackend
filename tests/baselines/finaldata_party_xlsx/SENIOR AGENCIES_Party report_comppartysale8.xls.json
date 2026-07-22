@@ -1,0 +1,30 @@
+{
+  "file": "comppartysale8.xls",
+  "route": "party_xlsx",
+  "row_count": 605,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_banded",
+  "party_count": 368,
+  "area_count": 0,
+  "product_count": 35,
+  "sample_parties": [
+    "1SHREE GANESH MEDICO BHARTI DHANKAWADI, ARIHANT CHEMBERS,",
+    "365 DAY N NIGHT MED GOVARDHAN VIMANNAGAR,PUNE.",
+    "AARTI MEDICAL (PRAVIN) BIBVEWADI,PUNE",
+    "AARU PHARMA SELF SADASHIV PETH,VANDE MATARAM CH",
+    "AAYUSHI MEDICAL(GANESH SANGHVI NEW SANGVI,SIDDHI VIHAR,KRUSHN"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "EBERFINE 30GM (KLM)",
+    "EBERFINE 50GM (KLM)"
+  ],
+  "qty_total": 823.0,
+  "amount_total": 148806.72,
+  "rate_total": 115937.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

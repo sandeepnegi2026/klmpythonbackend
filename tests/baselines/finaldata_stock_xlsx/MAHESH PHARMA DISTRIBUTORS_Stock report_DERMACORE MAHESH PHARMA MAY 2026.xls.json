@@ -1,0 +1,19 @@
+{
+  "file": "DERMACORE MAHESH PHARMA MAY 2026.xls",
+  "route": "stock_xlsx",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_klm_ss_analysis_oic_dualclose_grid_xls",
+  "product_count": 41,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 447.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

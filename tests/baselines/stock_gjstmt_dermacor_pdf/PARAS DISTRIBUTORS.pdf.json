@@ -1,0 +1,18 @@
+{
+  "file": "PARAS DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "technomax_stock",
+  "product_count": 16,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "KLM KLIN AHA F.W. GEL",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap"
+  ],
+  "closing_stock_total": 142.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "klm may.PDF",
+  "route": "stock_pdf",
+  "row_count": 114,
+  "warnings_count": 20,
+  "headers_detected_count": 3,
+  "detected_format": "qty_value_total",
+  "product_count": 113,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "closing_stock_total": 37.0,
+  "rate_total": 0.0
+}

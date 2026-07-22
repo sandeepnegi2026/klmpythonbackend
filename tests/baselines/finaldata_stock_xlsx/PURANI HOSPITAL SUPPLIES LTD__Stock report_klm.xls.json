@@ -1,0 +1,18 @@
+{
+  "file": "klm.xls",
+  "route": "stock_xlsx",
+  "row_count": 134,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "purani_mfr_stock_sales",
+  "product_count": 130,
+  "sample_products": [
+    ".KLM KLIN AHA. . CREAM",
+    "AZACEA 10 CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMO Q 200 ML SHAMPOO"
+  ],
+  "closing_stock_total": 1595.0,
+  "rate_total": 35705.8
+}

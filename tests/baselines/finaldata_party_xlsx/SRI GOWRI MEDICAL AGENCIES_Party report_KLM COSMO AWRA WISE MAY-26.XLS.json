@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO AWRA WISE MAY-26.XLS",
+  "route": "party_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 9,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "BHARATH MEDICAL & GEN STORE{MANVI}",
+    "DR AJAY KUMAR (RAICHUR)",
+    "DR ANIL KUMAR MACHNOOR",
+    "GURU SUGURESHWARA MEDICAL&GENERAL (RAICHUR)",
+    "NANDESHEWARA PHARMA <RAICHUR>"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Imxia 2%"
+  ],
+  "qty_total": 134.0,
+  "amount_total": 41634.0,
+  "rate_total": 6106.6,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

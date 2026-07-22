@@ -1,0 +1,19 @@
+{
+  "file": "klm pharma.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 16,
+  "detected_format": "tabular",
+  "product_count": 19,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "closing_stock_total": 346.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

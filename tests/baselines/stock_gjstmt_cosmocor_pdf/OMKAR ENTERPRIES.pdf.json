@@ -1,0 +1,18 @@
+{
+  "file": "OMKAR ENTERPRIES.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 10,
+  "headers_detected_count": 11,
+  "detected_format": "prompt",
+  "product_count": 30,
+  "sample_products": [
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 15247.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__PEDI SALES REPORT MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 216,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 68,
+  "area_count": 43,
+  "product_count": 40,
+  "sample_parties": [
+    "A.K. PHARMA",
+    "ARCHANA MEDICALS",
+    "ATHREYA MEDICALS",
+    "AYUSH PHARMA (DR. NAVEEN DHARIWAL)",
+    "BENGALURE DRUGE HOUSE"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 3301.0,
+  "amount_total": 505891.71,
+  "rate_total": 31433.11,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

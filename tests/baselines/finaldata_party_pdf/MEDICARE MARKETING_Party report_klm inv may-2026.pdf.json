@@ -1,0 +1,30 @@
+{
+  "file": "klm inv may-2026.pdf",
+  "route": "party_pdf",
+  "row_count": 276,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 55,
+  "area_count": 11,
+  "product_count": 77,
+  "sample_parties": [
+    "A.K. MEDICAL AND GENERAL STORE",
+    "AARADHYA MEDICAL STORE",
+    "AMRUT MEDICAL STORE",
+    "ASHOK MEDICINES",
+    "BHAGWATI MEDICAL"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 2305.0,
+  "amount_total": 411232.56,
+  "rate_total": 56267.44,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 8
+}

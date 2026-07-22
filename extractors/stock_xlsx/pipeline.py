@@ -1,3 +1,4 @@
+import re
 import time
 
 from extractors.stock_xlsx.constants import LAYOUT_LABELS
@@ -10,7 +11,7 @@ from extractors.stock_xlsx.layouts.html_stock import parse_html_stock_table
 from extractors.stock_xlsx.layouts.purani_mfr_stock_sales import parse_purani_mfr_stock_sales
 from extractors.stock_xlsx.postprocess import cast_numbers, sanity_warnings
 from extractors.stock_xlsx.registry import parse_rows
-from extractors.stock_xlsx.xlsx_io import load_data_sheets, workbook_kind
+from extractors.stock_xlsx.xlsx_io import load_data_sheets, read_sheets, sheet_rows, workbook_kind
 
 
 # ---------------------------------------------------------------------------
@@ -34,15 +35,22 @@ from extractors.stock_xlsx.xlsx_io import load_data_sheets, workbook_kind
 # ---------------------------------------------------------------------------
 
 def _mfac_group_wise_gate(sheets):
-    """ANNAPURNA C-Square 'Stock and Sales Mfac Group Wise Report', narrow (<=40 col)
-    variant. The width guard skips MINERVA's token-identical 59-col book so its frozen
-    `tabular` baseline is never even re-parsed."""
+    """KLM / C-Square PharmAssist abbreviated Mfac stock grid — the whole family:
+    ANNAPURNA ('Stock and Sales Mfac Group Wise Report'), MINERVA (token-identical 59-col
+    book), KOOTTIPARAMBIL, BIO PHARMA ('Stock and Sale Report'), ... all carrying the
+    Item | Op. | Pur | SP | Sale | SS | Br | Cr | Db | Adj | Bal. | BVal | SVal header.
+    Shortlisted on the distinctive BVal+SVal (balance-value + sales-value) abbreviation
+    pair, which is unique to this C-Square export and appears in no other stock family.
+    The neighbouring title / column-width differences (Mfac-Group-Wise vs plain, 28 vs
+    59 cols, apr/may vs jan/feb prev-month labels) rename per vendor/month, so they can't
+    route the family apart -- but this is only a SHORTLIST: the pipeline still adopts the
+    mfac parse ONLY when it reconciles >= 0.90 and keeps >= 80% of the rows, so a
+    non-member that happens to carry these tokens can never displace its working read."""
     for _name, srows in sheets:
         if not srows:
             continue
         flat = " ".join(" ".join(r) for r in srows[:150]).lower().replace(" ", "")
-        if ("stockandsalesmfacgroupwisereport" in flat and "bval" in flat
-                and "sval" in flat and max(len(r) for r in srows) <= 40):
+        if "bval" in flat and "sval" in flat:
             return True
     return False
 
@@ -57,6 +65,52 @@ _FALLBACK_TRIGGER_PASS_RATE = 0.50  # tabular failed sanity on >= half the rows
 # Acceptance: the candidate must be decisively good, not merely "less bad".
 _FALLBACK_ACCEPT_PASS_RATE = 0.90
 _FALLBACK_MIN_ROW_RATIO = 0.80      # candidate must keep >= 80% of tabular's rows
+
+
+_TABLE_SHEET_RE = re.compile(r"table\s*\d+$", re.I)
+
+
+def _ssa_variant(sheets):
+    """Which paginated 'STOCK & SALES ANALYSIS' converter variant, if any, the kept tabs carry.
+    Cheap check on the already-loaded tabs; only then do we re-read every tab raw. Returns the
+    forced layout id, or None.
+      - sale+value banner '<===sale===>'  -> sm_stock_sales_analysis   (S.M. MEDICAL)
+      - Opening/Receipt/Issue/Closing qty -> raja_stock_oric_analysis  (RAJA ENTERPRISE)
+
+    This converter names EVERY page 'Table 1'..'Table N'. A Marg ERP 9+ export is ALSO titled
+    'STOCK & SALES ANALYSIS' with Opening/Receipt/Issue/Closing columns, but names its sheets
+    'MARG ERP 9+ Excel Report'/'Sheet2' — so the Table-N sheet naming is the discriminator that
+    keeps the raja_oric gate from stealing the whole Marg family."""
+    if not sheets or not all(_TABLE_SHEET_RE.match(name.strip()) for name, _ in sheets):
+        return None
+    flat = " ".join(
+        " ".join(cell for cell in row) for _name, rows in sheets for row in rows[:120]
+    ).lower().replace(" ", "")
+    if "stock&salesanalysis" not in flat:
+        return None
+    if "<===sale===>" in flat:
+        return "sm_stock_sales_analysis"
+    if "openingreceiptissueclosing" in flat:
+        return "raja_stock_oric_analysis"
+    return None
+
+
+def _concat_if_paginated(file_bytes, filename):
+    """Concatenate every sheet's rows IN WORKBOOK ORDER, but only for a genuinely PAGINATED
+    book (>= 2 sheets). Returns the merged rows, or None for a single-sheet workbook.
+
+    The S.M. converter paginates ONE "STOCK & SALES ANALYSIS" report across many "Table N"
+    sheets, and load_data_sheets' per-tab scoring drops continuation pages — so we read the
+    whole book. But single-sheet exports of the same sale+value converter (BALLRI COSMOQ,
+    SAM MEDICOS) are already handled correctly by marg_sale_closing_*; the >= 2 sheet guard
+    leaves those on the normal per-sheet path untouched."""
+    xls, _ = read_sheets(file_bytes, filename)
+    if len(xls.sheet_names) < 2:
+        return None
+    merged = []
+    for name in xls.sheet_names:
+        merged.extend(sheet_rows(xls.parse(name, header=None)))
+    return merged
 
 
 def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
@@ -102,10 +156,24 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
             # parsers expect -- then merge the clean records. load_data_sheets returns a
             # single tab for ordinary single-sheet books, so that path stays byte-identical.
             sheets = load_data_sheets(file_bytes, filename, settings.get("sheet_name"))
+            # S.M. MEDICAL converter "STOCK & SALES ANALYSIS" is paginated across many "Table N"
+            # sheets; per-tab scoring drops continuation pages (keeps 19/28 -> 97 of 312 rows).
+            # If the kept tabs carry its unique SALE-banner signature AND the book is genuinely
+            # multi-sheet, re-read EVERY tab raw, collapse to one synthetic sheet, and FORCE the
+            # sm parser (which reconciles to the printed grand TOTAL). Single-sheet siblings stay
+            # on the normal per-sheet path (already handled by marg_sale_closing_*).
+            sm_forced = None
+            if forced_layout is None:
+                _variant = _ssa_variant(sheets)
+                if _variant:
+                    merged = _concat_if_paginated(file_bytes, filename)
+                    if merged is not None:
+                        sheets = [("merged", merged)]
+                        sm_forced = _variant
             sheets_ref = sheets
             records, detected, sheet_names, layouts, preview_parts = [], {}, [], [], []
             for name, srows in sheets:
-                sheet_layout = forced_layout or (detect_excel_layout(srows) if srows else "tabular")
+                sheet_layout = forced_layout or sm_forced or (detect_excel_layout(srows) if srows else "tabular")
                 recs, det = parse_rows(srows, sheet_layout, settings.get("header_row"))
                 if sheet_layout == "tabular" and not recs:
                     warnings.append("No stock header row found.")
@@ -160,9 +228,17 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
             "elapsed_ms": int((time.perf_counter() - started) * 1000),
         }
 
+    # Line-accounting ledger on the FULL raw sheets vs the raw pre-enrichment
+    # records (see core/line_ledger). Read-only; must precede pack-strip below.
+    from core.line_ledger import audit_sheet_rows
+    try:
+        line_audit = audit_sheet_rows(sheets, records)
+    except Exception:  # ledger must never break extraction
+        line_audit = {"applicable": False, "reason": "ledger error"}
+
     from core.pack_match import extract_pack_from_product
     from core.product_master import enrich_rows_with_master
-    
+
     for row in records:
         if "product_name" in row and not row.get("pack"):
             raw_full_name = str(row["product_name"])
@@ -228,6 +304,7 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
         "raw_text": preview,
         "warnings": warnings,
         "sanity": sanity,
+        "line_audit": line_audit,
         "elapsed_ms": int((time.perf_counter() - started) * 1000),
         "debug": {
             "parser": "stock_xlsx",

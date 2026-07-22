@@ -1,0 +1,30 @@
+{
+  "file": "curious CstCmpIt1813.xls",
+  "route": "party_xlsx",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 8,
+  "area_count": 5,
+  "product_count": 21,
+  "sample_parties": [
+    "ARATI PHARMA",
+    "DR",
+    "KRUPA MEDICAL STORES",
+    "NARMADA MEDICAL STORES",
+    "NAVYA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "AZOSPORE CREAM",
+    "CURICLIN GEL",
+    "CURICLIN-A GEL",
+    "CURIDOX-L CAP",
+    "CURIGLOW TAB"
+  ],
+  "qty_total": 3194.0,
+  "amount_total": 315115.57,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

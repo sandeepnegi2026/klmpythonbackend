@@ -1,0 +1,30 @@
+{
+  "file": "DERMA1.xls",
+  "route": "party_xlsx",
+  "row_count": 146,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 33,
+  "area_count": 33,
+  "product_count": 26,
+  "sample_parties": [
+    "-001001 SRI AMBIKA MEDICALS CHICK",
+    "-001011 TIRUMALA MEDICALS(B.B ROAD)",
+    "-001034 BALAJI MEDICAL STORES CHICK",
+    "-001138 SRI NANDEESHWARA MEDICAL & C",
+    "-004006 MANJUNATH MEDICALS VIJAY"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "qty_total": 1258.0,
+  "amount_total": 224084.77,
+  "rate_total": 30096.52,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM custwise N Goa june 26.xls",
+  "route": "party_xlsx",
+  "row_count": 436,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "party_count": 140,
+  "area_count": 54,
+  "product_count": 65,
+  "sample_parties": [
+    "AARAV MEDICAL STORES CHEMIST & DRUGGIST",
+    "AAYU CARE MEDICAL STORE CHEMIST & DRUGGIST",
+    "AGASSAIM MEDICAL STORES CHEMIST AND DRUGGIST",
+    "AJUDA MEDICAL C/D RIBANDAR",
+    "AMEY MEDICAL CHEMIST & DRUGGIST MAPUSA"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 1128.0,
+  "amount_total": 149513.89,
+  "rate_total": 69211.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

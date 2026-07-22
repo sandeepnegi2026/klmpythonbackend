@@ -1,11 +1,11 @@
 {
   "file": "JYOTI MEDICAL-ALL DIVISION.PDF",
   "route": "party_pdf",
-  "row_count": 294,
+  "row_count": 292,
   "warnings_count": 0,
   "headers_detected_count": 8,
   "detected_format": "busy_tally",
-  "party_count": 67,
+  "party_count": 66,
   "area_count": 14,
   "product_count": 76,
   "sample_parties": [
@@ -22,8 +22,9 @@
     "Ekran Soft Silicon Sunscreen Gel 50G",
     "Episert Cream 30 Gm"
   ],
-  "qty_total": 979.0,
-  "amount_total": 168511.01,
-  "rate_total": 60410.58,
-  "purchase_rate_total": 0.0
+  "qty_total": 977.0,
+  "amount_total": 168089.46,
+  "rate_total": 59989.03,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

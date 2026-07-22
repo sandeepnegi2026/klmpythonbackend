@@ -1,0 +1,18 @@
+{
+  "file": "EMAIL24267_26040210152884_1639107071376640129.XLS",
+  "route": "stock_xlsx",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 27,
+  "sample_products": [
+    "EKRAN 70 LOTTION 1 PACK",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G"
+  ],
+  "closing_stock_total": 431.0,
+  "rate_total": 0.0
+}

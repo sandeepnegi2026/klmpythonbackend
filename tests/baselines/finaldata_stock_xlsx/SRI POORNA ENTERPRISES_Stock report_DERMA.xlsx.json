@@ -1,0 +1,19 @@
+{
+  "file": "DERMA.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "profit_maker",
+  "product_count": 12,
+  "sample_products": [
+    "Hbsone Cream 30Gm",
+    "NEVELON MOISTURING SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Caloe Lotion 60Ml"
+  ],
+  "closing_stock_total": 277.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

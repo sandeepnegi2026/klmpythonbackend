@@ -1,0 +1,18 @@
+{
+  "file": "YUVEE ENTERPRISE.XLS",
+  "route": "stock_xlsx",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 40,
+  "sample_products": [
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm"
+  ],
+  "closing_stock_total": 1200.0,
+  "rate_total": 0.0
+}

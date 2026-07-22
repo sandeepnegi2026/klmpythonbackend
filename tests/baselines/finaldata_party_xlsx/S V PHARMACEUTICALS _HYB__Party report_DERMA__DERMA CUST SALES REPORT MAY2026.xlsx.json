@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA CUST SALES REPORT MAY2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 51,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "AISHWARIYA MEDICALS",
+    "KRISHNA TULASI MEDICAL &",
+    "RR PHARMACY",
+    "SHREE BALAJI MEDICAL WORL",
+    "SRI BALAJI PHARMA"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Glo Syndet Bar"
+  ],
+  "qty_total": 842.0,
+  "amount_total": 170101.83,
+  "rate_total": 11035.08,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -59,6 +59,30 @@ from extractors.party_pdf.layouts.area_item_sales_summary import parse_area_item
 from extractors.party_pdf.layouts.medivision_sale_dc import parse_medivision_sale_dc
 
 from extractors.party_pdf.layouts.klm_company_customer_invoice import parse_klm_company_customer_invoice
+from extractors.party_pdf.layouts.sree_swathi_company_product_area_invoice import parse_sree_swathi_company_product_area_invoice
+from extractors.party_pdf.layouts.customerwise_itemwise_billwise import parse_customerwise_itemwise_billwise
+from extractors.party_pdf.layouts.sri_shiv_shakti_company_sales_statement import parse_sri_shiv_shakti_company_sales_statement
+from extractors.party_pdf.layouts.tradelink_customer_invoice_itemwise import parse_tradelink_customer_invoice_itemwise
+from extractors.party_pdf.layouts.sai_bhaskar_customer_vs_item import parse_sai_bhaskar_customer_vs_item
+from extractors.party_pdf.layouts.klm_nagammai_customer_purchase_divisionwise import parse_klm_nagammai_customer_purchase_divisionwise
+from extractors.party_pdf.layouts.klm_partywise_qtywise_sales import parse_klm_partywise_qtywise_sales
+from extractors.party_pdf.layouts.klm_customer_product_wise_sales import parse_klm_customer_product_wise_sales
+from extractors.party_pdf.layouts.leo_companywise_areawise_billwise import parse_leo_companywise_areawise_billwise
+from extractors.party_pdf.layouts.jai_ambey_customer_wise_sales import parse_jai_ambey_customer_wise_sales
+from extractors.party_pdf.layouts.sri_sales_replacement_report import parse_sri_sales_replacement_report
+from extractors.party_pdf.layouts.amrit_companywise_sales_statement import parse_amrit_companywise_sales_statement
+from extractors.party_pdf.layouts.klm_customer_item_wise_sale import parse_klm_customer_item_wise_sale
+from extractors.party_pdf.layouts.klm_item_wise_sale_by_party import parse_klm_item_wise_sale_by_party
+from extractors.party_pdf.layouts.klm_product_customerwise_sales import parse_klm_product_customerwise_sales
+from extractors.party_pdf.layouts.suman_product_customer_wise_sales import parse_suman_product_customer_wise_sales
+from extractors.party_pdf.layouts.choudhary_customer_information import parse_choudhary_customer_information
+from extractors.party_pdf.layouts.jackson_companywise_customerwise_sales import parse_jackson_companywise_customerwise_sales
+from extractors.party_pdf.layouts.jmv_party_product_city import parse_jmv_party_product_city
+from extractors.party_pdf.layouts.kanara_areawise_partywise_sales import parse_kanara_areawise_partywise_sales
+from extractors.party_pdf.layouts.manish_product_customer_summary import parse_manish_product_customer_summary
+from extractors.party_pdf.layouts.mishra_companywise_partywise_twocol import parse_mishra_companywise_partywise_twocol
+from extractors.party_pdf.layouts.ravira_customer_company_sales import parse_ravira_customer_company_sales
+from extractors.party_pdf.layouts.trinity_party_item_wise_sale import parse_trinity_party_item_wise_sale
 from extractors.party_pdf.layouts.areawise_sales_billwise import parse_areawise_sales_billwise
 from extractors.party_pdf.layouts.customer_product_sales import parse_customer_product_sales
 from extractors.party_pdf.layouts.klm_party_wise_statement import parse_klm_party_wise_statement
@@ -117,6 +141,7 @@ from extractors.party_pdf.layouts.r15_santram_customerwise_itemwise_qty import p
 from extractors.party_pdf.layouts.r15_ishwar_customer_product_pack_bij import parse_r15_ishwar_customer_product_pack_bij
 from extractors.party_pdf.layouts.r15_marg_mf_customer_sales_summary import parse_r15_marg_mf_customer_sales_summary
 from extractors.party_pdf.layouts.r15_klm_group_vs_customer_icode import parse_r15_klm_group_vs_customer_icode
+from extractors.party_pdf.layouts.klm_group_vs_customer_custbanded import parse_klm_group_vs_customer_custbanded
 from extractors.party_pdf.layouts.r15_product_party_wise_totqty_gst import parse_product_party_wise_totqty_gst
 from extractors.party_pdf.layouts.r15_success_areawise_report import parse_success_areawise_report
 from extractors.party_pdf.layouts.r15_company_item_wise_sales_summary import parse_company_item_wise_sales_summary
@@ -147,6 +172,7 @@ PARSERS = {
     "r15_ishwar_customer_product_pack_bij": parse_r15_ishwar_customer_product_pack_bij,
     "r15_marg_mf_customer_sales_summary": parse_r15_marg_mf_customer_sales_summary,
     "r15_klm_group_vs_customer_icode": parse_r15_klm_group_vs_customer_icode,
+    "klm_group_vs_customer_custbanded": parse_klm_group_vs_customer_custbanded,
     "product_party_wise_totqty_gst": parse_product_party_wise_totqty_gst,
     "success_areawise_report": parse_success_areawise_report,
     "company_item_wise_sales_summary": parse_company_item_wise_sales_summary,
@@ -185,6 +211,30 @@ PARSERS = {
     "medivision_sale_dc": parse_medivision_sale_dc,
     "area_item_sales_summary": parse_area_item_sales_summary,
     "klm_company_customer_invoice": parse_klm_company_customer_invoice,
+    "sree_swathi_company_product_area_invoice": parse_sree_swathi_company_product_area_invoice,
+    "customerwise_itemwise_billwise": parse_customerwise_itemwise_billwise,
+    "sri_shiv_shakti_company_sales_statement": parse_sri_shiv_shakti_company_sales_statement,
+    "tradelink_customer_invoice_itemwise": parse_tradelink_customer_invoice_itemwise,
+    "sai_bhaskar_customer_vs_item": parse_sai_bhaskar_customer_vs_item,
+    "klm_nagammai_customer_purchase_divisionwise": parse_klm_nagammai_customer_purchase_divisionwise,
+    "klm_partywise_qtywise_sales": parse_klm_partywise_qtywise_sales,
+    "klm_customer_product_wise_sales": parse_klm_customer_product_wise_sales,
+    "leo_companywise_areawise_billwise": parse_leo_companywise_areawise_billwise,
+    "jai_ambey_customer_wise_sales": parse_jai_ambey_customer_wise_sales,
+    "sri_sales_replacement_report": parse_sri_sales_replacement_report,
+    "amrit_companywise_sales_statement": parse_amrit_companywise_sales_statement,
+    "klm_customer_item_wise_sale": parse_klm_customer_item_wise_sale,
+    "klm_item_wise_sale_by_party": parse_klm_item_wise_sale_by_party,
+    "klm_product_customerwise_sales": parse_klm_product_customerwise_sales,
+    "suman_product_customer_wise_sales": parse_suman_product_customer_wise_sales,
+    "choudhary_customer_information": parse_choudhary_customer_information,
+    "jackson_companywise_customerwise_sales": parse_jackson_companywise_customerwise_sales,
+    "jmv_party_product_city": parse_jmv_party_product_city,
+    "kanara_areawise_partywise_sales": parse_kanara_areawise_partywise_sales,
+    "manish_product_customer_summary": parse_manish_product_customer_summary,
+    "mishra_companywise_partywise_twocol": parse_mishra_companywise_partywise_twocol,
+    "ravira_customer_company_sales": parse_ravira_customer_company_sales,
+    "trinity_party_item_wise_sale": parse_trinity_party_item_wise_sale,
     "areawise_sales_billwise": parse_areawise_sales_billwise,
     "customer_product_sales": parse_customer_product_sales,
     "klm_party_wise_statement": parse_klm_party_wise_statement,

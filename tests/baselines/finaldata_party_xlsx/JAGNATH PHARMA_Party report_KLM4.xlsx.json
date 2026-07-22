@@ -1,0 +1,30 @@
+{
+  "file": "KLM4.xlsx",
+  "route": "party_xlsx",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 18,
+  "area_count": 17,
+  "product_count": 11,
+  "sample_parties": [
+    "ALIF MEDICAL& GENERAL STORE",
+    "APPLE CHEMIST & DRUGGIST",
+    "JAISWAL MEDICAL & GENERAL STORE",
+    "JAY TIRUPATI CHEMIST & GEN.STORES",
+    "JAYLAXMI MEDICAL & GEN.STORE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Caloe Lotion 60Ml"
+  ],
+  "qty_total": 104.0,
+  "amount_total": 13385.74,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

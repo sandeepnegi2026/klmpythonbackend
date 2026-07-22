@@ -1,0 +1,18 @@
+{
+  "file": "KLM DERMACORE MAHAVEER JUNE 26 Stock.XLS",
+  "route": "stock_xlsx",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 4,
+  "sample_products": [
+    "Kenz Soap",
+    "Melapik Ever New Cream 20 Gm",
+    "Melapik Plus Cream 20Gm",
+    "Tecum Lotion 15 Ml"
+  ],
+  "closing_stock_total": 21.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

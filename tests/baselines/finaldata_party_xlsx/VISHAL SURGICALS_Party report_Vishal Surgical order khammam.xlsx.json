@@ -1,0 +1,30 @@
+{
+  "file": "Vishal Surgical order khammam.xlsx",
+  "route": "party_xlsx",
+  "row_count": 377,
+  "warnings_count": 0,
+  "headers_detected_count": 18,
+  "detected_format": "tabular",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 365,
+  "sample_parties": [
+    "1001",
+    "1002",
+    "1005",
+    "1006",
+    "1007"
+  ],
+  "sample_products": [
+    "ABG SYR 3ML PML (D)",
+    "AUTO IV 180  RLL PC BCV SB PML",
+    "AUTOFUSION IV INFUSION SET, VENTED SPIKE, PVC FREE DOUBLE DRIP CHAMBER WITH AUTO STOP FILTER, DEHP FREE TUBE 180CM, LATEX FREE Y-SITE, LONG ORANGE ROLLER CLAMP, ROTATING LUER LOCK WITH PE CAP WITH FILTER- BLISTER PACK",
+    "Alcohol prep pad",
+    "Autofusion double drip chamber without Y site (Fixed Luer Lock)"
+  ],
+  "qty_total": 575.0,
+  "amount_total": 13625.0,
+  "rate_total": 40167.93,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

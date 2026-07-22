@@ -1,0 +1,18 @@
+{
+  "file": "STOCKKLM.PDF",
+  "route": "stock_pdf",
+  "row_count": 141,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "stock_op_pur_total_sale_close",
+  "product_count": 140,
+  "sample_products": [
+    "11 SOFIDEW BABY SHAMPOO",
+    "12 KLIN AHA FOAMING GEL",
+    "13 IMXIA HAIR MOIS GEL",
+    "14 NEVLON SOAP",
+    "15 ONITRAZ CAP"
+  ],
+  "closing_stock_total": 1046.0,
+  "rate_total": 0.0
+}

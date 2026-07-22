@@ -78,6 +78,22 @@ def _has_columnar_party_header(rows):
 
 
 def detect_layout(rows):
+    # Busy "List of Sale By Party" (MODI PHARMA / KLM): a Sr.-outline party-banded export where the
+    # shop name is the Item Name cell on the integer-Sr band row. customer_product_banded otherwise
+    # claims it and reads the "1"/"2" serial as the party, dropping every real name. Gated on the
+    # unique compact title token "listofsalebyparty" (matches ONLY MODI's 2 files) so nothing else
+    # is touched. MUST precede customer_product_banded.
+    from extractors.party_xlsx.layouts.busy_list_of_sale_by_party import detect as _busy_los_detect
+    if _busy_los_detect(rows):
+        return "busy_list_of_sale_by_party"
+    # SENTHIL PHARMA wide "Area-wise" columnar export: party in a CUSTOMER NAME column, interleaved
+    # with AREA NAME/COMPANY NAME headers and GROUP TOTAL subtotals. partywise_band mis-reads the
+    # masthead/serials as party; the dedicated reader emits only CUSTOMER-NAME rows (subtotals leave
+    # it blank), reconciling to the same value with the true customer. Gated on the exact
+    # PRODUCT NAME..GOODS VALUE..CUSTOMER NAME header run; MUST precede partywise_band.
+    from extractors.party_xlsx.layouts.senthil_areawise_columnar import detect as _senthil_col_detect
+    if _senthil_col_detect(rows):
+        return "senthil_areawise_columnar"
     # C-Square raw DB-field invoice dump (HERITAGE MARKTEERS / KLM per-division books). The
     # header row is the underlying view's literal column names and repeats 'c_name' four times
     # (item / pack / customer / firm), so text-keyed map_headers clobbers them and the customer
@@ -367,6 +383,14 @@ def detect_layout(rows):
     if _cpp_detect(rows):
         return "company_party_product_xlsx"
 
+    # FLAT variant of the above (NEW JAGDAMBA) — QTY / FREE / AMT only (no RPL / NET
+    # AMT). GARG's detect (above) requires net amt, so it claims its files first and
+    # this only matches the flat export. Blank-numeric product lines are kept (not
+    # mistaken for parties) via a party-name keyword heuristic.
+    from extractors.party_xlsx.layouts.company_party_product_flat_xlsx import detect as _cppf_detect
+    if _cppf_detect(rows):
+        return "company_party_product_flat_xlsx"
+
     # "PARTY+ITEM WISE SALE" columnar export (KAPOOR / Marg) — a flat table with a real
     # PARTY NAME column whose town is glued as a trailing "-<AREA>" suffix. Reuses tabular's
     # exact column mapping and only peels the area into party_location. Title-gated + requires
@@ -484,6 +508,34 @@ def detect_layout(rows):
         if "itemname" in header_text and "srno" in header_text:
             return "infosoft_bandwise"
     compact_text = compact(" ".join(" ".join(row) for row in rows[:150]))
+    # FAIRDEAL "Product-wise, customer-wise sale/DC details": a PRODUCT-banded export
+    # (product bands with a Comp/pack + total, customers as the Vch-dated rows beneath) ->
+    # party<-customer row, product<-product band. Its CUSTOMER-first sibling
+    # ("Customer-wise, product-wise sale/DC details", ANAGHA) shares the Particulars/Scm
+    # columns but is CUSTOMER-banded and belongs to customer_product_banded, so gate on the
+    # PRODUCT-first title run (compact drops punctuation: 'productwisecustomerwisesaledc')
+    # which the customer-first title does not contain. MUST precede customer_product_banded.
+    # Covers BOTH the "details" (FAIRDEAL, per-voucher) and "summary" (SUNRISE, no voucher)
+    # product-first variants; the parser keys band vs customer on the Comp column. The
+    # CUSTOMER-first sibling ("customerwiseproductwise...", ANAGHA) does not contain this
+    # product-first run and stays on customer_product_banded.
+    if "productwisecustomerwisesaledc" in compact_text and "particulars" in compact_text:
+        return "product_customer_sale_dc_details"
+    # "Product wise sale list ..." (MODERN PHARMA, J.K.MEDICO): CUSTOMER-banded
+    # (customer name bands, product rows, per-customer "Customer Total"). Header
+    # Product|Pack|Qty.|Free|Repl.|S.Value|Tot.Value. Without this it falls to tabular
+    # and extracts products but NO party (party_count 0). Header run svalue+totvalue is
+    # specific to this KLM "sale list" export.
+    if (
+        "productwisesalelist" in compact_text
+        and "svalue" in compact_text
+        and "totvalue" in compact_text
+    ):
+        return "product_wise_sale_list"
+    # "Item Wise Summary of Sale By Party" (ASHA AGENCIES): CUSTOMER-banded, two-level Sr
+    # (integer Sr = customer band, decimal Sr = its item rows). Falls to tabular -> no party.
+    if "itemwisesummaryofsalebyparty" in compact_text:
+        return "item_wise_summary_sale_by_party"
     # A columnar table that already exposes a Party Name column (e.g. Marg
     # "Party-Itemwise-Billwise Sale": Cust|Party Name|Area|Bill No|Date|...|Value) belongs
     # to ``tabular``; only band-style Busy/Tally exports (no party column) go to marg_busy.

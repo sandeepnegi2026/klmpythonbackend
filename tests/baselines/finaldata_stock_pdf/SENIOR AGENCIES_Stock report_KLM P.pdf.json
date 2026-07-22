@@ -1,0 +1,18 @@
+{
+  "file": "KLM P.pdf",
+  "route": "stock_pdf",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_gdin",
+  "product_count": 35,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend D3 Capsules"
+  ],
+  "closing_stock_total": 1004.0,
+  "rate_total": 0.0
+}

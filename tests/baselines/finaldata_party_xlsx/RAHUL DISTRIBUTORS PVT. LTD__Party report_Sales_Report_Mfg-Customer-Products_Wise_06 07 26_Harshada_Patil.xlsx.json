@@ -1,0 +1,30 @@
+{
+  "file": "Sales_Report_Mfg-Customer-Products_Wise_06 07 26_Harshada_Patil.xlsx",
+  "route": "party_xlsx",
+  "row_count": 2562,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "tabular",
+  "party_count": 443,
+  "area_count": 112,
+  "product_count": 206,
+  "sample_parties": [
+    "24X7HEALTH RX MEDICAL",
+    "AARAVV  CHEMIST",
+    "AARYAN PHARMA",
+    "ACHARYA MEDICAL",
+    "ADARSH CHEMIST"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 4562.0,
+  "amount_total": 814936.41,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

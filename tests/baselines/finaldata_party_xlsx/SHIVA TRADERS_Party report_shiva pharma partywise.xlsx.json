@@ -1,0 +1,30 @@
+{
+  "file": "shiva pharma partywise.xlsx",
+  "route": "party_xlsx",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "tabular",
+  "party_count": 9,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "A.D.MEHTA             DR ,*SIRSA",
+    "BHARAT MEDICOSE          ,*FATEHABAD",
+    "HARI MEDICAL HALL     17 ,*SIRSA",
+    "HARYANA MEDICAL HALL     ,*FATEHABAD",
+    "INSA MEDICOS             ,*FATEHABAD"
+  ],
+  "sample_products": [
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10",
+    "Kentruff Lotion 50 Ml"
+  ],
+  "qty_total": 191.0,
+  "amount_total": 20865.69,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

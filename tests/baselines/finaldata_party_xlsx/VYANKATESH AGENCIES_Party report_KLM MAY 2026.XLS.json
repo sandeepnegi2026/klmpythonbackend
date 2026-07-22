@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY 2026.XLS",
+  "route": "party_xlsx",
+  "row_count": 163,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 71,
+  "area_count": 34,
+  "product_count": 32,
+  "sample_parties": [
+    "AARADHYA MEDICAL & GENERAL STO",
+    "ADHIRA MEDICAL",
+    "ANNORA MEDICAL",
+    "ANUPREET MEDICAL & GEN STORES",
+    "ASHA MEDICAL & GEN STORES"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 1813.0,
+  "amount_total": 184667.18,
+  "rate_total": 20647.21,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

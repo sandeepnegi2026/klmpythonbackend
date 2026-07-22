@@ -1,0 +1,19 @@
+{
+  "file": "KLM_7HB0USZ5I.XLS",
+  "route": "stock_xlsx",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 20,
+  "sample_products": [
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Folibild Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 265.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

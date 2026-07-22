@@ -60,18 +60,19 @@ _PARTY_END = 61
 # Sale Amount / Tax Amount may be negative (Wastage). Tax %age sits between Sale Price and
 # Sale Amount and is dropped (it is a rate, not a value).
 _TAIL_RE = re.compile(
-    r"\s(?P<type>Sales|Wastage|Purchase|Sales Return|Purchase Return)\s+"
+    r"\s(?P<type>Sales|Wastage|Purchase|Sales Return|Purchase Return"
+    r"|Breakage|Expiry|Stock Transfer)\s+"
     r"(?P<qty>-\d+|-|\d+)\s+"
     r"(?P<free>-|\d+)\s+"
-    r"(?P<mrp>[\d.]+)\s+"
-    r"(?P<rate>[\d.]+)\s+"
-    r"(?P<taxp>[\d.]+)\s+"
-    r"(?P<amount>-?[\d.]+)\s+"
-    r"(?P<tax>-?[\d.]+)\s*$"
+    r"(?P<mrp>[\d,.]+)\s+"
+    r"(?P<rate>[\d,.]+)\s+"
+    r"(?P<taxp>[\d,.]+)\s+"
+    r"(?P<amount>-?[\d,.]+)\s+"
+    r"(?P<tax>-?[\d,.]+)\s*$"
 )
 
 # The remainder [61:] starts: dd-mm-yyyy <invoice> [batch] [MM-YYYY] Type ...
-_HEAD_RE = re.compile(r"^\s*(?P<date>\d{2}-\d{2}-\d{4})\s+(?P<inv>\S+)(?P<mid>.*?)\s+(?:Sales|Wastage|Purchase)")
+_HEAD_RE = re.compile(r"^\s*(?P<date>\d{2}-\d{2}-\d{4})\s+(?P<inv>\S+)(?P<mid>.*?)\s+(?:Sales|Wastage|Purchase|Breakage|Expiry|Stock Transfer)")
 _EXP_RE = re.compile(r"\b\d{2}-\d{4}\b")
 
 
@@ -152,10 +153,10 @@ def parse_klm_item_party_sales_statement(rows):
             "batch_no": batch,
             "qty": "0" if qty == "-" else qty,
             "free_qty": "0" if tail.group("free") == "-" else tail.group("free"),
-            "mrp": tail.group("mrp"),
-            "rate": tail.group("rate"),
-            "amount": tail.group("amount"),
-            "tax_amount": tail.group("tax"),
+            "mrp": tail.group("mrp").replace(",", ""),
+            "rate": tail.group("rate").replace(",", ""),
+            "amount": tail.group("amount").replace(",", ""),
+            "tax_amount": tail.group("tax").replace(",", ""),
         }
         records.append(rec)
 

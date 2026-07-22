@@ -9,8 +9,21 @@ from extractors.stock_pdf.parse_common import (
 
 
 def parse_saurashtra_monthly(text):
-    """Logic ERP Monthly Sales & Stock: SrNo ItemName PackSize PRate PTR Opening OpeningValue PurQty ... Closing ClosingAmt StockAmt"""
+    """Logic ERP Monthly Sales & Stock: SrNo ItemName PackSize PRate PTR Opening OpeningValue PurQty ... Closing ClosingAmt StockAmt
+
+    Two dialects share the "Monthly Sales And Stock" gate. VASAVI ends every row in the
+    3-tail [Closing Qty, Closing Amt(PTR), Stock Amt(Pur.Rate)] and prints Pack-Size as its
+    own numeric column. WESTERN HEALTHCARE appends a trailing "Rpl. Qty" column (4-tail) AND
+    prints the pack inline in the item name ("EKRAN LOTION 50GM"), so the numeric tail carries
+    no leading pack. Left unhandled, the shared back-anchored mapping shifts a column (closing
+    value read as closing qty) and the >=20 pop eats WESTERN's Rate. Normalise WESTERN back to
+    the VASAVI shape: (1) drop the trailing Rpl column when the header carries it, (2) only pop
+    a leading numeric pack when one wasn't already peeled into an alnum `pack`. Both guards are
+    inert for VASAVI (no "rpl. qty" header; its pack column is always numeric -> pack == "").
+    """
     records = []
+    _low = text.lower()
+    has_rpl = "rpl. qty" in _low or "rpl.qty" in _low
     for line in text.splitlines():
         s = line.strip()
         if _skip_line(s):
@@ -43,8 +56,14 @@ def parse_saurashtra_monthly(text):
         vals = _nums(tail)
         if len(vals) < 10:
             continue
-            
-        if len(vals) >= 20:
+
+        # WESTERN dialect: strip the trailing Rpl.Qty so the row matches VASAVI's 3-tail.
+        if has_rpl and vals:
+            vals = vals[:-1]
+
+        # A leading numeric Pack-Size column is present only when the pack wasn't already
+        # peeled into an alnum `pack` (WESTERN's "50GM" is inline -> its first number is Rate).
+        if len(vals) >= 20 and not pack:
             numeric_pack = vals.pop(0)
             pack = str(int(numeric_pack)) if numeric_pack.is_integer() else str(numeric_pack)
             

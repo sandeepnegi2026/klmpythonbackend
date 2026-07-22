@@ -1,0 +1,30 @@
+{
+  "file": "Klm Areawise  From 01-06-26  To 30-06-26.xls",
+  "route": "party_xlsx",
+  "row_count": 443,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "manufacturer_itemwise_secondary_xlsx",
+  "party_count": 146,
+  "area_count": 98,
+  "product_count": 99,
+  "sample_parties": [
+    "AANDAVAR MEDICALS",
+    "AAROGYA PHARMACY-2",
+    "AL MADEENA PHARMACY",
+    "AMIRTHAM MEDICALS",
+    "AMUTHA MEDICALS-C"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 895.0,
+  "amount_total": 161742.66,
+  "rate_total": 85320.23,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

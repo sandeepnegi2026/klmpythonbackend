@@ -5,6 +5,8 @@ import time
 
 import pdfplumber
 
+from core.line_ledger import audit_text_lines
+
 from extractors.party_pdf.constants import FORMAT_LABELS, FORMAT_REPORT_TYPE
 from extractors.party_pdf.detect import detect_format
 from extractors.party_pdf.registry import PARSERS
@@ -318,6 +320,15 @@ def extract_pdf(pdf_bytes):
                         break
             result["parsed_headers"] = h
             result["parsed_rows"] = r
+            # Line-accounting ledger (core/line_ledger): classify every input
+            # line against the RAW parser output — here, after the fallback
+            # chain resolves, values still match the printed text (no pack
+            # strip / canonicalization / enrichment yet). Read-only: it never
+            # alters rows; triage's UNACCOUNTED_LINES gate consumes it.
+            try:
+                result["line_audit"] = audit_text_lines(full_text, r, headers=h)
+            except Exception:  # ledger must never break extraction
+                result["line_audit"] = {"applicable": False, "reason": "ledger error"}
         except Exception as e:
             result["parse_error"] = str(e)
             result["parsed_headers"] = []

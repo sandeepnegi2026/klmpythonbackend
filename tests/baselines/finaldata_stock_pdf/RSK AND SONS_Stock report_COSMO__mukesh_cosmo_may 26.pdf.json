@@ -1,0 +1,18 @@
+{
+  "file": "COSMO__mukesh_cosmo_may 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 2,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 24,
+  "sample_products": [
+    "EKRAN HYDRAGEL 80 SUNS5C0GRMEEN",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-500 Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 625.0,
+  "rate_total": 0.0
+}

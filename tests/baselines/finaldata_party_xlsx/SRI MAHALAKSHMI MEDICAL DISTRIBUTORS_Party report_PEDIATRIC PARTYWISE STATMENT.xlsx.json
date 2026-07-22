@@ -1,0 +1,29 @@
+{
+  "file": "PEDIATRIC PARTYWISE STATMENT.xlsx",
+  "route": "party_xlsx",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 11,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "AMAAN MEDICAL & FANCY STO",
+    "GAYATRI MEDICAL AND G.STO",
+    "LIKITHA MEDICAL&GENERAL S",
+    "SREE SATYANARAYANA ENTERP",
+    "SRI MEGHANA MEDICALS"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "SOFIDEW MOISTURIZING LOTION",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 83.0,
+  "amount_total": 9436.18,
+  "rate_total": 1926.57,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

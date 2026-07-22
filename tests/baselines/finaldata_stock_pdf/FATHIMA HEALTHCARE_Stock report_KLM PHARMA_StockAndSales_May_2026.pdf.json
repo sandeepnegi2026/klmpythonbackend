@@ -1,0 +1,18 @@
+{
+  "file": "KLM PHARMA_StockAndSales_May_2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 13,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Ga-6 Cream 30Gm",
+    "K-Dox Capsules 1*10",
+    "Kentruff Lotion 75 Ml"
+  ],
+  "closing_stock_total": 118.0,
+  "rate_total": 0.0
+}

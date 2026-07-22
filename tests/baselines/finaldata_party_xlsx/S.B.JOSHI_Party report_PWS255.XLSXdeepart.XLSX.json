@@ -1,0 +1,30 @@
+{
+  "file": "PWS255.XLSXdeepart.XLSX",
+  "route": "party_xlsx",
+  "row_count": 94,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 60,
+  "area_count": 60,
+  "product_count": 21,
+  "sample_parties": [
+    "ABHAY MEDICALS",
+    "AL SHIFA MEDICALS&GEN STORES",
+    "ANAND HEALTH CARE (MAHESH)",
+    "ANAND MEDICO(NEW)",
+    "BHARATI HOSP.DRUG STORES"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 159.0,
+  "amount_total": 33306.88,
+  "rate_total": 19063.45,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

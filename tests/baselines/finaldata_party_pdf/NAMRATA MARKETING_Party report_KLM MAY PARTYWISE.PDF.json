@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY PARTYWISE.PDF",
+  "route": "party_pdf",
+  "row_count": 99,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 53,
+  "area_count": 14,
+  "product_count": 35,
+  "sample_parties": [
+    "AAKHRE MEDICAL STORES",
+    "AARADHYA MEDICAL STORES",
+    "AASHA MEDICAL STORES",
+    "ASHOK MEDICAL STORES",
+    "BHARGAV MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 50Gm",
+    "Kenz Soap"
+  ],
+  "qty_total": 634.0,
+  "amount_total": 68852.12,
+  "rate_total": 12601.27,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

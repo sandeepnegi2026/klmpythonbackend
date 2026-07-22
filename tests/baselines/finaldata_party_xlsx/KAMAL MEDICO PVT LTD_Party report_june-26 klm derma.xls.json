@@ -1,0 +1,30 @@
+{
+  "file": "june-26 klm derma.xls",
+  "route": "party_xlsx",
+  "row_count": 430,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "partywise_band",
+  "party_count": 287,
+  "area_count": 51,
+  "product_count": 24,
+  "sample_parties": [
+    "A ONE CHEMIST & GENERAL STORES",
+    "AADITYA MEDICAL AND GENERAL ST",
+    "AAIJI FOREVER CHESMIST & DRUGG",
+    "AARAV MEDICAL",
+    "AKSHAY MEDICAL & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 837.0,
+  "amount_total": 130407.11,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

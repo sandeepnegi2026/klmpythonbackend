@@ -1,0 +1,19 @@
+{
+  "file": "DSTT.XLS",
+  "route": "stock_xlsx",
+  "row_count": 228,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 219,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "CLOZE 0.5 TAB",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "closing_stock_total": 2752.0,
+  "rate_total": 0.0,
+  "line_unexplained": 10
+}

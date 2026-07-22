@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__KLM COSMOQ DIV PARTY WISE STATEMENT MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 7,
+  "area_count": 7,
+  "product_count": 9,
+  "sample_parties": [
+    "BHAVNA PHARMACY AND WELLNESS",
+    "DERMA PLUS MEDICAL",
+    "DR VISHAL ANJANVATIKAR(PATIL)",
+    "INDUMATI MEDICAL & GENERAL STO",
+    "KAYAKALP MEDICAL"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 142.0,
+  "amount_total": 49845.17,
+  "rate_total": 4111.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

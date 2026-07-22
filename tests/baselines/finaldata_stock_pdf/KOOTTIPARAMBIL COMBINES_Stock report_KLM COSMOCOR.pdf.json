@@ -1,0 +1,18 @@
+{
+  "file": "KLM COSMOCOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 19,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml",
+    "Nioclean Gel 20 Gm"
+  ],
+  "closing_stock_total": 654.0,
+  "rate_total": 0.0
+}

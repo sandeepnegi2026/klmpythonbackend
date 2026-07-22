@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCORE PARTY WISE JUNE-26-2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 89,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 43,
+  "area_count": 0,
+  "product_count": 24,
+  "sample_parties": [
+    "AHMED MEDI&GEN STORES",
+    "AMARAVATHI MEDICALS",
+    "AYYAPPA PHARMACY",
+    "DHANVANTRI PHARMACY",
+    "DOCTORS MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 786.0,
+  "amount_total": 104578.0,
+  "rate_total": 14277.54,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

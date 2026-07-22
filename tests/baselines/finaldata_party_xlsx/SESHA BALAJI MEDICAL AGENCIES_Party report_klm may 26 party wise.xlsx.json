@@ -1,0 +1,30 @@
+{
+  "file": "klm may 26 party wise.xlsx",
+  "route": "party_xlsx",
+  "row_count": 701,
+  "warnings_count": 0,
+  "headers_detected_count": 38,
+  "detected_format": "customer_company_itemwise",
+  "party_count": 192,
+  "area_count": 194,
+  "product_count": 126,
+  "sample_parties": [
+    "A S R MEDICALS AND GENERALS",
+    "A TO Z MEDICAL STORES",
+    "A.P.MEDICALS",
+    "AAHNA PHARMACY",
+    "ADITYA PHARMACY"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "qty_total": 3366.0,
+  "amount_total": 622874.73,
+  "rate_total": 159535.47,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

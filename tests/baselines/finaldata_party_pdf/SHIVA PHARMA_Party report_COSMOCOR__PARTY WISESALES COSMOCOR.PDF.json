@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR__PARTY WISESALES COSMOCOR.PDF",
+  "route": "party_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 6,
+  "area_count": 6,
+  "product_count": 11,
+  "sample_parties": [
+    "CHITRANSH MEDICAL STORE",
+    "DR NARGISH ANSARI",
+    "REFINE PHARMACY",
+    "SKIN PLANET",
+    "SRI SAI MEDICOSE"
+  ],
+  "sample_products": [
+    "AZACEA 20 CREAM",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Nioclean Ad Gel 15 Gm",
+    "Niogenta F Cream 20 Gm"
+  ],
+  "qty_total": 676.0,
+  "amount_total": 48029.51,
+  "rate_total": 2500.4,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

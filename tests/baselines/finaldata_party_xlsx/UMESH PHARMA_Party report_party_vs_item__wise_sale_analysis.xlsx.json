@@ -1,0 +1,24 @@
+{
+  "file": "party_vs_item__wise_sale_analysis.xlsx",
+  "route": "party_xlsx",
+  "row_count": 356,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 172,
+  "area_count": 0,
+  "product_count": 0,
+  "sample_parties": [
+    "AADHYA MEDICAL(6362)PADALI KHURD",
+    "AAPALI PHARMACY(6374)KODOLI",
+    "ADITYA PHARMA(6219)R.K.NAGAR",
+    "AMIT MEDICAL(2044)SHAHUPURI",
+    "AMIT R MEDICALS(2045)KALAMBA"
+  ],
+  "sample_products": [],
+  "qty_total": 1946.0,
+  "amount_total": 314589.94,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

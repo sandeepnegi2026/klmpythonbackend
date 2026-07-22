@@ -1,0 +1,15 @@
+{
+  "file": "KLM7.PDF",
+  "route": "stock_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_sales_statement_adjmt_positional",
+  "product_count": 2,
+  "sample_products": [
+    "Folibild Tablets",
+    "Xaliderm Solution 50Ml"
+  ],
+  "closing_stock_total": 29.0,
+  "rate_total": 0.0
+}

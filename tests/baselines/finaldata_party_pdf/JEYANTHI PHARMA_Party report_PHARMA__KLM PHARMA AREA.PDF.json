@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM PHARMA AREA.PDF",
+  "route": "party_pdf",
+  "row_count": 158,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "areawise_sales_billwise",
+  "party_count": 53,
+  "area_count": 20,
+  "product_count": 19,
+  "sample_parties": [
+    "ALAGU PHARMACY-R",
+    "ALM MEDICALS",
+    "ANNAM PHARMA DISTRIB",
+    "ARASAN MEDICAL",
+    "BAWA MEDICAL MART."
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 572.0,
+  "amount_total": 93120.94,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

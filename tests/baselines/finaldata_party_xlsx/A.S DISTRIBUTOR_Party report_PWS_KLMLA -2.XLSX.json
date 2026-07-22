@@ -1,0 +1,30 @@
+{
+  "file": "PWS_KLMLA -2.XLSX",
+  "route": "party_xlsx",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 34,
+  "area_count": 33,
+  "product_count": 10,
+  "sample_parties": [
+    "ADITI MEDICAL STORES",
+    "ADVIK MEDICO",
+    "CITY MEDICAL",
+    "DNYANSHWARI MEDICAL & GEN.STO.",
+    "DRUG CORNER MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 39.0,
+  "amount_total": 21284.0,
+  "rate_total": 19724.68,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

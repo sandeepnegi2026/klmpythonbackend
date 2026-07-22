@@ -1,0 +1,30 @@
+{
+  "file": "KLM-2.xls",
+  "route": "party_xlsx",
+  "row_count": 509,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_product_banded",
+  "party_count": 147,
+  "area_count": 61,
+  "product_count": 106,
+  "sample_parties": [
+    "AADYA MEDICALS(MIZAPOKHARI)",
+    "ANADI ALEKH MEDICINE STORE(BPL)",
+    "ANADI MEDICINES(ARAD BAZAR)",
+    "ANNAPURNA MEDICAL STORE(gopalpur)",
+    "AYUSH MEDICURE"
+  ],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 4089.0,
+  "amount_total": 828482.66,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

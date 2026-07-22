@@ -1,0 +1,26 @@
+{
+  "file": "COSMOCOR__KLM COSOCARE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 34,
+  "sample_parties": [
+    "KLM"
+  ],
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets"
+  ],
+  "qty_total": 1203.0,
+  "amount_total": 184559.0,
+  "rate_total": 1287.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

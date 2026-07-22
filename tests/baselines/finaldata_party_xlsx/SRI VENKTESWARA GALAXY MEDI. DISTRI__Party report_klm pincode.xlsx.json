@@ -1,0 +1,30 @@
+{
+  "file": "klm pincode.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1334,
+  "warnings_count": 0,
+  "headers_detected_count": 17,
+  "detected_format": "tabular",
+  "party_count": 348,
+  "area_count": 36,
+  "product_count": 83,
+  "sample_parties": [
+    "9 STARS MEDICALS AND FANCY",
+    "A P OM PHARMACY",
+    "AADITHYA MEDICAL AND FANCY",
+    "AAROGYA PHARMACY",
+    "ADHYA PHARMACY"
+  ],
+  "sample_products": [
+    "CANROLFIN 0.25%W/W CREAM",
+    "Canrolfin Cream 15 Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "EKRAN SPF 30 SUNSCREEN GEL"
+  ],
+  "qty_total": 2246.0,
+  "amount_total": 349400.8,
+  "rate_total": 222603.04,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

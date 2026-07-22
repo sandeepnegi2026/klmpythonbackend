@@ -1,0 +1,19 @@
+{
+  "file": "KLM 5 2.xls",
+  "route": "stock_xlsx",
+  "row_count": 100,
+  "warnings_count": 11,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 97,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "closing_stock_total": 1315.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

@@ -1,0 +1,30 @@
+{
+  "file": "REPORT-.PDF",
+  "route": "party_pdf",
+  "row_count": 410,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 166,
+  "area_count": 74,
+  "product_count": 116,
+  "sample_parties": [
+    "AARAV MEDICAL STORE",
+    "ABHINAV CHEMIST",
+    "AJAI CHEMIST",
+    "AKSHAT MEDIICAL STORE",
+    "AMIT PHARMACY"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "qty_total": 885.0,
+  "amount_total": 141393.42,
+  "rate_total": 79946.89,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

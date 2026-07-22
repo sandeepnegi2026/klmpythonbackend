@@ -1,0 +1,18 @@
+{
+  "file": "KLM STOCK JUNE 26.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 153,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 147,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 3382.0,
+  "rate_total": 0.0
+}

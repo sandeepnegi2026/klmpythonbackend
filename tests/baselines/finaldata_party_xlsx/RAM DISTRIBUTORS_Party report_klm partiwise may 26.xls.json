@@ -1,0 +1,30 @@
+{
+  "file": "klm partiwise may 26.xls",
+  "route": "party_xlsx",
+  "row_count": 250,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 66,
+  "area_count": 27,
+  "product_count": 62,
+  "sample_parties": [
+    "AADHAR MEDICAL AND AGENCIES",
+    "AKHADE MEDICAL STORE",
+    "ANAND MEDICAL & GENRAL STORES",
+    "ANSH PHARMA",
+    "APARAJIT MED & GENRAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "qty_total": 1852.0,
+  "amount_total": 301583.66,
+  "rate_total": 45699.62,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

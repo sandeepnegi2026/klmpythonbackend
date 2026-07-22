@@ -1,0 +1,30 @@
+{
+  "file": "DERMA PA.PDF",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 10,
+  "area_count": 5,
+  "product_count": 14,
+  "sample_parties": [
+    "ANJANI DRUG HOUSE(SALE) GUMLA",
+    "JANTA MEDICAL HALL",
+    "MAA VINDHAYAWASHNI MEDICAL",
+    "NEW JANTA MEDICAL HALL",
+    "NEW R. C. PHARMA"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 303.0,
+  "amount_total": 36628.14,
+  "rate_total": 4045.39,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "SHAH MEDICINE.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_datewise_pack_free_inst",
+  "product_count": 7,
+  "sample_products": [
+    "KLIN AHA FOAMING GE",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml",
+    "Klm Klin Face Wash 150 Ml",
+    "Klm Klin Soap 75G"
+  ],
+  "closing_stock_total": 145.0,
+  "rate_total": 0.0
+}

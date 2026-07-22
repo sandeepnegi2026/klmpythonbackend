@@ -1,0 +1,19 @@
+{
+  "file": "KLM ALL STK MAY 26.xls",
+  "route": "stock_xlsx",
+  "row_count": 100,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 98,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 1160.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

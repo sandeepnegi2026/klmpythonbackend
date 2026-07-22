@@ -1,0 +1,30 @@
+{
+  "file": "KLM Dermacor May 26 AWS.xls",
+  "route": "party_xlsx",
+  "row_count": 159,
+  "warnings_count": 0,
+  "headers_detected_count": 29,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 94,
+  "area_count": 30,
+  "product_count": 28,
+  "sample_parties": [
+    "AAIJI MEDICAL & GENERAL STORE",
+    "ADARSH CHEMIST",
+    "ADIL CHEM & GEN ST",
+    "ADITI MEDICAL & GEN STORE",
+    "AL-HUDA MEDICAL"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Tablets"
+  ],
+  "qty_total": 287.0,
+  "amount_total": 59149.97,
+  "rate_total": 32294.26,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

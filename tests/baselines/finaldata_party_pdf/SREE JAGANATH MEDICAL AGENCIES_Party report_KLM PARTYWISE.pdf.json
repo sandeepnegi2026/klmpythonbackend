@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTYWISE.pdf",
+  "route": "party_pdf",
+  "row_count": 87,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 34,
+  "area_count": 2,
+  "product_count": 36,
+  "sample_parties": [
+    "A.S.ENTERPRISES",
+    "AROGYA MEDICINE STORE",
+    "BHABANI MEDICINE",
+    "BHABANI SHANKAR MEDICAL STORE",
+    "BHUMI MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 594.0,
+  "amount_total": 86933.23,
+  "rate_total": 15893.14,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

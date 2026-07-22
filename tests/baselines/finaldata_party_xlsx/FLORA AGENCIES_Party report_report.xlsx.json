@@ -1,0 +1,29 @@
+{
+  "file": "report.xlsx",
+  "route": "party_xlsx",
+  "row_count": 598,
+  "warnings_count": 0,
+  "headers_detected_count": 49,
+  "detected_format": "product_areawise_pivot",
+  "party_count": 23,
+  "area_count": 23,
+  "product_count": 159,
+  "sample_parties": [
+    "ALIBAG-POYNAD",
+    "BORLI",
+    "KHED",
+    "KHOPOLI",
+    "LONERE GOREGAON"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "qty_total": 4219.0,
+  "amount_total": 611453.43,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

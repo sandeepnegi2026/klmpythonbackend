@@ -31,6 +31,22 @@ def detect_layout(text, n_rects):
     # terminus is disjoint from the batch-wise "…Closing Closing Value" sibling.
     if "openingreceiptstotalsalesclosingclosingage" in _c15:
         return "klm_lmsale_receipts_age"
+    # INDRA DRUG HOUSE "Group Wise Sales" KLM stock+sales statement. 13-col 2-row header
+    # (ProductName|Strength + 11 numeric); Total Qty is DERIVED (dropped), money->_value.
+    # Glued title "GroupWiseSales(From..." + the unique 13-col header run key ONLY this
+    # export (verified: 1/1995 corpus PDFs match). POSITIONAL (pdfplumber x1 buckets).
+    if ("groupwisesales(from" in _c15
+            and "openingopeningpurchasepurchasetotalissueissueclosingclosingdumpnear" in _c15):
+        return "indra_group_wise_sales"
+    # J.K.MEDICO PRIVATE LIMITED (RAJKOT) "Stock sales statement" — KLM-family xlsx->pdf
+    # "Product wise sale list". Real editable %PDF that wraps trailing digits/fractions and
+    # long names onto continuation lines, so it is parsed POSITIONALLY (numbers bucketed to
+    # header-label right edges via file_bytes/pdfplumber). Gate on the report TITLE plus the
+    # UNIQUE wrapped-stem header run (Openin/Purchas/SValue/Closing/Cl.Valu) — absent from
+    # every other export, so it cannot steal any other file.
+    if ("stocksalesstatementfortheperiod" in _c15
+            and "productnamepackrateopeninpurchassalessvalueclosingcl.valu" in _c15):
+        return "jkmedico_stock_sales_statement"
     # THANE xtraRepStockAndSales: Op Bal|Purc|Sale|Sal Val|In/Out|Stk|Stk Val|3M
     # (signed In/Out stock adjustment). Positional (PyMuPDF).
     if "purcsalesalval" in _c15 and "in/out" in low:
@@ -378,6 +394,34 @@ def detect_layout(text, n_rects):
     if ("stockandsalereport(month)" in _comp_rcpt and "opstkrcpt" in _comp_rcpt
             and "cl.sstkvalusalvalu" in _comp_rcpt):
         return "klm_stock_sales_month_rcpt"
+    # KLM 'Stock And Sales Report(Month)' — U.Rate dialect (NAGAMMAI PHARMA).
+    # Sibling of the month family; header 'Product Name Pack OpStk Rcpt AprL Sale
+    # ClStk U.Rate Sal Val Stk Val TfrOu'. Zero cells blank out + right-aligned =>
+    # positional x-bucket parser. Gate on 'clstku.rate' (ClStk+U.Rate glued -- the
+    # U.Rate column is unique to this dialect) + 'salvalstkval' (SalVal-before-StkVal
+    # order); the _rcpt sibling carries 'cl.sstkvalusalvalu' (disjoint), and the AprL
+    # prev-month col renames monthly so it is NOT gated. Must precede the generic fall.
+    if ("stockandsalesreport(month)" in _comp_rcpt and "clstku.rate" in _comp_rcpt
+            and "salvalstkval" in _comp_rcpt):
+        return "klm_stock_sales_month_urate"
+    # LEO PHARMA DISTRIBUTORS 'Stock Register' — KLM per-division dash-padded columnar
+    # export. Header 'PRODUCT NAME OPENING P.QTY P.FR STN S.RTN P.RTN STNO S.FREE ADJ
+    # CL.STK CL.VALUE S.QTY S.VALUE'; every zero cell prints '-' so a last-13-token split
+    # reads it. The generic reader mis-binds the abbreviated transfer/free columns and
+    # dumps CL.VALUE into closing_stock. Gate on the 'stock register' title + the compact
+    # header run 'p.frstns.rtnp.rtnstno' (the STN/STNO transfer-in/out pair is unique to
+    # this export), so it cannot steal any other vendor's stock file.
+    if "stockregister" in _comp_rcpt and "p.frstns.rtnp.rtnstno" in _comp_rcpt:
+        return "leo_stock_register"
+    # KLM 'Stock And Sale Report(Month)' — Prv2/Repl dialect (SUCCESS PHARMAA & VACCINE).
+    # Header 'Produc ProductName Packi OpStk Rcpt Prv2.S Prv.Sa Sales Free Repl Adj
+    # SalesValue Closing St Stock Valu' (item-code prefix, TWO prev-month cols, Repl/Adj).
+    # Blank zero cells + right-aligned => positional x-bucket parser. Gate on the two
+    # prev-month abbreviations 'prv2.sprv.sa' + the 'repladjsalesvalue' run, unique to this
+    # export; the _rcpt sibling requires 'cl.sstkvalusalvalu' (disjoint). Must precede fall.
+    if ("stockandsalereport(month)" in _comp_rcpt and "prv2.sprv.sa" in _comp_rcpt
+            and "repladjsalesvalue" in _comp_rcpt):
+        return "klm_stock_sales_month_prv2"
     # Marg (KLM) "Stock and Sale Report" (SRI SENTHIL MEDICAL AGENCIES):
     # Product Name|Pack|OpStk|Purch|PrvSa|Sales|Adj|Cl.St|P.price|Sales Valu|Age.
     # Interior qty cells (PrvSa/Sales/Adj/Cl.St) blank out for no-movement rows,
@@ -446,6 +490,17 @@ def detect_layout(text, n_rects):
     if ("stockandsalesreport(month)" in compact and "openingpureilast" in compact
             and "netstock" in compact and "@pur" in compact):
         return "klm_stock_sales_month_netstock"
+    # SRI SARAVANA PHARMA (Dharmapuri) 'Stock And Sales Report(Month)' — KLM per-division
+    # books. Same shared title as the other KLM-month siblings, but a DISTINCT column
+    # vocabulary: header 'ProductName Pack OpnSt ClsStk StockValu Sale Qua SalFre SalRep
+    # SalesNet PurQt ILastNet' (closing qty+value BEFORE the sales columns). Zero cells blank
+    # out + numbers right-align, so the flat text collapses rows and generic emits ~0 rows ->
+    # POSITIONAL x-bucket parser. Gate on the shared title + the glued runs
+    # 'opnstclsstkstockvalu' and 'salequasalfresalrepsalesnet' (disjoint from every sibling's
+    # key; 7/1995 corpus PDFs match, all SRI SARAVANA). MUST precede klm_stock_sales_month.
+    if ("stockandsalesreport(month)" in compact and "opnstclsstkstockvalu" in compact
+            and "salequasalfresalrepsalesnet" in compact):
+        return "sri_saravana_ss_month_positional"
     if "stockandsalesreport(month)" in compact and "opstpursalefreeadjcl.s" in compact:
         return "klm_stock_sales_month"
     # Saleable Stock Report (SURANA DRUG DISTRIBUTORS): pipe-delimited text PDF,
@@ -915,9 +970,17 @@ def detect_layout(text, n_rects):
     # ('...Received Issued Closing') has NEITHER token so it is not stolen. MUST precede the
     # coarse stock_simple_7col rule.
     _c_klmri = low.replace(" ", "")
-    if "stockandsalesstatement" in _c_klmri and (
-        ("openingreceivedissued" in _c_klmri and "closingage" in _c_klmri)
-        or "valueclosingsreturnpreturnfree" in _c_klmri
+    # M.K. MEDICAL AGENCIES ships the SAME KLM AGE-variant grid under a "Stock & Sales"
+    # title (no "statement", '&' not 'and'), so the title gate below misses it and the file
+    # falls to the coarse stock_simple_7col rule -- which reads the trailing AGE column as
+    # closing (a constant ~57 phantom) and drops every zero-closing activity row. The glued
+    # header run 'openingreceivedissuedclosingage' (Opening Received Issued Closing Age,
+    # adjacent) is unique to this KLM grid, so route it here regardless of title.
+    if "openingreceivedissuedclosingage" in _c_klmri or (
+        "stockandsalesstatement" in _c_klmri and (
+            ("openingreceivedissued" in _c_klmri and "closingage" in _c_klmri)
+            or "valueclosingsreturnpreturnfree" in _c_klmri
+        )
     ):
         return "klm_received_issued"
     # SRI SUBRAHMANYA PHARMACEUTICALS 'STOCK AND SALES STATEMENT': division-banded
@@ -1098,6 +1161,16 @@ def detect_layout(text, n_rects):
     if ("lstslopenrecd.salescloseorderpend" in low.replace(" ", "")
             and "stk.value" not in low):
         return "stock_lstsl"
+    # BHAVYA MEDICAL AGENCIES 'Stock & Sales' — Opening/Received/Issued/Closing qty +
+    # a rupee Value column. Header wraps as 'Opening Received Issued Closing' /
+    # 'Item Name' / 'Pack Qty Qty Qty Qty Value'. Must precede the coarse
+    # 'stock & sales'->simple4 rule: simple4 has no Value column (dumps the rupee
+    # Value into closing_stock) and its comma-blind walk drops most rows. The
+    # compact two-run signature is corpus-unique to the BHAVYA export (8/1061 stock
+    # PDFs, all BHAVYA), so it steals no other simple4 file.
+    _cs = low.replace(" ", "")
+    if "openingreceivedissuedclosing" in _cs and "packqtyqtyqtyqtyvalue" in _cs:
+        return "bhavya_open_recv_issue_close_value"
     if "stock & sales" in low:
         if "- prev* max*" in low:
             return "technomax_stock"
@@ -1135,5 +1208,58 @@ def detect_layout(text, n_rects):
             and "cls.stk" in _comp_pcode and "s.ret" in _comp_pcode
             and "adj." in _comp_pcode):
         return "klm_stock_sales_analysis_pcode"
+
+    # CHANDRATHIL / JACKSON DRUG HOUSE DOSPrinter "Patentwise Sales Statement" — 16
+    # positional columns (Op.Qty Purch. S.Ret. StkIn Sale Free Damage/Hosp P.Ret. StkOut
+    # Balance | Last-Month | Purchase/Sale/Stock Value), banded by "KLM <DIV>". Blank
+    # cells collapse in the text layer so 'generic' below mis-binds the value columns
+    # into qty fields (closing_stock <- StockValue). Gate on the exact compact title
+    # 'patentwisesalesstatement' PLUS the unique header run op.qty/s.ret/stkin/stkout/
+    # balance. The "Patentwise AREAWISE Sales Statement" sibling (klm areawise.pdf,
+    # Product/Qty/Free/Total/Amount) fails BOTH the title (its compact form is
+    # 'patentwiseareawise...') and the header tokens, so it stays generic. Both target
+    # files currently fall to 'generic'; MUST precede it.
+    _c_pw = low.replace(" ", "")
+    if ("patentwisesalesstatement" in _c_pw and "op.qty" in _c_pw
+            and "s.ret" in _c_pw and "stkin" in _c_pw
+            and "stkout" in _c_pw and "balance" in _c_pw):
+        return "patentwise_sales_statement"
+
+    # SREE SWATHI MEDICALS / SRIMATHA MEDICAL HALL "STOCK AND SALES STATEMENT" (KLM
+    # DOSPrinter). 9-col grid Code|Product|Packing|Opening|Receipts|Total|Sales|Closing|
+    # Closing Value; generic mis-maps sales_qty<-Total (derived Op+Rec) and closing_stock<-
+    # money Closing Value. POSITIONAL. Gate on title + the leading column set AND the doubled
+    # 'Closing Closing / Stock Stock Value' money split — corpus-unique (these 7 files only).
+    if ("stockandsalesstatement" in _c15
+            and "codeproductnamepackingopeningreceipts" in _c15
+            and "closingclosing" in _c15 and "stockstockvalue" in _c15):
+        return "sree_swathi_stock_sales_statement"
+
+    # JAI AMBEY SALES "Sales And Stock (Summary)" (Marg). 8-numeric grid Product|OpStock|
+    # OpValue|In Stock|In Stock Value|Out Stock|Out Stock Value|Cl.Stock|Cl.Value; generic slid
+    # money into qty (OpValue->purchase_stock, Cl.Value->closing_stock) + dropped wrapped rows.
+    # POSITIONAL. Gate on title + the header run + the Cl.Stock/Cl.Value pair (3 files only).
+    if ("sales and stock" in low and "(summary)" in low
+            and "product opstock opvalue in stock" in low
+            and "cl.stock" in low and "cl.value" in low):
+        return "jai_ambey_sales_and_stock_summary"
+
+    # ASHA AGENCIES "Stock n Sales Status" (Data Spec). POSITIONAL: 4 left-aligned qty cols
+    # (Opg/Inw/Out/Clg) + a "Days Last Sale" col that generic leaked into closing on ~6 rows.
+    # Gate on title + glued header run + vendor name — unique to this export.
+    _asha = low.replace(" ", "")
+    if ("stocknsalesstatus" in _asha
+            and "opgqtyinwqtyoutqtyclgqty" in _asha
+            and "asha agencies" in low):
+        return "asha_stock_n_sales_status"
+
+    # PRAKASH MEDICAL AGENCY KLM "STOCK STATMENT" (misspelled). Spaced-letter glyph header
+    # "I T E M N A M E QTY. VALUE P U R C H A S E ..."; 6 (qty,value) pairs; generic slid the
+    # OPENING value money into purchase_stock AND closing_stock. Gate on the compact misspelled
+    # title + full compact header run — both unique to this KLM export.
+    _c_prakash = low.replace(" ", "")
+    if ("stockstatmentdatedfrom" in _c_prakash
+            and "itemnameqty.valuepurchasepurchaseretu.salessalesreturnclosingbalance" in _c_prakash):
+        return "prakash_stock_statement_pairs"
 
     return "generic"

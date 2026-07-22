@@ -1,0 +1,30 @@
+{
+  "file": "KLM custwise S Goa june 26.xls",
+  "route": "party_xlsx",
+  "row_count": 301,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "party_count": 109,
+  "area_count": 45,
+  "product_count": 69,
+  "sample_parties": [
+    "ADARSH MEDICAL STORES C&D UNIT OF FARMACIA WE CARE",
+    "AJIT PHARMACY KEPEM",
+    "ANIL MEDICAL STORE",
+    "AROGYA CHEMIST & DRUGGIST",
+    "ASHAPURA MEDICAL STORES C & D"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 596.0,
+  "amount_total": 95027.6,
+  "rate_total": 54387.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

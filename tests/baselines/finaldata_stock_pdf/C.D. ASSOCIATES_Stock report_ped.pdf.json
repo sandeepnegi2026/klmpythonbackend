@@ -1,0 +1,18 @@
+{
+  "file": "ped.pdf",
+  "route": "stock_pdf",
+  "row_count": 44,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_qoh_returns",
+  "product_count": 40,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend Vita Syrup 200Ml"
+  ],
+  "closing_stock_total": 550.0,
+  "rate_total": 0.0
+}

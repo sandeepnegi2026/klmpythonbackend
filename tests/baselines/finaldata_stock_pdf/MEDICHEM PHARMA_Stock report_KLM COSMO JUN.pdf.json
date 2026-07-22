@@ -1,0 +1,18 @@
+{
+  "file": "KLM COSMO JUN.pdf",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "medichem_ss_expiry",
+  "product_count": 10,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Histabil Tablet 1*10 Tab",
+    "Imxia 5"
+  ],
+  "closing_stock_total": 70.0,
+  "rate_total": 0.0
+}

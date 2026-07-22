@@ -1,0 +1,18 @@
+{
+  "file": "KLM3.PDF",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_sales_statement_adjmt_positional",
+  "product_count": 11,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 109.0,
+  "rate_total": 0.0
+}

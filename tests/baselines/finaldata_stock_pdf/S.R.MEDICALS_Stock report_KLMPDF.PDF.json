@@ -1,0 +1,18 @@
+{
+  "file": "KLMPDF.PDF",
+  "route": "stock_pdf",
+  "row_count": 182,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 178,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 11013.5,
+  "rate_total": 0.0
+}

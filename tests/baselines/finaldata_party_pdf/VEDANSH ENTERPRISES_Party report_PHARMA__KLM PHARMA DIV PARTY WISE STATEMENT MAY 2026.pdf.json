@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM PHARMA DIV PARTY WISE STATEMENT MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 44,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 18,
+  "area_count": 8,
+  "product_count": 23,
+  "sample_parties": [
+    "ADHIRA MEDICAL STORES",
+    "BHAVNA PHARMACY AND WELLNESS",
+    "DR SARIKA SOMANI",
+    "JAY MALHAR MEDICAL & GEN STORE",
+    "KAYAKALP MEDICAL"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 567.0,
+  "amount_total": 84322.42,
+  "rate_total": 7771.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

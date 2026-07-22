@@ -1,0 +1,18 @@
+{
+  "file": "VISNAGAR MEDICAL STORES.pdf",
+  "route": "stock_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 5,
+  "sample_products": [
+    "105,106,109,110,ANAND MARKET,FIRST FLOOR,OPP.M.N.COLLEGE ROAD Ph:02765",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml",
+    "Scarcote Gel 15Gm"
+  ],
+  "closing_stock_total": 54.0,
+  "rate_total": 0.0
+}

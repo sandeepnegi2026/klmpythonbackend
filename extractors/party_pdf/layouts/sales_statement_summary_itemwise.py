@@ -32,7 +32,7 @@ H = ["Party Name", "Product Name", "Qty", "Free", "Amount"]
 # rupee decimal (Sale Amount / Tax Amount)
 _MONEY = re.compile(r"^-?[\d,]+\.\d{1,2}$")
 # quantity / free: a non-negative integer or a bare "-" (nil)
-_QF = re.compile(r"^(?:-|\d+)$")
+_QF = re.compile(r"^(?:-|\d{1,3}(?:,\d{3})*|\d+)$")
 
 # A "core" pack token carries a digit and optionally a unit / multiplier.
 # It anchors the end of the Item Name (e.g. 1*10, 60ML, 30GM, 10S, 18%, 150GMS).

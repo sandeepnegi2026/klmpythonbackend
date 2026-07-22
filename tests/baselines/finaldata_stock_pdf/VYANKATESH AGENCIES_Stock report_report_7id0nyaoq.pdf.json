@@ -1,0 +1,18 @@
+{
+  "file": "report_7id0nyaoq.pdf",
+  "route": "stock_pdf",
+  "row_count": 100,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_movement_detail",
+  "product_count": 94,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "closing_stock_total": 3521.0,
+  "rate_total": 0.0
+}

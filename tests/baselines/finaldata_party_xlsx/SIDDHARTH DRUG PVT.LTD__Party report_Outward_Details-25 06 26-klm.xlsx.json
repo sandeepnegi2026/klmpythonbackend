@@ -1,0 +1,30 @@
+{
+  "file": "Outward_Details-25 06 26-klm.xlsx",
+  "route": "party_xlsx",
+  "row_count": 699,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 303,
+  "area_count": 11,
+  "product_count": 140,
+  "sample_parties": [
+    "A ONE MEDICAL",
+    "A- 1 CHEMIST&D",
+    "AAIJI CHEMIST",
+    "AARADHAYA MEDI",
+    "AAYUSH MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 1607.0,
+  "amount_total": 0.0,
+  "rate_total": 137428.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

@@ -1,7 +1,7 @@
 from extractors.stock_pdf.parse_common import (
     _nums,
     _skip_line,
-    _split_product_numbers,
+    _split_product_numbers_comma as _split_product_numbers,
     _split_product_pack,
 )
 
@@ -38,6 +38,24 @@ def parse_stock_oric_pairs(text):
         # default alignment fails the opening+receipt-issue=closing identity but a
         # one-value left shift satisfies it, drop that stray leading value.
         offset = 1 if (not _reconciles(vals, 0) and len(vals) > 8 and _reconciles(vals, 1)) else 0
+        # Same stray-leading-integer case, but where a UNIT-LESS bare pack (e.g.
+        # "KENZ TAB 10") lets the 0-shift ALSO pass — only by the 2% tolerance edge
+        # (residual > 0) — so the corrector above never fired. When both offsets
+        # reconcile, the stray lead token is a bare integer, and the 1-shift's
+        # identity residual is STRICTLY smaller than the 0-shift's, prefer the 1-shift.
+        # A correctly-aligned row reconciles at offset 0 with residual EXACTLY 0, so
+        # res1 < res0 (=0) is impossible for it — every currently-correct row is
+        # byte-identical.
+        if (
+            offset == 0
+            and len(vals) > 8
+            and tail[0].isdigit()
+            and _reconciles(vals, 0)
+            and _reconciles(vals, 1)
+            and abs((vals[1] + vals[3] - vals[5]) - vals[7])
+            < abs((vals[0] + vals[2] - vals[4]) - vals[6])
+        ):
+            offset = 1
         # Trailing digits of the product NAME plus a mangled bare-number pack
         # (e.g. "KLM C 1000 10", "KLM-FX 180 10") are popped into the numeric
         # tail as TWO extra leading integers, fabricating opening qty/value and

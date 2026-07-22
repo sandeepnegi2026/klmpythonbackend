@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__KLM PEDIA PARTY WISE  May26.pdf",
+  "route": "party_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 12,
+  "area_count": 0,
+  "product_count": 18,
+  "sample_parties": [
+    "DR GARIMA BANSAL",
+    "DR H.K BHARDWAJ",
+    "DR HARSH SHARMA",
+    "DR M.L.GUPTA",
+    "DR MIHIR GUPTA HUF"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klm D3 Nano Drops",
+    "Kofcatch Ax 100Ml"
+  ],
+  "qty_total": 657.0,
+  "amount_total": 73387.91,
+  "rate_total": 4428.93,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

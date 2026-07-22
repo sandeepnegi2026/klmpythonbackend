@@ -91,7 +91,22 @@ THRESHOLDS = {
     "total_soft": 0.15,           # >15% printed-vs-summed gap -> AMBER
     "total_hard": 0.50,           # >50% gap -> RED TOTAL_MISMATCH
     "min_rows": 3,
+    # Line-accounting ledger gate (core/line_ledger): a file whose source holds
+    # materially many data-shaped lines that NO extracted row explains cannot be
+    # GREEN. Thresholds tuned on the VENUS incident (386 dropped lines -> 12%
+    # ratio, trips loudly) while staying quiet on clean files (0 unexplained).
+    "unaccounted_min_data": 20,   # ledger applies only with >= this many data lines
+    "unaccounted_min_lines": 5,   # >= this many unexplained lines ...
+    "unaccounted_ratio": 0.02,    # ... AND >= this fraction of data lines -> AMBER
 }
+
+# Shadow switch for the ledger gate: the ledger is ALWAYS computed and stored
+# (league table / auditors read it); only the verdict effect is flag-gated so
+# the corpus can be measured before any verdict changes. Flip the default to
+# "1" once the shadow league confirms the false-positive budget; the env var
+# then remains the emergency kill-switch.
+import os as _os  # noqa: E402
+_LEDGER_GATE = _os.environ.get("PSUI_LEDGER_GATE", "0") == "1"
 
 
 # --------------------------------------------------------------------------- #
@@ -217,6 +232,7 @@ def effective_sanity(result, report_type):
 
     enforce_schema turns a never-extracted row into all-zeros, which reconciles
     falsely (0 == 0+0-0-0+0). Excluding those gives an honest pass-rate.
+
     """
     if report_type != "stock":
         return None
@@ -494,6 +510,30 @@ def report_total_reconcile(result, report_type):
     else:
         printed = None
     if printed is None or summed == 0.0:
+        # Label-scan found nothing — consult the format registry (Marg per-MF
+        # doc-type summaries, bare-numeric grand lines; core/printed_totals).
+        # Fires ONLY on this no-labelled-total exit, so every file that already
+        # reconciles via a labelled total is byte-for-byte unaffected. The same
+        # magnitude guard as the labelled path applies (a qty-scale figure must
+        # not masquerade as the amount grand total).
+        if summed > 0:
+            from core.printed_totals import recognize_printed_totals
+            for hit in recognize_printed_totals(text, report_type):
+                cand = hit.get("amount")
+                if not cand:
+                    continue
+                if 0 < abs(cand) < summed / _STOCK_VALUE_TOTAL_FACTOR:
+                    continue
+                diff = abs(cand - summed) / max(abs(cand), 1.0)
+                return {
+                    "found": True,
+                    "field": field,
+                    "printed": round(cand, 2),
+                    "summed": round(summed, 2),
+                    "diff_ratio": round(diff, 3),
+                    "ok": diff <= THRESHOLDS["total_soft"],
+                    "source": hit["kind"],
+                }
         return {"found": False, "field": field, "summed": round(summed, 2)}
     # Units-mismatch guard: a stock qty sum vs a much-larger printed figure is a
     # rupee VALUE aggregate, not a quantity total — don't manufacture a mismatch.
@@ -579,6 +619,22 @@ def value_total_corroborated(result, report_type):
         summed = sum(_to_float(row.get(field)) or 0.0 for row in rows)
         if summed > 1000.0:  # a genuinely populated value column, not a stray cell
             targets.append(summed)
+    if not targets:
+        # Layouts that print a per-unit Rate but NO per-row value column (COSMO
+        # "Stock sales statement Small": Product|Pack|Rate|Opening|Reciept|Sales|
+        # Free|SalesRtn|Closing) still print a rupee grand total their own software
+        # computed as Σ rate×qty. Reconstruct that value column from rate×qty: a
+        # shifted/mis-mapped quantity column cannot reproduce the printed total
+        # through rate×qty, so a match is the same strength of proof as a native
+        # value column — and the quantity floor in decide() still gates the
+        # RED→AMBER downgrade exactly as before.
+        for field in ("closing_stock", "sales_qty"):
+            summed = sum(
+                (_to_float(row.get("rate")) or 0.0) * (_to_float(row.get(field)) or 0.0)
+                for row in rows
+            )
+            if summed > 1000.0:
+                targets.append(summed)
     if not targets:
         return False
     # Printed grand-totals live in the last few non-empty lines — a bare column-totals
@@ -708,6 +764,96 @@ def printed_totals_all_zero(result) -> bool:
         return False
 
 
+# --------------------------------------------------------------------------- #
+# row completeness — "did we capture every source row?"
+# (census adapted from scripts/audit_one.py's battle-tested line oracle; kept as
+#  a self-contained copy because core/ must not import from scripts/)
+# --------------------------------------------------------------------------- #
+_CENSUS_NOISE = re.compile(
+    r'^\s*$'
+    r'|^\s*page\b|\bpage\s*\d|\bpage\s*:\s*\d'
+    r'|grand\s*total|^\s*total\b|group\s*total|\btotal\s*:'
+    r'|^\s*[-=_*]{3,}\s*$'
+    r'|powered by|taken by|taken at'
+    r'|^gstin|^tin\b|^phone|^e-?mail|^\d+\s*[b:]'                 # licence/GSTIN block
+    r'|stock\s*(and|&)?\s*sales?\s*(statement|report|analysis)'   # report title banner
+    r'|^(opening|purchase|sales|closing)(\s+(value|val|stock))?\s+[\d,]+\.?\d*\s*$'
+    r'|^\d[\d/\-,\s]*(floor|street|st\b|road|nagar|complex|colony|market|near)'
+    r'|\bdiv\b\s*$|\[\d+\]\s*$'                                   # division bands
+    r'|item\s*name|product\s*/?\s*(name|company)|^no\b.*\bproduct',  # header row
+    re.I,
+)
+# Above this many candidate lines or rows the O(candidates×rows) token match is
+# skipped entirely — completeness is then reported as a plain row count only.
+_CENSUS_CAP = 1500
+
+
+def _census_norm(s):
+    return re.sub(r'[^A-Z0-9]', '', str(s).upper())
+
+
+def _census_candidate_lines(raw_text):
+    out = []
+    for ln in raw_text.splitlines():
+        s = ln.strip()
+        if not s or _CENSUS_NOISE.search(s):
+            continue
+        if re.search(r'[A-Za-z]', s) and re.search(r'\d', s):
+            out.append(s)
+    return out
+
+
+def _census_line_matches(line, norm_names):
+    """A candidate line matches an output row when its leading name token (first
+    alpha run >= 4 chars, falling back to >= 3) appears inside any normalized
+    extracted name. A line with no name token is not a data row -> counts matched."""
+    toks = re.findall(r'[A-Za-z]{4,}', line.upper()) or re.findall(r'[A-Za-z]{3,}', line.upper())
+    if not toks:
+        return True
+    key = toks[0]
+    return any(key in n for n in norm_names)
+
+
+def row_completeness(result, report_type):
+    """Census of source lines vs extracted rows. All values JSON-safe.
+
+    expected=None means "no reliable census for this file" (no text, empty rows,
+    over the perf cap, or a truncated xlsx preview where extracted > candidate
+    lines) — the verdict then makes NO completeness claim and NO alarm. The
+    printed-total proof (total_reconcile / value_corroborated) is evaluated
+    separately in decide() and can certify completeness even when the census
+    cannot: a dropped value-carrying row would shift our sum off the vendor's own
+    printed grand total.
+    """
+    rows = _rows(result)
+    text = result.get("raw_text") or ""
+    out = {"expected": None, "extracted": len(rows), "matched": None, "missing_lines": []}
+    if not text or not rows:
+        return out
+    cand = _census_candidate_lines(text)
+    if not cand or len(cand) > _CENSUS_CAP or len(rows) > _CENSUS_CAP:
+        return out
+    if len(rows) > len(cand):
+        # raw_text preview is truncated (xlsx keeps first-80 + tail-12 rows), so
+        # the census cannot see every source line — no claim either way.
+        return out
+    norm_names = set()
+    for row in rows:
+        for field in ("product_name", "raw_product_name", "party_name"):
+            value = row.get(field)
+            if value:
+                norm_names.add(_census_norm(value))
+    norm_names.discard("")
+    matched, missing = 0, []
+    for ln in cand:
+        if _census_line_matches(ln, norm_names):
+            matched += 1
+        elif len(missing) < 5:
+            missing.append(ln[:120])
+    out.update(expected=len(cand), matched=matched, missing_lines=missing)
+    return out
+
+
 def run_checks(result, report_type, coverage_chips=None):
     """Bundle every cross-check into one dict (cheap; no re-parse)."""
     chips = coverage_chips if coverage_chips is not None else _coverage(result, report_type)
@@ -728,9 +874,13 @@ def run_checks(result, report_type, coverage_chips=None):
         "duplicate_row_ratio": duplicate_row_ratio(result, report_type),
         "constant_core_columns": constant_core_columns(result, report_type),
         "total_reconcile": report_total_reconcile(result, report_type),
+        "row_completeness": row_completeness(result, report_type),
         "value_corroborated": value_total_corroborated(result, report_type),
         "closing_rate_corroborated": closing_rate_corroborated(result, report_type),
         "printed_totals_all_zero": printed_totals_all_zero(result),
+        # Line-accounting ledger, computed at the extractor choke points on the
+        # RAW parser output (core/line_ledger). Passed through opaquely.
+        "line_audit": result.get("line_audit") or {"applicable": False},
         # Canonical fields the SOURCE actually carries (headers_detected maps raw header
         # -> canonical, so its values are the columns the report really printed). Distinct
         # from enforce_schema's back-filled zeros: a core field absent here has NO column
@@ -744,8 +894,62 @@ def run_checks(result, report_type, coverage_chips=None):
 # --------------------------------------------------------------------------- #
 # the verdict
 # --------------------------------------------------------------------------- #
-def _verdict(bucket, code, reason, blocking):
-    return {"bucket": bucket, "reason_code": code, "reason": reason, "blocking": blocking}
+def _verdict(bucket, code, reason, blocking, extraction_ok=None):
+    """extraction_ok is the machine-readable verdict behind the message lead:
+    True  = extraction proven correct (GREEN, or AMBER whose numbers match the
+            report's own printed totals / whose flagged column is absent-blank
+            in the source) -> badge "Correct" / "Correct — vendor data mismatch"
+    None  = could not be auto-confirmed (unproven AMBER) -> badge "Needs a quick check"
+    False = extraction failed (RED) -> badge "Not correct"
+    Additive field: every transport (quality payload, service JSON, jsonb) passes
+    it through opaquely, and the UIs key their 4-state badge on it so the badge
+    and the message lead can never disagree."""
+    return {"bucket": bucket, "reason_code": code, "reason": reason,
+            "blocking": blocking, "extraction_ok": extraction_ok}
+
+
+def _extraction_line(checks, include_total_clause=True):
+    """The ① 'Extraction: X%' sentence — claims only what the evidence proves.
+
+    Census-complete -> "all N of N source rows captured"; printed-total proof
+    (with or without a census) -> totals-match wording, since a dropped
+    value-carrying row would shift our sum off the vendor's own grand total;
+    anything else (census gap or no census) -> a plain row count — never a claim,
+    never an alarm (a census gap is noise far more often than a real drop)."""
+    rc = checks.get("row_completeness") or {}
+    n = checks.get("row_count", 0)
+    tr = checks.get("total_reconcile") or {}
+    total_proof = bool(tr.get("found") and tr.get("ok")) or bool(checks.get("value_corroborated"))
+    exp, matched = rc.get("expected"), rc.get("matched")
+    # `matched` counts CANDIDATE LINES whose leading token appears in an extracted name,
+    # and that token set includes party_name — so a party report where many line-items
+    # share one party (customer/item-wise: "SNO PARTY - KLM PRODUCT ...") can have EVERY
+    # candidate line "match" the handful of extracted rows, giving matched==expected while
+    # most rows were dropped (RAKESH MAY PDF PART: 25 rows extracted, 67 candidate lines,
+    # matched 67 -> a FALSE "all 67 of 67 captured"). Require row_count >= expected too:
+    # you cannot have captured all N source lines if you produced fewer than N rows. This
+    # never suppresses a genuinely complete extraction (there row_count >= candidate lines),
+    # only the inflated-match false positive.
+    if exp and matched is not None and matched >= exp and n >= exp:
+        line = f"Extraction: 100% — all {exp} of {exp} source rows captured"
+        if total_proof and include_total_clause:
+            return line + ", and our totals match the report's own printed grand total."
+        return line + "."
+    if total_proof:
+        if include_total_clause:
+            # HONEST precision: totals matching the printed grand total proves no
+            # VALUE-BEARING row was dropped (a dropped value row would shift our sum
+            # off the vendor's own total). A dropped ZERO-value row is invisible to
+            # the total, so we claim "no value-bearing row is missing" — not the
+            # stronger "no data row is missing" (which the census, not the total,
+            # would have to prove). Matches this path's own test comment.
+            return (f"Extraction: {n} rows captured, and our totals match the report's "
+                    f"own printed grand total — so no value-bearing row is missing.")
+        return f"Extraction: {n} rows captured."
+    # Census gap with no totals proof: measured on the standing corpus, the gap is
+    # noise (addresses/footers/banners counted as candidate lines) far more often
+    # than a real drop — so print a plain count, never a scary partial percentage.
+    return f"Extraction: {n} rows captured."
 
 
 def _extraction_correct_note(code, tr, checks, partial_zero):
@@ -778,11 +982,20 @@ def _extraction_correct_note(code, tr, checks, partial_zero):
     "Investigate only if the original report does print these values." so the human is
     pointed at the one check that resolves it. It stays AMBER for exactly that review.
     """
+    # UNACCOUNTED_LINES excluded from the totals-match reassurance: when the
+    # ledger says lines are unexplained but the printed total still reconciles,
+    # the evidence CONFLICTS (e.g. the dropped lines net to ~zero, or the total
+    # regex matched a subtotal) — the honest lead is "needs a quick check",
+    # never "Extraction is correct".
     if (tr.get("found") and tr.get("ok")
-            and code not in ("SANITY_VALUE_OK", "SANITY_PARTIAL", "TOTAL_MISMATCH")):
-        return (f"Extraction is correct — the extracted rows sum to {tr['summed']} for "
-                f"{tr['field']}, matching the report's own printed grand total ({tr['printed']}), "
-                f"so the numbers are faithful to the source. ")
+            and code not in ("SANITY_VALUE_OK", "SANITY_PARTIAL", "TOTAL_MISMATCH",
+                             "UNACCOUNTED_LINES")):
+        # ① without the totals clause — the proof sentence right after it states the
+        # totals match with the actual figures, so the clause would just repeat it.
+        ext = _extraction_line(checks, include_total_clause=False)
+        return (f"Extraction is correct. {ext} Our extracted rows add up to {tr['summed']} for "
+                f"{tr['field']}, matching the report's own printed grand total ({tr['printed']}) "
+                f"— so the numbers are right. ")
     if code == "CORE_FIELD_EMPTY":
         core_pop = checks.get("core_numeric_population") or {}
         # Only reassure when EVERY flagged dimension is wholly empty (0% non-zero). A
@@ -792,13 +1005,14 @@ def _extraction_correct_note(code, tr, checks, partial_zero):
             # tuple keys like "amount / taxable_value / rate" -> underlying fields
             flagged = [f for key in partial_zero for f in str(key).split(" / ")]
             cols = ", ".join(partial_zero)
+            ext = _extraction_line(checks)
             if all(f not in detected for f in flagged):
-                return (f"Extraction is correct — the source report prints no {cols} column, so "
-                        f"it is blank in every row; the extractor emits only the columns the "
+                return (f"Extraction is correct. {ext} The source report prints no {cols} "
+                        f"column, so it is blank in every row; we only capture the columns the "
                         f"report actually carries. Investigate only if the original report does "
                         f"print these values. ")
-            return (f"Extraction is correct — the {cols} column is blank in the source (no value "
-                    f"in any row), which the extraction faithfully reflects. Investigate only if "
+            return (f"Extraction is correct. {ext} The {cols} column is blank in the source (no "
+                    f"value in any row), and our extraction reflects that. Investigate only if "
                     f"the original report does print these values. ")
     return None
 
@@ -815,10 +1029,17 @@ def decide(score, coverage_chips, checks, report_type):
     # ---- RED: unambiguous failures, each with a specific, non-misleading reason ----
     if checks["scanned_or_empty"]:
         return _verdict("RED", "SCANNED_OR_EMPTY",
-                        "0 rows and no extractable text — likely a scanned/image PDF needing OCR.", True)
+                        "Extraction is NOT correct. Nothing could be read from this file — it has "
+                        "no selectable text, so it is most probably a scanned or photographed PDF. "
+                        "Please upload a clearer copy, or ask the team to run it through OCR.",
+                        True, extraction_ok=False)
     if checks["empty_extraction"]:
         return _verdict("RED", "UNKNOWN_LAYOUT",
-                        "File has text but 0 rows were extracted — layout not recognized. Build a parser for it.", True)
+                        "Extraction is NOT correct. The file has readable text, but its layout "
+                        "does not match any format we support yet, so 0 rows came out. Please "
+                        "ask the team to add this format.",
+                        True, extraction_ok=False)
+    _rollup = False
     if checks["data_missing"]:
         dm = checks["data_missing"]
         # A party-level roll-up (e.g. Marg "SALE SUMMARY") prints party + amount with NO
@@ -834,7 +1055,10 @@ def decide(score, coverage_chips, checks, report_type):
         if not _rollup:
             field = dm[0]
             return _verdict("RED", f"MISSING_REQUIRED_FIELD:{field}",
-                            f"Required data field '{field}' was never extracted.", True)
+                            f"Extraction is NOT correct. A required column ('{field}') is "
+                            f"completely missing from the extracted data, so the result cannot "
+                            f"be used. Please ask the team to check the reader for this format.",
+                            True, extraction_ok=False)
     core_pop = checks["core_numeric_population"]
     not_extracted = [f for f, r in core_pop.items() if r < T["core_nonzero_min"]]
     if core_pop and len(not_extracted) == len(core_pop):
@@ -848,8 +1072,11 @@ def decide(score, coverage_chips, checks, report_type):
         # "extraction is correct — these columns are blank in the source").
         if not (checks.get("printed_totals_all_zero") or checks.get("value_corroborated")):
             return _verdict("RED", "COLUMN_MISALIGNMENT",
-                            "No numeric data extracted — every core numeric "
-                            f"({', '.join(core_pop)}) is zero/empty. Likely wrong column mapping or route.", True)
+                            f"Extraction is NOT correct. None of the key number columns "
+                            f"({', '.join(core_pop)}) came through — every one is empty or zero. "
+                            f"The numbers may have been read from the wrong columns or with the "
+                            f"wrong format. Please ask the team to check the reader for this file.",
+                            True, extraction_ok=False)
     sanity = checks["sanity"]
     sanity_red_hit = (sanity and sanity["effective_pass_rate"] is not None
                       and sanity["effective_pass_rate"] < T["sanity_red"])
@@ -886,16 +1113,56 @@ def decide(score, coverage_chips, checks, report_type):
     if sanity_red_hit and not corroborated_ok:
         fail_pct = round((1 - sanity["effective_pass_rate"]) * 100)
         return _verdict("RED", "SANITY_FAILED",
-                        f"Stock reconciliation fails on {fail_pct}% of rows "
-                        f"(closing ≠ opening + purchase − returns − sales).", True)
+                        f"Extraction is NOT correct. The stock numbers do not add up on "
+                        f"{fail_pct}% of rows (closing ≠ opening + purchases − sales − returns), "
+                        f"and we could not confirm our numbers against the report's own printed "
+                        f"totals. Some numbers may have come from the wrong column — please "
+                        f"re-upload the file, or ask the team to fix the reader for this format.",
+                        True, extraction_ok=False)
     # NOTE: TOTAL_MISMATCH is intentionally NOT a RED trigger. The printed-total
     # reconcile is a heuristic (it guesses which line/number is the grand total),
     # so it must never AUTO-REJECT — a gross gap is surfaced as an AMBER soft
     # signal below (uses `tr`) for human review instead.
     tr = checks["total_reconcile"]
+    ext_line = _extraction_line(checks)
 
     # ---- collect soft (AMBER) signals, highest priority first ----
+    # NOTE (measured on the Final_Data corpus, 2026-07-19): the row census can only
+    # CONFIRM completeness, never refute it. Firing a "missing rows" signal off a
+    # census gap flagged 365/3416 files whose "missing" lines were ALL noise
+    # (addresses, "Opening Value" footers, date banners, software ads, wrapped
+    # header fragments) — ratios 0.11-0.97, inseparable from a real drop by any
+    # threshold. So a census gap is deliberately NOT a verdict signal; the data
+    # stays in checks["row_completeness"] for auditors, and genuinely dropped rows
+    # are still caught by TOTAL_MISMATCH (a dropped row shifts our sum off the
+    # report's own printed grand total).
     soft = []
+    # Line-ledger gate — FIRST in the soft list: unexplained source lines mean
+    # possibly-dropped ROWS, which outranks any sparse-column nuance. Unlike the
+    # census note above, the ledger is value-anchored with multiset consumption
+    # (a duplicate amount cannot cover two lines) and classifies noise itself,
+    # so its "unexplained" is a far stronger signal than a raw census gap.
+    # Flag-gated (shadow mode) until the corpus league confirms the FP budget.
+    # The printed-total reconcile is the aggregate arbiter of completeness: if the
+    # extracted sums equal the vendor's OWN printed grand total, every
+    # value-bearing row is present, so unexplained lines are ledger noise
+    # (page-repeats, zero-movement rows, un-modelled furniture) — NOT dropped
+    # rows. Only fire UNACCOUNTED_LINES when that proof is absent or failing; a
+    # genuine drop shifts the sum and shows up as `not ok` (or unfound).
+    _tr = checks.get("total_reconcile") or {}
+    _totals_prove_complete = bool(_tr.get("found") and _tr.get("ok"))
+    la = checks.get("line_audit") or {}
+    la_counts = la.get("counts") or {}
+    if (_LEDGER_GATE and la.get("applicable") and not _totals_prove_complete
+            and la_counts.get("data", 0) >= T["unaccounted_min_data"]
+            and la_counts.get("unexplained", 0) >= T["unaccounted_min_lines"]
+            and (la.get("unexplained_ratio") or 0.0) >= T["unaccounted_ratio"]):
+        _sample = (la.get("unexplained_sample") or [""])[0]
+        soft.append(("UNACCOUNTED_LINES",
+                     f"{la_counts['unexplained']} of {la_counts['data']} data lines in the "
+                     f"source ({round((la.get('unexplained_ratio') or 0) * 100)}%) could not be "
+                     f"matched to any extracted row — rows may have been dropped. "
+                     f"e.g. \"{_sample[:90]}\""))
     # a single (but not total) core numeric came out all-zero -> suspicious
     partial_zero = [f for f, r in core_pop.items() if r < T["core_nonzero_min"]]
     # A sale+closing-only report (no_inflow) structurally has no opening/purchase column,
@@ -927,64 +1194,96 @@ def decide(score, coverage_chips, checks, report_type):
                         or core_pop.get(f, 0.0) == 0.0]
     if partial_zero:
         soft.append(("CORE_FIELD_EMPTY",
-                     f"Core numeric(s) {', '.join(partial_zero)} are zero/empty in almost every row — verify the column mapping."))
+                     f"Some key number columns ({', '.join(partial_zero)}) are empty or zero in "
+                     f"almost every row — please verify the column mapping to confirm nothing "
+                     f"was dropped."))
     # NOTE: soft_missing (invoice/date/period/pack/division) is NOT a bucket
     # trigger — those fields vary by layout (summary vs billwise) and their
     # absence does not mean the extracted rows are wrong. It is still surfaced in
     # checks["soft_missing"] for the reviewer's visibility.
     if sanity and sanity["effective_pass_rate"] is not None and sanity["effective_pass_rate"] < T["sanity_green"]:
         pass_pct = round(sanity["effective_pass_rate"] * 100)
+        miss_pct = 100 - pass_pct
+        _checked = sanity.get("checked") or 0
+        bad_n = max(0, _checked - round(sanity["effective_pass_rate"] * _checked))
         if sanity_red_hit:  # reachable here only when corroborated_ok (else returned RED above)
             if no_inflow:
                 soft.append(("SANITY_VALUE_OK",
-                             "This report prints only SALE and CLOSING columns (no opening/purchase), so "
-                             "stock quantities cannot be reconciled — but the extracted sale and closing "
-                             "VALUE totals match the vendor's printed grand totals, so the extraction is "
-                             "faithful. Human review recommended (cannot auto-approve without opening/purchase)."))
+                             f"Extraction is correct. {ext_line} This report prints only SALE and "
+                             f"CLOSING columns (no opening/purchase), so the stock equation cannot "
+                             f"be checked — but our sale and closing value totals match the "
+                             f"report's own printed grand totals, so the numbers are right. "
+                             f"Please take a quick look before approving (it cannot be "
+                             f"auto-approved without opening/purchase columns)."))
             elif no_opening:
                 soft.append(("SANITY_VALUE_OK",
-                             "This report prints purchase/sale/closing but NO OPENING column, so stock "
-                             "quantities cannot be reconciled (the opening balance is absent from the "
-                             "source) — but the extracted VALUE totals match the vendor's printed grand "
-                             "totals, so the extraction is faithful. Human review recommended (cannot "
-                             "auto-approve without an opening balance)."))
+                             f"Extraction is correct. {ext_line} This report prints "
+                             f"purchase/sale/closing but NO OPENING column, so the stock equation "
+                             f"cannot be checked (the opening balance is absent from the source) — "
+                             f"but our value totals match the report's own printed grand totals, "
+                             f"so the numbers are right. Please take a quick look before approving "
+                             f"(it cannot be auto-approved without an opening balance)."))
             else:
                 soft.append(("SANITY_VALUE_OK",
-                             f"Quantities reconcile on only {pass_pct}% of rows, but the extracted value "
-                             f"totals match the vendor's printed totals — the extraction is faithful; the "
-                             f"gap is the vendor's own data (free/scheme goods or order-format). Verify."))
+                             f"Extraction is correct. {ext_line} Stock data mismatch: {miss_pct}% "
+                             f"— {bad_n} of {_checked} rows do not add up in the vendor's own "
+                             f"file (closing ≠ opening + purchases − sales − returns). Our value "
+                             f"totals still match the report's printed totals, so this is in the "
+                             f"vendor's data, not in our reading — usually free/scheme goods or a "
+                             f"small typo on their side. Please take a quick look before approving."))
         else:
             soft.append(("SANITY_PARTIAL",
-                         f"Extraction is correct — this is a vendor source-file issue, not ours. "
-                         f"{pass_pct}% of rows balance; a few products don't add up in the vendor's own "
-                         f"report (their printed closing ≠ opening + purchases − sales), usually free/scheme "
-                         f"goods or a typo on their side. Spot-check the flagged products in the "
-                         f"'Sanity Warnings' tab against the original file."))
+                         f"Extraction is correct. {ext_line} Stock data mismatch: {miss_pct}% — "
+                         f"{bad_n} of {_checked} rows do not add up in the vendor's own report "
+                         f"(their printed closing ≠ opening + purchases − sales), usually "
+                         f"free/scheme goods or a typo on their side. Spot-check the flagged "
+                         f"products in the 'Sanity Warnings' tab against the original file."))
     mm = checks["product_master_match_rate"]
     if mm is not None and mm < T["master_amber"]:
         soft.append(("LOW_MASTER_MATCH",
-                     f"Only {round(mm * 100)}% of products matched the master catalog — verify product names."))
+                     f"Only {round(mm * 100)}% of the products matched our master catalog — "
+                     f"please verify the product names."))
     if checks["duplicate_row_ratio"] > T["dup_ratio_amber"]:
         soft.append(("DUPLICATE_ROWS",
-                     f"{round(checks['duplicate_row_ratio'] * 100)}% of rows are exact duplicates."))
+                     f"{round(checks['duplicate_row_ratio'] * 100)}% of the extracted rows are "
+                     f"exact copies of another row — the same data may have been read twice. "
+                     f"Please check the rows."))
     if checks["constant_core_columns"]:
         soft.append(("CONSTANT_COLUMN",
-                     f"Column(s) {', '.join(checks['constant_core_columns'])} hold the same value in every row."))
+                     f"Column(s) {', '.join(checks['constant_core_columns'])} hold the exact "
+                     f"same value in every row, which is unusual — please confirm the column "
+                     f"was read correctly."))
     if checks["zero_fill_ratio"] > T["zero_fill_amber"]:
         soft.append(("HIGH_ZERO_FILL",
-                     f"{round(checks['zero_fill_ratio'] * 100)}% of numeric cells are zero."))
+                     f"{round(checks['zero_fill_ratio'] * 100)}% of all number cells are zero — "
+                     f"this can be normal for a quiet period, but please confirm no column "
+                     f"was missed."))
     tr = checks["total_reconcile"]
     if tr.get("found") and not tr.get("ok") and tr.get("diff_ratio", 0) > T["total_soft"]:
         soft.append(("TOTAL_MISMATCH",
-                     f"The extracted rows add up to {tr['summed']} for {tr['field']}, but the report's "
-                     f"own printed grand total reads {tr['printed']} ({round(tr['diff_ratio'] * 100)}% apart). "
-                     f"This is usually the vendor's own total (a subtotal, or a total over a different column) "
-                     f"rather than an extraction error — verify against the printed total in the original file."))
+                     f"Our extracted rows add up to {tr['summed']} for {tr['field']}, but the "
+                     f"report's own printed total reads {tr['printed']} "
+                     f"({round(tr['diff_ratio'] * 100)}% apart). This is often the vendor's "
+                     f"subtotal, or a total over a different column, rather than a reading "
+                     f"mistake — please compare against the printed total in the original file."))
     score_pct = score.get("score_pct", 0.0)
     if score_pct < T["low_score_amber"]:
-        soft.append(("LOW_SCORE", f"Quality score {round(score_pct * 100)}% is low."))
+        soft.append(("LOW_SCORE",
+                     f"The overall quality score is low ({round(score_pct * 100)}%) — please "
+                     f"review before approving."))
     if checks["row_count"] < T["min_rows"]:
-        soft.append(("THIN_EXTRACTION", f"Only {checks['row_count']} row(s) extracted."))
+        soft.append(("THIN_EXTRACTION",
+                     f"Only {checks['row_count']} row(s) were extracted — fewer than expected. "
+                     f"Please confirm nothing was missed."))
+
+    # A party-level roll-up has NO product column in the source (product_name absent from
+    # detected_fields, so it escaped the RED above). A file carrying only party totals must
+    # NEVER auto-approve GREEN — force a soft signal so it lands AMBER for a human glance.
+    if _rollup:
+        soft.append(("PRODUCT_ROLLUP",
+                     "This looks like a party-level summary — the source has no product column, "
+                     "so each row is a per-party total. Please confirm this is the expected "
+                     "report before approving."))
 
     # ---- GREEN: no soft signals, score above floor, master ok, enough rows.
     # The real guardrails are the cross-checks already evaluated above (core
@@ -992,14 +1291,20 @@ def decide(score, coverage_chips, checks, report_type):
     # the score is only a secondary floor. ----
     green_master_ok = (mm is None) or (mm >= T["master_green"])
     if not soft and green_master_ok and score_pct >= T["green_min_score"] and checks["row_count"] >= T["min_rows"]:
-        return _verdict("GREEN", "CLEAN", "Passed all automated checks.", False)
+        return _verdict("GREEN", "CLEAN",
+                        f"Extraction is correct. {ext_line} Every automatic check passed — "
+                        f"safe to approve.",
+                        False, extraction_ok=True)
 
     # master in the [amber, green) band blocks GREEN but wasn't added above
     if not green_master_ok and not any(c == "LOW_MASTER_MATCH" for c, _ in soft):
         soft.insert(0, ("LOW_MASTER_MATCH",
-                        f"Only {round(mm * 100)}% of products matched the master catalog."))
+                        f"Only {round(mm * 100)}% of the products matched our master catalog — "
+                        f"please verify the product names."))
 
-    code, msg = soft[0] if soft else ("NEEDS_REVIEW", "Manual review recommended.")
+    code, msg = soft[0] if soft else (
+        "NEEDS_REVIEW",
+        "We could not automatically confirm this file — please review it before approving.")
     # Universal reassurance across ALL AMBER sanity types: whatever soft signal won, if we
     # have positive proof the extraction is faithful (printed total reconciles, OR the
     # flagged core field has no column in the source at all), lead the message with a plain
@@ -1010,4 +1315,12 @@ def decide(score, coverage_chips, checks, report_type):
     note = _extraction_correct_note(code, tr, checks, partial_zero)
     if note:
         msg = note + msg
-    return _verdict("AMBER", code, msg, False)
+    # Every AMBER opens with a clear verdict: messages that carry positive proof
+    # already start "Extraction is correct."; everything else gets the honest
+    # "needs a quick check" lead plus the ① extraction line. extraction_ok mirrors
+    # the lead so the badge and the message can never disagree.
+    if msg.startswith("Extraction is correct"):
+        return _verdict("AMBER", code, msg, False, extraction_ok=True)
+    msg = ("Extraction needs a quick check — could not be auto-confirmed. "
+           + (f"{ext_line} " if ext_line else "") + msg)
+    return _verdict("AMBER", code, msg, False, extraction_ok=None)

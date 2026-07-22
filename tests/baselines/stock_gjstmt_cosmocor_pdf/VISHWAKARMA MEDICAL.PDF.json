@@ -1,0 +1,18 @@
+{
+  "file": "VISHWAKARMA MEDICAL.PDF",
+  "route": "stock_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_stock_analysis_full",
+  "product_count": 31,
+  "sample_products": [
+    "Episert Cream 10 Gm",
+    "Episert Cream 30 Gm",
+    "MELBBOST LOTION 5ML 5ML PCS",
+    "MELBOOST 5ML PCS",
+    "Melboost Nxt Tablet"
+  ],
+  "closing_stock_total": 629.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA PARTY.PDF",
+  "route": "party_pdf",
+  "row_count": 283,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 95,
+  "area_count": 45,
+  "product_count": 23,
+  "sample_parties": [
+    "A.B. ENTERPRISE",
+    "A.J.PHARMA",
+    "AL SADIQUE PHARMA",
+    "AMINIYA MEDICAL HALL",
+    "ANJANA MEDICAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Melboost Nxt Tablet"
+  ],
+  "qty_total": 1341.0,
+  "amount_total": 237181.25,
+  "rate_total": 54290.3,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

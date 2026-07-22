@@ -1,0 +1,18 @@
+{
+  "file": "PEDIA KLM...pdf",
+  "route": "stock_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 32,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab"
+  ],
+  "closing_stock_total": 747.0,
+  "rate_total": 0.0
+}

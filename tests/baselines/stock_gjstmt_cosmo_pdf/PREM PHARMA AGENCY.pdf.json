@@ -1,0 +1,18 @@
+{
+  "file": "PREM PHARMA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 19,
+  "warnings_count": 19,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 19,
+  "sample_products": [
+    "8 IMXIA",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Extend Total 1*15 Tab"
+  ],
+  "closing_stock_total": 2416.44,
+  "rate_total": 0.0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "COSMOCOR.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 24,
+  "sample_products": [
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 141.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

@@ -1,0 +1,30 @@
+{
+  "file": "Customer___Product_25062026_132458_1_KLMDC_260625132459123.Pdf",
+  "route": "party_pdf",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "profitmaker",
+  "party_count": 20,
+  "area_count": 9,
+  "product_count": 7,
+  "sample_parties": [
+    "BALAJI MEDICAL AND GENERA",
+    "CHINMAYI PHARMACY",
+    "GREESHMANI MEDICAL HALL",
+    "MARUTHI MEDICAL AND GENER",
+    "MUDDUKRISHNA MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "LULIZOL 30GM CREAM",
+    "Lulizol Cream 20 Gm",
+    "Lulizol Xl Cream 50 Gm"
+  ],
+  "qty_total": 73.0,
+  "amount_total": 14525.18,
+  "rate_total": 7403.91,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

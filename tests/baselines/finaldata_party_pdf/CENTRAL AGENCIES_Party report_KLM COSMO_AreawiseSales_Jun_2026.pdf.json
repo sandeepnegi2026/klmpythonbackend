@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO_AreawiseSales_Jun_2026.pdf",
+  "route": "party_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "areawise_sales_statement_banded",
+  "party_count": 12,
+  "area_count": 10,
+  "product_count": 6,
+  "sample_parties": [
+    "ASWAS COMMUNITY PHARMACY",
+    "BROTHERS MEDICALS",
+    "BUDGET PHARMA CARE -MOTHER LLP",
+    "C.H MEDICALS",
+    "JANSERVE HEALTH CARE SERVICE LLP*---A"
+  ],
+  "sample_products": [
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Imxia 5",
+    "Imxia Pro Serum 60Ml",
+    "Imxia Soft Hair Moisturizer 100G"
+  ],
+  "qty_total": 31.0,
+  "amount_total": 17232.95,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,18 @@
+{
+  "file": "KLM ALL DIV MAY 26.PDF",
+  "route": "stock_pdf",
+  "row_count": 123,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 116,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 3329.0,
+  "rate_total": 0.0
+}

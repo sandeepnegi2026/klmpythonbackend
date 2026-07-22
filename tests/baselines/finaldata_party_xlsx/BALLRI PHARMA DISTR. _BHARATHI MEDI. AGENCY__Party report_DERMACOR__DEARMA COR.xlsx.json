@@ -1,0 +1,26 @@
+{
+  "file": "DERMACOR__DEARMA COR.xlsx",
+  "route": "party_xlsx",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 35,
+  "sample_parties": [
+    "KLM"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair 1*30 Tablets",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 949.0,
+  "amount_total": 144699.0,
+  "rate_total": 811.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

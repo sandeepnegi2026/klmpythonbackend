@@ -1,0 +1,28 @@
+{
+  "file": "3.pdf",
+  "route": "party_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 5,
+  "area_count": 5,
+  "product_count": 3,
+  "sample_parties": [
+    "AVENUE PHARMACY[300006]",
+    "ENJUKUDY MEDICALS",
+    "N M MEDICALS, MUPPATHADAM",
+    "ST.MARYS HEALTHCARE PVT LTD",
+    "V CARE MEDICALS ALUVA LLP"
+  ],
+  "sample_products": [
+    "Imxia 5",
+    "Imxia Soft Hair Moisturizer 100G",
+    "Kojitin Ultra Emulgel 20Gm"
+  ],
+  "qty_total": 8.0,
+  "amount_total": 3493.21,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

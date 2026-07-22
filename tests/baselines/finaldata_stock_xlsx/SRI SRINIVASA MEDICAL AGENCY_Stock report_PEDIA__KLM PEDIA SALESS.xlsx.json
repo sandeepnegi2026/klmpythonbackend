@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__KLM PEDIA SALESS.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 15,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash",
+    "Fentispor Capsule"
+  ],
+  "closing_stock_total": 491.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

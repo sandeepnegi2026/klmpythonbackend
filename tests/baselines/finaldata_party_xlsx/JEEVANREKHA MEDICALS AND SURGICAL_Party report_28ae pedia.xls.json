@@ -1,0 +1,30 @@
+{
+  "file": "28ae pedia.xls",
+  "route": "party_xlsx",
+  "row_count": 57,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "itemwise_party_column",
+  "party_count": 17,
+  "area_count": 9,
+  "product_count": 21,
+  "sample_parties": [
+    "AMBADNYA CHEMIST AND DRUGGIST",
+    "DHANVANTARI CHEMIST",
+    "DR.ABHINAV TIWARI",
+    "DR.AMREEN KHAN",
+    "GLOBAL MEDICAL STORES."
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Extend Vita Syrup 200Ml",
+    "Klclav Es Oral Suspension 50Ml"
+  ],
+  "qty_total": 575.0,
+  "amount_total": 67168.1,
+  "rate_total": 6945.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

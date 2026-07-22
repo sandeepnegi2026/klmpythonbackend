@@ -1,0 +1,22 @@
+{
+  "file": "k.pdf",
+  "route": "party_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sree_swathi_company_product_area_invoice",
+  "party_count": 1,
+  "area_count": 2,
+  "product_count": 1,
+  "sample_parties": [
+    "ROOPAM SPECTS WORLD"
+  ],
+  "sample_products": [
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 10.0,
+  "amount_total": 5271.15,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

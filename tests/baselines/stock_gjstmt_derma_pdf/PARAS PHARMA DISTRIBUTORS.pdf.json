@@ -1,0 +1,18 @@
+{
+  "file": "PARAS PHARMA DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_monthly_ss_inward_other_closing",
+  "product_count": 11,
+  "sample_products": [
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Cream 50Gm"
+  ],
+  "closing_stock_total": 117.0,
+  "rate_total": 0.0
+}

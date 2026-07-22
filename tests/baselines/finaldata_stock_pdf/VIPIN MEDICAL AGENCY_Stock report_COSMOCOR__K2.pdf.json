@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR__K2.pdf",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 22,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 160.0,
+  "rate_total": 3921.13
+}

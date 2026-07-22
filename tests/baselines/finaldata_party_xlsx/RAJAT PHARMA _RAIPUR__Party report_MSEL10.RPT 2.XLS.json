@@ -1,0 +1,30 @@
+{
+  "file": "MSEL10.RPT 2.XLS",
+  "route": "party_xlsx",
+  "row_count": 89,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 43,
+  "area_count": 1,
+  "product_count": 21,
+  "sample_parties": [
+    "3 JAI MEDICALS SHASTRI CHOWK RAIPUR 9158",
+    "5 ANUP MEDICAL AND GEN STORES",
+    "6 laxmi medical hall  ware house",
+    "8 LAXMI MEDICAL STORES SHASTRI CHOWK",
+    "AGRAWAL MEDICAL STORES pithora"
+  ],
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm"
+  ],
+  "qty_total": 653.0,
+  "amount_total": 57151.72,
+  "rate_total": 14834.14,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

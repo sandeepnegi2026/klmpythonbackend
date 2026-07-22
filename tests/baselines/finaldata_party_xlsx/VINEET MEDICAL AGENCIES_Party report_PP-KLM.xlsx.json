@@ -1,0 +1,30 @@
+{
+  "file": "PP-KLM.xlsx",
+  "route": "party_xlsx",
+  "row_count": 165,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 45,
+  "area_count": 16,
+  "product_count": 75,
+  "sample_parties": [
+    "AASHEE PHARMACY",
+    "AMAN MEDICAL STORES",
+    "AMIT MEDICAL STORES",
+    "ANIL MEDICAL STORES",
+    "BANSAL MEDICAL AGENCIES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 2275.0,
+  "amount_total": 390106.91,
+  "rate_total": 31511.22,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

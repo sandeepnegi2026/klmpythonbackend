@@ -1,0 +1,30 @@
+{
+  "file": "klm partwise exel.xlsx",
+  "route": "party_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "tabular",
+  "party_count": 14,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "ALL WELL CHEMISTS KUSUMPTI    -KASUMPTI",
+    "AREA MANAGER (ARKI )          -solan",
+    "AREA MANAGER HPSCS DDUH       -SHIMLA",
+    "CHAUHAN MEDICOS LAKKAR BAZAR  -SHIMLA",
+    "DEEP MEDICAL STORE - N R H    -SHIMLA"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "qty_total": 129.58,
+  "amount_total": 25027.58,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

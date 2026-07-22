@@ -29,6 +29,7 @@ existing, battle-tested CLIs so their behaviour is identical to running them by 
 from __future__ import annotations
 
 import argparse
+import os
 import json
 import subprocess
 import sys
@@ -139,13 +140,15 @@ def discover_folder(folder: Path):
         parts = {p.lower() for p in f.parts}
         if f.is_file() and f.suffix.lower() in exts \
                 and "need reviews" not in low and "_misfiled" not in low \
-                and "wrong" not in parts:
+                and "_wrong_format" not in low and "wrong" not in parts:
             yield route_for_path(f), f
 
 
 def register_batch(name: str, jobs, batches_path: Path) -> None:
     """Write/refresh a batches.json entry from discovered (route, leaf-folder) pairs."""
-    cfg = json.loads(batches_path.read_text(encoding="utf-8"))
+    # First-ever registration bootstraps the file instead of crashing on a missing one.
+    cfg = json.loads(batches_path.read_text(encoding="utf-8")) if batches_path.exists() \
+        else {"data_root": "../..", "batches": {}}
     data_root = (ROOT / cfg.get("data_root", "../..")).resolve()
     pairs = sorted({(route, str(path.parent)) for route, path in jobs})
     entries = []
@@ -448,17 +451,32 @@ class Runner:
             # infer from the first job's path: .../<batch>/<party|stock root>/...
             batch_dir = Path(q[0]["path"]).parents[2]
         review = batch_dir / "need Reviews"
-        dest = {"party": review / "party wise", "stock": review / "sales reports"}
-        for d in dest.values():
-            d.mkdir(parents=True, exist_ok=True)
-        moved = 0
+        moved = skipped = 0
         for item in q:
             sp = item["path"]
-            side = "party" if item["route"].startswith("party") else "stock"
-            if sp and os.path.exists(sp):
-                shutil.move(sp, str(dest[side] / Path(sp).name))
-                moved += 1
-        self.log(f"  --apply-quarantine: moved {moved} file(s) into {review}")
+            if not (sp and os.path.exists(sp)):
+                continue
+            src = Path(sp)
+            # PRESERVE the <stockist>/<slot>/<file> path. A flat move (need Reviews/<name>)
+            # silently OVERWRITES same-named files from different stockists (report.pdf recurs
+            # in 16 folders, KLM.pdf in 13) via shutil.move — data loss. Keeping the relative
+            # path makes every destination unique.
+            try:
+                rel = src.relative_to(batch_dir)
+            except ValueError:
+                side = "party wise" if item["route"].startswith("party") else "sales reports"
+                rel = Path(side) / src.name
+            dst = review / rel
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            if dst.exists():
+                skipped += 1
+                continue                                   # never overwrite an existing file
+            shutil.move(str(src), str(dst))
+            moved += 1
+        msg = f"  --apply-quarantine: moved {moved} file(s) into {review}"
+        if skipped:
+            msg += f" ({skipped} skipped — a file already exists at the destination)"
+        self.log(msg)
 
     # -- phase 9 -------------------------------------------------------------
     def phase_mirror(self):
@@ -493,6 +511,10 @@ class Runner:
         (self.out_dir / "run.json").write_text(
             json.dumps({k: v for k, v in self.record.items() if k != "triage_rows"},
                        indent=2, ensure_ascii=False), encoding="utf-8")
+        # per-file rows kept separately so --render-only can re-render with NO re-triage
+        (self.out_dir / "triage_rows.json").write_text(
+            json.dumps(self.record.get("triage_rows", []), ensure_ascii=False, default=str),
+            encoding="utf-8")
         # full record (incl. per-file rows) for the renderer
         rd.render(self.record, self.out_dir)
         self.log(f"  dashboard -> {self.out_dir / 'dashboard.html'}")
@@ -538,7 +560,8 @@ def main() -> int:
     src.add_argument("--folder", help="A drop folder (auto-discovers routes)")
     ap.add_argument("--batches", default=str(ROOT / "batches.json"))
     ap.add_argument("--out", default=None, help="Output dir (default _triage/<batch>)")
-    ap.add_argument("--workers", type=int, default=1)
+    ap.add_argument("--workers", type=int, default=min(16, max(1, (os.cpu_count() or 4) - 2)),
+                    help="Parallel extraction/triage workers (default: auto = min(16, cores-2))")
     ap.add_argument("--refresh", action="store_true", help="Ignore the extract cache")
     ap.add_argument("--register", action="store_true", help="With --folder: write a batches.json entry")
     ap.add_argument("--only", nargs="+", choices=ALL_PHASES, help="Run only these phases")
@@ -555,7 +578,22 @@ def main() -> int:
     ap.add_argument("--product-margin", type=float, default=0.03)
     ap.add_argument("--reg-suites", nargs="+", help="Regression: only these suites")
     ap.add_argument("--reg-all", action="store_true", help="Regression: include slow glob suites too")
+    ap.add_argument("--render-only", action="store_true",
+                    help="Re-render dashboard.html/SUMMARY.md from a prior run's run.json + "
+                         "triage_rows.json — NO re-extract/triage (use after a render/format change)")
     args = ap.parse_args()
+
+    if args.render_only:
+        runner = Runner(args)
+        rj, tr = runner.out_dir / "run.json", runner.out_dir / "triage_rows.json"
+        if not (rj.exists() and tr.exists()):
+            raise SystemExit(f"--render-only needs run.json + triage_rows.json in {runner.out_dir} "
+                             "(run the batch once first).")
+        record = json.loads(rj.read_text(encoding="utf-8"))
+        record["triage_rows"] = json.loads(tr.read_text(encoding="utf-8"))
+        rd.render(record, runner.out_dir)
+        print(f"Re-rendered from saved rows -> {runner.out_dir / 'dashboard.html'}")
+        return 0
 
     phases = _select_phases(args)
     runner = Runner(args)

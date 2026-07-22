@@ -1,0 +1,30 @@
+{
+  "file": "AreaCity_Wise_Sale_Report_Of_KLM_PAEDIATRIC_From_01_May26_To_30_May26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "areacity_wise_sale_pivot",
+  "party_count": 13,
+  "area_count": 13,
+  "product_count": 11,
+  "sample_parties": [
+    "CHINCHPOKLI MUMBAI",
+    "CUFFE PARADE MUMBAI",
+    "DADAR WEST MUMBAI",
+    "KALACHOWKI MUMBAI",
+    "LALBAGH MUMBAI"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend Vita Syrup 200Ml",
+    "Klclav Ds",
+    "Klclav Es Oral Suspension 50Ml"
+  ],
+  "qty_total": 54.0,
+  "amount_total": 6830.08,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 9
+}

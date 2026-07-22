@@ -1,0 +1,30 @@
+{
+  "file": "ITEM WISE SALES SUMMARY FROM 01-06-2026-30-06-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 80,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 49,
+  "area_count": 28,
+  "product_count": 15,
+  "sample_parties": [
+    "AEON CLINIC",
+    "ASHTAVINYAK CHEMIST",
+    "ASKA AESTHETIC CLINIC",
+    "AUM S & J SKINCARE PVT LTD",
+    "CUTI LYF"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 576.0,
+  "amount_total": 257309.95,
+  "rate_total": 37715.81,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

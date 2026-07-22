@@ -1,0 +1,30 @@
+{
+  "file": "KLM _Dermacor_.xlsx",
+  "route": "party_xlsx",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 9,
+  "area_count": 5,
+  "product_count": 7,
+  "sample_parties": [
+    "JAYA  MEDICAL&GENERAL STO",
+    "LS HEALTHCARE PHARMA DIST",
+    "MAA MEDICAL HALL",
+    "SNEHA MEDICLAS",
+    "SRI  RAMAKRISHNA MEDICAL"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Sal Lotion 60 Ml",
+    "Lulizol Xl Cream 50 Gm",
+    "Tecum 0.03 % Ointment 10 Gm"
+  ],
+  "qty_total": 326.0,
+  "amount_total": 87836.38,
+  "rate_total": 8556.9,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

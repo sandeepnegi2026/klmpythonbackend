@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR.PDF",
+  "route": "party_pdf",
+  "row_count": 151,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_nagammai_customer_purchase_divisionwise",
+  "party_count": 77,
+  "area_count": 0,
+  "product_count": 23,
+  "sample_parties": [
+    "ALAGU PHARMACY\"G\" PEELAMEDU",
+    "ALM MEDICALS (PN PALAYAM)",
+    "ALM MEDICALS (VADAVALLI)",
+    "AMUTHAM PHARMACY (SIDHAPUDUR)",
+    "APOLLO PHARMACIES LIMITED ( SULUR KALANGAL ROAD"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "qty_total": 523.0,
+  "amount_total": 120628.44,
+  "rate_total": 31769.98,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

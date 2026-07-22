@@ -1,0 +1,30 @@
+{
+  "file": "KLM_DERMACOR_JUNE2026_PP.PDF",
+  "route": "party_pdf",
+  "row_count": 67,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 35,
+  "area_count": 5,
+  "product_count": 12,
+  "sample_parties": [
+    "ANAND MEDICALS BEAWAR",
+    "BALAJI MEDICAL",
+    "BHAGWATI MEDICAL & GEN. STORE",
+    "CHARBHUJA MEDICAL & GENERAL STORE (GST)",
+    "CHETAN MEDICAL & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap"
+  ],
+  "qty_total": 219.0,
+  "amount_total": 41259.53,
+  "rate_total": 12862.28,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

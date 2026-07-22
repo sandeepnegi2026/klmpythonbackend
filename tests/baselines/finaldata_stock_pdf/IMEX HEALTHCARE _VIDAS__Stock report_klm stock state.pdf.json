@@ -1,0 +1,18 @@
+{
+  "file": "klm stock state.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 10,
+  "sample_products": [
+    "A/415-416, DEV ATELIER, ANANDNAGAR CROSS ROAD, ,PRAHLADNAGAR, SATELLITE, AHMEDABAD - Ph:9106248147,",
+    "Appybush Syrup 200Ml",
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 224.0,
+  "rate_total": 0.0
+}

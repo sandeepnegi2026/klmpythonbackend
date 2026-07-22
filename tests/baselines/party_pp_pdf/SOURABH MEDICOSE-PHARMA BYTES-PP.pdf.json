@@ -1,12 +1,12 @@
 {
   "file": "SOURABH MEDICOSE-PHARMA BYTES-PP.pdf",
   "route": "party_pdf",
-  "row_count": 17,
+  "row_count": 15,
   "warnings_count": 0,
   "headers_detected_count": 9,
   "detected_format": "marg_summary",
-  "party_count": 14,
-  "area_count": 6,
+  "party_count": 13,
+  "area_count": 5,
   "product_count": 5,
   "sample_parties": [
     "AAROGYA MEDICAL STORE MANDSAUR(M.P)",
@@ -22,8 +22,9 @@
     "Imxia 5",
     "Imxia Xl Serum 60Ml"
   ],
-  "qty_total": 117.0,
+  "qty_total": 115.0,
   "amount_total": 0.0,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

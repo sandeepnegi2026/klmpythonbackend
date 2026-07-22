@@ -1,0 +1,30 @@
+{
+  "file": "KLM ALL DIV PARTYWISE MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 132,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 71,
+  "area_count": 22,
+  "product_count": 59,
+  "sample_parties": [
+    "AMBIKA MEDICAL & GENERAL STORE",
+    "BALAJI MEDICAL & GENERAL STORE",
+    "BHAVIK MEDICAL & PROVISION STO",
+    "BHAWANI MEDICAL & GENE STORES",
+    "DANISH MEDICO (NEW)"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "qty_total": 419.0,
+  "amount_total": 91383.19,
+  "rate_total": 26247.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

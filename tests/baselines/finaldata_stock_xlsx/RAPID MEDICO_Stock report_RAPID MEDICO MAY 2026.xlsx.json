@@ -1,0 +1,18 @@
+{
+  "file": "RAPID MEDICO MAY 2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 287,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls",
+  "product_count": 266,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml"
+  ],
+  "closing_stock_total": 10199.0,
+  "rate_total": 0.0
+}

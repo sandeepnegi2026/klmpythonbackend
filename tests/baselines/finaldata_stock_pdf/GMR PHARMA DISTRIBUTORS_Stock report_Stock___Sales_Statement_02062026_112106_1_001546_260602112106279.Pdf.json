@@ -1,0 +1,18 @@
+{
+  "file": "Stock___Sales_Statement_02062026_112106_1_001546_260602112106279.Pdf",
+  "route": "stock_pdf",
+  "row_count": 48,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 45,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 951.0,
+  "rate_total": 0.0
+}

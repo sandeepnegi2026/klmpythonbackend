@@ -1,0 +1,19 @@
+{
+  "file": "klm.xls",
+  "route": "stock_xlsx",
+  "row_count": 255,
+  "warnings_count": 5,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 238,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 1773.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

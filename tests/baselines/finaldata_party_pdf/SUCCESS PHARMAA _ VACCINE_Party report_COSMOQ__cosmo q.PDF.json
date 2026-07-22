@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__cosmo q.PDF",
+  "route": "party_pdf",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "success_areawise_report",
+  "party_count": 23,
+  "area_count": 16,
+  "product_count": 11,
+  "sample_parties": [
+    "ALAGU PHARMACY C",
+    "ALAGU PHARMACY K",
+    "BAWA PHARMACY",
+    "DR SAARANYA MBBS",
+    "DR THARNIMATHI B.D.S"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 101.0,
+  "amount_total": 41054.99,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

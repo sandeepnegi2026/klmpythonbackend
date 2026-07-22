@@ -1,0 +1,18 @@
+{
+  "file": "klm ss.pdf",
+  "route": "stock_pdf",
+  "row_count": 143,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 141,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "closing_stock_total": 2624.0,
+  "rate_total": 0.0
+}

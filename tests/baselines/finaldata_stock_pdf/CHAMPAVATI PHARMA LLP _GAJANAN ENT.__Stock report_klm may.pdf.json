@@ -1,0 +1,18 @@
+{
+  "file": "klm may.pdf",
+  "route": "stock_pdf",
+  "row_count": 248,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "stock_open_purch_miscout",
+  "product_count": 236,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMO Q CREAM",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 9149.0,
+  "rate_total": 0.0
+}

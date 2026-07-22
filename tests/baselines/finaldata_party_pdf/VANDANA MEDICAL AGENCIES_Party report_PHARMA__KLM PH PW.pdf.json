@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM PH PW.pdf",
+  "route": "party_pdf",
+  "row_count": 110,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 67,
+  "area_count": 12,
+  "product_count": 30,
+  "sample_parties": [
+    "AAROGYA MEDICOSE",
+    "AASTHA MEDICAL HALL",
+    "ABHA MEDICAL",
+    "AE MEDICAL SHOPEE",
+    "ANAND MEDICAL & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm"
+  ],
+  "qty_total": 293.0,
+  "amount_total": 40360.14,
+  "rate_total": 19119.93,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

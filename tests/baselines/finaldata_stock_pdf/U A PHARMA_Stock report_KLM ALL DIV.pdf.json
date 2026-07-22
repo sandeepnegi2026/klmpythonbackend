@@ -1,0 +1,18 @@
+{
+  "file": "KLM ALL DIV.pdf",
+  "route": "stock_pdf",
+  "row_count": 175,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 173,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 2949.0,
+  "rate_total": 38811.83
+}

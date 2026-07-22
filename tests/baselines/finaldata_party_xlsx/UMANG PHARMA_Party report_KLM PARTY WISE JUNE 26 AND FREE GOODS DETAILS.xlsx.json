@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE JUNE 26 AND FREE GOODS DETAILS.xlsx",
+  "route": "party_xlsx",
+  "row_count": 448,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 98,
+  "area_count": 44,
+  "product_count": 122,
+  "sample_parties": [
+    "ABHISHEK MEDICAL STORE",
+    "AFFAIRS PHARMACY",
+    "AGARWAL MEDICOS",
+    "AGGARWAL MEDICAL STORE",
+    "ALTRUS HELATHCARE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet"
+  ],
+  "qty_total": 4497.0,
+  "amount_total": 866271.43,
+  "rate_total": 112154.75,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

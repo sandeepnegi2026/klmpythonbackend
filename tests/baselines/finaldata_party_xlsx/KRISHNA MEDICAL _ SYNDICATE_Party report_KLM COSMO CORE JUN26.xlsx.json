@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO CORE JUN26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 38,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_customer_vs_groups_text",
+  "party_count": 13,
+  "area_count": 8,
+  "product_count": 18,
+  "sample_parties": [
+    "AMAR MEDICALS",
+    "AMOGHA MEDICALS",
+    "AYYAPPA MEDICAL&GEN.STO",
+    "BHAVYASRI PHARMACY",
+    "GUNA MEDICALS"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm"
+  ],
+  "qty_total": 144.0,
+  "amount_total": 20116.86,
+  "rate_total": 6663.68,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,30 @@
+{
+  "file": "1DQ0626.xlsx",
+  "route": "party_xlsx",
+  "row_count": 50,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 23,
+  "area_count": 14,
+  "product_count": 8,
+  "sample_parties": [
+    "ALAGU PHARMACY",
+    "ARUN PHARMACY",
+    "BAWA MEDICALS",
+    "BAWA MEDICALS (B)",
+    "BAWAA MEDICALS,"
+  ],
+  "sample_products": [
+    "NEVLON SOAP",
+    "Nevlon Cream 100Gm",
+    "Nevlon Cream 50Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Nevlon Lotion 100Ml"
+  ],
+  "qty_total": 149.0,
+  "amount_total": 18272.71,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

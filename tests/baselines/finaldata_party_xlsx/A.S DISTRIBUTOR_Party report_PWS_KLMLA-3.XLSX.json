@@ -1,0 +1,30 @@
+{
+  "file": "PWS_KLMLA-3.XLSX",
+  "route": "party_xlsx",
+  "row_count": 86,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 66,
+  "area_count": 68,
+  "product_count": 13,
+  "sample_parties": [
+    "AAKASH CHEMIST",
+    "ADINATH AGENCY",
+    "AMEY MEDI & GEN STORE",
+    "AMOL MEDICAL & GEN.STORES",
+    "ARNAV MEDICAL"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Fentispor Capsule",
+    "Klm D3 Nano Drops",
+    "Mupisoft Ointment 5 Gm"
+  ],
+  "qty_total": 274.0,
+  "amount_total": 38794.01,
+  "rate_total": 13077.14,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,19 @@
+{
+  "file": "SALASAR STOCK MAY 26 PEDIA.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 41,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash"
+  ],
+  "closing_stock_total": 794.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

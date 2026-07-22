@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__COSMO Q.xlsx",
+  "route": "party_xlsx",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 6,
+  "area_count": 3,
+  "product_count": 9,
+  "sample_parties": [
+    "-ARORA MEDICAL HALL(N)",
+    "-DR.SHALLU MITTAL*",
+    "-GOLD PHARMACY",
+    "-JINDAL MEDICAL HALL",
+    "-PARKASH MEDICAL HALL."
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 40.0,
+  "amount_total": 18491.81,
+  "rate_total": 5508.8,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

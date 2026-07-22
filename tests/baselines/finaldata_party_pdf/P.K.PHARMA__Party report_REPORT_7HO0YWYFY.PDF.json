@@ -1,0 +1,26 @@
+{
+  "file": "REPORT_7HO0YWYFY.PDF",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "pipe_delimited",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 9,
+  "sample_parties": [
+    "APNA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "CLOITCH LOTION",
+    "DOXDERM 200",
+    "FINAGRA SUS",
+    "GLAEDE FACEWASH",
+    "HD ZINE LOTION"
+  ],
+  "qty_total": 2082.19,
+  "amount_total": 45571.7,
+  "rate_total": 1514.34,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

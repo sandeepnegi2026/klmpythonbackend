@@ -1,0 +1,27 @@
+{
+  "file": "k4.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sree_swathi_company_product_area_invoice",
+  "party_count": 3,
+  "area_count": 4,
+  "product_count": 4,
+  "sample_parties": [
+    "KEERTHI MEDICALS",
+    "NEELIMA PHARMACY",
+    "ROOPAM SPECTS WORLD"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Soap 75G"
+  ],
+  "qty_total": 158.0,
+  "amount_total": 21711.35,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

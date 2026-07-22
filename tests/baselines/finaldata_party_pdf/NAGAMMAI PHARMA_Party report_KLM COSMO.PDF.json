@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO.PDF",
+  "route": "party_pdf",
+  "row_count": 148,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_nagammai_customer_purchase_divisionwise",
+  "party_count": 81,
+  "area_count": 0,
+  "product_count": 20,
+  "sample_parties": [
+    "ALAGU PHARMACY \"R\" PEELAMEDU",
+    "ALAGU PHARMACY \"S\" S.B.COLONY.",
+    "ALAGU PHARMACY-`B GANDHIPURAM.",
+    "ALM MEDICALS (PN PALAYAM)",
+    "ALM MEDICALS (VADAVALLI)"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 500.0,
+  "amount_total": 217211.91,
+  "rate_total": 68576.74,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

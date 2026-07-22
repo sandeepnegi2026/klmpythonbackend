@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__PEDIA MAY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 331,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_product_sale_dc_summary",
+  "party_count": 182,
+  "area_count": 182,
+  "product_count": 31,
+  "sample_parties": [
+    "A TO Z MEDICAL & GEN. STORES",
+    "A.K.PHARMA",
+    "AAHAN MEDICAL",
+    "AARNA MEDICAL",
+    "AAYUSH MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab",
+    "Evaklin Medicated Wash"
+  ],
+  "qty_total": 1008.0,
+  "amount_total": 147127.95,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "PHARMA__PHARMA STK.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 15,
+  "warnings_count": 4,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 15,
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "K-Dox Capsules 1*10"
+  ],
+  "closing_stock_total": 264.0,
+  "rate_total": 2384.06,
+  "line_unexplained": 0
+}

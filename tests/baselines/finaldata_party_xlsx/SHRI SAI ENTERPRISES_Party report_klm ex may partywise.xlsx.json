@@ -1,0 +1,30 @@
+{
+  "file": "klm ex may partywise.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1351,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 75,
+  "area_count": 13,
+  "product_count": 281,
+  "sample_parties": [
+    "AGRAWAL MEDICAL & COSMETICS",
+    "AJAY MEDICAL & GENRAL STORES",
+    "AKOLA MEDICAL STORES",
+    "AMRUT MEDICAL STORES",
+    "ANAYSHA MEDICAL& GEN. STORES"
+  ],
+  "sample_products": [
+    "ACNECROSS MOISTURZING GEL",
+    "ACNEPAD 50 PADS",
+    "ACTIVE MF CREAM",
+    "ADAPERO GEL",
+    "ADLENE GEL"
+  ],
+  "qty_total": 8213.0,
+  "amount_total": 1701951.15,
+  "rate_total": 338842.08,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

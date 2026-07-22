@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__PARTY WISESALES DERMA.PDF",
+  "route": "party_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 9,
+  "area_count": 8,
+  "product_count": 13,
+  "sample_parties": [
+    "CHITRANSH MEDICAL STORE",
+    "DR NARGISH ANSARI",
+    "DR SUDHEER JAIN",
+    "REFINE PHARMACY",
+    "SHREE GANESH MEDICAL"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Caloe Lotion 60Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "qty_total": 237.0,
+  "amount_total": 36055.46,
+  "rate_total": 2676.73,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

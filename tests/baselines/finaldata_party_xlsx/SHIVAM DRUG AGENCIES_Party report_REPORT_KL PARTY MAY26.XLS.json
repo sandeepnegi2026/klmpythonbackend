@@ -1,0 +1,30 @@
+{
+  "file": "REPORT_KL PARTY MAY26.XLS",
+  "route": "party_xlsx",
+  "row_count": 78,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 36,
+  "area_count": 10,
+  "product_count": 35,
+  "sample_parties": [
+    "24 HOURS MEDICINES",
+    "ANKUSH MEDICOSE",
+    "ANKUSH MEDICOSE JPH",
+    "ANMOL CLINIC",
+    "ARJUN MEDICOSE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 590.0,
+  "amount_total": 143861.21,
+  "rate_total": 20396.99,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

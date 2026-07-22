@@ -1,0 +1,30 @@
+{
+  "file": "KLM_COSMO_JUNE2026_PP.PDF",
+  "route": "party_pdf",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 23,
+  "area_count": 3,
+  "product_count": 16,
+  "sample_parties": [
+    "BALAJI MEDICAL",
+    "BEAWAR DAWA KENDRA",
+    "CHARBHUJA MEDICAL & GENERAL STORE (GST)",
+    "DEV MEDICALS",
+    "JAY PHARMA"
+  ],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "qty_total": 104.0,
+  "amount_total": 18962.89,
+  "rate_total": 7553.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

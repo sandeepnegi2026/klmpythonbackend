@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR PW MAY-26.pdf",
+  "route": "party_pdf",
+  "row_count": 81,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "profitmaker",
+  "party_count": 25,
+  "area_count": 0,
+  "product_count": 28,
+  "sample_parties": [
+    "AB SKIN AND NEURO CENTRE",
+    "ABHI MEDICAL HALL",
+    "ADITHYA PHARMACY",
+    "AVISHA HEALTHCARE",
+    "AYYAPPA MEDICAL AND GENAR"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 923.0,
+  "amount_total": 141111.8,
+  "rate_total": 17095.5,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

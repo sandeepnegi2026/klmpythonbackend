@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR.PDF",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 32,
+  "sample_products": [
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Klcepo 200 Tablets",
+    "Lulizol Cream 20 Gm"
+  ],
+  "closing_stock_total": 368.0,
+  "rate_total": 0.0
+}

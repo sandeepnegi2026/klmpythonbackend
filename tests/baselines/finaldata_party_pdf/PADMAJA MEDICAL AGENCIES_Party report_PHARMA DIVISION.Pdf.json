@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA DIVISION.Pdf",
+  "route": "party_pdf",
+  "row_count": 81,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 27,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "AMAR MEDICALS. City :RAJAHMUNDRY",
+    "AMMAJI MEDICALS. City :RAJAHMUNDRY",
+    "BHAVYASRI PHARMACY. City :RAJAHMUNDRY",
+    "CENTRAL MEDICAL STORES City :RAJAHMUNDRY",
+    "CENTRAL PHARMACY City :RAJAHMUNDRY"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 529.0,
+  "amount_total": 108679.43,
+  "rate_total": 16757.92,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

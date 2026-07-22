@@ -1,0 +1,30 @@
+{
+  "file": "KLM ST 2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 300,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "tabular",
+  "party_count": 96,
+  "area_count": 0,
+  "product_count": 57,
+  "sample_parties": [
+    "AJAY MEDICAL HALL  DHURI 11   -DHURI",
+    "AMAN MEDICAL STORE CHEEMA 24  -CHEEMA",
+    "ARORA PHARMACUTICAL BHAWANIGARH 12 -BHAWANIGARH",
+    "AZAD MEDICAL HALL BARNALA 05  -BARNALA",
+    "BANSAL MEDICARE NABHA 18      -NABHA"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "qty_total": 1307.5,
+  "amount_total": 0.0,
+  "rate_total": 48136.72,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

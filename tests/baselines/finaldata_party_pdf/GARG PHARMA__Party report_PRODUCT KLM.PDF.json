@@ -1,0 +1,30 @@
+{
+  "file": "PRODUCT KLM.PDF",
+  "route": "party_pdf",
+  "row_count": 43,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "product_customer_wise_sales",
+  "party_count": 19,
+  "area_count": 3,
+  "product_count": 23,
+  "sample_parties": [
+    "BALAJI MEDICALS",
+    "BHAWANA MEDICAL STORE",
+    "BRIJ MEDICAL.(GARG HOS.)",
+    "DEEYA MEDICAL HALL",
+    "HITESH MEDICAL"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 50Gm",
+    "Extend Capsules",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "qty_total": 168.0,
+  "amount_total": 31710.24,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

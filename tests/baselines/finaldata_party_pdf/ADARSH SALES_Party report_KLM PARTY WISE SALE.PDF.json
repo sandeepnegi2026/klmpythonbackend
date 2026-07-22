@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE SALE.PDF",
+  "route": "party_pdf",
+  "row_count": 1644,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 458,
+  "area_count": 242,
+  "product_count": 204,
+  "sample_parties": [
+    "A-ONE PHARMACY",
+    "A.B.CHEMIST & DRUGGIST-NEW",
+    "A.R. SURGICAL & PHARMA",
+    "AASTHA MEDICAL STORE",
+    "ADHIRAJ MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMO Q AC 50SPF S",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 8714.0,
+  "amount_total": 1395741.77,
+  "rate_total": 316833.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

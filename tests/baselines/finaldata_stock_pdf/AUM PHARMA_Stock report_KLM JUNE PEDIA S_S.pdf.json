@@ -1,0 +1,18 @@
+{
+  "file": "KLM JUNE PEDIA S_S.pdf",
+  "route": "stock_pdf",
+  "row_count": 64,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_ss_statement_detailed",
+  "product_count": 62,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "closing_stock_total": 1632.0,
+  "rate_total": 0.0
+}

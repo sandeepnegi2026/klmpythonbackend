@@ -1,0 +1,30 @@
+{
+  "file": "1LW0626.xlsx",
+  "route": "party_xlsx",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 17,
+  "area_count": 8,
+  "product_count": 5,
+  "sample_parties": [
+    "BAWA MEDICALS (B)",
+    "CO-OPERATIVE MEDICAL SHOP",
+    "DR DHRUTHIKA R",
+    "GOWTHAM MEDICAL STORE,",
+    "KAYAL PHARMACY,"
+  ],
+  "sample_products": [
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Nevlon Acne Soap 75Gm",
+    "Nevlon Anti-Itch Soft Cream 100 Gm",
+    "Xaliderm Solution 50Ml"
+  ],
+  "qty_total": 55.0,
+  "amount_total": 12918.32,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

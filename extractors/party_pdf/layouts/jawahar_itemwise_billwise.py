@@ -187,7 +187,8 @@ def parse_jawahar_itemwise_billwise(text, file_bytes=None):
                 # --- otherwise: a PRODUCT band header (has no leading BillNo) ---
                 # product bands start at the left margin (x0 ~26) and carry no
                 # trailing numeric value column.
-                if rw[0]["x0"] < 60 and not _NUM_RE.match(first):
+                if (rw[0]["x0"] < 60 and not _NUM_RE.match(first)
+                        and not (len(rw) >= 2 and _DATE_RE.match(rw[1]["text"]))):
                     base, pack = _strip_pack(line)
                     if base:
                         product_name = base

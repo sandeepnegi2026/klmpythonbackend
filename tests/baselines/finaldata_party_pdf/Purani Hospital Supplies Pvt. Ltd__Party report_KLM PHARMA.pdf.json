@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 47,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "backbone_mfr_sales_detail",
+  "party_count": 32,
+  "area_count": 14,
+  "product_count": 16,
+  "sample_parties": [
+    "ABIRAMI MEDICALS - B - GOBI",
+    "ABIRAMI MEDICALS - GOBI",
+    "BARANI MEDICALS - KANGAYAM",
+    "BHARANI MEDICALS - B P AGRAHARAM",
+    "DEEPAA MEDICALS - D - ERODE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "GA 1230GMCREAM1`S",
+    "GA 630GMCREAM1`S"
+  ],
+  "qty_total": 81.0,
+  "amount_total": 12681.49,
+  "rate_total": 7326.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 10
+}

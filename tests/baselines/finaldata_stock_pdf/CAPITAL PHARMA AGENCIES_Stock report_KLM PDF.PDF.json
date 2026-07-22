@@ -1,0 +1,18 @@
+{
+  "file": "KLM PDF.PDF",
+  "route": "stock_pdf",
+  "row_count": 217,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "capital_stock_sale_stmt",
+  "product_count": 208,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 1647.0,
+  "rate_total": 0.0
+}

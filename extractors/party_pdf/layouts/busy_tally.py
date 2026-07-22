@@ -43,6 +43,30 @@ def parse_busy_tally(text):
     pat5_frac = re.compile(
         r"^(.+?)\s+" + _qty_frac_neg + r"\s+" + _free_opt + r"\s+" + _money + r"\s+" + _money + r"\s*$"
     )
+    # INTEGER-qty + DECIMAL-free rows (KLMPARTY "K-DOX 10 CAP 17 1.50 88.12 1498.05
+    # 0.27"): pat6 free=[\d-]+ rejects the decimal free, and pat6_frac needs a
+    # decimal/negative QTY, so an integer-qty line with a half-scheme fractional
+    # free falls in the gap and is silently dropped. Shape-strict (integer qty,
+    # decimal free, 2-dp money tail) and tried ONLY after every pattern above
+    # fails, so no line parsed today changes.
+    _decfree = r"(\d+\.\d{1,3})"
+    pat6_intqty_decfree = re.compile(
+        r"^(.+?)\s+(\d+)\s+" + _decfree + r"\s+" + _money + r"\s+" + _money + r"\s+" + _money + r"\s*$"
+    )
+    pat5_intqty_decfree = re.compile(
+        r"^(.+?)\s+(\d+)\s+" + _decfree + r"\s+" + _money + r"\s+" + _money + r"\s*$"
+    )
+    # COLON-FUSED qty cell (JUNE-2026 Busy scheme split, "KLCLAV 625 10,S 3:0 0
+    # 143.36 430.09 0.22"): the qty column prints as "<qty>:<free>" glued by a
+    # colon, followed by a standalone scheme token, then rate/amount/(%). pat6
+    # qty=(\d+) halts at the colon so the whole row is dropped. Take qty/free from
+    # the two colon parts; the standalone scheme token is consumed but unused.
+    pat6_colon = re.compile(
+        r"^(.+?)\s+(-?\d+):(-?\d+)\s+[\d.-]+\s+" + _money + r"\s+" + _money + r"\s+" + _money + r"\s*$"
+    )
+    pat5_colon = re.compile(
+        r"^(.+?)\s+(-?\d+):(-?\d+)\s+[\d.-]+\s+" + _money + r"\s+" + _money + r"\s*$"
+    )
 
     has_pct = bool(re.search(r'\b(PCT|DISC\.?|DISCOUNT)\b|\( ?% ?\)', text, re.IGNORECASE))
 
@@ -255,6 +279,28 @@ def parse_busy_tally(text):
                     vendor_line,
                 ]
             )
+            continue
+        # INTEGER-qty + DECIMAL-free fallback (see pattern note). Reached only when
+        # every branch above failed, i.e. on otherwise-dropped half-scheme rows.
+        mi = pat6_intqty_decfree.match(s) if has_pct else pat5_intqty_decfree.match(s)
+        if mi:
+            name, area = _split_party_area(cur_raw)
+            rows.append(
+                [name, area, mi.group(1).strip(), mi.group(2), mi.group(3),
+                 mi.group(4), mi.group(5), vendor_line]
+            )
+            continue
+        # COLON-FUSED qty-cell fallback (see pattern note). qty/free come from the
+        # two colon parts; a '-' free is normalised to 0.
+        mc = pat6_colon.match(s) if has_pct else pat5_colon.match(s)
+        if mc:
+            name, area = _split_party_area(cur_raw)
+            free = mc.group(3)
+            rows.append(
+                [name, area, mc.group(1).strip(), mc.group(2),
+                 "0" if free == "-" else free, mc.group(4), mc.group(5), vendor_line]
+            )
+            continue
     # A file with ZERO strict integer-qty rows is a decimal-only sibling, not a
     # busy_tally report -> return empty so pdf_io routes it to its dedicated parser
     # instead of hijacking with a partial (decimal-only) parse.

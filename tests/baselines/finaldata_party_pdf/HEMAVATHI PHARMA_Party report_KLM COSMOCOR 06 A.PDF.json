@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR 06 A.PDF",
+  "route": "party_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 16,
+  "area_count": 6,
+  "product_count": 20,
+  "sample_parties": [
+    "BHARANI DRUG HOUSE,-HASSAN-573201",
+    "DHANALAXMI MEDICALS STORES SKP-SAKALESHPURA",
+    "DHANVANTHRI MEDICAL CENTER(ARA-ARASIKERE",
+    "DR.A.G.CHANDRASHEKAR HASSAN-HASSAN",
+    "DR.VIVEKANANDA,HSN-HASSAN"
+  ],
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 310.0,
+  "amount_total": 51135.08,
+  "rate_total": 7325.73,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

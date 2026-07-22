@@ -1,0 +1,30 @@
+{
+  "file": "PEAD.pdf",
+  "route": "party_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 12,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "AAYUSH MEDICALS ,MADANAPALLI",
+    "ARUNA MEDICALS ,SRI KALAHASTHI I",
+    "MADHU MEDICALS AND FANCY ,MR PALLI",
+    "MEDISURE PHARMACY ,TIRUPATI",
+    "NEELIMA PHARMACY ,TIRUPATI"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Mupisoft Ointment 5 Gm"
+  ],
+  "qty_total": 948.0,
+  "amount_total": 105183.34,
+  "rate_total": 3642.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

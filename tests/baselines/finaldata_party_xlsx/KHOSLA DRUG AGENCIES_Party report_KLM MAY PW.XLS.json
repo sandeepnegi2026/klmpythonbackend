@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY PW.XLS",
+  "route": "party_xlsx",
+  "row_count": 264,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 64,
+  "area_count": 25,
+  "product_count": 91,
+  "sample_parties": [
+    "A-ONE MEDICAL HALL",
+    "A.R PHARMA",
+    "AADYA MEDICAL HALL",
+    "ANNU MEDICAL",
+    "APOLLO PHARMACIES LTD"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "qty_total": 992.0,
+  "amount_total": 139556.55,
+  "rate_total": 57556.58,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

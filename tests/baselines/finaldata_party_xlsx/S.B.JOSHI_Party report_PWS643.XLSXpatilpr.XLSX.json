@@ -1,0 +1,30 @@
+{
+  "file": "PWS643.XLSXpatilpr.XLSX",
+  "route": "party_xlsx",
+  "row_count": 168,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 104,
+  "area_count": 104,
+  "product_count": 24,
+  "sample_parties": [
+    "AAI MEDICAL",
+    "AAYUSHI MEDICAL GEN STORE",
+    "ABHAY MEDICALS",
+    "ADARSH MED & GEN STORES**.",
+    "ANAND HEALTH CARE (MAHESH)"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Gold Soft Gelatin Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "qty_total": 262.0,
+  "amount_total": 70069.72,
+  "rate_total": 48213.04,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

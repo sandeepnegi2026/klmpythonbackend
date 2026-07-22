@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__KLM DERMA PW.pdf",
+  "route": "party_pdf",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 11,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "AARYA MEDICAL & GEN STORE",
+    "ANJANI MEDICAL&GEN STORES",
+    "ARJUN PHARMACY",
+    "HUSSAIN BROTHRES MEDICAL",
+    "KKP PHARMACY"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 352.0,
+  "amount_total": 70819.74,
+  "rate_total": 8445.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

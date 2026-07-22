@@ -1,0 +1,27 @@
+{
+  "file": "PHARMA__Customer___Product_02062026_112130_1_001547_260602112130928.Pdf",
+  "route": "party_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 4,
+  "area_count": 0,
+  "product_count": 3,
+  "sample_parties": [
+    "BALAJI PHARMACY ( A UNIT",
+    "CITY PHARMACY",
+    "SHOBHA PHARMACY",
+    "SRI VENKATESHAM PHARMACY"
+  ],
+  "sample_products": [
+    "Eberfine-Xl Cream 50 Gm",
+    "Klclav-625 Tablets",
+    "Klmite Cream 60 Gm"
+  ],
+  "qty_total": 88.0,
+  "amount_total": 12134.83,
+  "rate_total": 1026.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "report_sns_KLM_PHARMA.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 18,
+  "detected_format": "tabular",
+  "product_count": 18,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 17.0,
+  "rate_total": 0.0
+}

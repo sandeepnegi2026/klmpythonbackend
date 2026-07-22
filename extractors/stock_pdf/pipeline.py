@@ -32,6 +32,20 @@ _SANITY_FALLBACK_TRIGGER = 0.80   # mirrors core.triage THRESHOLDS["sanity_red"]
 _SANITY_FALLBACK_ACCEPT = 0.98    # mirrors core.triage THRESHOLDS["sanity_green"]
 _SANITY_FALLBACK_MIN_ROWS = 5
 
+# Printed grand-total / value-summary lines that some layouts emit as if they were
+# products (swil's 'GRAND TOTAL' footer, marg_bordered's per-section 'Goods Value' /
+# 'Amount' lines). Their figures are TOTALS, not stock, so they inflate row counts
+# and totals. Matched ONLY as the WHOLE product name (case-insensitive, stripped) —
+# never a substring — so a real product ('Total Care Cream', 'Amount X') is untouched.
+_TOTAL_LABEL_ROWS = frozenset({
+    "grand total", "goods value", "amount", "total", "group total",
+    "sub total", "subtotal", "company total", "division total", "net total",
+})
+
+
+def _is_total_label_row(name) -> bool:
+    return str(name or "").strip().lower() in _TOTAL_LABEL_ROWS
+
 
 def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
     started = time.perf_counter()
@@ -105,9 +119,22 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
     if not rows:
         rows = parse_generic(all_text)
 
+    # Drop printed total / value-summary lines mis-emitted as product rows
+    # (exact whole-name match only — see _TOTAL_LABEL_ROWS).
+    if rows:
+        rows = [r for r in rows if not _is_total_label_row(r.get("product_name"))]
+
     for row in rows:
         for k, v in header_fields.items():
             row.setdefault(k, v)
+
+    # Line-accounting ledger — MUST run pre-enrichment/pre-pack-strip so row
+    # values still match the printed text. Read-only; triage gates on it.
+    from core.line_ledger import audit_text_lines
+    try:
+        line_audit = audit_text_lines(all_text, rows)
+    except Exception:  # ledger must never break extraction
+        line_audit = {"applicable": False, "reason": "ledger error"}
 
     from core.pack_match import extract_pack_from_product
     from core.product_master import enrich_rows_with_master
@@ -159,6 +186,7 @@ def extract(file_bytes: bytes, settings: dict | None = None) -> dict:
         "raw_text": "\n".join(raw_parts),
         "warnings": warnings,
         "sanity": sanity,
+        "line_audit": line_audit,
         "elapsed_ms": int((time.perf_counter() - started) * 1000),
         "debug": {
             "parser": "stock_pdf",

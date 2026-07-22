@@ -1,0 +1,30 @@
+{
+  "file": "KLM 06 S.xls",
+  "route": "party_xlsx",
+  "row_count": 489,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_party_banded",
+  "party_count": 118,
+  "area_count": 59,
+  "product_count": 156,
+  "sample_parties": [
+    "AASTHA MEDI & GEN STORE",
+    "AM MEDICO",
+    "ANA MEDICAL",
+    "ANANYA CHEMIST",
+    "ANJANI CHEMIST"
+  ],
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "qty_total": 9959.0,
+  "amount_total": 2124438.68,
+  "rate_total": 111729.91,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

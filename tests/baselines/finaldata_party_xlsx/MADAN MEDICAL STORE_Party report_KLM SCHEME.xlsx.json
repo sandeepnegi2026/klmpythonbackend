@@ -1,0 +1,30 @@
+{
+  "file": "KLM SCHEME.xlsx",
+  "route": "party_xlsx",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 12,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "AREA MANAGER  ARKI (SOLAN)",
+    "AREA MANAGER  D.D.U.",
+    "BHALUNI MEDICOSE RAMPUR       -RAMPUR",
+    "DHRUV MEDICAL STORE RAMPUR    -RAMPUR",
+    "DR NEHA SOOD                  -SHIMLA"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Ekran Aqua Gel 50Gm",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets",
+    "Kalsid Tablets"
+  ],
+  "qty_total": 0.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "75105721.PDF",
+  "route": "party_pdf",
+  "row_count": 75,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "unisolve",
+  "party_count": 33,
+  "area_count": 10,
+  "product_count": 21,
+  "sample_parties": [
+    "ABAN MEDICAL",
+    "ALI MEDICAL STORES",
+    "ANUSHKA MEDICAL",
+    "APPLE MEDICAL",
+    "CHOUDHARY MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 616.0,
+  "amount_total": 79630.3,
+  "rate_total": 13796.46,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

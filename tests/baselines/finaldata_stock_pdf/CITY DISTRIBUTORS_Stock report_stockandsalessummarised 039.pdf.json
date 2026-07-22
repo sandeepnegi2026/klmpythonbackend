@@ -1,0 +1,18 @@
+{
+  "file": "stockandsalessummarised 039.pdf",
+  "route": "stock_pdf",
+  "row_count": 135,
+  "warnings_count": 2,
+  "headers_detected_count": 8,
+  "detected_format": "stock_op_pur_total_sale_close",
+  "product_count": 129,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 588.0,
+  "rate_total": 0.0
+}

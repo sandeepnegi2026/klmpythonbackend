@@ -1,0 +1,30 @@
+{
+  "file": "PWS_KLMLA DERMACOR.XLSX",
+  "route": "party_xlsx",
+  "row_count": 107,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 95,
+  "area_count": 95,
+  "product_count": 26,
+  "sample_parties": [
+    "AAIJI MEDICAL",
+    "ADINATH AGENCY",
+    "ADVIK MEDICO",
+    "AMBIKA MEDICAL STORE",
+    "AMOL MEDICAL & GEN.STORES"
+  ],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches"
+  ],
+  "qty_total": 273.0,
+  "amount_total": 62488.7,
+  "rate_total": 28284.91,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

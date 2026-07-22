@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE-2.XLS",
+  "route": "party_xlsx",
+  "row_count": 364,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 69,
+  "area_count": 8,
+  "product_count": 116,
+  "sample_parties": [
+    "AJAY MED STO C/O BIMR CAMPUS",
+    "ALFA MEDICAL STORE",
+    "AMAR MEDICAL AND SURGICAL",
+    "ARIHANT MED STORE SKC",
+    "ARPIT MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet"
+  ],
+  "qty_total": 2354.0,
+  "amount_total": 509271.2,
+  "rate_total": 85231.79,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM ALL DIV.xlsx",
+  "route": "party_xlsx",
+  "row_count": 544,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 185,
+  "area_count": 0,
+  "product_count": 108,
+  "sample_parties": [
+    "AARY MEDICAL NANDED",
+    "ADITYA MEDICAL & GAN STORES",
+    "AHEMAD MEDICAL HALL NANDED",
+    "AKANKSHA MEDICAL STORES DEGLOOR",
+    "AMOL MEDICAL STO. HIMAYATNAGAR"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 2965.0,
+  "amount_total": 444724.18,
+  "rate_total": 96714.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,30 @@
+{
+  "file": "REPORT PARTY WISE.PDF",
+  "route": "party_pdf",
+  "row_count": 210,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 78,
+  "area_count": 51,
+  "product_count": 88,
+  "sample_parties": [
+    ".RAKESH AGENCY",
+    "ADARSH MEDICO",
+    "ADITYA MEDICALS",
+    "ANKIT MEDICAL HALL",
+    "APSHA MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 3012.0,
+  "amount_total": 512602.41,
+  "rate_total": 40626.05,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

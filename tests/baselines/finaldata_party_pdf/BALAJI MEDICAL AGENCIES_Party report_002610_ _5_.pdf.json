@@ -1,0 +1,30 @@
+{
+  "file": "002610_ _5_.pdf",
+  "route": "party_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "mfacwise_custwise_itemwise",
+  "party_count": 6,
+  "area_count": 6,
+  "product_count": 5,
+  "sample_parties": [
+    "CHACKO MEMORIAL HOSPITAL",
+    "COCHIN MEDICALS",
+    "DELITE MEDICALS",
+    "LILLY MEDICALS",
+    "LISSY MEDICALS"
+  ],
+  "sample_products": [
+    "Imxia Pro Serum 60Ml",
+    "Keramate Eva",
+    "Kojitin Emulgel 15Gm",
+    "Kojitin Ultra Emulgel 20Gm",
+    "Zycozol Cream 30 Gm"
+  ],
+  "qty_total": 28.0,
+  "amount_total": 12478.42,
+  "rate_total": 3526.1,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

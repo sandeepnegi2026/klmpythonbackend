@@ -1,0 +1,29 @@
+{
+  "file": "COSMOCOR PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "bhaskara_code_customer_banded",
+  "party_count": 13,
+  "area_count": 8,
+  "product_count": 8,
+  "sample_parties": [
+    "BHAAVYA PHARMACY",
+    "GANESH MEDICAL STORES",
+    "KANAKA DURGA MEDICALS",
+    "LAKE PHARMACY",
+    "LIFE PHARMA"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Imxia 2%",
+    "Imxia F",
+    "Imxia Pro Serum 60Ml"
+  ],
+  "qty_total": 28.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

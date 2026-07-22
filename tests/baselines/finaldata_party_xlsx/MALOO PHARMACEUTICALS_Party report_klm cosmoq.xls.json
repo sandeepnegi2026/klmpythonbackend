@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmoq.xls",
+  "route": "party_xlsx",
+  "row_count": 74,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 28,
+  "area_count": 3,
+  "product_count": 15,
+  "sample_parties": [
+    "DR.M K SINGH (KLM FREE GOODS)",
+    "GANGA MED & GEN STORES(GUDIYARI) RAIPUR",
+    "HANSU MEDICOSE RAIPUR",
+    "JAI DURGA MED.STORES(MOVA) RAIPUR",
+    "JAI DURGA MED.STORES(RAIPURA) RAIPUR"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 274.0,
+  "amount_total": 123807.33,
+  "rate_total": 38176.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

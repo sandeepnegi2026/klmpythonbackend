@@ -84,6 +84,7 @@ LAYOUT_LABELS = {
     "klm_stock_sales_small_pdf": "KLM Stock Sales Statement (Small) — Rate/Openin/Reciept/Sales/Free/SalesRt/Closing positional (MUDRAA/WARAD, wrapped)",
     "medichem_ss_expiry": "MEDICHEM Stock & Sales Statement — Opening/Sales/Purchase/Closing + Expiry (14-token per-division)",
     "meyon_prevmonth_stock": "MEYON DRUGS Stock Statement (Prev.month Sales/Rate/Op_Stk/Rcpts/P.Ret/Sales/Hos.Sal/Brk/Repl/Cl_Stk/Value, positional per-division)",
+    "bhavya_open_recv_issue_close_value": "BHAVYA MEDICAL AGENCIES Stock & Sales (Opening/Received/Issued/Closing qty + Value)",
     "smartpharma_sas": "SmartPharma360 Stock And Sales Report (Open/Pur/Sales/SaleRet/Closing Qty+Value pairs, KLM, SRI BABA)",
     "csquare_manufacturerwise_stock_sales": "UNIVERSAL DRUG LINES — C-Square Manufacturerwise Stock and Sales (trailing-8 anchor)",
     "medivision_stock_sales": "MediVision Platinum — Stock and Sales (Op/Purc/Scm/Sale/Scm/Closing + values, positional, PyMuPDF)",

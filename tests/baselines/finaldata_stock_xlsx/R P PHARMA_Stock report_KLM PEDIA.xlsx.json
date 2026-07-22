@@ -1,0 +1,19 @@
+{
+  "file": "KLM PEDIA.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 41,
+  "warnings_count": 12,
+  "headers_detected_count": 15,
+  "detected_format": "tabular",
+  "product_count": 41,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab"
+  ],
+  "closing_stock_total": 549.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

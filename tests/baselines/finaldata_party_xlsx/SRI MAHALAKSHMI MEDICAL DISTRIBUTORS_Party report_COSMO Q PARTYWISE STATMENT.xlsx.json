@@ -1,0 +1,29 @@
+{
+  "file": "COSMO Q PARTYWISE STATMENT.xlsx",
+  "route": "party_xlsx",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "MOHANA MEDICAL & GENERAL",
+    "SAMBHAVI PHARMA CARE",
+    "SIDDARDHA MEDICALS",
+    "SRI PADA MEDICALS",
+    "SRI RAJESWARI MEDICALS"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm"
+  ],
+  "qty_total": 16.0,
+  "amount_total": 9983.93,
+  "rate_total": 5534.34,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

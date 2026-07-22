@@ -1,0 +1,18 @@
+{
+  "file": "ARCHI DISTRIBUTOR.xls",
+  "route": "stock_xlsx",
+  "row_count": 10,
+  "warnings_count": 4,
+  "headers_detected_count": 8,
+  "detected_format": "html_stock",
+  "product_count": 10,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 42.0,
+  "rate_total": 0.0
+}

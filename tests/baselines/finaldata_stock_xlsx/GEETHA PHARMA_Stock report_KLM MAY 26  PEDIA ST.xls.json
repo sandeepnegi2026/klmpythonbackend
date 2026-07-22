@@ -1,0 +1,19 @@
+{
+  "file": "KLM MAY 26  PEDIA ST.xls",
+  "route": "stock_xlsx",
+  "row_count": 47,
+  "warnings_count": 4,
+  "headers_detected_count": 20,
+  "detected_format": "tabular",
+  "product_count": 45,
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 380.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

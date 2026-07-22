@@ -1,0 +1,30 @@
+{
+  "file": "cwjune.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1555,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 270,
+  "area_count": 137,
+  "product_count": 200,
+  "sample_parties": [
+    "AAI MEDICAL STORES",
+    "AARADHYA MEDICAL & GEN STORE",
+    "AASHIRWAD MEDI STORES",
+    "ADARSH MEDICAL & GENRAL STORE",
+    "ADVIK MEDICAL STORES"
+  ],
+  "sample_products": [
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "qty_total": 5505.0,
+  "amount_total": 1038274.2,
+  "rate_total": 329104.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

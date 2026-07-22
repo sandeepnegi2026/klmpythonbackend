@@ -1,0 +1,18 @@
+{
+  "file": "SEC SALES MAY 2026 KLM COSMOCOR  DIV.pdf",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 24,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Imxia Pro Serum 60Ml",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets"
+  ],
+  "closing_stock_total": 189.0,
+  "rate_total": 4209.26
+}

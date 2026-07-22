@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA AREA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 53,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_wise_sale_list",
+  "party_count": 34,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "A.J.MEDICALS ANGADIKADAVU",
+    "A.M.MEDICALS PERAVOOR",
+    "AASRAYA MEDICALS KUDUKKIMOTTA",
+    "AKG MEMORIAL CO",
+    "ASHIRVAD MEDICALS TALIPARAMBA"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "qty_total": 215.0,
+  "amount_total": 38344.83,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

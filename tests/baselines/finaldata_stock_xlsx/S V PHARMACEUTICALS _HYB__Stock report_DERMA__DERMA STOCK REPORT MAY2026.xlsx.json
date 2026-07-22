@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__DERMA STOCK REPORT MAY2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "profit_maker",
+  "product_count": 30,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Eberfine Cream 15 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 350.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE.pdf",
+  "route": "party_pdf",
+  "row_count": 804,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "laxmi_mfac",
+  "party_count": 129,
+  "area_count": 0,
+  "product_count": 132,
+  "sample_parties": [
+    "AASTHA MEDICAL STORES LAKHENAG'A4IR320-21199",
+    "ABHIJEET MEDICAL & COSMETIC CG-RZ3-42550",
+    "AGRAWAL MEDICAL STORES-BASNA 20B/63/2010",
+    "AJAY MEDICAL STORES BERLA 20-25226",
+    "ANAND MED. & GEN.NEW RAJEDNRANA2G0-A4R1826"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 1291.0,
+  "amount_total": 276861.58,
+  "rate_total": 183330.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY.PDF",
+  "route": "party_pdf",
+  "row_count": 142,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_marg_mf_customer_sales_summary",
+  "party_count": 53,
+  "area_count": 19,
+  "product_count": 61,
+  "sample_parties": [
+    "AAROGYA MEDICAL STORE MANDSAUR(M.P)",
+    "ANAND MEDICAL STORE SITAMAU SITAMU.",
+    "ASHISH MEDICOSE,MANDSAUR.",
+    "CASH PHARMA , MANDSAUR.",
+    "CENTRAL MEDICAL STORS,MANDSAUR"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 664.0,
+  "amount_total": 102938.54,
+  "rate_total": 0.0,
+  "purchase_rate_total": 94972.73,
+  "line_unexplained": 0
+}

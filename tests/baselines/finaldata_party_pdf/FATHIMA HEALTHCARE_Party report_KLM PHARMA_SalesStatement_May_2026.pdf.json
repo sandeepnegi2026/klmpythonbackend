@@ -1,0 +1,24 @@
+{
+  "file": "KLM PHARMA_SalesStatement_May_2026.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "bluefox_customerwise_sales",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 2,
+  "sample_parties": [
+    "MOSKO MEDICALS",
+    "SURYA MEDICALS"
+  ],
+  "sample_products": [
+    "Kentruff Lotion 75 Ml",
+    "Naditret Plus Cream 10G"
+  ],
+  "qty_total": 5.0,
+  "amount_total": 712.13,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

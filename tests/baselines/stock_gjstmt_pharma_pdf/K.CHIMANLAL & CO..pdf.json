@@ -1,0 +1,18 @@
+{
+  "file": "K.CHIMANLAL & CO..pdf",
+  "route": "stock_pdf",
+  "row_count": 41,
+  "warnings_count": 7,
+  "headers_detected_count": 18,
+  "detected_format": "marg_bordered",
+  "product_count": 39,
+  "sample_products": [
+    "***OXIDOX 130MG CAP",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet"
+  ],
+  "closing_stock_total": 257.0,
+  "rate_total": 0.0
+}

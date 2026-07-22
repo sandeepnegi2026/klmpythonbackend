@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 75,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_item_party_sales_statement",
+  "party_count": 37,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "AJAY MEDICAL STORE JANAKPUR",
+    "AMBEY MEDICAL STORES MANENDRAG",
+    "ANI MEDICAL STORES",
+    "HARISH MEDICAL STORES BIJURI",
+    "JAI MATA DI MEDICAL STORES AMK"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend Eva Capsules",
+    "Fentispor Capsule"
+  ],
+  "qty_total": 210.0,
+  "amount_total": 23244.16,
+  "rate_total": 10646.37,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

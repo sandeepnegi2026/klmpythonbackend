@@ -1,0 +1,18 @@
+{
+  "file": "ST-KLM8-MAY-2026-24062026-15.pdf",
+  "route": "stock_pdf",
+  "row_count": 150,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "medica_stock_apr_mar",
+  "product_count": 150,
+  "sample_products": [
+    "####XYTER TAB(CLOSED)",
+    "Appybush Syrup 200Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 1592.0,
+  "rate_total": 0.0
+}

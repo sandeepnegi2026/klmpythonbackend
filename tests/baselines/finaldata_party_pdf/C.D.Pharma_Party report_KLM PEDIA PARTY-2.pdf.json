@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA PARTY-2.pdf",
+  "route": "party_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "customer_product_analysis_dash",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "ANJANA MEDICALS",
+    "DR.S.SRINITHYA",
+    "DR.V.SETHU MADHAVI",
+    "RK MEDICALS",
+    "SAI SAHASRA MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Extend Vita Syrup 200Ml",
+    "HISTABIL SUSPENSION 60ml 25S1GLA268",
+    "Klm D3 Nano Drops",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 204.0,
+  "amount_total": 24384.77,
+  "rate_total": 2551.56,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

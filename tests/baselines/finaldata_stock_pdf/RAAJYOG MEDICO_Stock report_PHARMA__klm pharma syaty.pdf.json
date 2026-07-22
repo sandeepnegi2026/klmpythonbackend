@@ -1,0 +1,18 @@
+{
+  "file": "PHARMA__klm pharma syaty.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "swastik_particulars",
+  "product_count": 27,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "closing_stock_total": 297.0,
+  "rate_total": 0.0
+}

@@ -46,7 +46,7 @@ H = ["Party Name", "Area", "Product Name", "Qty", "Amount"]
 
 # item:  "<serial>:<name...> <v1> <v2> <qty>N"
 _ITEM = re.compile(
-    r"^\s*\d+:(.+?)\s+([\d,]+\.\d+)\s+([\d,]+\.\d+)\s+(\d+)N\s*$"
+    r"^\s*\d+:(.+?)\s+(-?[\d,]+\.\d+)\s+(-?[\d,]+\.\d+)\s+(-?\d+)N\s*$"
 )
 _DEALER = re.compile(r"^\s*Dealer:(.*)$", re.I)
 _TOTAL = re.compile(r"^\s*TOTAL\s*\(\d+\)", re.I)

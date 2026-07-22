@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR PARTYWISE STATMENT.xlsx",
+  "route": "party_xlsx",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 23,
+  "area_count": 0,
+  "product_count": 10,
+  "sample_parties": [
+    "AVIN MEDITECH PRIVATE LIM",
+    "GANESH MEDICAL STORES",
+    "HEMASRI MEDICALS&GENARALS",
+    "LAKSHMI GANAPATHI MEDICAL",
+    "MAMATHA MEDICALS"
+  ],
+  "sample_products": [
+    "Glutaderm Tablets",
+    "Kenz Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "qty_total": 79.0,
+  "amount_total": 12482.09,
+  "rate_total": 5785.57,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

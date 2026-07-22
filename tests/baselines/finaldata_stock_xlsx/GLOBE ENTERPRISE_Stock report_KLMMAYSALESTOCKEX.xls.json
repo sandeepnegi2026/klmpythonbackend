@@ -1,0 +1,19 @@
+{
+  "file": "KLMMAYSALESTOCKEX.xls",
+  "route": "stock_xlsx",
+  "row_count": 302,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_stock_analysis_qv",
+  "product_count": 239,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml"
+  ],
+  "closing_stock_total": 8514.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

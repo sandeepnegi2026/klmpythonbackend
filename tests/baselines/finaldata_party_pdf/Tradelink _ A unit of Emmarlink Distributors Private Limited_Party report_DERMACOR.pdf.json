@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR.pdf",
+  "route": "party_pdf",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tradelink_customer_invoice_itemwise",
+  "party_count": 30,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "AASRAYA MEDICALS KUDUKKIMETTA ,KANNUR",
+    "AKG MEMORIAL CO-OP HOSPITAL KANNUR",
+    "AMALA MEDICALS KARUVANCHAL",
+    "ANUGRAHAM MEDICALS DHARMASALA",
+    "BEST MEDICALS KANNUR"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair Tablet",
+    "Kenz Cream 30 Gm",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "qty_total": 137.0,
+  "amount_total": 29190.17,
+  "rate_total": 10553.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

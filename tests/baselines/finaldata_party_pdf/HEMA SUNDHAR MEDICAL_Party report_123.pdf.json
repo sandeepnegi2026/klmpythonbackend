@@ -1,0 +1,27 @@
+{
+  "file": "123.pdf",
+  "route": "party_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_company_customer_invoice",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 7,
+  "sample_parties": [
+    "LAKSHMI MEDICALS",
+    "SRI DHANALAKSHMI MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Enzotret Tablet",
+    "Klflam-Sp Tablet",
+    "Klm-D3 60K Capsules (1*8 Cap)",
+    "Kortuf-6"
+  ],
+  "qty_total": 190.0,
+  "amount_total": 24572.9,
+  "rate_total": 1575.33,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

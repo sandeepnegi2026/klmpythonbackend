@@ -1,0 +1,18 @@
+{
+  "file": "KLM ALL.pdf",
+  "route": "stock_pdf",
+  "row_count": 129,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 126,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 979.0,
+  "rate_total": 0.0
+}

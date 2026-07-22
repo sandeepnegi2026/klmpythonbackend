@@ -1,0 +1,19 @@
+{
+  "file": "KLM june 26 stock _ sale-2.xls",
+  "route": "stock_xlsx",
+  "row_count": 112,
+  "warnings_count": 14,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_combined_xlsx",
+  "product_count": 110,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 3450.0,
+  "rate_total": 18507.3,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY ALL 2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 674,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 110,
+  "area_count": 0,
+  "product_count": 456,
+  "sample_parties": [
+    "AAR HEALTH(6)",
+    "AGGARWAL MEDICAL HALL(MP)",
+    "AJAY MEDICAL HALL(KK)",
+    "AMBICA PHARMACY",
+    "AMBIKA MEDICOS(KHANNA)"
+  ],
+  "sample_products": [
+    "..AT SHOP.. 30-05 AB406",
+    "16/4/26 07-05 BN411",
+    "238 22-05 CE415",
+    "AT SHOP. 08-05 CX524",
+    "BY KRISHNA 06-05 BN419"
+  ],
+  "qty_total": 15744.5,
+  "amount_total": 444243.11,
+  "rate_total": 87704.58,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

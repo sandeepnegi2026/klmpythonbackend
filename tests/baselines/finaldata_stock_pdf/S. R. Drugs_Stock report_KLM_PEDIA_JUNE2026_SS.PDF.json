@@ -1,0 +1,18 @@
+{
+  "file": "KLM_PEDIA_JUNE2026_SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 16,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Kofcatch Ls 100Ml Junior",
+    "Mupisoft Ointment 5 Gm"
+  ],
+  "closing_stock_total": 328.0,
+  "rate_total": 0.0
+}

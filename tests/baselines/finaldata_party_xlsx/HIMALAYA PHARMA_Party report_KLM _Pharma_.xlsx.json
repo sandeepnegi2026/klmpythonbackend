@@ -1,0 +1,30 @@
+{
+  "file": "KLM _Pharma_.xlsx",
+  "route": "party_xlsx",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 7,
+  "area_count": 5,
+  "product_count": 5,
+  "sample_parties": [
+    "ABHI SAI MEDICAL HALL",
+    "CITY MEDICAL HALL",
+    "DIVYA MEDICAL AND GENARAL",
+    "SAKSHI MEDICAL GEN STORES",
+    "SNEHA MEDICLAS"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-6 Cream 30Gm",
+    "Klmite Cream 60 Gm",
+    "Soriban-50 Softgel Capsules"
+  ],
+  "qty_total": 169.0,
+  "amount_total": 57592.29,
+  "rate_total": 6288.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

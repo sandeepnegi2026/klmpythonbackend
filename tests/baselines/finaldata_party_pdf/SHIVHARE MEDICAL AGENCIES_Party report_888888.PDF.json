@@ -1,0 +1,30 @@
+{
+  "file": "888888.PDF",
+  "route": "party_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 10,
+  "area_count": 3,
+  "product_count": 14,
+  "sample_parties": [
+    "ARELA MEDICAL STORES",
+    "GARG MEDICAL STORES",
+    "KANHA MEDICAL STORES",
+    "MANISH MEDICAL STORES",
+    "NEW PANKAJ MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Kenz Soap",
+    "Nevlon Lotion 100Ml",
+    "Niosol-F Cream 10 Gm",
+    "Sofidew Baby Massage Oil 100Ml"
+  ],
+  "qty_total": 145.0,
+  "amount_total": 15567.56,
+  "rate_total": 2743.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

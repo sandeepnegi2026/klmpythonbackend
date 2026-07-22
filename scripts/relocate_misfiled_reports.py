@@ -36,8 +36,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]              # .../Projects/Backends
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+for _p in (ROOT, ROOT / "scripts"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 
 # Header detection runs before product enrichment; neutralise enrichment (the per-row
 # bottleneck) so classification of a whole batch is fast.
@@ -52,10 +53,67 @@ from extractors.stock_xlsx.pipeline import extract as extract_stock_xlsx
 PROJECTS = ROOT.parent
 DEFAULT_DATA_ROOT = PROJECTS.parent / "Data" / "New Data"
 REPORT_EXTS = {".pdf", ".xls", ".xlsx"}
+# An image uploaded as a "report" is effectively a scan -> OCR track (_wrong_format).
+IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tif", ".tiff"}
 LOG_PATH = ROOT / "scripts" / "_misfiled_moved.txt"
+# Discovery must NEVER descend into the tool's own staging folders. A prior --apply run
+# creates <root>/_wrong_format/<stockist>/<slot>/ (and _misfiled_duplicates/, legacy
+# "need Reviews/") that mirror the Party report/Stock report layout — an un-pruned walk
+# re-pairs them and re-flags already-moved files, double-nesting into _wrong_format/_wrong_format/.
+# This is the exclusion the runbooks promise ("all discovery skips _wrong_format/, _misfiled*,
+# need Reviews/"); keep code and doc in lockstep.
+EXCLUDE_DIRS = {"_wrong_format", "_misfiled_duplicates", "_misfiled", "need reviews", "backups"}
+
+
+def _is_staged(path: Path) -> bool:
+    """True if any path component is one of the tool's staging folders (case-insensitive)."""
+    return any(part.strip().lower() in EXCLUDE_DIRS for part in path.parts)
+
+
+# Filled by _preextract(): (report_type, str(path)) -> extraction result, so the per-file
+# verdict()/classify()/_wrong_format checks read an in-memory result instead of re-parsing
+# serially. Populated via the SHARED extract cache (parallel) — the same one run_batch fills.
+_PREEXTRACTED: dict = {}
+
+
+def _be_route(f: Path, report_type: str) -> str:
+    return f"{report_type}_{'xlsx' if f.suffix.lower() in ('.xls', '.xlsx') else 'pdf'}"
+
+
+def _preextract(files, workers: int) -> None:
+    """Warm the in-memory cache in PARALLEL so verdict()/classify() don't re-parse serially.
+    Party route for ALL files (verdict consults it for every file), then stock route ONLY
+    for files the party route can't name a party in (the misfiled/unknown candidates that
+    actually reach the stock branch). Anything not covered falls back to a direct parse in
+    _extract, so this is a pure speed-up that never changes an outcome."""
+    if workers <= 1 or not files:
+        return                       # serial: _extract falls back to a direct parse
+    try:
+        import batch_extract as be
+    except Exception:
+        return
+    uniq = sorted({Path(f) for f in files})
+    pres = be.extract_batch([(_be_route(f, "party"), f) for f in uniq],
+                            workers=workers, progress=True)
+    need_stock = []
+    for f in uniq:
+        r = pres.get(str(f), {})
+        _PREEXTRACTED[("party", str(f))] = r
+        if not any(str(x.get("party_name") or "").strip() for x in (r.get("rows") or [])):
+            need_stock.append(f)
+    if need_stock:
+        sres = be.extract_batch([(_be_route(f, "stock"), f) for f in need_stock],
+                                workers=workers, progress=True)
+        for f in need_stock:
+            _PREEXTRACTED[("stock", str(f))] = sres.get(str(f), {})
 
 
 def _extract(path: Path, report_type: str):
+    cached = _PREEXTRACTED.get((report_type, str(path)))
+    if cached is not None:
+        if isinstance(cached, dict) and cached.get("_extract_error"):
+            raise RuntimeError(cached["_extract_error"])   # preserve callers' except-on-error path
+        return cached
     is_xlsx = path.suffix.lower() in (".xls", ".xlsx")
     if report_type == "party":
         fn = extract_party_xlsx if is_xlsx else extract_party_pdf
@@ -200,6 +258,8 @@ def _find_pairs(tree_root: Path) -> list[tuple[Path, Path]]:
     party_dirs: dict[Path, Path] = {}
     stock_dirs: dict[Path, Path] = {}
     for dirpath, dirnames, _n in os.walk(tree_root):
+        # prune staging folders IN PLACE so os.walk never descends into them
+        dirnames[:] = [d for d in dirnames if d.strip().lower() not in EXCLUDE_DIRS]
         for d in dirnames:
             low = d.strip().lower()
             parent = Path(dirpath)
@@ -249,6 +309,88 @@ def _collect_moves(party_root: Path, stock_root: Path) -> list[tuple[Path, Path,
     return moves
 
 
+def _wrong_format_kind(path: Path) -> str:
+    """Classify a file as the WRONG FORMAT to extract: 'scanned' (an image, or a PDF
+    with no extractable text -> needs OCR), 'corrupt' (the reader raises), or '' (a
+    normal readable report -> leave it). This is OCR + corrupt ONLY: a readable file
+    that simply isn't recognized by a parser is NOT wrong-format here (it may be a new
+    layout to support) and stays put."""
+    ext = path.suffix.lower()
+    if ext in IMAGE_EXTS:
+        return "scanned"                       # image uploaded as a report
+    if ext not in REPORT_EXTS:
+        return ""                              # not a report file we handle here
+    try:
+        if ext == ".pdf":
+            import io
+            import pdfplumber
+            with pdfplumber.open(io.BytesIO(path.read_bytes())) as pdf:
+                text = "".join((p.extract_text() or "") for p in pdf.pages)
+            return "scanned" if len(text.strip()) < 40 else ""
+        # xls/xlsx: structured data (never "scanned"). A raise -> corrupt (outer except);
+        # some readers swallow a broken workbook and return nothing, so no rows AND no
+        # headers also means unreadable/corrupt. A readable-but-unrecognized sheet still
+        # yields headers, so it is NOT flagged (may be a new layout to support).
+        res = _extract(path, "stock")
+        if not (res.get("rows") or res.get("headers_detected")):
+            return "corrupt"
+        return ""
+    except Exception:
+        return "corrupt"
+
+
+def _collect_wrong_format(roots) -> list[tuple[Path, str, str]]:
+    """(src, report_type, kind) for scanned/corrupt files under the given slot roots."""
+    out: list[tuple[Path, str, str]] = []
+    seen: set[Path] = set()
+    for report_type, root in roots:
+        if not root.exists():
+            continue
+        for f in sorted(root.rglob("*")):
+            if not f.is_file() or f in seen or _is_staged(f):
+                continue
+            kind = _wrong_format_kind(f)
+            if kind:
+                out.append((f, report_type, kind))
+                seen.add(f)
+    return out
+
+
+def _apply_wrong_format(wrongs, wf_root: Path, base_for_rel: Path, apply: bool) -> None:
+    """Move scanned/corrupt files into <root>/_wrong_format/, preserving the
+    <stockist>/<slot>/ path, appending each move to the shared undo log, and writing a
+    _REVIEW.txt (scanned = re-scan/OCR, corrupt = re-export from source)."""
+    print("=" * 72)
+    print(f"Wrong-format (OCR/corrupt) candidates: {len(wrongs)}  ({'APPLY' if apply else 'DRY-RUN'})")
+    print("=" * 72)
+    review = []
+    for src, rtype, kind in wrongs:
+        try:
+            rel = src.resolve().relative_to(base_for_rel.resolve())
+        except ValueError:
+            rel = Path(src.name)
+        dst = wf_root / rel
+        print(f"  [{kind}] {src.name}  -> {dst}")
+        review.append((kind, rtype, str(rel)))
+        if apply:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            if dst.exists():
+                print(f"    SKIP (exists at dst): {dst}")
+                continue
+            shutil.move(str(src), str(dst))
+            with LOG_PATH.open("a", encoding="utf-8") as log:
+                log.write(f"wrong-format:{kind}\t{src}\t{dst}\n")
+    if apply and wrongs:
+        wf_root.mkdir(parents=True, exist_ok=True)
+        lines = ["# _wrong_format — files that could NOT be extracted (OCR + corrupt only)",
+                 "# scanned = image/no-text PDF -> re-scan or OCR before re-upload",
+                 "# corrupt = file would not open/parse -> re-export from the source software", ""]
+        for kind, rtype, rel in sorted(review):
+            lines.append(f"[{kind}] ({rtype}) {rel}")
+        (wf_root / "_REVIEW.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        print(f"\n  wrote review list -> {wf_root / '_REVIEW.txt'}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Relocate misfiled party/stock reports")
     ap.add_argument("--batch", help='Batch folder name under New Data, e.g. "26 June"')
@@ -257,9 +399,16 @@ def main() -> int:
     ap.add_argument("--stock-root", help="Explicit sales-and-stock folder")
     ap.add_argument("--tree-root", help="Walk a tree; pair every sibling 'Party report'/'Stock report' folder")
     ap.add_argument("--apply", action="store_true", help="Move files (default: dry-run)")
+    ap.add_argument("--wrong-format", action="store_true",
+                    help="Also set aside SCANNED (image/no-text) and CORRUPT files into "
+                         "<root>/_wrong_format/ (OCR + corrupt only; readable files are left in place)")
+    ap.add_argument("--workers", type=int, default=min(16, max(1, (os.cpu_count() or 4) - 2)),
+                    help="Parallel workers for the shared-cache pre-extraction (default: auto = min(16, cores-2))")
     args = ap.parse_args()
 
     moves: list[tuple[Path, Path, str]] = []  # (src, dst, reason)
+    wrongs: list[tuple[Path, str, str]] = []  # (src, report_type, kind)
+    wf_root = base_for_rel = None
 
     if args.tree_root:
         tree_root = Path(args.tree_root)
@@ -267,14 +416,22 @@ def main() -> int:
             sys.exit(f"tree-root not found: {tree_root}")
         pairs = _find_pairs(tree_root)
         print(f"Found {len(pairs)} Party/Stock folder pair(s) under {tree_root.name}")
+        _preextract([f for pdir, sdir in pairs for f in (_enumerate(pdir) + _enumerate(sdir))], args.workers)
         for pdir, sdir in pairs:
             moves.extend(_collect_moves(pdir, sdir))
+            if args.wrong_format:
+                wrongs.extend(_collect_wrong_format([("party", pdir), ("stock", sdir)]))
+        wf_root, base_for_rel = tree_root / "_wrong_format", tree_root
     else:
         party_root, stock_root = _resolve_roots(args)
         for label, root in (("party", party_root), ("stock", stock_root)):
             if not root.exists():
                 print(f"WARNING: {label} root not found: {root}")
+        _preextract(_enumerate(party_root) + _enumerate(stock_root), args.workers)
         moves = _collect_moves(party_root, stock_root)
+        if args.wrong_format:
+            wrongs = _collect_wrong_format([("party", party_root), ("stock", stock_root)])
+        wf_root, base_for_rel = party_root.parent / "_wrong_format", party_root.parent
 
     print("=" * 72)
     print(f"Misfiled candidates: {len(moves)}  ({'APPLY' if args.apply else 'DRY-RUN'})")
@@ -282,6 +439,9 @@ def main() -> int:
     for src, dst, reason in moves:
         print(f"  [{reason}] {src.name}")
         print(f"      -> {dst}")
+
+    if args.wrong_format:
+        _apply_wrong_format(wrongs, wf_root, base_for_rel, args.apply)
 
     if not args.apply:
         print("\nDRY-RUN — nothing moved. Re-run with --apply to relocate.")

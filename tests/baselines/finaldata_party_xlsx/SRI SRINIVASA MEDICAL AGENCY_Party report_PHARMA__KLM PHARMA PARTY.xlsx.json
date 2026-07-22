@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM PHARMA PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "item_item_sales_summary",
+  "party_count": 5,
+  "area_count": 1,
+  "product_count": 13,
+  "sample_parties": [
+    "ALIF PHARMA",
+    "BANASRI MEDICAL STORES-BALAGA",
+    "HANUMAN MEDICAL & GEN STORE-S",
+    "SRI SAI SRINIVAS MEDICALS",
+    "SRI THAKUR MEDICAL"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine Lot 50Gm Tube",
+    "Eberfine-M Cream 15G",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10"
+  ],
+  "qty_total": 738.0,
+  "amount_total": 95904.22,
+  "rate_total": 2568.17,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

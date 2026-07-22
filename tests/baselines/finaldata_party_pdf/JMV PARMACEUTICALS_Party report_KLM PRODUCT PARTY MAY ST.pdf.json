@@ -1,0 +1,30 @@
+{
+  "file": "KLM PRODUCT PARTY MAY ST.pdf",
+  "route": "party_pdf",
+  "row_count": 465,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "jmv_party_product_city",
+  "party_count": 138,
+  "area_count": 43,
+  "product_count": 121,
+  "sample_parties": [
+    "A.C.ENTERPRISES",
+    "AANCHAL MEDICAL",
+    "ABC PHARMA",
+    "AGARWAL MEDICAL STORE (S)",
+    "AGARWAL MEDICALS (S)"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 1054.0,
+  "amount_total": 231893.79,
+  "rate_total": 118223.88,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

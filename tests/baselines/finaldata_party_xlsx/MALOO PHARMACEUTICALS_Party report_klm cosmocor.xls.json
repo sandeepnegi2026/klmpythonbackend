@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmocor.xls",
+  "route": "party_xlsx",
+  "row_count": 147,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 65,
+  "area_count": 11,
+  "product_count": 26,
+  "sample_parties": [
+    "ANOOP MEDICAL STORES (SADAR) RAIPUR.",
+    "ARIHANT MEDICAL STORES",
+    "AYANSH MEDICAL STORES GUDIYARI RYP",
+    "D.C VERMA MEDICAL KHAIRAGADH",
+    "DIYA MEDICAL STORES RAIPUR"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "qty_total": 795.0,
+  "amount_total": 110135.27,
+  "rate_total": 25601.27,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

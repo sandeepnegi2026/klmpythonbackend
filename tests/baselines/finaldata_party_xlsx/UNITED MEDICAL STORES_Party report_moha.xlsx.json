@@ -1,0 +1,30 @@
+{
+  "file": "moha.xlsx",
+  "route": "party_xlsx",
+  "row_count": 213,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "customer_items_new_xlsx",
+  "party_count": 74,
+  "area_count": 40,
+  "product_count": 31,
+  "sample_parties": [
+    "A-ONE HOSPITALS-PHARMACY(RETAIL)",
+    "AKSHARA MEDICAL STORES",
+    "AMMA PHARMACY",
+    "ANNAPOORNA MEDICAL STORES",
+    "ANUPAMA MEDICALS"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol-D Capsules"
+  ],
+  "qty_total": 2507.0,
+  "amount_total": 211323.81,
+  "rate_total": 24527.44,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

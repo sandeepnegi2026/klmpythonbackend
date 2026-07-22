@@ -1,0 +1,18 @@
+{
+  "file": "report.pdf",
+  "route": "stock_pdf",
+  "row_count": 125,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 122,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "closing_stock_total": 2347.0,
+  "rate_total": 0.0
+}

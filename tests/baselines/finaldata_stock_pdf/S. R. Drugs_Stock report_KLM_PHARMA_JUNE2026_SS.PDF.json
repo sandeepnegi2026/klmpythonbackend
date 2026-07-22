@@ -1,0 +1,18 @@
+{
+  "file": "KLM_PHARMA_JUNE2026_SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 18,
+  "sample_products": [
+    "Cetalore-M Tablet",
+    "Eberfine Cream 30 Gm",
+    "Extend Gold Soft Gelatin Capsules",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 661.0,
+  "rate_total": 0.0
+}

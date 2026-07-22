@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__KLM 6P.pdf",
+  "route": "party_pdf",
+  "row_count": 35,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "billwise_multiheader",
+  "party_count": 15,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "CHARLI MEDICAL STORES",
+    "F.K. MEDICAL STORES LATUR",
+    "GANDHI CHOWK,FIRST FLR,OPP.TELEGRAF OFFICE,LATUR,, LATUR",
+    "GILDA MEDICALS",
+    "ISHWAR MEDICAL AND GENERAL STORES,L"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "EBERFINE 30GM.CREAM 30GM. BM511",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kentruff Lotion 75 Ml"
+  ],
+  "qty_total": 221.0,
+  "amount_total": 34878.82,
+  "rate_total": 6160.92,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM STST.xls",
+  "route": "stock_xlsx",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_sales_analysis_wide_xlsx",
+  "product_count": 19,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 282.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

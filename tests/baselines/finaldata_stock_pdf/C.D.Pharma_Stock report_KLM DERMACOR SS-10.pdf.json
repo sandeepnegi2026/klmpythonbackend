@@ -1,0 +1,18 @@
+{
+  "file": "KLM DERMACOR SS-10.pdf",
+  "route": "stock_pdf",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 46,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Ekran Lotion 50G",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches"
+  ],
+  "closing_stock_total": 1345.0,
+  "rate_total": 0.0
+}

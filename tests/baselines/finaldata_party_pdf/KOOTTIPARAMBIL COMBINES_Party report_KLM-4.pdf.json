@@ -1,0 +1,30 @@
+{
+  "file": "KLM-4.pdf",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customerwise_itemwise_billwise",
+  "party_count": 6,
+  "area_count": 6,
+  "product_count": 5,
+  "sample_parties": [
+    "DR ANU KURIAN",
+    "DR VEENA VS",
+    "M.G MEDICALS",
+    "M.G.M MUTHOOT MED.CENTER PVT LTD",
+    "MAMMEN MEMMORIAL HOSPITAL"
+  ],
+  "sample_products": [
+    "Nevlon Glo Syndet Bar",
+    "Nevlon Max Cream 150 Gm",
+    "Onitraz Sb 130",
+    "Sudif Cream 10 Gm",
+    "Xepinoxin Cream 5G"
+  ],
+  "qty_total": 67.0,
+  "amount_total": 11508.06,
+  "rate_total": 1786.64,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

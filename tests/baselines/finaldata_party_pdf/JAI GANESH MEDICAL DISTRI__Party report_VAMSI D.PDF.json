@@ -1,0 +1,30 @@
+{
+  "file": "VAMSI D.PDF",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 11,
+  "area_count": 5,
+  "product_count": 17,
+  "sample_parties": [
+    "AARUSH MEDICALS",
+    "AL-SHIFA PHARMACY",
+    "ALEKHYA MEDICAL&FANCY",
+    "ASHRITHA MEDICALS",
+    "MPR MEDICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "qty_total": 409.0,
+  "amount_total": 60550.42,
+  "rate_total": 4308.73,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

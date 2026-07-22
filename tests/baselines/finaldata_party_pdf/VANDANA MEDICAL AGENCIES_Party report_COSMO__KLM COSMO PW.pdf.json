@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__KLM COSMO PW.pdf",
+  "route": "party_pdf",
+  "row_count": 47,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 31,
+  "area_count": 9,
+  "product_count": 20,
+  "sample_parties": [
+    "ANAND MEDICAL & GENERAL STORES",
+    "ANUSHUMAN MEDICAL",
+    "BOSSMEN PHARMA PVT.LMT.",
+    "CARE PHARMACY",
+    "CHITRA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-500 Tablets 1*3 Tablets"
+  ],
+  "qty_total": 117.0,
+  "amount_total": 29635.79,
+  "rate_total": 14749.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

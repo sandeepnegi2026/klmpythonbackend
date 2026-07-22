@@ -1,0 +1,19 @@
+{
+  "file": "klm statement jun.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 170,
+  "warnings_count": 35,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 149,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 395.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

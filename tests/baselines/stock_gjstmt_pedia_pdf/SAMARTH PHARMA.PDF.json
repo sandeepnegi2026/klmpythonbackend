@@ -1,0 +1,15 @@
+{
+  "file": "SAMARTH PHARMA.PDF",
+  "route": "stock_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 2,
+  "sample_products": [
+    "Mupisoft Ointment 5 Gm",
+    "Sofikid Zn Drops 15Ml"
+  ],
+  "closing_stock_total": 21.0,
+  "rate_total": 0.0
+}

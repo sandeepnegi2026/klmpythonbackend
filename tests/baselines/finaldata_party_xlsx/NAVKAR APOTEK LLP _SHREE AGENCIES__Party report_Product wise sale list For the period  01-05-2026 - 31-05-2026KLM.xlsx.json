@@ -1,0 +1,30 @@
+{
+  "file": "Product wise sale list For the period  01-05-2026 - 31-05-2026KLM.xlsx",
+  "route": "party_xlsx",
+  "row_count": 165,
+  "warnings_count": 0,
+  "headers_detected_count": 33,
+  "detected_format": "tabular",
+  "party_count": 86,
+  "area_count": 45,
+  "product_count": 21,
+  "sample_parties": [
+    "AADARSH MEDICAL SHIRWAL",
+    "ADITYA MEDICAL SASWAD",
+    "AKSHATA MEDICAL PARGAON",
+    "AMIT MEDICAL DAUND",
+    "ASIM MEDICALS DAUND"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 843.0,
+  "amount_total": 94234.54,
+  "rate_total": 23206.67,
+  "purchase_rate_total": 20901.85,
+  "line_unexplained": 1
+}

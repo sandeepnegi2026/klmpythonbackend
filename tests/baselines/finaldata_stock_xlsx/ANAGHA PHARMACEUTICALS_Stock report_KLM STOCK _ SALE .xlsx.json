@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK _ SALE .xlsx",
+  "route": "stock_xlsx",
+  "row_count": 269,
+  "warnings_count": 51,
+  "headers_detected_count": 24,
+  "detected_format": "tabular",
+  "product_count": 248,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 6133.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA DIVISION.xlsx",
+  "route": "party_xlsx",
+  "row_count": 92,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 41,
+  "area_count": 0,
+  "product_count": 31,
+  "sample_parties": [
+    "ADITYA PHARMACY",
+    "AMMAJI MEDICALS.",
+    "ANITHA MEDICALS.",
+    "BHAVYASRI PHARMACY.",
+    "CENTRAL MEDICAL STORES"
+  ],
+  "sample_products": [
+    "EBERFINE CR 15G [SMALL]",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 556.0,
+  "amount_total": 106567.92,
+  "rate_total": 18205.72,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

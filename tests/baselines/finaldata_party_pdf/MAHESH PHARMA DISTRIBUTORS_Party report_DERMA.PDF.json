@@ -1,0 +1,30 @@
+{
+  "file": "DERMA.PDF",
+  "route": "party_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 14,
+  "area_count": 3,
+  "product_count": 8,
+  "sample_parties": [
+    "DR ABHAY GOYAL",
+    "DR ANU GARG",
+    "DR CHARU SINGH",
+    "DR GAURANG GUPTA",
+    "DR H.K BHARDWAJ"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "KLM KLIN FW 100ML 1*100ML",
+    "Kenz Soap",
+    "Klm Klin Aha Face Wash 100 Ml"
+  ],
+  "qty_total": 1564.0,
+  "amount_total": 232984.68,
+  "rate_total": 2513.7,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

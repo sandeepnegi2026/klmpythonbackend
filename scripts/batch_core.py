@@ -37,8 +37,10 @@ from core.header_match import match_header, normalize
 from core.product_master import _normalize_name
 
 # Safe to import (no import-time monkeypatch, no main() side effects):
-import build_product_synonyms as _bps
-from regression_test import _party_metrics, _stock_metrics
+from regression_test import _party_metrics, _stock_metrics, _completeness_metrics
+# NOTE: build_product_synonyms is imported LAZILY inside match_spellings_to_master()
+# — it is a PSUI-only catalog CLI, and batch_core is mirrored to Backends/scripts
+# (run_full_suite dependency) where that module does not exist.
 
 
 def report_type(route: str) -> str:
@@ -58,7 +60,10 @@ REASON_META = {
     "CORE_FIELD_EMPTY":  ("A core numeric column is empty in nearly all rows",       "Header-mapping",    "You decide", "AMBER", True),
     "SANITY_FAILED":     ("Stock totals don't reconcile on most rows",               "Diagnose sanity",   "Dev + you",  "RED",   True),
     "SANITY_PARTIAL":    ("Stock totals reconcile on most but not all rows",         "Diagnose sanity",   "Dev + you",  "AMBER", True),
+    "SANITY_VALUE_OK":   ("Extraction proven right by value totals; vendor's own quantities don't add up", "Review", "You decide", "AMBER", False),
+    "PRODUCT_ROLLUP":    ("Party-level roll-up — source has no product column",      "Review",            "You decide", "AMBER", False),
     "TOTAL_MISMATCH":    ("Printed grand total differs from the summed rows",        "Reconcile / audit", "Dev + you",  "AMBER", True),
+    "UNACCOUNTED_LINES": ("Source data lines not matched to any extracted row (possible dropped rows)", "Diagnose parser", "Dev", "AMBER", True),
     "HIGH_ZERO_FILL":    ("Too many zero-filled numeric cells",                      "Case-by-case",      "You decide", "AMBER", True),
     "DUPLICATE_ROWS":    ("High duplicate-row ratio",                                "Case-by-case",      "You decide", "AMBER", True),
     "CONSTANT_COLUMN":   ("A column holds the same value in every row",              "Case-by-case",      "You decide", "AMBER", True),
@@ -85,6 +90,36 @@ def problem_text(reason_code: str) -> str:
     return fix_meta(reason_code)["plain"]
 
 
+def _completeness_fields(result: dict, checks: dict) -> dict:
+    """Line-ledger + printed-total fields for the rows-completeness gate.
+
+    Derived from the SAME build_quality pass as the triage verdict (checks
+    carries total_reconcile), so run_full_suite's S4 costs nothing extra.
+    would_fire mirrors scripts/ledger_league.would_fire: the ledger thresholds
+    AND NOT printed-total-proven (a file whose sums equal the vendor's own grand
+    total is complete; unexplained lines there are ledger noise, not drops).
+    """
+    from core.triage import THRESHOLDS
+    la = result.get("line_audit") or {}
+    c = la.get("counts") or {}
+    tr = checks.get("total_reconcile") or {}
+    total_proven = bool(tr.get("found") and tr.get("ok"))
+    would_fire = bool(
+        not total_proven
+        and la.get("applicable")
+        and c.get("data", 0) >= THRESHOLDS["unaccounted_min_data"]
+        and c.get("unexplained", 0) >= THRESHOLDS["unaccounted_min_lines"]
+        and (la.get("unexplained_ratio") or 0.0) >= THRESHOLDS["unaccounted_ratio"]
+    )
+    return {
+        "line_applicable": bool(la.get("applicable")),
+        "line_unexplained": c.get("unexplained"),
+        "line_data": c.get("data"),
+        "total_proven": total_proven,
+        "ledger_would_fire": would_fire,
+    }
+
+
 # --------------------------------------------------------------------------- #
 # 1. triage  — identical shape & logic to triage_batch.py:triage_one()
 # --------------------------------------------------------------------------- #
@@ -95,6 +130,7 @@ def triage_row(route: str, vendor: str, file_name: str, path: str, result: dict)
         return {
             **base, "layout": "ERROR", "bucket": "ERROR",
             "reason_code": "EXTRACTION_CRASHED", "reason": err,
+            "extraction_ok": False,
             "score_pct": None, "row_count": None, "sanity_eff": None,
             "master_match": None, "dup_ratio": None, "zero_fill": None,
             "soft_missing": "", "warnings": None,
@@ -111,6 +147,9 @@ def triage_row(route: str, vendor: str, file_name: str, path: str, result: dict)
             "bucket": triage["bucket"],
             "reason_code": triage["reason_code"],
             "reason": triage["reason"],
+            # 4-state triage badge (GREEN/AMBER-true/AMBER-null/RED) rides on this;
+            # True=proven correct, None=unconfirmed AMBER, False=RED. See core/triage.py:_verdict.
+            "extraction_ok": triage.get("extraction_ok"),
             "score_pct": quality["score_pct"],
             "row_count": checks["row_count"],
             "sanity_eff": sanity.get("effective_pass_rate"),
@@ -119,11 +158,17 @@ def triage_row(route: str, vendor: str, file_name: str, path: str, result: dict)
             "zero_fill": checks.get("zero_fill_ratio"),
             "soft_missing": ", ".join(checks.get("soft_missing") or []),
             "warnings": len(result.get("warnings") or []),
+            # Line-ledger completeness + printed-total proof (run_full_suite's S4
+            # rows gate reads these; additive — dashboards ignore extra keys).
+            # Exposed here so the suite derives triage AND completeness from this
+            # ONE build_quality pass instead of re-running the catalog fuzzy-match.
+            **_completeness_fields(result, checks),
         }
     except Exception as exc:  # mirror triage_one's defensive catch
         return {
             **base, "layout": "ERROR", "bucket": "ERROR",
             "reason_code": "EXTRACTION_CRASHED", "reason": f"{type(exc).__name__}: {exc}",
+            "extraction_ok": False,
             "score_pct": None, "row_count": None, "sanity_eff": None,
             "master_match": None, "dup_ratio": None, "zero_fill": None,
             "soft_missing": "", "warnings": None,
@@ -175,6 +220,8 @@ def match_spellings_to_master(spellings: dict, catalog: list, min_score: float =
     The actual write is a gated step that calls the real build_product_synonyms CLI,
     so the catalog is never mutated here.
     """
+    import build_product_synonyms as _bps  # lazy: PSUI-only catalog CLI (see header note)
+
     covered = set()
     for product in catalog:
         covered.add(_normalize_name(product.get("canonical_name", "")))
@@ -249,4 +296,5 @@ def regression_metrics(route: str, file_name: str, result: dict) -> dict:
         snap.update(_party_metrics(rows))
     else:
         snap.update(_stock_metrics(rows))
+    snap.update(_completeness_metrics(result))
     return snap

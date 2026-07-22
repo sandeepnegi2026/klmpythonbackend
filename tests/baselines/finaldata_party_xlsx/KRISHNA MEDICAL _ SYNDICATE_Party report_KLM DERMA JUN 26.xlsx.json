@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA JUN 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 55,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_customer_vs_groups_text",
+  "party_count": 23,
+  "area_count": 12,
+  "product_count": 19,
+  "sample_parties": [
+    "AMAR MEDICALS",
+    "AMOGHA MEDICALS",
+    "BALAJI MEDICAL&GEN STOR",
+    "BHAVYASRI PHARMACY",
+    "COMPASS ENTERPRISES PVT"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "MF SONE 30GM",
+    "NEVLON MOIST CREAM SOAP 7",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 457.0,
+  "amount_total": 86621.45,
+  "rate_total": 16340.05,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

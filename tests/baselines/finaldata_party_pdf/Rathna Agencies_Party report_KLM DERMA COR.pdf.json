@@ -1,0 +1,29 @@
+{
+  "file": "KLM DERMA COR.pdf",
+  "route": "party_pdf",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "wep_legacy",
+  "party_count": 4,
+  "area_count": 3,
+  "product_count": 11,
+  "sample_parties": [
+    "DR.DINESH RAJA MBBS;MD;D.V.L.;",
+    "DR.MONISHA.,M.B.B.S.,M.D.,(DVL).,AAAM",
+    "DR.S.VIJAYARAGHAVAN M.D.",
+    "SABARI MEDICALS"
+  ],
+  "sample_products": [
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Extend Forte Tablet 1*10 Tab"
+  ],
+  "qty_total": 153.0,
+  "amount_total": 28468.38,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

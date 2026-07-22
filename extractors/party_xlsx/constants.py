@@ -55,6 +55,8 @@ LAYOUT_LABELS = {
     "fawin_partywise": "Fawin Partywise Outward",
     "itemwise_party_column": "Itemwise Sales (Party-as-Column)",
     "customer_product_banded": "Customer-Banded Party-Product",
+    "busy_list_of_sale_by_party": "Busy List of Sale By Party",
+    "senthil_areawise_columnar": "Senthil Areawise Columnar",
     "partywise_band": "Party-Band (Areawise/Customerwise)",
     "area_party_billwise": "Area/Party/Billwise Register",
     "company_area_wise_sales": "Company Wise Area Wise Sales (Bill-wise, Banded)",

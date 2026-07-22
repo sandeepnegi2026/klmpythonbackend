@@ -1,0 +1,30 @@
+{
+  "file": "klm derma.xls",
+  "route": "party_xlsx",
+  "row_count": 93,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 50,
+  "area_count": 20,
+  "product_count": 15,
+  "sample_parties": [
+    "ABIRAMI MEDICALS",
+    "APOLLO PHARMACY (UNIT OF APOLLO PHARMACIES LTD)",
+    "BAWA SMART PHARMACY",
+    "BAWAA MEDICALS",
+    "BCS PHARMA AND SURGICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 332.0,
+  "amount_total": 66693.08,
+  "rate_total": 20508.87,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,18 @@
+{
+  "file": "SAURASHTRA MEDISOLUTION-2.pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 2,
+  "headers_detected_count": 15,
+  "detected_format": "saurashtra_monthly",
+  "product_count": 15,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 187.0,
+  "rate_total": 6959.32
+}

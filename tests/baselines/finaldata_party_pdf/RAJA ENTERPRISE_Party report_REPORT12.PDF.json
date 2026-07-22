@@ -1,0 +1,30 @@
+{
+  "file": "REPORT12.PDF",
+  "route": "party_pdf",
+  "row_count": 463,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 39,
+  "area_count": 21,
+  "product_count": 131,
+  "sample_parties": [
+    "A H ENTERPRISE",
+    "A.B.DEV",
+    "A.R.ENTERPRISE",
+    "ADARSHA PHARMACY",
+    "ADHUNICK MEDICAL HALL-DIAMOND"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CANROLFINE 30GR CR 30GR",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 4288.0,
+  "amount_total": 595561.11,
+  "rate_total": 87413.03,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

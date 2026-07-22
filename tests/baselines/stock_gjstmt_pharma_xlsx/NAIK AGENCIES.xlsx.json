@@ -1,0 +1,18 @@
+{
+  "file": "NAIK AGENCIES.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 35,
+  "warnings_count": 8,
+  "headers_detected_count": 17,
+  "detected_format": "tabular",
+  "product_count": 32,
+  "sample_products": [
+    "BILL NO.",
+    "CLOSING AMOUNT",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 176.0,
+  "rate_total": 3464.75
+}

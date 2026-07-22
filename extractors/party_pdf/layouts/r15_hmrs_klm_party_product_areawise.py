@@ -169,8 +169,11 @@ def parse_r15_hmrs_klm_party_product_areawise(text):
             ])
             continue
 
-        # A bare line with letters and no leading PCode/date -> party band.
-        if re.search(r"[A-Za-z]", s) and not re.match(r"^\d", s):
+        # A bare line with letters and no invoice date -> party band.
+        # (Reject only true numeric/data lines by testing for a DD/MM/YYYY
+        # date; do NOT reject on a leading digit, so digit-leading store
+        # names like "7 STAR MEDICALS KALADY" / "24X7 PHARMACY" still band.)
+        if re.search(r"[A-Za-z]", s) and not re.search(r"\d{2}/\d{2}/\d{4}", s):
             party = s
 
     return H, rows

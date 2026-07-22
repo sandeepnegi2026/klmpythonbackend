@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__PONDY - PHARMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 112,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "company_customer_itemwise_area",
+  "party_count": 72,
+  "area_count": 64,
+  "product_count": 24,
+  "sample_parties": [
+    "ABIRAMI MEDICALS (LAWSPET.)",
+    "ABIRAMY MEDICALS",
+    "ABIRAMY PHARMACEUTICALS",
+    "AJAY  PHARMACY",
+    "AMBAL MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 1168.0,
+  "amount_total": 144510.42,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

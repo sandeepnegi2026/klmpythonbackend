@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ MAY PARTY WISE.pdf",
+  "route": "party_pdf",
+  "row_count": 50,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 26,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "AKKAYYAPALEM MEDICAL &GEN",
+    "AP MEDICALS",
+    "AYYAPPA MEDICALS",
+    "DAY&NIGHT PHARMACY",
+    "DAYAL MEDICAL &GENERAL ST"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 233.5,
+  "amount_total": 100174.66,
+  "rate_total": 24237.8,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

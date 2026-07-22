@@ -1,0 +1,18 @@
+{
+  "file": "report.pdf",
+  "route": "stock_pdf",
+  "row_count": 209,
+  "warnings_count": 20,
+  "headers_detected_count": 14,
+  "detected_format": "stock_sale_closing_pairs",
+  "product_count": 192,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 7042.0,
+  "rate_total": 0.0
+}

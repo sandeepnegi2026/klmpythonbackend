@@ -1,0 +1,18 @@
+{
+  "file": "MAYUR MEDICAL.xls",
+  "route": "stock_xlsx",
+  "row_count": 35,
+  "warnings_count": 2,
+  "headers_detected_count": 42,
+  "detected_format": "tabular",
+  "product_count": 35,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "EKRAN 50GM LOTION",
+    "EKRAN 50SPF SOFT SILICON 50GM GEL",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm"
+  ],
+  "closing_stock_total": 187.0,
+  "rate_total": 0.0
+}

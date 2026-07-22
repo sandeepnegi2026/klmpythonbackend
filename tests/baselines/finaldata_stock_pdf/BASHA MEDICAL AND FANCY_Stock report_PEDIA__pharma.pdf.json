@@ -1,0 +1,18 @@
+{
+  "file": "PEDIA__pharma.pdf",
+  "route": "stock_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 8,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Hicosyn-25 Tablets",
+    "Kenz Plus Lotion 100Ml",
+    "Klm Fx 120 Tablet",
+    "Klmite Soap"
+  ],
+  "closing_stock_total": 771.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "sm dermacor area.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 6,
+  "area_count": 3,
+  "product_count": 5,
+  "sample_parties": [
+    "AYYAPPA MEDICAL STORES",
+    "KANCHANA MEDICALS",
+    "KAVYA MEDICAL & GENRAL S",
+    "SANJEEVINI MEDICALS",
+    "SRI VENKATA SAI MEDICAL &"
+  ],
+  "sample_products": [
+    "Kenz Soap",
+    "Klm Klin Soap 75G",
+    "Lulizol Xl Cream 50 Gm",
+    "Melapik Ever New Cream 20 Gm",
+    "Moxiview Eye Drops"
+  ],
+  "qty_total": 20.0,
+  "amount_total": 3338.27,
+  "rate_total": 1262.45,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

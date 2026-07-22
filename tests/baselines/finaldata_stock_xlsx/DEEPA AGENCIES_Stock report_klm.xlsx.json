@@ -1,0 +1,19 @@
+{
+  "file": "klm.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 176,
+  "warnings_count": 51,
+  "headers_detected_count": 12,
+  "detected_format": "klm_sale_dtl_xlsx",
+  "product_count": 160,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 2957.0,
+  "rate_total": 39180.75,
+  "line_unexplained": 0
+}

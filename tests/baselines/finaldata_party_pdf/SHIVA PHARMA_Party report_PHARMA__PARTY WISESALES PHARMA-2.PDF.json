@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__PARTY WISESALES PHARMA-2.PDF",
+  "route": "party_pdf",
+  "row_count": 53,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 18,
+  "area_count": 14,
+  "product_count": 26,
+  "sample_parties": [
+    "A AND B MEDICAL",
+    "DR NISHA NAGWANSI",
+    "JAIN & COMPANY",
+    "MANEESH MEDICOS DAMOHNAKA",
+    "OM MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Total 1*15 Tab"
+  ],
+  "qty_total": 875.0,
+  "amount_total": 111590.96,
+  "rate_total": 8433.08,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

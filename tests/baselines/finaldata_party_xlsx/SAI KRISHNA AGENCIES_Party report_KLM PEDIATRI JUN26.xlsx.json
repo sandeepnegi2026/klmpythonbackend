@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIATRI JUN26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 40,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "item_customerwise_sale",
+  "party_count": 22,
+  "area_count": 22,
+  "product_count": 17,
+  "sample_parties": [
+    "A.P.MEDICALS(DONDAPARTHY)",
+    "BON PHARMACY(KGH)",
+    "CURE PHARMACY A(SEETHAMMADHARA)",
+    "DHRUVEM PHARMA( NEW)  MVP",
+    "DR.K.VIJAY KRISHNA  (MADDILAPALEM)"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 840.0,
+  "amount_total": 62579.11,
+  "rate_total": 5240.29,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

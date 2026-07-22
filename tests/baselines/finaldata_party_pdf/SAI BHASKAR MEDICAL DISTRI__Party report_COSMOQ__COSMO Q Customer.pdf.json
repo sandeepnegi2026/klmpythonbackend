@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__COSMO Q Customer.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sai_bhaskar_customer_vs_item",
+  "party_count": 5,
+  "area_count": 3,
+  "product_count": 5,
+  "sample_parties": [
+    "AAROGYA MEDICALS,MARKAPURAM",
+    "DR.KAVYA MEDAM GARU,ONGOLE",
+    "KEERTHI MEDICAL STORES (MASTAN DARGA),ONGOLE",
+    "MANOHARAM MEDICAL C/O LIPO,ONGOLE",
+    "SAI SAHASRA MEDICALS (DR N PADMAVATHI),MARKAPUR"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm",
+    "Zuvimax Cream 20 Gm"
+  ],
+  "qty_total": 27.0,
+  "amount_total": 19622.03,
+  "rate_total": 3596.6,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

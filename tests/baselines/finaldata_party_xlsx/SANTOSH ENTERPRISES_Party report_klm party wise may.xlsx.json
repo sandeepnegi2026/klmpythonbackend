@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise may.xlsx",
+  "route": "party_xlsx",
+  "row_count": 312,
+  "warnings_count": 0,
+  "headers_detected_count": 25,
+  "detected_format": "customer_item_invoicewise_banded",
+  "party_count": 87,
+  "area_count": 5,
+  "product_count": 86,
+  "sample_parties": [
+    "A.R. MEDICOSE MM",
+    "ALLWEL MEDICARE",
+    "ANAND CHEMISTS",
+    "ANIL & CO.",
+    "ANIL MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 1341.0,
+  "amount_total": 319329.35,
+  "rate_total": 76510.89,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

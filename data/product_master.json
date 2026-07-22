@@ -12,7 +12,6 @@
       "EKRAN (30-SILICONE)",
       "EKRAN - 30 SILICON",
       "EKRAN 30",
-      "EKRAN 30 GEL 50GM",
       "EKRAN 30 SILICON GEL 1*30GM",
       "EKRAN 30 SILICON S",
       "EKRAN 30 SILICON S 1*30GM",
@@ -55,9 +54,10 @@
     "pack": "50gm",
     "division": "COSMO",
     "synonyms": [
+      "EKRAN 30 GEL 50GM",
       "EKRAN 30 SILICON SUNSCREEN GE 50'GM",
-      "EKRAN 30 SILICON SUNSCREEN GEL 50GM",
-      "ekran 30 silicon sunscreen gel 50 gm"
+      "ekran 30 silicon sunscreen gel 50 gm",
+      "EKRAN 30 SILICON SUNSCREEN GEL 50GM"
     ]
   },
   {
@@ -201,6 +201,7 @@
       "EKRAN 50 SOFT SILICONE SUNSCREEN",
       "EKRAN SILICON SUNSCREEN GEL",
       "EKRAN SOFT  SILICON SUNSCREEN 50GM (CK0037)",
+      "EKRAN SOFT GEL",
       "EKRAN SOFT SALICON SUNSCREEN",
       "EKRAN SOFT SILI",
       "EKRAN SOFT SILICO",
@@ -2215,40 +2216,43 @@
     "division": "COSMOCOR",
     "synonyms": [
       "KLM ZYDIP LOTION",
+      "ZYDIP 100 ML",
+      "ZYDIP 100ML",
       "ZYDIP LOCTION",
       "ZYDIP LOSTION",
       "ZYDIP LOT",
+      "Zydip Lot 100ml",
       "ZYDIP LOT 100ML 1PK",
       "ZYDIP LOT(NR)",
       "ZYDIP LOT.(100 ML.) 100 ML.",
       "ZYDIP LOT.100ML(KLM)",
       "ZYDIP LOTIN",
       "ZYDIP LOTION",
+      "Zydip Lotion (100ml)",
       "ZYDIP LOTION (B)",
       "ZYDIP LOTION (BIG)",
       "ZYDIP LOTION (S)",
       "ZYDIP LOTION (SMALL)",
       "ZYDIP LOTION 1*100ML",
       "ZYDIP LOTION 100 M",
+      "Zydip LOTION 100 ML",
       "ZYDIP LOTION 100 ML 1",
       "ZYDIP LOTION 100 ML-100ml",
       "ZYDIP LOTION 100L",
+      "Zydip Lotion 100m",
       "ZYDIP LOTION 100ML            1*100ML",
       "ZYDIP LOTION 100ML (CK0023)",
       "ZYDIP LOTION 100ML 100ML.",
       "ZYDIP LOTION 100ML BIG",
       "ZYDIP LOTION 100ML. 100 ML.",
       "ZYDIP LOTION100",
+      "Zydip Lotn 100ML",
       "ZYDIP LOTTON.100 ML",
       "ZYDIP LOYION",
+      "Zydip Solution 100ml",
+      "ZYDIP-100ML",
       "ZYDIP-LOTION(BIG)       100'ML",
-      "ZYDIP-LOTION-BIG * 100ML",
-      "Zydip LOTION 100 ML",
-      "Zydip Lot 100ml",
-      "Zydip Lotion (100ml)",
-      "Zydip Lotion 100m",
-      "Zydip Lotn 100ML",
-      "Zydip Solution 100ml"
+      "ZYDIP-LOTION-BIG * 100ML"
     ]
   },
   {
@@ -3625,8 +3629,11 @@
     "pack": "1*10 Cap",
     "division": "DERMA",
     "synonyms": [
+      "ONITRAZ FORTE 10'S",
       "ONITRAZ FORTE 10S",
-      "ONITRAZ FORTE 10'S"
+      "ONITRAZ FORTE TAB",
+      "ONITRAZ FORTE TAB.",
+      "ONITRAZ FORTE TABS"
     ]
   },
   {

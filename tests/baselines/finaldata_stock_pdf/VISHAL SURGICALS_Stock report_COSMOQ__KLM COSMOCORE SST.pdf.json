@@ -1,0 +1,18 @@
+{
+  "file": "COSMOQ__KLM COSMOCORE SST.pdf",
+  "route": "stock_pdf",
+  "row_count": 34,
+  "warnings_count": 8,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 34,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet"
+  ],
+  "closing_stock_total": 416.0,
+  "rate_total": 0.0
+}

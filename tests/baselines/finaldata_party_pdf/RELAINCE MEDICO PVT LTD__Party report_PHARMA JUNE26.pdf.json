@@ -1,0 +1,27 @@
+{
+  "file": "PHARMA JUNE26.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 4,
+  "area_count": 3,
+  "product_count": 3,
+  "sample_parties": [
+    "ARORA SURGICAL&MEDICAL AGENCY",
+    "AYANSH MEDICOSE",
+    "BHARAT MEDICAL STORE",
+    "SUBHASH MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 14.0,
+  "amount_total": 2949.57,
+  "rate_total": 1265.45,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

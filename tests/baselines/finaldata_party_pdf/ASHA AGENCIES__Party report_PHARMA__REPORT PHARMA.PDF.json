@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__REPORT PHARMA.PDF",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 5,
+  "area_count": 2,
+  "product_count": 14,
+  "sample_parties": [
+    "KHILESH-MAA KHILESHWARI MEDICAL HALL",
+    "LAXMI-LAXMIS CLINIC",
+    "SHAH.-SHAH MEDICAL HALL",
+    "SNM/-SHREE NARAYAN MEDICAL",
+    "SR-NEW S.R.PHARMA"
+  ],
+  "sample_products": [
+    "Extend Gold Soft Gelatin Capsules",
+    "Hicosyn-25 Tablets",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10",
+    "Klclav-625 Tablets"
+  ],
+  "qty_total": 240.0,
+  "amount_total": 31003.05,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

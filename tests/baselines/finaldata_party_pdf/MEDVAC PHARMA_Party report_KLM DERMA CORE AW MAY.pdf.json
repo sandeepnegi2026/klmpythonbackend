@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA CORE AW MAY.pdf",
+  "route": "party_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 11,
+  "area_count": 2,
+  "product_count": 11,
+  "sample_parties": [
+    "AMARESHWAR MEDICAL AND GEN STORES GADAG",
+    "DR AMULYA M HIREMATH",
+    "DR SAROJA PATIL MD GADAG",
+    "DR SHARNAPPA GANIGER MBBS PG DIP GAJENDRGADA",
+    "GANGA MEDICALS GADAG"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap"
+  ],
+  "qty_total": 209.0,
+  "amount_total": 47257.92,
+  "rate_total": 4987.93,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

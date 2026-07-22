@@ -115,7 +115,7 @@ def parse_r15_suntraders_saleby_party_docno(text):
         # "2026 Gm}". Re-attach that fragment to the previous item row's name so
         # the pack is not lost, and NEVER let it fall through to the band test
         # (otherwise "Gm}" would be mistaken for a party heading).
-        if re.match(r"^2026\b", s):
+        if re.match(r"^(?:19|20)\d{2}\b", s):
             frag = s[4:].strip()
             if frag and rows:
                 rows[-1][1] = (rows[-1][1] + " " + frag).strip()

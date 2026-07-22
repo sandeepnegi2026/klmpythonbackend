@@ -1,0 +1,18 @@
+{
+  "file": "klm4.PDF",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "klm_stock_sales_month_rcpt",
+  "product_count": 22,
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Klm C 20 Serum 15Ml",
+    "Klm D3 Nano Drops",
+    "Klm D3 Nano Shots"
+  ],
+  "closing_stock_total": 102.0,
+  "rate_total": 0.0
+}

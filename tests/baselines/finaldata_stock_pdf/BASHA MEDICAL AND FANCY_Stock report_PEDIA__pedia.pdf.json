@@ -1,0 +1,15 @@
+{
+  "file": "PEDIA__pedia.pdf",
+  "route": "stock_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 2,
+  "sample_products": [
+    "Sofibar Syndet Bar",
+    "Sofidew Shampoo 100Ml"
+  ],
+  "closing_stock_total": 100.0,
+  "rate_total": 0.0
+}

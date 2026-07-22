@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 48,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "backbone_mfr_sales_detail",
+  "party_count": 34,
+  "area_count": 18,
+  "product_count": 11,
+  "sample_parties": [
+    "AADHI PHARMACY - KAVINDAPADI",
+    "ABIRAMI MEDICALS - B - GOBI",
+    "ABIRAMI MEDICALS - GOBI",
+    "BARANI MEDICALS - CHENNIMALAI",
+    "BARANI MEDICALS - KANGAYAM"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Mupisoft Ointment 5 Gm",
+    "SOFIDEW BABY100MLMOISTURIZING LOTION1`S",
+    "SOFIDEW100GMCREAM1`S",
+    "SOFIDEW100MLSHAMPOO1`S"
+  ],
+  "qty_total": 167.0,
+  "amount_total": 17409.41,
+  "rate_total": 6400.06,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 20
+}

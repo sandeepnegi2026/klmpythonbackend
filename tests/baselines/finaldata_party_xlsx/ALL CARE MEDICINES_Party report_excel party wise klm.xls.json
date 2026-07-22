@@ -1,0 +1,30 @@
+{
+  "file": "excel party wise klm.xls",
+  "route": "party_xlsx",
+  "row_count": 351,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 146,
+  "area_count": 0,
+  "product_count": 95,
+  "sample_parties": [
+    "A H MEDICAL COSMETICS AND SURGICAL STORE, TANDLJA, VADODARA",
+    "A-1 MEDICAL & PROVISION STORE, RAOPURA, VADODARA",
+    "A.ROY & CO, RAOPURA, VADODARA",
+    "AKSHAR PHARMA, RAOPURA, VADODARA",
+    "AL MAKKAH MEDICAL, TANDLJA, VADODARA"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 1811.0,
+  "amount_total": 369141.03,
+  "rate_total": 84260.07,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

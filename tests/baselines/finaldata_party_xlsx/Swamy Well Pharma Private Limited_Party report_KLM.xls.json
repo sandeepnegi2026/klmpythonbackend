@@ -1,0 +1,24 @@
+{
+  "file": "KLM.xls",
+  "route": "party_xlsx",
+  "row_count": 173,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tabular",
+  "party_count": 0,
+  "area_count": 0,
+  "product_count": 169,
+  "sample_parties": [],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CUTIHHEAL CREAM[KLM]"
+  ],
+  "qty_total": 1796.0,
+  "amount_total": 2489.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

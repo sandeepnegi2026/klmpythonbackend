@@ -1,0 +1,23 @@
+{
+  "file": "KLM-PHARMA AREA WISE.xls",
+  "route": "party_xlsx",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 1,
+  "sample_parties": [
+    "DR.KRISHNAPRASAD,S.,MBBS,CCEBDM.,FAM.,",
+    "SUPERMED PHARMACY (A UNIT OF REGENIX DRUGS LTD) - FAIRLANDS"
+  ],
+  "sample_products": [
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 20.0,
+  "amount_total": 6169.4,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

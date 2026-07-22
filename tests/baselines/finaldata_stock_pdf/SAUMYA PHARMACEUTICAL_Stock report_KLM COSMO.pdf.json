@@ -1,0 +1,18 @@
+{
+  "file": "KLM COSMO.pdf",
+  "route": "stock_pdf",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "marg_open_pur_free_sale",
+  "product_count": 39,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm"
+  ],
+  "closing_stock_total": 1784.0,
+  "rate_total": 0.0
+}

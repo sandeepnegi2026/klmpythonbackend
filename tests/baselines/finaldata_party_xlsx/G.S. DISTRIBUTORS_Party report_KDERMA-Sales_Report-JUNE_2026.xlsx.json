@@ -1,0 +1,30 @@
+{
+  "file": "KDERMA-Sales_Report-JUNE_2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 457,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded_grsamt",
+  "party_count": 327,
+  "area_count": 64,
+  "product_count": 27,
+  "sample_parties": [
+    "AADARSH MEDICO",
+    "AFFOLIFE RETAIL PRIVATE LIMITED",
+    "AJWA MEDICAL AND GENERAL STORE",
+    "ALAM MEDICAL & GENERAL STORES",
+    "AMBAJI MEDICO"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Extend Capsules",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "qty_total": 722.0,
+  "amount_total": 110825.43,
+  "rate_total": 72239.02,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

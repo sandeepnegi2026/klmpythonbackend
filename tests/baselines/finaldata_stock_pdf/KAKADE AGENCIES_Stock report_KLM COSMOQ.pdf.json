@@ -1,0 +1,18 @@
+{
+  "file": "KLM COSMOQ.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_sales_expiry_positional",
+  "product_count": 10,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "closing_stock_total": 56.0,
+  "rate_total": 0.0
+}

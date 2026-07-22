@@ -1,0 +1,18 @@
+{
+  "file": "BMK DRUG DISTRIBUTOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 30,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Lotion 50G",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 720.0,
+  "rate_total": 0.0
+}

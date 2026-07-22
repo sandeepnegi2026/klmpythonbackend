@@ -1,0 +1,19 @@
+{
+  "file": "klm may statement.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 186,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_detailed_stock",
+  "product_count": 184,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 2774.0,
+  "rate_total": 0.0,
+  "line_unexplained": 4
+}

@@ -1,0 +1,29 @@
+{
+  "file": "klm-pharma-aw may-26.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 4,
+  "area_count": 4,
+  "product_count": 5,
+  "sample_parties": [
+    "ALPHA MEDICALS",
+    "DR.NIKITHA BABU",
+    "PAKKAI MEMORIAL HOSPITAL",
+    "V.R.AESTHETICS LASER SKIN CLINIC"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "K-Dox Capsules 1*10",
+    "Melapik Hq Cream 20 Gm",
+    "Naditret Cream 10G"
+  ],
+  "qty_total": 64.0,
+  "amount_total": 8512.42,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

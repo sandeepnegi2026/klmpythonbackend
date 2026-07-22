@@ -1,0 +1,30 @@
+{
+  "file": "klm i cut exel.xls",
+  "route": "party_xlsx",
+  "row_count": 377,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 73,
+  "area_count": 0,
+  "product_count": 95,
+  "sample_parties": [
+    "AARYA MEDICAL, UPLETA, UPLETA",
+    "AMIT MEDICAL STORE, DHORAJI, DHORAJI",
+    "AMRUT DINDAYAL PM AUS. STORE, JETPUR, JETPUR",
+    "ANGEL MEDICAL STORE, JETPUR, JETPUR",
+    "AROGYAM MEDICAL STORE, JASDAN, JASDAN"
+  ],
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Amoclafix-625 Tablets",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 1786.0,
+  "amount_total": 280665.67,
+  "rate_total": 67704.32,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

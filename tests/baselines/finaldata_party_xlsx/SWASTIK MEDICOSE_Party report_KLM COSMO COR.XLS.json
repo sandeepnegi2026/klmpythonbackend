@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO COR.XLS",
+  "route": "party_xlsx",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 13,
+  "area_count": 2,
+  "product_count": 8,
+  "sample_parties": [
+    "DEEPAK MEDICAL LAXMI NIVAS DMT",
+    "DHAMTARI MEDICAL STORE DHAMTARI",
+    "HEERA MEDICAL AND OPTICAL",
+    "JANKI MEDICAL",
+    "KAMAL MEDICAL KONDAGAON"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niosalic 6 Lotion 50Ml",
+    "Niosalic 6 Ointment 20 Gm"
+  ],
+  "qty_total": 49.0,
+  "amount_total": 7523.62,
+  "rate_total": 4496.44,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

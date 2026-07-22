@@ -1,10 +1,10 @@
 {
   "file": "NAGAMMAI PHARMA - WONDERSOFT - TELLY - SSS.Pdf",
   "route": "stock_pdf",
-  "row_count": 34,
-  "warnings_count": 20,
-  "headers_detected_count": 9,
-  "detected_format": "generic",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_month_urate",
   "product_count": 17,
   "sample_products": [
     "Eberfine Cream 15 Gm",
@@ -13,6 +13,6 @@
     "Ga-6 Cream 30Gm",
     "Imxia Plus Shampoo 150 Ml"
   ],
-  "closing_stock_total": 226981.64,
-  "rate_total": 0.0
+  "closing_stock_total": 769.0,
+  "rate_total": 2999.89
 }

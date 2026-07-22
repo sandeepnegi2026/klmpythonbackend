@@ -1,0 +1,30 @@
+{
+  "file": "june-26 klm dermacor.xls",
+  "route": "party_xlsx",
+  "row_count": 543,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "partywise_band",
+  "party_count": 335,
+  "area_count": 56,
+  "product_count": 29,
+  "sample_parties": [
+    "A ONE CHEMIST",
+    "A ONE CHEMIST & GENERAL STORES",
+    "A.K.SHREYA CHEMIST PRIVATE LIM",
+    "AADARSH MEDICAL & GEN. STORES",
+    "AAIJI  CHEMIST"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "qty_total": 857.0,
+  "amount_total": 161982.58,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

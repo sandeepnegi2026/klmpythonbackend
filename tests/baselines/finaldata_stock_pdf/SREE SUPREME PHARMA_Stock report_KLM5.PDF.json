@@ -1,0 +1,17 @@
+{
+  "file": "KLM5.PDF",
+  "route": "stock_pdf",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_sales_statement_adjmt_positional",
+  "product_count": 4,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Xepinoxin Cream 5G"
+  ],
+  "closing_stock_total": 58.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM 8.PDF",
+  "route": "party_pdf",
+  "row_count": 58,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 35,
+  "area_count": 2,
+  "product_count": 19,
+  "sample_parties": [
+    "ARJUN MEDICAL STORE",
+    "ATUL MEDICAL STORE",
+    "BASTI LIFE LINE MEDICAL STORE",
+    "BHARAT MEDICINES CO.",
+    "CHAND MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 1029.0,
+  "amount_total": 92457.65,
+  "rate_total": 6624.23,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

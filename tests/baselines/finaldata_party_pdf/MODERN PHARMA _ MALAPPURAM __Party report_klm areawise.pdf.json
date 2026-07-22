@@ -1,0 +1,29 @@
+{
+  "file": "klm areawise.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "bluefox_customerwise_sales",
+  "party_count": 4,
+  "area_count": 4,
+  "product_count": 5,
+  "sample_parties": [
+    "CENTRAL MEDICALS",
+    "CITY MEDICALS",
+    "FATHIMA MEDICALS",
+    "ROYAL MEDICALS"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Imxia Soft Hair Moisturizer 100G",
+    "Kenz Lotion 60 Ml",
+    "Naditret Plus Cream 10G",
+    "Zoritraz Forte Capsule 1*10 Cap"
+  ],
+  "qty_total": 15.0,
+  "amount_total": 2507.73,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

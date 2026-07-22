@@ -1,0 +1,18 @@
+{
+  "file": "KLM PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 28,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "purani_mfr_stock_sales_pdf",
+  "product_count": 21,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine-M Cream 15G",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "KLM C MG TAB"
+  ],
+  "closing_stock_total": 132.0,
+  "rate_total": 4598.7
+}

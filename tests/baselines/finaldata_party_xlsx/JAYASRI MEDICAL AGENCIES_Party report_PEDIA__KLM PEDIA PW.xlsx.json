@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__KLM PEDIA PW.xlsx",
+  "route": "party_xlsx",
+  "row_count": 109,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 56,
+  "area_count": 31,
+  "product_count": 23,
+  "sample_parties": [
+    "AMRUTHA MED & GEN STORES",
+    "ANNAPOORNA PHARMACY",
+    "ASHUS MEDICALS",
+    "BALAJI MED AND GEN STORES",
+    "BALAKRISHNA MEDICAL AND G"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash"
+  ],
+  "qty_total": 773.0,
+  "amount_total": 113039.62,
+  "rate_total": 17219.16,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

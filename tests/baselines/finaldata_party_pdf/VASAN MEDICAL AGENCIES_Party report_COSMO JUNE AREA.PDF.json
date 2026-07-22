@@ -1,0 +1,28 @@
+{
+  "file": "COSMO JUNE AREA.PDF",
+  "route": "party_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "vasan_areawise_billwise",
+  "party_count": 4,
+  "area_count": 3,
+  "product_count": 4,
+  "sample_parties": [
+    "DR.SATHEESH KUMAR,MD.,DVL.,",
+    "DR.SINDHUJA.,MBBS.,DDVL.,",
+    "SKIN TRUST PHARMACY",
+    "TAMILNADU MEDICALS (BUS STAND)"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Imxia Soft Hair Moisturizer 100G",
+    "Imxia-At",
+    "Kojitin Ultra Emulgel 30Gm"
+  ],
+  "qty_total": 26.0,
+  "amount_total": 10227.98,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

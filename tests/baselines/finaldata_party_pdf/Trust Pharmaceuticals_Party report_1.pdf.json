@@ -1,0 +1,27 @@
+{
+  "file": "1.pdf",
+  "route": "party_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 4,
+  "area_count": 4,
+  "product_count": 3,
+  "sample_parties": [
+    "BHARATHY MEDICALS",
+    "RIA MEDICALS",
+    "V CARE MEDICALS ALUVA LLP",
+    "V CARE-2 MEDICALS, ALUVA"
+  ],
+  "sample_products": [
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Zydip Lotion 50 Ml"
+  ],
+  "qty_total": 11.0,
+  "amount_total": 1617.83,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

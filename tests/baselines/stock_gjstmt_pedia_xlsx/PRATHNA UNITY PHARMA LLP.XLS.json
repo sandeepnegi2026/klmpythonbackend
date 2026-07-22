@@ -1,0 +1,18 @@
+{
+  "file": "PRATHNA UNITY PHARMA LLP.XLS",
+  "route": "stock_xlsx",
+  "row_count": 97,
+  "warnings_count": 6,
+  "headers_detected_count": 11,
+  "detected_format": "venus_stock_excel",
+  "product_count": 93,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 442.0,
+  "rate_total": 0.0
+}

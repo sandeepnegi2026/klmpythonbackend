@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE SALE MAY 26 EXCEL.XLS",
+  "route": "party_xlsx",
+  "row_count": 796,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 95,
+  "area_count": 0,
+  "product_count": 196,
+  "sample_parties": [
+    "AASHVI CHEMIST-GORAKHPUR",
+    "ADITI MEDICINE CENTRE",
+    "AMAN MEDICAL AGENCIES-GORAKHPUR",
+    "AMAR MEDICAL STORE",
+    "APNA MEDICAL STORE-KHALILABAD"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Argicyne Sachets 6Gm",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 22194.0,
+  "amount_total": 3163175.96,
+  "rate_total": 144619.14,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

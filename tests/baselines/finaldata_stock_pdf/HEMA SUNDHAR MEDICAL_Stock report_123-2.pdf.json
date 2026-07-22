@@ -1,0 +1,17 @@
+{
+  "file": "123-2.pdf",
+  "route": "stock_pdf",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_lmsale_receipts_age",
+  "product_count": 4,
+  "sample_products": [
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm",
+    "Zitlin 500 Tablets",
+    "Zydip-C Lotion 30 Ml"
+  ],
+  "closing_stock_total": 67.0,
+  "rate_total": 0.0
+}

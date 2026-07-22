@@ -1,0 +1,18 @@
+{
+  "file": "ebb6.pdf",
+  "route": "stock_pdf",
+  "row_count": 156,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 149,
+  "sample_products": [
+    "CZHH POWDER. 100 GM.",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 546.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "KLM SALE MONTH OF JUNE.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 107,
+  "warnings_count": 16,
+  "headers_detected_count": 16,
+  "detected_format": "tabular",
+  "product_count": 106,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 477.0,
+  "rate_total": 0.0
+}

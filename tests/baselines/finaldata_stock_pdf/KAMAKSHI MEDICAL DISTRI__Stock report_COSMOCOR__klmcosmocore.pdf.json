@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR__klmcosmocore.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 12,
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niofine Forte Tablet 1*7 Tablets"
+  ],
+  "closing_stock_total": 764.0,
+  "rate_total": 0.0
+}

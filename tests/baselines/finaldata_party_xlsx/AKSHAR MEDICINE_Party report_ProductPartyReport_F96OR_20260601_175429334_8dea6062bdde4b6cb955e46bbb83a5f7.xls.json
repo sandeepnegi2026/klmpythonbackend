@@ -1,0 +1,30 @@
+{
+  "file": "ProductPartyReport_F96OR_20260601_175429334_8dea6062bdde4b6cb955e46bbb83a5f7.xls",
+  "route": "party_xlsx",
+  "row_count": 79,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_party_banded",
+  "party_count": 33,
+  "area_count": 19,
+  "product_count": 24,
+  "sample_parties": [
+    "AM MEDICO",
+    "AVINOX PHARMACY",
+    "BEATLE HEALTHCARE",
+    "BHAVANI MEDICAL STORES",
+    "CHK DISTRIBUTORS"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 1012.0,
+  "amount_total": 352716.7,
+  "rate_total": 27767.62,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

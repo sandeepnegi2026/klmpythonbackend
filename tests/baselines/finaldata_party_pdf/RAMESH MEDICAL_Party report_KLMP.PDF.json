@@ -1,0 +1,30 @@
+{
+  "file": "KLMP.PDF",
+  "route": "party_pdf",
+  "row_count": 172,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "r15_ramesh_partywise_itemwise_pack",
+  "party_count": 52,
+  "area_count": 5,
+  "product_count": 71,
+  "sample_parties": [
+    "3 F PHARMACY",
+    "ABHA MEDICAL STORES",
+    "AKSHAY MEDICOSE",
+    "AMAN MEDICOSE",
+    "BOBAL MEDICAL AGENCIES M"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 1217.0,
+  "amount_total": 189986.06,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

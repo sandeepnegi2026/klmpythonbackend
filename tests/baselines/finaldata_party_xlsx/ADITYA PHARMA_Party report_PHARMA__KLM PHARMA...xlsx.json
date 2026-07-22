@@ -1,0 +1,24 @@
+{
+  "file": "PHARMA__KLM PHARMA...xlsx",
+  "route": "party_xlsx",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 2,
+  "area_count": 1,
+  "product_count": 2,
+  "sample_parties": [
+    "N.M MEDICAL AND GENRAL STORES",
+    "PRAKASH MEDICAL & GEN. STORES"
+  ],
+  "sample_products": [
+    "K-Dox Capsules 1*10",
+    "Klmite Soap"
+  ],
+  "qty_total": 2.0,
+  "amount_total": 203.03,
+  "rate_total": 203.03,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

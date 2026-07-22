@@ -1,0 +1,18 @@
+{
+  "file": "KLM_DERMACOR_JUNE2026_SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 18,
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "closing_stock_total": 241.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__KLM PEDIA STATEMENT.xls",
+  "route": "party_xlsx",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 22,
+  "detected_format": "customer_product_banded",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 10,
+  "sample_parties": [
+    "1",
+    "11",
+    "17",
+    "21",
+    "8"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klclav Es Oral Suspension 50Ml"
+  ],
+  "qty_total": 228.0,
+  "amount_total": 0.0,
+  "rate_total": 1376.22,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 26
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM JUN MOTHE.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 233,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 226,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 4824.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "Stock___Sales_Statement_02062026_112142_1_001547_260602112142072.Pdf",
+  "route": "stock_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 25,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "closing_stock_total": 110.0,
+  "rate_total": 0.0
+}

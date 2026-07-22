@@ -1,0 +1,18 @@
+{
+  "file": "PHARMA__klm pharma may.pdf",
+  "route": "stock_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 3,
+  "detected_format": "stock_simple_7col",
+  "product_count": 5,
+  "sample_products": [
+    "Hicosyn-25 Tablets",
+    "Klm Fx 180 Tablets 1*10 Tablets",
+    "Klmite Cream 60 Gm",
+    "Klmite Soap",
+    "Oxidox Cap 1*10"
+  ],
+  "closing_stock_total": 902.0,
+  "rate_total": 0.0
+}

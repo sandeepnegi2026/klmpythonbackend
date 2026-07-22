@@ -1,0 +1,30 @@
+{
+  "file": "klm i cut pdf.pdf",
+  "route": "party_pdf",
+  "row_count": 385,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 72,
+  "area_count": 11,
+  "product_count": 98,
+  "sample_parties": [
+    "A.B.C.MEDICAL STORE.",
+    "AARYA MEDICAL",
+    "ALPHA MEDICAL STORE",
+    "AMARDIP.MEDICAL.STORES",
+    "AMIT MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 1722.0,
+  "amount_total": 252073.92,
+  "rate_total": 63123.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 12
+}

@@ -1,6 +1,6 @@
 import re
 
-_NUM = r"\d[\d,]*(?:\.\d+)?"
+_NUM = r"-?\d[\d,]*(?:\.\d+)?"
 # product row:  <name (may contain trailing size like "... CREAM 10")>  Qty  Free  Amt
 _PRODUCT = re.compile(r"^(.*?\S)\s+(" + _NUM + r")\s+(" + _NUM + r")\s+(" + _NUM + r")$")
 _TOTAL = re.compile(r"^(party|company|grand)\s*total\s*:", re.I)

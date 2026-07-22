@@ -1,0 +1,18 @@
+{
+  "file": "StockReport1024325-Jun-2026-14-58-3.pdf",
+  "route": "stock_pdf",
+  "row_count": 254,
+  "warnings_count": 0,
+  "headers_detected_count": 16,
+  "detected_format": "marg_stock_summary",
+  "product_count": 235,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "BEPOZAL M TAB",
+    "BEPOZAL TAB",
+    "Blemguard Face Serum 30Ml",
+    "CRISBOTOP OINT"
+  ],
+  "closing_stock_total": 17282.53,
+  "rate_total": 57656.85
+}

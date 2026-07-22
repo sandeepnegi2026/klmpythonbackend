@@ -1,0 +1,30 @@
+{
+  "file": "cosmocore Party-Itemwise-Billwise Sal.xls",
+  "route": "party_xlsx",
+  "row_count": 262,
+  "warnings_count": 0,
+  "headers_detected_count": 17,
+  "detected_format": "tabular",
+  "party_count": 101,
+  "area_count": 27,
+  "product_count": 32,
+  "sample_parties": [
+    "AARAMBH CHEMIST",
+    "ALOK MEDICAL STORES",
+    "AMBIKA MEDICAL SURGICAL AYURVE",
+    "AMNI CHEMIST",
+    "AMRUT MEDICAL & GEN STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "KLCEPO TAB",
+    "Melboost Nxt Tablet"
+  ],
+  "qty_total": 4668.0,
+  "amount_total": 557310.44,
+  "rate_total": 41069.79,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

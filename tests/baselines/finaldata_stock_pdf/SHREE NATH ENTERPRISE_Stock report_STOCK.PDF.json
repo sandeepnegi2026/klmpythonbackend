@@ -1,0 +1,18 @@
+{
+  "file": "STOCK.PDF",
+  "route": "stock_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "stock_op_pur_total_sale_close",
+  "product_count": 16,
+  "sample_products": [
+    "17 ZUVIMAX CRE",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 193.0,
+  "rate_total": 0.0
+}

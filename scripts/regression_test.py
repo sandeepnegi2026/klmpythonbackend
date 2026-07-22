@@ -16,14 +16,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+for _p in (ROOT, ROOT / "scripts"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 
 from extractors import party_pdf, party_xlsx, stock_pdf, stock_xlsx
+# Shared on-disk extract cache (the SAME one run_batch/audit_batch fill). A warm
+# regression then costs a read+metrics, not a re-extract: ~92s -> <1s on 41 files.
+# batch_extract does NOT import this module, so there is no import cycle.
+import batch_extract as be  # noqa: E402
 
 MANIFEST_PATH = ROOT / "tests" / "regression_manifest.json"
 BASELINES_DIR = ROOT / "tests" / "baselines"
@@ -154,13 +160,32 @@ def _stock_metrics(rows: list[dict]) -> dict:
     }
 
 
-def _snapshot(route: str, path: Path) -> dict:
-    file_bytes = path.read_bytes()
-    settings = {"filename": path.name}
-    result = ROUTES[route](file_bytes, settings)
+def _completeness_metrics(result: dict) -> dict:
+    """Line-ledger completeness fingerprint (row-match regression gate).
+
+    `result["line_audit"]` is deterministic, so pinning its unexplained count makes
+    REGRESSION — not just the shadow triage gate — catch row loss going forward: a
+    future change that drops source rows raises `line_unexplained`, tripping the
+    suite. Emitted ONLY when the ledger is applicable (absent on capped / pivoted /
+    zero-row files), which also makes it opt-in per baseline: a suite starts
+    enforcing it the next time its baseline is `--update`d, so adding this field
+    does not retro-break suites whose baselines predate it (see `_compare`)."""
+    la = result.get("line_audit") or {}
+    if not la.get("applicable"):
+        return {}
+    return {"line_unexplained": (la.get("counts") or {}).get("unexplained", 0)}
+
+
+def _snapshot_from_result(route: str, filename: str, result: dict) -> dict:
+    """Build the regression snapshot from an ALREADY-extracted result dict.
+
+    This is the whole snapshot except the extraction itself, so it works off the
+    shared cache. Identical output to the old inline _snapshot (and to
+    batch_core.regression_metrics, which run_batch uses) — baselines are unchanged.
+    """
     rows = result.get("rows") or []
     snap = {
-        "file": path.name,
+        "file": filename,
         "route": route,
         "row_count": len(rows),
         "warnings_count": len(result.get("warnings") or []),
@@ -174,7 +199,14 @@ def _snapshot(route: str, path: Path) -> dict:
         snap.update(_party_metrics(rows))
     else:
         snap.update(_stock_metrics(rows))
+    snap.update(_completeness_metrics(result))
     return snap
+
+
+def _snapshot(route: str, path: Path) -> dict:
+    """Direct (uncached) single-file extraction — kept for one-off callers."""
+    result = ROUTES[route](path.read_bytes(), {"filename": path.name})
+    return _snapshot_from_result(route, path.name, result)
 
 
 def _baseline_path(suite: str, filename: str) -> Path:
@@ -183,9 +215,13 @@ def _baseline_path(suite: str, filename: str) -> Path:
 
 
 def _compare(expected: dict, actual: dict) -> list[str]:
+    # Compare only fields the BASELINE pins (not the union): a snapshot field that
+    # a baseline predates is ignored until that baseline is `--update`d, so a new
+    # fingerprint (e.g. `line_unexplained`) rolls out per-suite instead of
+    # retro-failing every un-refreshed baseline. A field the baseline HAS but the
+    # snapshot dropped still fails (actual.get -> None != expected).
     diffs: list[str] = []
-    keys = sorted(set(expected) | set(actual))
-    for key in keys:
+    for key in sorted(expected):
         if key in {"file", "route"}:
             continue
         if expected.get(key) != actual.get(key):
@@ -194,7 +230,7 @@ def _compare(expected: dict, actual: dict) -> list[str]:
 
 
 def run_suite(suite: str, cfg: dict, reports_root: Path, update: bool,
-              exclude_contains: list | None = None) -> tuple[int, int, int]:
+              exclude_contains: list | None = None, workers: int = 6) -> tuple[int, int, int]:
     route = cfg["route"]
     if "files" in cfg:
         files = _resolve_files(reports_root, cfg["files"])
@@ -218,10 +254,22 @@ def run_suite(suite: str, cfg: dict, reports_root: Path, update: bool,
         print(f"  SKIP {suite}: no files ({where})")
         return 0, 0, 0
 
+    # Extract the WHOLE suite once, through the shared cache (warm = read-only,
+    # cold = parallel across `workers`). Same metrics as before -> same baselines.
+    results = be.extract_batch([(route, p) for p in files], workers=workers, progress=False)
+
     passed = failed = skipped = 0
+    # Suites whose files come from many sibling folders (e.g. the Final_Data
+    # standing corpus: <stockist>/<report>/<file>) collide on basename — every
+    # stockist ships a "klm.pdf". Those suites set "unique_key": true so the
+    # baseline is keyed by the last 3 path parts (stockist/report/file), which
+    # _baseline_path sanitizes to a unique filename. Curated suites (unique
+    # basenames) omit the flag and keep the plain basename key — unchanged.
+    unique_key = bool(cfg.get("unique_key"))
     for path in files:
-        actual = _snapshot(route, path)
-        baseline_file = _baseline_path(suite, path.name)
+        actual = _snapshot_from_result(route, path.name, results.get(str(path), {}))
+        key = "/".join(path.parts[-3:]) if unique_key else path.name
+        baseline_file = _baseline_path(suite, key)
 
         if update:
             baseline_file.parent.mkdir(parents=True, exist_ok=True)
@@ -256,6 +304,8 @@ def main() -> int:
     parser.add_argument("--suite", action="append", help="Run only named suite(s) from manifest")
     parser.add_argument("--update", action="store_true", help="Write/refresh baseline snapshots")
     parser.add_argument("--list-suites", action="store_true", help="List configured suites")
+    parser.add_argument("--workers", type=int, default=min(16, max(1, (os.cpu_count() or 4) - 2)),
+                        help="Parallel extraction workers for cold files (default: auto = min(16, cores-2))")
     args = parser.parse_args()
 
     manifest = _load_manifest()
@@ -281,7 +331,7 @@ def main() -> int:
     total_pass = total_fail = total_skip = 0
     for suite in selected:
         print(f"[{suite}]")
-        p, f, s = run_suite(suite, suites[suite], reports_root, args.update, exclude_contains)
+        p, f, s = run_suite(suite, suites[suite], reports_root, args.update, exclude_contains, args.workers)
         total_pass += p
         total_fail += f
         total_skip += s

@@ -1,0 +1,19 @@
+{
+  "file": "klm sst-1.XLSX",
+  "route": "stock_xlsx",
+  "row_count": 140,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "venus_stock_excel",
+  "product_count": 137,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm"
+  ],
+  "closing_stock_total": 3119.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

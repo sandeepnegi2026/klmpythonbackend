@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE SALES MAY 2026 KLM PEDIA DIV.pdf",
+  "route": "party_pdf",
+  "row_count": 26,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 21,
+  "area_count": 3,
+  "product_count": 7,
+  "sample_parties": [
+    "AIJEE MEDICAL STORE",
+    "ANAND MEDICOSE",
+    "BHAWANA MEDICAL CENTER PALI",
+    "CITY MEDICAL",
+    "DEWASI MEDICAL AND GEN. STORE PALI"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klm D3 Nano Drops",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 323.5,
+  "amount_total": 30665.91,
+  "rate_total": 3124.84,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

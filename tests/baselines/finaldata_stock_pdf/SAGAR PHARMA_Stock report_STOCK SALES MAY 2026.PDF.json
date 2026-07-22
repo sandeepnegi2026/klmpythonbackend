@@ -1,0 +1,18 @@
+{
+  "file": "STOCK SALES MAY 2026.PDF",
+  "route": "stock_pdf",
+  "row_count": 96,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 88,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "EKRAN-70 CR",
+    "Eberfine-M Cream 15G",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "closing_stock_total": 700.0,
+  "rate_total": 0.0
+}

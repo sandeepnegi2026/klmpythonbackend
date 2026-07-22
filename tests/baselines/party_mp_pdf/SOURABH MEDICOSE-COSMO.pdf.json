@@ -1,12 +1,12 @@
 {
   "file": "SOURABH MEDICOSE-COSMO.pdf",
   "route": "party_pdf",
-  "row_count": 16,
+  "row_count": 13,
   "warnings_count": 0,
   "headers_detected_count": 9,
   "detected_format": "marg_summary",
-  "party_count": 10,
-  "area_count": 5,
+  "party_count": 9,
+  "area_count": 4,
   "product_count": 5,
   "sample_parties": [
     "AAROGYA MEDICAL STORE MANDSAUR(M.P)",
@@ -22,8 +22,9 @@
     "Imxia F",
     "Imxia Pro Serum 60Ml"
   ],
-  "qty_total": 113.0,
-  "amount_total": 33447.69,
+  "qty_total": 108.0,
+  "amount_total": 31384.3,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

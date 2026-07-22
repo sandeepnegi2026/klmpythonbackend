@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR__COSMOCOR MAY.pdf",
+  "route": "party_pdf",
+  "row_count": 241,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "party_sale_report",
+  "party_count": 171,
+  "area_count": 106,
+  "product_count": 29,
+  "sample_parties": [
+    "A TO Z MEDICAL & GEN. STORES",
+    "A.K.PHARMA",
+    "AASTHA MEDICAL STORE QUETA",
+    "ADARSH MEDICOSE",
+    "ADHIRAJ MEDICAL STORES JANKI"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 553.0,
+  "amount_total": 87976.03,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

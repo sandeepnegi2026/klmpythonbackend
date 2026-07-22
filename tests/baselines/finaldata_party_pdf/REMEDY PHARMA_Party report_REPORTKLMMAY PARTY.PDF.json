@@ -1,0 +1,30 @@
+{
+  "file": "REPORTKLMMAY PARTY.PDF",
+  "route": "party_pdf",
+  "row_count": 233,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 84,
+  "area_count": 43,
+  "product_count": 74,
+  "sample_parties": [
+    "A K KAMAT",
+    "AGARWAL MEDICOSE",
+    "ALL INDIA MEDICAL STORE",
+    "ALPNA MEDICAL STORE",
+    "AMIT MEDICOSE"
+  ],
+  "sample_products": [
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 452.0,
+  "amount_total": 71960.18,
+  "rate_total": 41971.6,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

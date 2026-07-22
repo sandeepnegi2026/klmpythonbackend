@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE MAY 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 212,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 41,
+  "area_count": 6,
+  "product_count": 46,
+  "sample_parties": [
+    "AGARWAL DAWAGHAR CIVIL LINE DE",
+    "AGARWAL MEDICAL HALL DEORIA",
+    "AGARWAL MEDICAL STORES DEORIA",
+    "AGRAWAL MEDICINE HOUSE DEORIA",
+    "AJAY MEDICAL STORES DEORIA"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 786.0,
+  "amount_total": 117333.15,
+  "rate_total": 32943.36,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

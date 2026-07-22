@@ -1,0 +1,18 @@
+{
+  "file": "klm cosmo core.pdf",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 3,
+  "detected_format": "stock_simple_7col",
+  "product_count": 25,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "closing_stock_total": 469.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__DERMA SST.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "profit_maker",
+  "product_count": 36,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "EKRAN-70 CREAM",
+    "EPISERT 10GMS",
+    "Ekran Lotion 50G"
+  ],
+  "closing_stock_total": 244.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__pratap treders.XLS",
+  "route": "party_xlsx",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 11,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "AARYA PHARMACY",
+    "DR.ADITI BANSAL DUBEY",
+    "Dr Asish Biswas Pendra",
+    "GUJRAL MEDICAL STORE",
+    "KRISHNA SKIN PHARMACY"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 362.0,
+  "amount_total": 153161.12,
+  "rate_total": 15606.61,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

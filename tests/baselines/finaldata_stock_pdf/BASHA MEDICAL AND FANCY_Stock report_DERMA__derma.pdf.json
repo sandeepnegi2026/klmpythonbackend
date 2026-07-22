@@ -1,0 +1,17 @@
+{
+  "file": "DERMA__derma.pdf",
+  "route": "stock_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 4,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "NEVLON SOAP",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Sudif Cream 10 Gm"
+  ],
+  "closing_stock_total": 211.0,
+  "rate_total": 0.0
+}

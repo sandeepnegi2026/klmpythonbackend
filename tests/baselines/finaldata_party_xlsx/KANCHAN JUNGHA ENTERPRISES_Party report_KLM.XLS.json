@@ -1,0 +1,30 @@
+{
+  "file": "KLM.XLS",
+  "route": "party_xlsx",
+  "row_count": 92,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 36,
+  "area_count": 19,
+  "product_count": 55,
+  "sample_parties": [
+    "AGARWAL MEDICAL STORE",
+    "ALAM PHARMA",
+    "ARCHANA MEDICAL",
+    "B R PHARMA",
+    "BABLU MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 1205.0,
+  "amount_total": 190279.41,
+  "rate_total": 15987.1,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

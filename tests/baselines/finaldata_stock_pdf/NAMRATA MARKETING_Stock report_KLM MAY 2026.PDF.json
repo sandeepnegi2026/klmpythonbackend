@@ -1,0 +1,18 @@
+{
+  "file": "KLM MAY 2026.PDF",
+  "route": "stock_pdf",
+  "row_count": 130,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "value_pairs",
+  "product_count": 119,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "closing_stock_total": 1769.0,
+  "rate_total": 15622.0
+}

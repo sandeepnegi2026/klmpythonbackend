@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR__COSMOCOR AREA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 98,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_wise_sale_list",
+  "party_count": 57,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "A.J.MEDICALS ANGADIKADAVU",
+    "AKG MEMORIAL CO",
+    "ANUGRAHAM MEDICALS (DHARMASALA KANNUR",
+    "ANUSREE MEDICALS ANJARAKANDY",
+    "ARAFA MEDICALS TALIPARAMBA"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml"
+  ],
+  "qty_total": 483.0,
+  "amount_total": 68903.57,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

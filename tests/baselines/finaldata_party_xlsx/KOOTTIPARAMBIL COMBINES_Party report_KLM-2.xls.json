@@ -1,0 +1,30 @@
+{
+  "file": "KLM-2.xls",
+  "route": "party_xlsx",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 18,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "SD0109",
+    "SD0181",
+    "SD0405",
+    "SD0434",
+    "SD0435"
+  ],
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml",
+    "Niosalic 6 Lotion 50Ml"
+  ],
+  "qty_total": 194.0,
+  "amount_total": 0.0,
+  "rate_total": 5085.15,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 19
+}

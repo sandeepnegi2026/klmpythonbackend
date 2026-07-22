@@ -1,0 +1,30 @@
+{
+  "file": "2690.pdf",
+  "route": "party_pdf",
+  "row_count": 1175,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 266,
+  "area_count": 24,
+  "product_count": 158,
+  "sample_parties": [
+    "A ONE MEDICAL STORE",
+    "A TO Z MEDICO (BALAJI HALL)",
+    "AAROGYAM MEDICAL STORE - MAVDI",
+    "AARYA MEDICAL STORE",
+    "AAYUSH MED STORE (KOTHARIA RD)"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 3476.0,
+  "amount_total": 568798.74,
+  "rate_total": 239643.71,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 34
+}

@@ -1,0 +1,19 @@
+{
+  "file": "SALASAR COSMO Q STOCK MAY 26.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 11,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 57.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

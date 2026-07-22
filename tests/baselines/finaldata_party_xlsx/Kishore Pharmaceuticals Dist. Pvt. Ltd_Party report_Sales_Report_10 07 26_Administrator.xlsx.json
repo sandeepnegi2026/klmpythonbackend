@@ -1,0 +1,30 @@
+{
+  "file": "Sales_Report_10 07 26_Administrator.xlsx",
+  "route": "party_xlsx",
+  "row_count": 67,
+  "warnings_count": 0,
+  "headers_detected_count": 21,
+  "detected_format": "tabular",
+  "party_count": 10,
+  "area_count": 10,
+  "product_count": 56,
+  "sample_parties": [
+    "ALPHONSO MEDICAL&GEN STORE",
+    "AMBIKA MED & GEN STORES(ELPHINSTON)",
+    "APPLE CHEMIST AND DRUGGIST(CHEMBUR)",
+    "BHAGWATI MED&GEN STORES",
+    "CHARBHUJA MEDI & GEN STORE( KHAR )"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "qty_total": 161.0,
+  "amount_total": 35087.55,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

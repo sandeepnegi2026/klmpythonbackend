@@ -1,0 +1,19 @@
+{
+  "file": "SALASAR DERMACOR STOCK MAY 26.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "product_count": 26,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets"
+  ],
+  "closing_stock_total": 205.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

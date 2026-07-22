@@ -1,0 +1,30 @@
+{
+  "file": "KLM.xlsx",
+  "route": "party_xlsx",
+  "row_count": 196,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "r15_area_customer_company_product_sales",
+  "party_count": 44,
+  "area_count": 14,
+  "product_count": 88,
+  "sample_parties": [
+    "1",
+    "AAYUSH MEDICALS",
+    "AJAY MEDICALS",
+    "ANANDH MEDICALS",
+    "ARUNA MEDICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Dektop Cream 20Gm"
+  ],
+  "qty_total": 1720.0,
+  "amount_total": 264695.17,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

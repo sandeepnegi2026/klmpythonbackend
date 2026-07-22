@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__PONDY - COSMO.xlsx",
+  "route": "party_xlsx",
+  "row_count": 83,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "company_customer_itemwise_area",
+  "party_count": 48,
+  "area_count": 45,
+  "product_count": 19,
+  "sample_parties": [
+    "ABIRAMI MEDICALS (LAWSPET.)",
+    "ABIRAMY MEDICALS",
+    "AMBAL MEDICALS",
+    "APOLLO PHARMACIES LIMITED",
+    "ARULMANGAI MEDICALS AND SURGICALS"
+  ],
+  "sample_products": [
+    "EKRAN SOFT S.SC GEL",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "qty_total": 434.0,
+  "amount_total": 105722.6,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

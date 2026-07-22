@@ -1,0 +1,26 @@
+{
+  "file": "COSMO__Book2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 27,
+  "sample_parties": [
+    "KLM"
+  ],
+  "sample_products": [
+    "EKRAN 80 SUNSCREN",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G"
+  ],
+  "qty_total": 1077.0,
+  "amount_total": 129525.0,
+  "rate_total": 693.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

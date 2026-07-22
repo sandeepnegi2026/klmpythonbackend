@@ -23,17 +23,53 @@ PACK_RE = re.compile(
     re.I,
 )
 
+# "Container-of" dialect (KLM raw dumps): "<BRAND> TUBE OF/BOX OF/BOTTLE OF <SIZE>
+# <FORM>" — e.g. "EPISERT TUBE OF 30GM CREAM", "ZYDIP C BOTTLE OF 30ML LOTION". The
+# SIZE sits MID-string (a FORM word trails), so the suffix rule below never sees it
+# and pack comes back empty AND the noisy name fails to match. This rule pulls the
+# <SIZE> right after the container word as the pack and DROPS only the container
+# filler ("TUBE OF <SIZE>"), KEEPING the form word so downstream matching can still
+# pick the right form/size sibling (EKRAN 50gm has 5 forms; ZYDIP-C cream vs lotion).
+# It fires ONLY when a container word is immediately followed by "OF <size>", so any
+# name without that exact shape returns byte-identical to before.
+_CONTAINER = r"(?:TUBE|BOX|BOTTLE|JAR|STRIP|VIAL|BLISTER)"
+_SIZE_TOKEN = (
+    r"\d+\s*[\*xX]\s*\d+"                                       # grid/strip count: 1*10, 10x10
+    r"|\d+(?:\.\d+)?\s*(?:MLS|ML|GMS|GM|GRAMS|GRAM|KG|LTR|G|L)\b"  # measure: 30GM, 50ML
+    r"|\d+"                                                      # bare count: "10" (10 tablets)
+)
+_CONTAINER_OF_RE = re.compile(
+    r"\b" + _CONTAINER + r"\s+OF\s+(" + _SIZE_TOKEN + r")", re.I)
+# Dangling container filler with no size after it ("KLMKLIN AHA FACE WASH TUBE OF").
+_DANGLING_CONTAINER_RE = re.compile(r"\s*\b" + _CONTAINER + r"\s+OF\s*$", re.I)
+
 
 def extract_pack_from_product(product):
     """
-    Extracts the pack/size information from the end of a product name string.
+    Extracts the pack/size information from a product name string.
     Returns a tuple of (product_name_without_pack, pack).
 
-    Only a genuine measure/count suffix is peeled (see PACK_RE); dosage-form words
-    are left as part of the name.
+    Handles two shapes:
+      1. "Container-of" dialect ("BRAND TUBE OF 30GM CREAM") — size mid-string; the
+         container filler is dropped, the size becomes the pack, the form word stays.
+      2. A genuine measure/count SUFFIX (see PACK_RE); dosage-form words are left as
+         part of the name.
     """
     if not product:
         return "", ""
+
+    # (1) Container-of dialect — mid-string size behind "TUBE OF"/"BOX OF"/...
+    m = _CONTAINER_OF_RE.search(product)
+    if m:
+        pack = re.sub(r"\s+", " ", m.group(1).strip())
+        name = (product[:m.start()] + " " + product[m.end():])
+        name = re.sub(r"\s+", " ", name).strip()
+        return name, pack
+    # Dangling "... TUBE OF" with nothing after — strip it, then fall through to the
+    # normal suffix peel on the cleaned name.
+    d = _DANGLING_CONTAINER_RE.search(product)
+    if d:
+        product = re.sub(r"\s+", " ", product[:d.start()]).strip()
 
     tokens = product.strip().split()
 

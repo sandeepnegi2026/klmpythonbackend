@@ -1,0 +1,18 @@
+{
+  "file": "DOC-20260626-WA0009..pdf",
+  "route": "stock_pdf",
+  "row_count": 115,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 108,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 6412.0,
+  "rate_total": 0.0
+}

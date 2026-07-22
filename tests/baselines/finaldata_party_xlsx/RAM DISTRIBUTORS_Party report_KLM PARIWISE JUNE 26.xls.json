@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARIWISE JUNE 26.xls",
+  "route": "party_xlsx",
+  "row_count": 267,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 79,
+  "area_count": 1,
+  "product_count": 66,
+  "sample_parties": [
+    "AADHAR MEDICAL",
+    "AAI MEDICAL STO",
+    "ABHIJIT MEDICAL",
+    "AKHADE MEDICAL",
+    "ANAND MEDICAL &"
+  ],
+  "sample_products": [
+    "10830010 MFSUDDIF CREAM",
+    "10830030 NEVLON MOIST. CREAM SOA",
+    "10830079 KLM KLIM AHA FACE WASH",
+    "10830164 ZITLIN SUP.",
+    "Argicyne Sachets 6Gm"
+  ],
+  "qty_total": 2093.0,
+  "amount_total": 0.0,
+  "rate_total": 43874.64,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 5
+}

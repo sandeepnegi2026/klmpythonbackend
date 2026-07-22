@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 559,
+  "warnings_count": 0,
+  "headers_detected_count": 24,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 211,
+  "area_count": 26,
+  "product_count": 106,
+  "sample_parties": [
+    "AADHAR MEDICALS VITA",
+    "ABHISHEK MEDICAL KAV",
+    "ABHISHEK MEDICAL STO",
+    "AJIT MEDICAL KAVALAP",
+    "AJIT MEDICAL SANGOLA"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "qty_total": 1746.0,
+  "amount_total": 312273.34,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 322
+}

@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__PHARMA PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 5,
+  "sample_parties": [
+    "ARPAN MEDICAL STORES",
+    "KANKAVALI UBALE MEDICAL STORES",
+    "KUDAL DR NALANDA DHEERAJ PARAB- KAJAREKAR",
+    "P M SHIRSAT MEDI STORE",
+    "SHIRODA SWAMI MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Kentruff Lotion 50 Ml",
+    "Klmite Cream 60 Gm"
+  ],
+  "qty_total": 21.0,
+  "amount_total": 3835.11,
+  "rate_total": 1281.55,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

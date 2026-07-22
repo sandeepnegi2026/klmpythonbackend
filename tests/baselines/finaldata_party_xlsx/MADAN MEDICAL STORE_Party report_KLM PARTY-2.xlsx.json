@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY-2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 72,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tabular",
+  "party_count": 44,
+  "area_count": 0,
+  "product_count": 32,
+  "sample_parties": [
+    "AREA MANAGER I.G.M.C. SHOP (1) -SHIMLA",
+    "ASHA MEDICAL STORE SN.        -SHIMLA",
+    "B K MEDICOES                  -SHIMLA",
+    "BHAI KARAM SINGH MED.STORE LB",
+    "BHALUNI MEDICOSE RAMPUR       -RAMPUR"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "qty_total": 474.0,
+  "amount_total": 49555.91,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

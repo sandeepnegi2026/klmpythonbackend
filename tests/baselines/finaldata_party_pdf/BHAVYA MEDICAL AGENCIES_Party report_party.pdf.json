@@ -1,0 +1,30 @@
+{
+  "file": "party.pdf",
+  "route": "party_pdf",
+  "row_count": 43,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 25,
+  "area_count": 8,
+  "product_count": 11,
+  "sample_parties": [
+    "D.V MEDICAL AGENCIES",
+    "GANDHI MEDICALS",
+    "LAKSHMI SAI MEDICALS",
+    "POORNA MEDICAL STORES",
+    "PSR CHOWDARY MEDICAL&FANCY STORES"
+  ],
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niogenta F Cream 20 Gm"
+  ],
+  "qty_total": 239.0,
+  "amount_total": 38765.33,
+  "rate_total": 7038.62,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

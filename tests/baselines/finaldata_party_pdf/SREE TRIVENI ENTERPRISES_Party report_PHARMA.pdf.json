@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 13,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "C S MEDICALS ,CHITTOOR",
+    "JAGANATHAM MEDICALS ,PAKALA",
+    "POORVANSH MEDICALS ,CHITTOOR",
+    "PRASANTHI MEDICALS ,PRAKASAM ROAD",
+    "ROOPAM SPECTS WORLD ,REDDY & REDDY C"
+  ],
+  "sample_products": [
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Total 1*15 Tab",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "qty_total": 131.0,
+  "amount_total": 19798.02,
+  "rate_total": 4533.51,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

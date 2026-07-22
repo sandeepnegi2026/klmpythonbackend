@@ -1,0 +1,27 @@
+{
+  "file": "Customer_Company_And_Product_Sales PEDIATRIC 1-5-26 TO 31-5-26.Pdf",
+  "route": "party_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_customer_company_product",
+  "party_count": 6,
+  "area_count": 3,
+  "product_count": 2,
+  "sample_parties": [
+    "BAWAA MEDICALS",
+    "MAHESH MEDICALS",
+    "NEELIMA MEDICALS",
+    "POORVANSH MEDICALS",
+    "SAI KRUPA MEDICALS,PUNGUN"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 53.0,
+  "amount_total": 6021.67,
+  "rate_total": 1028.61,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "KLM ALL SALE _ STOCK.pdf",
+  "route": "stock_pdf",
+  "row_count": 187,
+  "warnings_count": 20,
+  "headers_detected_count": 14,
+  "detected_format": "stock_sale_closing_pairs",
+  "product_count": 184,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMOQ SKIN SERUM"
+  ],
+  "closing_stock_total": 7161.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY 2026 PHARMA PW.xls",
+  "route": "party_xlsx",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tabular",
+  "party_count": 13,
+  "area_count": 5,
+  "product_count": 8,
+  "sample_parties": [
+    "BALAJI MEDICALS STORES",
+    "DR.K.NARASIMMAN.,MD.,DVL.,",
+    "DR.K.TAMILSELVI,MBBS,MD.,",
+    "DR.NITHYA,MBBS,MD,DVL.,",
+    "MONIKA MEDICALS"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Nevlon Acne Soap 75Gm"
+  ],
+  "qty_total": 323.0,
+  "amount_total": 0.0,
+  "rate_total": 3684.91,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "klm derma.xls",
+  "route": "party_xlsx",
+  "row_count": 101,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 40,
+  "area_count": 5,
+  "product_count": 25,
+  "sample_parties": [
+    "AANAND MED.&GEN.STORES (N. RAJENDRA) RYP",
+    "ANOOP MEDICAL STORES (SADAR) RAIPUR.",
+    "AYANSH MEDICAL STORES GUDIYARI RYP",
+    "CHACHA SHRI MEDICALSTORES SARAIPALI",
+    "D.C VERMA MEDICAL KHAIRAGADH"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON BODY LOTION"
+  ],
+  "qty_total": 449.0,
+  "amount_total": 83564.74,
+  "rate_total": 19275.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

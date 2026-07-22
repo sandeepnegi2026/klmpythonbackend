@@ -1,0 +1,26 @@
+{
+  "file": "klm peadia.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "areawise_sales_statement_packing",
+  "party_count": 6,
+  "area_count": 5,
+  "product_count": 2,
+  "sample_parties": [
+    "DR. BALRAJS CLINIC",
+    "GREENIX PHARMA",
+    "KIMS HOSPITAL LLP",
+    "MATRIX PHARMACY*---A",
+    "MEDSUITE PHARMA 15 D"
+  ],
+  "sample_products": [
+    "Sofibar Syndet Bar",
+    "Sofirash Cream 30 Gm"
+  ],
+  "qty_total": 17.0,
+  "amount_total": 2076.46,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

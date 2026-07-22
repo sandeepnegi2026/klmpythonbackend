@@ -1,0 +1,18 @@
+{
+  "file": "KLM DERMACORE.pdf",
+  "route": "stock_pdf",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 31,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Evaklin Medicated Wash",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "closing_stock_total": 565.0,
+  "rate_total": 0.0
+}

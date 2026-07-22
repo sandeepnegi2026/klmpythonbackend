@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__COSMO MAY.pdf",
+  "route": "party_pdf",
+  "row_count": 152,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "party_sale_report",
+  "party_count": 118,
+  "area_count": 81,
+  "product_count": 24,
+  "sample_parties": [
+    "A TO Z MEDICAL & GEN. STORES",
+    "A.S. WELLNESS STORE",
+    "AASTHA MEDICAL STORE QUETA",
+    "AAYUSH MEDICAL STORES SAONER",
+    "ACME PHARMA"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 351.0,
+  "amount_total": 124014.07,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

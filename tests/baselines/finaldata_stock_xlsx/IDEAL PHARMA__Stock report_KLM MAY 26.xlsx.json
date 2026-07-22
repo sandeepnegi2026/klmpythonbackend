@@ -1,0 +1,19 @@
+{
+  "file": "KLM MAY 26.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 228,
+  "warnings_count": 16,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 217,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm"
+  ],
+  "closing_stock_total": 4354.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

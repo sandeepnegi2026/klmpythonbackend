@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tradelink_customer_invoice_itemwise",
+  "party_count": 16,
+  "area_count": 0,
+  "product_count": 9,
+  "sample_parties": [
+    "AMALA MEDICALS KARUVANCHAL",
+    "AZDA HYPER PHARMACY, PANOOR KANNUR,KANNUR",
+    "BEST MEDICALS KANNUR",
+    "C.A.R.E PHARMACY KANNUR",
+    "DAYA MEDICALS. STADIUM, KANNUR KANNUR"
+  ],
+  "sample_products": [
+    "Klm D3 Nano Drops 30Ml",
+    "Sofibar Syndet Bar",
+    "Sofidew Caloe Lotion 60Ml",
+    "Sofidew Cream 100Gm",
+    "Sofidew Lotion 100Ml"
+  ],
+  "qty_total": 70.0,
+  "amount_total": 8909.55,
+  "rate_total": 3626.69,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

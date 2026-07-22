@@ -1,0 +1,18 @@
+{
+  "file": "PARAS PHARMA DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_monthly_ss_inward_other_closing",
+  "product_count": 13,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Hicosyn-25 Tablets",
+    "Scarcote Gel 15Gm",
+    "Sofibar Syndet Bar"
+  ],
+  "closing_stock_total": 98.0,
+  "rate_total": 0.0
+}

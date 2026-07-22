@@ -1,0 +1,30 @@
+{
+  "file": "KLM_PHARMA_JUNE2026_PP.PDF",
+  "route": "party_pdf",
+  "row_count": 100,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 45,
+  "area_count": 4,
+  "product_count": 16,
+  "sample_parties": [
+    "BALAJI MEDICAL",
+    "BEAWAR MEDICAL",
+    "BHANDARI MEDICAL",
+    "CHANCHAL MEDICAL STORE",
+    "CHARBHUJA MEDICAL & GENERAL STORE (GST)"
+  ],
+  "sample_products": [
+    "Cetalore-M Tablet",
+    "Eberfine Cream 30 Gm",
+    "Extend Gold Soft Gelatin Capsules",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 590.0,
+  "amount_total": 76381.09,
+  "rate_total": 17848.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

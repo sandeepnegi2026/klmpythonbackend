@@ -1,0 +1,18 @@
+{
+  "file": "KLM DERMACOR JUN.pdf",
+  "route": "stock_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "medichem_ss_expiry",
+  "product_count": 16,
+  "sample_products": [
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets"
+  ],
+  "closing_stock_total": 137.0,
+  "rate_total": 0.0
+}

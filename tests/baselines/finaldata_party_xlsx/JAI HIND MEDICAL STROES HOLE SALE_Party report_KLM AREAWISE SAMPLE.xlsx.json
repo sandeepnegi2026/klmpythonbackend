@@ -1,0 +1,27 @@
+{
+  "file": "KLM AREAWISE SAMPLE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 3,
+  "sample_parties": [
+    "BHAGYALAXMI MEDICAL STORE",
+    "JSR MEDICAL STORES",
+    "KAMESWARI MEDICAL $ GENL",
+    "SAILAJA MEDICAL STORES",
+    "SRI BALAJI MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Histabil Tablet 1*10 Tab",
+    "Imxia Xl Serum 30Ml",
+    "Zycozol-Xl Cream 50 Gm"
+  ],
+  "qty_total": 22.0,
+  "amount_total": 5940.49,
+  "rate_total": 1898.46,
+  "purchase_rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "phrma party.pdf",
+  "route": "party_pdf",
+  "row_count": 68,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_sales",
+  "party_count": 25,
+  "area_count": 5,
+  "product_count": 25,
+  "sample_parties": [
+    "APEX PHARMACY",
+    "BRIGHT PHARMACY",
+    "CUTIS PHARMA",
+    "DR.HIMABINDU B",
+    "DR.JYOTHI M MD"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "EXTEND GLOD SOFT GELATIN 1*10 0090925F",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm"
+  ],
+  "qty_total": 1134.0,
+  "amount_total": 170090.75,
+  "rate_total": 11441.07,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

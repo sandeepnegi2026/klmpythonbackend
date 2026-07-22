@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR PARTY WISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 151,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "tabular",
+  "party_count": 80,
+  "area_count": 0,
+  "product_count": 16,
+  "sample_parties": [
+    "AGGERWAL MEDICOSE  **    ,AMBALACITY",
+    "AHUJA MED MART           ,SHAHABAD",
+    "AHUJA MEDICOSE           ,AMBALACITY",
+    "AJAY MEDICINE CENTRE     ,AMBALACANT",
+    "APOLLO PHARMACIES LTD    ,AMBALACANT"
+  ],
+  "sample_products": [
+    "Herpival-500 Tablets 1*3 Tablets",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm"
+  ],
+  "qty_total": 661.0,
+  "amount_total": 90107.05,
+  "rate_total": 21072.66,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

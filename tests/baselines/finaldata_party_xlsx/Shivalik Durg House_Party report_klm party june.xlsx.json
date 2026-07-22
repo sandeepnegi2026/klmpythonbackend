@@ -1,0 +1,30 @@
+{
+  "file": "klm party june.xlsx",
+  "route": "party_xlsx",
+  "row_count": 115,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "tabular",
+  "party_count": 24,
+  "area_count": 0,
+  "product_count": 45,
+  "sample_parties": [
+    "BALAJI & BROS. PHASE 3 B2 MOHALI",
+    "BANSAL MEDICAL STORE MOHALI",
+    "CAREWELL MEDICOSE",
+    "CHAITANYA MEDICAL STORE ROPER",
+    "CITY MEDICOS,PH-9, MOHALI     -MOHALI"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "qty_total": 1276.8,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

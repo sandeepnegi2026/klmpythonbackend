@@ -1,0 +1,30 @@
+{
+  "file": "june-26 klm cosmocor.xls",
+  "route": "party_xlsx",
+  "row_count": 477,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "partywise_band",
+  "party_count": 324,
+  "area_count": 51,
+  "product_count": 32,
+  "sample_parties": [
+    "A ONE CHEMIST & GENERAL STORES",
+    "A.K.SHREYA CHEMIST PRIVATE LIM",
+    "AADARSH MEDICAL & GEN. STORES",
+    "AADARSH MEDICO.",
+    "AAIJI CHEMIST"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 888.0,
+  "amount_total": 154472.03,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

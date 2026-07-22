@@ -1,0 +1,30 @@
+{
+  "file": "KLM Pedia May 26 AWS.xls",
+  "route": "party_xlsx",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 29,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 33,
+  "area_count": 16,
+  "product_count": 15,
+  "sample_parties": [
+    "ANMOL CHEMIST..",
+    "BABA CHEMIST",
+    "BHARAT MEDICO",
+    "GOLFADEVI MEDICAL & GENERAL STORE",
+    "GRACE MEDICAL & GENRAL STORE"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol-D Capsules",
+    "Klclav Ds",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 69.0,
+  "amount_total": 9575.12,
+  "rate_total": 6983.98,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

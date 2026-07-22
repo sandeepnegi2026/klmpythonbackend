@@ -3,6 +3,14 @@ from extractors.stock_pdf.layouts.generic import parse_generic
 from extractors.stock_pdf.layouts.marg_sales_stock_statement import parse_marg_sales_stock_statement
 from extractors.stock_pdf.layouts.marg_stock_sales_expiry_positional import parse_marg_stock_sales_expiry_positional
 from extractors.stock_pdf.layouts.stock_sales_statement_adjmt_positional import parse_stock_sales_statement_adjmt_positional
+from extractors.stock_pdf.layouts.patentwise_sales_statement import parse_patentwise_sales_statement
+from extractors.stock_pdf.layouts.sree_swathi_stock_sales_statement import parse_sree_swathi_stock_sales_statement
+from extractors.stock_pdf.layouts.sri_saravana_ss_month_positional import parse_sri_saravana_ss_month_positional
+from extractors.stock_pdf.layouts.jai_ambey_sales_and_stock_summary import parse_jai_ambey_sales_and_stock_summary
+from extractors.stock_pdf.layouts.asha_stock_n_sales_status import parse_asha_stock_n_sales_status
+from extractors.stock_pdf.layouts.indra_group_wise_sales import parse_indra_group_wise_sales
+from extractors.stock_pdf.layouts.jkmedico_stock_sales_statement import parse_jkmedico_stock_sales_statement
+from extractors.stock_pdf.layouts.prakash_stock_statement_pairs import parse_prakash_stock_statement_pairs
 from extractors.stock_pdf.layouts.stock_oric_receipt_qtyonly import parse_stock_oric_receipt_qtyonly
 from extractors.stock_pdf.layouts.klm_stock_sales_analysis_movement import parse_klm_stock_sales_analysis_movement
 from extractors.stock_pdf.layouts.stock_opbal_free_expiry import parse_stock_opbal_free_expiry
@@ -92,10 +100,14 @@ from extractors.stock_pdf.layouts.product_wise_stock_sale_profit import (
 
 from extractors.stock_pdf.layouts.klm_stock_sales_month_netstock import parse_klm_stock_sales_month_netstock
 from extractors.stock_pdf.layouts.klm_stock_sales_month_rcpt import parse_klm_stock_sales_month_rcpt
+from extractors.stock_pdf.layouts.klm_stock_sales_month_urate import parse_klm_stock_sales_month_urate
+from extractors.stock_pdf.layouts.leo_stock_register import parse_leo_stock_register
+from extractors.stock_pdf.layouts.klm_stock_sales_month_prv2 import parse_klm_stock_sales_month_prv2
 from extractors.stock_pdf.layouts.klm_stock_sales_analysis_pcode import parse_klm_stock_sales_analysis_pcode
 from extractors.stock_pdf.layouts.klm_stock_sales_small_pdf import parse_klm_stock_sales_small_pdf
 from extractors.stock_pdf.layouts.medichem_ss_expiry import parse_medichem_ss_expiry
 from extractors.stock_pdf.layouts.meyon_prevmonth_stock import parse_meyon_prevmonth_stock
+from extractors.stock_pdf.layouts.bhavya_open_recv_issue_close_value import parse_bhavya_open_recv_issue_close_value
 from extractors.stock_pdf.layouts.smartpharma_sas import parse_smartpharma_sas
 from extractors.stock_pdf.layouts.csquare_manufacturerwise_stock_sales import parse_csquare_manufacturerwise_stock_sales
 from extractors.stock_pdf.layouts.klm_stock_sales_month_tots import parse_klm_stock_sales_month_tots
@@ -123,7 +135,7 @@ from extractors.stock_pdf.layouts.r15_monthly_ss_inward_other_closing import par
 from extractors.stock_pdf.layouts.r15_klm_pcode_opstk_psch_ssch_positional import parse_klm_pcode_opstk_psch_ssch_positional
 from extractors.stock_pdf.layouts.r15_jayambe_monthly_ss_balance import parse_jayambe_monthly_ss_balance
 from extractors.stock_pdf.layouts.r15_klm_lab_open_recv_sales_close_value_positional import parse_r15_klm_lab_open_recv_sales_close_value_positional
-from extractors.stock_pdf.layouts.r15_klm_ss_month_totalstock_ilast_positional import parse_r15_klm_ss_month_totalstock_ilast_positional
+from extractors.stock_pdf.layouts.r15_klm_ss_month_wide_xgrid import parse_klm_ss_month_wide_xgrid
 from extractors.stock_pdf.layouts.r15_klm_ss_register_receipt_inst_gr_positional import parse_r15_klm_ss_register_receipt_inst_gr_positional
 from extractors.stock_pdf.layouts.r15_klm_ss_prevlast_twopage_positional import parse_r15_klm_ss_prevlast_twopage_positional
 from extractors.stock_pdf.layouts.r15_nu_srishyam_sales_stock_detail_tripage import parse_r15_nu_srishyam_sales_stock_detail_tripage
@@ -154,7 +166,7 @@ TEXT_PARSERS = {
     "klm_pcode_opstk_psch_ssch_positional": parse_klm_pcode_opstk_psch_ssch_positional,
     "r15_jayambe_monthly_ss_balance": parse_jayambe_monthly_ss_balance,
     "r15_klm_lab_open_recv_sales_close_value_positional": parse_r15_klm_lab_open_recv_sales_close_value_positional,
-    "klm_ss_month_totalstock_ilast_positional": parse_r15_klm_ss_month_totalstock_ilast_positional,
+    "klm_ss_month_totalstock_ilast_positional": parse_klm_ss_month_wide_xgrid,
     "r15_klm_ss_register_receipt_inst_gr_positional": parse_r15_klm_ss_register_receipt_inst_gr_positional,
     "r15_klm_ss_prevlast_twopage_positional": parse_r15_klm_ss_prevlast_twopage_positional,
     "nu_srishyam_sales_stock_detail": parse_r15_nu_srishyam_sales_stock_detail_tripage,
@@ -191,10 +203,14 @@ TEXT_PARSERS = {
     "purani_mfr_stock_sales_pdf": parse_purani_mfr_stock_sales_pdf,
     "klm_stock_sales_month_netstock": parse_klm_stock_sales_month_netstock,
     "klm_stock_sales_month_rcpt": parse_klm_stock_sales_month_rcpt,
+    "klm_stock_sales_month_urate": parse_klm_stock_sales_month_urate,
+    "leo_stock_register": parse_leo_stock_register,
+    "klm_stock_sales_month_prv2": parse_klm_stock_sales_month_prv2,
     "klm_stock_sales_analysis_pcode": parse_klm_stock_sales_analysis_pcode,
     "klm_stock_sales_small_pdf": parse_klm_stock_sales_small_pdf,
     "medichem_ss_expiry": parse_medichem_ss_expiry,
     "meyon_prevmonth_stock": parse_meyon_prevmonth_stock,
+    "bhavya_open_recv_issue_close_value": parse_bhavya_open_recv_issue_close_value,
     "smartpharma_sas": parse_smartpharma_sas,
     "csquare_manufacturerwise_stock_sales": parse_csquare_manufacturerwise_stock_sales,
     "stock_lstsl": parse_stock_lstsl,
@@ -272,5 +288,13 @@ TEXT_PARSERS = {
     "stock_op_pur_total_sale_close": parse_stock_op_pur_total_sale_close,
     "stock_received_issued": parse_stock_received_issued,
     "stock_in_out_statement": parse_stock_in_out_statement,
+    "patentwise_sales_statement": parse_patentwise_sales_statement,
+    "sree_swathi_stock_sales_statement": parse_sree_swathi_stock_sales_statement,
+    "sri_saravana_ss_month_positional": parse_sri_saravana_ss_month_positional,
+    "jai_ambey_sales_and_stock_summary": parse_jai_ambey_sales_and_stock_summary,
+    "asha_stock_n_sales_status": parse_asha_stock_n_sales_status,
+    "indra_group_wise_sales": parse_indra_group_wise_sales,
+    "jkmedico_stock_sales_statement": parse_jkmedico_stock_sales_statement,
+    "prakash_stock_statement_pairs": parse_prakash_stock_statement_pairs,
     "generic": parse_generic,
 }

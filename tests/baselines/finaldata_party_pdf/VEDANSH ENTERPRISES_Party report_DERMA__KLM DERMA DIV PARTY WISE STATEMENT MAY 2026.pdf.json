@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__KLM DERMA DIV PARTY WISE STATEMENT MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 6,
+  "area_count": 5,
+  "product_count": 10,
+  "sample_parties": [
+    "ADHIRA MEDICAL STORES",
+    "DR KRUTI JAIN",
+    "DR VISHAL ANJANVATIKAR(PATIL)",
+    "SAYEE MEDICOS",
+    "SHREE MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Cream 100Gm"
+  ],
+  "qty_total": 161.0,
+  "amount_total": 24579.06,
+  "rate_total": 1678.36,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

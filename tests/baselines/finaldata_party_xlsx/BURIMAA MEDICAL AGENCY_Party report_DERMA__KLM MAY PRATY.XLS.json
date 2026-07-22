@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__KLM MAY PRATY.XLS",
+  "route": "party_xlsx",
+  "row_count": 763,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "item_item_sales_summary_text",
+  "party_count": 117,
+  "area_count": 49,
+  "product_count": 144,
+  "sample_parties": [
+    "ABS MEDICINE HUB",
+    "APANJAN MEDICAL STORES",
+    "ASHA MEDICAL HALL",
+    "ASIMA ENTERPRISE",
+    "B.D.MEDICAL AGENCY"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 4059.0,
+  "amount_total": 571544.11,
+  "rate_total": 134919.03,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

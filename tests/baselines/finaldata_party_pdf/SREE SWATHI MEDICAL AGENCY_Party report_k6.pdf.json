@@ -1,0 +1,23 @@
+{
+  "file": "k6.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sree_swathi_company_product_area_invoice",
+  "party_count": 1,
+  "area_count": 2,
+  "product_count": 2,
+  "sample_parties": [
+    "RAMESH MEDICALS AND FA"
+  ],
+  "sample_products": [
+    "Sofibar Syndet Bar",
+    "Toddrub Ointment 40Gm"
+  ],
+  "qty_total": 25.0,
+  "amount_total": 2804.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

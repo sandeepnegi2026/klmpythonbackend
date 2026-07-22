@@ -1,0 +1,18 @@
+{
+  "file": "KOTHARI MEDICAL (RAVI MEDICAL).pdf",
+  "route": "stock_pdf",
+  "row_count": 6,
+  "warnings_count": 6,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 6,
+  "sample_products": [
+    "Desosoft Lotion 30 Ml",
+    "SOFIBAR SOAP",
+    "SOFIDEW BABY LOTION",
+    "Sofidew Baby Massage Oil 100Ml",
+    "Sofidew Shampoo 100Ml"
+  ],
+  "closing_stock_total": 9929.72,
+  "rate_total": 0.0
+}

@@ -1,11 +1,11 @@
 {
   "file": "TIRUPATI MEDICOSE - PHARMA.pdf",
   "route": "stock_pdf",
-  "row_count": 41,
+  "row_count": 46,
   "warnings_count": 0,
   "headers_detected_count": 9,
   "detected_format": "marg_lms_simple",
-  "product_count": 38,
+  "product_count": 42,
   "sample_products": [
     "Cetalore 10 Tablets 1*10 Tablets",
     "Cetalore Tablets 1*10 Tablets",
@@ -13,6 +13,6 @@
     "Eberfine Cream 15 Gm",
     "Eberfine Cream 30 Gm"
   ],
-  "closing_stock_total": 1316.0,
+  "closing_stock_total": 1734.0,
   "rate_total": 0.0
 }

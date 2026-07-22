@@ -1,11 +1,11 @@
 {
   "file": "NR-[Sample]_KLMBook1_KUSHAL_DISTRIBUTOR_party_product_xlsx.xlsx",
   "route": "party_xlsx",
-  "row_count": 424,
+  "row_count": 418,
   "warnings_count": 0,
   "headers_detected_count": 5,
   "detected_format": "party_item_summary",
-  "party_count": 146,
+  "party_count": 145,
   "area_count": 16,
   "product_count": 111,
   "sample_parties": [
@@ -22,8 +22,9 @@
     "Cetalore-M Tablet",
     "Cosmoq Ac Sunscreen Gel 60G"
   ],
-  "qty_total": 2421.5,
-  "amount_total": 346740.05,
-  "rate_total": 80985.7,
-  "purchase_rate_total": 0.0
+  "qty_total": 2412.5,
+  "amount_total": 344297.3,
+  "rate_total": 79240.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
 }

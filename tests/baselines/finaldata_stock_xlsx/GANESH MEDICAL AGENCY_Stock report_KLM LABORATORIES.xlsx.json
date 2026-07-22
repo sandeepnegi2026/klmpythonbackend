@@ -1,0 +1,19 @@
+{
+  "file": "KLM LABORATORIES.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 107,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "product_count": 107,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "closing_stock_total": 1366.0,
+  "rate_total": 0.0,
+  "line_unexplained": 91
+}

@@ -1,0 +1,18 @@
+{
+  "file": "klmp.pdf",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 1,
+  "headers_detected_count": 14,
+  "detected_format": "marg_open_pur_free_sale",
+  "product_count": 11,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Extend Gold Soft Gelatin Capsules",
+    "Ga-12 Cream 30Gm",
+    "Kenz Plus Lotion 100Ml",
+    "Klm D3 Nano Drops"
+  ],
+  "closing_stock_total": 148.0,
+  "rate_total": 0.0
+}

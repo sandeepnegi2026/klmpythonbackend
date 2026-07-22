@@ -1,0 +1,18 @@
+{
+  "file": "KLM COSMOCOR_StockAndSales_May_2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 6,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Niofine Forte Tablet 1*7 Tablets",
+    "Niosalic Lotion 50Ml",
+    "Niosalic Ointment 20 Gm",
+    "Zydip Lotion 100Ml"
+  ],
+  "closing_stock_total": 47.0,
+  "rate_total": 0.0
+}

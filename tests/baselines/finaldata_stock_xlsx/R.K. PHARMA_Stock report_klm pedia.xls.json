@@ -1,0 +1,19 @@
+{
+  "file": "klm pedia.xls",
+  "route": "stock_xlsx",
+  "row_count": 40,
+  "warnings_count": 27,
+  "headers_detected_count": 9,
+  "detected_format": "klm_opstk_apr_may_curstk_xls",
+  "product_count": 40,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 736.0,
+  "rate_total": 5403.91,
+  "line_unexplained": 4
+}

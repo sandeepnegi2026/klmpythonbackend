@@ -1,0 +1,18 @@
+{
+  "file": "DERMA__klm derma may 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "prakash_stock_statement_pairs",
+  "product_count": 25,
+  "sample_products": [
+    "CANROLFIN,OINT,15GM",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "HB SALIC,CREAM,20GM",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 66.0,
+  "rate_total": 0.0
+}

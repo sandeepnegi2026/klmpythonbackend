@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR__72161873.PDF",
+  "route": "stock_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "saraswati_lstsl",
+  "product_count": 6,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Tablets",
+    "Nioclean Gel 20 Gm",
+    "Niosol Ointment 30 Gm",
+    "Tyrolite Cream 15Gm"
+  ],
+  "closing_stock_total": 127.0,
+  "rate_total": 0.0
+}

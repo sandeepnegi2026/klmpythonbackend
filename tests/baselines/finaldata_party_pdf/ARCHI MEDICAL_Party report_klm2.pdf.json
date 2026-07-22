@@ -1,0 +1,30 @@
+{
+  "file": "klm2.pdf",
+  "route": "party_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "klm_customer_item_wise_sale",
+  "party_count": 23,
+  "area_count": 5,
+  "product_count": 23,
+  "sample_parties": [
+    "ABHISHEK MEDICAL STORE",
+    "AREA MANAGER HP STATE CIVIL SUPPLY HAMIRPUR",
+    "ARORA M.S.BHARERI",
+    "CHANDEL CLINIC DHANED",
+    "CUSTOMER"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 121.0,
+  "amount_total": 43166.77,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

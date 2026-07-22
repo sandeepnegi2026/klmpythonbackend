@@ -1,0 +1,19 @@
+{
+  "file": "STOCK MAY-26 Rpt_ProductStock.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 229,
+  "warnings_count": 4,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 217,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 7382.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

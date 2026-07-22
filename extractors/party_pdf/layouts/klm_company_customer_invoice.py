@@ -41,8 +41,13 @@ _NUM = r'-?\d[\d,]*\.\d+'
 _BAND_RE = re.compile(r'^Customer\s*:\s*(?P<body>.+)$', re.I)
 
 # invoice row: <INV> <date> <head> <qty> <free> <rate> <value> <disc>
+# Invoice prefix is 1-4 letters then >=4 digits: SRI VASAVI "XY1234" (2), HEMA
+# SUNDHAR "IAR0438" (3), SRIMATHA "H011960" (1). The 2-letter-only original dropped
+# every row of the 1- and 3-letter vendors; widening the letter count is additive
+# (2-letter invoices still match) and the trailing date + five decimal columns keep
+# it from matching a product line.
 _ROW_RE = re.compile(
-    r'^(?P<inv>[A-Z]{2}\d{4,})\s+'
+    r'^(?P<inv>[A-Z]{1,4}\d{4,})\s+'
     r'(?P<date>\d{2}/\d{2}/\d{4})\s+'
     r'(?P<head>.+?)\s+'
     r'(?P<qty>' + _NUM + r')\s+'

@@ -1,0 +1,30 @@
+{
+  "file": "FREE GOODS JUNE 2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 205,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 17,
+  "area_count": 44,
+  "product_count": 80,
+  "sample_parties": [
+    "-CHOUDHARY MEDICAL CENTER (SURAJPOL)",
+    "-DEWASI MEDICAL AND GEN. STORE PALI",
+    "-GANESH MEDICAL AND GENERAL STORE SOJAT CITY",
+    "-GAYTRI MEDICAL STORE PALI (DINESH JI)",
+    "-JAI AMBE MEDICAL STORE (SOJAT ROAD)"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 1054.0,
+  "amount_total": 297131.66,
+  "rate_total": 65362.02,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

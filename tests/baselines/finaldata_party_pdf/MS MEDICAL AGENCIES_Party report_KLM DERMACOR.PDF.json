@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 8,
+  "area_count": 1,
+  "product_count": 12,
+  "sample_parties": [
+    "ARUNA PHARMACY",
+    "CUTIS PHARMACY",
+    "KARTHI PHARMACY",
+    "RAMNEEL PHARMACY",
+    "SAI CHANDRA PHARMACY"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Sal Lotion 60 Ml",
+    "Klm Klin Aha Face Wash 100 Ml"
+  ],
+  "qty_total": 210.0,
+  "amount_total": 63361.4,
+  "rate_total": 3846.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

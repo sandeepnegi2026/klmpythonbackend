@@ -1,0 +1,30 @@
+{
+  "file": "301.xlsx",
+  "route": "party_xlsx",
+  "row_count": 194,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 122,
+  "area_count": 123,
+  "product_count": 34,
+  "sample_parties": [
+    "A TO Z PHARMACY & GEN.STORES",
+    "AASHRITH PHARMACY(CHEMIST AND DRUGGIST)",
+    "AL SHIFA MEDICAL HALL",
+    "AMMA  MEDICAL  AND GENERAL STORES",
+    "ANNAPURNA MEDICAL AND GEN STORES"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 2613.0,
+  "amount_total": 412776.42,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

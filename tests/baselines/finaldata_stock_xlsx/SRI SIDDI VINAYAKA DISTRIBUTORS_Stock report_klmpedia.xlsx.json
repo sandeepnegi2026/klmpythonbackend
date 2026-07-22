@@ -1,0 +1,19 @@
+{
+  "file": "klmpedia.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "profit_maker",
+  "product_count": 21,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Imxia 10",
+    "Imxia F",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "closing_stock_total": 60.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

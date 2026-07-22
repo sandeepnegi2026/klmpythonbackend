@@ -1,0 +1,18 @@
+{
+  "file": "STOCK AND SALES.pdf",
+  "route": "stock_pdf",
+  "row_count": 150,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 146,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 758.0,
+  "rate_total": 0.0
+}

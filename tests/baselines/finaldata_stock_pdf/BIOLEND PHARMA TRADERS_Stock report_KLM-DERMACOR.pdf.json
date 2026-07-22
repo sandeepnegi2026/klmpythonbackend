@@ -1,0 +1,18 @@
+{
+  "file": "KLM-DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_netstock",
+  "product_count": 7,
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Soap 75G",
+    "Lulizol Cream 30 Gm"
+  ],
+  "closing_stock_total": 203.0,
+  "rate_total": 0.0
+}

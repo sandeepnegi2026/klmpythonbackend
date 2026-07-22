@@ -1,11 +1,11 @@
 {
   "file": "SOURABH MEDICOSE-COSMOCOR.pdf",
   "route": "party_pdf",
-  "row_count": 32,
+  "row_count": 31,
   "warnings_count": 0,
   "headers_detected_count": 9,
   "detected_format": "marg_summary",
-  "party_count": 19,
+  "party_count": 18,
   "area_count": 11,
   "product_count": 11,
   "sample_parties": [
@@ -22,8 +22,9 @@
     "Nioclean Gel 20 Gm",
     "Niosol Ointment 30 Gm"
   ],
-  "qty_total": 115.0,
-  "amount_total": 18339.96,
+  "qty_total": 114.0,
+  "amount_total": 18154.25,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

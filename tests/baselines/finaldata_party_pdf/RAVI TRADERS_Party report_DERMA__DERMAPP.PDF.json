@@ -1,0 +1,27 @@
+{
+  "file": "DERMA__DERMAPP.PDF",
+  "route": "party_pdf",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 4,
+  "area_count": 3,
+  "product_count": 3,
+  "sample_parties": [
+    "FAIZEAAM MEDICAL STORE",
+    "NEW RAJ MEDICAL STORE",
+    "R.A.MEDICAL STORE.",
+    "SODHI MEDICAL STORE"
+  ],
+  "sample_products": [
+    "CANROLFIN(B) 1*30GM",
+    "Sudif Cream 10 Gm",
+    "Zydip Lotion 50 Ml"
+  ],
+  "qty_total": 5.0,
+  "amount_total": 729.4,
+  "rate_total": 590.23,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

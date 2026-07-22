@@ -1,0 +1,30 @@
+{
+  "file": "comppartysale10.xls",
+  "route": "party_xlsx",
+  "row_count": 654,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_banded",
+  "party_count": 361,
+  "area_count": 0,
+  "product_count": 24,
+  "sample_parties": [
+    "24/7 MEDICINES  ( VIKAR ) WAGHOLI DADASH",
+    "A ONE PHARMACY RAMESHWAR D Y PATIL COLLEGE RD LOHEGAON",
+    "AADHAR MEDICAL VINOD GREEN CITY SATAV NAGAR",
+    "AAI MEDICAL (ISHWAR) DHANKWADI,BESIDE ADARSH MITRA",
+    "AAIJI MEDICAL VIKAS VISH SATHE VASTI,LOHGAON,PUNE."
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Es Oral Suspension 50Ml",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 1014.0,
+  "amount_total": 141578.51,
+  "rate_total": 93301.54,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

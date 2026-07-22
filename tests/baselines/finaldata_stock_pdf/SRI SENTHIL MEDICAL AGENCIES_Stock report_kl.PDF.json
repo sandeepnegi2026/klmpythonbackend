@@ -1,0 +1,18 @@
+{
+  "file": "kl.PDF",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "klm_stock_sale_prvsa",
+  "product_count": 29,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Dektop Cream 20Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 970.0,
+  "rate_total": 0.0
+}

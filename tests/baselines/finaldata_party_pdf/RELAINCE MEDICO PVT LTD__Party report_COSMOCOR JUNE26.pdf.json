@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR JUNE26.pdf",
+  "route": "party_pdf",
+  "row_count": 89,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 38,
+  "area_count": 7,
+  "product_count": 28,
+  "sample_parties": [
+    "A.K.MEDICAL STORE BAJORIA ROAD",
+    "ADERSH MEDICAL STORE",
+    "ANAS MEDICOSE",
+    "ASTHA MED STORE",
+    "AYANSH MEDICOSE"
+  ],
+  "sample_products": [
+    "AZACEA 20 CREAM",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 698.0,
+  "amount_total": 87920.66,
+  "rate_total": 13774.18,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

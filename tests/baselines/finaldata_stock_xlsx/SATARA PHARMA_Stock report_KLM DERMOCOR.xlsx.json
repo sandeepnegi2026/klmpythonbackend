@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMOCOR.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 22,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Total 1*15 Tab",
+    "KENZ 200 MG TAB",
+    "KLIN AHA FOAMING GEL",
+    "Kenz Cream 30 Gm"
+  ],
+  "closing_stock_total": 31.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

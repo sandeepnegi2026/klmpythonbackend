@@ -1,0 +1,29 @@
+{
+  "file": "KLM _ _DERMA__AreawiseSales_Jun_2026.xls",
+  "route": "party_xlsx",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "areawise_sales_statement",
+  "party_count": 15,
+  "area_count": 8,
+  "product_count": 8,
+  "sample_parties": [
+    "ACURA HEALTH CARE, BADAGARA",
+    "ASHRAYA MEDICALS AND SURGICALS, MAIN ROAD IRITTY",
+    "AZDA HYPER PHARMACY-670692 (AZDA MEDICALS), PANOOR",
+    "CARE PHARMA, ORKATTERY",
+    "DIYA PHARMACY-673310, PANDAKKAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Nevlon Cream 100Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Nevlon Lotion 100Ml",
+    "Onitraz Capsules 1*10 Capsules"
+  ],
+  "qty_total": 55.0,
+  "amount_total": 14216.01,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

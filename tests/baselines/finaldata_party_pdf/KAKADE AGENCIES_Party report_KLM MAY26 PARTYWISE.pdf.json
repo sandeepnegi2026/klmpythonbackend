@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY26 PARTYWISE.pdf",
+  "route": "party_pdf",
+  "row_count": 439,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "partywise_sales_summary",
+  "party_count": 164,
+  "area_count": 0,
+  "product_count": 141,
+  "sample_parties": [
+    "A 1 MEDICAL RATNAGIRI",
+    "AAPALI PHARMACY(UNIT KODOLI",
+    "AAPLICH PHARMACY CHE TORASKAR CHOWK",
+    "ABDUL-MAJIDMEDICAL & SHENGAON",
+    "ABHISHEK MEDICAL JATH"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 3046.0,
+  "amount_total": 495116.37,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

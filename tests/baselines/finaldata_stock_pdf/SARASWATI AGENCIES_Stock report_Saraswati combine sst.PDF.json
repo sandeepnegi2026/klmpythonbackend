@@ -1,0 +1,18 @@
+{
+  "file": "Saraswati combine sst.PDF",
+  "route": "stock_pdf",
+  "row_count": 182,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "saraswati_lstsl",
+  "product_count": 177,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml"
+  ],
+  "closing_stock_total": 5903.0,
+  "rate_total": 0.0
+}

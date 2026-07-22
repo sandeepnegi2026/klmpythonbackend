@@ -1,0 +1,24 @@
+{
+  "file": "ORTHO JUNE26.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 2,
+  "sample_parties": [
+    "DR.B.K.CHODHARY B.R.",
+    "TULIP MEDICOSE"
+  ],
+  "sample_products": [
+    "Klflam-Sp Tablet",
+    "Xyeter 250 Tablets"
+  ],
+  "qty_total": 260.0,
+  "amount_total": 20370.94,
+  "rate_total": 338.01,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

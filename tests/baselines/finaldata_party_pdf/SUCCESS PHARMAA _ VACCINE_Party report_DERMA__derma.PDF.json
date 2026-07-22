@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__derma.PDF",
+  "route": "party_pdf",
+  "row_count": 129,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "success_areawise_report",
+  "party_count": 53,
+  "area_count": 22,
+  "product_count": 13,
+  "sample_parties": [
+    "ABI PHARMACY (sundarapur",
+    "ALAGU PHARMACY K",
+    "ALM MEDICALS (GANDHI ROA",
+    "ALM MEDICALS (UTHUKULI R",
+    "AMBAL MEDICAL"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Cream 100Gm",
+    "Nevlon Cream 50Gm"
+  ],
+  "qty_total": 705.0,
+  "amount_total": 144182.8,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

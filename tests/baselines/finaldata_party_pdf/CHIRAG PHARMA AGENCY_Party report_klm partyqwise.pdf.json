@@ -1,0 +1,30 @@
+{
+  "file": "klm partyqwise.pdf",
+  "route": "party_pdf",
+  "row_count": 72,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 49,
+  "area_count": 16,
+  "product_count": 18,
+  "sample_parties": [
+    "ANKUR MEDICAL STORE",
+    "APPLE MEDICAL",
+    "ARIHAANT PHARMACY",
+    "ASHAPURA MEDICAL & GEN.STORE",
+    "BALAJI MEDICAL AND GEN.STORE..."
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml"
+  ],
+  "qty_total": 168.0,
+  "amount_total": 29067.81,
+  "rate_total": 12983.95,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

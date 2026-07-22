@@ -1,0 +1,30 @@
+{
+  "file": "DERMACORE MAY2026 28aederma _2_.xls",
+  "route": "party_xlsx",
+  "row_count": 296,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "itemwise_party_column",
+  "party_count": 122,
+  "area_count": 34,
+  "product_count": 35,
+  "sample_parties": [
+    "32 AESTHETISC",
+    "AADITYA MEDICAL & GEN STORE",
+    "AARAMBH CHEMIST",
+    "ALOK MEDICAL STORES",
+    "ALPHA CHEMIST"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend Eva Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 3040.0,
+  "amount_total": 878999.44,
+  "rate_total": 93150.69,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

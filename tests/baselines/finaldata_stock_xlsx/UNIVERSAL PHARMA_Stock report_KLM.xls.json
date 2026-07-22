@@ -1,0 +1,19 @@
+{
+  "file": "KLM.xls",
+  "route": "stock_xlsx",
+  "row_count": 79,
+  "warnings_count": 1,
+  "headers_detected_count": 15,
+  "detected_format": "central_stock_and_sales_xls",
+  "product_count": 79,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 1065.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

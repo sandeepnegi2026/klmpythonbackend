@@ -1,0 +1,30 @@
+{
+  "file": "klmcp0626.xls",
+  "route": "party_xlsx",
+  "row_count": 420,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_product_banded",
+  "party_count": 156,
+  "area_count": 9,
+  "product_count": 92,
+  "sample_parties": [
+    "A RAJA MEDICAL AND GENRAL STORE",
+    "A.H.MEDICAL AND GENERAL STORE",
+    "A.K.ENTERPRISES",
+    "A.KARIM MEDICAL STORE",
+    "A.R.MEDICAL AND GENERAL STORE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 1427.5,
+  "amount_total": 235301.56,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

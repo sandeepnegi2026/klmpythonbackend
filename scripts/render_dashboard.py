@@ -25,6 +25,43 @@ BUCKET_COLOR = {"GREEN": "#d7f5dd", "AMBER": "#fff3cd", "RED": "#f8d7da", "ERROR
 WHO_COLOR = {"Dev": "#cfe2ff", "You decide": "#fff3cd", "Dev + you": "#e2d9f3",
              "OCR track": "#e2e3e5", "—": "#f0f0f0"}
 
+# The user-facing triage verdict is 4 colours, not 3: the AMBER bucket splits on
+# core/triage.py's `extraction_ok` (True = extraction proven correct but the vendor's
+# own numbers don't balance; None = unconfirmed, a human should glance). GREEN/AMBER/RED
+# stays the canonical gate enum (tests, relocate RED-gate); this badge is the display layer.
+# key -> (label, colour). Order here is the display order (best -> worst).
+BADGE = [
+    ("correct",        "Correct",                        "#d7f5dd"),  # GREEN
+    ("vendor_mismatch","Correct — vendor data mismatch", "#ffe0b2"),  # AMBER + extraction_ok True
+    ("check",          "Needs a quick check",            "#fff3cd"),  # AMBER + extraction_ok None
+    ("not_correct",    "Not correct",                    "#f8d7da"),  # RED
+    ("crashed",        "Extraction crashed",             "#e2e3e5"),  # ERROR
+]
+BADGE_LABEL = {k: lbl for k, lbl, _ in BADGE}
+BADGE_COLOR = {k: col for k, _, col in BADGE}
+
+
+def _badge_of(row: dict) -> str:
+    """Map a triage row -> one of the 4 (+ERROR) verdict badges. `extraction_ok` may be
+    absent on older/run.json records — fall back to the bucket so it degrades to 3 states."""
+    bucket = row.get("bucket")
+    if bucket == "GREEN":
+        return "correct"
+    if bucket == "RED":
+        return "not_correct"
+    if bucket == "ERROR":
+        return "crashed"
+    if bucket == "AMBER":
+        return "vendor_mismatch" if row.get("extraction_ok") is True else "check"
+    return "check"
+
+
+def _badge_counts(rows) -> dict:
+    counts = {k: 0 for k, _, _ in BADGE}
+    for r in rows or []:
+        counts[_badge_of(r)] += 1
+    return counts
+
 
 def _esc(v):
     return html.escape("" if v is None else str(v))
@@ -32,6 +69,26 @@ def _esc(v):
 
 def _pct(n, d):
     return round(100 * n / d) if d else 0
+
+
+def _rel(path, name):
+    """`stockist/slot/file` locator from a full path — the bare basename is ambiguous
+    across 576 stockist folders that each contain a `KLM.pdf`."""
+    if not path:
+        return name or ""
+    parts = str(path).replace("\\", "/").rstrip("/").split("/")
+    return "/".join(parts[-3:]) if len(parts) >= 3 else "/".join(parts)
+
+
+def _file_link(path, name):
+    """Clickable file:// link labelled with the stockist/slot/file locator. The href is
+    URL-encoded (spaces -> %20) so paths like 'SRI NAGENDRA DRUG AGENCIES/...' open."""
+    rel = _rel(path, name)
+    if not path:
+        return _esc(rel)
+    from urllib.parse import quote
+    href = "file:///" + quote(str(path).replace("\\", "/"), safe="/:")
+    return f"<a href='{href}' title='{_esc(path)}'>{_esc(rel)}</a>"
 
 
 # --------------------------------------------------------------------------- #
@@ -45,6 +102,12 @@ def render_summary(rec: dict) -> str:
     L.append("")
     L.append(f"- Files: **{total}**  ·  GREEN {b.get('GREEN',0)} ({_pct(b.get('GREEN',0),total)}%) ·  "
              f"AMBER {b.get('AMBER',0)} ·  RED {b.get('RED',0)} ·  ERROR {b.get('ERROR',0)}")
+    bc4 = _badge_counts(rec.get("triage_rows", []))
+    if any(bc4.values()):
+        L.append(f"- Triage badge (4-state) · **Correct {bc4['correct']}** ({_pct(bc4['correct'],total)}%) ·  "
+                 f"Correct—vendor data mismatch {bc4['vendor_mismatch']} ·  "
+                 f"Needs a quick check {bc4['check']} ·  Not correct {bc4['not_correct']} ·  "
+                 f"Crashed {bc4['crashed']}")
     clusters = rec.get("clusters", [])
     L.append(f"- {len(clusters)} clusters need work · fixing the top {rec.get('est_green_gain_clusters',0)} "
              f"code-fixable clusters could clear ~{rec.get('est_green_gain',0)} files")
@@ -110,10 +173,17 @@ def _headline(rec):
     pills = " ".join(
         f"<span class='pill' style='background:{BUCKET_COLOR[k]}'>{k} {b.get(k,0)} ({_pct(b.get(k,0),total)}%)</span>"
         for k in ("GREEN", "AMBER", "RED", "ERROR") if b.get(k))
+    bc4 = _badge_counts(rec.get("triage_rows", []))
+    badge_pills = " ".join(
+        f"<span class='pill' style='background:{BADGE_COLOR[k]}'>{_esc(BADGE_LABEL[k])} {bc4[k]} ({_pct(bc4[k],total)}%)</span>"
+        for k, _, _ in BADGE if bc4.get(k))
+    badge_row = (f"<div class='note'><span class='muted'>Triage verdict (4-state):</span> {badge_pills}</div>"
+                 if any(bc4.values()) else "")
     gain = (f"Fixing the top {rec.get('est_green_gain_clusters',0)} code-fixable clusters could clear "
             f"~<b>{rec.get('est_green_gain',0)}</b> files (~+{_pct(rec.get('est_green_gain',0),total)}% green).")
     return (f"<div class='head'><div class='bigrow'><div class='big'>{total} files</div>"
             f"<div>{pills}</div></div>"
+            f"{badge_row}"
             f"<div class='note'>{len(rec.get('clusters',[]))} distinct clusters need work. {gain}</div></div>")
 
 
@@ -172,15 +242,15 @@ def _panels(rec):
     rows = rec.get("triage_rows", [])
     by_route = {}
     for r in rows:
-        d = by_route.setdefault(r["route"], {"GREEN": 0, "AMBER": 0, "RED": 0, "ERROR": 0})
-        d[r["bucket"]] = d.get(r["bucket"], 0) + 1
+        d = by_route.setdefault(r["route"], {k: 0 for k, _, _ in BADGE})
+        d[_badge_of(r)] += 1
+    hdr = "".join(f"<th style='background:{col}'>{_esc(lbl)}</th>" for _, lbl, col in BADGE)
     trows = "".join(
         f"<tr><td class='mono'>{_esc(rt)}</td>"
-        + "".join(f"<td>{d.get(k,0)}</td>" for k in ('GREEN', 'AMBER', 'RED', 'ERROR'))
+        + "".join(f"<td>{d.get(k,0)}</td>" for k, _, _ in BADGE)
         + "</tr>" for rt, d in sorted(by_route.items()))
-    out.append("<details><summary>Triage by route</summary><table>"
-               "<tr><th>route</th><th>GREEN</th><th>AMBER</th><th>RED</th><th>ERROR</th></tr>"
-               + trows + "</table></details>")
+    out.append("<details><summary>Triage by route (4-state verdict)</summary><table>"
+               "<tr><th>route</th>" + hdr + "</tr>" + trows + "</table></details>")
 
     # unmapped headers
     uh = rec.get("unmapped_headers", {})
@@ -223,13 +293,15 @@ def _panels(rec):
     for r in sorted(rows, key=lambda x: ({"RED": 0, "ERROR": 1, "AMBER": 2, "GREEN": 3}.get(x["bucket"], 4),
                                          x["route"], x["reason_code"], x["file_name"])):
         meta = bc.fix_meta(r["reason_code"]) if r["bucket"] != "GREEN" else {"plain": "OK — extracted cleanly"}
-        frows.append(f"<tr style='background:{BUCKET_COLOR.get(r['bucket'],'#fff')}'>"
-                     f"<td class='mono'>{_esc(r['file_name'])}</td><td>{_esc(r['route'])}</td>"
-                     f"<td>{_esc(r['bucket'])}</td><td>{_esc(meta['plain'])}</td>"
+        badge = _badge_of(r)
+        frows.append(f"<tr style='background:{BADGE_COLOR.get(badge,'#fff')}'>"
+                     f"<td class='mono'>{_file_link(r.get('path'), r['file_name'])}</td><td>{_esc(r['route'])}</td>"
+                     f"<td>{_esc(BADGE_LABEL[badge])}<br><span class='rc'>{_esc(r['bucket'])}</span></td>"
+                     f"<td>{_esc(meta['plain'])}</td>"
                      f"<td class='rc'>{_esc(r['reason_code'])}</td><td>{_esc(r.get('row_count'))}</td></tr>")
     out.append("<details><summary>All files ({} )</summary><table>"
-               "<tr><th>file</th><th>route</th><th>status</th><th>problem</th><th class='rc'>reason</th>"
-               "<th>rows</th></tr>{}</table></details>".format(len(rows), "".join(frows)))
+               "<tr><th>file (stockist / slot / name)</th><th>route</th><th>verdict (4-state)</th><th>problem</th>"
+               "<th class='rc'>reason</th><th>rows</th></tr>{}</table></details>".format(len(rows), "".join(frows)))
     return "".join(out)
 
 

@@ -1,0 +1,23 @@
+{
+  "file": "KLM _ _PHARMA__AreawiseSales_Jun_2026.xls",
+  "route": "party_xlsx",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "areawise_sales_statement",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 2,
+  "sample_parties": [
+    "MATHA MEDICALS-670703, IRITTY"
+  ],
+  "sample_products": [
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 6.0,
+  "amount_total": 933.72,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

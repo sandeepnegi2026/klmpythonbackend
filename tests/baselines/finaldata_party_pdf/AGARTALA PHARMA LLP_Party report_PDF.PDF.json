@@ -1,0 +1,30 @@
+{
+  "file": "PDF.PDF",
+  "route": "party_pdf",
+  "row_count": 1023,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "area_item_sales_summary",
+  "party_count": 202,
+  "area_count": 119,
+  "product_count": 124,
+  "sample_parties": [
+    "A LIFE CARE PHARMACY",
+    "ABANTIKA MEDICAL HALL",
+    "ADDYASHAKTI MEDICAL HALL",
+    "AGARTALA MEDICAL",
+    "AMAL MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet"
+  ],
+  "qty_total": 4572.0,
+  "amount_total": 693411.93,
+  "rate_total": 207272.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

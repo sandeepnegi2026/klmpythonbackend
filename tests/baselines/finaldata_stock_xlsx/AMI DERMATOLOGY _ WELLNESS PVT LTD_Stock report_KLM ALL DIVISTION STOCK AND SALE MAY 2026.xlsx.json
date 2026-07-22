@@ -1,0 +1,19 @@
+{
+  "file": "KLM ALL DIVISTION STOCK AND SALE MAY 2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 299,
+  "warnings_count": 51,
+  "headers_detected_count": 11,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 285,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm"
+  ],
+  "closing_stock_total": 30721.0,
+  "rate_total": 0.0,
+  "line_unexplained": 4
+}

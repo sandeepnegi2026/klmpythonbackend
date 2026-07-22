@@ -1,0 +1,19 @@
+{
+  "file": "All Division Excel.xls",
+  "route": "stock_xlsx",
+  "row_count": 162,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 157,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 4163.0,
+  "rate_total": 0.0,
+  "line_unexplained": 59
+}

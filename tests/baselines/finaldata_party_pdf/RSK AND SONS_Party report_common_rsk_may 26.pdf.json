@@ -1,0 +1,30 @@
+{
+  "file": "common_rsk_may 26.pdf",
+  "route": "party_pdf",
+  "row_count": 507,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 151,
+  "area_count": 63,
+  "product_count": 118,
+  "sample_parties": [
+    "A TO Z PHARMACY STORES",
+    "A.B.ENTERPRISES",
+    "AAKASH MEDICAL & GENERAL",
+    "AHILYA MEDICARE STORES",
+    "AJAY MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 2814.0,
+  "amount_total": 474976.83,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 8
+}

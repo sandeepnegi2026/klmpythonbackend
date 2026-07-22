@@ -1,0 +1,30 @@
+{
+  "file": "klm.pdf",
+  "route": "party_pdf",
+  "row_count": 1077,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "rp_pharma_itemwise",
+  "party_count": 376,
+  "area_count": 19,
+  "product_count": 156,
+  "sample_parties": [
+    "A-1 MED.STORES",
+    "AAI MEDICAL",
+    "AAYUSH MED.& GEN.STOR",
+    "ABDULLAH MEDICAL & GE",
+    "ADITI MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 3698.0,
+  "amount_total": 654905.61,
+  "rate_total": 200047.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

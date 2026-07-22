@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import threading
 from difflib import SequenceMatcher
 
 def _normalize_name(name):
@@ -160,6 +161,31 @@ def _build_indexes():
     _BRAND_INDEX = brand_index
     _INDEX_FOR = catalog
 
+# Thread-local pool of one SequenceMatcher per DISTINCT normalized candidate, with its
+# seq2 (b) preset to that candidate. difflib rebuilds the b-side char index (__chain_b,
+# the dominant per-row cost) on every set_seq2; presetting b ONCE and only calling
+# set_seq1(row) per row removes that rebuild. b stays exactly the candidate string, so
+# ratio()/quick_ratio() are byte-identical to the old set_seq2-per-row loop — this is a
+# pure caching change, not a scoring change. Thread-LOCAL because a SequenceMatcher is
+# mutated per use (set_seq1); a shared one would race across the service's request
+# threads. Rebuilt per thread when the catalog object changes.
+_TL = threading.local()
+
+def _candidate_matchers():
+    catalog = load_master_catalog()
+    cm = getattr(_TL, "cand_matcher", None)
+    if cm is not None and getattr(_TL, "cand_for", None) is catalog:
+        return cm
+    _build_indexes()
+    cm = {}
+    for _product, norm_cands in _NORM_INDEX:
+        for norm_cand in norm_cands:
+            if norm_cand not in cm:
+                cm[norm_cand] = SequenceMatcher(None, "", norm_cand)  # b=candidate, __chain_b once
+    _TL.cand_matcher = cm
+    _TL.cand_for = catalog
+    return cm
+
 def _exact_lookup(name):
     """O(1) exact/alias index hit for `name` (canonical name or harvested synonym),
     normalized identically to normalize_product. NO fuzzy matching: returns the
@@ -209,8 +235,10 @@ def normalize_product(raw_name, min_score=0.85):
 
     best_match = None
     best_score = 0.0
-    # Reuse one matcher: seq1 (norm_raw) is processed once; only seq2 changes per candidate.
-    matcher = SequenceMatcher(None, norm_raw)
+    # One prebuilt matcher per candidate (seq2/b = the candidate, char index built once);
+    # per candidate we only set_seq1(norm_raw), so b's index is reused instead of rebuilt.
+    # b is unchanged from the old loop, so every score is byte-identical.
+    cand_matcher = _candidate_matchers()
     # Length gate: ratio() = 2*matches/(len_a+len_b) <= 2*min_len/(len_a+len_b), so a
     # candidate whose length ratio min/max < min_score/(2-min_score) can NEVER reach
     # min_score. Skipping it avoids building SequenceMatcher's per-candidate match table
@@ -222,14 +250,15 @@ def normalize_product(raw_name, min_score=0.85):
 
     for product, norm_cands in _NORM_INDEX:
         for norm_cand in norm_cands:
+            matcher = cand_matcher[norm_cand]  # b = norm_cand, index prebuilt
             # Containment bonus if lengths are somewhat close to avoid matching tiny substrings
             if (norm_cand in norm_raw or norm_raw in norm_cand) and len(norm_cand) >= 4:
                 # Floor of 0.90, but never DEMOTE a contained candidate whose real
                 # similarity exceeds 0.90 below a loosely-contained rival that also
                 # hits the flat 0.90 (a generic alias like "nevlon moisturizing"
-                # otherwise ties and wins on catalog order). set_seq2 first so ratio()
+                # otherwise ties and wins on catalog order). set_seq1 first so ratio()
                 # is available for this candidate.
-                matcher.set_seq2(norm_cand)
+                matcher.set_seq1(norm_raw)
                 score = max(0.90, matcher.ratio())
             else:
                 cand_len = len(norm_cand)
@@ -237,7 +266,7 @@ def normalize_product(raw_name, min_score=0.85):
                     continue  # length ratio too skewed for ratio() to reach min_score
                 # quick_ratio() >= ratio() always, so if the cheap upper bound can't beat the
                 # current best, the real ratio can't either — skip it. Result is unchanged.
-                matcher.set_seq2(norm_cand)
+                matcher.set_seq1(norm_raw)
                 if matcher.real_quick_ratio() <= best_score or matcher.quick_ratio() <= best_score:
                     continue
                 score = matcher.ratio()
@@ -280,6 +309,77 @@ def _pack_correct(master, size):
     if cand.get("canonical_name") == master.get("canonical_name"):
         return None
     return cand
+
+
+# Form-GROUP model for cross-form mismatch detection. Distinct groups almost never
+# share a product, so a raw whose form-group is DISJOINT from the matched product's is
+# the wrong FORM (e.g. "XEPIBACT CREAM" -> "Xepibact 500 Tablets", "SOFIDEW BABY LOTION"
+# -> "Sofidew Baby Massage Oil"). Equivalences live INSIDE a group so spelling variants
+# never false-flag (oint==ointment, gel==emulgel, softgel==capsule, syrup==suspension).
+# DELIBERATELY CONSERVATIVE: only UNAMBIGUOUS form words are listed. Ambiguous ones
+# ("solution", "drops", "spray", "serum", bare "wash"/"foam") are OMITTED so they can
+# never trigger a false veto (a topical "solution" vs a "lotion" must not unmatch). Within
+# a group the finer sub-form (cream vs lotion vs gel) is NOT gated here — a coarser, safer
+# first cut. Mirror of scripts/validate_master_coverage.py's oracle.
+_FORM_GROUP = {}
+for _grp, _words in {
+    "oral_solid": ["tablet", "tablets", "tab", "tabs", "capsule", "capsules", "cap", "caps", "softgel"],
+    "oral_liquid": ["syrup", "syp", "suspension", "susp"],
+    "topical": ["cream", "ointment", "oint", "gel", "emulgel", "lotion", "paste"],
+    "wash": ["soap", "bar", "shampoo", "facewash", "wash", "cleanser", "foam"],
+    "powder": ["powder"], "oil": ["oil"],
+}.items():
+    for _w in _words:
+        _FORM_GROUP[_w] = _grp
+
+
+def _form_groups(text):
+    """Set of form GROUPS present in `text`. 'soft gel'/'gelatin' collapse to the
+    oral_solid (softgel capsule) group; otherwise each recognised form word maps to
+    its group. Unrecognised / ambiguous words contribute nothing."""
+    t = (text or "").lower()
+    out = set()
+    # "gelatin" (soft-gelatin capsule) is unambiguously oral_solid.
+    if "gelatin" in t:
+        out.add("oral_solid")
+    # A bare "soft gel" phrase is AMBIGUOUS — "Ekran Soft Gel" is a topical silicon gel
+    # while "Extend Gold Soft Gel" is a soft-gelatin capsule — so neutralise the phrase
+    # (contribute no form group) rather than mis-read it. The single token "softgel" and
+    # "gelatin" still count as the capsule form.
+    t = re.sub(r"\bsoft\s+gel\b", " ", t)
+    for w in re.findall(r"[a-z]+", t):
+        g = _FORM_GROUP.get(w)
+        if g:
+            out.add(g)
+    return out
+
+
+def _form_correct(master, form_text, size):
+    """Cross-form-group correction. When the row's raw form-group is DISJOINT from the
+    matched master's form-group, the base match is the wrong FORM. Snap to the same-brand
+    sibling whose form-group matches the raw (and pack size, when known); if exactly one
+    such sibling does not exist, return None to VETO the match — the row then stays raw +
+    unmatched and is flagged for review, rather than keep a confidently-wrong form
+    (cream booked as tablets). Sibling-existence-gated exactly like _pack_correct, so a
+    row whose form is compatible or absent is returned unchanged and the only real
+    candidate is never blindly demoted."""
+    if master is None:
+        return master
+    rg = _form_groups(form_text)
+    mg = _form_groups(master.get("canonical_name", ""))
+    if not rg or not mg or (rg & mg):
+        return master  # no form info on one side, or compatible -> keep base match
+    _build_indexes()
+    bkey = _brand_key(master.get("canonical_name", ""))
+    if not bkey:
+        return master
+    cands = {}
+    for s_size, product in _BRAND_INDEX.get(bkey, []):
+        if (_form_groups(product.get("canonical_name", "")) & rg) and (not size or s_size == size):
+            cands[product.get("code") or product.get("canonical_name")] = product
+    if len(cands) == 1:
+        return next(iter(cands.values()))   # unique correct-form sibling -> snap
+    return None  # no / ambiguous correct-form sibling -> veto (flag for review)
 
 
 def _recover_pack_strength(raw_name, pack_txt, master):
@@ -430,12 +530,23 @@ def enrich_rows_with_master(rows):
                 better = _pack_correct(master, size)
                 if better is not None:
                     master = better
+        # Cross-form-group correction: when the raw names a different FORM than the
+        # matched product (cream vs tablet, lotion vs oil, soap vs lotion), snap to the
+        # correct-form same-brand sibling, or VETO the match (leave the row unmatched +
+        # flagged) when no such sibling exists. Form is read from the full pre-strip
+        # name and the (form-preserving) raw product name.
+        if master is not None:
+            master = _form_correct(master, f"{prestrip or ''} {raw_name}", size)
         if master:
             row["raw_product_name"] = raw_name
             row["product_name"] = master.get("canonical_name", raw_name)
             row["canonical_name"] = master.get("canonical_name", raw_name)
+            # Stable master product code — carried through so the downstream DB/edge can
+            # honour the exact product identity instead of re-guessing by name (Phase 4).
+            # Additive: not part of any regression metric.
+            if master.get("code"):
+                row["product_code"] = master["code"]
 
-            
             if "pack" in master:
                 row["raw_pack"] = row.get("pack", "")
                 row["pack"] = master["pack"]

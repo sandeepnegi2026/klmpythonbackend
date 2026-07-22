@@ -1,0 +1,30 @@
+{
+  "file": "KLM LAB _COSMO DIVISION_ Period 01-06-2026 To 30-06-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 194,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "retailer_band_cgst_sgst",
+  "party_count": 109,
+  "area_count": 52,
+  "product_count": 26,
+  "sample_parties": [
+    "AADARSH MEDICAL & GEN STRS",
+    "AARAV MEDICAL",
+    "AASHA PHARMACY",
+    "ANNAPURNA MED.STORE",
+    "AQSA MED.STORE"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Enzotret Tablet"
+  ],
+  "qty_total": 474.0,
+  "amount_total": 135753.19,
+  "rate_total": 65445.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

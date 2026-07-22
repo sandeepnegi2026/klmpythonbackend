@@ -1,0 +1,18 @@
+{
+  "file": "NEW MEDICAL CORPORATION.xls",
+  "route": "stock_xlsx",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "venus_stock_excel",
+  "product_count": 9,
+  "sample_products": [
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Herpival-500 Tablets 1*3 Tablets",
+    "Imxia 5"
+  ],
+  "closing_stock_total": 78.0,
+  "rate_total": 0.0
+}

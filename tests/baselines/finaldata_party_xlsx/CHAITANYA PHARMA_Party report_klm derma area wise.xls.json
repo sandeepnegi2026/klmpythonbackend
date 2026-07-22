@@ -1,0 +1,30 @@
+{
+  "file": "klm derma area wise.xls",
+  "route": "party_xlsx",
+  "row_count": 50,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "company_area_wise_sales",
+  "party_count": 17,
+  "area_count": 13,
+  "product_count": 26,
+  "sample_parties": [
+    "DR AKASH B K",
+    "DR BHARATH BANGERA N J",
+    "DR KAVYA K B",
+    "DR KESHAVMURTHY H",
+    "DR MOHAMMED SHAHID ANSARI"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "qty_total": 882.0,
+  "amount_total": 134854.21,
+  "rate_total": 826.79,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR__KLM 2.pdf",
+  "route": "stock_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "swastik_particulars",
+  "product_count": 25,
+  "sample_products": [
+    "EKRAN-50GM.SOFT 50GM.",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "closing_stock_total": 826.0,
+  "rate_total": 0.0
+}

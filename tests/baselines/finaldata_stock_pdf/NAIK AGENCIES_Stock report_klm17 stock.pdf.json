@@ -1,0 +1,18 @@
+{
+  "file": "klm17 stock.pdf",
+  "route": "stock_pdf",
+  "row_count": 70,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "r15_klm_ss_register_receipt_inst_gr_positional",
+  "product_count": 70,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml"
+  ],
+  "closing_stock_total": 1010.0,
+  "rate_total": 0.0
+}

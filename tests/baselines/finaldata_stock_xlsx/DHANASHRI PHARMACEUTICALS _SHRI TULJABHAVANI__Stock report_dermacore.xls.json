@@ -1,0 +1,19 @@
+{
+  "file": "dermacore.xls",
+  "route": "stock_xlsx",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 41,
+  "detected_format": "tabular",
+  "product_count": 8,
+  "sample_products": [
+    "Extend Capsules",
+    "Kenz Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "closing_stock_total": 53.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__klm derma core CstCmpIt1834.xls",
+  "route": "party_xlsx",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 9,
+  "area_count": 6,
+  "product_count": 8,
+  "sample_parties": [
+    "ARADHYA MEDICAL STORE",
+    "DR JAYSHREEBEN J RAJPUT",
+    "DR.PARESH THAKKAR-BHABHAR",
+    "GADHAVI MEDICAL STORES",
+    "KRISHNA MEDICINES 2"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Kenz Lotion 60 Ml",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml",
+    "Melapik Ever New Cream 20 Gm"
+  ],
+  "qty_total": 176.0,
+  "amount_total": 35181.16,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

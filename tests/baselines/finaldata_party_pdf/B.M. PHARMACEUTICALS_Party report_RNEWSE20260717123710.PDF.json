@@ -1,0 +1,30 @@
+{
+  "file": "RNEWSE20260717123710.PDF",
+  "route": "party_pdf",
+  "row_count": 245,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 31,
+  "area_count": 3,
+  "product_count": 110,
+  "sample_parties": [
+    "AKHMDH-AKHANDALAMANI DRUG HOUSE",
+    "ASPHM-ASPIRE PHARMA",
+    "BAPUJE-BAPUJEE DRUG HOUSE.",
+    "BBSRDRG-BHUBANESWAR DRUG HOUSE.",
+    "DPMDR-DEEPAK MEDICARE"
+  ],
+  "sample_products": [
+    "AD MOIS.LOTION 1*150ML",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm"
+  ],
+  "qty_total": 5667.0,
+  "amount_total": 1334064.71,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

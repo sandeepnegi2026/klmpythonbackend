@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE SALE MAY.PDF",
+  "route": "party_pdf",
+  "row_count": 97,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 40,
+  "area_count": 14,
+  "product_count": 29,
+  "sample_parties": [
+    "AGRAWAL MEDICAL",
+    "AGRAWAL MEDICINE COMPANY,GONDA",
+    "AGRAWAL MEDICO,GONDA",
+    "AHR PHARMACY,GONDA",
+    "AMAN MEDICAL"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Hbsalic Ointment 20Gm",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Kenz Tablet 1*10 Tablets"
+  ],
+  "qty_total": 416.0,
+  "amount_total": 66840.54,
+  "rate_total": 16026.6,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

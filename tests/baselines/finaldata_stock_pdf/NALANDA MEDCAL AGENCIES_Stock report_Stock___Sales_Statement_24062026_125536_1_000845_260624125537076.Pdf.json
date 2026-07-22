@@ -1,0 +1,18 @@
+{
+  "file": "Stock___Sales_Statement_24062026_125536_1_000845_260624125537076.Pdf",
+  "route": "stock_pdf",
+  "row_count": 152,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "stock_qoh",
+  "product_count": 140,
+  "sample_products": [
+    "CANROLFIN 15 GM CREAM",
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 940.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "PREM PHARMA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 20,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 24,
+  "sample_products": [
+    "2 EPISERT 30G CREAM",
+    "20 ZITLIN",
+    "3 KLCEPO",
+    "Amoclafix-625 Tablets",
+    "Extend Total 1*15 Tab"
+  ],
+  "closing_stock_total": 418.0,
+  "rate_total": 0.0
+}

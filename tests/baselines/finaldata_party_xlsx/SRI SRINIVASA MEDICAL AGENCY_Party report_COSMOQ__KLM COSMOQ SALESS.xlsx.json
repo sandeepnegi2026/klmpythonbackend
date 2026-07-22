@@ -1,0 +1,26 @@
+{
+  "file": "COSMOQ__KLM COSMOQ SALESS.xlsx",
+  "route": "party_xlsx",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "KLM COSMOQ"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 150.0,
+  "amount_total": 13470.73,
+  "rate_total": 20.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

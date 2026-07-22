@@ -1,0 +1,26 @@
+{
+  "file": "KLM Product Wise Sales Customer Wise.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "klm_customer_product_wise_sales",
+  "party_count": 6,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "MAPEETAMBARAMEDICALHALL",
+    "RAJMEDICALHOUSE",
+    "SANTOSHMEDICALSTORE",
+    "SIDDHIVINAYAKDRUGSTORE",
+    "SONUMEDICALS"
+  ],
+  "sample_products": [
+    "Sofirash Cream 30 Gm"
+  ],
+  "qty_total": 33.25,
+  "amount_total": 3791.79,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

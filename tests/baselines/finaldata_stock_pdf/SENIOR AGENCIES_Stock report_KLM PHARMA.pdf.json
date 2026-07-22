@@ -1,0 +1,18 @@
+{
+  "file": "KLM PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 47,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_gdin",
+  "product_count": 44,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "EBERFINE 30GM (KLM)",
+    "EBERFINE 50GM (KLM)"
+  ],
+  "closing_stock_total": 1103.0,
+  "rate_total": 0.0
+}

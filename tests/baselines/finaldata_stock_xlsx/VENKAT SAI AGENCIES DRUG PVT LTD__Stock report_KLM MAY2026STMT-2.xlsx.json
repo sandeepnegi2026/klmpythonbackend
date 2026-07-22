@@ -1,0 +1,19 @@
+{
+  "file": "KLM MAY2026STMT-2.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 281,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_detailed_stock",
+  "product_count": 258,
+  "sample_products": [
+    "ARGICYNE ORANGE FLV SACHET 6GM",
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml"
+  ],
+  "closing_stock_total": 15678.0,
+  "rate_total": 0.0,
+  "line_unexplained": 4
+}

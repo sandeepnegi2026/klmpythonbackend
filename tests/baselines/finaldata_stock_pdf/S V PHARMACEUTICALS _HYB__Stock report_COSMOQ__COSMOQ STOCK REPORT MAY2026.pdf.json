@@ -1,0 +1,18 @@
+{
+  "file": "COSMOQ__COSMOQ STOCK REPORT MAY2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_ss_statement_detailed",
+  "product_count": 12,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMOQ CONDITI1O5N0EGRM 1 5Tu0GbeM2",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 58.0,
+  "rate_total": 0.0
+}

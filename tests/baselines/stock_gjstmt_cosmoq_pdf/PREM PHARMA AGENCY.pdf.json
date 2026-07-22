@@ -1,0 +1,18 @@
+{
+  "file": "PREM PHARMA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 16,
+  "warnings_count": 15,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 15,
+  "sample_products": [
+    "5 COSMOQ M CREAM",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 266.0,
+  "rate_total": 0.0
+}

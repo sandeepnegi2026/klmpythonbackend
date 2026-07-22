@@ -1,0 +1,30 @@
+{
+  "file": "report_7hw10rb18.pdf",
+  "route": "party_pdf",
+  "row_count": 171,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 60,
+  "area_count": 7,
+  "product_count": 47,
+  "sample_parties": [
+    "A.M MEDICOS",
+    "ADARINI DRUGS",
+    "AMBICA PHARMA DISTRIBUTORS",
+    "AMIT MEDICAL",
+    "ARIF MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 1303.0,
+  "amount_total": 281121.54,
+  "rate_total": 35988.65,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

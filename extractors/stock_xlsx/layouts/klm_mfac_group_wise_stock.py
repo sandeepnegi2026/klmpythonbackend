@@ -17,7 +17,7 @@ row.
 
 Decoded by 100% row reconciliation across both sample books:
 
-    Bal. = Op. + Pur + SP - Sale - SS + Cr - Db + Adj
+    Bal. = Op. + Pur + SP - Sale - SS + Cr - Db + Adj - Br
 
 so, in canonical fields (closing = opening + purchase + purchase_free - purchase_return
 - sales_qty - sales_free + sales_return):
@@ -30,7 +30,10 @@ so, in canonical fields (closing = opening + purchase + purchase_free - purchase
     Cr    -> sales_return     (credit-note qty back in, inflow)
     Db    -> purchase_return  (debit-note qty out, outflow)
     Adj   -> signed: +ve folds into sales_return (in), -ve into purchase_return (out)
-    Br    -> signed like Adj (branch transfer; all-zero in samples, mapped conservatively)
+    Br    -> breakage / branch-transfer-out: a pure OUTFLOW, folded into sales_free
+             (reconcile over the wider MINERVA book, 56 non-zero-Br rows, proves the
+             minus sign; the ANNAPURNA sample carried Br all-zero, hence the earlier
+             conservative guess)
     Bal.  -> closing_stock
     BVal  -> closing_stock_value   (balance value)
     SVal  -> sales_value
@@ -128,6 +131,7 @@ def parse_klm_mfac_group_wise_stock(rows):
         acc = {k: 0.0 for k in _NUMERIC}
         pack = ""
         adj = 0.0
+        br = 0.0
         closing = None
         closing_value = None
         sales_value = None
@@ -155,18 +159,27 @@ def parse_klm_mfac_group_wise_stock(rows):
                 closing_value = v
             elif role == "sales_value":
                 sales_value = v
-            elif role in ("adj", "br"):
+            elif role == "adj":
                 adj += v
+            elif role == "br":
+                br += v
             elif role in acc:
                 acc[role] += v
         if skip or closing is None:
             continue
 
-        # Signed Adj/Br: positive is an inflow (credit-like return), negative an outflow.
+        # Signed Adj: positive is an inflow (credit-like return), negative an outflow.
         if adj >= 0:
             acc["sales_return"] += adj
         else:
             acc["purchase_return"] += -adj
+        # Br (breakage / branch-transfer-out) is a pure OUTFLOW. Reconciliation over the
+        # wider MINERVA book (56 rows carry non-zero Br) proves
+        #     closing = Op + Pur + SP - Sale - SS + Cr - Db + Adj - Br
+        # so fold it into sales_free (an outflow); a negative Br (rare inflow) correctly
+        # adds stock back. ANNAPURNA / KOOTTIPARAMBIL / BIO carry Br = 0, so unchanged.
+        if br:
+            acc["sales_free"] += br
 
         record = {"product_name": product}
         if pack:

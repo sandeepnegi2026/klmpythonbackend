@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM PHARMA PW.xlsx",
+  "route": "party_xlsx",
+  "row_count": 67,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 33,
+  "area_count": 24,
+  "product_count": 18,
+  "sample_parties": [
+    "A TO Z PHARMACY",
+    "ADITYA MEDICAL & GEN STOR",
+    "AMBICA TRADERS MED AND GE",
+    "ANISH MEDICAL AND GENERAL",
+    "BALAKRISHNA MEDICAL AND G"
+  ],
+  "sample_products": [
+    "Cetalore-M Tablet",
+    "EBERFINE  BIG",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 623.0,
+  "amount_total": 79304.75,
+  "rate_total": 11478.5,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "MAY PDF PART.pdf",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_item_wise_sale",
+  "party_count": 25,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "ALL WELL CHEMISTS KUSUMPTI -",
+    "AREA MANAGER HPSCS DDUH -",
+    "BHAI KARAM SINGH MEDICAL STORE -",
+    "DEEP MEDICAL STORE - N R H -",
+    "DR BHAWNA KUMARHATTI"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 368.5,
+  "amount_total": 108572.78,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 57
+}

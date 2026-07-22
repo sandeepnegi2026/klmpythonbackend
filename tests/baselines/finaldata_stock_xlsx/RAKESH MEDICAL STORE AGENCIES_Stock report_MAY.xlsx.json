@@ -1,0 +1,19 @@
+{
+  "file": "MAY.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 68,
+  "warnings_count": 8,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 66,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Desosoft Cream 10 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "closing_stock_total": 965.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

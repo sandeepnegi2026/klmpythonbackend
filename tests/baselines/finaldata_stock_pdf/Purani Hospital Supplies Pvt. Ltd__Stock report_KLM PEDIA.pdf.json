@@ -1,0 +1,18 @@
+{
+  "file": "KLM PEDIA.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 9,
+  "headers_detected_count": 13,
+  "detected_format": "purani_mfr_stock_sales_pdf",
+  "product_count": 28,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Histabil-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 1145.0,
+  "rate_total": 3478.36
+}

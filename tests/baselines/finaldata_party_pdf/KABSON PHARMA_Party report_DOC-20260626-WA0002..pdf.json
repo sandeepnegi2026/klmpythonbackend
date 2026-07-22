@@ -1,0 +1,30 @@
+{
+  "file": "DOC-20260626-WA0002..pdf",
+  "route": "party_pdf",
+  "row_count": 537,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 159,
+  "area_count": 49,
+  "product_count": 69,
+  "sample_parties": [
+    "7 SKY MEDICAL HALL KHEORA",
+    "A K HEALTH CARE CHANNI",
+    "AAP SHAMBU MEDICOS ROOP NAGAR-JAMMU",
+    "AAY KAY PHARMACY LAKSHAMI NAGA",
+    "AL-SHAFA E HAIDER MED SHOP DO"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 3963.0,
+  "amount_total": 665140.38,
+  "rate_total": 112253.07,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

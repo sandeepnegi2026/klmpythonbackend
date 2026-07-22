@@ -1,0 +1,17 @@
+{
+  "file": "klm ss exle.xls",
+  "route": "party_xlsx",
+  "row_count": 0,
+  "warnings_count": 1,
+  "headers_detected_count": 0,
+  "detected_format": "unknown",
+  "party_count": 0,
+  "area_count": 0,
+  "product_count": 0,
+  "sample_parties": [],
+  "sample_products": [],
+  "qty_total": 0,
+  "amount_total": 0,
+  "rate_total": 0,
+  "purchase_rate_total": 0
+}

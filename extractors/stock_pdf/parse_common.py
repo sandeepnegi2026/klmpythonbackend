@@ -65,6 +65,39 @@ def _split_product_numbers(line):
     return " ".join(tokens), tail, expiry
 
 
+# Comma-aware tail-walk gate: NUM_RE plus properly-grouped thousands numbers
+# ("10,642.92", "1,23,456.00"). It is a strict SUPERSET of NUM_RE — a comma-less
+# token matches the same branch, so tokenisation is byte-identical unless a token
+# actually carries a well-formed comma group. Used ONLY by the opt-in comma helper.
+_NUM_RE_COMMA = re.compile(
+    r"^-?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?$|^-?\d+(?:\.\d+)?\.?$|^-$|^-----$"
+)
+
+
+def _split_product_numbers_comma(line):
+    """OPT-IN comma-aware variant of _split_product_numbers for Marg value-bearing
+    layouts whose rupee columns print Indian thousands commas. The shared NUM_RE is
+    comma-blind, so such a token halts the tail-walk and the whole row is dropped by
+    the layout's ``len(vals) >= N`` gate; this variant lets the tail-walk accept a
+    grouped-comma number. Only layouts that opt in call this — every other layout
+    keeps _split_product_numbers unchanged. ``_to_number`` strips the comma downstream.
+    """
+    tokens = line.strip().split()
+    if len(tokens) < 3:
+        return None, [], ""
+    tail = []
+    expiry = ""
+    while tokens and (_NUM_RE_COMMA.match(tokens[-1]) or EXP_RE.match(tokens[-1])):
+        t = tokens.pop()
+        if EXP_RE.match(t) and not expiry:
+            expiry = t
+        else:
+            tail.insert(0, t)
+    if not tail or not tokens:
+        return None, [], ""
+    return " ".join(tokens), tail, expiry
+
+
 from core.pack_match import extract_pack_from_product as _split_product_pack
 
 

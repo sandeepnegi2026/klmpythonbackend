@@ -20,7 +20,7 @@ def parse_unisolve(text):
         "Prod.Dis",
     ]
     pat = re.compile(
-        r"^(\d{7,})\s+(.+?)\s+(INV|DM|INC)\s+(\d+)\s+(\d{2}/\d{2}/\d{2})\s+(\S+)\s+([\d.]+)\s+(?:([\d.]+)\s+)?([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*$"
+        r"^(\d{7,})\s+(.+?)\s+(INV|DM|INC)\s+(\d+)\s+(\d{2}/\d{2}/\d{2})\s+(\S+)\s+([\d.,]+)\s+(?:([\d.,]+)\s+)?([\d.,]+)\s+([\d.,]+)\s+([\d.,]+)\s*$"
     )
     rows, cur_raw = [], ""
     for line in text.split("\n"):

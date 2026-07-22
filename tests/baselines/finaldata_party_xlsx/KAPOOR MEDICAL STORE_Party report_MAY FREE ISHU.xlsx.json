@@ -1,0 +1,30 @@
+{
+  "file": "MAY FREE ISHU.xlsx",
+  "route": "party_xlsx",
+  "row_count": 687,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "party_item_wise_sale",
+  "party_count": 149,
+  "area_count": 11,
+  "product_count": 107,
+  "sample_parties": [
+    "A V PHARMACY MANDI",
+    "AASHISH MEDICAL AGENCY MANDI",
+    "ABS MEDICAL STORE  BHUNTER",
+    "ADVANCE DRUGS AND NO BILL",
+    "AK CORPORATION MANDI"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "qty_total": 3027.0,
+  "amount_total": 625047.16,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__STOCKANDSALESNEW - DERMACOR.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 16,
+  "detected_format": "klm_stock_and_sale",
+  "product_count": 28,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 978.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

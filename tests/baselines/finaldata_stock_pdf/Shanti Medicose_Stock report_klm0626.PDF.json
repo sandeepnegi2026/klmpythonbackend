@@ -1,0 +1,18 @@
+{
+  "file": "klm0626.PDF",
+  "route": "stock_pdf",
+  "row_count": 236,
+  "warnings_count": 4,
+  "headers_detected_count": 10,
+  "detected_format": "stock_opbal_free_expiry",
+  "product_count": 202,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 2192.0,
+  "rate_total": 0.0
+}

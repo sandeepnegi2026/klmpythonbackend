@@ -1,0 +1,29 @@
+{
+  "file": "KLM COSMO Q A.pdf",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 6,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "AMULYA MEDICALS",
+    "LIFE LINE MEDICAL HUB (VZ",
+    "PADMA MEDICALS",
+    "SATYANARAYANA PHARMACY (V",
+    "SHIVAM MEDICALS"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm"
+  ],
+  "qty_total": 46.0,
+  "amount_total": 18374.11,
+  "rate_total": 6588.12,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

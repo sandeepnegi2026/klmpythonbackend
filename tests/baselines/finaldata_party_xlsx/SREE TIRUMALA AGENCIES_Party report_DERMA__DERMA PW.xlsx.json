@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA PW.xlsx",
+  "route": "party_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 10,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "AYYAPPA SANTHOSH MEDI & G",
+    "HEMA SAI PHARMACY",
+    "JANA JEEVANASREE PHARMACY",
+    "LAKSHMI PHARMACY",
+    "MAYURI PHARMACY"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON CALOC BIG",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 94.0,
+  "amount_total": 20175.93,
+  "rate_total": 4383.52,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

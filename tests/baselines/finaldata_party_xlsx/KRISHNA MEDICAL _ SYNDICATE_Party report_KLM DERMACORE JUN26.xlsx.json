@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACORE JUN26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_customer_vs_groups_text",
+  "party_count": 15,
+  "area_count": 10,
+  "product_count": 13,
+  "sample_parties": [
+    "BHAVYASRI PHARMACY",
+    "COMPASS ENTERPRISES PVT",
+    "LAKSHMI BALAJI GENERIC",
+    "LAKSHMI GANAPATHI MEDIC",
+    "MOHAN MED & GEN STORES"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml"
+  ],
+  "qty_total": 84.0,
+  "amount_total": 15437.18,
+  "rate_total": 7959.22,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

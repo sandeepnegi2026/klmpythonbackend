@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 203,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_nagammai_customer_purchase_divisionwise",
+  "party_count": 118,
+  "area_count": 0,
+  "product_count": 22,
+  "sample_parties": [
+    "AKHIL PHARMACY, PODANUR",
+    "ALAGU PHARMACY \"S\" S.B.COLONY.",
+    "ALAGU PHARMACY\"G\" PEELAMEDU",
+    "ALAGU PHARMACY-`B GANDHIPURAM.",
+    "ALM MEDICALS ( DHARAPURAM ROAD - TIRUPPUR )"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Lotion 60 Ml"
+  ],
+  "qty_total": 706.0,
+  "amount_total": 118299.72,
+  "rate_total": 38671.04,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

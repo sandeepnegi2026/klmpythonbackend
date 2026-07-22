@@ -1,0 +1,18 @@
+{
+  "file": "DERMACOR__KLM DERMACOR STMT.PDF",
+  "route": "stock_pdf",
+  "row_count": 33,
+  "warnings_count": 1,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_repq",
+  "product_count": 31,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 926.0,
+  "rate_total": 0.0
+}

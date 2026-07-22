@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO 06 A.PDF",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 20,
+  "area_count": 7,
+  "product_count": 16,
+  "sample_parties": [
+    "ANAND DRUG HOUSE-BUS STAND SIDE",
+    "BHARANI MEDICALS CENTER,HASSAN-HASSAN-573201",
+    "DR.VIVEKANANDA,HSN-HASSAN",
+    "GURU MEDICALS,(HNP)-HNP",
+    "HARISH MEDICALS, ARKALGUDU-ARKALGUD"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 151.0,
+  "amount_total": 56907.94,
+  "rate_total": 14295.01,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

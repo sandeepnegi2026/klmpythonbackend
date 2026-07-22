@@ -60,7 +60,10 @@ _AMOUNT = 7
 # right below the header; treat any all-caps digit-free single-cell col0 that matches
 # the company token as the division band.
 _DIV_BAND_RE = re.compile(r"^KLM\s*LAB", re.IGNORECASE)
-_PINCODE_RE = re.compile(r"^\d{6}$")
+# Pincode band: a bare-numeric col0 band row (address furniture, never a customer whose name
+# always carries letters). 6-digit is the Indian pincode; a few exports print a 5-digit local
+# code (DHRUVI "32016" under SIDDHARTH MEDICAL) — that too must never become the party.
+_PINCODE_RE = re.compile(r"^\d{5,6}$")
 # Footer / grand-total rows: "KLM LABO   Total :" and "TOTAL :".
 _TOTAL_RE = re.compile(r"total\s*:", re.IGNORECASE)
 
@@ -104,7 +107,12 @@ def _rate_variant_cols(rows):
 
 def detect(rows):
     head = compact(" ".join(" ".join(cell_text(c) for c in r) for r in rows[:8]))
-    return "partynamebarcoodeitemname" in head and "companycustomeritemwisesale" in head
+    # The banded "Party Name | Barcode | Item Name" header — vendors ship it both misspelled
+    # ("Barcoode", DHRUVI) and correctly ("Barcode", CHANDUKA). Both are this banded export (the
+    # CHANDUKA variant otherwise falls to `tabular` and reads its pincode band as the party). Still
+    # double-gated on the "Company - Customer - Item Wise Sale" title, so only that exact report routes here.
+    has_banded_header = ("partynamebarcoodeitemname" in head or "partynamebarcodeitemname" in head)
+    return has_banded_header and "companycustomeritemwisesale" in head
 
 
 def _parse_rate_variant(rows, cols):

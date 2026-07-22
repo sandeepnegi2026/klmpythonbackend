@@ -1,0 +1,30 @@
+{
+  "file": "KLM PRODUCET SUPPLY.PDF",
+  "route": "party_pdf",
+  "row_count": 650,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 121,
+  "area_count": 13,
+  "product_count": 151,
+  "sample_parties": [
+    ".CHANDA-CHANDAN MEDICAL*",
+    ".SBM-SHREE BALAJEE MEDICALS..",
+    "135-SARITA MEDICAL AGENCY",
+    "154-NEW POPULAR PHARMA",
+    "155-PRAKASH MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 2704.0,
+  "amount_total": 459509.44,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

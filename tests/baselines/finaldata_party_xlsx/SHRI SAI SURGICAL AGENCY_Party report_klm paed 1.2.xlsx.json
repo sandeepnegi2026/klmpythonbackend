@@ -1,0 +1,30 @@
+{
+  "file": "klm paed 1.2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "company_area_customer_product_wise",
+  "party_count": 15,
+  "area_count": 15,
+  "product_count": 9,
+  "sample_parties": [
+    "AMBICA MEDICAL AND GENERAL STORES",
+    "APNA MEDICOS",
+    "ARBUDA MA MEDICAL & GENERAL STORE",
+    "DHANVANTARI MEDICAL AND GENERAL STORES",
+    "DIYA MEDICAL AND GENERAL STORE"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "SOFIDEW BABY LOTION",
+    "Sacctik Plus 1*10 Bottle",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 83.0,
+  "amount_total": 10005.24,
+  "rate_total": 2987.84,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,18 @@
+{
+  "file": "OPTHAL.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 4,
+  "sample_products": [
+    "Moxiview Eye Drops",
+    "Moxiview-D Eye Drops",
+    "OPTIVIEW  HA  E/D",
+    "Opaview Eye Drops"
+  ],
+  "closing_stock_total": 5.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

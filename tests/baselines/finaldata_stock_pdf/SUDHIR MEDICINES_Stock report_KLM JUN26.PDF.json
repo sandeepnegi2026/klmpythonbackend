@@ -1,0 +1,18 @@
+{
+  "file": "KLM JUN26.PDF",
+  "route": "stock_pdf",
+  "row_count": 77,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 77,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "closing_stock_total": 655.0,
+  "rate_total": 0.0
+}

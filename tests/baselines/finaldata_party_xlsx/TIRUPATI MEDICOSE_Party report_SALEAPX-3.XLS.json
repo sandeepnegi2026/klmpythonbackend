@@ -1,0 +1,30 @@
+{
+  "file": "SALEAPX-3.XLS",
+  "route": "party_xlsx",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "product_name_city",
+  "party_count": 30,
+  "area_count": 16,
+  "product_count": 18,
+  "sample_parties": [
+    "AGRAWAL MEDICAL STORES",
+    "AMBAY MEDICAL STORES PVT.LTD.",
+    "AMBEY MED STO GEN STO NAVAGAON",
+    "Dr.tanya Dubey Rajnandgaon",
+    "GANESH MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Extend Capsules",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 435.0,
+  "amount_total": 70694.68,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

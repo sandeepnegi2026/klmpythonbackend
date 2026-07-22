@@ -1,0 +1,18 @@
+{
+  "file": "222222pdf.PDF",
+  "route": "stock_pdf",
+  "row_count": 102,
+  "warnings_count": 8,
+  "headers_detected_count": 8,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 94,
+  "sample_products": [
+    "4,5,6,GIRIRAJ SHOPPING CENTRE,NR.S.T.STAND,STATE HIGHWAY,HIMATNAGAR-383001 Ph:02772 , ,",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 1305.0,
+  "rate_total": 0.0
+}

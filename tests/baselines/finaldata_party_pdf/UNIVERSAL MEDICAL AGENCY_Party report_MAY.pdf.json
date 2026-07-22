@@ -1,0 +1,24 @@
+{
+  "file": "MAY.pdf",
+  "route": "party_pdf",
+  "row_count": 54,
+  "warnings_count": 0,
+  "headers_detected_count": 2,
+  "detected_format": "marg_sale_summary_party",
+  "party_count": 54,
+  "area_count": 0,
+  "product_count": 0,
+  "sample_parties": [
+    "AGRAWAL MEDICAL AGENCY",
+    "ARYAN DRUG POINT",
+    "BELA LAL MEDICAL HALL",
+    "DARBAR MEDICANA MEDICAL STORE",
+    "DELHA LAL MEDICAL HALL"
+  ],
+  "sample_products": [],
+  "qty_total": 0.0,
+  "amount_total": 65584.64,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

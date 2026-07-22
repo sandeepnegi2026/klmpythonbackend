@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA.xls",
+  "route": "party_xlsx",
+  "row_count": 60,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "companywise_customerwise",
+  "party_count": 28,
+  "area_count": 18,
+  "product_count": 20,
+  "sample_parties": [
+    "AROGYA MEDICAL",
+    "BHARATH MEDICALS GEN STORES",
+    "DHANVATH MEDICALS",
+    "DR.SURESH K.V. MD PEAD",
+    "G.A.D MEDICAL & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 334.0,
+  "amount_total": 46879.9,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

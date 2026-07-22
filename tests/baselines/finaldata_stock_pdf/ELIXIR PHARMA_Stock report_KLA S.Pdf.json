@@ -1,0 +1,18 @@
+{
+  "file": "KLA S.Pdf",
+  "route": "stock_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 19,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Histabil-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 12.0,
+  "rate_total": 0.0
+}

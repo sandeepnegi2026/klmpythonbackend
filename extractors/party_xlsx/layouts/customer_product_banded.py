@@ -290,6 +290,13 @@ def parse_customer_product_banded(rows):
             continue
         first = cell_text(raw[0])
 
+        # A pure rule/separator cell ("==============", "--------") underlines the customer band
+        # or header in some exports (RAM DISTRIBUTORS "Customer-Wise Product-Wise Sales"); it is
+        # never a band or a product line, so it must not become the current party. Safe tightener:
+        # a real name/code always carries a letter or digit.
+        if first and re.fullmatch(r"[=\-_]{3,}", first.strip()):
+            continue
+
         if _SECTION_MARKER_RE.match(first):
             continue
 

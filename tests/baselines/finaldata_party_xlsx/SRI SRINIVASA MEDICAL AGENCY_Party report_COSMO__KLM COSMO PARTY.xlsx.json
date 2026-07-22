@@ -1,0 +1,28 @@
+{
+  "file": "COSMO__KLM COSMO PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "item_item_sales_summary",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "DEVI MEDICALS-SINDHANUR",
+    "HANUMAN MEDICAL & GEN STORE-S",
+    "SHREE REVANASIDESHWARA MEDICA"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Imxia 5",
+    "Imxia F"
+  ],
+  "qty_total": 430.0,
+  "amount_total": 77073.04,
+  "rate_total": 3075.64,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,18 @@
+{
+  "file": "KLM MAY PDF 2026 STOOCK.pdf",
+  "route": "stock_pdf",
+  "row_count": 193,
+  "warnings_count": 2,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 177,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 10918.0,
+  "rate_total": 36109.0
+}

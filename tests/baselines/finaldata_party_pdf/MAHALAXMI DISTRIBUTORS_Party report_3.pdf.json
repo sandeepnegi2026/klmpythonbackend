@@ -1,0 +1,24 @@
+{
+  "file": "3.pdf",
+  "route": "party_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 2,
+  "area_count": 1,
+  "product_count": 2,
+  "sample_parties": [
+    "M/S MAISALGE MEDICAL &GENERAL STO",
+    "MALKUD MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 20.0,
+  "amount_total": 7842.71,
+  "rate_total": 784.27,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

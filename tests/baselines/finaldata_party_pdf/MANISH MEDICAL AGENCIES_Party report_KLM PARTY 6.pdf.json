@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY 6.pdf",
+  "route": "party_pdf",
+  "row_count": 480,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "product_party_wise_freeamt",
+  "party_count": 207,
+  "area_count": 111,
+  "product_count": 142,
+  "sample_parties": [
+    "AAIMATA MED&GEN STORES",
+    "AARAV MEDICAL STORES",
+    "ABHAY MEDICOS",
+    "AKASH MEDICAL STORES",
+    "AKSHAR MED&GEN STORES"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 3884.0,
+  "amount_total": 751709.67,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,18 @@
+{
+  "file": "MEDICARE MARKETING.pdf",
+  "route": "stock_pdf",
+  "row_count": 216,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 206,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 4565.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,27 @@
+{
+  "file": "klmderma.xlsx",
+  "route": "party_xlsx",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "BRIGHT PHARMACY",
+    "CUTICARE CHEMIST DRUGGIST",
+    "DR.RADHA S PHARMACY"
+  ],
+  "sample_products": [
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Onitraz Forte Capsules 1*10 Capsules",
+    "Onitraz Sb 130",
+    "Xerolene Max Cream 100 Gm"
+  ],
+  "qty_total": 373.0,
+  "amount_total": 79592.87,
+  "rate_total": 4854.88,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

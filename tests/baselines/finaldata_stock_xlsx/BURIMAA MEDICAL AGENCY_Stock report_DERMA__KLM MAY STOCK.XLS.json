@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__KLM MAY STOCK.XLS",
+  "route": "stock_xlsx",
+  "row_count": 184,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_open_rcpt_issue_xls",
+  "product_count": 182,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 4997.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,25 @@
+{
+  "file": "KLM-PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "wep_legacy",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 4,
+  "sample_parties": [
+    "SABARI MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 30 Gm",
+    "Xaliderm Solution 50Ml"
+  ],
+  "qty_total": 178.0,
+  "amount_total": 18576.53,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

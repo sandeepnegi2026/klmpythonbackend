@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR DIV PARTY WISE JUNE 26.pdf",
+  "route": "party_pdf",
+  "row_count": 55,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 32,
+  "area_count": 8,
+  "product_count": 18,
+  "sample_parties": [
+    "AIJEE MEDICAL STORE",
+    "ANAND MEDICOSE",
+    "CHANDRALOK MEDICAL STORE",
+    "DEWASI MEDICAL AND GEN. STORE PALI",
+    "DEWASI MEDICAL STORE (SOJAT)"
+  ],
+  "sample_products": [
+    "IMXIA PRO HAIR SER",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nioclean Ad Gel 15 Gm"
+  ],
+  "qty_total": 325.0,
+  "amount_total": 61815.6,
+  "rate_total": 13113.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

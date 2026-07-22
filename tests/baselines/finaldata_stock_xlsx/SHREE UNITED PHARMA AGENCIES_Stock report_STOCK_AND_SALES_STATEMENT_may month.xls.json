@@ -1,0 +1,19 @@
+{
+  "file": "STOCK_AND_SALES_STATEMENT_may month.xls",
+  "route": "stock_xlsx",
+  "row_count": 235,
+  "warnings_count": 31,
+  "headers_detected_count": 12,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 229,
+  "sample_products": [
+    "ARGICYNE POWDER",
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 2473.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

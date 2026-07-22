@@ -1,0 +1,30 @@
+{
+  "file": "KLM Pharma May 26 AWS.xls",
+  "route": "party_xlsx",
+  "row_count": 144,
+  "warnings_count": 0,
+  "headers_detected_count": 29,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 85,
+  "area_count": 30,
+  "product_count": 31,
+  "sample_parties": [
+    "AAIJI MEDICAL & GENERAL STORE",
+    "ADIE PHARMACY",
+    "ADIL CHEM & GEN ST",
+    "AMRUT MEDICAL AND GENERAL STORES",
+    "ANANT MEDICAL & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 461.0,
+  "amount_total": 59534.47,
+  "rate_total": 21946.5,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

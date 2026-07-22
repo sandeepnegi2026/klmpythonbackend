@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__KLM PD PW.pdf",
+  "route": "party_pdf",
+  "row_count": 75,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 57,
+  "area_count": 13,
+  "product_count": 16,
+  "sample_parties": [
+    "A AND B MEDICAL AND SURGICAL",
+    "AASTHA MEDICAL HALL",
+    "ANAND MEDICAL & GENERAL STORES",
+    "ANSHIKA MEDICAL & GENERAL STOR",
+    "ASHOK MEDICOSE"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab",
+    "Extend D3 Capsules"
+  ],
+  "qty_total": 200.0,
+  "amount_total": 23894.01,
+  "rate_total": 9510.61,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

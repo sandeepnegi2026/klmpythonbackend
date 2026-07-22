@@ -1,0 +1,19 @@
+{
+  "file": "KLM ITEMWISE 05-26.XLSX",
+  "route": "stock_xlsx",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "venus_stock_excel",
+  "product_count": 20,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 581.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

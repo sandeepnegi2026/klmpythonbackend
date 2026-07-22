@@ -1,0 +1,23 @@
+{
+  "file": "KLM PRODUCT LIST.xls",
+  "route": "party_xlsx",
+  "row_count": 56,
+  "warnings_count": 0,
+  "headers_detected_count": 3,
+  "detected_format": "unknown",
+  "party_count": 0,
+  "area_count": 0,
+  "product_count": 56,
+  "sample_parties": [],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cutiheal Cream 15Gm",
+    "Dektop Cream 20Gm"
+  ],
+  "qty_total": 0.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

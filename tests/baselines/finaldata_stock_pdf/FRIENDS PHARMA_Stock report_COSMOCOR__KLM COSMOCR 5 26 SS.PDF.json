@@ -1,0 +1,18 @@
+{
+  "file": "COSMOCOR__KLM COSMOCR 5 26 SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_open_pur_sale_amt",
+  "product_count": 23,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niofine Tablet 1*7 Tablets"
+  ],
+  "closing_stock_total": 566.0,
+  "rate_total": 0.0
+}

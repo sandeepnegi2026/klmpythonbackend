@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE  JUNE-2026.XLS",
+  "route": "party_xlsx",
+  "row_count": 247,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 83,
+  "area_count": 18,
+  "product_count": 70,
+  "sample_parties": [
+    "AAROGYA MEDICOSE",
+    "AGGARWAL MEDICOSE",
+    "AHUJA MEDICOSE.",
+    "AMBIKA MEDICOSE",
+    "ARORA PHARMACY"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 1642.0,
+  "amount_total": 282094.4,
+  "rate_total": 43360.66,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

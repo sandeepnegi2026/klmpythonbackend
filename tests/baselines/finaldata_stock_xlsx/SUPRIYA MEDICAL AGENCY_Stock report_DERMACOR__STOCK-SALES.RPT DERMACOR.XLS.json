@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__STOCK-SALES.RPT DERMACOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_stock",
+  "product_count": 29,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets"
+  ],
+  "closing_stock_total": 693.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

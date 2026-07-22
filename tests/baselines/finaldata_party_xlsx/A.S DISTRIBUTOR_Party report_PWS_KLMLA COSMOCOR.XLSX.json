@@ -1,0 +1,30 @@
+{
+  "file": "PWS_KLMLA COSMOCOR.XLSX",
+  "route": "party_xlsx",
+  "row_count": 125,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 102,
+  "area_count": 102,
+  "product_count": 27,
+  "sample_parties": [
+    "ADINATH AGENCY",
+    "ADITI PHARMACY",
+    "BHAGWANT MEDICAL",
+    "BHAGYALAXMI CHEMIST AND DRUGGI",
+    "BHARAT MEDICAL"
+  ],
+  "sample_products": [
+    "Episert Cream 10 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "qty_total": 328.0,
+  "amount_total": 46279.78,
+  "rate_total": 21593.57,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

@@ -1,0 +1,19 @@
+{
+  "file": "klm derma.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 16,
+  "detected_format": "tabular",
+  "product_count": 6,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Extend Total 1*15 Tab",
+    "Kenz Soap",
+    "Klm Klin Face Wash 100 Ml",
+    "NEVLON-SOFT CREAM"
+  ],
+  "closing_stock_total": 33.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

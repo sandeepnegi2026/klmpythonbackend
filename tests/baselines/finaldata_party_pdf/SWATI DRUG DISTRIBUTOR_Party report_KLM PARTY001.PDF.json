@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY001.PDF",
+  "route": "party_pdf",
+  "row_count": 62,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 23,
+  "area_count": 7,
+  "product_count": 24,
+  "sample_parties": [
+    "AM-ARIHANT MEDICAL&GENERAL STORE",
+    "AN023-ANMOL MEDICAL STORE",
+    "AN030-ANSH MEDICAL & GENARAL STORE",
+    "BM01-BHARTI MEDICAL STORE",
+    "DBAMG-ASHOK MEDICAL & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Episert Cream 30 Gm",
+    "Extend Hair Tablet",
+    "Imxia 5",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 275.0,
+  "amount_total": 42595.93,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

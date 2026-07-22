@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA PARTY STATEMENT 05 26.pdf",
+  "route": "party_pdf",
+  "row_count": 118,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "sri_shiv_shakti_company_sales_statement",
+  "party_count": 38,
+  "area_count": 0,
+  "product_count": 16,
+  "sample_parties": [
+    "AADARSH PHARMACEUTICALS",
+    "DR.AJIT KUMAR",
+    "DR.AMBUJ SINGH",
+    "DR.AMIT BHASKER",
+    "DR.AMIT KUMAR GUPTA"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 1898.0,
+  "amount_total": 215260.47,
+  "rate_total": 16119.75,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "SHREE BALAJI PHARMA PARTYWISE MAY 26.xls",
+  "route": "party_xlsx",
+  "row_count": 81,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 39,
+  "area_count": 5,
+  "product_count": 46,
+  "sample_parties": [
+    "ABHINANDAN PHARMACY",
+    "ANAND MEDICAL CENTRE",
+    "BHARAT MEDICOSE",
+    "CHOUHAN MEDICOSE",
+    "DELHI PHARMACY"
+  ],
+  "sample_products": [
+    "CREAM NEVLON MOIST",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 695.5,
+  "amount_total": 102891.8,
+  "rate_total": 21153.26,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

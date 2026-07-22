@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__KLM DERMA STATEMENT.xls",
+  "route": "stock_xlsx",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "r15_klm_ss_pfree_purret_marapr_curstk_xls",
+  "product_count": 36,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm"
+  ],
+  "closing_stock_total": 431.0,
+  "rate_total": 7446.73,
+  "line_unexplained": 4
+}

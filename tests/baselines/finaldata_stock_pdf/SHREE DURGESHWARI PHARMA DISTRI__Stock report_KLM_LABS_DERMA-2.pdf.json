@@ -1,0 +1,18 @@
+{
+  "file": "KLM_LABS_DERMA-2.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_ss_statement_receive_close",
+  "product_count": 27,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Extend Total 1*15 Tab",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 593.0,
+  "rate_total": 4384.53
+}

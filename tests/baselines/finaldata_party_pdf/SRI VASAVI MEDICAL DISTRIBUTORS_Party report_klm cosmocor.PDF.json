@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmocor.PDF",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_company_customer_invoice",
+  "party_count": 16,
+  "area_count": 13,
+  "product_count": 15,
+  "sample_parties": [
+    "ANAND MEDICALS",
+    "MAATRAA PHARMACY",
+    "MAATRAA PHARMACY (TWO)",
+    "MAHESH ROYAL PHARMACY",
+    "MYRA PHARMACY"
+  ],
+  "sample_products": [
+    "Melboost Solution 2Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niogenta F Cream 20 Gm"
+  ],
+  "qty_total": 210.0,
+  "amount_total": 33794.63,
+  "rate_total": 5259.5,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

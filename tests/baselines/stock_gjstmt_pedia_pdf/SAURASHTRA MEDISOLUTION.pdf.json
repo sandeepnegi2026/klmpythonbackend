@@ -1,0 +1,18 @@
+{
+  "file": "SAURASHTRA MEDISOLUTION.pdf",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 11,
+  "headers_detected_count": 16,
+  "detected_format": "saurashtra_ss_report",
+  "product_count": 22,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klm D3 Nano Drops"
+  ],
+  "closing_stock_total": 546.0,
+  "rate_total": 2552.45
+}

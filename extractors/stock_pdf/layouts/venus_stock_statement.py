@@ -16,7 +16,7 @@ def parse_venus_stock_statement(text):
         s = line.strip()
         if _skip_line(s):
             continue
-        if re.match(r"^KLM\s", s, re.I):
+        if re.match(r"^KLM\s+LAB", s, re.I):
             division = re.sub(r"\s+X[A-Z]\d+$", "", s).strip()
             continue
         if re.match(

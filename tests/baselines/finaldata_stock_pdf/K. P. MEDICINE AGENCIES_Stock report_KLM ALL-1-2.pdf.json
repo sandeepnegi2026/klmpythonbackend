@@ -1,0 +1,18 @@
+{
+  "file": "KLM ALL-1-2.pdf",
+  "route": "stock_pdf",
+  "row_count": 138,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_movement_detail_sparse",
+  "product_count": 133,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "closing_stock_total": 2111.0,
+  "rate_total": 31848.65
+}

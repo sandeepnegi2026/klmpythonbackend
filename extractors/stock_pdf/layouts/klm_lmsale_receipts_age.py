@@ -109,8 +109,20 @@ def parse_klm_lmsale_receipts_age(text):
             continue
 
         lead, vals = _peel_tail(s)
-        if len(vals) != 8:
+        if len(vals) < 8:
             continue
+        # A bare numeric name/pack unit ("... TAB 10", "... 100", "... -625")
+        # gets peeled into the tail, giving 9+ numbers. The 8 fixed stat cells
+        # always sit at the RIGHT, so anchor from the end and fold any leading
+        # surplus back onto the product text (keeps the fixed index mapping and
+        # the CODE peel intact). Real total/subtotal/value-Rs. band lines are
+        # already dropped upstream by _skip_line / the 'value rs.' guard.
+        if len(vals) > 8:
+            surplus = vals[:-8]
+            vals = vals[-8:]
+            lead = (lead + " " + " ".join(
+                str(int(v)) if float(v).is_integer() else str(v) for v in surplus
+            )).strip()
         lead = lead.strip()
         if not lead:
             continue

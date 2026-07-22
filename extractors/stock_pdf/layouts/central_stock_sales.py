@@ -25,7 +25,11 @@ import re
 # suffices — no positional parsing needed.
 # ---------------------------------------------------------------------------
 
-_NUMTOK = re.compile(r'^\d[\d,]*(?:\.\d+)?$')
+# Cells are zero-printed and comma-grouped ("10,642.92"); the signed Adj.Qty cell
+# ([8]) may be NEGATIVE ("-5"), so the token walk MUST accept a leading '-' — else
+# the walk halts at the Adj cell, collects <14 vals, and the whole product row is
+# dropped (SUNANDA/TELLY: rows with a -ve Adj were silently lost).
+_NUMTOK = re.compile(r'^-?\d[\d,]*(?:\.\d+)?$')
 _SLNO = re.compile(r'^(\d+)\s+(.+)$')
 
 

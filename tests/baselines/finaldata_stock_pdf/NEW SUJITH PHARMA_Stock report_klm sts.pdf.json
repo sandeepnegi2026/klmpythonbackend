@@ -1,0 +1,18 @@
+{
+  "file": "klm sts.pdf",
+  "route": "stock_pdf",
+  "row_count": 147,
+  "warnings_count": 2,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 146,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 969.0,
+  "rate_total": 0.0
+}

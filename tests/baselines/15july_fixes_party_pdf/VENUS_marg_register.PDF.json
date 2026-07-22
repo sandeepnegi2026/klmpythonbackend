@@ -1,17 +1,17 @@
 {
   "file": "VENUS_marg_register.PDF",
   "route": "party_pdf",
-  "row_count": 1682,
+  "row_count": 2063,
   "warnings_count": 0,
   "headers_detected_count": 12,
   "detected_format": "marg_register",
-  "party_count": 332,
-  "area_count": 323,
-  "product_count": 206,
+  "party_count": 371,
+  "area_count": 373,
+  "product_count": 233,
   "sample_parties": [
-    "37",
     "AADITYA PHARMACY (VASNA)",
     "AAGAM MEDICAL STORE (NARANPURA)",
+    "AAKASH MEDICARE (GOTA)",
     "AAKASH MEDICINES (VASTRAPUR)",
     "AAMIR MEDICAL (JAMALPUR)"
   ],
@@ -22,8 +22,9 @@
     "Blemguard-Tx Face Serum 30Ml",
     "Canrolfin Cream 30 Gm"
   ],
-  "qty_total": 20037.0,
-  "amount_total": 3149111.3,
+  "qty_total": 23180.0,
+  "amount_total": 3784875.61,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
 }

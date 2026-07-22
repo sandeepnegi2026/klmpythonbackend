@@ -1,0 +1,19 @@
+{
+  "file": "report.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 192,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "raja_stock_oric_analysis",
+  "product_count": 162,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CANROLFINE 30GR CREAM",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 3187.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

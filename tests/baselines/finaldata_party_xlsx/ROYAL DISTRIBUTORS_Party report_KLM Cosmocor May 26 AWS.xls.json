@@ -1,0 +1,30 @@
+{
+  "file": "KLM Cosmocor May 26 AWS.xls",
+  "route": "party_xlsx",
+  "row_count": 136,
+  "warnings_count": 0,
+  "headers_detected_count": 29,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 78,
+  "area_count": 25,
+  "product_count": 29,
+  "sample_parties": [
+    "AMBIKA MEDICAL PHARMA AND SUPER STORES",
+    "AMBIKA MEDICO & GENERAL STORES",
+    "AMRUT MEDICAL AND GENERAL STORES",
+    "APANA MEDICAL STORE",
+    "BHARAT MEDICO"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm"
+  ],
+  "qty_total": 314.0,
+  "amount_total": 45689.78,
+  "rate_total": 20394.01,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

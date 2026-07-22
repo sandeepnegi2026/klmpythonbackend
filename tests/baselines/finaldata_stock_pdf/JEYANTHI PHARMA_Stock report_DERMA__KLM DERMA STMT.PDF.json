@@ -1,0 +1,18 @@
+{
+  "file": "DERMA__KLM DERMA STMT.PDF",
+  "route": "stock_pdf",
+  "row_count": 26,
+  "warnings_count": 1,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_repq",
+  "product_count": 24,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Episert Cream 20 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 1546.0,
+  "rate_total": 0.0
+}

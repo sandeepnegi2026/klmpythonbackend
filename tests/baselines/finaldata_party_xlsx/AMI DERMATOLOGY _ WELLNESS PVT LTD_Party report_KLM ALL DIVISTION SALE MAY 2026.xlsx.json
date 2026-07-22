@@ -1,0 +1,30 @@
+{
+  "file": "KLM ALL DIVISTION SALE MAY 2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 2694,
+  "warnings_count": 0,
+  "headers_detected_count": 18,
+  "detected_format": "customer_product_wise_band",
+  "party_count": 455,
+  "area_count": 167,
+  "product_count": 244,
+  "sample_parties": [
+    "A STAR CHEMIST MEDICAL",
+    "A-ONE CHEMIST & GENERAL STORE",
+    "AADHAR MEDICAL & GEN STORE",
+    "AADI MEDICAL AND GENERAL STORES",
+    "AAI MEDICAL & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "qty_total": 31219.0,
+  "amount_total": 5233568.03,
+  "rate_total": 607462.43,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

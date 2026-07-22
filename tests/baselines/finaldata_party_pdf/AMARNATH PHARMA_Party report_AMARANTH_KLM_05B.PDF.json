@@ -1,0 +1,30 @@
+{
+  "file": "AMARANTH_KLM_05B.PDF",
+  "route": "party_pdf",
+  "row_count": 115,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 31,
+  "area_count": 2,
+  "product_count": 37,
+  "sample_parties": [
+    "0419-VINAYAK MEDICAL STORE",
+    "0441-LAXMI MEDICAL & GEN.STORE(S)",
+    "0588-VANDANA MEDICAL STORE",
+    "0589-NAHAR MEDICAL STORE .",
+    "0688-SHUBHAM MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 825.0,
+  "amount_total": 146234.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

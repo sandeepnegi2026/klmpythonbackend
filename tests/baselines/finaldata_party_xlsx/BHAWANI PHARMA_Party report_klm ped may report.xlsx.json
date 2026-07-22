@@ -1,0 +1,30 @@
+{
+  "file": "klm ped may report.xlsx",
+  "route": "party_xlsx",
+  "row_count": 91,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 32,
+  "area_count": 13,
+  "product_count": 29,
+  "sample_parties": [
+    "Abhitesh Health & Wellness",
+    "Arunya Medical Bemetra",
+    "BHARAT MEDICOSE",
+    "Balaji Medical Sec 10",
+    "Colors Pharmacy"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Fentispor Capsule"
+  ],
+  "qty_total": 738.0,
+  "amount_total": 108095.99,
+  "rate_total": 14148.86,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

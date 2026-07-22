@@ -1,0 +1,26 @@
+{
+  "file": "KLM DERMA MAY PARTY WISE.pdf",
+  "route": "party_pdf",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 3,
+  "sample_parties": [
+    "MINHAZ MEDICAL AND GENERA",
+    "SRI RAMA SHIVA MEDICALS",
+    "SRI SAI MADHURI MEDICALS"
+  ],
+  "sample_products": [
+    "Onitraz Sb 130",
+    "Sudif Cream 10 Gm",
+    "Zoritraz Forte Capsule 1*10 Cap"
+  ],
+  "qty_total": 9.0,
+  "amount_total": 1508.25,
+  "rate_total": 612.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

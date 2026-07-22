@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO Q May 26 AWS.xls",
+  "route": "party_xlsx",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 29,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 19,
+  "area_count": 12,
+  "product_count": 10,
+  "sample_parties": [
+    "AAIJI MEDICAL & GENERAL STORE",
+    "AMRUT MEDICAL AND GENERAL STORES",
+    "GIRIRAJ MEDICAL LLP",
+    "HARI OM WELLNESS MEDICAL & GENERAL STORES",
+    "MADINA MEDICAL GENERAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 47.0,
+  "amount_total": 17280.41,
+  "rate_total": 10846.78,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

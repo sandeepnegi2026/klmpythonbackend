@@ -1,0 +1,18 @@
+{
+  "file": "KLM PEDIA.PDF",
+  "route": "stock_pdf",
+  "row_count": 20,
+  "warnings_count": 2,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_month_urate",
+  "product_count": 20,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Histabil-M Suspension 60Ml",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 733.0,
+  "rate_total": 2764.0
+}

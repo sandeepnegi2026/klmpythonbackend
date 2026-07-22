@@ -1,0 +1,30 @@
+{
+  "file": "KLM NEW ALL.XLS",
+  "route": "party_xlsx",
+  "row_count": 60,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 26,
+  "area_count": 11,
+  "product_count": 28,
+  "sample_parties": [
+    "ABHISHEK MEMORIAL MEDICOSE",
+    "ALL WEEL MEDICOS",
+    "ANIL MEDICOS",
+    "AROGYA PHARMACY",
+    "BHUTANI MEDICAL HALL..."
+  ],
+  "sample_products": [
+    "CORTICO MF OINT",
+    "Cetalore Tablets 1*10 Tablets",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "qty_total": 736.33,
+  "amount_total": 84000.99,
+  "rate_total": 7388.09,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

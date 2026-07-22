@@ -1,0 +1,30 @@
+{
+  "file": "PARTYWISE SALE MAY 2026.XLS",
+  "route": "party_xlsx",
+  "row_count": 263,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 63,
+  "area_count": 0,
+  "product_count": 96,
+  "sample_parties": [
+    "ABEEHA MEDICAL STORE",
+    "ADHIKARI MEDICAL STORE (MAU)",
+    "AGRAWAL MEDICAL STOR",
+    "AMOLIK MEDICAL STORE",
+    "ANANT MEDICOSE GENERAL STORE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 1962.0,
+  "amount_total": 398569.6,
+  "rate_total": 63109.4,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

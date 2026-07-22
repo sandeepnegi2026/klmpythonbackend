@@ -1,0 +1,18 @@
+{
+  "file": "jun-26 klm stetment pdf 01-07.PDF",
+  "route": "stock_pdf",
+  "row_count": 197,
+  "warnings_count": 5,
+  "headers_detected_count": 13,
+  "detected_format": "stock_sale_stmt_stkad",
+  "product_count": 183,
+  "sample_products": [
+    "105,106,109,110,ANAND",
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml"
+  ],
+  "closing_stock_total": 8461.0,
+  "rate_total": 0.0
+}

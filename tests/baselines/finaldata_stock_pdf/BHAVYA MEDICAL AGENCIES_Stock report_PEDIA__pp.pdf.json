@@ -1,0 +1,18 @@
+{
+  "file": "PEDIA__pp.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "bhavya_open_recv_issue_close_value",
+  "product_count": 7,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Kofcatch Ls 100Ml Junior",
+    "Mupisoft Ointment 5 Gm",
+    "Sofibar Syndet Bar"
+  ],
+  "closing_stock_total": 137.0,
+  "rate_total": 0.0
+}

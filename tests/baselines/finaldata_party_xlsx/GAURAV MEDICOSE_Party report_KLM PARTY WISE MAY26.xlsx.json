@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE MAY26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 55,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "tabular",
+  "party_count": 18,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "ARM PHARMACY             ,C.DADRI",
+    "CENTRAL PHARMACY(SHHEF)  ,BHIWANI",
+    "DERMA MEDISALES          ,BHIWANI",
+    "DR.ROHIT KAUSHIK         ,BHIWANI",
+    "DR.SUNIL                 ,DIGHAWA"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Fentispor Capsule",
+    "Klclav Ds",
+    "Klm Fx 120 Tablet"
+  ],
+  "qty_total": 506.0,
+  "amount_total": 73980.32,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

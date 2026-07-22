@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY.XLSX",
+  "route": "party_xlsx",
+  "row_count": 330,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "tabular",
+  "party_count": 53,
+  "area_count": 17,
+  "product_count": 119,
+  "sample_parties": [
+    "*ABHISHIR MEDICAL STORES - YOGAPUR",
+    "BALAGAR MEDICAL STORES - TALIKOTI",
+    "DEEPAK MEDICAL STORES - VIJAYAPUR",
+    "DELUX MEDICAL STORES - JAMAKHANDI",
+    "DR.A.M.PATHAN - VIJAYAPUR"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 3835.0,
+  "amount_total": 658109.44,
+  "rate_total": 65651.02,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

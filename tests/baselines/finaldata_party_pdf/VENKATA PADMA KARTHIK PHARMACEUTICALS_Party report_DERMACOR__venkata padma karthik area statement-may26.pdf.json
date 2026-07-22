@@ -1,0 +1,26 @@
+{
+  "file": "DERMACOR__venkata padma karthik area statement-may26.pdf",
+  "route": "party_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 7,
+  "sample_parties": [
+    "SRI VENKATA SAI MEDICALS & GEN"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Soap",
+    "Klm Klin Aha Face Wash 50Ml",
+    "Klm Klin Face Wash 50Ml"
+  ],
+  "qty_total": 210.0,
+  "amount_total": 34566.1,
+  "rate_total": 1180.9,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

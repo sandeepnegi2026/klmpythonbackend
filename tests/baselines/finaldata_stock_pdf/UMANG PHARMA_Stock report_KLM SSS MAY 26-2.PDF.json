@@ -1,0 +1,18 @@
+{
+  "file": "KLM SSS MAY 26-2.PDF",
+  "route": "stock_pdf",
+  "row_count": 208,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 195,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 3037.0,
+  "rate_total": 0.0
+}

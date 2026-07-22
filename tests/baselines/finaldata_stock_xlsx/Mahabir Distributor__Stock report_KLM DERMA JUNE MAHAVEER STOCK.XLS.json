@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA JUNE MAHAVEER STOCK.XLS",
+  "route": "stock_xlsx",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 6,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Lotion 100Ml",
+    "Onitraz Capsules 1*10 Capsules",
+    "Onitraz Forte Capsules 1*10 Capsules"
+  ],
+  "closing_stock_total": 322.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

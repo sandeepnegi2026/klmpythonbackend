@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY EXL.xlsx",
+  "route": "party_xlsx",
+  "row_count": 378,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 72,
+  "area_count": 1,
+  "product_count": 100,
+  "sample_parties": [
+    "A.R.MEDICAL STORE",
+    "AALAM MEDICAL STORE",
+    "ADARSH MEDICAL STORE",
+    "ADI YOGI MEDICALS",
+    "AJAY MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "qty_total": 4921.0,
+  "amount_total": 596845.45,
+  "rate_total": 61600.05,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

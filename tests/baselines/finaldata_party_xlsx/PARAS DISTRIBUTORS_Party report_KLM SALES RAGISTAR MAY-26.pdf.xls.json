@@ -1,0 +1,30 @@
+{
+  "file": "KLM SALES RAGISTAR MAY-26.pdf.xls",
+  "route": "party_xlsx",
+  "row_count": 84,
+  "warnings_count": 0,
+  "headers_detected_count": 3,
+  "detected_format": "company_customer_monthwise_sales",
+  "party_count": 51,
+  "area_count": 4,
+  "product_count": 49,
+  "sample_parties": [
+    "AASHWI PHARMACY",
+    "ACME PHARMACY",
+    "ANAR MEDICAL STORES",
+    "APOLLO PHARMACIES LIMITED",
+    "ARBUDA MEDICAL AND COSMETICS"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 368.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

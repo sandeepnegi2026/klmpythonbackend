@@ -1,0 +1,18 @@
+{
+  "file": "JUNE 26 KLM DERMA  S_S.pdf",
+  "route": "stock_pdf",
+  "row_count": 44,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_ss_statement_detailed",
+  "product_count": 44,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Dektop Lotion 50Ml",
+    "Eberfine Cream 30 Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Episert Cream 30 Gm"
+  ],
+  "closing_stock_total": 19.0,
+  "rate_total": 0.0
+}

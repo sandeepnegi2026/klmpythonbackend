@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmocor-aw may 26.pdf",
+  "route": "party_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 8,
+  "area_count": 8,
+  "product_count": 5,
+  "sample_parties": [
+    "ALPHA MEDICALS",
+    "CHANDINI MEDICALS",
+    "DR.PREM NARAYANAN",
+    "EPICORIUM CLINIC",
+    "M G MEDICALS-CHE"
+  ],
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Niosol Ointment 30 Gm",
+    "Zydip Lotion 100Ml",
+    "Zydip Lotion 50 Ml",
+    "Zydip-C Lotion 30 Ml"
+  ],
+  "qty_total": 41.0,
+  "amount_total": 6101.43,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

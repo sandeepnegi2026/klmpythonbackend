@@ -1,0 +1,30 @@
+{
+  "file": "PEDI _ GYNAC PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 81,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 28,
+  "area_count": 0,
+  "product_count": 25,
+  "sample_parties": [
+    "AMBOLI MAULI MEDICAL",
+    "ARPAN MEDICAL STORES",
+    "BABA MED. STORE",
+    "BANDA SAI MAULI MEDICAL STORES",
+    "BHEDSHI VISHWA MANGALYA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash"
+  ],
+  "qty_total": 439.0,
+  "amount_total": 53856.59,
+  "rate_total": 11560.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

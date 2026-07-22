@@ -1,0 +1,18 @@
+{
+  "file": "CHIRAG PHARMA AGENCY.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 10,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 75.0,
+  "rate_total": 0.0
+}

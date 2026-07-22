@@ -1,0 +1,30 @@
+{
+  "file": "KLM Derma May 26 AWS.xls",
+  "route": "party_xlsx",
+  "row_count": 94,
+  "warnings_count": 0,
+  "headers_detected_count": 29,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 57,
+  "area_count": 25,
+  "product_count": 25,
+  "sample_parties": [
+    "ADARSH CHEMIST",
+    "AL-HUDA MEDICAL",
+    "ANMOL CHEMIST..",
+    "APPLE  CHEMIST AND DRUGGIST",
+    "AVS MEDICAL & GEN STORE"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "NEVLON MOISTURIZING SOAP",
+    "Nevlon Acne Soap 75Gm"
+  ],
+  "qty_total": 225.0,
+  "amount_total": 35820.42,
+  "rate_total": 17190.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

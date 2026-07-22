@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY SALE MAY 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 328,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "item_item_sales_summary",
+  "party_count": 102,
+  "area_count": 0,
+  "product_count": 87,
+  "sample_parties": [
+    "AAI-JI MEDICOSE",
+    "AAIJEE MEDICAL STORE",
+    "ADARSH MEDICAL STORE",
+    "ASHOK MEDICAL & GEN.STORE",
+    "ASHOK MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 1518.0,
+  "amount_total": 269675.42,
+  "rate_total": 63776.45,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

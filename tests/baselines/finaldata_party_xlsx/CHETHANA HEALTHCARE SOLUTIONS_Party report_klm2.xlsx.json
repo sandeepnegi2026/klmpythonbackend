@@ -1,0 +1,30 @@
+{
+  "file": "klm2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 99,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_party_billwise",
+  "party_count": 54,
+  "area_count": 13,
+  "product_count": 39,
+  "sample_parties": [
+    "ADARSH  MEDICAL  HALL",
+    "AISHWARYA MEDICAL& GENERA",
+    "AMBIKA MEDICAL AND GENERA",
+    "ANAND MEDICAL HALL",
+    "ANKITA MEDICAL & GENERAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 285.0,
+  "amount_total": 46269.17,
+  "rate_total": 17610.18,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

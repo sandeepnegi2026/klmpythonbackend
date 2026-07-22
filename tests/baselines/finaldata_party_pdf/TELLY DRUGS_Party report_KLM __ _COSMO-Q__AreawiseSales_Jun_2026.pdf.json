@@ -1,0 +1,28 @@
+{
+  "file": "KLM __ _COSMO-Q__AreawiseSales_Jun_2026.pdf",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "areawise_sales_statement_banded",
+  "party_count": 4,
+  "area_count": 3,
+  "product_count": 4,
+  "sample_parties": [
+    "DAYA MEDICALS (NEW) (WHOLE SALE)",
+    "KALYAN CLINIC",
+    "NEW LIFE PHARMA (NEW)",
+    "PP MEDICALS"
+  ],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm"
+  ],
+  "qty_total": 20.0,
+  "amount_total": 13292.68,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

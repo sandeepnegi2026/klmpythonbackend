@@ -1,0 +1,18 @@
+{
+  "file": "COSMOQ__STOCK _ SALES ANALSIS COSMOQ.PDF",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 11,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 74.0,
+  "rate_total": 4499.21
+}

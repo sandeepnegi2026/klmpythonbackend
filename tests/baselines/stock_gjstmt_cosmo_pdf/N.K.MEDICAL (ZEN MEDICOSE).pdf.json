@@ -1,0 +1,18 @@
+{
+  "file": "N.K.MEDICAL (ZEN MEDICOSE).pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 4,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 29,
+  "sample_products": [
+    "EKRAN AQUA SUNSCREEN GEL.",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 776.0,
+  "rate_total": 0.0
+}

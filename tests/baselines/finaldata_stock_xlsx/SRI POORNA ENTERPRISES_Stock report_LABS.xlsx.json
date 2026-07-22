@@ -1,0 +1,19 @@
+{
+  "file": "LABS.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "profit_maker",
+  "product_count": 21,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Extend Gold Soft Gelatin Capsules",
+    "Extend Total 1*15 Tab",
+    "Extend Vita Syrup 200Ml",
+    "Ga-12 Cream 30Gm"
+  ],
+  "closing_stock_total": 20.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

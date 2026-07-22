@@ -1,0 +1,18 @@
+{
+  "file": "KLM STATEMENT.pdf",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 22,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G",
+    "Eberfine Cream 30 Gm",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "closing_stock_total": 51.0,
+  "rate_total": 0.0
+}

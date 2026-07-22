@@ -1,0 +1,30 @@
+{
+  "file": "PARTY_KLM.pdf",
+  "route": "party_pdf",
+  "row_count": 1382,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 416,
+  "area_count": 42,
+  "product_count": 170,
+  "sample_parties": [
+    "24*7 PHARMACY (LIG)",
+    "A ONE MEDICAL STORE (SILAWAT)",
+    "A.V(AMEY VIKRAMA MEDICOSE)M.Y",
+    "AARYA JANAROGYAM (DRAVID NAGAR",
+    "AARYASH PHARMACY(OLD PALASIYA)"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "qty_total": 3813.4,
+  "amount_total": 578375.64,
+  "rate_total": 234247.37,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,19 @@
+{
+  "file": "COSMO CORE1.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_klm_ss_analysis_oic_dualclose_grid_xls",
+  "product_count": 12,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "KLM COSMO CORE DIVISION PAWAN",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm"
+  ],
+  "closing_stock_total": 1412.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

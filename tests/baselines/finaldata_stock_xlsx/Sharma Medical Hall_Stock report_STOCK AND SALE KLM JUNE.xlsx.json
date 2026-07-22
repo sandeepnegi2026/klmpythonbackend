@@ -1,0 +1,19 @@
+{
+  "file": "STOCK AND SALE KLM JUNE.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_stock_analysis_qv_dumpext",
+  "product_count": 30,
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "ECRAN SOFT SUNSCREEN GEL",
+    "Ekran Aqua Gel 100Gm",
+    "Extend Hair Tablet",
+    "Hbsalic Ointment 20Gm"
+  ],
+  "closing_stock_total": 1208.0,
+  "rate_total": 6903.24,
+  "line_unexplained": 1
+}

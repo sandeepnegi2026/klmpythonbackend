@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTYWISE MAHAVEER DISTRIBUTOR.xls",
+  "route": "party_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "item_vs_parties_scheme_register",
+  "party_count": 14,
+  "area_count": 5,
+  "product_count": 16,
+  "sample_parties": [
+    "AASTHA MEDICAL HALL",
+    "CLINIX PHARMA",
+    "GAYATRI PHARMACY",
+    "GOPESH MEDICOS",
+    "HARYANA MEDICAL HALL..."
+  ],
+  "sample_products": [
+    "Cosmoq Moisturizing Cream 50G",
+    "Eberfine Cream 30 Gm",
+    "GA-6 30 GRAM",
+    "Ga-12 Cream 30Gm",
+    "Kortuf-6"
+  ],
+  "qty_total": 526.93,
+  "amount_total": 96414.83,
+  "rate_total": 3729.6,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

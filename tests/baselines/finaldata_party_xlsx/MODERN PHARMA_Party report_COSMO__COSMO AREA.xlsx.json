@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__COSMO AREA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 56,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_wise_sale_list",
+  "party_count": 44,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "A.J.MEDICALS ANGADIKADAVU",
+    "ALINKEEL PHARMACY TALIPARAMBA",
+    "ANUSREE MEDICALS ANJARAKANDY",
+    "ARAFA MEDICALS TALIPARAMBA",
+    "ASHIRVAD MEDICALS TALIPARAMBA"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "qty_total": 164.0,
+  "amount_total": 48498.18,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

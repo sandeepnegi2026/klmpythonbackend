@@ -1,0 +1,30 @@
+{
+  "file": "REPORT 2.pdf",
+  "route": "party_pdf",
+  "row_count": 296,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 59,
+  "area_count": 0,
+  "product_count": 143,
+  "sample_parties": [
+    "A.B.CHEMIST AND DRUGGIST-SADAR",
+    "AARNA MEDICAL-NANDANWAN",
+    "AARUNYA MEDICAL STORE-SAONER",
+    "AARYA MEDICAL-HUDKESHWAR",
+    "ADHIRAJ MEDICAL STORES-JANKI NAGAR"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet"
+  ],
+  "qty_total": 4383.0,
+  "amount_total": 767968.62,
+  "rate_total": 66088.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,25 @@
+{
+  "file": "123-3.pdf",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_company_customer_invoice",
+  "party_count": 3,
+  "area_count": 2,
+  "product_count": 2,
+  "sample_parties": [
+    "ARUNA MEDICALS",
+    "INDIAN PHARMACY",
+    "SRI DHANALAKSHMI MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Kenz Sal Lotion 60 Ml",
+    "Nepatret Eye Drops"
+  ],
+  "qty_total": 29.0,
+  "amount_total": 4917.17,
+  "rate_total": 1802.86,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

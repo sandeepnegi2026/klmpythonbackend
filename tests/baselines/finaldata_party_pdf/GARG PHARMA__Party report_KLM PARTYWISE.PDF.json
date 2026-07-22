@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTYWISE.PDF",
+  "route": "party_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 21,
+  "area_count": 3,
+  "product_count": 29,
+  "sample_parties": [
+    "0039-BHAWANA MEDICAL STORE",
+    "0096-JAGDISH MEDICAL HALL",
+    "0281-VINAY MEDICAL CORNER",
+    "0307-MEDICURE",
+    "1324-KHANDELWAL PHARMACY"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 50Gm",
+    "Extend Capsules",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 166.0,
+  "amount_total": 28424.15,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

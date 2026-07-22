@@ -1,0 +1,29 @@
+{
+  "file": "klm areawise3.PDF",
+  "route": "party_pdf",
+  "row_count": 47,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "shivasakthi_areawise_billwise",
+  "party_count": 22,
+  "area_count": 15,
+  "product_count": 15,
+  "sample_parties": [
+    "ABS PHARMACY",
+    "ARC HOSPITAL PHARMACY.",
+    "ASSISI ARUL NILYAM HOSPIT",
+    "AVR MEDICALS",
+    "BARANI MEDICALS"
+  ],
+  "sample_products": [
+    "Kenz Lotion 60 Ml",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm"
+  ],
+  "qty_total": 292.0,
+  "amount_total": 48434.33,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

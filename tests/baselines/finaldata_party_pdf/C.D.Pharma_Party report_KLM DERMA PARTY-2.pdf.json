@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA PARTY-2.pdf",
+  "route": "party_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 20,
+  "area_count": 0,
+  "product_count": 18,
+  "sample_parties": [
+    "AASHRITHA MEDICALS",
+    "ARKA MEDICALS",
+    "C K PHARMA CARE",
+    "DR.G.ANUSHA",
+    "DR.M.N.SRAVANI MD(DVL), F"
+  ],
+  "sample_products": [
+    "HBSALIC CREAM",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 418.0,
+  "amount_total": 84455.45,
+  "rate_total": 9851.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM  PEDIA PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 157,
+  "warnings_count": 0,
+  "headers_detected_count": 26,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 72,
+  "area_count": 27,
+  "product_count": 20,
+  "sample_parties": [
+    "AAISAHEB MEDICAL DESHMUKHNAGAR",
+    "AARVI MEDICAL",
+    "ADINATH MEDICAL",
+    "ADITI MEDICAL WAI",
+    "ARADHYA MEDICAL WAI"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 593.0,
+  "amount_total": 65197.48,
+  "rate_total": 19938.76,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

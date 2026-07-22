@@ -1,0 +1,30 @@
+{
+  "file": "KLM-3.pdf",
+  "route": "party_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customerwise_itemwise_billwise",
+  "party_count": 10,
+  "area_count": 10,
+  "product_count": 6,
+  "sample_parties": [
+    "DERMAVUE SKIN HAIR&LASER INSTITUTE P.LTD",
+    "DR ANU KURIAN",
+    "DR SHAMMY DOUGLAS LAMBERT",
+    "DR.MANOJ K UNNITHAN",
+    "JANA HRIDHAYA MEDICALS"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "KERAMATE BLACK",
+    "KERAMATE BROWN"
+  ],
+  "qty_total": 88.0,
+  "amount_total": 67130.89,
+  "rate_total": 12661.56,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

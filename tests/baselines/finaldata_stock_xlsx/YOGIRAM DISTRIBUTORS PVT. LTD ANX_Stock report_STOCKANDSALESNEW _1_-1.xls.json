@@ -1,0 +1,19 @@
+{
+  "file": "STOCKANDSALESNEW _1_-1.xls",
+  "route": "stock_xlsx",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 16,
+  "detected_format": "klm_stock_and_sale",
+  "product_count": 28,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 422.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

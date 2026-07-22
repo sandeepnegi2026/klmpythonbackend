@@ -52,7 +52,7 @@ import re
 from extractors.stock_pdf.parse_common import _split_product_pack
 
 # a stat token: integer / decimal / signed, or a bare '-' zero placeholder.
-_STAT = re.compile(r"^-?\d+(?:\.\d+)?$|^-$")
+_STAT = re.compile(r"^-?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?$|^-?\d+(?:\.\d+)?$|^-$")
 # leading P.Code: a 3+ digit item code.
 _PCODE = re.compile(r"^\d{3,}$")
 

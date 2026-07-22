@@ -1,0 +1,30 @@
+{
+  "file": "KLM PAEDIATRIC AWRA WISE MAY-26.XLS",
+  "route": "party_xlsx",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 11,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "A-ONE MEDICAL & GENRAL STORE",
+    "ADARSH MEDICAL & GEN STORES (RAICHUR)",
+    "AGARWAL MEDICAL & GEN STORES (RAICHUR)",
+    "BHARATH MEDICAL & GEN STORE{MANVI}",
+    "DR SIDDALINGA REDDY AND OTHERS"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Klclav Ds",
+    "Sacctik Gg Sachets",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 299.0,
+  "amount_total": 29825.63,
+  "rate_total": 2870.11,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

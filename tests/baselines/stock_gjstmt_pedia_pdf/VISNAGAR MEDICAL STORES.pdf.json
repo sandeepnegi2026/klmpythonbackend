@@ -1,0 +1,18 @@
+{
+  "file": "VISNAGAR MEDICAL STORES.pdf",
+  "route": "stock_pdf",
+  "row_count": 40,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "stock_sale_stmt_stkad",
+  "product_count": 38,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash"
+  ],
+  "closing_stock_total": 1994.0,
+  "rate_total": 0.0
+}

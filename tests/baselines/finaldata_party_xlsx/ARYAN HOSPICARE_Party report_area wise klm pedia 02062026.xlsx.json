@@ -1,0 +1,30 @@
+{
+  "file": "area wise klm pedia 02062026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 69,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tabular",
+  "party_count": 17,
+  "area_count": 0,
+  "product_count": 30,
+  "sample_parties": [
+    "ARYAN HOSPICARE(PAREL VILLAGE)",
+    "DR. ASHA RAJADHYAKSHA",
+    "DR. ASHISH S. GURJAR",
+    "DR. FARIDA SHAIKH",
+    "DR. KAVITHA ASHOK GUDLA (GUDURI)"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol-D Capsules",
+    "Evaklin Medicated Wash",
+    "Extend D3 Capsules"
+  ],
+  "qty_total": 1718.0,
+  "amount_total": 175889.1,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

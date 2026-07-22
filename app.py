@@ -167,16 +167,25 @@ def _raw_headers(result, report_type):
 
 
 def _render_verdict(triage):
+    # 4-state display: the wire bucket stays GREEN/AMBER/RED, but AMBER splits on
+    # extraction_ok — True means the numbers are proven correct (they match the
+    # report's own printed totals) and only the vendor's data doesn't add up;
+    # None means correctness could not be auto-confirmed (YELLOW, needs a check).
     bucket = triage.get("bucket", "?")
     code = triage.get("reason_code", "")
     reason = triage.get("reason", "")
-    text = f"**{bucket} — `{code}`**\n\n{reason}"
+    ok = triage.get("extraction_ok")
     if bucket == "GREEN":
-        st.success(text)
+        st.success(f"🟢 **Correct**\n\n{reason}")
     elif bucket == "RED":
-        st.error(text)
+        st.error(f"🔴 **Not correct**\n\n{reason}")
+    elif bucket == "AMBER" and (ok is True or (ok is None and str(reason).startswith("Extraction is correct"))):
+        st.warning(f"🟠 **Correct — vendor data mismatch**\n\n{reason}")
+    elif bucket == "AMBER":
+        st.warning(f"🟡 **Needs a quick check**\n\n{reason}")
     else:
-        st.warning(text)
+        st.warning(f"**{bucket}**\n\n{reason}")
+    st.caption(f"technical: `{bucket} · {code}`")
 
 
 def _render_header_mapping(result, report_type, checks, raw_headers):

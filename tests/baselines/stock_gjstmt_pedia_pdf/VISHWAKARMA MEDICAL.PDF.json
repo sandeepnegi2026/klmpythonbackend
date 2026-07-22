@@ -1,0 +1,18 @@
+{
+  "file": "VISHWAKARMA MEDICAL.PDF",
+  "route": "stock_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_stock_analysis_full",
+  "product_count": 24,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Histabil Oral Solution",
+    "Humisoft Soap",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 392.0,
+  "rate_total": 0.0
+}

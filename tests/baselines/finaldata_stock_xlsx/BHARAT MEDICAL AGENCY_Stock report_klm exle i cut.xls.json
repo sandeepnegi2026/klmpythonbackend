@@ -1,0 +1,19 @@
+{
+  "file": "klm exle i cut.xls",
+  "route": "stock_xlsx",
+  "row_count": 385,
+  "warnings_count": 51,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 99,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 63123.53,
+  "line_unexplained": 1
+}

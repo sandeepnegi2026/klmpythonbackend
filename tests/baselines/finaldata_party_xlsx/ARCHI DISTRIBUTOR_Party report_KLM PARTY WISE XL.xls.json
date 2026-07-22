@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE XL.xls",
+  "route": "party_xlsx",
+  "row_count": 263,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_party_banded",
+  "party_count": 131,
+  "area_count": 26,
+  "product_count": 83,
+  "sample_parties": [
+    "AAROGYA MED AND GENERAL STORE",
+    "AMAR MEDICAL STORE SATYANARAYAN",
+    "AMRUT MEDICAL STORE PALSANA",
+    "ANAND MEDICAL",
+    "APPLE MEDICAL VALSAD"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 987.0,
+  "amount_total": 142823.0,
+  "rate_total": 38648.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

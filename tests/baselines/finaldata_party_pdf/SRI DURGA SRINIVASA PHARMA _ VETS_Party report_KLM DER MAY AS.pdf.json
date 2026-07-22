@@ -1,0 +1,30 @@
+{
+  "file": "KLM DER MAY AS.pdf",
+  "route": "party_pdf",
+  "row_count": 84,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_customer_company_product",
+  "party_count": 39,
+  "area_count": 13,
+  "product_count": 17,
+  "sample_parties": [
+    "AYYAPPA MEDICAL STORES(PT",
+    "AYYAPPA MEDICALS",
+    "DAY & NIGHT PHARMACY",
+    "DAYAL MEDICAL & GENERAL S",
+    "HEALTH CARE MEDICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "NEVLON MOIST SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml"
+  ],
+  "qty_total": 509.0,
+  "amount_total": 111248.39,
+  "rate_total": 20278.51,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

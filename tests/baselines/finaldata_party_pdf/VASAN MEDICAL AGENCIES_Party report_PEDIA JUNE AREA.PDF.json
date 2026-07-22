@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA JUNE AREA.PDF",
+  "route": "party_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "vasan_areawise_billwise",
+  "party_count": 5,
+  "area_count": 3,
+  "product_count": 6,
+  "sample_parties": [
+    "DR.KALAIVANI.,MD (DVL), DNB,",
+    "DR.KIRUTHIKA.,MBBS.,DDVL.,",
+    "DR.SATHEESH KUMAR,MD.,DVL.,",
+    "SKIN TRUST PHARMACY",
+    "SUGUNA MEDICALS & GENERALS"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Sofidew Cream 100Gm",
+    "Sofidew Resyl Lotion 50 Ml",
+    "Sofidew Shampoo 100Ml"
+  ],
+  "qty_total": 106.0,
+  "amount_total": 17426.86,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

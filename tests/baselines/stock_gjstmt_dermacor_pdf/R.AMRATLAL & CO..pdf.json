@@ -1,0 +1,18 @@
+{
+  "file": "R.AMRATLAL & CO..pdf",
+  "route": "stock_pdf",
+  "row_count": 191,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_movement_detail",
+  "product_count": 172,
+  "sample_products": [
+    "05408 ZYDIP 50ML LOTION",
+    "05409 ZYDIP C 20GM CREAM",
+    "05410 ZYDIP C 30ML LOTION",
+    "05411 KENZ 60ML LOTION",
+    "05413 NEVLON 50GM CREAM"
+  ],
+  "closing_stock_total": 744.0,
+  "rate_total": 0.0
+}

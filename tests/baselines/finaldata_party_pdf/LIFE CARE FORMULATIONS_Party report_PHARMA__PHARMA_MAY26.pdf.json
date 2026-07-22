@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__PHARMA_MAY26.pdf",
+  "route": "party_pdf",
+  "row_count": 141,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customerwise_productwise",
+  "party_count": 63,
+  "area_count": 21,
+  "product_count": 31,
+  "sample_parties": [
+    "ARIHANT MEDICAL STORES",
+    "ASHAPURA MEDICAL & GENERAL STO",
+    "ASHIRVAD MEDICAL & GENERAL",
+    "ASHOK MEDICAL",
+    "ASHWINI MEDICO"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 30 Gm",
+    "Eberfine Lot 50Gm Tube",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 1097.0,
+  "amount_total": 164639.0,
+  "rate_total": 24566.57,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

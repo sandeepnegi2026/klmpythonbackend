@@ -1,0 +1,18 @@
+{
+  "file": "J.O.T. DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 15,
+  "headers_detected_count": 12,
+  "detected_format": "venus_stock_statement",
+  "product_count": 15,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Caloe Lotion 60Ml"
+  ],
+  "closing_stock_total": 28368.0,
+  "rate_total": 0.0
+}

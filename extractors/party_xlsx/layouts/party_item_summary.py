@@ -440,6 +440,24 @@ def parse_party_item_summary(rows):
                 split = _set_party(text)
                 if split is not None:
                     current_party, current_loc = split
+            elif (len(nums) == 2 and "free_qty" in cols and toks
+                  and toks[-1] == "-" and _is_num(toks[-2])
+                  and re.search(r"[A-Za-z]", " ".join(toks[:-2]))):
+                # Product line whose FREE column is a bare "-" (= 0) with no trailing
+                # "( % )": the dash halts the numeric pop, leaving only rate+amount
+                # (nums == 2) so the >=3 test missed and the row was swallowed as a
+                # party band. Reclaim it: qty = number just before the dash, free = 0,
+                # the two popped nums = rate, amount. A real party band never ends
+                # "<number> -" (its trailing MARG code leaves a letter token), so this
+                # additive branch cannot steal a band.
+                product = " ".join(toks[:-2]).strip()
+                if product and current_party:
+                    rec = {"party_name": current_party, "product_name": product,
+                           "qty": toks[-2].replace(",", ""), "free_qty": "0",
+                           "rate": nums[0].replace(",", ""), "amount": nums[1].replace(",", "")}
+                    if current_loc:
+                        rec["party_location"] = current_loc
+                    records.append(rec)
             elif toks and re.search(r"[A-Za-z]", " ".join(toks)):
                 # A party band whose name carries a trailing MARG party-code number
                 # (e.g. "AGRAWAL CHEMIST U N-INDORE 3", "ALSHIFA CHEMIST-INDORE 8"):

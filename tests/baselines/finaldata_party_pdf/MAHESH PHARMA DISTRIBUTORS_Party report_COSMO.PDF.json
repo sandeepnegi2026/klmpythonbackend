@@ -1,0 +1,29 @@
+{
+  "file": "COSMO.PDF",
+  "route": "party_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 12,
+  "area_count": 1,
+  "product_count": 4,
+  "sample_parties": [
+    "DR CHARU SINGH",
+    "DR GAURANG GUPTA",
+    "DR HARLEEN CHHCHI",
+    "DR KARAMVEER SINGH",
+    "DR PRANAY SINGH CHAKOTAI"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Imxia F",
+    "Kojitin Emulgel 15Gm"
+  ],
+  "qty_total": 462.0,
+  "amount_total": 103299.12,
+  "rate_total": 3036.06,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

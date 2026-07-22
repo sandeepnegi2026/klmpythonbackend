@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__CompaSal.Xls",
+  "route": "party_xlsx",
+  "row_count": 87,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 15,
+  "area_count": 4,
+  "product_count": 28,
+  "sample_parties": [
+    "ASHTAVINAYAK MEDICAL STORE",
+    "All Care Pharmacy",
+    "CHAUHAN MEDICOSE",
+    "Dr Mamta Mall",
+    "GAYATRI MEDICAL"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 762.0,
+  "amount_total": 102718.01,
+  "rate_total": 13332.89,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

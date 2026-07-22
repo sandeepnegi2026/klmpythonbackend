@@ -1,0 +1,18 @@
+{
+  "file": "KKLL.pdf",
+  "route": "stock_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 17,
+  "sample_products": [
+    "Klm D3 Nano Drops 30Ml",
+    "Sacctik Gg Sachets",
+    "Sacctik Plus 1*10 Bottle",
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Massage Oil 100Ml"
+  ],
+  "closing_stock_total": 513.0,
+  "rate_total": 0.0
+}

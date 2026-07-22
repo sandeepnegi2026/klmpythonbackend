@@ -1,0 +1,30 @@
+{
+  "file": "KLM ALL DIV PARTYWISE STATEMENT.pdf",
+  "route": "party_pdf",
+  "row_count": 139,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 38,
+  "area_count": 13,
+  "product_count": 89,
+  "sample_parties": [
+    "AAROGYAM PHARMACY",
+    "ADHIRA MEDICAL STORES",
+    "ADITYA MEDICAL & GEN STORES",
+    "ARIHANT MEICAL",
+    "BHAVNA PHARMACY AND WELLNESS"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 1743.0,
+  "amount_total": 309120.27,
+  "rate_total": 28923.97,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}
