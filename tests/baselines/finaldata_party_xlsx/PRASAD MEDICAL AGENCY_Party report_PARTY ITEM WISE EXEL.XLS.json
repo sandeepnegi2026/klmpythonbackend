@@ -1,0 +1,30 @@
+{
+  "file": "PARTY ITEM WISE EXEL.XLS",
+  "route": "party_xlsx",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 21,
+  "area_count": 0,
+  "product_count": 15,
+  "sample_parties": [
+    "AGARWAL MEDICAL STORE(PALIYA)",
+    "ASHA PHARMACY",
+    "ATUL MEDICAL STORE(PALIYA)",
+    "DASMESH MEDICAL STORE",
+    "DR.ABHISHEK AGARWAL"
+  ],
+  "sample_products": [
+    "Desosoft Lotion 30 Ml",
+    "K-Dox Capsules 1*10",
+    "Klm D3 Nano Drops",
+    "Klm D3 Nano Shots",
+    "Klmite Cream 60 Gm"
+  ],
+  "qty_total": 403.0,
+  "amount_total": 36331.94,
+  "rate_total": 2831.76,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "COSMOQ__KLM COSMOQ STMT.PDF",
+  "route": "stock_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_repq",
+  "product_count": 16,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 629.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

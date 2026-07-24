@@ -1,0 +1,29 @@
+{
+  "file": "DERMA__MSEL10.RPT DERMA PRTY.XLS",
+  "route": "party_xlsx",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 4,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "GANESH MEDICAL STORES",
+    "MANDAL PHARMACY & SURGICALS",
+    "ROYAL  MEDICAL STORES",
+    "SHRI SOPAMA MEDICAL AND AGENCY"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Mfsone Cream 30 Gm",
+    "NEVLON MOSIT CREEM SOAP",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Intense Moisturizing Lotion 150Ml"
+  ],
+  "qty_total": 86.0,
+  "amount_total": 14298.83,
+  "rate_total": 2570.33,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

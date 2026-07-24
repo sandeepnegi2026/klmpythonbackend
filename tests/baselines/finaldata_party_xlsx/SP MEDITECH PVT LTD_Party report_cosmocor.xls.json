@@ -1,0 +1,30 @@
+{
+  "file": "cosmocor.xls",
+  "route": "party_xlsx",
+  "row_count": 107,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 55,
+  "area_count": 18,
+  "product_count": 20,
+  "sample_parties": [
+    "ABIRAMI MEDICALS",
+    "AMBAL MEDICALS",
+    "APOLLO PHARMACY (UNIT OF APOLLO PHARMACIES LTD)",
+    "BAWAA MEDICALS",
+    "BCS PHARMA AND SURGICALS"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets"
+  ],
+  "qty_total": 450.0,
+  "amount_total": 61605.72,
+  "rate_total": 20042.51,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

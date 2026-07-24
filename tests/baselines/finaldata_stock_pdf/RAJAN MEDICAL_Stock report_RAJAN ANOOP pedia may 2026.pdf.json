@@ -1,0 +1,19 @@
+{
+  "file": "RAJAN ANOOP pedia may 2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 21,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Mupisoft Ointment 5 Gm",
+    "Normyo Tablets 1*10 Tab"
+  ],
+  "closing_stock_total": 368.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

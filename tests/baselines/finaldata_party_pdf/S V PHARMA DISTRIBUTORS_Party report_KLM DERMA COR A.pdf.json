@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA COR A.pdf",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 10,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "AMULYA MEDICALS",
+    "DEVI MEDICALS (GARIVIDI)",
+    "JOSHVIKA MEDICALS",
+    "MANASA MEDICALS & GENARAL",
+    "NEW SRINIVASA MEDICALS (V"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Eva Capsules",
+    "Extend Hair 1*30 Tablets",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "qty_total": 223.0,
+  "amount_total": 39765.05,
+  "rate_total": 6698.76,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

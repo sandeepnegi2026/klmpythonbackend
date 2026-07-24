@@ -1,0 +1,19 @@
+{
+  "file": "STOCK MAY 2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 102,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 102,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "closing_stock_total": 411.0,
+  "rate_total": 17372.31,
+  "line_unexplained": 0
+}

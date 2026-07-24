@@ -1,0 +1,28 @@
+{
+  "file": "AREA PEDIA.PDF",
+  "route": "party_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "sales_statement_summary_itemwise",
+  "party_count": 6,
+  "area_count": 0,
+  "product_count": 3,
+  "sample_parties": [
+    "BALAJI MEDICAL GENRAL STORES-A",
+    "MAMATHA MEDICAL STORES-YEMMIGA",
+    "MOHAN PHARMACY-KURNOOL",
+    "SATHEESH MEDICAL CENTER.-ADONI",
+    "SREE KARTHIKEYA MEDICALS-KURNO"
+  ],
+  "sample_products": [
+    "SOFIDEW BABY MOIST LOTION 100M",
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Massage Oil 100Ml"
+  ],
+  "qty_total": 21.0,
+  "amount_total": 2890.8,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

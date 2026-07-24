@@ -1,0 +1,19 @@
+{
+  "file": "sm dermacor.pdf",
+  "route": "stock_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "klm_received_issued",
+  "product_count": 9,
+  "sample_products": [
+    "Kenz Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Soap 75G",
+    "Lulizol Cream 30 Gm",
+    "Lulizol Xl Cream 50 Gm"
+  ],
+  "closing_stock_total": 100.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

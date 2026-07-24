@@ -1,0 +1,19 @@
+{
+  "file": "REPORT.PDF",
+  "route": "stock_pdf",
+  "row_count": 147,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 144,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet"
+  ],
+  "closing_stock_total": 2207.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

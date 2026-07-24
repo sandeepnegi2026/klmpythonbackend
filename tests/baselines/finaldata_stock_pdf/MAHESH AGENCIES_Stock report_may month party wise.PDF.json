@@ -1,0 +1,19 @@
+{
+  "file": "may month party wise.PDF",
+  "route": "stock_pdf",
+  "row_count": 173,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "stock_lstsl",
+  "product_count": 171,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 3446.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

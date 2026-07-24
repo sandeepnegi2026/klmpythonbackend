@@ -1,0 +1,25 @@
+{
+  "file": "klm order.xls",
+  "route": "party_xlsx",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "klm_order_form_xlsx",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 33,
+  "sample_parties": [
+    "PHARMA ASIA DISTRIBUTOR"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 455.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

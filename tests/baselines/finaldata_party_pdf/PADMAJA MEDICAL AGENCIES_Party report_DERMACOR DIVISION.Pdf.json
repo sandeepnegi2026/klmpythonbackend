@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR DIVISION.Pdf",
+  "route": "party_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 17,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "AMAR MEDICALS. City :RAJAHMUNDRY",
+    "ANITHA MEDICALS. City :RAJAHMUNDRY",
+    "CENTRAL MEDICAL STORES City :RAJAHMUNDRY",
+    "LORVEN PHARMACY City :RAJAHMUNDRY",
+    "M/S KAVITHA MEDICALS City :RAJAHMUNDRY"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Kenz Tablet 1*10 Tablets"
+  ],
+  "qty_total": 337.0,
+  "amount_total": 67798.69,
+  "rate_total": 10002.4,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

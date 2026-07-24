@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE.XLS",
+  "route": "party_xlsx",
+  "row_count": 68,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 10,
+  "area_count": 0,
+  "product_count": 50,
+  "sample_parties": [
+    "BALAJEE MEDICAL HALL",
+    "CITY PHARMA",
+    "KALYANI MEDICAL CENTRE",
+    "LAXMI S CLINIC",
+    "M.S PHARMA"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Folibild Tablets",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "qty_total": 1584.0,
+  "amount_total": 253269.99,
+  "rate_total": 12582.5,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

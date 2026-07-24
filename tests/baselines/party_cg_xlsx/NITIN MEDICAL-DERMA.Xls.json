@@ -7,7 +7,7 @@
   "detected_format": "tabular_party_product",
   "party_count": 47,
   "area_count": 27,
-  "product_count": 25,
+  "product_count": 26,
   "sample_parties": [
     "24x7 Medical Shop",
     "ANIKA TRADER",
@@ -25,5 +25,6 @@
   "qty_total": 319.0,
   "amount_total": 55437.39,
   "rate_total": 19548.2,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

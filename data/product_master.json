@@ -12,7 +12,6 @@
       "EKRAN (30-SILICONE)",
       "EKRAN - 30 SILICON",
       "EKRAN 30",
-      "EKRAN 30 GEL 50GM",
       "EKRAN 30 SILICON GEL 1*30GM",
       "EKRAN 30 SILICON S",
       "EKRAN 30 SILICON S 1*30GM",
@@ -55,9 +54,10 @@
     "pack": "50gm",
     "division": "COSMO",
     "synonyms": [
+      "EKRAN 30 GEL 50GM",
       "EKRAN 30 SILICON SUNSCREEN GE 50'GM",
-      "EKRAN 30 SILICON SUNSCREEN GEL 50GM",
-      "ekran 30 silicon sunscreen gel 50 gm"
+      "ekran 30 silicon sunscreen gel 50 gm",
+      "EKRAN 30 SILICON SUNSCREEN GEL 50GM"
     ]
   },
   {
@@ -201,6 +201,7 @@
       "EKRAN 50 SOFT SILICONE SUNSCREEN",
       "EKRAN SILICON SUNSCREEN GEL",
       "EKRAN SOFT  SILICON SUNSCREEN 50GM (CK0037)",
+      "EKRAN SOFT GEL",
       "EKRAN SOFT SALICON SUNSCREEN",
       "EKRAN SOFT SILI",
       "EKRAN SOFT SILICO",
@@ -827,7 +828,10 @@
     "canonical_name": "Klm-D3 60K Capsules (1*4Cap)",
     "pack": "1*4 Cap",
     "division": "COSMO",
-    "synonyms": []
+    "synonyms": [
+      "KLM D3 60K 1*4",
+      "KLM-D3 60K CAPSULES (1*4)"
+    ]
   },
   {
     "code": "D360K2",
@@ -837,17 +841,22 @@
     "synonyms": [
       "10408 KLM D3 60K CAPS",
       "KLM D3 60 K CAPS",
+      "KLM D3 60K",
       "KLM D3 60K CAP",
       "KLM D3 60K CAPS 1*8'S",
       "KLM D3 60K CAPSULE",
+      "KLM D3 60K SOFTGEL",
       "KLM D3 60K TAB",
       "KLM D360K CAPSULE 8",
       "KLM- D3 60K CAPSULES (1*8)",
       "KLM-D3 60000K CAP",
+      "KLM-D3 60K",
       "KLM-D3 60K 1*8 CAP",
       "KLM-D3 60K CAPS",
       "KLM-D3 60K CAPSULE(KLM",
       "KLM-D3 60K CAPSULES",
+      "KLM-D3 60K SOFTGEL",
+      "KLMD3 60K",
       "KLMD3 60K CAPSULES"
     ]
   },
@@ -1783,7 +1792,6 @@
     "division": "COSMOCOR",
     "synonyms": [
       "KLM NIOSOL - F",
-      "NIOSOL",
       "NIOSOL F",
       "NIOSOL F 20 GM",
       "NIOSOL F CR",
@@ -2215,40 +2223,43 @@
     "division": "COSMOCOR",
     "synonyms": [
       "KLM ZYDIP LOTION",
+      "ZYDIP 100 ML",
+      "ZYDIP 100ML",
       "ZYDIP LOCTION",
       "ZYDIP LOSTION",
       "ZYDIP LOT",
+      "Zydip Lot 100ml",
       "ZYDIP LOT 100ML 1PK",
       "ZYDIP LOT(NR)",
       "ZYDIP LOT.(100 ML.) 100 ML.",
       "ZYDIP LOT.100ML(KLM)",
       "ZYDIP LOTIN",
       "ZYDIP LOTION",
+      "Zydip Lotion (100ml)",
       "ZYDIP LOTION (B)",
       "ZYDIP LOTION (BIG)",
       "ZYDIP LOTION (S)",
       "ZYDIP LOTION (SMALL)",
       "ZYDIP LOTION 1*100ML",
       "ZYDIP LOTION 100 M",
+      "Zydip LOTION 100 ML",
       "ZYDIP LOTION 100 ML 1",
       "ZYDIP LOTION 100 ML-100ml",
       "ZYDIP LOTION 100L",
+      "Zydip Lotion 100m",
       "ZYDIP LOTION 100ML            1*100ML",
       "ZYDIP LOTION 100ML (CK0023)",
       "ZYDIP LOTION 100ML 100ML.",
       "ZYDIP LOTION 100ML BIG",
       "ZYDIP LOTION 100ML. 100 ML.",
       "ZYDIP LOTION100",
+      "Zydip Lotn 100ML",
       "ZYDIP LOTTON.100 ML",
       "ZYDIP LOYION",
+      "Zydip Solution 100ml",
+      "ZYDIP-100ML",
       "ZYDIP-LOTION(BIG)       100'ML",
-      "ZYDIP-LOTION-BIG * 100ML",
-      "Zydip LOTION 100 ML",
-      "Zydip Lot 100ml",
-      "Zydip Lotion (100ml)",
-      "Zydip Lotion 100m",
-      "Zydip Lotn 100ML",
-      "Zydip Solution 100ml"
+      "ZYDIP-LOTION-BIG * 100ML"
     ]
   },
   {
@@ -3625,8 +3636,11 @@
     "pack": "1*10 Cap",
     "division": "DERMA",
     "synonyms": [
+      "ONITRAZ FORTE 10'S",
       "ONITRAZ FORTE 10S",
-      "ONITRAZ FORTE 10'S"
+      "ONITRAZ FORTE TAB",
+      "ONITRAZ FORTE TAB.",
+      "ONITRAZ FORTE TABS"
     ]
   },
   {
@@ -5983,6 +5997,8 @@
       "17 KLM D3 NANO DROPS15",
       "I06263 KLM D3 NANO DROPS",
       "K.L.M D3 NANO DROPS",
+      "KLM D3 800 IU NANO DROPS",
+      "KLM D3 800IU NANO DROPS",
       "KLM D3 NANO DROAP",
       "KLM D3 NANO DROP",
       "KLM D3 NANO DROP (KLM P)",
@@ -7665,6 +7681,8 @@
       "KLM D3 NANO SHOTS 4*5ML",
       "KLM D3 NANO SHOTS 5ML",
       "KLM D3 NANO SHOTS m4X5ML",
+      "KLM D3 SHOT",
+      "KLM D3 SHOTS",
       "KLM- D3-60 NANO SHOT",
       "KLM-D3 NANO SHOTS 5'ML",
       "KLMD3 NANO",

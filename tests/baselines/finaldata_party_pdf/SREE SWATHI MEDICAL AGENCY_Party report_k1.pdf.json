@@ -1,0 +1,28 @@
+{
+  "file": "k1.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sree_swathi_company_product_area_invoice",
+  "party_count": 4,
+  "area_count": 5,
+  "product_count": 4,
+  "sample_parties": [
+    "ARJUN MEDICAL AGENCIES",
+    "PANDU MEDICALS(PRAKASH",
+    "ROOPAM SPECTS WORLD",
+    "VARSHA PHARMACY-1"
+  ],
+  "sample_products": [
+    "Niofine Tablet 1*7 Tablets",
+    "Niosalic Ointment 20 Gm",
+    "Niosol Ointment 30 Gm",
+    "Zydip-C Lotion 50 Ml"
+  ],
+  "qty_total": 115.0,
+  "amount_total": 15998.88,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

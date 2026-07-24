@@ -1,0 +1,29 @@
+{
+  "file": "klmc cust.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_group_vs_customer",
+  "party_count": 4,
+  "area_count": 2,
+  "product_count": 5,
+  "sample_parties": [
+    "MOHAN MEDICAL&GEN STORES",
+    "S K K MEDICAL STORES",
+    "SRI OME SAIVENKATESWARA MED&GEN STORES",
+    "SRI TADIKONDA MEDICAL&GENARAL STORES"
+  ],
+  "sample_products": [
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Imxia 5",
+    "Kojitin Emulgel 15Gm",
+    "Kojitin Ultra Emulgel 20Gm"
+  ],
+  "qty_total": 12.0,
+  "amount_total": 3823.31,
+  "rate_total": 2672.46,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

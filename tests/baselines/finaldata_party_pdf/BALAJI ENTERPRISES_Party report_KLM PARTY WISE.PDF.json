@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE.PDF",
+  "route": "party_pdf",
+  "row_count": 608,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "klm_product_customerwise_sales",
+  "party_count": 129,
+  "area_count": 303,
+  "product_count": 127,
+  "sample_parties": [
+    "AARUSH TIRUPATI ENTERPRISE(A U",
+    "ACHARYA MAHAPRAGYA",
+    "AFFOLIFE RETAIL PRIVATE LTD",
+    "ANKW PHARMA RETAIL PVT LTD",
+    "ARATI MEDICAL"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 1351.0,
+  "amount_total": 267998.13,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

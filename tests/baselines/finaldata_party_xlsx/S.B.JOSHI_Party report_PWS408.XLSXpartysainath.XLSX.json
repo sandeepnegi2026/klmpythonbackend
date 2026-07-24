@@ -1,0 +1,30 @@
+{
+  "file": "PWS408.XLSXpartysainath.XLSX",
+  "route": "party_xlsx",
+  "row_count": 139,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 90,
+  "area_count": 89,
+  "product_count": 22,
+  "sample_parties": [
+    "AAIJI MEDICAL SHOP (RAMESHWAR)",
+    "AAYUSHI MEDICAL GEN STORE",
+    "ADVIK MEDICO (YOGESH)",
+    "AISHWARYA GANESH MEDIPOINT",
+    "AKSHAY MEDICO & GEN.(SANJU)"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 355.0,
+  "amount_total": 56689.64,
+  "rate_total": 27106.15,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

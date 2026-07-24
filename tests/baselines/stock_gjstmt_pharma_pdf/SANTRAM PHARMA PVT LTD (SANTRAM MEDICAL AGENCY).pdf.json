@@ -1,0 +1,19 @@
+{
+  "file": "SANTRAM PHARMA PVT LTD (SANTRAM MEDICAL AGENCY).pdf",
+  "route": "stock_pdf",
+  "row_count": 38,
+  "warnings_count": 6,
+  "headers_detected_count": 12,
+  "detected_format": "stock_open_pur_sale_free_current",
+  "product_count": 36,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 729.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

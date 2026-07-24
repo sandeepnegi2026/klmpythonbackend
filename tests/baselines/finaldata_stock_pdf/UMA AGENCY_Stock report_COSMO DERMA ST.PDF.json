@@ -1,0 +1,19 @@
+{
+  "file": "COSMO DERMA ST.PDF",
+  "route": "stock_pdf",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 48,
+  "sample_products": [
+    "ASCORET CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "closing_stock_total": 572.0,
+  "rate_total": 10302.78,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "PREM PHARMA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 11,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 12,
+  "sample_products": [
+    "5 SOFIDEW 100ML LOTION",
+    "6 SOFIDEW BABY CREAM",
+    "7 SOFIDEW BABY MOIST LOTION",
+    "8 SOFIDEW BABY SHAMPOO",
+    "Cutiheal Cream 15Gm"
+  ],
+  "closing_stock_total": 256.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA MAY PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "customer_product_banded",
+  "party_count": 14,
+  "area_count": 0,
+  "product_count": 9,
+  "sample_parties": [
+    "KANAKA DURGA MEDICALS",
+    "NAVYA MEDICALS",
+    "PADMA PRIYA MEDICALS",
+    "SAI BABA AND COMPANY",
+    "SAI MEDICAL& GENERAL STOR"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Nevlon Moisturizing Cream Soap 75G"
+  ],
+  "qty_total": 31.0,
+  "amount_total": 0.0,
+  "rate_total": 2805.92,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

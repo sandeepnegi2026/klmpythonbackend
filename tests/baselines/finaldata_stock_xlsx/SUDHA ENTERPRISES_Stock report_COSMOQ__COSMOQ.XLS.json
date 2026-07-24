@@ -1,0 +1,19 @@
+{
+  "file": "COSMOQ__COSMOQ.XLS",
+  "route": "stock_xlsx",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 13,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "COSMOQ CREAM 1*50G",
+    "COSMOQ SERUM 1*30ML",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 128.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

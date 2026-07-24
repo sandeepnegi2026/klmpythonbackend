@@ -1,0 +1,19 @@
+{
+  "file": "BHOOLA DISTRIBUTERS.pdf",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 14,
+  "headers_detected_count": 9,
+  "detected_format": "generic",
+  "product_count": 24,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 157.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

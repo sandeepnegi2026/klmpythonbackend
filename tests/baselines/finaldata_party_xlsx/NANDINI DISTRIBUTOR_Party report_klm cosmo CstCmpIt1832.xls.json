@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmo CstCmpIt1832.xls",
+  "route": "party_xlsx",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 5,
+  "area_count": 3,
+  "product_count": 6,
+  "sample_parties": [
+    "ARADHYA MEDICAL STORE",
+    "ARATI PHARMA",
+    "DR,DHRUVIN A.JOSHI",
+    "NINA MEDICINES",
+    "VEDANTA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Ekran Ms Gel 50Gm",
+    "Herpival-500 Tablets 1*3 Tablets",
+    "Imxia 2%",
+    "Imxia-At",
+    "KORTUF 12 TABLET"
+  ],
+  "qty_total": 50.0,
+  "amount_total": 16572.07,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

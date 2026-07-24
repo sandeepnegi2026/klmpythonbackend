@@ -1,0 +1,29 @@
+{
+  "file": "Product wise sale list _Combined_ for the period  01-05-2026 - 31-05-2026.xlsx.pdf",
+  "route": "party_pdf",
+  "row_count": 691,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "product_wise_sale_combined",
+  "party_count": 250,
+  "area_count": 79,
+  "product_count": 121,
+  "sample_parties": [
+    "AAYUCAREMEDICALSTOREC&D",
+    "ABANIADRUGSTORESC&D",
+    "AJITPHARMACY",
+    "ALORACHEMIST&DRUGGIST",
+    "AMARCHEMIST&DRUGGIST"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 3120.0,
+  "amount_total": 551462.12,
+  "rate_total": 152438.78,
+  "purchase_rate_total": 0.0
+}

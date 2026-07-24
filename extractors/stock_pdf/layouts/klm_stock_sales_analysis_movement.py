@@ -43,7 +43,7 @@ import re
 from extractors.stock_pdf.parse_common import _skip_line, _split_product_pack
 
 # a stat token: integer / decimal / signed, or a bare '-' zero placeholder.
-_STAT = re.compile(r"^-?\d+(?:\.\d+)?$|^-$")
+_STAT = re.compile(r"^-?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?$|^-?\d+(?:\.\d+)?$|^-$")
 
 _N_STATS = 11  # OPENING PURCHASE FREE P.RETURN FREE SALE FREE S.RETURN FREE OTHERS CLOSING
 

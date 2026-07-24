@@ -1,0 +1,19 @@
+{
+  "file": "KLM.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 125,
+  "warnings_count": 32,
+  "headers_detected_count": 18,
+  "detected_format": "tabular",
+  "product_count": 120,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "closing_stock_total": 2857.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM ALL.xls",
+  "route": "stock_xlsx",
+  "row_count": 99,
+  "warnings_count": 19,
+  "headers_detected_count": 20,
+  "detected_format": "tabular",
+  "product_count": 96,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "BWN/26-27/01529",
+    "BWN/26-27/01564"
+  ],
+  "closing_stock_total": 1547.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

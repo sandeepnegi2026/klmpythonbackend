@@ -1,0 +1,30 @@
+{
+  "file": "PWS_KLMLA.XLSX",
+  "route": "party_xlsx",
+  "row_count": 70,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular_party_product",
+  "party_count": 59,
+  "area_count": 60,
+  "product_count": 24,
+  "sample_parties": [
+    "ADINATH AGENCY",
+    "ALKYNE CHEMIST",
+    "ANAND HEALTH CARE",
+    "BANER PHARMA",
+    "BHAVANI MEDICAL"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Extend Vita Syrup 200Ml",
+    "Hbsone Cream 30Gm",
+    "Klm C 20 Serum 15Ml",
+    "Mfsone Cream 30 Gm"
+  ],
+  "qty_total": 181.0,
+  "amount_total": 33821.89,
+  "rate_total": 16991.91,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

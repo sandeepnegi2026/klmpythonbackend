@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise.pdf",
+  "route": "party_pdf",
+  "row_count": 202,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 82,
+  "area_count": 53,
+  "product_count": 71,
+  "sample_parties": [
+    "AAKASH MADICAL STORS",
+    "AANAND MEDICAL STORS AMARWARA",
+    "AASTHA MEDICAL STORES",
+    "AASTHA MEDICAL STORES PALARI",
+    "AASTHA MEDICAL STORES-LANJI"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 567.0,
+  "amount_total": 92602.26,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 28
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA AWRA WISE MAY-26.XLS",
+  "route": "party_xlsx",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 12,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "ADARSH MEDICAL & GEN STORES (RAICHUR)",
+    "BHARATH MEDICAL & GEN STORE{MANVI}",
+    "KARNATAKA MEDICAL STORE (RAICHUR)",
+    "KARNATAKA PHARMACY (RAICHUR)",
+    "KRISHNA MEDICAL & GENERAL STORE<RAICHUR>"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "NEVLON SOAP",
+    "Nevlon Cream 100Gm"
+  ],
+  "qty_total": 789.0,
+  "amount_total": 123128.63,
+  "rate_total": 7549.18,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

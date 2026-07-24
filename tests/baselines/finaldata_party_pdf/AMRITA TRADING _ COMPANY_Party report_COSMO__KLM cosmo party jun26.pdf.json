@@ -1,0 +1,29 @@
+{
+  "file": "COSMO__KLM cosmo party jun26.pdf",
+  "route": "party_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "party_item_summary_qtyfree",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 15,
+  "sample_parties": [
+    "DR. AK GUPTA",
+    "DR. M K MISHRA",
+    "DR. S KHAN",
+    "DR. SALMAN KHAN",
+    "DR. SHREYA KAUSHIK"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Histabil Tablet 1*10 Tab"
+  ],
+  "qty_total": 247.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

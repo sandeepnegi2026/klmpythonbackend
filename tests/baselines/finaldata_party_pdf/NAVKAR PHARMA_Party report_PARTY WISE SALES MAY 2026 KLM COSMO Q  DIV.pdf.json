@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE SALES MAY 2026 KLM COSMO Q  DIV.pdf",
+  "route": "party_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 8,
+  "area_count": 1,
+  "product_count": 6,
+  "sample_parties": [
+    "BHAWANA MEDICAL CENTER PALI",
+    "CHOUDHARY MEDICAL CENTER (SURAJPOL)",
+    "HARISH MEDICAL CENTRE",
+    "JAI MEDICAL STORE(OLD)",
+    "JANTA MEDICAL STORE(SURAJPOLE)"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 20.0,
+  "amount_total": 7739.25,
+  "rate_total": 5547.21,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

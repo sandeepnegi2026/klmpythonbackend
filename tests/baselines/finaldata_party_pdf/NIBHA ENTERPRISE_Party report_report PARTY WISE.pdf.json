@@ -1,0 +1,24 @@
+{
+  "file": "report PARTY WISE.pdf",
+  "route": "party_pdf",
+  "row_count": 375,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "company_party_summary",
+  "party_count": 180,
+  "area_count": 0,
+  "product_count": 0,
+  "sample_parties": [
+    "A.M.R PHARMACY SAMSI",
+    "ABC PHARMACY PIROJP",
+    "AKHI MEDICAL HALL MOTHAB",
+    "AKHTAR DRUG AGENCY SUJAPU",
+    "AMENA PHARMACY KALIAC"
+  ],
+  "sample_products": [],
+  "qty_total": 0.0,
+  "amount_total": 330330.66,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 8
+}

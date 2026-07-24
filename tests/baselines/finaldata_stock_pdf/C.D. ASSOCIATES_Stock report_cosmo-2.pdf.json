@@ -1,0 +1,19 @@
+{
+  "file": "cosmo-2.pdf",
+  "route": "stock_pdf",
+  "row_count": 44,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_qoh_returns",
+  "product_count": 42,
+  "sample_products": [
+    "EKRAN OSP",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G"
+  ],
+  "closing_stock_total": 847.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "klm party product 18-6-26.pdf",
+  "route": "party_pdf",
+  "row_count": 38,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_normal",
+  "party_count": 31,
+  "area_count": 15,
+  "product_count": 20,
+  "sample_parties": [
+    "AFZAL MEDICAL/U0026 PROVISON STORE",
+    "AKSHAJ MEDICARE (ZAD)",
+    "ANMOL CHEMIST(ANK)",
+    "DIAMOND MEDICAL STORE (100)",
+    "GIRISH MEDICAL STORE NEW(1571)"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Ekran Aqua Gel 100Gm",
+    "Imxia 5",
+    "Kenz Sal Lotion 60 Ml",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "qty_total": 72.0,
+  "amount_total": 11348.19,
+  "rate_total": 6378.84,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

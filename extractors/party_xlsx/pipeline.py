@@ -1,6 +1,7 @@
 import time
 
 from core.pack_match import extract_pack_from_product
+from core.party_filter import tag_generic_accounts
 from core.product_master import enrich_rows_with_master
 from extractors.party_xlsx.constants import LAYOUT_LABELS
 from extractors.party_xlsx.detect import detect_layout
@@ -10,7 +11,36 @@ from extractors.party_xlsx.layouts.swil_html_billwise import (
 )
 from extractors.party_xlsx.postprocess import cast_numbers
 from extractors.party_xlsx.registry import parse_rows
-from extractors.party_xlsx.xlsx_io import load_data_sheets
+from extractors.party_xlsx.xlsx_io import load_data_sheets, read_sheets, sheet_rows_from_df
+
+import re as _re
+
+_TABLE_SHEET_RE = _re.compile(r"table\s*\d+$", _re.I)
+
+
+def _is_raja_party_summary(sheets):
+    """True if the kept tabs are the RAJA "Table N" converter's PARTY/ITEM WISE SALES SUMMARY.
+    The Table-N sheet naming is what separates this paginated converter from the many other
+    'item wise sales summary' party exports, so those are never stolen."""
+    if not sheets or not all(_TABLE_SHEET_RE.match(name.strip()) for name, _ in sheets):
+        return False
+    flat = " ".join(
+        " ".join(cell for cell in row) for _name, rows in sheets for row in rows[:120]
+    ).lower().replace(" ", "")
+    return "party/itemwisesalessummary" in flat
+
+
+def _concat_table_sheets(file_bytes, filename):
+    """All sheets' rows in workbook order, but only for a paginated (>= 2 sheet) book — the
+    RAJA converter splits ONE report across many 'Table N' pages that load_data_sheets' per-tab
+    scoring would otherwise drop."""
+    xls, _ = read_sheets(file_bytes, filename)
+    if len(xls.sheet_names) < 2:
+        return None
+    merged = []
+    for name in xls.sheet_names:
+        merged.extend(sheet_rows_from_df(xls.parse(name, header=None)))
+    return merged
 
 
 def extract(file_bytes, settings=None):
@@ -41,9 +71,20 @@ def extract(file_bytes, settings=None):
     # its own -- so every tab keeps its title/header at row 0 exactly as the parsers expect --
     # then merge the clean records. load_data_sheets returns a single tab for ordinary
     # single-sheet books, so that path stays byte-identical to before.
+    # RAJA ENTERPRISE "PARTY / ITEM WISE SALES SUMMARY" is paginated across many "Table N"
+    # sheets; per-tab scoring drops continuation pages. If the kept tabs carry its signature and
+    # the book is multi-sheet, re-read every tab raw, collapse to one synthetic sheet, and FORCE
+    # the raja parser (which reconciles to the printed grand TOTAL qty/amount).
+    forced = None
+    if _is_raja_party_summary(sheets):
+        merged = _concat_table_sheets(file_bytes, filename)
+        if merged is not None:
+            sheets = [("merged", merged)]
+            forced = "raja_party_item_summary"
+
     records, detected, sheet_names, layouts = [], {}, [], []
     for name, srows in sheets:
-        sheet_layout = detect_layout(srows)
+        sheet_layout = forced or detect_layout(srows)
         recs, det = parse_rows(srows, sheet_layout)
         if not recs and sheet_layout != "tabular":
             recs, det = parse_rows(srows, "tabular")
@@ -52,6 +93,18 @@ def extract(file_bytes, settings=None):
             detected = det
         sheet_names.append(name)
         layouts.append(sheet_layout)
+    # Line-accounting ledger on the FULL raw sheets (immune to the 80+tail raw_text
+    # preview truncation) against the raw pre-cast records. Read-only.
+    from core.line_ledger import audit_sheet_rows
+    try:
+        line_audit = audit_sheet_rows(sheets, records)
+    except Exception:  # ledger must never break extraction
+        line_audit = {"applicable": False, "reason": "ledger error"}
+    # TAG generic non-customer ledger accounts (CASH / COUNTER / WALK IN / STAFF / ...) with
+    # is_generic_party=True instead of DROPPING them — all rows are retained so totals stay
+    # complete, and party-wise reads exclude them at query time. Runs AFTER the ledger. Same
+    # name-anchored allowlist (core/party_filter) — a real shop is never tagged.
+    records, _generic_tagged = tag_generic_accounts(records)
     cast_numbers(records)
     sheet_name = ",".join(sheet_names)
     layout = (
@@ -107,11 +160,13 @@ def extract(file_bytes, settings=None):
         "pages": pages,
         "raw_text": preview,
         "warnings": warnings,
+        "line_audit": line_audit,
         "elapsed_ms": int((time.perf_counter() - started) * 1000),
         "debug": {
             "layout": layout,
             "layout_label": LAYOUT_LABELS.get(layout, layout),
             "sheet": sheet_name,
+            "generic_party_rows_tagged": _generic_tagged,
         },
     }
 
@@ -125,6 +180,7 @@ def _extract_html(file_bytes, started):
     layout = "swil_html_billwise"
     warnings = []
     records, detected = parse_swil_html_billwise(file_bytes)
+    records, _ = tag_generic_accounts(records)
 
     for row in records:
         if "product_name" in row:

@@ -1,0 +1,18 @@
+{
+  "file": "klm ss pdf.pdf",
+  "route": "stock_pdf",
+  "row_count": 156,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 154,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMO Q AC-50 SPF SUN GEL",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 3043.0,
+  "rate_total": 0.0
+}

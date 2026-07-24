@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 8,
   "detected_format": "simple4",
-  "product_count": 20,
+  "product_count": 21,
   "sample_products": [
     "Ekran 30 Silicon Sunscreen Gel 30G",
     "Ekran Aqua Gel 100Gm",
@@ -14,5 +14,6 @@
     "Ekran Soft Silicon Sunscreen Gel 50G"
   ],
   "closing_stock_total": 244.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

@@ -1,0 +1,19 @@
+{
+  "file": "klm.PDF",
+  "route": "stock_pdf",
+  "row_count": 193,
+  "warnings_count": 4,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month",
+  "product_count": 189,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZKAVIT TAB",
+    "AZTEL AM 40MG TAB",
+    "AZTEL MT",
+    "AZTEL TRIO 12.5MG TA"
+  ],
+  "closing_stock_total": 4941.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

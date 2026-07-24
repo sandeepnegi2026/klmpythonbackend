@@ -1,0 +1,30 @@
+{
+  "file": "JUNE 2026 EXCEL PARTY.XLS",
+  "route": "party_xlsx",
+  "row_count": 329,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 53,
+  "area_count": 0,
+  "product_count": 48,
+  "sample_parties": [
+    "ABHAY MEDICAL STORES",
+    "ABHISHEK MEDICAL AND SURGICAL.",
+    "ADARSH MEDICAL STORES",
+    "AMIT MEDICAL STORE",
+    "ANAND MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Desosoft Cream 10 Gm",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm"
+  ],
+  "qty_total": 907.0,
+  "amount_total": 195102.49,
+  "rate_total": 73710.88,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

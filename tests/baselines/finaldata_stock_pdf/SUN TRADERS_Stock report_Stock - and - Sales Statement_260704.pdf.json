@@ -1,0 +1,19 @@
+{
+  "file": "Stock - and - Sales Statement_260704.pdf",
+  "route": "stock_pdf",
+  "row_count": 166,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "suntraders_stock_n_sales_status",
+  "product_count": 157,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 1812.0,
+  "rate_total": 28160.23,
+  "line_unexplained": 0
+}

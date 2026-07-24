@@ -1,0 +1,19 @@
+{
+  "file": "klmd-2.pdf",
+  "route": "stock_pdf",
+  "row_count": 9,
+  "warnings_count": 1,
+  "headers_detected_count": 14,
+  "detected_format": "marg_open_pur_free_sale",
+  "product_count": 9,
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "closing_stock_total": 88.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

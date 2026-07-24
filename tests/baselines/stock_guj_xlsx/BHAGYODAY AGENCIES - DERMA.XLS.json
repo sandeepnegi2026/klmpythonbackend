@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 42,
   "detected_format": "tabular",
-  "product_count": 19,
+  "product_count": 20,
   "sample_products": [
     "Canrolfin Cream 15 Gm",
     "Klm Klin Face Wash 100 Ml",
@@ -14,5 +14,6 @@
     "Nevlon Caloe Lotion 100Ml"
   ],
   "closing_stock_total": 165.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 2
 }

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTYSIWE JUN26.PDF",
+  "route": "party_pdf",
+  "row_count": 106,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "company_item_wise_sales_summary",
+  "party_count": 45,
+  "area_count": 0,
+  "product_count": 40,
+  "sample_parties": [
+    "A R MEDICINE",
+    "A.B.C DRUGS",
+    "ABBASH MEDICAL HALL",
+    "APNA DAWAKHANA",
+    "D.P.GUPTA ASSOCIATES PVT.LTD."
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 297.0,
+  "amount_total": 49800.74,
+  "rate_total": 20838.26,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

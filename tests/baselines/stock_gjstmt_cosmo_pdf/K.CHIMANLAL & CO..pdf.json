@@ -1,0 +1,19 @@
+{
+  "file": "K.CHIMANLAL & CO..pdf",
+  "route": "stock_pdf",
+  "row_count": 43,
+  "warnings_count": 4,
+  "headers_detected_count": 19,
+  "detected_format": "marg_bordered",
+  "product_count": 37,
+  "sample_products": [
+    "***NEVLON MOISTURISING BABY SOAP",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "closing_stock_total": 376.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

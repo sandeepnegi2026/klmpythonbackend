@@ -1,0 +1,30 @@
+{
+  "file": "report _2_.xlsx",
+  "route": "party_xlsx",
+  "row_count": 775,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_product_sale_dc_summary",
+  "party_count": 371,
+  "area_count": 350,
+  "product_count": 143,
+  "sample_parties": [
+    "AAI MEDICAL",
+    "AAIJI MEDICO",
+    "AARADHYA MEDICAL",
+    "AAROGYAM DHANWANTARI LLP,DR.PD PATIL SUPERSPECIALITY HOSPITAL & RESEARCH CENTRE,CENTRAL PHARMACY",
+    "AAROHI MED & GEN STORES"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 2489.0,
+  "amount_total": 411859.68,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

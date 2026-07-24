@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__COSMOCORE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 103,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 46,
+  "area_count": 11,
+  "product_count": 25,
+  "sample_parties": [
+    "-ADITYA MEDICAL STORE",
+    "-ALPHA PHARMACY",
+    "-ARORA MEDICAL HALL(N)",
+    "-ASIJA MEDICOS.",
+    "-CHAUDHARY MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "qty_total": 1781.5,
+  "amount_total": 250503.28,
+  "rate_total": 17468.33,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

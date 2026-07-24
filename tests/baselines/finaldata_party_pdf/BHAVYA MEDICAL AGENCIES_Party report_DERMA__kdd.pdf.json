@@ -1,0 +1,28 @@
+{
+  "file": "DERMA__kdd.pdf",
+  "route": "party_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 8,
+  "area_count": 3,
+  "product_count": 3,
+  "sample_parties": [
+    "D.V MEDICAL AGENCIES",
+    "LAKSHMI SAI MEDICALS",
+    "SAAR MEDICAL AGENCIES",
+    "SRI GANESH MEDICAL HALL",
+    "SRI SAI RAM MEDICAL STORES"
+  ],
+  "sample_products": [
+    "NEVLON SOAP",
+    "ONITRAZ TAB",
+    "Onitraz Forte Capsules 1*10 Capsules"
+  ],
+  "qty_total": 51.0,
+  "amount_total": 6731.87,
+  "rate_total": 1466.89,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

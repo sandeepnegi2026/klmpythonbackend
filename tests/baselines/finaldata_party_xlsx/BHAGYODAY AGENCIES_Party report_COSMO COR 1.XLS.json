@@ -1,0 +1,30 @@
+{
+  "file": "COSMO COR 1.XLS",
+  "route": "party_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 35,
+  "detected_format": "marg_register_excel",
+  "party_count": 9,
+  "area_count": 8,
+  "product_count": 9,
+  "sample_parties": [
+    "AGRAWAL  CHEMIST",
+    "DR BHAGIRATH RAJESHKUMAR PATEL HUF",
+    "GANESH MEDICINES& PROVISIONS",
+    "NUTAN MEDICAL &PROVISON STORE",
+    "OM MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Nioclean Gel 20 Gm",
+    "Niogenta F Cream 20 Gm",
+    "Niosol-F Cream 20 Gm"
+  ],
+  "qty_total": 40.0,
+  "amount_total": 8986.7,
+  "rate_total": 5967.81,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,7 +1,7 @@
 {
   "file": "DAHOD PHARMA-DERMA.pdf",
   "route": "party_pdf",
-  "row_count": 12,
+  "row_count": 14,
   "warnings_count": 0,
   "headers_detected_count": 12,
   "detected_format": "marg_register",
@@ -22,8 +22,9 @@
     "Ximplus-100 Dry Syrup 30Ml",
     "Ximplus-100 Dt Tablets"
   ],
-  "qty_total": 152.0,
-  "amount_total": 11191.4,
+  "qty_total": 154.0,
+  "amount_total": 11502.69,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

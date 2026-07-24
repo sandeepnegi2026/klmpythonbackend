@@ -1,0 +1,12 @@
+{
+  "file": "product_details_1mo.xls",
+  "route": "stock_xlsx",
+  "row_count": 0,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "html_stock",
+  "product_count": 0,
+  "sample_products": [],
+  "closing_stock_total": 0,
+  "rate_total": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "COSMO__klm cosmo..pdf",
+  "route": "stock_pdf",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "swastik_particulars",
+  "product_count": 25,
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Hbsalic Ointment 20Gm",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 348.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

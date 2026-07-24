@@ -1,0 +1,30 @@
+{
+  "file": "KLM LAB. _PEDIATRIC DIVISION_ Period 01-06-2026 To 30-06-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 167,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "retailer_band_cgst_sgst",
+  "party_count": 114,
+  "area_count": 57,
+  "product_count": 26,
+  "sample_parties": [
+    "A ONE CHEMIST",
+    "AL-BASIT MEDICAL & GENERAL STORES",
+    "AMBIKA MEDICAL",
+    "AMBIKA. MEDICAL & GENERAL STORES",
+    "AMINA MEDICAL AND GENERAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab"
+  ],
+  "qty_total": 367.0,
+  "amount_total": 45857.1,
+  "rate_total": 21579.58,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

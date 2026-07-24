@@ -1,0 +1,30 @@
+{
+  "file": "KLM285-1.xlsx",
+  "route": "party_xlsx",
+  "row_count": 114,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 70,
+  "area_count": 70,
+  "product_count": 28,
+  "sample_parties": [
+    "ABHI MEDICAL AND GEN STORES",
+    "APOLLO PHARMACIES LIMITED",
+    "APOLLO PHARMACY",
+    "BALAJI PHARMACY",
+    "BEST PHARMACY"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "qty_total": 1318.0,
+  "amount_total": 431159.72,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

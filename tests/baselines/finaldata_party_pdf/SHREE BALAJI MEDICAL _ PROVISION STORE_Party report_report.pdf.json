@@ -1,0 +1,30 @@
+{
+  "file": "report.pdf",
+  "route": "party_pdf",
+  "row_count": 61,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 19,
+  "area_count": 2,
+  "product_count": 42,
+  "sample_parties": [
+    "BHAGWATI MEDICAL STORE",
+    "BHARAT MEDICAL",
+    "CITY MEDICAL AND GENERAL STORE",
+    "DR ARJUN LAL CHOUDHARY",
+    "DR PRATEEK KUMAR SAINI"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 609.0,
+  "amount_total": 94630.26,
+  "rate_total": 10213.54,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

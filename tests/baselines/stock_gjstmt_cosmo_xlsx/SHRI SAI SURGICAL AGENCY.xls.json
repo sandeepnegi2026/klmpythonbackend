@@ -1,0 +1,19 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY.xls",
+  "route": "stock_xlsx",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_ss_paired_opstk_pfree_sfree_curstk_xls",
+  "product_count": 15,
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Enzotret Tablet",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 238.0,
+  "rate_total": 5027.11,
+  "line_unexplained": 5
+}

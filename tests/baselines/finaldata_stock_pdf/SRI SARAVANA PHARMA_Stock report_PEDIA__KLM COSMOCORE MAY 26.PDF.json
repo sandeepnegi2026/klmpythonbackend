@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__KLM COSMOCORE MAY 26.PDF",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "sri_saravana_ss_month_positional",
+  "product_count": 15,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Kenz Sal Lotion 60 Ml",
+    "Melboost Solution 2Ml",
+    "Nioclean Gel 20 Gm",
+    "Niosalic Lotion 50Ml"
+  ],
+  "closing_stock_total": 60.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

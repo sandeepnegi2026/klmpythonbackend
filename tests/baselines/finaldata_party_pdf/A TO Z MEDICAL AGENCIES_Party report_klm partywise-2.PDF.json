@@ -1,0 +1,30 @@
+{
+  "file": "klm partywise-2.PDF",
+  "route": "party_pdf",
+  "row_count": 261,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "unisolve",
+  "party_count": 70,
+  "area_count": 26,
+  "product_count": 88,
+  "sample_parties": [
+    "AAI KRUPA MED.& GEN.STO",
+    "AAIKRUPA MEDI.STORES",
+    "ABHINAV MEDICALS BALLARPUR",
+    "ANOKHEE ENTERPRISES",
+    "ARNAV MED.& GEN.ST"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 1076.0,
+  "amount_total": 197421.09,
+  "rate_total": 53549.89,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 10
+}

@@ -1,0 +1,29 @@
+{
+  "file": "KLM DERMA FREE UNITS.pdf",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "GUPTA MEDICAL&GENERAL STO",
+    "OM SUKHIBHAVA MEDICALS",
+    "ONEHUB PHARMACY",
+    "SATYA MEDICAL(KGH)",
+    "SOMANATH MEDICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Xerolene Cream 50Gm",
+    "Xerolene Max Cream 100 Gm"
+  ],
+  "qty_total": 24.0,
+  "amount_total": 6151.15,
+  "rate_total": 2852.28,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

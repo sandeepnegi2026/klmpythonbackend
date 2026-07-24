@@ -1,0 +1,30 @@
+{
+  "file": "KCOSMOR-Sales_Report-JUNE_2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 544,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded_grsamt",
+  "party_count": 339,
+  "area_count": 68,
+  "product_count": 30,
+  "sample_parties": [
+    "A.R PHARMA",
+    "AADARSH MEDICO",
+    "AAIJEE MEDICAL & GENERAL STORES .",
+    "AAIJI MEDICO.",
+    "AASHIRWAD CHEMIST & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Solution 2Ml"
+  ],
+  "qty_total": 1418.0,
+  "amount_total": 155105.5,
+  "rate_total": 80267.8,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

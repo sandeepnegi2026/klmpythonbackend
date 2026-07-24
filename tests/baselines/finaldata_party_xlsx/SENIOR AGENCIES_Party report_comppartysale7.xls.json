@@ -1,0 +1,30 @@
+{
+  "file": "comppartysale7.xls",
+  "route": "party_xlsx",
+  "row_count": 706,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_banded",
+  "party_count": 396,
+  "area_count": 0,
+  "product_count": 31,
+  "sample_parties": [
+    "1SHREE GANESH MEDICO BHARTI DHANKAWADI, ARIHANT CHEMBERS,",
+    "24/7 MEDICINES  ( VIKAR ) WAGHOLI DADASH",
+    "AADITI PHARMACY PHALE SHRIRAM SOC,KARVENAGAR,HINGANE",
+    "AAIJI MEDICO AND MART (JAVED) AUNDH, CLARION PARK.",
+    "AAYUSHI MEDICAL(GANESH SANGHVI NEW SANGVI,SIDDHI VIHAR,KRUSHN"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "MELBOOST SOLN (KLM)",
+    "MELBOOST SOLN(KLM)",
+    "Melboost Nxt Tablet"
+  ],
+  "qty_total": 1182.0,
+  "amount_total": 160417.28,
+  "rate_total": 114411.88,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "28aederma.xls",
+  "route": "party_xlsx",
+  "row_count": 533,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "itemwise_party_column",
+  "party_count": 167,
+  "area_count": 37,
+  "product_count": 64,
+  "sample_parties": [
+    "32 AESTHETISC",
+    "AADITYA MEDICAL & GEN STORE",
+    "AARAMBH CHEMIST",
+    "AARATI MEDICAL",
+    "AJARA MEDICAL CENTRE"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend Eva Capsules"
+  ],
+  "qty_total": 6800.0,
+  "amount_total": 1455233.63,
+  "rate_total": 132896.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

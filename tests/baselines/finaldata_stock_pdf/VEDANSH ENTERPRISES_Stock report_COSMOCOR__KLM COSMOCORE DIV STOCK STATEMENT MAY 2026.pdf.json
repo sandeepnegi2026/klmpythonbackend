@@ -1,0 +1,19 @@
+{
+  "file": "COSMOCOR__KLM COSMOCORE DIV STOCK STATEMENT MAY 2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_movement_detail",
+  "product_count": 28,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets"
+  ],
+  "closing_stock_total": 660.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

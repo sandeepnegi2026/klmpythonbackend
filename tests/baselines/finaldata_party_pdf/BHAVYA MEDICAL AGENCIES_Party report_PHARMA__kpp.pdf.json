@@ -1,0 +1,27 @@
+{
+  "file": "PHARMA__kpp.pdf",
+  "route": "party_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 6,
+  "area_count": 4,
+  "product_count": 2,
+  "sample_parties": [
+    "MANIKANTA MEDICALS",
+    "RAVI HANUMAN MEDICALS",
+    "SAAR MEDICAL AGENCIES",
+    "SRI SAI RAM MEDICAL STORES",
+    "Sai JAYA SRI MERDICALS"
+  ],
+  "sample_products": [
+    "Klmite Cream 60 Gm",
+    "Klmite Soap"
+  ],
+  "qty_total": 68.0,
+  "amount_total": 6292.36,
+  "rate_total": 1066.71,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

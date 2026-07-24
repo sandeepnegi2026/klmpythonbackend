@@ -1,0 +1,19 @@
+{
+  "file": "klm5.PDF",
+  "route": "stock_pdf",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "klm_stock_sales_month_rcpt",
+  "product_count": 20,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair 1*30 Tablets",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 247.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

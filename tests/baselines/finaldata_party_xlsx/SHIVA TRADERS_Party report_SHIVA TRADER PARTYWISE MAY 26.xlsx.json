@@ -1,0 +1,30 @@
+{
+  "file": "SHIVA TRADER PARTYWISE MAY 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 150,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 31,
+  "area_count": 0,
+  "product_count": 48,
+  "sample_parties": [
+    "A.D.MEHTA             DR ,*SIRSA",
+    "ABHINANDAN PHARMACY      ,*SIRSA",
+    "BALAJI MEDICAL HALL  JH  ,*SIRSA",
+    "BHARAT MEDICOSE          ,*FATEHABAD",
+    "CHIMAN MEDICAL CENTRE    ,*KALAWALI"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Desosoft Cream 10 Gm",
+    "EZACNE            1",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "qty_total": 1342.0,
+  "amount_total": 160210.47,
+  "rate_total": 30318.38,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

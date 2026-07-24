@@ -1,0 +1,30 @@
+{
+  "file": "Customer___Product_25062026_132342_1_KLMCCD_260625132342428.Pdf",
+  "route": "party_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "profitmaker",
+  "party_count": 12,
+  "area_count": 4,
+  "product_count": 9,
+  "sample_parties": [
+    "AKSHITH MEDICAL AND GENER",
+    "ANSHU MEDICAL HALL",
+    "CURE PHARMACY",
+    "D THREE SIXTY FIVE MEDICA",
+    "DIVYA MEDICAL&GENERAL STO"
+  ],
+  "sample_products": [
+    "EPISERT 30 GM CREAM 30",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm"
+  ],
+  "qty_total": 30.0,
+  "amount_total": 4113.62,
+  "rate_total": 2530.03,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

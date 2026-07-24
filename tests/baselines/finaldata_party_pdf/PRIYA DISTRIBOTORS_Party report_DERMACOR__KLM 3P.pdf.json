@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__KLM 3P.pdf",
+  "route": "party_pdf",
+  "row_count": 35,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "billwise_multiheader",
+  "party_count": 19,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "BALKUNDEKAR MED & GEN STORES",
+    "CHAPSI SON S LATUR",
+    "CHARLI MEDICAL STORES",
+    "DATAL MEDI. & GEN.STORES.LATUR",
+    "F.K. MEDICAL STORES LATUR"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON 100GM.CREAM 100GM. BN517",
+    "NEVLON 100ML. LOTION 100ML. BO517",
+    "NEVLON 50GM.CREAM 50GM. BN424"
+  ],
+  "qty_total": 133.0,
+  "amount_total": 22566.39,
+  "rate_total": 6151.58,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KUNT.PDF",
+  "route": "party_pdf",
+  "row_count": 366,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 108,
+  "area_count": 43,
+  "product_count": 37,
+  "sample_parties": [
+    "A M S ENTERPRISE",
+    "A.B. ENTERPRISE",
+    "A.J.PHARMA",
+    "AMINIYA MEDICAL HALL",
+    "ANJANA MEDICAL"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 2487.0,
+  "amount_total": 294089.78,
+  "rate_total": 61432.48,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

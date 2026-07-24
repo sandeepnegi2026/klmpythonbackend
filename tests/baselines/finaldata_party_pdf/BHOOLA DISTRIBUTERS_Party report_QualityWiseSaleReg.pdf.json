@@ -1,0 +1,30 @@
+{
+  "file": "QualityWiseSaleReg.pdf",
+  "route": "party_pdf",
+  "row_count": 136,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "r15_saleregister_allparty_freeqty",
+  "party_count": 75,
+  "area_count": 59,
+  "product_count": 71,
+  "sample_parties": [
+    "AAIJEE MED & GEN.ST",
+    "AAROGYA MEDICAL & GENERAL STORE",
+    "AMBICA MED.& GEN.ST",
+    "ANAND MEDICAL STORE",
+    "BALAJI MEDI & GEN.ST"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Shampoo 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 551.0,
+  "amount_total": 101701.44,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

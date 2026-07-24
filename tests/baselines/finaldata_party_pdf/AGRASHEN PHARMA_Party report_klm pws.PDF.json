@@ -1,0 +1,30 @@
+{
+  "file": "klm pws.PDF",
+  "route": "party_pdf",
+  "row_count": 67,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 26,
+  "area_count": 7,
+  "product_count": 45,
+  "sample_parties": [
+    "AGKUJU-AGRAWAL MEDICAL HALL........(KUJJU)",
+    "AMH..-AGRAWAL MEDICAL HALL........GOLA",
+    "AMHB-ARVIND MEDICINE CENTRE",
+    "AR-NEW ARCHANA MEDICAL HALL",
+    "BJM-BALA JEE MEDICAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm",
+    "Eberfine Cream 30 Gm",
+    "Evaklin Medicated Wash"
+  ],
+  "qty_total": 393.0,
+  "amount_total": 50457.16,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

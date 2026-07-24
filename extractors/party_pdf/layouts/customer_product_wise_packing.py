@@ -53,6 +53,12 @@ def parse_customer_product_wise_packing(text):
             continue
         hm = _HEAD.match(s)
         if hm and ("," in s or "(" in s) and not _ROW.match(s):
-            party, area = _split_head(hm.group(2))
+            cand_name, cand_area = _split_head(hm.group(2))
+            # An ADDRESS continuation line ("2-A, GROUND FLOOR RANISATI NGR,") also
+            # matches _HEAD (code '2', name 'A') and would clobber the real heading
+            # ("97814-PHARMACY NO. 1,JAIPUR") with a phantom 1-letter party. A real
+            # customer name is never a 1-2 char fragment -> only accept longer names.
+            if len(cand_name) >= 3:
+                party, area = cand_name, cand_area
             continue
     return headers, rows

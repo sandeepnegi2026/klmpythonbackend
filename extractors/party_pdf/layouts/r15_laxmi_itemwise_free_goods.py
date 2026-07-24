@@ -36,7 +36,7 @@ def parse_laxmi_itemwise_free_goods(text):
         r'(.+?)\s+(\S+)\s+'                                              # pname batch
         r'([\d.]+)\s+(\d+)'                                             # rate qty
         r'(?:\s+([FZ])(?:\s+(\d+))?)?'                                  # opt free-marker + scheme qty
-        r'(?:\s+([\d.]+))?'                                             # opt value (absent when qty=0)
+        r'(?:\s+([\d,.]+))?'                                            # opt value (absent when qty=0; commas grouped)
         r'\s+(\d{2}/\d{2})\s*$')                                        # expiry
     # division band: code + text containing DIV (case-insensitive)
     div_re = re.compile(r'^\s*(\d{1,4})\s+(.*(?:DIV|div).*)$')

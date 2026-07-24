@@ -39,6 +39,17 @@ _FURNITURE_TOKENS = (
     "GRAND TOTAL", "PAGE NO", "CONTINUED", "GSTIN", "REPORT FOR",
 )
 
+# Under each product band, every real customer line is followed by its invoice/credit-note
+# DETAIL line — an invoice/challan/CN code in col0 ("AM2627-0262813-06 EB503", "CN00167 26-06
+# AG3607", "AMCH-05920 26-06 CX527") that DUPLICATES the customer's qty/amount (the customer line
+# already carries the correct net rate/amount and is what the per-item TOTAL reconciles to).
+# Emitting the detail line as a second "party" double-counts the sale, so it is skipped. Two
+# signature a real customer name never has: a 2-4 letter code prefix glued straight to 3+ digits
+# ("AM2627...", "CN00167") or to a dash+2digits ("AMCH-05920"). Requiring 3+ glued digits keeps a
+# short real name like "ABC12 MEDICAL" safe. Files without such detail lines never match and are
+# byte-for-byte unaffected.
+_DOCNO_RE = re.compile(r"^[A-Z]{2,4}(?:\d{3,}|-\d{2,})")
+
 
 def _split_trailing(text):
     """Peel a trailing fixed-width column: return (head, tail); tail is "" when there is no
@@ -147,6 +158,11 @@ def parse_item_item_sales_summary(rows):
             continue
         # party line
         if not product:
+            continue
+        # Skip a page-break repeat of the title/header block and the invoice/credit-note DETAIL
+        # line that duplicates the customer's sale (see _DOCNO_RE) — both otherwise leak in as a
+        # bogus/duplicate party. Real customer lines never match either, so this is additive.
+        if up0 in header_block or _is_furniture(col0) or _DOCNO_RE.match(col0):
             continue
         qty, free, rate, amount = tail
         pname, ploc = _split_trailing(col0)

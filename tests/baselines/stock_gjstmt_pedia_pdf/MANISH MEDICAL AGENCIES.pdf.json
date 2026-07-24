@@ -1,0 +1,19 @@
+{
+  "file": "MANISH MEDICAL AGENCIES.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 4,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 29,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend D3 Capsules",
+    "Fentispor Capsule"
+  ],
+  "closing_stock_total": 1318.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

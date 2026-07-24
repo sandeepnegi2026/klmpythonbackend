@@ -1,0 +1,30 @@
+{
+  "file": "Customer__Company_ klm.pdf",
+  "route": "party_pdf",
+  "row_count": 180,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "r15_profitmaker_area_ccp",
+  "party_count": 44,
+  "area_count": 16,
+  "product_count": 82,
+  "sample_parties": [
+    "AADVIK MEDICALS",
+    "AJAY MEDICALS",
+    "ANANDH MEDICALS",
+    "ARUNA MEDICALS",
+    "ATM APOLLO MPHARMACY"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "C-1000 MG",
+    "Canrolfin Cream 15 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 984.0,
+  "amount_total": 184480.99,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

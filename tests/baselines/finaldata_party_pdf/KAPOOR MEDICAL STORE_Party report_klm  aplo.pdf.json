@@ -1,0 +1,30 @@
+{
+  "file": "klm  aplo.pdf",
+  "route": "party_pdf",
+  "row_count": 685,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "kapoor_party_itemwise_sale",
+  "party_count": 132,
+  "area_count": 10,
+  "product_count": 102,
+  "sample_parties": [
+    "A.R MEDICOS BILASPUR",
+    "AASHISH MEDICAL AGENCY MANDI",
+    "AAYU MEDICAL STORE RAM NAGAR MANDI",
+    "ABS MEDICAL STORE BHUNTER",
+    "ADVANCE DRUGS AND SURGICAL BHANGROTU"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 2775.0,
+  "amount_total": 589205.82,
+  "rate_total": 247801.51,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

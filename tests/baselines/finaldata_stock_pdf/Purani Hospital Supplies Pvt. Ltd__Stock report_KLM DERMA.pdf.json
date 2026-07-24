@@ -1,0 +1,18 @@
+{
+  "file": "KLM DERMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "purani_mfr_stock_sales_pdf",
+  "product_count": 16,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Klm C 20 Serum 15Ml",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 157.0,
+  "rate_total": 5308.53
+}

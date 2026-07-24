@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__klm dermacor pw may.pdf",
+  "route": "party_pdf",
+  "row_count": 89,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_group_vs_customer",
+  "party_count": 23,
+  "area_count": 6,
+  "product_count": 30,
+  "sample_parties": [
+    "AMMA PAHARMACY (NEW)",
+    "ARUNA MEDICALS",
+    "ARUNA MEDICALS (KORITEPADU)",
+    "HARITHA MEDICAL STORES",
+    "KVS MEDICALS"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair 1*30 Tablets",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 548.0,
+  "amount_total": 121372.93,
+  "rate_total": 20749.48,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

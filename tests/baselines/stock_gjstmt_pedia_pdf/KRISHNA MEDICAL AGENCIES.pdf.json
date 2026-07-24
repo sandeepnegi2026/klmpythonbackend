@@ -1,0 +1,19 @@
+{
+  "file": "KRISHNA MEDICAL AGENCIES.pdf",
+  "route": "stock_pdf",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "marg_web_stock",
+  "product_count": 28,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend D3 Capsules",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 907.0,
+  "rate_total": 0.0,
+  "line_unexplained": 4
+}

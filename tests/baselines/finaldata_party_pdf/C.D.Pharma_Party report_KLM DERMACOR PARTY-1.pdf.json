@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACOR PARTY-1.pdf",
+  "route": "party_pdf",
+  "row_count": 76,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 21,
+  "area_count": 0,
+  "product_count": 27,
+  "sample_parties": [
+    "ARKA MEDICALS",
+    "BHAVANI DRUG HOUSE",
+    "BLOSSOMS PHARMACY",
+    "C K PHARMA CARE",
+    "COUNTER SALE"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 1216.5,
+  "amount_total": 216831.08,
+  "rate_total": 16707.28,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

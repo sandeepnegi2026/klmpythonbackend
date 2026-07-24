@@ -1,0 +1,30 @@
+{
+  "file": "klm area 25062026.xls",
+  "route": "party_xlsx",
+  "row_count": 155,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "area_party_billwise",
+  "party_count": 31,
+  "area_count": 26,
+  "product_count": 62,
+  "sample_parties": [
+    "Datta Medicals",
+    "Dr.Mukund Purushotham",
+    "Eshwar Medicals(RJN)",
+    "Ganesh Medicals (NRM)",
+    "Gowri Medicals"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "qty_total": 473.0,
+  "amount_total": 86403.94,
+  "rate_total": 30380.48,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

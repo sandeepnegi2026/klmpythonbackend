@@ -1,0 +1,18 @@
+{
+  "file": "ARHAM DISTRIBUTOR.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "infosoft_stock",
+  "product_count": 4,
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Kojitin Emulgel 15Gm"
+  ],
+  "closing_stock_total": 134.0,
+  "rate_total": 13084.79,
+  "line_unexplained": 0
+}

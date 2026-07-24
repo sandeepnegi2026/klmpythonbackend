@@ -1,0 +1,30 @@
+{
+  "file": "sm pharma area.pdf",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 14,
+  "area_count": 6,
+  "product_count": 10,
+  "sample_parties": [
+    "AYYAPPA MEDICAL STORES",
+    "DRAKSHAYEENI MEDICAL S",
+    "JABILI MEDICAL STORES",
+    "KAVYA MEDICAL & GENRAL S",
+    "LAKSHMI MEDICAL & GENR"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 246.0,
+  "amount_total": 21007.04,
+  "rate_total": 6018.22,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

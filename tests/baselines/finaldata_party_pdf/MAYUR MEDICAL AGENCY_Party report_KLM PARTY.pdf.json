@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY.pdf",
+  "route": "party_pdf",
+  "row_count": 313,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 171,
+  "area_count": 37,
+  "product_count": 71,
+  "sample_parties": [
+    ".AADHYA MED STORE",
+    "A R MEDICAL ST MEWATI MOHALLA",
+    "A S MEDICAL STORE",
+    "AGARWAL MEDICAL STORE(NEW)",
+    "AGRAWAL MED. STR. GWL."
+  ],
+  "sample_products": [
+    "009203 SOFIBAR SOA",
+    "0285 KLM D3 NANO",
+    "1025 SOFIDEW BAB",
+    "302608 KERAMATE BL",
+    "911272 COSMOQ-S/B"
+  ],
+  "qty_total": 538.0,
+  "amount_total": 94266.13,
+  "rate_total": 59420.99,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

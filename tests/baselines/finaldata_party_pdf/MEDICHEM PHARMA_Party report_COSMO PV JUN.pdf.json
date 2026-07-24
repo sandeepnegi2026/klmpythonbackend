@@ -1,0 +1,27 @@
+{
+  "file": "COSMO PV JUN.pdf",
+  "route": "party_pdf",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "party_item_summary_nofree",
+  "party_count": 4,
+  "area_count": 0,
+  "product_count": 3,
+  "sample_parties": [
+    "DR NEHA SHARMA",
+    "DR SUNIL RANA",
+    "HEALTH CARE SOCIETY OF DIOCESE",
+    "KAIVALYA MEDICALS"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Klm-D3 60K Capsules (1*8 Cap)",
+    "Kojitin Emulgel 15Gm"
+  ],
+  "qty_total": 80.0,
+  "amount_total": 11203.22,
+  "rate_total": 614.48,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

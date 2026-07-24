@@ -7,7 +7,7 @@
   "detected_format": "marg_bordered_billwise",
   "party_count": 56,
   "area_count": 16,
-  "product_count": 94,
+  "product_count": 95,
   "sample_parties": [
     "ALPHA MEDICAL",
     "AM MEDICO",
@@ -25,5 +25,6 @@
   "qty_total": 4975.0,
   "amount_total": 0.0,
   "rate_total": 105100.82,
-  "purchase_rate_total": 94590.76
+  "purchase_rate_total": 94590.76,
+  "line_unexplained": 47
 }

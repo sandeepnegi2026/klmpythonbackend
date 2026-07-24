@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY SALE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1980,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "klm_warehouse_pincode_sale_dump",
+  "party_count": 277,
+  "area_count": 141,
+  "product_count": 128,
+  "sample_parties": [
+    "0",
+    "ADARSH NAGAR",
+    "AIIMS HOSPITAL",
+    "AJAY NAGER",
+    "AJMER"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 4876.0,
+  "amount_total": 995153.49,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

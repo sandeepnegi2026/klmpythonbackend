@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise.xlsx",
+  "route": "party_xlsx",
+  "row_count": 481,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 181,
+  "area_count": 167,
+  "product_count": 124,
+  "sample_parties": [
+    "AAA REGENERATION CHEMIST & DUR",
+    "AAI MEDICAL&GENERAL STORES",
+    "AAIJEE CHEMIST & GEN STORE",
+    "AARAMBH CHEMIST",
+    "ADVIK MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "qty_total": 1134.0,
+  "amount_total": 198543.84,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

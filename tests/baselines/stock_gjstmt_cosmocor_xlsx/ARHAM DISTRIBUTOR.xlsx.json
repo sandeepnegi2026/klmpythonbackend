@@ -1,0 +1,19 @@
+{
+  "file": "ARHAM DISTRIBUTOR.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 74,
+  "warnings_count": 5,
+  "headers_detected_count": 11,
+  "detected_format": "infosoft_stock",
+  "product_count": 8,
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Niogenta F Cream 20 Gm",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm",
+    "Niosol Ointment 30 Gm"
+  ],
+  "closing_stock_total": 516.0,
+  "rate_total": 12203.06,
+  "line_unexplained": 0
+}

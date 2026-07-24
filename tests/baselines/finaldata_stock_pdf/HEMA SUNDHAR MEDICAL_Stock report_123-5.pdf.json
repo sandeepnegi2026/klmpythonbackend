@@ -1,0 +1,19 @@
+{
+  "file": "123-5.pdf",
+  "route": "stock_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_lmsale_receipts_age",
+  "product_count": 8,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Extend Total 1*15 Tab",
+    "Klclav-625 Tablets",
+    "Klm Fx 180 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 114.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

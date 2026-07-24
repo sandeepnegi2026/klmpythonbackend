@@ -1,0 +1,29 @@
+{
+  "file": "KLM COSMOQ AW MAY.pdf",
+  "route": "party_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 5,
+  "area_count": 1,
+  "product_count": 4,
+  "sample_parties": [
+    "AMARESHWAR MEDICAL AND GEN STORES GADAG",
+    "DR BHAGYASHRI BASARIGIDAD GADAG",
+    "DR MD ZAKIR M.B.B.S MD GADAG",
+    "JAIN MEDICAL & GENRAL STORE GADAG",
+    "SHIFA MEDICAL (DR JAMADAR) GADAG"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "KERMATE BROWN HAIR"
+  ],
+  "qty_total": 42.0,
+  "amount_total": 17497.38,
+  "rate_total": 2623.55,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

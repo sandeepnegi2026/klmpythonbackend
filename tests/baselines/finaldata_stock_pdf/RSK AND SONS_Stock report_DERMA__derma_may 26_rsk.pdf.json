@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__derma_may 26_rsk.pdf",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 2,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 24,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "HB SALIC CREAM",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "closing_stock_total": 669.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

@@ -1,0 +1,19 @@
+{
+  "file": "STOCK _ SALES ANALYSIS  _KLM LABORATORIES PVT.LTD_ 01-06-2026 - 30-06-2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 17,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 663.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

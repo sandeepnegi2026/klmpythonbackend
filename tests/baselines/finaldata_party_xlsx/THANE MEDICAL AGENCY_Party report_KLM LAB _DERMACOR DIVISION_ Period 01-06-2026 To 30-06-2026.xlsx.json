@@ -1,0 +1,18 @@
+{
+  "file": "KLM LAB _DERMACOR DIVISION_ Period 01-06-2026 To 30-06-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "tabular",
+  "party_count": 0,
+  "area_count": 0,
+  "product_count": 0,
+  "sample_parties": [],
+  "sample_products": [],
+  "qty_total": 0.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

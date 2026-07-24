@@ -1,0 +1,30 @@
+{
+  "file": "klm exel partiw.may-26.XLS",
+  "route": "party_xlsx",
+  "row_count": 271,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_register_excel",
+  "party_count": 80,
+  "area_count": 21,
+  "product_count": 98,
+  "sample_parties": [
+    "A ONE MEDICAL STORE",
+    "AANJANEYA CHEMIST",
+    "AASTHA MEDICAL STORE.",
+    "AL HAYAT MEDICAL STORES",
+    "ALSHIFA MEDICAL & PRO.STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 3347.0,
+  "amount_total": 410169.57,
+  "rate_total": 41604.53,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

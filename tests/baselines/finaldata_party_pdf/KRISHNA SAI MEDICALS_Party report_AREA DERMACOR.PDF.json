@@ -1,0 +1,30 @@
+{
+  "file": "AREA DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "sales_statement_summary_itemwise",
+  "party_count": 29,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "BHARATH MEDICAL STORES-KURNOOL",
+    "BHASKAR MEDICAL STORE-KURNOOL",
+    "GANAPATHI MEDI GENRAL STORES-K",
+    "GANESH MEDICAL FANCY STORES-NA",
+    "GURU RAGHAVENDRA M F CORNER-KU"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets"
+  ],
+  "qty_total": 352.0,
+  "amount_total": 64982.55,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

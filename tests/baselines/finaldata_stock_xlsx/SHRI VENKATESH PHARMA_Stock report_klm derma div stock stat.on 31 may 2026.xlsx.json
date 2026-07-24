@@ -1,0 +1,19 @@
+{
+  "file": "klm derma div stock stat.on 31 may 2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 19,
+  "detected_format": "klm_stock_sale_gdout_xlsx",
+  "product_count": 21,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "NEVLON MOIST.SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "closing_stock_total": 317.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

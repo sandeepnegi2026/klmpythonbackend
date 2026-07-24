@@ -20,10 +20,11 @@
     "NEVLON BODY LOTION",
     "NEVLON SOAP",
     "Nevlon Cream 100Gm",
-    "Onitraz Sb 65"
+    "Onitraz Forte Capsules 1*10 Capsules"
   ],
   "qty_total": 20.0,
   "amount_total": 3271.04,
   "rate_total": 1822.07,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIATRIC 1.PDF",
+  "route": "party_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 7,
+  "area_count": 3,
+  "product_count": 15,
+  "sample_parties": [
+    "AARHANSH PHARMACY",
+    "AARUSH MEDICALS",
+    "AMRUTHA MEDICAL &FANCY",
+    "BLIV MEDICALS",
+    "DR KHADEER AHAMAD"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Histabil Tablet 1*10 Tab",
+    "Klclav Ds"
+  ],
+  "qty_total": 189.0,
+  "amount_total": 17968.85,
+  "rate_total": 2096.95,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

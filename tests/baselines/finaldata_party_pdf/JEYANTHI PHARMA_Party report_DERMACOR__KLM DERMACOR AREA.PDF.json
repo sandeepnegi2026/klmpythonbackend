@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__KLM DERMACOR AREA.PDF",
+  "route": "party_pdf",
+  "row_count": 136,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "areawise_sales_billwise",
+  "party_count": 55,
+  "area_count": 17,
+  "product_count": 25,
+  "sample_parties": [
+    "100 PLUS PHARMACY",
+    "ADHI MEDICALS",
+    "ALAGU PHARMACY-C",
+    "ALM MEDICALS",
+    "AMERTH PHARMACY"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "qty_total": 539.0,
+  "amount_total": 109884.42,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

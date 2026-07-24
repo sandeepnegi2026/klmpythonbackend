@@ -1,0 +1,19 @@
+{
+  "file": "Stock___Sales_Statement_02062026_112013_1_001599_260602112013867.Pdf",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 28,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Dusting Powder 100Gm"
+  ],
+  "closing_stock_total": 210.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

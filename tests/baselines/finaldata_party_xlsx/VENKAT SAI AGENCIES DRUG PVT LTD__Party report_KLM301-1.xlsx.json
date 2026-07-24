@@ -1,0 +1,30 @@
+{
+  "file": "KLM301-1.xlsx",
+  "route": "party_xlsx",
+  "row_count": 169,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 100,
+  "area_count": 99,
+  "product_count": 33,
+  "sample_parties": [
+    "A TO Z PHARMACY & GEN.STORES",
+    "AASHRITH PHARMACY(CHEMIST AND DRUGGIST)",
+    "ADITHYA PHARMACY",
+    "ADITYA MED & GEN STORES F1",
+    "AL SHIFA MEDICAL HALL"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 2009.0,
+  "amount_total": 357667.57,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

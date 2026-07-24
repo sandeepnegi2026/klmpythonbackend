@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA COR.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls",
+  "product_count": 30,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "closing_stock_total": 262.0,
+  "rate_total": 4841.52,
+  "line_unexplained": 5
+}

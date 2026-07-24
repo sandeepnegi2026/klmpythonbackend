@@ -1,0 +1,19 @@
+{
+  "file": "COSMOQ__KLM COSMOQ 5 26 SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_open_pur_sale_amt",
+  "product_count": 5,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "closing_stock_total": 44.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

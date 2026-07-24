@@ -31,6 +31,8 @@ holds exactly (matches core.sanity: op+pur+pf-pr-sal-sf+sr).
 import io
 import re
 
+from extractors.stock_pdf.parse_common import _zero_row_is_product
+
 _NUM_RE = re.compile(r"-?\d[\d,]*\.?\d*$")
 
 # Header sub-label token that is unique enough to lock onto this bottom header line.
@@ -224,9 +226,12 @@ def parse_marg_movement_detail_sparse(text, file_bytes=None):
                 sales = col.get("sales", 0.0)
                 closing = col.get("closing", 0.0)
 
-                # A genuine product row prints at least a TOTAL or a CLOSING.
+                # Keep genuine zero-activity catalog SKUs: a named product with no
+                # movement this period (often only a rate printed). Only drop a
+                # nameless / address phantom.
                 if opening == 0 and purchases == 0 and total == 0 and \
-                        sales == 0 and closing == 0:
+                        sales == 0 and closing == 0 and \
+                        not _zero_row_is_product(name):
                     continue
 
                 # Fold secondary movement columns off the ERP's printed TOTAL so the

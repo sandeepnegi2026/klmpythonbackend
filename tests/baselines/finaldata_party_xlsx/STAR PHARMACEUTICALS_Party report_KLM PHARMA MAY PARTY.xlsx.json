@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA MAY PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "customer_product_banded",
+  "party_count": 25,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "AVSR MEDICAL AND GENERAL",
+    "AYUSH MEDICAL AND SURGICA",
+    "HOPE MEDICAL&FANCY STORES",
+    "KANAKADURGA MEDICAL/F/STO",
+    "LAKE PHARMACY"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 58.0,
+  "amount_total": 0.0,
+  "rate_total": 8768.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

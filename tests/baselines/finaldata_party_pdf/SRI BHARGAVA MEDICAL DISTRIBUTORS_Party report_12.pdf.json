@@ -1,0 +1,22 @@
+{
+  "file": "12.pdf",
+  "route": "party_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "NEON PHARMACY"
+  ],
+  "sample_products": [
+    "Tecum 0.03 % Ointment 10 Gm"
+  ],
+  "qty_total": 8.0,
+  "amount_total": 1031.47,
+  "rate_total": 128.93,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

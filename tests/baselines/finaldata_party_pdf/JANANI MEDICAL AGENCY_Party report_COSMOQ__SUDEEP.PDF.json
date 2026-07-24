@@ -1,0 +1,30 @@
+{
+  "file": "COSMOQ__SUDEEP.PDF",
+  "route": "party_pdf",
+  "row_count": 101,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 44,
+  "area_count": 22,
+  "product_count": 14,
+  "sample_parties": [
+    "A.J.PHARMA",
+    "ANTBIOTICK",
+    "ANTIBIOTIC MEDICARE",
+    "BANDHU MEDICAL HALL PVT.LT",
+    "BANDHU MEDICAL HALL.PVT.LTD"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 253.0,
+  "amount_total": 94586.57,
+  "rate_total": 38903.28,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

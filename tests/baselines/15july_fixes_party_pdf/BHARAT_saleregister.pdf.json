@@ -1,0 +1,30 @@
+{
+  "file": "BHARAT_saleregister.pdf",
+  "route": "party_pdf",
+  "row_count": 384,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "bharat_saleregister",
+  "party_count": 68,
+  "area_count": 0,
+  "product_count": 87,
+  "sample_parties": [
+    "ADVANCE DRUGS AND SURGICAL",
+    "AMAN MED STORE (SNR)",
+    "ANIL MEDICAL STORE SUNDERNAGAR",
+    "ARORA MED HALL (BHARERI)",
+    "ARYA MEDICAL STORE (BAKSAID)"
+  ],
+  "sample_products": [
+    "01/06/2026",
+    "02/06/2026",
+    "05/06/2026",
+    "06/06/2026",
+    "08/04/2026"
+  ],
+  "qty_total": 6537.0,
+  "amount_total": 888137.98,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 76
+}

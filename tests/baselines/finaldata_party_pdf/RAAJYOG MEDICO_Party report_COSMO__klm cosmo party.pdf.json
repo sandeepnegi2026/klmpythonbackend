@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__klm cosmo party.pdf",
+  "route": "party_pdf",
+  "row_count": 26,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "billwise_multiheader",
+  "party_count": 22,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "0 TO 9 BABY SHOP",
+    "AADI MEDICAL STORES",
+    "DEVANSHU MEDICAL & GEN STORES",
+    "DR.MAYURI SONAWANE",
+    "FAST MEDICO OPD"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Histabil Tablet 1*10 Tab",
+    "Imxia 10",
+    "Imxia 2%"
+  ],
+  "qty_total": 129.0,
+  "amount_total": 43119.8,
+  "rate_total": 9853.35,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "klm all 18-6-26.pdf",
+  "route": "stock_pdf",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt_datewise_pack_free_inst",
+  "product_count": 38,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Ekran Aqua Gel 100Gm"
+  ],
+  "closing_stock_total": 591.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

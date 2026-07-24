@@ -1,0 +1,19 @@
+{
+  "file": "KLML.PDF",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sree_swathi_stock_sales_statement",
+  "product_count": 7,
+  "sample_products": [
+    "Desosoft Lotion 30 Ml",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml",
+    "Klmite Cream 60 Gm",
+    "Klmite Soap"
+  ],
+  "closing_stock_total": 155.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

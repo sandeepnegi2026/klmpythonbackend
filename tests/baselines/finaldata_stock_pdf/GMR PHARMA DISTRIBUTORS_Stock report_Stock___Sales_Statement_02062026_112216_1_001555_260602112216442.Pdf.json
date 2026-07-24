@@ -1,0 +1,19 @@
+{
+  "file": "Stock___Sales_Statement_02062026_112216_1_001555_260602112216442.Pdf",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 10,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 15.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -36,7 +36,7 @@ Modelled on marg_ss_statement_detailed.py.
 from extractors.stock_pdf.parse_common import (
     _nums,
     _skip_line,
-    _split_product_numbers,
+    _split_product_numbers_comma as _split_product_numbers,
     _split_product_pack,
 )
 

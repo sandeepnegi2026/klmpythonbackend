@@ -18,7 +18,7 @@ def parse_marg_lms_simple(text):
             continue
         if s.startswith("SALES AMOUNT") or s.startswith("STOCK VALUE"):
             continue
-        if re.match(r"^KLM\s", s, re.I):
+        if re.match(r"^KLM\s", s, re.I) and not re.search(r"\d", s):
             division = s
             continue
         if s.startswith("PRODUCT ") and "OPENING" in s:

@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__AARCHI DIST-PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "marg_bordered_billwise",
+  "party_count": 7,
+  "area_count": 2,
+  "product_count": 17,
+  "sample_parties": [
+    "ANJALI MEDICINES",
+    "DHANVANTARI MEDICAL",
+    "DR CHANDRESH PANELI",
+    "MUSKAN MEDICAL STOR",
+    "SANJIVANI MEDICINE GO"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klm D3 Nano Drops 30Ml"
+  ],
+  "qty_total": 575.0,
+  "amount_total": 0.0,
+  "rate_total": 5266.16,
+  "purchase_rate_total": 4739.51,
+  "line_unexplained": 0
+}

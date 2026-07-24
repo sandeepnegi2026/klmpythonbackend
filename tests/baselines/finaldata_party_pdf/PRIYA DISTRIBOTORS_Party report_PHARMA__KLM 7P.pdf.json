@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM 7P.pdf",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "billwise_multiheader",
+  "party_count": 17,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "AAROGYA MEDICAL AND GENERAL STORES",
+    "BALKUNDEKAR MED & GEN STORES",
+    "CHAPSI SON S LATUR",
+    "CHARLI MEDICAL STORES",
+    "GANDHI CHOWK,FIRST FLR,OPP.TELEGRAF OFFICE,LATUR,, LATUR"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "SOFIBAR 75GM.SOAP 75GM. SKS0326",
+    "SOFIDEW BABY 100ML. AC3602",
+    "SOFIDEW BABY 100ML. KH502"
+  ],
+  "qty_total": 103.0,
+  "amount_total": 16489.57,
+  "rate_total": 3865.3,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

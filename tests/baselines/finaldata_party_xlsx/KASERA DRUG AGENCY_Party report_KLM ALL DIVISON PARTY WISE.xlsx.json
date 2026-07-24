@@ -1,0 +1,30 @@
+{
+  "file": "KLM ALL DIVISON PARTY WISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 564,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "item_item_sales_summary",
+  "party_count": 134,
+  "area_count": 0,
+  "product_count": 121,
+  "sample_parties": [
+    "AAYUSHI MEDICARE-HATA",
+    "ABHIKA MEDICARE-MANGO",
+    "AGARWAL MEDICAL STORE-SAKCHI",
+    "AGARWAL MEDICALS-SAKCHI",
+    "AJAY MEDICAL HALL-GAMHRIA"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 3448.0,
+  "amount_total": 567381.85,
+  "rate_total": 126145.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

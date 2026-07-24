@@ -1,0 +1,19 @@
+{
+  "file": "GAYATRI ENTERPRISE.PDF",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 1,
+  "headers_detected_count": 12,
+  "detected_format": "prompt_bordered",
+  "product_count": 30,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Folibild Tablets"
+  ],
+  "closing_stock_total": 764.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

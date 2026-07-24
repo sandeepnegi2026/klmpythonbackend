@@ -1,0 +1,19 @@
+{
+  "file": "KLM_S_S.PDF",
+  "route": "stock_pdf",
+  "row_count": 154,
+  "warnings_count": 20,
+  "headers_detected_count": 14,
+  "detected_format": "stock_sale_closing_pairs",
+  "product_count": 140,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "closing_stock_total": 333.0,
+  "rate_total": 0.0,
+  "line_unexplained": 13
+}

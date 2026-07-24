@@ -30,7 +30,37 @@ def _split_town(name):
     return (name_clean or raw), town
 
 
-def parse_manufacturerwise_billwise(text):
+_FOOTER_INTERLEAVE_RE = re.compile(r"D\s+o\s+c\s+u\s+m\s+e\s+n\s+t")
+
+
+def _strip_footer_overlay(file_bytes):
+    """Some page-1 exports overlay a "Document Footer Text  Page N / M" watermark in
+    Helvetica-Oblique that pdfplumber interleaves CHAR-BY-CHAR into the first party
+    heading ("D o c u m e n t F o o t e SrA KTTHeIxSRtI MEDICALS, ERODE Page 1 / 9").
+    The real data is Courier New,Bold; dropping the italic overlay glyphs and
+    re-extracting recovers the clean party ("SAKTHISRI MEDICALS, ERODE")."""
+    import io
+
+    import pdfplumber
+
+    # The whole report body is Courier New; the page-1 overlay uses Helvetica
+    # (Helvetica-Oblique "Document Footer Text" watermark + Helvetica-Bold "Page N / M"
+    # page number). Dropping every Helvetica glyph removes BOTH footer parts and leaves
+    # the Courier data untouched.
+    parts = []
+    with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
+        for page in pdf.pages:
+            clean = page.filter(
+                lambda o: not (
+                    o.get("object_type") == "char"
+                    and "elvetica" in (o.get("fontname") or "")
+                )
+            )
+            parts.append(clean.extract_text() or "")
+    return "\n".join(parts)
+
+
+def parse_manufacturerwise_billwise(text, file_bytes=None):
     """Sri Senthil 'Manufacturerwise Sales Report' billwise layout.
 
     The extracted raw text repeats the ENTIRE report once per printed page
@@ -49,6 +79,12 @@ def parse_manufacturerwise_billwise(text):
 
     headers = ["Party Name", "Area", "Date", "Inv No", "Product Name",
                "Qty", "Free", "Gross", "Rate", "MRP", "Repl", "Amount"]
+
+    # Re-extract without the italic page-1 footer watermark ONLY when it has bled into
+    # the text (its char-by-char interleave shows as a spaced "D o c u m e n t"); the
+    # unaffected exports keep their original byte-identical text.
+    if file_bytes and _FOOTER_INTERLEAVE_RE.search(text):
+        text = _strip_footer_overlay(file_bytes)
 
     lines = text.splitlines()
 

@@ -1,0 +1,30 @@
+{
+  "file": "KLM REPORT JUNE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 17,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "AMAN PHARMA(BARHI)",
+    "BHAGAT MEDICALS",
+    "CLUB PHARMA",
+    "DHARA MEDICAL",
+    "DR CHHITIZ ANAND"
+  ],
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Extend Total 1*15 Tab",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10"
+  ],
+  "qty_total": 501.0,
+  "amount_total": 82751.5,
+  "rate_total": 3722.06,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

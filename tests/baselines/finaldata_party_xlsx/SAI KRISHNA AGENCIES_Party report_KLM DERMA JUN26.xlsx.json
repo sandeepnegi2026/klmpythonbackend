@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA JUN26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "item_customerwise_sale",
+  "party_count": 22,
+  "area_count": 22,
+  "product_count": 13,
+  "sample_parties": [
+    "ARCHANA PHARMACY(ALLIPURAM)",
+    "BALAJI MEDICALS(PM PALEM)",
+    "BON PHARMACY(KGH)",
+    "CHAITANYA MEDICALS(KURMANNAPALEM)",
+    "CURE PHARMACY A(SEETHAMMADHARA)"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 60Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "qty_total": 119.0,
+  "amount_total": 25774.31,
+  "rate_total": 5677.39,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

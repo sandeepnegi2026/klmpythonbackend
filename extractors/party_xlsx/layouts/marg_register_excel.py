@@ -56,6 +56,18 @@ def parse_marg_register_excel(rows):
         inv = cell_text(raw_row[inv_idx] if inv_idx < len(raw_row) else "")
         if not item:
             continue
+        # Skip the page-header block that repeats atop every page: the firm's own
+        # address line ("105,106,109,110,ANAND MARKET,...ROAD Ph:02765...") and the
+        # repeated column-header row ("Item Name ... Amount"). Otherwise the address
+        # line's leading code becomes a phantom party ('105') and the header row a
+        # phantom product. Guarded so a real customer/product is never matched.
+        import re as _re
+        if (
+            _re.match(r"^\d{2,4}\s*,\s*\d", item)
+            or _re.search(r"\bPh\s*[:.]", item)
+            or item.strip().lower() in ("item name", "item", "product name")
+        ):
+            continue
         if not looks_like_date(date) and not inv:
             import re
             # Extract clean area from date column if present (e.g. 'JAMALPUR-       287')

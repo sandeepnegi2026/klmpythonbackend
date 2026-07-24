@@ -1,0 +1,19 @@
+{
+  "file": "PRAKASH DISTRIBUTOR mail.pdf",
+  "route": "stock_pdf",
+  "row_count": 25,
+  "warnings_count": 12,
+  "headers_detected_count": 9,
+  "detected_format": "generic",
+  "product_count": 22,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash",
+    "Fentispor Capsule",
+    "Klclav Kid Dt Tablets"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "MSEL10.RPT 6.XLS",
+  "route": "party_xlsx",
+  "row_count": 54,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 27,
+  "area_count": 1,
+  "product_count": 14,
+  "sample_parties": [
+    "5 ANUP MEDICAL AND GEN STORES",
+    "8 LAXMI MEDICAL STORES SHASTRI CHOWK",
+    "9 Laxmi Medicine Center Pandari",
+    "AGRAWAL MEDICAL STORES pithora",
+    "APOLLO PHARMACIES LIMITED  mowa"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 148.0,
+  "amount_total": 18749.6,
+  "rate_total": 6851.23,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

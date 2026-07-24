@@ -1,0 +1,19 @@
+{
+  "file": "KLM-2.PDF",
+  "route": "stock_pdf",
+  "row_count": 81,
+  "warnings_count": 2,
+  "headers_detected_count": 12,
+  "detected_format": "stock_sales_statement_adjmt_positional",
+  "product_count": 81,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "closing_stock_total": 1385.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 13,
   "detected_format": "marg_bordered",
-  "product_count": 32,
+  "product_count": 33,
   "sample_products": [
     "DEKTOP 20GM CREAM.",
     "DEKTOP 50ML LOTION.",
@@ -14,5 +14,6 @@
     "Extend Hair 1*30 Tablets"
   ],
   "closing_stock_total": 943.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 1
 }

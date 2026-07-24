@@ -1,0 +1,19 @@
+{
+  "file": "KRISHNA PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 14,
+  "warnings_count": 1,
+  "headers_detected_count": 16,
+  "detected_format": "marg_bordered",
+  "product_count": 14,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 374.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

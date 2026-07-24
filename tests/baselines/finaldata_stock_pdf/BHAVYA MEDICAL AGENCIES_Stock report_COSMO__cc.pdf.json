@@ -1,0 +1,19 @@
+{
+  "file": "COSMO__cc.pdf",
+  "route": "stock_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "bhavya_open_recv_issue_close_value",
+  "product_count": 9,
+  "sample_products": [
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Herpival-500 Tablets 1*3 Tablets",
+    "Histabil Tablet 1*10 Tab",
+    "Imxia 2%",
+    "Imxia 5"
+  ],
+  "closing_stock_total": 102.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

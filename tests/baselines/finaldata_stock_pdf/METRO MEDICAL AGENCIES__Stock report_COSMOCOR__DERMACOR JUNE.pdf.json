@@ -1,0 +1,19 @@
+{
+  "file": "COSMOCOR__DERMACOR JUNE.pdf",
+  "route": "stock_pdf",
+  "row_count": 51,
+  "warnings_count": 4,
+  "headers_detected_count": 9,
+  "detected_format": "stock_unit_op_purc_sale_cl",
+  "product_count": 47,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Eva Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets"
+  ],
+  "closing_stock_total": 861.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

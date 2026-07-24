@@ -1,0 +1,24 @@
+{
+  "file": "klmd cust.pdf",
+  "route": "party_pdf",
+  "row_count": 2,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_group_vs_customer",
+  "party_count": 2,
+  "area_count": 1,
+  "product_count": 2,
+  "sample_parties": [
+    "DEVI NEW ATOZ MEDICAL & GEN STORES",
+    "SRI SIRI MEDICAL&GENARAL STORES."
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Melapik Hq Cream 20 Gm"
+  ],
+  "qty_total": 3.0,
+  "amount_total": 360.71,
+  "rate_total": 257.14,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

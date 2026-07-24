@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACOR JUN26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "item_customerwise_sale",
+  "party_count": 12,
+  "area_count": 12,
+  "product_count": 11,
+  "sample_parties": [
+    "A.P.MEDICALS(DONDAPARTHY)",
+    "ADITYA PHARMACY(KURMANNA PALEM)",
+    "CURE PHARMACY A(SEETHAMMADHARA)",
+    "GUPTA MEDICALS (RAMNAGAR)",
+    "SREE RAMA MEDICALSTORES(NVCHE)"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "qty_total": 81.0,
+  "amount_total": 14023.42,
+  "rate_total": 3370.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

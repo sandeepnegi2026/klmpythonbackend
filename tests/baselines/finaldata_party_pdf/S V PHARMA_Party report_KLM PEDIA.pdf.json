@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "JANANI PHARMACY",
+    "MAHALAXMI MEDICALS",
+    "SRI ANNAPURNA MEDICALS AN",
+    "SRI MODA VENKATA SAI K V",
+    "SRIJAN MEDICAL & GENERALS"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Klm D3 Nano Drops",
+    "Mupisoft Ointment 5 Gm",
+    "Sacctik Plus 1*10 Bottle",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 100.0,
+  "amount_total": 11263.78,
+  "rate_total": 2030.86,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

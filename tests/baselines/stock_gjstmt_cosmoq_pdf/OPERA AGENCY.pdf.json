@@ -1,0 +1,18 @@
+{
+  "file": "OPERA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 7,
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm",
+    "Keramate Hair Colour (Natural Brown) 60Gm+60Gm",
+    "Priloderm Gel 10Gm"
+  ],
+  "closing_stock_total": 52.0,
+  "rate_total": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR.PDF",
+  "route": "party_pdf",
+  "row_count": 35,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 26,
+  "area_count": 7,
+  "product_count": 9,
+  "sample_parties": [
+    "AHUJA MEDICAL NEEMUCH",
+    "ANNAPURNA MEDICAL",
+    "APURVA MEDICOSE MANASA",
+    "CASH CUSTOMER",
+    "CHEMS CORNER MEDICAL NEEMUCH"
+  ],
+  "sample_products": [
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm",
+    "Kenz Soap",
+    "Klm C 20 Serum 15Ml",
+    "Klm Klin Aha Face Wash 100 Ml"
+  ],
+  "qty_total": 109.0,
+  "amount_total": 21589.91,
+  "rate_total": 7755.68,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

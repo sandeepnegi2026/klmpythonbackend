@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMCORE 1.PDF",
+  "route": "party_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 8,
+  "area_count": 4,
+  "product_count": 20,
+  "sample_parties": [
+    "AARUSH MEDICALS",
+    "ALEKHYA MEDICAL&FANCY",
+    "MPR MEDICALS",
+    "PRIME MEDICALS",
+    "SRI MYDELI MEDICALS 81A"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "EXTEN EXTEND",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 287.0,
+  "amount_total": 72202.96,
+  "rate_total": 9183.76,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

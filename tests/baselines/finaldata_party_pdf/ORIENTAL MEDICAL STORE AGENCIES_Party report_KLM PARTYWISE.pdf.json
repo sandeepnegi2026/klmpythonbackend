@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTYWISE.pdf",
+  "route": "party_pdf",
+  "row_count": 321,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 74,
+  "area_count": 35,
+  "product_count": 108,
+  "sample_parties": [
+    "AAROGYA MEDICAL",
+    "AFZAL MEDICAL",
+    "AMAN MEDICAL",
+    "ANAND MEDICAL",
+    "ANNU MEDICAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 3735.5,
+  "amount_total": 726412.28,
+  "rate_total": 74019.5,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

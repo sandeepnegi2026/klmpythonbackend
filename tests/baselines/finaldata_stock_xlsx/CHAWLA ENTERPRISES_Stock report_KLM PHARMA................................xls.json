@@ -1,0 +1,19 @@
+{
+  "file": "KLM PHARMA................................xls",
+  "route": "stock_xlsx",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_erp9_movement",
+  "product_count": 15,
+  "sample_products": [
+    "EBERFINE 30GM      1*1    PCS",
+    "Eberfine Cream 15 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "closing_stock_total": 120.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

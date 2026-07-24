@@ -1,0 +1,30 @@
+{
+  "file": "10.pdf",
+  "route": "party_pdf",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 12,
+  "area_count": 9,
+  "product_count": 16,
+  "sample_parties": [
+    "AXON PHARMACY",
+    "CRADLE MEDICAL",
+    "DHRUVI MEDICALS",
+    "ESHWAR PHARMACY",
+    "GANESH MEDICAL&GENERAL STORES"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Klclav Ds",
+    "Kofcatch Ls 100Ml Junior",
+    "Mupisoft Ointment 5 Gm"
+  ],
+  "qty_total": 911.0,
+  "amount_total": 78417.25,
+  "rate_total": 2827.72,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

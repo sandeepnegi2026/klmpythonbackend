@@ -7,7 +7,7 @@
   "detected_format": "marg_summary",
   "party_count": 21,
   "area_count": 10,
-  "product_count": 19,
+  "product_count": 20,
   "sample_parties": [
     "AAROGYA MEDICAL STORE MANDSAUR(M.P)",
     "CENTRAL MEDICAL STORS",
@@ -25,5 +25,6 @@
   "qty_total": 720.0,
   "amount_total": 63385.49,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

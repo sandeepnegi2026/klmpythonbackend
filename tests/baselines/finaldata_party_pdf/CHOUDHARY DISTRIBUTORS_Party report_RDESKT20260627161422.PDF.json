@@ -1,0 +1,22 @@
+{
+  "file": "RDESKT20260627161422.PDF",
+  "route": "party_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "choudhary_customer_information",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "ANKITA ENTERPRISE -1"
+  ],
+  "sample_products": [
+    "ABITOL PLUS SYP."
+  ],
+  "qty_total": 4.0,
+  "amount_total": 403.76,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK JUNE.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 129,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 123,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 1222.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

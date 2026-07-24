@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 11,
   "detected_format": "stock_oric_pairs",
-  "product_count": 230,
+  "product_count": 233,
   "sample_products": [
     "ARGICYNE ORAL POWDER",
     "Amoclafix-625 Tablets",
@@ -14,5 +14,6 @@
     "Canrolfin Cream 15 Gm"
   ],
   "closing_stock_total": 2436.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 1
 }

@@ -1,0 +1,19 @@
+{
+  "file": "Stock sales statement for the period 01-05-2026 - 31-05-2026KLMPDF.pdf",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "r15_klm_ss_prevlast_twopage_positional",
+  "product_count": 31,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "closing_stock_total": 1607.0,
+  "rate_total": 4236.62,
+  "line_unexplained": 2
+}

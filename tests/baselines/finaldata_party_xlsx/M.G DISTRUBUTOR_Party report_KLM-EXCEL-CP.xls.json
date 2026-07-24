@@ -1,0 +1,30 @@
+{
+  "file": "KLM-EXCEL-CP.xls",
+  "route": "party_xlsx",
+  "row_count": 80,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "r15_customer_product_wise_sales_swil",
+  "party_count": 50,
+  "area_count": 13,
+  "product_count": 42,
+  "sample_parties": [
+    "A TO Z MEDICAL STORE",
+    "AARSH MEDI SALES",
+    "ANAND MEDICAL STORE(H/R)",
+    "APOLLO PHARMACY(A/M)",
+    "APOLLO PHARMACY(S/PURA)"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ekran Aqua Gel 100Gm"
+  ],
+  "qty_total": 517.0,
+  "amount_total": 97974.82,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

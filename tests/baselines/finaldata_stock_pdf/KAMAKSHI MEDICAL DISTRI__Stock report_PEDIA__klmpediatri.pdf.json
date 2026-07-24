@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__klmpediatri.pdf",
+  "route": "stock_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 14,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klm D3 Nano Drops"
+  ],
+  "closing_stock_total": 243.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

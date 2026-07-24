@@ -1,0 +1,19 @@
+{
+  "file": "klmcosmo.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "profit_maker",
+  "product_count": 23,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G"
+  ],
+  "closing_stock_total": 111.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

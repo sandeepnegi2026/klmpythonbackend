@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__Customer___Product_02062026_112025_1_001599_260602112025430.Pdf",
+  "route": "party_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "BHAVANI KASHETTY MEDICAL",
+    "CITY PHARMACY",
+    "LALITHA MEDICAL AND GENER",
+    "MADHU PHARMACY",
+    "SAI DURGA MEDICAL AND GEN"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Sal Lotion 60 Ml",
+    "Lulizol Cream 30 Gm",
+    "Lulizol Lotion 20 Ml"
+  ],
+  "qty_total": 120.0,
+  "amount_total": 24925.3,
+  "rate_total": 4583.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "Product wise sale list For the period  01-05-2026 - 31-05-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 750,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_wise_sale_list",
+  "party_count": 186,
+  "area_count": 0,
+  "product_count": 202,
+  "sample_parties": [
+    "A ONE MEDICAL STORE JASDAN JASDAN",
+    "AAROGYAM MEDICAL STORE(RAJ NAGAR) RAJKOT",
+    "AAYUSH MED. ST RELNAGAR  RAJKOT",
+    "ABC MEDICAL CENTRE SARDARNAGAR RAJKOT",
+    "ABC MEDICAL STORES KVD RD RAJKOT"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 5278.0,
+  "amount_total": 931002.41,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

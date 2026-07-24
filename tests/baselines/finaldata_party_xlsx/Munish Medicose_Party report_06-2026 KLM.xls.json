@@ -1,0 +1,30 @@
+{
+  "file": "06-2026 KLM.xls",
+  "route": "party_xlsx",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 6,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "PANKAJ SAINI             ,P.C JIND",
+    "SACHIN GOEL              ,G.R.JIND",
+    "SHANTI BINDLISH(C)HOSPITL,JIND",
+    "SHREE SALASAR MEDICOSE   ,G.R.JIND",
+    "SONI PHARMACY            ,G.R.JIND"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Histabil-M Suspension 60Ml",
+    "Naditret Plus Cream 10G",
+    "Sacctik Gg Sachets"
+  ],
+  "qty_total": 858.0,
+  "amount_total": 55091.28,
+  "rate_total": 2044.43,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "01a0717ee3e646679f41a5b0beb6055e.pdf",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 1,
+  "headers_detected_count": 11,
+  "detected_format": "stock_open_pur_sale_free_current",
+  "product_count": 24,
+  "sample_products": [
+    "B FOLCIN DROPS 8%",
+    "B FOLCIN GEL 8%",
+    "B FOLCIN LM SYP 8%",
+    "B FOLCIN PLUS TAB 5%",
+    "B FOLCIN SYP 5%"
+  ],
+  "closing_stock_total": 9829.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

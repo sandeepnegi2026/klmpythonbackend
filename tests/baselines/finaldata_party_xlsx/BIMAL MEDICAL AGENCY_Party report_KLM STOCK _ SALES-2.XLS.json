@@ -1,0 +1,30 @@
+{
+  "file": "KLM STOCK _ SALES-2.XLS",
+  "route": "party_xlsx",
+  "row_count": 53,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 53,
+  "sample_parties": [
+    "ITEM DESCRIPTION",
+    "KLM COSMO",
+    "KLM COSMOCOR",
+    "KLM DERMA",
+    "KLM LABORATORIES PVT.LTD."
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Folibild Tablets"
+  ],
+  "qty_total": 2013.0,
+  "amount_total": 6810.0,
+  "rate_total": 45.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 35
+}

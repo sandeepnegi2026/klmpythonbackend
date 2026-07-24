@@ -1,0 +1,19 @@
+{
+  "file": "KLM SST.PDF",
+  "route": "stock_pdf",
+  "row_count": 102,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "pharma_bytes_itemcode",
+  "product_count": 100,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "closing_stock_total": 1195.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

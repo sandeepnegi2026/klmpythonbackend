@@ -1,0 +1,30 @@
+{
+  "file": "KLM LAB _COSMOCOR_ Period 01-06-2026 To 30-06-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 219,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "retailer_band_cgst_sgst",
+  "party_count": 128,
+  "area_count": 57,
+  "product_count": 30,
+  "sample_parties": [
+    "A ONE CHEMIST",
+    "A ONE CHEMIST AND GENERAL STORES.",
+    "AADARSH MEDICO",
+    "AMINA MEDICAL AND GENERAL STORE",
+    "APPLE CHEMIST & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet"
+  ],
+  "qty_total": 574.0,
+  "amount_total": 73653.41,
+  "rate_total": 31541.36,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

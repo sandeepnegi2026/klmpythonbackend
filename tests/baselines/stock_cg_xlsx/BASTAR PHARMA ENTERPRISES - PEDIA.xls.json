@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 12,
   "detected_format": "tabular",
-  "product_count": 41,
+  "product_count": 43,
   "sample_products": [
     "Argicyne Sachets 6Gm",
     "Cetalore-M Suspension 60Ml",
@@ -14,5 +14,6 @@
     "Desosoft Lotion 30 Ml"
   ],
   "closing_stock_total": 2202.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

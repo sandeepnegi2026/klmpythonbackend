@@ -1,0 +1,30 @@
+{
+  "file": "CompaSal.Xls",
+  "route": "party_xlsx",
+  "row_count": 1016,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular_party_product",
+  "party_count": 218,
+  "area_count": 62,
+  "product_count": 148,
+  "sample_parties": [
+    "A G Chemist",
+    "AASHIRWAD MEDICAL SHANKAR NAGA",
+    "ANNAPURNA DISTRIBUTORS",
+    "ANOOP MEDICAL STORES",
+    "ARTI MEDICAL STORE ,AVNTI VIHA"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "qty_total": 2692.0,
+  "amount_total": 625490.05,
+  "rate_total": 276906.44,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

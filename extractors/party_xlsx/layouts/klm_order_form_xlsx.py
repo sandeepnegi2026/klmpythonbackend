@@ -120,6 +120,12 @@ def parse_klm_order_form_xlsx(rows):
             division = _division(name)
             continue
         qty = cells[qty_idx].strip() if qty_idx < len(cells) else ""
+        # Thousands-grouped order qty ("1,000" / "1,00,000"): strip the grouping
+        # commas so the numeric gate below accepts it (pandas to_numeric rejects
+        # grouped commas). Only when the comma-less form is all digits, so "10+2"
+        # scheme annotations, dates and codes are left byte-identical and still skip.
+        if "," in qty and qty.replace(",", "").isdigit():
+            qty = qty.replace(",", "")
         # Emit only genuinely ordered lines; skip the un-ordered catalog tail and any
         # stray date cell that landed in the qty column.
         if not qty or not is_numeric_qty(qty):

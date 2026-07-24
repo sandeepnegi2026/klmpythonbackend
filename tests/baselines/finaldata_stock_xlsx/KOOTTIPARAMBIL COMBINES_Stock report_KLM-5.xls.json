@@ -1,0 +1,19 @@
+{
+  "file": "KLM-5.xls",
+  "route": "stock_xlsx",
+  "row_count": 21,
+  "warnings_count": 1,
+  "headers_detected_count": 17,
+  "detected_format": "klm_mfac_group_wise_stock",
+  "product_count": 21,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "closing_stock_total": 299.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

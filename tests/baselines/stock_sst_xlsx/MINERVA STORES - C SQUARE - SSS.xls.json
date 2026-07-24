@@ -2,10 +2,10 @@
   "file": "MINERVA STORES - C SQUARE - SSS.xls",
   "route": "stock_xlsx",
   "row_count": 188,
-  "warnings_count": 51,
-  "headers_detected_count": 62,
-  "detected_format": "tabular",
-  "product_count": 183,
+  "warnings_count": 8,
+  "headers_detected_count": 17,
+  "detected_format": "klm_mfac_group_wise_stock",
+  "product_count": 185,
   "sample_products": [
     "Amoclafix-625 Tablets",
     "Canrolfin Cream 15 Gm",
@@ -13,6 +13,7 @@
     "Cetalore 10 Tablets 1*10 Tablets",
     "Cetalore Tablets 1*10 Tablets"
   ],
-  "closing_stock_total": 0.0,
-  "rate_total": 0.0
+  "closing_stock_total": 3721.0,
+  "rate_total": 0.0,
+  "line_unexplained": 15
 }

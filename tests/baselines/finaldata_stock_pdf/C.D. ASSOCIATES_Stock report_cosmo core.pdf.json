@@ -1,0 +1,19 @@
+{
+  "file": "cosmo core.pdf",
+  "route": "stock_pdf",
+  "row_count": 42,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_qoh_returns",
+  "product_count": 41,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm"
+  ],
+  "closing_stock_total": 1798.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

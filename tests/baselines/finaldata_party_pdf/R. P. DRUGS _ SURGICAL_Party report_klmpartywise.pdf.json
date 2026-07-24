@@ -1,0 +1,30 @@
+{
+  "file": "klmpartywise.pdf",
+  "route": "party_pdf",
+  "row_count": 104,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "r15_rpdrugs_dealer_partywise",
+  "party_count": 19,
+  "area_count": 17,
+  "product_count": 73,
+  "sample_parties": [
+    "ADITYA PHARMA",
+    "AURA MEDICOS",
+    "BHUYAN DRUG DISTRIBUTOR",
+    "DARRANG MEDICAL HALL",
+    "DERMACITY DRUGS"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "qty_total": 3018.0,
+  "amount_total": 327141.32,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

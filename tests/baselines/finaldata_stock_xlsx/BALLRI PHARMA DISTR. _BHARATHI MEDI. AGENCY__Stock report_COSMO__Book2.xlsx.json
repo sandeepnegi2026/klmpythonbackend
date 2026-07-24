@@ -1,0 +1,19 @@
+{
+  "file": "COSMO__Book2.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 28,
+  "warnings_count": 25,
+  "headers_detected_count": 9,
+  "detected_format": "marg_sale_closing_grid_xlsx",
+  "product_count": 28,
+  "sample_products": [
+    "EKRAN 80 SUNSCREN",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G"
+  ],
+  "closing_stock_total": 693.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

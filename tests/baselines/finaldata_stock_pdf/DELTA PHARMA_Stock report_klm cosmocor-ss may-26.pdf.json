@@ -1,0 +1,19 @@
+{
+  "file": "klm cosmocor-ss may-26.pdf",
+  "route": "stock_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 8,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Niofine Dusting Powder 75Gm",
+    "Niosol Ointment 30 Gm",
+    "Niosol-F Cream 20 Gm",
+    "Resoten 20"
+  ],
+  "closing_stock_total": 107.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

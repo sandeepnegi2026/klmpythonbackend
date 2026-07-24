@@ -15,10 +15,11 @@
   "sample_products": [
     "Nevlon Intense Moisturizing Lotion 300Ml",
     "Onitraz Capsules 1*10 Capsules",
-    "Zoritraz Forte Capsule 1*10 Cap"
+    "Onitraz Forte Capsules 1*10 Capsules"
   ],
   "qty_total": 132.0,
   "amount_total": 38803.72,
   "rate_total": 794.15,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

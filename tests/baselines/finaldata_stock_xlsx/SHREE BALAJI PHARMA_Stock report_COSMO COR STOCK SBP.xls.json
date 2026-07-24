@@ -1,0 +1,19 @@
+{
+  "file": "COSMO COR STOCK SBP.xls",
+  "route": "stock_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 23,
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "closing_stock_total": 1398.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

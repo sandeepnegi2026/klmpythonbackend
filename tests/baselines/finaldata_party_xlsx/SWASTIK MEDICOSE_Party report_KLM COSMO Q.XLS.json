@@ -1,0 +1,27 @@
+{
+  "file": "KLM COSMO Q.XLS",
+  "route": "party_xlsx",
+  "row_count": 4,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "CHAUHAN MEDICOSE KANKER",
+    "MANISH MEDICAL STORES",
+    "SURAJ MEDICAL STORES DHAMTARI"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm"
+  ],
+  "qty_total": 4.0,
+  "amount_total": 2244.07,
+  "rate_total": 2244.07,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

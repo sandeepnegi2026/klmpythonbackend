@@ -1,0 +1,19 @@
+{
+  "file": "stock_and_sales_report__new_.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 133,
+  "warnings_count": 36,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 126,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "COMNAME TOTAL",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cutiheal Cream 15Gm"
+  ],
+  "closing_stock_total": 1521.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

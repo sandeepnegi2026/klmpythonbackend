@@ -1,0 +1,19 @@
+{
+  "file": "klm derma-ss may-26 new.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 7,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Nevlon Cream 100Gm",
+    "Nevlon Cream 50Gm",
+    "Nevlon Intense Moisturizing Lotion 300Ml",
+    "Nevlon Max Cream 150 Gm"
+  ],
+  "closing_stock_total": 10.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

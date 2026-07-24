@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK.PDF",
+  "route": "stock_pdf",
+  "row_count": 244,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_movement_detail_sparse",
+  "product_count": 228,
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 1779.0,
+  "rate_total": 44588.62,
+  "line_unexplained": 0
+}

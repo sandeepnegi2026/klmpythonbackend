@@ -1,0 +1,19 @@
+{
+  "file": "derma core.pdf",
+  "route": "stock_pdf",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_qoh_returns",
+  "product_count": 46,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Eva Capsules",
+    "Extend Hair 1*30 Gummy Pouches"
+  ],
+  "closing_stock_total": 816.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

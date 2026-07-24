@@ -1,0 +1,30 @@
+{
+  "file": "klm dermacor2.PDF",
+  "route": "party_pdf",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_company_customer_invoice",
+  "party_count": 16,
+  "area_count": 13,
+  "product_count": 16,
+  "sample_parties": [
+    "AAYUSH MEDICALS",
+    "ANAND MEDICALS",
+    "ARUNA MEDICALS",
+    "MAATRAA PHARMACY",
+    "MAATRAA PHARMACY (TWO)"
+  ],
+  "sample_products": [
+    "Extend Gold Soft Gelatin Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Lotion 60 Ml"
+  ],
+  "qty_total": 210.0,
+  "amount_total": 44048.79,
+  "rate_total": 9047.28,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

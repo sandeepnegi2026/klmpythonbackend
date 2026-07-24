@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__KLM 6P.pdf",
+  "route": "party_pdf",
+  "row_count": 84,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "party_item_summary_nofree",
+  "party_count": 57,
+  "area_count": 0,
+  "product_count": 16,
+  "sample_parties": [
+    "A TO Z MEDICAL & SURGICAL AGENCY",
+    "ABC MEDICAL",
+    "ADARSH MEDICAL STORES",
+    "AJAY MEDICAL STORES",
+    "AMRITAM MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "EBERFINE.30 1*30GM",
+    "Eberfine Cream 15 Gm",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 342.0,
+  "amount_total": 47950.57,
+  "rate_total": 16405.92,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

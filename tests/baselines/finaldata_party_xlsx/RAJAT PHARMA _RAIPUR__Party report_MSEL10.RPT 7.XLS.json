@@ -1,0 +1,30 @@
+{
+  "file": "MSEL10.RPT 7.XLS",
+  "route": "party_xlsx",
+  "row_count": 54,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 28,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "3 JAI MEDICALS SHASTRI CHOWK RAIPUR 9158",
+    "5 ANUP MEDICAL AND GEN STORES",
+    "6 laxmi medical hall  ware house",
+    "9 Laxmi Medicine Center Pandari",
+    "AKSHAY BORA HUF"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 283.0,
+  "amount_total": 49527.79,
+  "rate_total": 11125.37,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

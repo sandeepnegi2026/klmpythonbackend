@@ -1,0 +1,24 @@
+{
+  "file": "PARTY KLM.PDF",
+  "route": "party_pdf",
+  "row_count": 303,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "company_party_summary",
+  "party_count": 112,
+  "area_count": 0,
+  "product_count": 0,
+  "sample_parties": [
+    "ANANTA AUSHADHALAY TAPAN TAPAN",
+    "ANANTA OUSHADHALAYA BALURG",
+    "ANIMA DISTRIBUTOR PATIRA",
+    "APARNA MEDICINE AGENCY BUNIAD",
+    "AROGYA NIKETAN RAIGAN"
+  ],
+  "sample_products": [],
+  "qty_total": 0.0,
+  "amount_total": 436387.71,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 7
+}

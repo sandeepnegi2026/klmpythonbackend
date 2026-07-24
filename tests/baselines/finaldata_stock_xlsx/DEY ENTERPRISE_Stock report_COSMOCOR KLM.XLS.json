@@ -1,0 +1,19 @@
+{
+  "file": "COSMOCOR KLM.XLS",
+  "route": "stock_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_klm_ss_analysis_oic_dualclose_grid_xls",
+  "product_count": 23,
+  "sample_products": [
+    "Episert Cream 20 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm"
+  ],
+  "closing_stock_total": 412.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

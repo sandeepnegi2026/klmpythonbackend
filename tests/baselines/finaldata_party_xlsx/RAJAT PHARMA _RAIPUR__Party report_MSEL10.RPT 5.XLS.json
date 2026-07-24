@@ -1,0 +1,30 @@
+{
+  "file": "MSEL10.RPT 5.XLS",
+  "route": "party_xlsx",
+  "row_count": 65,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 29,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "3 JAI MEDICALS SHASTRI CHOWK RAIPUR 9158",
+    "5 ANUP MEDICAL AND GEN STORES",
+    "8 LAXMI MEDICAL STORES SHASTRI CHOWK",
+    "APOLLO PHARMACIES LIMITED  mowa",
+    "ASHISH MEDICAL STORES CHOTAPARA RAIPUR"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "qty_total": 261.0,
+  "amount_total": 61145.65,
+  "rate_total": 14681.75,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

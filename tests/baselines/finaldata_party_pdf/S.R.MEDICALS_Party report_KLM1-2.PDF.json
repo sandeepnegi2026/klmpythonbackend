@@ -1,0 +1,30 @@
+{
+  "file": "KLM1-2.PDF",
+  "route": "party_pdf",
+  "row_count": 427,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 63,
+  "area_count": 4,
+  "product_count": 113,
+  "sample_parties": [
+    "ADARSH MEDICAL STORE",
+    "AJAY MEDICAL STORE",
+    "ALPHA MEDICAL & GENRAL STORE",
+    "ARJUN MEDICAL STORE",
+    "ATHARV CHAUHAN PHARMACY"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 5011.0,
+  "amount_total": 608067.86,
+  "rate_total": 71281.88,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

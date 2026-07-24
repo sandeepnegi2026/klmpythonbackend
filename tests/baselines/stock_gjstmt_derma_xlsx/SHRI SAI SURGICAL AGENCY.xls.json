@@ -1,0 +1,19 @@
+{
+  "file": "SHRI SAI SURGICAL AGENCY.xls",
+  "route": "stock_xlsx",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_ss_paired_opstk_pfree_sfree_curstk_xls",
+  "product_count": 17,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Caloe Lotion 60Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "closing_stock_total": 190.0,
+  "rate_total": 2741.13,
+  "line_unexplained": 4
+}

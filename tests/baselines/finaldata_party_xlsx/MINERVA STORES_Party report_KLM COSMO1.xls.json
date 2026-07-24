@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO1.xls",
+  "route": "party_xlsx",
+  "row_count": 53,
+  "warnings_count": 0,
+  "headers_detected_count": 36,
+  "detected_format": "tabular",
+  "party_count": 20,
+  "area_count": 0,
+  "product_count": 30,
+  "sample_parties": [
+    "ASHWINI MEDICALS GEN STORES",
+    "CHETANA MEDICALS",
+    "GEETHA DENTAL & FACECLINIC",
+    "HARISH MEDICALS GEN STORES",
+    "LAKSHYA PHARMA"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "qty_total": 362.0,
+  "amount_total": 68480.38,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

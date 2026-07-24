@@ -97,7 +97,7 @@ def parse_klm_ss_statement_receive_close(text):
             continue
         toks = s.split()
         # a data / total row is entirely numeric (allow leading '-' and decimals)
-        if not all(re.fullmatch(r"-?\d+(?:\.\d+)?", t) for t in toks):
+        if not all(re.fullmatch(r"-?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?|-?\d+(?:\.\d+)?", t) for t in toks):
             continue
         vals = _nums(toks)
         if len(vals) < 5:

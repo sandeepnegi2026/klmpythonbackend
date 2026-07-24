@@ -1,0 +1,19 @@
+{
+  "file": "KLM PDF.pdf",
+  "route": "stock_pdf",
+  "row_count": 226,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 207,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 2707.0,
+  "rate_total": 22149.01,
+  "line_unexplained": 4
+}

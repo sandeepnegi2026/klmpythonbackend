@@ -1,0 +1,19 @@
+{
+  "file": "Stock1136.xls",
+  "route": "stock_xlsx",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_stock_wide_multival_xls",
+  "product_count": 37,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "closing_stock_total": 1309.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

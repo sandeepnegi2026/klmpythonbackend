@@ -1,0 +1,19 @@
+{
+  "file": "KLM Sales And Stock.pdf",
+  "route": "stock_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "indra_group_wise_sales",
+  "product_count": 8,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash",
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Massage Oil 100Ml"
+  ],
+  "closing_stock_total": 187.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

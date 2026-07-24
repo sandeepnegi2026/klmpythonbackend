@@ -1,0 +1,19 @@
+{
+  "file": "STOCK_ SALES KLM MAY.PDF",
+  "route": "stock_pdf",
+  "row_count": 233,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 229,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm"
+  ],
+  "closing_stock_total": 6926.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

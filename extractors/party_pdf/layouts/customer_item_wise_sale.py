@@ -51,14 +51,23 @@ import re
 #   first text char already in the item column -> no customer, item only.
 #
 #   Groups: each customer's item detail line(s) are followed by a numbers-only
-#   sub-total line carrying the group's clean SALE/FREE/TOTAL/GROSS aggregate. We
-#   emit ONE row per customer using the sub-total's clean numbers:
-#       qty       <- SALE  QTY
-#       free_qty  <- FREE  QTY
-#       amount    <- GROSS AMOUNT   (TOTAL QTY = SALE + FREE, kept as raw)
-#   party_name  = the group's de-interleaved CUSTOMER NAME.
-#   product_name = the group's de-interleaved ITEM NAME run(s), joined with ' | '.
-#   The trailing grand-total line (numbers-only, but the LAST such line and not
+#   sub-total line carrying the group's clean SALE/FREE/TOTAL/GROSS aggregate.
+#   Output is ONE row PER ITEM when that can be proven safe, else one aggregate
+#   row per customer:
+#     * PER-ITEM SPLIT (preferred) — only in the CLEAN dialect (the file carries
+#       at least one numbers-ONLY line bearing an SN, i.e. an item-detail number
+#       line printed on its own baseline). Each item's de-interleaved NAME is
+#       paired 1:1 (in SN order) with its SN-tagged SALE/FREE/TOTAL/GROSS numbers,
+#       and the split is emitted only if those per-item sums reconcile to the
+#       group sub-total (a name-wrap / missed number line / leaked digit fails the
+#       count-or-sum check and collapses the group back to the aggregate).
+#     * AGGREGATE FALLBACK — the interleaved dialect (pack digits leak across the
+#       SALE/FREE bands, so per-item numbers are untrustworthy) has NO on-its-own
+#       number line, so it always emits one row per customer off the clean
+#       sub-total, product_name = the ITEM NAME run(s) joined with ' | '.
+#       qty <- SALE QTY, free_qty <- FREE QTY, amount <- GROSS AMOUNT.
+#   Either branch reconciles to the printed grand total, so file-level totals are
+#   invariant. The trailing grand-total line (numbers-only, LAST such line, not
 #   preceded by group text) is skipped.
 #
 #   The clean " - "/KLM dialect ("MAY PDF PART.pdf") has NO interleaving: its
@@ -282,8 +291,88 @@ def parse_customer_item_wise_sale(text, file_bytes=None):
                     vals[b] = _num(s)
             return vals
 
-        pending_cust = None    # open group's customer (party_name)
-        pending_items = []      # open group's item lines (product_name parts)
+        def _furniture(low):
+            # header/period furniture. The multi-row column header de-interleaves
+            # into stray single-word fragments ('CUSTO' from CUSTOMER, 'SAL' from
+            # SALE, 'QTY', 'SN', ...) and the report period prints as 'FROM 01/..'
+            # without a 'TO' on the same fragment line; skip both so they never leak
+            # into the first customer's product name. Matched EXACTLY (stripped) so
+            # no real KLM product / pharmacy name (none is a lone header word) is hit.
+            s = low.strip()
+            return ('customer name' in low or 'item name' in low
+                    or 'sale qty' in low
+                    or low.startswith('page no')
+                    or low.startswith('printed by')
+                    or 'wise sale' in low
+                    or 'medical stores agencies' in low
+                    or low.startswith('o. qty')
+                    or 'workstation' in low
+                    or re.search(r'\bfrom\b.*\bto\b', low)
+                    or re.match(r'from\s+\d{1,2}[/-]', s)
+                    or s in ('custo', 'customer', 'sn', 'o.', 'sal', 'sale',
+                             'qty', 'free', 'total', 'gross', 'item', 'name'))
+
+        # ---- PRE-SCAN: is this the CLEAN dialect? It carries at least one
+        # numbers-ONLY line that also holds an SN (an item-detail number line
+        # printed on its own baseline; see "MAY PDF PART.pdf"). The interleaved
+        # dialect ("klm party wise..") never lays a number line down on its own —
+        # its digits always share the baseline with the item text and leak across
+        # the SALE/FREE bands, so its per-item numbers are untrustworthy. Only the
+        # clean dialect is eligible for a per-item split; the interleaved dialect
+        # stays byte-identical to the aggregate-per-customer output.
+        file_has_numsn = False
+        for pg in pdf.pages:
+            pl = {}
+            for c in pg.chars:
+                pl.setdefault(round(c['top'], 0), []).append(c)
+            for y in sorted(pl):
+                sn, cust, item = _deinterleave_line(pl[y], geom)
+                if _furniture((cust + ' ' + item).lower()):
+                    continue
+                if sn and not re.search('[A-Za-z]', cust + item):
+                    v = subtotal_vals(pl[y])
+                    if v['total'] or v['gross']:
+                        file_has_numsn = True
+                        break
+            if file_has_numsn:
+                break
+
+        _EPS = 0.05
+
+        def close_group(cust, names, numsets, sub):
+            """Emit the rows for one closed customer group.
+
+            Per-item SPLIT (one row per item) is taken only when it is provably
+            safe: the file is the clean dialect AND every item's name lines up 1:1
+            with an SN-tagged number set AND those per-item SALE/FREE/GROSS sums
+            equal the group sub-total (so a name-wrap, a missed number line, or any
+            leaked digit collapses the group back to the aggregate). Otherwise emit
+            today's single aggregate row off the clean sub-total. Either branch
+            reconciles to the printed grand total, so the file-level totals are
+            invariant under this fix."""
+            if not (cust or names):
+                return
+            party = cust or ''
+            if (file_has_numsn and names and len(names) == len(numsets)
+                    and abs(sum(n['sale'] for n in numsets) - sub['sale']) < _EPS
+                    and abs(sum(n['free'] for n in numsets) - sub['free']) < _EPS
+                    and abs(sum(n['gross'] for n in numsets) - sub['gross']) < _EPS):
+                for nm, n in zip(names, numsets):
+                    rows.append([
+                        party, nm,
+                        "%g" % n['sale'], "%g" % n['free'],
+                        "%g" % n['total'], "%.2f" % n['gross'],
+                    ])
+            else:
+                rows.append([
+                    party, ' | '.join(names),
+                    "%g" % sub['sale'], "%g" % sub['free'],
+                    "%g" % sub['total'], "%.2f" % sub['gross'],
+                ])
+
+        pending_cust = None     # open group's customer (party_name)
+        pending_items = []      # open group's item names, in reading (SN) order
+        pending_nums = []       # open group's per-item number sets, in SN order
 
         for pg in pdf.pages:
             # group CHARS by baseline; keep DRAWING ORDER within each line.
@@ -296,16 +385,7 @@ def parse_customer_item_wise_sale(text, file_bytes=None):
                 sn, cust, item = _deinterleave_line(line, geom)
 
                 # page furniture / header sub-lines -> skip
-                low = (cust + ' ' + item).lower()
-                if ('customer name' in low or 'item name' in low
-                        or 'sale qty' in low
-                        or low.startswith('page no')
-                        or low.startswith('printed by')
-                        or 'wise sale' in low
-                        or 'medical stores agencies' in low
-                        or low.startswith('o. qty')
-                        or 'workstation' in low
-                        or re.search(r'\bfrom\b.*\bto\b', low)):
+                if _furniture((cust + ' ' + item).lower()):
                     continue
 
                 has_text = bool(re.search('[A-Za-z]', cust + item))
@@ -313,27 +393,22 @@ def parse_customer_item_wise_sale(text, file_bytes=None):
                 if not has_text:
                     # numbers-only line. Two kinds:
                     #   * item-detail number line (clean dialect, e.g. MAY) — carries
-                    #     a leading SN in the SN column. It holds a SINGLE item's
-                    #     numbers; do NOT close the group here (the group's clean
-                    #     aggregate arrives on the SN-less sub-total line).
-                    #   * sub-total line — NO SN; holds the group's clean aggregate.
-                    if sn:
-                        continue
+                    #     a leading SN. Holds ONE item's clean numbers -> a numset.
+                    #   * sub-total line — NO SN; holds the group's clean aggregate
+                    #     and CLOSES the group.
                     vals = subtotal_vals(line)
                     if not (vals['total'] or vals['gross']):
+                        continue
+                    if sn:
+                        pending_nums.append(vals)
                         continue
                     # grand total = trailing numbers-only line with no open group
                     if pending_cust is None and not pending_items:
                         continue
-                    party = pending_cust or ''
-                    product = ' | '.join(pending_items)
-                    rows.append([
-                        party, product,
-                        "%g" % vals['sale'], "%g" % vals['free'],
-                        "%g" % vals['total'], "%.2f" % vals['gross'],
-                    ])
+                    close_group(pending_cust, pending_items, pending_nums, vals)
                     pending_cust = None
                     pending_items = []
+                    pending_nums = []
                     continue
 
                 # data line: a customer-bearing detail row (cust set) or a
@@ -344,5 +419,12 @@ def parse_customer_item_wise_sale(text, file_bytes=None):
                     it = _clean_product(item)
                     if it:
                         pending_items.append(it)
+                if sn:
+                    # a text line that ALSO carries this item's own numbers
+                    # (clean dialect prints some items name+numbers on one line);
+                    # capture the numset so the 1:1 item/number pairing holds.
+                    vals = subtotal_vals(line)
+                    if vals['total'] or vals['gross']:
+                        pending_nums.append(vals)
 
     return H, rows

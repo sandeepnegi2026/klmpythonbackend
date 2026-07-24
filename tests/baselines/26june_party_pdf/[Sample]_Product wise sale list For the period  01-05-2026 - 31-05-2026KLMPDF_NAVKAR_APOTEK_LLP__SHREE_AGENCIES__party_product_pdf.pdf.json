@@ -7,7 +7,7 @@
   "detected_format": "navkar_productwise",
   "party_count": 86,
   "area_count": 0,
-  "product_count": 20,
+  "product_count": 21,
   "sample_parties": [
     "AADARSH MEDICAL SHIRWAL",
     "ADITYA MEDICAL SASWAD",
@@ -25,5 +25,6 @@
   "qty_total": 843.0,
   "amount_total": 0.0,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 49
 }

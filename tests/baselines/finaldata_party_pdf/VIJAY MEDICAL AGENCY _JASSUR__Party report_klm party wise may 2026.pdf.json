@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise may 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 46,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sale_register_detailed",
+  "party_count": 26,
+  "area_count": 8,
+  "product_count": 25,
+  "sample_parties": [
+    "AMRIT MEDICAL & GEN. STORE",
+    "ASHOKA MEDICOS",
+    "BABA MEDICAL & GENERAL STORE",
+    "CHAMUNDA MATA CHEMIST STORE",
+    "CHITRA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cutiheal Cream 15Gm",
+    "Ekran 30 Silicon Sunscreen Gel 50Gm"
+  ],
+  "qty_total": 330.0,
+  "amount_total": 91544.85,
+  "rate_total": 13243.49,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 10
+}

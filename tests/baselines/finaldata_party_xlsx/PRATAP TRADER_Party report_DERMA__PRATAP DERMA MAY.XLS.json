@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__PRATAP DERMA MAY.XLS",
+  "route": "party_xlsx",
+  "row_count": 43,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 17,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "AARYA PHARMACY",
+    "CASH",
+    "DR.ADITI BANSAL DUBEY",
+    "KAILASH MEDICAL",
+    "KAMAL MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON BODY LOTION",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml"
+  ],
+  "qty_total": 1770.0,
+  "amount_total": 294911.63,
+  "rate_total": 7683.61,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

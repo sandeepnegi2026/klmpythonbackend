@@ -1,0 +1,19 @@
+{
+  "file": "DAHOD PHARMAKON.pdf",
+  "route": "stock_pdf",
+  "row_count": 10,
+  "warnings_count": 5,
+  "headers_detected_count": 9,
+  "detected_format": "dahod_marg",
+  "product_count": 10,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 84.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "J.O.T. DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 18,
+  "warnings_count": 16,
+  "headers_detected_count": 12,
+  "detected_format": "venus_stock_statement",
+  "product_count": 17,
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Histabil Tablet 1*10 Tab",
+    "Imxia 10"
+  ],
+  "closing_stock_total": 58386.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

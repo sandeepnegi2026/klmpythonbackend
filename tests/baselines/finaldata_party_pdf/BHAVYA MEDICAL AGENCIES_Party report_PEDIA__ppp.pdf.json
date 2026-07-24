@@ -1,0 +1,29 @@
+{
+  "file": "PEDIA__ppp.pdf",
+  "route": "party_pdf",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 5,
+  "area_count": 2,
+  "product_count": 4,
+  "sample_parties": [
+    "LAKSHMI SAI MEDICALS",
+    "PSR CHOWDARY MEDICAL&FANCY STORES",
+    "SRI GANESH MEDICAL HALL",
+    "VENEELA PHARMACY",
+    "VIJAYA MEDICALS"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Kofcatch Ls 100Ml Junior",
+    "Mupisoft Ointment 5 Gm",
+    "Toddrub Ointment 40Gm"
+  ],
+  "qty_total": 87.0,
+  "amount_total": 7444.81,
+  "rate_total": 748.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,26 @@
+{
+  "file": "KLM - SALE.xls",
+  "route": "party_xlsx",
+  "row_count": 76,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "party_product_net_sales_xlsx",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 76,
+  "sample_parties": [
+    "PRIME TARDERS 23-24"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 2864.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

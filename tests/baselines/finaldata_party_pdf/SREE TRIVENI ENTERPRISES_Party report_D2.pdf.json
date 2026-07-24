@@ -1,0 +1,30 @@
+{
+  "file": "D2.pdf",
+  "route": "party_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 13,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "CHINMAY MEDICALS ,TIRUPATI",
+    "HOSHITHA PHARMACY ,BAIRAGIPATTEDA I",
+    "KEERTHY MEDICAL STORES PV ,TIRUPATHI",
+    "LIKHITH PHARMACY ,TIRUPATI",
+    "NEELIMA PHARMACY ,TIRUPATI"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "qty_total": 211.0,
+  "amount_total": 33852.28,
+  "rate_total": 5238.45,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "PARAS PHARMA DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_monthly_ss_inward_other_closing",
+  "product_count": 13,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 113.0,
+  "rate_total": 0.0,
+  "line_unexplained": 4
+}

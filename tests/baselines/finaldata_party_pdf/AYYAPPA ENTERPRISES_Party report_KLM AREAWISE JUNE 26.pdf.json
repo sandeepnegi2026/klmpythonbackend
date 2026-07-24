@@ -1,0 +1,30 @@
+{
+  "file": "KLM AREAWISE JUNE 26.pdf",
+  "route": "party_pdf",
+  "row_count": 292,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customerwise_itemwise_billwise",
+  "party_count": 60,
+  "area_count": 61,
+  "product_count": 89,
+  "sample_parties": [
+    "ANUGRAHA MEDICALS",
+    "ARTES SKIN AND HAIR CLINIC(TRINITY HEALTH)",
+    "ASWATHI MEDICALS",
+    "B&G MEDICALS",
+    "BAWA MEDICALS"
+  ],
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 2858.0,
+  "amount_total": 307574.28,
+  "rate_total": 70694.38,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

@@ -1,0 +1,19 @@
+{
+  "file": "BMK DRUG DISTRIBUTOR.XLS",
+  "route": "stock_xlsx",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 13,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMOQ CREAM",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 97.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

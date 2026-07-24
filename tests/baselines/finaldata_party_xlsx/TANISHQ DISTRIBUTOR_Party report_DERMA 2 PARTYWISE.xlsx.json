@@ -1,0 +1,30 @@
+{
+  "file": "DERMA 2 PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 9,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "A Y GHADI",
+    "DR GAWAS",
+    "KANKAVALI UBALE MEDICAL STORES",
+    "KUDAL BHADRAKALI MEDI GEN STORES",
+    "MHAPSEKAR MEDICO AND LIFECARE KANKAVALI"
+  ],
+  "sample_products": [
+    "Kenz Lotion 60 Ml",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Kenz Tablet 1*10 Tablets",
+    "Klm C 20 Serum 15Ml"
+  ],
+  "qty_total": 52.0,
+  "amount_total": 11994.47,
+  "rate_total": 4414.24,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

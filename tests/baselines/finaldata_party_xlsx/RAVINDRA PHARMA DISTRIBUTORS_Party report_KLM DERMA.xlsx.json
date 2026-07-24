@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 9,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "AMBIKA MEDICALS               HUBLI",
+    "ARIHANT MEDICALS              HUBLI",
+    "DR LAHARI KOLOLGI             HUBLI",
+    "DR M D ZAKIR MBBS MD          HUBLI",
+    "G.S. MEDICALS                 DHARWAD"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml"
+  ],
+  "qty_total": 291.0,
+  "amount_total": 51231.51,
+  "rate_total": 6691.6,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

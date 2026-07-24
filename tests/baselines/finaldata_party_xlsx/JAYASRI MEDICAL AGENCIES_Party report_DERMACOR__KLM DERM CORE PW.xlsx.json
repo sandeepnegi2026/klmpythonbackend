@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__KLM DERM CORE PW.xlsx",
+  "route": "party_xlsx",
+  "row_count": 130,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 46,
+  "area_count": 27,
+  "product_count": 25,
+  "sample_parties": [
+    "AMBICA MED&GEN  STORES",
+    "ANISH MEDICAL AND GENERAL",
+    "BALAKRISHNA MEDICAL AND G",
+    "BHAGAWAN MEDICAL STORES",
+    "BHAVANI MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm"
+  ],
+  "qty_total": 656.0,
+  "amount_total": 150101.63,
+  "rate_total": 29523.92,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

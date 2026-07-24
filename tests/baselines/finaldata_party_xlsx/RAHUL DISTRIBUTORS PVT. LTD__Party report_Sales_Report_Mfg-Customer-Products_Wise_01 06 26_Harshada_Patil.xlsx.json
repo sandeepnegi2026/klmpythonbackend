@@ -1,0 +1,30 @@
+{
+  "file": "Sales_Report_Mfg-Customer-Products_Wise_01 06 26_Harshada_Patil.xlsx",
+  "route": "party_xlsx",
+  "row_count": 418,
+  "warnings_count": 0,
+  "headers_detected_count": 15,
+  "detected_format": "tabular",
+  "party_count": 168,
+  "area_count": 81,
+  "product_count": 37,
+  "sample_parties": [
+    "24X7HEALTH RX MEDICAL",
+    "ACHARYA MEDICAL",
+    "ADITYA MEDICAL & GENERAL STORES",
+    "AMBIKA MEDICAL STORES",
+    "AMIT MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G"
+  ],
+  "qty_total": 756.0,
+  "amount_total": 121169.44,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY MAY 26.PDF",
+  "route": "party_pdf",
+  "row_count": 386,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 128,
+  "area_count": 33,
+  "product_count": 126,
+  "sample_parties": [
+    "AAYUSH MEDICAL & GEN STORES",
+    "ADINATH MEDICAL STORES",
+    "ADITYA MEDICAL STORE",
+    "AJANTA MEDICAL STORES",
+    "AKSHYA MEDICOSE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "qty_total": 3192.0,
+  "amount_total": 306780.99,
+  "rate_total": 69438.31,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

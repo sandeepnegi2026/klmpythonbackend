@@ -1,0 +1,29 @@
+{
+  "file": "DERMACOR__DERMACOR CUST SALES REPORT MAY2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 4,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "AISHWARIYA MEDICALS",
+    "RR PHARMACY",
+    "SHREE BALAJI MEDICAL WORL",
+    "VASANTHA MEDICAL & GENERA"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "qty_total": 272.0,
+  "amount_total": 71543.55,
+  "rate_total": 7915.01,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

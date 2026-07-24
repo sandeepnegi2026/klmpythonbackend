@@ -1,0 +1,30 @@
+{
+  "file": "COSMO 2 PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 12,
+  "area_count": 0,
+  "product_count": 9,
+  "sample_parties": [
+    "ARPAN MEDICAL STORES",
+    "BANDA SAI MAULI MEDICAL STORES",
+    "DR M.R. AROSKAR",
+    "JANATA MEDICAL STORES",
+    "KANKAVALI UBALE MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Niofine Tablet 1*7 Tablets",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosol Ointment 30 Gm"
+  ],
+  "qty_total": 61.0,
+  "amount_total": 10435.54,
+  "rate_total": 2959.39,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

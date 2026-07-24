@@ -1,0 +1,26 @@
+{
+  "file": "klm dermacor aw-may-26.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 3,
+  "area_count": 3,
+  "product_count": 3,
+  "sample_parties": [
+    "JANASEVA MEDICALS",
+    "M G MEDICALS-CHE",
+    "V.R.AESTHETICS LASER SKIN CLINIC"
+  ],
+  "sample_products": [
+    "Glutaderm Plus Tablets",
+    "Melapik Tx Tablets",
+    "Sebozit Gel 30G"
+  ],
+  "qty_total": 53.0,
+  "amount_total": 8194.86,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

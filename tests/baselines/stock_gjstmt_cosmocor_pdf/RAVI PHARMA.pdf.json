@@ -1,0 +1,18 @@
+{
+  "file": "RAVI PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 4,
+  "warnings_count": 4,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 4,
+  "sample_products": [
+    "NIOS03 NIOSALIC",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosol-F Cream 10 Gm",
+    "Trunex Ms Gel 15 Gm"
+  ],
+  "closing_stock_total": 59.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

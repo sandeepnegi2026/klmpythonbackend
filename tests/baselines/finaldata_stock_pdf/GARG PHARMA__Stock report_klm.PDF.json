@@ -1,0 +1,19 @@
+{
+  "file": "klm.PDF",
+  "route": "stock_pdf",
+  "row_count": 107,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "qty_value_total",
+  "product_count": 100,
+  "sample_products": [
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 587.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

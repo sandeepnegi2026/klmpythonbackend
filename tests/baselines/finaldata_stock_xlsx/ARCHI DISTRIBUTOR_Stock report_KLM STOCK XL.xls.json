@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK XL.xls",
+  "route": "stock_xlsx",
+  "row_count": 145,
+  "warnings_count": 50,
+  "headers_detected_count": 16,
+  "detected_format": "tabular",
+  "product_count": 144,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 2409.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

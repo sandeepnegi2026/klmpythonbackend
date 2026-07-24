@@ -1,0 +1,30 @@
+{
+  "file": "KLM CPW.xls",
+  "route": "party_xlsx",
+  "row_count": 413,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded",
+  "party_count": 162,
+  "area_count": 32,
+  "product_count": 86,
+  "sample_parties": [
+    "A 2 Z PHARMACY",
+    "A T0 Z MEDICAL STORE GANGAPUR",
+    "A-ONE MEDICAL STORE N/R",
+    "AADINATH PHARMACY",
+    "AAROHI MEDICAL&GENREL STORE"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm"
+  ],
+  "qty_total": 1125.5,
+  "amount_total": 253132.86,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

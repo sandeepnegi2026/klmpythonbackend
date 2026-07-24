@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__COSMO JUNE.pdf",
+  "route": "party_pdf",
+  "row_count": 164,
+  "warnings_count": 0,
+  "headers_detected_count": 4,
+  "detected_format": "party_sale_report",
+  "party_count": 121,
+  "area_count": 0,
+  "product_count": 24,
+  "sample_parties": [
+    "A TO Z MEDICAL & GEN. STORES",
+    "A.K.PHARMA",
+    "AASTHA MEDICAL STORE",
+    "ADARSH PHARMACY",
+    "AMIT MEDI & GEN STORES"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "qty_total": 364.0,
+  "amount_total": 117199.45,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

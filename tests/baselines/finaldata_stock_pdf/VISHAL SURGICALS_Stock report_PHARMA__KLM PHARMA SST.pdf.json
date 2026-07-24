@@ -1,0 +1,19 @@
+{
+  "file": "PHARMA__KLM PHARMA SST.pdf",
+  "route": "stock_pdf",
+  "row_count": 14,
+  "warnings_count": 2,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 14,
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10"
+  ],
+  "closing_stock_total": 173.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

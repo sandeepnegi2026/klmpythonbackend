@@ -1,0 +1,30 @@
+{
+  "file": "klm pary product.pdf",
+  "route": "party_pdf",
+  "row_count": 165,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "companywise_customerwise",
+  "party_count": 70,
+  "area_count": 44,
+  "product_count": 66,
+  "sample_parties": [
+    "AAKASH MADICAL STORS",
+    "AARJU MEDICAL STORES PATHARGAON",
+    "AASTHA MEDICAL STORES",
+    "AASTHA MEDICAL STORES PALARI",
+    "AASTHA MEDICAL STORES-LANJI"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "qty_total": 438.0,
+  "amount_total": 71291.5,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 22
+}

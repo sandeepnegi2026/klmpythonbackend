@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__KLM 3P.pdf",
+  "route": "party_pdf",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "party_item_summary_nofree",
+  "party_count": 21,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "AJAY MEDICAL STORES",
+    "ANNAPURNA DRUG HOUSE",
+    "ASTHA.MEDICAL.STORES",
+    "AWDHESH MEDICAL STORES",
+    "EMERGENCY MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Intense Moisturizing Lotion 300Ml",
+    "Nevlon Lotion 100Ml",
+    "Onitraz Forte Capsules 1*10 Capsules"
+  ],
+  "qty_total": 77.0,
+  "amount_total": 14691.2,
+  "rate_total": 4551.24,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

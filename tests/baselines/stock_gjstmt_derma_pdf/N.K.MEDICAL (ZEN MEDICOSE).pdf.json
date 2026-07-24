@@ -1,0 +1,19 @@
+{
+  "file": "N.K.MEDICAL (ZEN MEDICOSE).pdf",
+  "route": "stock_pdf",
+  "row_count": 27,
+  "warnings_count": 3,
+  "headers_detected_count": 13,
+  "detected_format": "marg_bordered",
+  "product_count": 27,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON 100GM CREAM."
+  ],
+  "closing_stock_total": 991.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

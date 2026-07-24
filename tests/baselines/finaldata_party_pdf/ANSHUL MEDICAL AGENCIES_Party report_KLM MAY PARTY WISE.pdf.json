@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY PARTY WISE.pdf",
+  "route": "party_pdf",
+  "row_count": 656,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 264,
+  "area_count": 30,
+  "product_count": 115,
+  "sample_parties": [
+    "A ONE MEDICAL STORE",
+    "A.G.MEDICAL AGENCIES",
+    "A.K MEDICAL & HEALTH CARE",
+    "A.M.MEDICAL STORE",
+    "A.V PHARMACY"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "qty_total": 1707.0,
+  "amount_total": 264319.62,
+  "rate_total": 121030.69,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

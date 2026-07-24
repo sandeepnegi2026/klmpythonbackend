@@ -1,0 +1,30 @@
+{
+  "file": "MAY PARTYWISE PDF.PDF",
+  "route": "party_pdf",
+  "row_count": 407,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "party_item_summary_sr_total",
+  "party_count": 126,
+  "area_count": 21,
+  "product_count": 130,
+  "sample_parties": [
+    "24 HOURS MEDICAL.DUNGARPUR",
+    "24 KALAK AKSHAR MEDICAL",
+    "24 KALAK KRISHNA MEDICAL STORE",
+    "24 KALAK MEDICAL BHILODA.",
+    "24 KALAK MEDICAL KHEDBRAHMA"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 3918.0,
+  "amount_total": 497633.0,
+  "rate_total": 75569.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

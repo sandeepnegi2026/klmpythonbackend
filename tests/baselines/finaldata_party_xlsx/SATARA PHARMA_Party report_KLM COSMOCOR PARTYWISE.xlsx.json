@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 26,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 13,
+  "area_count": 6,
+  "product_count": 5,
+  "sample_parties": [
+    "ADINATH MEDICAL",
+    "BHUNJE BROTHERS KGN",
+    "DURGA MEDICALS",
+    "GURUDATTA MEDICAL STORES WAI",
+    "GURUDATTA MEDICALAS BR-2 WAI"
+  ],
+  "sample_products": [
+    "Nioclean Gel 20 Gm",
+    "Niofine Tablet 1*7 Tablets",
+    "Resoten 10",
+    "Zydip Lotion 100Ml",
+    "Zydip-C Lotion 30 Ml"
+  ],
+  "qty_total": 183.0,
+  "amount_total": 25605.26,
+  "rate_total": 2911.49,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

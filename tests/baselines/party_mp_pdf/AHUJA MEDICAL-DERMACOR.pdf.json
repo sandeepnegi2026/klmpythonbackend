@@ -25,5 +25,6 @@
   "qty_total": 157.0,
   "amount_total": 27664.98,
   "rate_total": 9332.01,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
 }

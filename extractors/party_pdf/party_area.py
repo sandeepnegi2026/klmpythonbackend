@@ -177,6 +177,20 @@ def extract_party_and_area(raw_party, fmt):
         if "-" in raw:
             idx = raw.rfind("-")
             name, area = raw[:idx].strip(), raw[idx + 1 :].strip()
+            # Intra-name hyphen, NOT a name/city separator: "AT-AYU MEDICAL HALL",
+            # "AAI-JI MEDICOSE", "INDU-KAMAL MEDICAL HALL". Two signals together: the
+            # pre-hyphen fragment is a SHORT single token ('AT'/'AAI'/'INDU'), never a
+            # full shop name, AND the post-hyphen tail ends in a store-suffix PHRASE
+            # (HALL / MEDICOSE / MEDICAL / ...). Keep the heading whole. The short-name
+            # guard is essential: a real "RIVA PHARMACY-OLD BUS DEPOT" (long, multi-word
+            # name; tail ends 'DEPOT') must still split into name + area.
+            if (
+                " " not in name
+                and len(name) <= 5
+                and area
+                and area.split()[-1].rstrip(".").upper() in _SUFFIXES
+            ):
+                name, area = raw, ""
             # Jodhpur/SIDDHI convention: "<NAME>-<CITY>-L[.]" carries a trailing
             # bare "L"/"L." locality tag AFTER the real city. rfind() grabs the
             # tag as the area and buries the city in the name; promote the city

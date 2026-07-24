@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 13,
   "detected_format": "tabular",
-  "product_count": 51,
+  "product_count": 52,
   "sample_products": [
     "Appybush Syrup 200Ml",
     "Cetalore-M Suspension 60Ml",
@@ -14,5 +14,6 @@
     "Desosoft Lotion 30 Ml"
   ],
   "closing_stock_total": 3144.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

@@ -1,0 +1,18 @@
+{
+  "file": "PARAS DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "technomax_stock",
+  "product_count": 7,
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Mupisoft Ointment 5 Gm",
+    "Sofibar Syndet Bar",
+    "Sofidew Baby Massage Oil 100Ml",
+    "Sofidew Lotion 100Ml"
+  ],
+  "closing_stock_total": 47.0,
+  "rate_total": 0.0
+}

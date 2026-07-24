@@ -1,0 +1,30 @@
+{
+  "file": "JUNE 26 KLM ALL FREE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 71,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 29,
+  "area_count": 0,
+  "product_count": 36,
+  "sample_parties": [
+    "CITY MEDICO",
+    "DANG MEDICOS",
+    "DHINGRA MEDICINE CENTRE",
+    "DR ADARSH",
+    "GLOBAL PHARMACY"
+  ],
+  "sample_products": [
+    "Cosmoq Shampoo 200Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 400.5,
+  "amount_total": 63690.84,
+  "rate_total": 14472.73,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 20
+}

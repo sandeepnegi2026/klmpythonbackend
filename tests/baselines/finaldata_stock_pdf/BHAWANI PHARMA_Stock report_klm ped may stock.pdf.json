@@ -1,0 +1,19 @@
+{
+  "file": "klm ped may stock.pdf",
+  "route": "stock_pdf",
+  "row_count": 51,
+  "warnings_count": 2,
+  "headers_detected_count": 9,
+  "detected_format": "marg_lms_simple",
+  "product_count": 49,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 3467.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

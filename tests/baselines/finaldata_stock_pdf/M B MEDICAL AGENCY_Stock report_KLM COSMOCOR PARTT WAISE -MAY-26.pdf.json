@@ -1,0 +1,19 @@
+{
+  "file": "KLM COSMOCOR PARTT WAISE -MAY-26.pdf",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 31,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet"
+  ],
+  "closing_stock_total": 456.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

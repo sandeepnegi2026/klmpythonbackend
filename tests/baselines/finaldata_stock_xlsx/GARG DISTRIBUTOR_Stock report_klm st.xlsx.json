@@ -1,0 +1,19 @@
+{
+  "file": "klm st.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 176,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_op_pur_total_cl_xlsx",
+  "product_count": 166,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 1502.0,
+  "rate_total": 0.0,
+  "line_unexplained": 73
+}

@@ -1,0 +1,19 @@
+{
+  "file": "STOCK _ SALES STATEMENT FOR JUNE 26..xlsx",
+  "route": "stock_xlsx",
+  "row_count": 184,
+  "warnings_count": 3,
+  "headers_detected_count": 15,
+  "detected_format": "tabular",
+  "product_count": 180,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 2793.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

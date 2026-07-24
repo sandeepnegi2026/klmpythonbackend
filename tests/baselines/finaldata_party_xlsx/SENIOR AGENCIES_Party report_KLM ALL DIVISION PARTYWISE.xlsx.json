@@ -1,0 +1,30 @@
+{
+  "file": "KLM ALL DIVISION PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 3531,
+  "warnings_count": 0,
+  "headers_detected_count": 23,
+  "detected_format": "tabular",
+  "party_count": 1114,
+  "area_count": 1101,
+  "product_count": 182,
+  "sample_parties": [
+    "1SHREE GANESH MEDICO BHARTI",
+    "24/7 MEDICINES  ( VIKAR )",
+    "365 DAY N NIGHT MED GOVARDHAN",
+    "A ONE PHARMACY RAMESHWAR",
+    "AADHAR MEDICAL VINOD"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 5268.0,
+  "amount_total": 1028254.37,
+  "rate_total": 762790.4,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

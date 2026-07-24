@@ -1,0 +1,30 @@
+{
+  "file": "KLM REPORT JUNE PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 539,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 139,
+  "area_count": 90,
+  "product_count": 146,
+  "sample_parties": [
+    "-13385LOTUS PHARMACY",
+    "-13391SHREE SAI SALES",
+    "-13396SHRADDHA MEDICAL STORES",
+    "-13407BHAGWAN MEDICAL STORE",
+    "-13427NAMAN MEDICOSE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "COSMO-Q AC-50 SPF",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 3641.0,
+  "amount_total": 653270.88,
+  "rate_total": 116021.81,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

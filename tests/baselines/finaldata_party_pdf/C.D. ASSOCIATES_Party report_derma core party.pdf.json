@@ -1,0 +1,30 @@
+{
+  "file": "derma core party.pdf",
+  "route": "party_pdf",
+  "row_count": 54,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_sales",
+  "party_count": 26,
+  "area_count": 10,
+  "product_count": 21,
+  "sample_parties": [
+    "APEX PHARMACY",
+    "BRIGHT PHARMACY",
+    "COUNTER SALE",
+    "DR HARITHA GARU.MBBS DVL",
+    "DR SRUTHI SKIN & HAIR CLI"
+  ],
+  "sample_products": [
+    "DEKTOP BCREAM 20GM KJ502",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Glutaderm Tablets"
+  ],
+  "qty_total": 394.0,
+  "amount_total": 81932.01,
+  "rate_total": 12839.97,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE MAY 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 490,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 190,
+  "area_count": 25,
+  "product_count": 137,
+  "sample_parties": [
+    "A AND B MEDICAL AND SURGICAL",
+    "AASTHA MEDICAL HALL",
+    "AAYUSH MEDICAL STORES V.F.J",
+    "AHLAWAT MEDICOSE BILHARI",
+    "AHUJA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet",
+    "Cutiheal Cream 15Gm",
+    "Dektop Cream 20Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 2299.5,
+  "amount_total": 318178.63,
+  "rate_total": 83451.81,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

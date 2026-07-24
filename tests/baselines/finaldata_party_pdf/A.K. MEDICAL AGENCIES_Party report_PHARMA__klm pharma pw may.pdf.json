@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__klm pharma pw may.pdf",
+  "route": "party_pdf",
+  "row_count": 98,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_group_vs_customer",
+  "party_count": 14,
+  "area_count": 5,
+  "product_count": 26,
+  "sample_parties": [
+    "AMMA PAHARMACY (NEW)",
+    "ARUNA MEDICALS",
+    "DURGA MEDICAL AND SURGICALS",
+    "KVS MEDICALS",
+    "MANORAMA DERMA PHARMACY"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Total 1*15 Tab"
+  ],
+  "qty_total": 542.0,
+  "amount_total": 89830.35,
+  "rate_total": 20083.15,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

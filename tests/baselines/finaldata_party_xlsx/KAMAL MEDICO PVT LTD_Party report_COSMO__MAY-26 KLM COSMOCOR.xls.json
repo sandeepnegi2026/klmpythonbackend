@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__MAY-26 KLM COSMOCOR.xls",
+  "route": "party_xlsx",
+  "row_count": 386,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "partywise_band",
+  "party_count": 264,
+  "area_count": 54,
+  "product_count": 31,
+  "sample_parties": [
+    "A ONE CHEMIST & GENERAL STORES",
+    "A.K.SHREYA CHEMIST PRIVATE LIM",
+    "AARADHYA MEDICAL & GEN STORES",
+    "AARAV MEDICAL",
+    "AKSHAY MEDICAL & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml"
+  ],
+  "qty_total": 653.0,
+  "amount_total": 103071.13,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

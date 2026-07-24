@@ -1,0 +1,26 @@
+{
+  "file": "klm peadi.pdf",
+  "route": "party_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "areawise_sales_statement_packing",
+  "party_count": 4,
+  "area_count": 4,
+  "product_count": 2,
+  "sample_parties": [
+    "ASWAS COMMUNITY PHARMACY",
+    "BUDGET PHARMA CARE -MOTHER LLP",
+    "CENTRAL MEDICALS C 1.25 LT",
+    "THANAL MEDICAL DIVISION QUILANDY---A"
+  ],
+  "sample_products": [
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "qty_total": 7.0,
+  "amount_total": 1755.86,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

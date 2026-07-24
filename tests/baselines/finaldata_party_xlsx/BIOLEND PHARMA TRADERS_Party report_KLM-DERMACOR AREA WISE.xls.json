@@ -1,0 +1,30 @@
+{
+  "file": "KLM-DERMACOR AREA WISE.xls",
+  "route": "party_xlsx",
+  "row_count": 8,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 5,
+  "area_count": 3,
+  "product_count": 5,
+  "sample_parties": [
+    "DR.ASHOK KUMAR.M,MD",
+    "DR.JAYANTHINIE.A,MBBS,DVL",
+    "DR.MONISHA.MBBS,MD(DVL)",
+    "DR.SARAVANAN.N.MD,DCH",
+    "SUPERMED PHARMACY (A UNIT OF REGENIX DRUGS LTD) - FAIRLANDS"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Soap",
+    "Klm Klin Soap 75G",
+    "Lulizol Cream 30 Gm",
+    "Sebozit Gel 30G"
+  ],
+  "qty_total": 69.0,
+  "amount_total": 11936.52,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

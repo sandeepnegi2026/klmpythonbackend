@@ -1,0 +1,19 @@
+{
+  "file": "klm may 2026.xls",
+  "route": "stock_xlsx",
+  "row_count": 178,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_dstk_free_xlsx",
+  "product_count": 176,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "closing_stock_total": 5462.0,
+  "rate_total": 0.0,
+  "line_unexplained": 14
+}

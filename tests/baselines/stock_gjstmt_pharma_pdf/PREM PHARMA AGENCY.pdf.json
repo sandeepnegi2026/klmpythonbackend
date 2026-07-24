@@ -1,0 +1,19 @@
+{
+  "file": "PREM PHARMA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 17,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 21,
+  "sample_products": [
+    "1 EBERFINE 30G CREAM",
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Total 1*15 Tab"
+  ],
+  "closing_stock_total": 610.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

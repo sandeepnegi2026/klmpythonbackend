@@ -1,0 +1,30 @@
+{
+  "file": "Party_Product_Analysis_69.pdf",
+  "route": "party_pdf",
+  "row_count": 288,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "metro_orion_product_analysis",
+  "party_count": 144,
+  "area_count": 49,
+  "product_count": 35,
+  "sample_parties": [
+    "AAIJEE CHEMIST(E) ****(STATION)",
+    "AAIJI CHEMIST(AVINA)",
+    "AASHIRWAD CHEMIST(W)",
+    "AJINKYA MEDICAL & STORE",
+    "AKSHAY MEDICAL AGENCY"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Eva Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 947.0,
+  "amount_total": 174817.84,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 31
+}

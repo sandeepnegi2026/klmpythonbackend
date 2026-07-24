@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY WISE SALE EXCEL.xlsx",
+  "route": "party_xlsx",
+  "row_count": 109,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "party_item_wise_sale",
+  "party_count": 42,
+  "area_count": 12,
+  "product_count": 47,
+  "sample_parties": [
+    "AAR KAY MEDICALS SOLAN",
+    "AREA MANAGER HPSCSC LTD ARKI",
+    "BHALUNI MEDICAL STORE RAMPUR",
+    "CHAUHAN  MEDICOS ANNI- ANNI",
+    "CHAUHAN MEDICINE STORE RAMPUR"
+  ],
+  "sample_products": [
+    "AZACEA 20 CREAM",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 1017.0,
+  "amount_total": 237339.22,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 26
+}

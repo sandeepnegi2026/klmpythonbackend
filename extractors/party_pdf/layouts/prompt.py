@@ -90,17 +90,20 @@ def parse_prompt_normal(text):
         "Rate",
         "Amount",
     ]
-    # Bill ref: any letter-group(s) joined by dashes then '/digits' (DB-T/, M/,
-    # DB-SR-T/, CA-T/, GCN-D/ ...). Date: dd-mm-yyyy or dd/mm/yyyy. Broadening
-    # these two only ADDS matches inside the otherwise-rigid 9-field structure;
-    # the original DB-T/M/DB-SR-T + slash-date inputs still match unchanged.
+    # Bill ref: a letter-led series that may carry digits ("CD1/82") and/or dash
+    # groups ("DB-T/", "DB-SR-T/", "CA-T/", "GCN-D/") then '/digits'. It MUST start
+    # with a letter so dates/pure-numbers can't match. Date: dd-mm-yyyy or dd/mm/yyyy.
+    # Batch: ONE or TWO whitespace tokens ("CY566", "SBP 022", "K-24 NS"): a spaced
+    # batch code previously left an extra token that broke the anchored field count
+    # and silently dropped the row. It stays unambiguous — a single-batch row has 5
+    # trailing tokens (batch qty free rate amount), a spaced-batch row has 6, so the
+    # greedy 2-token batch only wins when a 6th trailing token actually exists.
     # Qty/Free groups allow an OPTIONAL decimal part (e.g. 5.5, 0.5, 2.5) so
-    # fractional-strip / half-scheme rows are captured. Previously (-?\d+)/(\d+)
-    # dropped any line whose qty or free was a decimal, silently losing rows
-    # and undercounting the party/grand totals. Adding (?:\.\d+)? is purely
-    # additive: existing integer qty/free inputs still match unchanged.
+    # fractional-strip / half-scheme rows are captured. All broadenings are purely
+    # additive: the original DB-T/M + single-token-batch + integer-qty inputs still
+    # match unchanged.
     pat = re.compile(
-        r"^(.+?)\s+([A-Z]+(?:-[A-Z]+)*/\d+)\s+(\d{1,2}[-/]\d{1,2}[-/]\d{4})\s+([\d.]+)\s+(\S+)\s+(-?\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+([\d.-]+)\s+([\d.-]+)\s*$"
+        r"^(.+?)\s+([A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*/\d+)\s+(\d{1,2}[-/]\d{1,2}[-/]\d{4})\s+([\d.]+)\s+(\S+(?:\s+\S+)?)\s+(-?\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+([\d.-]+)\s+([\d.-]+)\s*$"
     )
     rows, cur_raw = [], []
     skip_pf = [

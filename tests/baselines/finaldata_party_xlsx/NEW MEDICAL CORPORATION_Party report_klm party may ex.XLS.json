@@ -1,0 +1,30 @@
+{
+  "file": "klm party may ex.XLS",
+  "route": "party_xlsx",
+  "row_count": 245,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "sales_detail_mf_customer_itemwise",
+  "party_count": 69,
+  "area_count": 17,
+  "product_count": 61,
+  "sample_parties": [
+    ".ALPHA MEDICAL AND PROVISION STORES",
+    ".JALARAM MEDICAL STORES",
+    ".KRISHNA MEDICAL STORES",
+    ".METRO MEDICAL",
+    ".NEW LIFE MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 798.0,
+  "amount_total": 99077.75,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

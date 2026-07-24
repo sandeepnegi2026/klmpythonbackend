@@ -7,7 +7,7 @@
   "detected_format": "busy_tally",
   "party_count": 67,
   "area_count": 14,
-  "product_count": 76,
+  "product_count": 77,
   "sample_parties": [
     "ADARSH MEDICAL STORE",
     "AKOTIYA MEDICAL STORE",
@@ -25,5 +25,6 @@
   "qty_total": 979.0,
   "amount_total": 168511.01,
   "rate_total": 60410.58,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

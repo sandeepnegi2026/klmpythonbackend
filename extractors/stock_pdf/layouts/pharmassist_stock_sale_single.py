@@ -34,6 +34,8 @@ value totals tie out to the printed block, so a file may land GREEN or AMBER hon
 import io
 import re
 
+from extractors.stock_pdf.parse_common import _zero_row_is_product
+
 _NUM_RE = re.compile(r"-?\d+(?:\.\d+)?$")
 
 _MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -176,8 +178,12 @@ def parse_pharmassist_stock_sale_single(text, file_bytes=None):
                 extras_in = sum(col.get(c, 0.0) for c in _INFLOW)
                 extras_out = sum(col.get(c, 0.0) for c in _OUTFLOW)
 
+                # Keep genuine zero-activity catalog SKUs; drop only a nameless /
+                # address phantom the positional pass mis-captured (e.g. a "SHOP NO
+                # .., PROPERTY .." block that bucketed to all-zero).
                 if (op == 0 and pur == 0 and sale == 0 and bal == 0
-                        and extras_in == 0 and extras_out == 0):
+                        and extras_in == 0 and extras_out == 0
+                        and not _zero_row_is_product(name)):
                     continue
 
                 records.append({

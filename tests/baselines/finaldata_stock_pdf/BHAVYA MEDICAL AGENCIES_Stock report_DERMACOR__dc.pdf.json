@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__dc.pdf",
+  "route": "stock_pdf",
+  "row_count": 17,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "bhavya_open_recv_issue_close_value",
+  "product_count": 17,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm"
+  ],
+  "closing_stock_total": 217.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

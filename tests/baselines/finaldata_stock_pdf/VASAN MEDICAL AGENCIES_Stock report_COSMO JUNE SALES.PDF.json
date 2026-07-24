@@ -1,0 +1,19 @@
+{
+  "file": "COSMO JUNE SALES.PDF",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 2,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_tots",
+  "product_count": 7,
+  "sample_products": [
+    "EKRAN SOFT S.SC GEL",
+    "Ekran Aqua Gel 50Gm",
+    "Herpival-500 Tablets 1*3 Tablets",
+    "Imxia F",
+    "Imxia Soft Hair Moisturizer 100G"
+  ],
+  "closing_stock_total": 44.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

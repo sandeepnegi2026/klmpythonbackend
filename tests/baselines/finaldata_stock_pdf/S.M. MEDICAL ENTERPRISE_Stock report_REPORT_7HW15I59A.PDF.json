@@ -1,0 +1,19 @@
+{
+  "file": "REPORT_7HW15I59A.PDF",
+  "route": "stock_pdf",
+  "row_count": 313,
+  "warnings_count": 20,
+  "headers_detected_count": 11,
+  "detected_format": "marg_sale_closing_pdf",
+  "product_count": 273,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 4962.0,
+  "rate_total": 0.0,
+  "line_unexplained": 14
+}

@@ -1,0 +1,19 @@
+{
+  "file": "COSMO__KLM COSMO STMT.PDF",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 1,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_repq",
+  "product_count": 29,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "closing_stock_total": 763.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "klm.PDF",
+  "route": "stock_pdf",
+  "row_count": 141,
+  "warnings_count": 10,
+  "headers_detected_count": 9,
+  "detected_format": "capital_stock_sale_stmt",
+  "product_count": 136,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet"
+  ],
+  "closing_stock_total": 1443.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

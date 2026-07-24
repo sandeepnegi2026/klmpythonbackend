@@ -1,0 +1,19 @@
+{
+  "file": "KLM_COSMO_DIV_1.XLS",
+  "route": "stock_xlsx",
+  "row_count": 14,
+  "warnings_count": 9,
+  "headers_detected_count": 19,
+  "detected_format": "tabular",
+  "product_count": 14,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Herpival-1 G Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 272.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

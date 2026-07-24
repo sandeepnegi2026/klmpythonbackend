@@ -1,0 +1,30 @@
+{
+  "file": "PEDIEA PARTY WISE JUNE-26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 165,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 52,
+  "area_count": 0,
+  "product_count": 30,
+  "sample_parties": [
+    "AAROGYA MEDICALS",
+    "ADISHANKARA MEDICALS",
+    "ADITYA MED&GEN STORES",
+    "AMARAVATHI MEDICALS",
+    "AMRUTHA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend Vita Syrup 200Ml",
+    "Klclav Ds"
+  ],
+  "qty_total": 1752.0,
+  "amount_total": 262561.61,
+  "rate_total": 23635.67,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

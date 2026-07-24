@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA SS-9.pdf",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "stock_qoh",
+  "product_count": 32,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "HBSALIC CREAM",
+    "Hbsone Cream 30Gm",
+    "Kenz Soap",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 829.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

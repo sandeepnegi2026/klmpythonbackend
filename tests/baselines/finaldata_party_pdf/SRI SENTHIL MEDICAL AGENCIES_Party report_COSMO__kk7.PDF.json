@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__kk7.PDF",
+  "route": "party_pdf",
+  "row_count": 153,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "manufacturerwise_billwise",
+  "party_count": 48,
+  "area_count": 19,
+  "product_count": 27,
+  "sample_parties": [
+    "ADITHI PHARMACY",
+    "ALAGU PHARMA",
+    "BAWA MEDICAL MART",
+    "BAWA SMART PHARMACY",
+    "BAWAA MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 708.0,
+  "amount_total": 125900.43,
+  "rate_total": 30524.64,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

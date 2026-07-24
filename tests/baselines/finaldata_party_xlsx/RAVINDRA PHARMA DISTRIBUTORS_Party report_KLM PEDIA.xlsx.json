@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 13,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "ANANYA MEDICAL                KESHWAPUR",
+    "DR LAHARI KOLOLGI             HUBLI",
+    "ISHWAR MEDICAL STORES         GADAG",
+    "MANJUNATH MEDICAL STORES      SHIGGAON",
+    "NAVASPANDANA MEDICALS         DHARWAD"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Klm D3 Nano Drops",
+    "Mupisoft Ointment 5 Gm",
+    "Sacctik Gg Sachets",
+    "Sacctik Plus 1*10 Bottle"
+  ],
+  "qty_total": 217.0,
+  "amount_total": 25923.81,
+  "rate_total": 4004.86,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,27 @@
+{
+  "file": "PHARMA__PHARMA AREA.pdf",
+  "route": "party_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_customer_vs_item",
+  "party_count": 2,
+  "area_count": 1,
+  "product_count": 6,
+  "sample_parties": [
+    "SUDHA PHARAMCY",
+    "Sree satyannarayana medicals"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Kenz Plus Lotion 100Ml",
+    "Klm Fx 120 Tablet",
+    "Klmite Soap",
+    "Melapik Tx Tablets"
+  ],
+  "qty_total": 2078.0,
+  "amount_total": 258638.99,
+  "rate_total": 3553.86,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

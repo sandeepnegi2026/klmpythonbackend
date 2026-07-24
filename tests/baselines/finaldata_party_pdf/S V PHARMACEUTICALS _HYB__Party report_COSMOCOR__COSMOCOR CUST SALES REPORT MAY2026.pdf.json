@@ -1,0 +1,28 @@
+{
+  "file": "COSMOCOR__COSMOCOR CUST SALES REPORT MAY2026.pdf",
+  "route": "party_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "AISHWARIYA MEDICALS",
+    "KRISHNA TULASI MEDICAL & GENERAL",
+    "VASANTHA MEDICAL & GENERA"
+  ],
+  "sample_products": [
+    "Nioclean Ad Gel 15 Gm",
+    "Niosalic 6 Lotion 50Ml",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm",
+    "Niosol-F Cream 20 Gm"
+  ],
+  "qty_total": 129.0,
+  "amount_total": 29672.68,
+  "rate_total": 1373.2,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

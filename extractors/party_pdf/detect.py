@@ -1,6 +1,32 @@
 import re
 
 
+def _gvc_band_customer_fraction(text):
+    """For a KLM 'Group Vs Customer Details' report, the fraction of BAND lines (no-date
+    text lines that aren't furniture or bare-number subtotals) that look like customer
+    names. ~1.0 => CUSTOMER-banded (M.K./BHAVYA: customer bands, item rows); ~0.0 =>
+    PRODUCT-banded (SRI KRISHNA/SRI SUBRAHMANYA: item/address bands, customer rows)."""
+    _date = re.compile(r"\b\d{1,2}/[A-Za-z]{3}/\d{2,4}\b")
+    _cust = re.compile(
+        r"MEDICAL|PHARMAC|STORES|AGENC|SURGICAL|MEDICALS|MEDICOS|TRADERS|ENTERPRIS|\bDRUG",
+        re.I,
+    )
+    _furn = ("mkmedical", "bhavya", "srikrishna", "srisubra", "d.no", "groupvs",
+             "itemname", "1stfloor", "page", "total")
+    bands = []
+    for ln in text.splitlines():
+        s = ln.strip()
+        if not s or _date.search(s) or re.match(r"^[\d,.\s]+$", s):
+            continue
+        low = s.lower().replace(" ", "")
+        if low.startswith(_furn) or not re.search(r"[A-Za-z]{3}", s):
+            continue
+        bands.append(s)
+    if not bands:
+        return 0.0
+    return sum(1 for b in bands if _cust.search(b)) / len(bands)
+
+
 def detect_format(text, n_rects, n_lines):
     t = text[:2000]
     tl = t.lower()
@@ -323,6 +349,158 @@ def detect_format(text, n_rects, n_lines):
         and "invoiceinvoiceproductnamepackingbatchquantityfreepricevaluediscount" in cfull
     ):
         return "klm_company_customer_invoice"
+    # SREE SWATHI DOSPrinter "COMPANY AND PRODUCT, AREA, INVOICE": PRODUCT-major
+    # sibling of the customer-major klm_company_customer_invoice above. Product Name:/
+    # Area Name: bands -> invoice rows (Inv|Date|Customer Name|Qty|Free|Value|Discount);
+    # the customer name is optional and Value reconciles to the printed Grand Total.
+    # Distinct title/header tokens; tail-placed so existing rules always win.
+    if (
+        "companyandproduct,area,invoice" in cfull
+        and "invoiceinvoicecustomernamequantityfreevaluediscount" in cfull
+    ):
+        return "sree_swathi_company_product_area_invoice"
+    # KOOTTIPARAMBIL / AYYAPPA "Customerwise Itemwise Billwise Sales Report": company
+    # (KLM <div>) + customer (<code> <name>,<town>) bands -> bill rows anchored on the
+    # trailing 5 decimals (Rate MRP Value Pur.Rate Pur.Value); Value reconciles to the
+    # per-customer + grand totals. Distinct title/header tokens; tail-placed.
+    if (
+        "customerwiseitemwisebillwisesalesreport" in cfull
+        and "billnorefiddateitemdescriptionqtyfreeratemrpvaluepur.ratepur.value" in cfull
+    ):
+        return "customerwise_itemwise_billwise"
+    # SRI SHIV SHAKTI "SALES STATEMENT OF THE COMPANY < KLM >": product-grouped party
+    # statement, S.NO|PARTY rows; row AMOUNT (GST-incl.) reconciles to per-product +
+    # grand TOTAL. Distinct title/header tokens; tail-placed.
+    if (
+        "salesstatementofthecompany<klm>" in cfull
+        and "s.nopartynamebillno.dateqtyratedealdiscgstamount" in cfull
+    ):
+        return "sri_shiv_shakti_company_sales_statement"
+    # TRADELINK "CUSTOMER - INVOICE - ITEM WISE SALE": customer-banded, item rows end
+    # at MRP (no value col) -> amount = qty*rate, per-customer TOTAL is the oracle.
+    if (
+        "customer-invoice-itemwisesale" in cfull
+        and "itcoderackpackitemnamebatchqty.freeratemrp" in cfull
+    ):
+        return "tradelink_customer_invoice_itemwise"
+    # SAI BHASKAR "Customer VS Item Details": party-banded, POSITIONAL x1-band parser.
+    # Shares the 'customervsitemdetails' title with klm_customer_vs_item below but its
+    # header is 'Item name Town ...' (no second 'Item'), so the header tokens are
+    # mutually exclusive. MUST precede klm_customer_vs_item to be safe.
+    if (
+        "customervsitemdetails" in cfull
+        and "itemnametownbilldatebillno.batchnoqtyfreeratenetvalue" in cfull
+    ):
+        return "sai_bhaskar_customer_vs_item"
+    # NAGAMMAI PHARMA "Customer Purchase-Divisionwise Report": POSITIONAL x1-band party
+    # billwise. Per-party subtotal reconciles to <=0.01 (the oracle); glyph-corrupted
+    # grand total is vendor-rounded <=0.06. Distinct title/header tokens; tail-placed.
+    if (
+        "customerpurchase-divisionwisereport" in cfull
+        and "billdatbillnumberproductnamepackbatchexpirqtyfrereprat" in cfull
+    ):
+        return "klm_nagammai_customer_purchase_divisionwise"
+    # ATTASSERIL "Partywise Qtywise Sales" (party code + name(phone),area; qty+amount, no rate).
+    if "partywiseqtywisesales" in cfull:
+        return "klm_partywise_qtywise_sales"
+    # INDRA "Customer-ProductWiseSales" (customer-banded; product qty/free/amount).
+    # Fully glued export: the title has NO spaces, so match tfull (space-preserving)
+    # to avoid stealing the SPACED "Customer-Product wise Sales" report (Agrawal's
+    # customer_product_wise_packing), which collapses to the same token in cfull.
+    if "customer-productwisesales" in tfull:
+        return "klm_customer_product_wise_sales"
+    # LEO "Companywise Areawise Report" billwise (LP[HS]/n/n bill rows; TD col always '-').
+    if (
+        "companywiseareawisereport" in cfull
+        and "billnodateitemnamebatchnoexpqtyfreetdsratetotal" in cfull
+    ):
+        return "leo_companywise_areawise_billwise"
+    # JAI AMBEY "Customer Wise Sales(Detail)": horizontal page-split (text half + numeric
+    # 'Qty(Unit1)'/'Amount' half), positional.
+    if "customerwisesales(detail)" in cfull and "qty(unit1)" in cfull:
+        return "jai_ambey_customer_wise_sales"
+    # SRI SARAVANA "Sales Replacement Report": division/product/customer banded, positional.
+    if "salesreplacementreport" in cfull and "billnumbe" in cfull:
+        return "sri_sales_replacement_report"
+    # AMRIT "Company wise - Sales statement" (billwise). Shares the title token with the
+    # MISHRA two-column variant below; the 'Bill No Date Batch...' header is distinct.
+    if (
+        "companywise-salesstatement" in cfull
+        and "billnodatebatchnoex.dtptrmrpqtyfreeamount" in cfull
+    ):
+        return "amrit_companywise_sales_statement"
+    # MISHRA "Company wise - Sales statement" TWO-COLUMN variant (shares the AMRIT title
+    # token; the doubled 'Product Name Packing Qty Free' header is distinct).
+    if (
+        "companywise-salesstatement" in cfull
+        and "productnamepackingqtyfreeproductnamepackingqtyfree" in cfull
+    ):
+        return "mishra_companywise_partywise_twocol"
+    # ARCHI "CUSTOMER+ ITEM WISE SALE".
+    if (
+        "customer+itemwisesale" in cfull
+        and "saleqtyfreeqtytotalqtygrossamountnetamount" in cfull
+    ):
+        return "klm_customer_item_wise_sale"
+    # ASHA "Item Wise Summary of Sale By Party".
+    if (
+        "itemwisesummaryofsalebyparty" in cfull
+        and "sr.itemnameqtyfreevaluecgstsgstigstamount" in cfull
+    ):
+        return "klm_item_wise_sale_by_party"
+    # BALAJI "Product-Customer Wise Sales" (has a Pin Code column). MUST precede the
+    # SUMAN sibling below: SUMAN's header token is a prefix of BALAJI's, so BALAJI would
+    # otherwise be mis-detected as SUMAN.
+    if (
+        "product-customerwisesales" in cfull
+        and "customerstationqty.freeqtsalesvaluepincode" in cfull
+    ):
+        return "klm_product_customerwise_sales"
+    # SUMAN "Product-Customer Wise Sales" (no Pin Code; different print geometry).
+    if (
+        "product-customerwisesales" in cfull
+        and "customerstationqty.freeqtsalesvalue" in cfull
+    ):
+        return "suman_product_customer_wise_sales"
+    # CHOUDHARY SwilERP "Customer Information".
+    if "customerinformation" in cfull and "qty.valueqty.value" in cfull:
+        return "choudhary_customer_information"
+    # JACKSON "Companywise Customerwise Sales Statement".
+    if (
+        "companywisecustomerwisesalesstatement" in cfull
+        and "productbillnodatebatchnoexpirymrpqtyrateamount" in cfull
+    ):
+        return "jackson_companywise_customerwise_sales"
+    # JMV "Party & Product Wise Sale" (fully columnar).
+    if (
+        "party&productwisesale" in cfull
+        and "itemcodecitypartynameproductnamepackingquantityfreeavg.rateamount" in cfull
+    ):
+        return "jmv_party_product_city"
+    # KANARA "Areawise Partywise Sales".
+    if (
+        "areawisepartywisesales" in cfull
+        and "nameproductpackinqtyfreevalue" in cfull
+    ):
+        return "kanara_areawise_partywise_sales"
+    # MANISH "Product-Wise Customer-Wise Sales Summary".
+    if (
+        "product-wisecustomer-wisesalessummary" in cfull
+        and "prd.codeproductname" in cfull
+    ):
+        return "manish_product_customer_summary"
+    # RAVIRA "Customer And Company Sales" (glyph-fenced title 'E ... SalesF').
+    if (
+        "customerandcompanysalesf" in cfull
+        and "inv.nodateprouctnamepackbatchqtyfreeamount" in cfull
+    ):
+        return "ravira_customer_company_sales"
+    # TRINITY "PARTY + ITEM WISE SALE & SALE RETURN REPORT".
+    if (
+        "party+itemwisesale&salereturnreport" in cfull
+        and "sno.itemnamepackingfreevalueg.amountnetamount" in cfull
+    ):
+        return "trinity_party_item_wise_sale"
     # SmartPharma360 "Customer-Company wise Product Sales" (KLM): Company Name: bands ->
     # per-invoice rows (Inv.No|InvDate|Product Name|Batch|Qty|Free|Rate|Value). Distinct
     # header from the klm_company_customer_invoice sibling above. Tail-placed.
@@ -572,8 +750,16 @@ def detect_format(text, n_rects, n_lines):
     # MediVision "Platinum" sale/DC SUMMARY sibling of medivision_sale_dc (details).
     if "customer-wise,product-wisesale/dcsummary" in cfull:
         return "medivision_sale_dc_summary"
-    # SRI SUBRAHMANYA "Group Vs Customer Details" — PRODUCT-banded Icode/Ipack dialect.
+    # KLM "Group Vs Customer Details" Icode/Ipack report — TWO dialects share this exact
+    # title + column header. PRODUCT-banded (SRI SUBRAHMANYA / SRI KRISHNA: item name bands,
+    # customers are the data rows) -> r15. CUSTOMER-banded (M.K. MEDICAL / BHAVYA: customer
+    # name bands, items are the data rows) -> custbanded parser, which the r15 parser both
+    # inverts (item<->party) and field-mangles (its x-anchors are hardcoded to SRI
+    # SUBRAHMANYA's shifted-right coordinates). The band-content fraction separates them
+    # cleanly (customer-banded >=0.83, product-banded ==0.0).
     if "groupvscustomerdetails" in cfull and "icodeipacktowndocdatebillnobatch" in cfull:
+        if _gvc_band_customer_fraction(text) > 0.5:
+            return "klm_group_vs_customer_custbanded"
         return "r15_klm_group_vs_customer_icode"
     # PURUSHOTHAM "Area Wise Customer, Company And Product Sales" (PROFITMAKER, positional).
     if (
@@ -623,6 +809,12 @@ def detect_format(text, n_rects, n_lines):
     # KLM "Item-wise Customer-wise Offtake" — Company>Product>Customer rows.
     if "itemdescriptiontotalbonusquantityrateamountamount" in cfull:
         return "klm_customerwise_offtake"
+    # J.K.MEDICO / SAURASHTRA "Product wise sale list" — Product|Pack|Qty|Free|Repl|
+    # S.Value|Tot.Value, customer-banded (Customer Total terminators), wrapped names.
+    # Line-based tabular; the 'repl' + dual-value columns distinguish it from the
+    # generic nilkanth Rate/Amount gate below.
+    if "productpackqty.freerepl.s.value" in cfull:
+        return "product_wise_sale_list"
     # NILKANTH "Product Summary" — generic Product/Pack/Qty/Free/Rate/Amount header;
     # positional. Placed LAST so every more-specific gate above wins first.
     if "productpackqtyfreerateamount" in cfull:

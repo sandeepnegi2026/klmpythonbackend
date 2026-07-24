@@ -1,0 +1,30 @@
+{
+  "file": "ITEM WISE SALES SUMMARY FROM 01-05-2026-31-05-2026.xls",
+  "route": "party_xlsx",
+  "row_count": 75,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 35,
+  "area_count": 24,
+  "product_count": 14,
+  "sample_parties": [
+    "AGELESS CLINIC PRIVATE LIMITED",
+    "ASHTAVINYAK CHEMIST",
+    "AUM S & J SKINCARE PVT LTD",
+    "COSMAC SKIN CLINIC",
+    "DR.AKSHAY VETAL"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 493.0,
+  "amount_total": 196132.7,
+  "rate_total": 31165.23,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

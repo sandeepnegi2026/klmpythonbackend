@@ -1,0 +1,19 @@
+{
+  "file": "Stock _ Sales Divisionwise For The Period From 01-0-2026 To 30-06-2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 167,
+  "warnings_count": 2,
+  "headers_detected_count": 9,
+  "detected_format": "stock_op_pur_total_sale_close",
+  "product_count": 156,
+  "sample_products": [
+    "AZACEA 20 CREAM",
+    "AZACEA CREAM 20% 15GRM",
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "closing_stock_total": 7738.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

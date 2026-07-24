@@ -3,7 +3,7 @@ import re
 
 import pdfplumber
 
-_NUM = re.compile(r"^\d[\d,]*\.\d{2}$")
+_NUM = re.compile(r"^-?\d[\d,]*\.\d{2}$")
 # skip page furniture (vendor / date / page / report title / column header)
 _SKIP = re.compile(
     r"^[\s\-]*(amit pharma|from\b|page\b|sales report|particulars|master - cost)", re.I

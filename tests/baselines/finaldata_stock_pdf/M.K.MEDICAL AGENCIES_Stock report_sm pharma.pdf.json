@@ -1,0 +1,19 @@
+{
+  "file": "sm pharma.pdf",
+  "route": "stock_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "klm_received_issued",
+  "product_count": 15,
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 403.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

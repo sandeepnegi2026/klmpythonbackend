@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__dermacor.pdf",
+  "route": "stock_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 10,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Kenz Soap",
+    "Klm Extend Forte Tablet 1*10 Tab"
+  ],
+  "closing_stock_total": 1285.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

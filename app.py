@@ -12,6 +12,7 @@ from core.header_match import match_header, normalize, set_header_overrides
 from core.io_helpers import build_csv, build_json, build_xlsx, rows_to_dataframe
 from core.quality import build_quality
 from core.scoring import coverage
+from core.triage import _to_float
 from extractors import party_pdf, party_xlsx, stock_pdf, stock_xlsx
 
 HEADER_MATCH_THRESHOLD = 0.62  # mirrors core.header_match.match_header default
@@ -167,16 +168,266 @@ def _raw_headers(result, report_type):
 
 
 def _render_verdict(triage):
+    # 4-state display: the wire bucket stays GREEN/AMBER/RED, but AMBER splits on
+    # extraction_ok — True means the numbers are proven correct (they match the
+    # report's own printed totals) and only the vendor's data doesn't add up;
+    # None means correctness could not be auto-confirmed (YELLOW, needs a check).
     bucket = triage.get("bucket", "?")
     code = triage.get("reason_code", "")
     reason = triage.get("reason", "")
-    text = f"**{bucket} — `{code}`**\n\n{reason}"
+    ok = triage.get("extraction_ok")
     if bucket == "GREEN":
-        st.success(text)
+        st.success(f"🟢 **Correct**\n\n{reason}")
     elif bucket == "RED":
-        st.error(text)
+        st.error(f"🔴 **Not correct**\n\n{reason}")
+    elif bucket == "AMBER" and (ok is True or (ok is None and str(reason).startswith("Extraction is correct"))):
+        st.warning(f"🟠 **Correct — vendor data mismatch**\n\n{reason}")
+    elif bucket == "AMBER":
+        st.warning(f"🟡 **Needs a quick check**\n\n{reason}")
     else:
-        st.warning(text)
+        st.warning(f"**{bucket}**\n\n{reason}")
+    st.caption(f"technical: `{bucket} · {code}`")
+
+
+# --------------------------------------------------------------------------- #
+# Analytics & Statistics — an at-a-glance aggregate view of the extracted rows,
+# mirroring the /admin/uploads InsightCard panel. Computed purely from the
+# vendor's own as-printed values (PSUI has no price catalog), so a column the
+# report never printed (commonly PTS) shows "—" rather than a fabricated 0.
+# --------------------------------------------------------------------------- #
+def _indian_group(digits):
+    """Group an all-digit integer string Indian-style: last 3, then 2s. '5193088' -> '51,93,088'."""
+    if len(digits) <= 3:
+        return digits
+    head, tail = digits[:-3], digits[-3:]
+    parts = []
+    while len(head) > 2:
+        parts.insert(0, head[-2:])
+        head = head[:-2]
+    parts.insert(0, head)
+    return ",".join(parts) + "," + tail
+
+
+def _fmt_indian_number(value, decimals=2, strip=True):
+    """Indian-grouped number, up to `decimals` places, no currency symbol.
+
+    `strip=True` drops trailing zeros (mirrors JS maximumFractionDigits, e.g.
+    23507 -> "23,507", 101.32 -> "101.32"); `strip=False` keeps exactly `decimals`
+    places (used by the currency formatter). None -> em dash."""
+    if value is None:
+        return "—"
+    try:
+        n = float(value)
+    except (TypeError, ValueError):
+        return "—"
+    neg = n < 0
+    n = abs(n)
+    if decimals > 0:
+        whole = int(n)
+        frac = round(n - whole, decimals)
+        if frac >= 1:                       # rounding carried into the integer part
+            whole += int(frac)
+            frac -= int(frac)
+        frac_str = f"{frac:.{decimals}f}"[2:]
+        if strip:
+            frac_str = frac_str.rstrip("0")
+        out = _indian_group(str(whole)) + (f".{frac_str}" if frac_str else "")
+    else:
+        out = _indian_group(str(int(round(n))))
+    return ("-" + out) if neg else out
+
+
+def _fmt_inr(value, decimals=2):
+    """Rupee amount, Indian grouping, ₹ prefix, always `decimals` places
+    (mirrors formatINRPrice, e.g. ₹51,93,088.05). None -> em dash (no ₹)."""
+    if value is None:
+        return "—"
+    formatted = _fmt_indian_number(value, decimals, strip=False)
+    if formatted == "—":
+        return "—"
+    return ("-₹" + formatted[1:]) if formatted.startswith("-") else ("₹" + formatted)
+
+
+def _is_return(row):
+    # PSUI rows carry no transaction_type; a return is a negative qty or amount.
+    return (_to_float(row.get("qty")) or 0) < 0 or (_to_float(row.get("amount")) or 0) < 0
+
+
+def _distinct_count(rows, *fields):
+    """Distinct non-empty count over the first populated field per row (trim+lower)."""
+    seen = set()
+    for row in rows:
+        for field in fields:
+            value = row.get(field)
+            if value is not None and str(value).strip():
+                seen.add(str(value).strip().lower())
+                break
+    return len(seen)
+
+
+def _sum_col(rows, *fields, transform=None, require_nonzero=False):
+    """Sum across rows. None if NO row carries a parseable value in any given field.
+
+    `require_nonzero=True` also returns None when every parseable value is 0 — used
+    for money fields, because enforce_schema fills a column the report never printed
+    with "0", and a card should show "—" for that, not a misleading ₹0.00. Quantities
+    leave it False so a genuine 0 (e.g. no free qty) still shows as 0."""
+    total, seen, nonzero = 0.0, False, False
+    for row in rows:
+        value = None
+        for field in fields:
+            value = _to_float(row.get(field))
+            if value is not None:
+                break
+        if value is None:
+            continue
+        seen = True
+        if value != 0:
+            nonzero = True
+        total += transform(row, value) if transform else value
+    if not seen or (require_nonzero and not nonzero):
+        return None
+    return total
+
+
+def _analytics_row(label, value, emphasis=False, accent=None):
+    return (label, value, emphasis, accent)
+
+
+def _party_cards(rows):
+    return_rows = [r for r in rows if _is_return(r)]
+
+    products = _distinct_count(rows, "canonical_name", "product_name")
+    parties = _distinct_count(rows, "normalized_party_name", "party_name")
+
+    # Headline qty + money totals sum EVERY row (returns/credit lines included) so
+    # the panel equals the report's own printed GRAND TOTAL and the exported TOTAL
+    # row (core/io_helpers.append_totals_row, which sums the additive columns over
+    # all rows). An extraction preview must reconcile to the vendor's printed
+    # figures — a report prints ONE arithmetic column sum, it does not net returns
+    # out of gross like the catalog-based admin tiles do. Return/Net below stay as
+    # an informational split (Return Qty = Σ|return-row qty|; Net = Gross − Return).
+    gross_qty = _sum_col(rows, "qty") or 0.0
+    return_qty = _sum_col(return_rows, "qty", transform=lambda r, v: abs(v)) or 0.0
+    net_qty = gross_qty - return_qty
+    free_qty = _sum_col(rows, "free_qty") or 0.0
+
+    # Financial totals come straight from what the report PRINTS (PSUI has no price
+    # catalog — see the module note; the admin's MRP/PTR/PTS need catalog defaults we
+    # don't have). require_nonzero collapses an all-"0" (never-printed) column to "—".
+    mrp = _sum_col(rows, "mrp", transform=lambda r, v: (_to_float(r.get("qty")) or 0.0) * v, require_nonzero=True)
+    sale_value = _sum_col(rows, "amount", require_nonzero=True)
+    taxable = _sum_col(rows, "taxable_value", require_nonzero=True)
+    gst_amount = _sum_col(rows, "gst_amount", require_nonzero=True)
+    net_amount = _sum_col(rows, "net_amount", require_nonzero=True)
+
+    avg_qty = (gross_qty / products) if products else 0.0
+
+    def line_value(row):
+        for field in ("amount", "taxable_value"):
+            value = _to_float(row.get(field))
+            if value is not None:
+                return value
+        qty, rate = _to_float(row.get("qty")), _to_float(row.get("rate"))
+        return qty * rate if (qty is not None and rate is not None) else None
+
+    line_vals = [lv for lv in (line_value(r) for r in rows) if lv is not None]
+    total_value = sum(line_vals) if line_vals else None
+    avg_value = (total_value / products) if (total_value is not None and products) else None
+
+    return [
+        ("Invoice Overview", [
+            _analytics_row("Products", _fmt_indian_number(products, 0)),
+            _analytics_row("Parties", _fmt_indian_number(parties, 0)),
+            _analytics_row("Avg Qty / Product", _fmt_indian_number(avg_qty, 2), emphasis=True),
+            _analytics_row("Avg Value / Product", _fmt_inr(avg_value, 2)),
+        ]),
+        ("Financial Summary", [
+            _analytics_row("MRP", _fmt_inr(mrp, 2)),
+            _analytics_row("Sale Value", _fmt_inr(sale_value, 2), emphasis=True),
+            _analytics_row("Taxable Value", _fmt_inr(taxable, 2)),
+            _analytics_row("GST Amount", _fmt_inr(gst_amount, 2)),
+            _analytics_row("Net Amount", _fmt_inr(net_amount, 2)),
+        ]),
+        ("Quantity Summary", [
+            _analytics_row("Gross Qty", _fmt_indian_number(gross_qty, 2)),
+            _analytics_row("Return Qty", _fmt_indian_number(return_qty, 2), accent="warning"),
+            _analytics_row("Net Qty", _fmt_indian_number(net_qty, 2), emphasis=True),
+            _analytics_row("Free Qty", _fmt_indian_number(free_qty, 2)),
+        ]),
+    ]
+
+
+def _stock_cards(rows):
+    products = _distinct_count(rows, "canonical_name", "product_name")
+
+    opening = _sum_col(rows, "opening_stock") or 0.0
+    purchase_qty = _sum_col(rows, "purchase_stock") or 0.0
+    sales_qty = _sum_col(rows, "sales_qty") or 0.0
+    closing = _sum_col(rows, "closing_stock") or 0.0
+
+    purchase_val = _sum_col(rows, "purchase_value", require_nonzero=True)
+    sales_val = _sum_col(rows, "sales_value", require_nonzero=True)
+    closing_val = _sum_col(rows, "closing_stock_value", require_nonzero=True)
+
+    avg_purchase = (purchase_qty / products) if products else 0.0
+    avg_sales = (sales_qty / products) if products else 0.0
+
+    return [
+        ("Stock Overview", [
+            _analytics_row("Products", _fmt_indian_number(products, 0)),
+            _analytics_row("Avg Purchase / Product", _fmt_indian_number(avg_purchase, 2)),
+            _analytics_row("Avg Sales / Product", _fmt_indian_number(avg_sales, 2), emphasis=True),
+        ]),
+        ("Value Summary", [
+            _analytics_row("Purchase Value", _fmt_inr(purchase_val, 2)),
+            _analytics_row("Sales Value", _fmt_inr(sales_val, 2), emphasis=True),
+            _analytics_row("Closing Value", _fmt_inr(closing_val, 2)),
+        ]),
+        ("Quantity Summary", [
+            _analytics_row("Opening Stock", _fmt_indian_number(opening, 2)),
+            _analytics_row("Purchase Qty", _fmt_indian_number(purchase_qty, 2)),
+            _analytics_row("Sales Qty", _fmt_indian_number(sales_qty, 2), emphasis=True),
+            _analytics_row("Closing Stock", _fmt_indian_number(closing, 2)),
+        ]),
+    ]
+
+
+def _render_insight_card(title, rows):
+    with st.container(border=True):
+        st.markdown(
+            f"<div style='font-size:0.72rem;font-weight:700;letter-spacing:0.06em;"
+            f"text-transform:uppercase;color:#64748b;margin-bottom:0.4rem;'>{title}</div>",
+            unsafe_allow_html=True,
+        )
+        for label, value, emphasis, accent in rows:
+            if accent == "warning":
+                color = "#b45309"
+            elif emphasis:
+                color = "#2563eb"
+            else:
+                color = "inherit"
+            size, weight = ("1.35rem", "700") if emphasis else ("0.95rem", "600")
+            st.markdown(
+                "<div style='display:flex;justify-content:space-between;align-items:baseline;padding:0.12rem 0;'>"
+                f"<span style='font-size:0.8rem;color:#475569;'>{label}</span>"
+                f"<span style='font-size:{size};font-weight:{weight};color:{color};text-align:right;'>{value}</span>"
+                "</div>",
+                unsafe_allow_html=True,
+            )
+
+
+def _render_analytics(result, report_type):
+    rows = result.get("rows", []) or []
+    if not rows:
+        return
+    st.divider()
+    st.markdown("### Analytics & Statistics")
+    cards = _party_cards(rows) if report_type == "party" else _stock_cards(rows)
+    cols = st.columns(len(cards))
+    for col, (title, card_rows) in zip(cols, cards):
+        with col:
+            _render_insight_card(title, card_rows)
 
 
 def _render_header_mapping(result, report_type, checks, raw_headers):
@@ -441,6 +692,8 @@ if layout_key:
     st.caption(f"Layout key: `{layout_key}`")
 
 _render_verdict(triage)
+
+_render_analytics(result, report_type_key)
 
 row_tab_label = "Stock Rows" if report_type_key == "stock" else "Extracted Rows"
 (

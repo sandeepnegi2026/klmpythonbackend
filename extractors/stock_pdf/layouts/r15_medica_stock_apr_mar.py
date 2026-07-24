@@ -53,6 +53,14 @@ _SKIP_SUBSTR = (
 
 _E_WATERMARK_RE = re.compile(r"^(\d+)[eE](\d+)$")
 
+# Pack-unit token with a watermark 'e' bled between the unit and the FIRST data
+# column, e.g. 'KLM D3 NANO SHOTS 5MLe40 ...' where '5ML' is the pack and '40' is
+# OPSTK. Unlike _E_WATERMARK_RE (pure <digit>e<digit>), this token carries a real
+# pack-unit suffix, so it needs splitting into ['5ML','40'] BEFORE the number run.
+_PACK_E_DATA_RE = re.compile(
+    r"^(\d+(?:GM|ML|MG|KG|GML|MLL|LTR|G|L))[eE](\d+)$", re.I
+)
+
 
 def _num(v):
     # '4e0' is a single value 40 with an 'e' bled *inside* it by the diagonal
@@ -64,7 +72,7 @@ def _num(v):
     return _to_number(_clean_number_token(v)) or 0.0
 
 
-def _unglue(tokens):
+def _unglue(tokens, merge_glued=False):
     """Split genuinely-glued adjacent integer columns ('0a13' -> '0','13').
 
     Only splits when the token is NOT already a plain number, i.e. it carries a
@@ -73,16 +81,64 @@ def _unglue(tokens):
     _clean_number_token can recover it as the SINGLE value '40' (the watermark bled
     an 'e' *inside* one number); pandas would misread '4e0' as scientific notation,
     which _clean_number_token corrects.
+
+    A '<int>letter<int>' token is AMBIGUOUS: it can be two glued columns ('0a13' ->
+    '0','13') OR a single value wearing a mid-number watermark letter ('5a834' ->
+    '5834' -- pdfminer >=20251230 keeps the giant diagonal glyph fused into the
+    SALE-VAL cell as one wide token). ``merge_glued=True`` keeps such a token whole
+    so _clean_number_token collapses it to the single true value; the caller tries
+    the split reading FIRST and only falls back to merged when the stock identity
+    fails to reconcile, so genuinely-glued '0a13' columns are unaffected.
     """
     out = []
     for t in tokens:
+        pe = _PACK_E_DATA_RE.match(t)
+        if pe:
+            # '5MLe40' -> '5ML' (pack unit, stops the number run) + '40' (OPSTK)
+            out.append(pe.group(1))
+            out.append(pe.group(2))
+            continue
         m = _GLUED_INTCOL_RE.match(t)
-        if m and not _is_num(t):
+        if m and not _is_num(t) and not merge_glued:
             out.append(m.group(1))
             out.append(m.group(2))
         else:
             out.append(t)
     return out
+
+
+def _tokens_to_row(tokens):
+    """(prod, vals) from an un-glued token list, or None if it can't be a data row.
+
+    Collects the trailing numeric run (glyph-tolerant), stopping at the first
+    genuine non-number / pack-unit token so a product word is never eaten.
+    """
+    if len(tokens) < 8:
+        return None
+    i = len(tokens) - 1
+    vals = []
+    while (
+        i >= 0
+        and _is_num(_clean_number_token(tokens[i]))
+        and not _PACK_UNIT_TOKEN_RE.match(tokens[i])
+    ):
+        vals.insert(0, _num(tokens[i]))
+        i -= 1
+    if i < 0 or len(vals) < 7:
+        return None
+    prod = " ".join(tokens[: i + 1]).strip()
+    if not prod or not any(c.isalpha() for c in prod):
+        return None
+    return prod, vals
+
+
+def _reconciled_window(vals):
+    """Leftmost 7-wide window satisfying OPSTK+PURCH+IN/OT-SALE == STOCK, else None."""
+    for off in range(0, len(vals) - 7 + 1):
+        ops, pur, sale, saleval, inot, stk, stkval = vals[off : off + 7]
+        if ops + pur + inot - sale == stk:
+            return vals[off : off + 7]
+    return None
 
 
 def parse_medica_stock_apr_mar(text):
@@ -95,42 +151,31 @@ def parse_medica_stock_apr_mar(text):
         if any(s in low for s in _SKIP_SUBSTR):
             continue
 
-        tokens = _unglue(line.split())
-        if len(tokens) < 8:
-            continue
-
-        # Collect the trailing numeric run (glyph-tolerant), stopping at the first
-        # genuine non-number / pack-unit token so a product word is never eaten.
-        i = len(tokens) - 1
-        vals = []
-        while (
-            i >= 0
-            and _is_num(_clean_number_token(tokens[i]))
-            and not _PACK_UNIT_TOKEN_RE.match(tokens[i])
-        ):
-            vals.insert(0, _num(tokens[i]))
-            i -= 1
-        if i < 0 or len(vals) < 7:
-            continue
-
-        prod = " ".join(tokens[: i + 1]).strip()
-        if not prod or not any(c.isalpha() for c in prod):
-            continue
-
-        # Slide a 7-wide window over the numeric run; accept the leftmost offset
-        # where the stock identity reconciles. Falls back to the earliest window
-        # (drop only trailing month columns) when nothing reconciles exactly.
-        n = len(vals)
-        chosen = None
-        for off in range(0, n - 7 + 1):
-            ops, pur, sale, saleval, inot, stk, stkval = vals[off : off + 7]
-            if ops + pur + inot - sale == stk:
-                chosen = vals[off : off + 7]
+        raw = line.split()
+        # A '<int>letter<int>' cell is ambiguous (two glued columns vs one
+        # watermark-fused value). Read it BOTH ways and accept the first whose
+        # 7-wide window satisfies the stock identity: split first (preserves the
+        # genuine '0a13' IN/OT-glued-onto-STOCK case), then merged (recovers a
+        # single-value cell like '5a834'->'5834' that pdfminer >=20251230 keeps
+        # fused). Only rows where the split reading fails to reconcile change.
+        prod = chosen = None
+        for merge_glued in (False, True):
+            r = _tokens_to_row(_unglue(raw, merge_glued=merge_glued))
+            if r is None:
+                continue
+            win = _reconciled_window(r[1])
+            if win is not None:
+                prod, chosen = r[0], win
                 break
         if chosen is None:
-            # No exact reconcile (single OCR-mangled cell): keep the row using the
-            # first 7 columns after an optional single leading PACKING token.
-            off = 1 if n >= 8 else 0
+            # Neither reading reconciles (a genuinely OCR-mangled cell): fall back
+            # to the split reading's first 7 columns after an optional single
+            # leading PACKING token -- unchanged from the original behaviour.
+            r = _tokens_to_row(_unglue(raw))
+            if r is None:
+                continue
+            prod, vals = r
+            off = 1 if len(vals) >= 8 else 0
             chosen = vals[off : off + 7]
 
         ops, pur, sale, saleval, inot, stk, stkval = chosen

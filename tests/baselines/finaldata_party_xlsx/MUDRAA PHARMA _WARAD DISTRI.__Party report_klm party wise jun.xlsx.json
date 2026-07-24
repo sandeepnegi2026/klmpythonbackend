@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise jun.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1204,
+  "warnings_count": 0,
+  "headers_detected_count": 33,
+  "detected_format": "tabular",
+  "party_count": 325,
+  "area_count": 60,
+  "product_count": 183,
+  "sample_parties": [
+    "*BADAL INGLAE",
+    "AAISAHEB MEDICAL STORES,MIDC ROAD",
+    "AAROGYA AMRUT MEDICAL AND GENERAL STORES",
+    "AAROGYA MEDICAL AND GENERAL STORES",
+    "AARYASH MEDICAL AND GENRAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CETALORE M 60ML SUSP"
+  ],
+  "qty_total": 4666.0,
+  "amount_total": 749103.16,
+  "rate_total": 242047.76,
+  "purchase_rate_total": 217842.53,
+  "line_unexplained": 0
+}

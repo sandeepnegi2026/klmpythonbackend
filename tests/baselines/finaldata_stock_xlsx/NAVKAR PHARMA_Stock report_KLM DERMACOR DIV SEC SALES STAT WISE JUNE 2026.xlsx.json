@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMACOR DIV SEC SALES STAT WISE JUNE 2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 30,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 30,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "closing_stock_total": 121.0,
+  "rate_total": 0.0,
+  "line_unexplained": 11
+}

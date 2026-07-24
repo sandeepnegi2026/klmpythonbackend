@@ -1,0 +1,30 @@
+{
+  "file": "area_customer_item_wise_summary_2026-07-03T17_11_29.157478_05_30.xlsx",
+  "route": "party_xlsx",
+  "row_count": 7247,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_ascent_warehouse_customer_sale_dump",
+  "party_count": 1729,
+  "area_count": 1110,
+  "product_count": 231,
+  "sample_parties": [
+    "11 STAR MEDICO",
+    "A 1 GENERIC MEDICINE STORE",
+    "A P MEDICAL AND GENERAL STORES",
+    "A-ONE CHEMIST AND GENERAL STORE",
+    "A.B.M PHARMACY AND HEALTHCARE"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CETALORE M DELICIOUS MIX FRUIT SYRUP"
+  ],
+  "qty_total": 9465.0,
+  "amount_total": 1978756.17,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

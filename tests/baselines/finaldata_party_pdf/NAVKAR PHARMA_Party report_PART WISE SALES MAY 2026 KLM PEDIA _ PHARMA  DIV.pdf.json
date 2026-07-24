@@ -1,0 +1,30 @@
+{
+  "file": "PART WISE SALES MAY 2026 KLM PEDIA _ PHARMA  DIV.pdf",
+  "route": "party_pdf",
+  "row_count": 25,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 20,
+  "area_count": 4,
+  "product_count": 14,
+  "sample_parties": [
+    "AAI JI MEDICAL & GENERAL STORE",
+    "ANAND MEDICOSE",
+    "GAYTRI MEDICAL STORE PALI (DINESH JI)",
+    "HARISH MEDICAL CENTRE",
+    "JAI SHREE MEDICAL STORE . SURAJ POLE"
+  ],
+  "sample_products": [
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml",
+    "Klm C 1000"
+  ],
+  "qty_total": 73.5,
+  "amount_total": 16158.63,
+  "rate_total": 4425.16,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

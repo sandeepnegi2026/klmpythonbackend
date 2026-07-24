@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO PARTY WISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "tabular",
+  "party_count": 22,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "24 HOURS MEDICINES       ,JAGADHARI",
+    "BAGGA MEDICOSE           ,AMBALACITY",
+    "CHOUDHRY MEDICAL HALL    ,AMBALACITY",
+    "COONER MEDICOSE          ,AMBALACITY",
+    "DECENT MEDICOSE          ,AMBALACITY"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "qty_total": 210.75,
+  "amount_total": 67183.54,
+  "rate_total": 20687.83,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

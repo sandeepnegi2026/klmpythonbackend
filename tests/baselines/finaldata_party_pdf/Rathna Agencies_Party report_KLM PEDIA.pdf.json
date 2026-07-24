@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA.pdf",
+  "route": "party_pdf",
+  "row_count": 55,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "wep_legacy",
+  "party_count": 7,
+  "area_count": 4,
+  "product_count": 20,
+  "sample_parties": [
+    "DR.MONISHA.,M.B.B.S.,M.D.,(DVL).,AAAM",
+    "DR.R.MOHAN.M.B.B.S.D.C.H.",
+    "DR.S.VIJAYARAGHAVAN M.D.",
+    "METTUR MEDICALS",
+    "MUKIL MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Evaklin Medicated Wash",
+    "Klclav Ds"
+  ],
+  "qty_total": 330.0,
+  "amount_total": 63523.79,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

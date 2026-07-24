@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__PHARMA CUST SALES REPORT MAY2026.pdf",
+  "route": "party_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 6,
+  "area_count": 0,
+  "product_count": 13,
+  "sample_parties": [
+    "AISHWARIYA MEDICALS",
+    "KRISHNA TULASI MEDICAL &",
+    "RR PHARMACY",
+    "SRI BALAJI PHARMA",
+    "TWACHA PHRAMCY"
+  ],
+  "sample_products": [
+    "EBERFINE CR30EAGMM 30BGM519",
+    "EXTEND GO1L*D1 S0OFT0 C0A7P1125F",
+    "Eberfine-Xl Cream 50 Gm",
+    "GA - 12 CRE3A0MGM EI505",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 52715051.0,
+  "amount_total": 59382.53,
+  "rate_total": 3413.31,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

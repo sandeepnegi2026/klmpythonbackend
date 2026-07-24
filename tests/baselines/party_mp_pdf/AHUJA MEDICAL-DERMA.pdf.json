@@ -20,10 +20,11 @@
     "Mfsone Cream 30 Gm",
     "Mfsudif Cream 10 Gm",
     "Nevlon Acne Soap 75Gm",
-    "ONITRAZ-FORTE TAB"
+    "Onitraz 100Mg 1*30 Capsules"
   ],
   "qty_total": 43.0,
   "amount_total": 7404.25,
   "rate_total": 2046.56,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

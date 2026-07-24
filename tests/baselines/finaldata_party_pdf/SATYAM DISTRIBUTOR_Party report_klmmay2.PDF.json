@@ -1,0 +1,30 @@
+{
+  "file": "klmmay2.PDF",
+  "route": "party_pdf",
+  "row_count": 261,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 74,
+  "area_count": 21,
+  "product_count": 80,
+  "sample_parties": [
+    "0002-VIKASH MEDICALS",
+    "A22-AMIT MEDICAL..",
+    "ADM-A.D MEDICAL AGENCY",
+    "AJT-AJIT MEDICINE.",
+    "AKS-AKASH MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cosmoq Facewash Gel 100G",
+    "Cutiheal Cream 15Gm"
+  ],
+  "qty_total": 779.0,
+  "amount_total": 107780.32,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

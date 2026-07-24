@@ -1,0 +1,19 @@
+{
+  "file": "klm_laboratories_pedia.xls",
+  "route": "stock_xlsx",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 32,
+  "sample_products": [
+    "Essfol Tablet 1*10 Tab",
+    "Evaklin Medicated Wash",
+    "Extend Eva Capsules",
+    "Fentispor Capsule",
+    "Klclav Ds"
+  ],
+  "closing_stock_total": 505.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

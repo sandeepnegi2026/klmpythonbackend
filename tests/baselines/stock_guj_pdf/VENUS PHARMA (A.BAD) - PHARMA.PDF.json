@@ -1,11 +1,11 @@
 {
   "file": "VENUS PHARMA (A.BAD) - PHARMA.PDF",
   "route": "stock_pdf",
-  "row_count": 244,
+  "row_count": 254,
   "warnings_count": 20,
   "headers_detected_count": 8,
   "detected_format": "venus_stock_statement",
-  "product_count": 234,
+  "product_count": 244,
   "sample_products": [
     "Amoclafix-625 Tablets",
     "Appybush Syrup 200Ml",
@@ -13,6 +13,7 @@
     "Blemguard Face Serum 30Ml",
     "Blemguard-Tx Face Serum 30Ml"
   ],
-  "closing_stock_total": 12317.0,
-  "rate_total": 0.0
+  "closing_stock_total": 13087.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

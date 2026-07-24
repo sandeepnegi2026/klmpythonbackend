@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__DERMACOR STOCK REPORT MAY2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 35,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_ss_statement_detailed",
+  "product_count": 29,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets"
+  ],
+  "closing_stock_total": 207.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

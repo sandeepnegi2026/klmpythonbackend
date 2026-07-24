@@ -1,0 +1,30 @@
+{
+  "file": "klm may party wise.pdf",
+  "route": "party_pdf",
+  "row_count": 1034,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "customer_invoice_itemwise_sale",
+  "party_count": 411,
+  "area_count": 0,
+  "product_count": 127,
+  "sample_parties": [
+    "(PL) SHREE SAI MEDICAL(CASH BILL) C.S NO.1218,GALA NO.2, SANGLI",
+    "AADNYA MEDICO 611 S, TIPANWAR SKIN CARE CENTER, SANGLI 27AAAHT",
+    "AAKANKSHA MEDICAL & GEN.STORES SHAMROVNAGAR SANGLI 27AJRPB4071",
+    "AARAV MEDICAL BALGOPAL HOSPITAL JATH",
+    "AAROHI MEDICAL M.NO-453/15/30/1/2,GROUND FLOOR,GALA NO-1, JATH"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 3863.0,
+  "amount_total": 484668.23,
+  "rate_total": 167618.71,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 147
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM _ _ COSMOCOR__AreawiseSales_Jun_2026.pdf",
+  "route": "party_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "areawise_sales_statement_banded",
+  "party_count": 18,
+  "area_count": 8,
+  "product_count": 6,
+  "sample_parties": [
+    "DELUXE MEDICALS-670101",
+    "FARMACIA MEDICARE",
+    "K.K. MEDICALS-670673",
+    "KALYAN CLINIC",
+    "KRIPA MEDICALS"
+  ],
+  "sample_products": [
+    "Melboost Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Niosol Ointment 30 Gm",
+    "Niosol-F Cream 20 Gm",
+    "Trunex 0.025% Gel 30Gm"
+  ],
+  "qty_total": 64.0,
+  "amount_total": 9690.37,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

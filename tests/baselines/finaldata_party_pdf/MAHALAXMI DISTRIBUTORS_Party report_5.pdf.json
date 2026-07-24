@@ -1,0 +1,30 @@
+{
+  "file": "5.pdf",
+  "route": "party_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 13,
+  "area_count": 8,
+  "product_count": 14,
+  "sample_parties": [
+    "AAROGYA MED /STORE HUMNABAD",
+    "DR SHARAD PATIL YADGIR",
+    "DR.AMBRESH.S.BADAD GULABRGA",
+    "DR.DIVYASHREE",
+    "INDIA MEDICAL & GENERAL STORES"
+  ],
+  "sample_products": [
+    "Folibild Tablets",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "qty_total": 254.0,
+  "amount_total": 49141.47,
+  "rate_total": 3743.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

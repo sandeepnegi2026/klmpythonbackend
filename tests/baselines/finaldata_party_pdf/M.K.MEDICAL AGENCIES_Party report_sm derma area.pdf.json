@@ -1,0 +1,30 @@
+{
+  "file": "sm derma area.pdf",
+  "route": "party_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_group_vs_customer_custbanded",
+  "party_count": 8,
+  "area_count": 6,
+  "product_count": 6,
+  "sample_parties": [
+    "AYYAPPA MEDICAL STORES",
+    "DRAKSHAYEENI MEDICAL S",
+    "KAVYA MEDICAL & GENRAL S",
+    "SRI BANGARAMMA MEDICAL",
+    "SRI SAPTAGIRI MEDICAL&GEN"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Max Cream 150 Gm",
+    "SM CANROFILIN CREAM",
+    "Xepinoxin Cream 5G"
+  ],
+  "qty_total": 27.0,
+  "amount_total": 6696.81,
+  "rate_total": 2954.22,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

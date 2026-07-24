@@ -1,0 +1,18 @@
+{
+  "file": "ALL CARE MEDICINES.pdf",
+  "route": "stock_pdf",
+  "row_count": 167,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "prompt",
+  "product_count": 162,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "closing_stock_total": 2958.0,
+  "rate_total": 0.0
+}

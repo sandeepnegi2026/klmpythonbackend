@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK.PDF",
+  "route": "stock_pdf",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 36,
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "closing_stock_total": 170.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

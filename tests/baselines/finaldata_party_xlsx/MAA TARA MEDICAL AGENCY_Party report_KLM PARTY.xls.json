@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY.xls",
+  "route": "party_xlsx",
+  "row_count": 51,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 20,
+  "area_count": 14,
+  "product_count": 41,
+  "sample_parties": [
+    "AMRIT MEDICAL HALL",
+    "ARCHNA MEDICAL",
+    "DCM MEDICALS",
+    "HEALTHMATE PHARMA",
+    "JYOTI MEDICALS"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Ms Gel 50Gm"
+  ],
+  "qty_total": 1021.0,
+  "amount_total": 196065.73,
+  "rate_total": 11796.25,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KPHARM-Sales_Report-JUNE_2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 643,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded_grsamt",
+  "party_count": 378,
+  "area_count": 62,
+  "product_count": 41,
+  "sample_parties": [
+    "A.R PHARMA",
+    "AAI MEDICO(GHANSOLI)",
+    "AAIJI CHEMIST..",
+    "AFFOLIFE RETAIL PRIVATE LIMITED",
+    "AJWA MEDICAL AND GENERAL STORE"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 1501.0,
+  "amount_total": 226367.51,
+  "rate_total": 103067.77,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

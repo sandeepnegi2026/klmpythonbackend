@@ -1,0 +1,30 @@
+{
+  "file": "KLM JUNE SALE PINCODE WISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1902,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "klm_warehouse_pincode_sale_dump",
+  "party_count": 275,
+  "area_count": 146,
+  "product_count": 127,
+  "sample_parties": [
+    "0",
+    "ADARSH NAGAR",
+    "AIIMS HOSPITAL",
+    "AJMER",
+    "AJMER-BEAWAR"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 4467.0,
+  "amount_total": 984549.28,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

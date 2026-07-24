@@ -1,0 +1,19 @@
+{
+  "file": "KLM STOCK MAY.pdf",
+  "route": "stock_pdf",
+  "row_count": 98,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 95,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "closing_stock_total": 909.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

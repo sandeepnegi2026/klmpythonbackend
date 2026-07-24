@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA PARTY REPORT  JUNE 2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 21,
+  "sample_parties": [
+    "GOWRISH PHARMA-RAICHUR",
+    "GURU SUGURESHWARA MEDICAL& GEN-RAICHUR",
+    "SANGAMESHWARA MEDICAL STORE-RAICHUR",
+    "SHREE MATA MEDICAL STORE -RAICHUR",
+    "SUJATHA PHARMA-RAICHUR"
+  ],
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Desosoft Cream 10 Gm",
+    "Klclav Ds",
+    "Klclav Es Oral Suspension 50Ml",
+    "Klm D3 Nano Drops"
+  ],
+  "qty_total": 1620.0,
+  "amount_total": 237619.45,
+  "rate_total": 5613.56,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

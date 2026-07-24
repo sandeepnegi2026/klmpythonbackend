@@ -1,0 +1,30 @@
+{
+  "file": "cosmo party.pdf",
+  "route": "party_pdf",
+  "row_count": 62,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_sales",
+  "party_count": 24,
+  "area_count": 11,
+  "product_count": 22,
+  "sample_parties": [
+    "APEX PHARMACY",
+    "COUNTER SALE",
+    "CUTIS PHARMA",
+    "DR HARITHA GARU.MBBS DVL",
+    "JAYA SURYA MEDICAL & FANC"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Enzotret Tablet"
+  ],
+  "qty_total": 812.0,
+  "amount_total": 213647.96,
+  "rate_total": 20882.81,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

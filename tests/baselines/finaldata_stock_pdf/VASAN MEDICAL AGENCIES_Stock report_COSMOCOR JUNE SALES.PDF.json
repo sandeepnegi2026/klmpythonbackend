@@ -1,0 +1,19 @@
+{
+  "file": "COSMOCOR JUNE SALES.PDF",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 3,
+  "headers_detected_count": 12,
+  "detected_format": "klm_stock_sales_month_tots",
+  "product_count": 7,
+  "sample_products": [
+    "Nioclean Gel 20 Gm",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm",
+    "Niosol Ointment 30 Gm",
+    "Trunex 0.025% Gel 30Gm"
+  ],
+  "closing_stock_total": 10.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

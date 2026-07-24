@@ -1,0 +1,30 @@
+{
+  "file": "KLM LABORATORIES PARTY PRODUCT.xlsx",
+  "route": "party_xlsx",
+  "row_count": 150,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "infosoft_bandwise",
+  "party_count": 53,
+  "area_count": 15,
+  "product_count": 56,
+  "sample_parties": [
+    "A TO Z MEDICAL STORE",
+    "A TO Z PHARMACY",
+    "A.K.HEALTHCARE",
+    "AARSHVI PHARMACY (ANAND)",
+    "ADITYA MEDICAL AND PROVISION STORES"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 971.0,
+  "amount_total": 216788.22,
+  "rate_total": 41082.4,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

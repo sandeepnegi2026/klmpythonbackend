@@ -1,0 +1,19 @@
+{
+  "file": "klm cosmocore may-26 sale.pdf",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_received_issued",
+  "product_count": 23,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Tablets",
+    "NIOSOL BIG ONIT#"
+  ],
+  "closing_stock_total": 481.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

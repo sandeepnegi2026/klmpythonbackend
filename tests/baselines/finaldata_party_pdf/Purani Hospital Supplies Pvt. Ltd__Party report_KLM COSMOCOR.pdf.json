@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOCOR.pdf",
+  "route": "party_pdf",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "backbone_mfr_sales_detail",
+  "party_count": 32,
+  "area_count": 14,
+  "product_count": 15,
+  "sample_parties": [
+    "BARANI MEDICALS - CHENNIMALAI",
+    "BARANI MEDICALS - KANGAYAM",
+    "BARANI MEDICALS PK ROAD - KANGEYAM",
+    "CO OPERATIVE MEDICAL SHOP K730",
+    "DEEPAA MEDICALS - P - PERUNDURAI"
+  ],
+  "sample_products": [
+    "EPISERT30GMCREAM1`S",
+    "Melboost Tablets",
+    "NIOSALIC - 650MLLOTION1`S",
+    "NIOSOL30GMOINT1`S",
+    "Nioclean Ad Gel 15 Gm"
+  ],
+  "qty_total": 52.0,
+  "amount_total": 9226.32,
+  "rate_total": 7563.08,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

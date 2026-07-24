@@ -1,0 +1,19 @@
+{
+  "file": "KLM STATMENTS.pdf",
+  "route": "stock_pdf",
+  "row_count": 155,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_movement_detail",
+  "product_count": 148,
+  "sample_products": [
+    "009203 SOFIBAR SOAP",
+    "0286 CANROLFIN 15GM CREA",
+    "0287 CANROLFIN 30GM CREA",
+    "1025 SOFIDEW BABY CREAM",
+    "302607 KERAMATE BROWN"
+  ],
+  "closing_stock_total": 827.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

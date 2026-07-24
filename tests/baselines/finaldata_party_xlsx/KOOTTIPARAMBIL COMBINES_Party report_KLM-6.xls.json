@@ -1,0 +1,22 @@
+{
+  "file": "KLM-6.xls",
+  "route": "party_xlsx",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 1,
+  "sample_parties": [
+    "SD2443"
+  ],
+  "sample_products": [
+    "Mupisoft Ointment 5 Gm"
+  ],
+  "qty_total": 10.0,
+  "amount_total": 0.0,
+  "rate_total": 82.54,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

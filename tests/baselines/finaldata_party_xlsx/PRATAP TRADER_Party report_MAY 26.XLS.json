@@ -1,0 +1,30 @@
+{
+  "file": "MAY 26.XLS",
+  "route": "party_xlsx",
+  "row_count": 84,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 20,
+  "area_count": 0,
+  "product_count": 34,
+  "sample_parties": [
+    "24X7 MEDICAL SHOP",
+    "AARYA PHARMACY",
+    "CASH",
+    "DR.ADITI BANSAL DUBEY",
+    "DR.NISCHAL SHRIVASTAVA"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 3531.0,
+  "amount_total": 516898.37,
+  "rate_total": 12469.19,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

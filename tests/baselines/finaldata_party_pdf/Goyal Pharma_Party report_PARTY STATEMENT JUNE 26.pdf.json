@@ -1,0 +1,30 @@
+{
+  "file": "PARTY STATEMENT JUNE 26.pdf",
+  "route": "party_pdf",
+  "row_count": 191,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 49,
+  "area_count": 21,
+  "product_count": 58,
+  "sample_parties": [
+    "A.N.MEDICOS",
+    "APOLLO PHARMACIES LIMITED MDC",
+    "ASHOKA MEDICOSE",
+    "BALAJI MEDICOS,ZIRAKPUR",
+    "BIMLA MEDICOS"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 819.0,
+  "amount_total": 155491.19,
+  "rate_total": 38379.11,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

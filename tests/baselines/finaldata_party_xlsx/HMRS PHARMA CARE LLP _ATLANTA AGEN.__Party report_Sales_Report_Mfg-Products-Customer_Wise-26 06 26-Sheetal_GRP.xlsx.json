@@ -1,0 +1,30 @@
+{
+  "file": "Sales_Report_Mfg-Products-Customer_Wise-26 06 26-Sheetal_GRP.xlsx",
+  "route": "party_xlsx",
+  "row_count": 264,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "mfg_product_customer_wise_pcode",
+  "party_count": 155,
+  "area_count": 71,
+  "product_count": 111,
+  "sample_parties": [
+    "A-ONE CHEMIST",
+    "A-ONE CHEMIST & GENERAL STORES",
+    "A-ONE MEDICO",
+    "AADHAR MEDICAL & GENERAL STORES",
+    "AAIJI FOREVER CHEMIST & DRUGGIST"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 783.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

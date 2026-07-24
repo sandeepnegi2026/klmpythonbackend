@@ -1,0 +1,19 @@
+{
+  "file": "SANTRAM PHARMA PVT LTD (SANTRAM MEDICAL AGENCY).pdf",
+  "route": "stock_pdf",
+  "row_count": 34,
+  "warnings_count": 1,
+  "headers_detected_count": 12,
+  "detected_format": "stock_open_pur_sale_free_current",
+  "product_count": 32,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets"
+  ],
+  "closing_stock_total": 752.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

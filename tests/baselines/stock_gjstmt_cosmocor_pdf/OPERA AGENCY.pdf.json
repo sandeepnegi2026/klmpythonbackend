@@ -1,0 +1,18 @@
+{
+  "file": "OPERA AGENCY.pdf",
+  "route": "stock_pdf",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 20,
+  "sample_products": [
+    "Episert Cream 20 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "closing_stock_total": 283.0,
+  "rate_total": 0.0
+}

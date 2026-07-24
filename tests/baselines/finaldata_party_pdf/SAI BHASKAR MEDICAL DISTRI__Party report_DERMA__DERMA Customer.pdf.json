@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA Customer.pdf",
+  "route": "party_pdf",
+  "row_count": 111,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "sai_bhaskar_customer_vs_item",
+  "party_count": 55,
+  "area_count": 20,
+  "product_count": 22,
+  "sample_parties": [
+    "AMBICA PHARMA DISTRIBUTORS,KAVALI",
+    "ANANTHA LAKSHMI MEDICALS,ONGOLE",
+    "ANAPURNA MEDICAL AGENCIES,MARKAPURAM",
+    "ANIL MEDICALS & FANCY,ONGOLE",
+    "Adithya medicals (chimakurthi),CHIMAKURHI"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 1210.0,
+  "amount_total": 212545.27,
+  "rate_total": 19537.58,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 36
+}

@@ -1,0 +1,29 @@
+{
+  "file": "PEDIA__REPORT PEDIA.PDF",
+  "route": "party_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_grouped",
+  "party_count": 4,
+  "area_count": 1,
+  "product_count": 11,
+  "sample_parties": [
+    "DURGA./-DURGA MEDICAL HALL",
+    "MATA.-MATA RANI DRUG AGENCY",
+    "ML/-ML PHARMA",
+    "USH-USHA MEDICAL HALL."
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Desosoft Cream 10 Gm",
+    "Klclav Ds",
+    "Kofcatch Ls 100Ml Junior",
+    "Mupisoft Ointment 5 Gm"
+  ],
+  "qty_total": 865.0,
+  "amount_total": 98251.39,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

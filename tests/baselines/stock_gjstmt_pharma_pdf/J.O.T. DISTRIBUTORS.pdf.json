@@ -1,0 +1,19 @@
+{
+  "file": "J.O.T. DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 18,
+  "warnings_count": 18,
+  "headers_detected_count": 12,
+  "detected_format": "venus_stock_statement",
+  "product_count": 18,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Total 1*15 Tab",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 38482.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

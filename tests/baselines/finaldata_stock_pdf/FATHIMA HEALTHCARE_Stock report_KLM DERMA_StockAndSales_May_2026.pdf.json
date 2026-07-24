@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA_StockAndSales_May_2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 9,
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON MOISTURIZING SOAP",
+    "Nevlon Cream 100Gm"
+  ],
+  "closing_stock_total": 60.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

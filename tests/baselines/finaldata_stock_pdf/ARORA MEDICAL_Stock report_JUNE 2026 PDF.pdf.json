@@ -1,0 +1,19 @@
+{
+  "file": "JUNE 2026 PDF.pdf",
+  "route": "stock_pdf",
+  "row_count": 78,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 74,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Desosoft Cream 10 Gm",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 1313.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

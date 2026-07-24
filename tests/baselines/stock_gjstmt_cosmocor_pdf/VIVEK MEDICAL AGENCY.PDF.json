@@ -1,0 +1,19 @@
+{
+  "file": "VIVEK MEDICAL AGENCY.PDF",
+  "route": "stock_pdf",
+  "row_count": 143,
+  "warnings_count": 1,
+  "headers_detected_count": 9,
+  "detected_format": "stock_op_pur_total_sale_close",
+  "product_count": 141,
+  "sample_products": [
+    "11 SOFIDEW BABY SHAMPOO",
+    "12 KLIN AHA FOAMING GEL",
+    "13 IMXIA HAIR MOIS GEL",
+    "14 NEVLON SOAP",
+    "15 ONITRAZ CAP"
+  ],
+  "closing_stock_total": 1168.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

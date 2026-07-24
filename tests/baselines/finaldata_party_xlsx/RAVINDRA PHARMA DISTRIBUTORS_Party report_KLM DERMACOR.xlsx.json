@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACOR.xlsx",
+  "route": "party_xlsx",
+  "row_count": 50,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 12,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "AMBIKA MEDICALS               HUBLI",
+    "ARIHANT MEDICALS              HUBLI",
+    "BASAVESHWAR MEDICAL STORE (O) HUBLI",
+    "DR CHANNABASAYYA VIRAKTMATH   HAVERI",
+    "DR LAHARI KOLOLGI             HUBLI"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm"
+  ],
+  "qty_total": 176.0,
+  "amount_total": 40782.3,
+  "rate_total": 11908.66,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__KLM DERMA AREAWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 79,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "senthil_areawise_columnar",
+  "party_count": 33,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "ALM MEDICALS-RANGASAMUNDRAM-SATHYAMANGALAM",
+    "ALM MEDICALS-TIRUPUR  BAZAAR-TIRUPUR",
+    "AMBAL MEDICAL-V K ROAD-PEELAMEDU",
+    "AMUTHAM PHARMACY-SAROJINI STREET AVARAMPALAYAM ROAD-SIDDHAPUDUR",
+    "B 16 PHARMACY-SIVANANDHAPURAM-SATHY MAIN ROAD;SARAVANAMPATTY"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON MOIST CREAM SOAP"
+  ],
+  "qty_total": 437.0,
+  "amount_total": 94999.12,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

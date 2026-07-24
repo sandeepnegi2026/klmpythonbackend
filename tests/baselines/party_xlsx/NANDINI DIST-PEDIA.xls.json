@@ -7,7 +7,7 @@
   "detected_format": "infosoft_bandwise",
   "party_count": 11,
   "area_count": 7,
-  "product_count": 10,
+  "product_count": 11,
   "sample_parties": [
     "KASHIBA CHEMIST",
     "MAA PHARMACY",
@@ -20,10 +20,11 @@
     "Desosoft Lotion 30 Ml",
     "Klm D3 Nano Drops",
     "Kofcatch D 100Ml",
-    "Sofibar Syndet Bar"
+    "SOFIDEW BABY LOTION"
   ],
   "qty_total": 224.0,
   "amount_total": 32105.86,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

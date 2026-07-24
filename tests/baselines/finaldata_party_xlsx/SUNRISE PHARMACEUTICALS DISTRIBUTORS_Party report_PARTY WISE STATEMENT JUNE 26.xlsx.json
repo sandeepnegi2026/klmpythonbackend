@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE STATEMENT JUNE 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 115,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_customer_sale_dc_details",
+  "party_count": 63,
+  "area_count": 42,
+  "product_count": 48,
+  "sample_parties": [
+    "AADHAR MEDICAL-KHERDI",
+    "AAI KARANJESHWARI MEDICAL STORES",
+    "ABHAY MEDICALS-ABLOLI (NEW)",
+    "AL MAIRA MEDICAL",
+    "AROGYAM MEDICAL"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Essfol Tablet 1*10 Tab"
+  ],
+  "qty_total": 557.0,
+  "amount_total": 75482.5,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 31
+}

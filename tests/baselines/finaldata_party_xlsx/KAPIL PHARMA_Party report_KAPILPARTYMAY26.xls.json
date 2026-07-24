@@ -1,0 +1,30 @@
+{
+  "file": "KAPILPARTYMAY26.xls",
+  "route": "party_xlsx",
+  "row_count": 650,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 185,
+  "area_count": 0,
+  "product_count": 175,
+  "sample_parties": [
+    "AADHINATH MEDICAL STORES-BHARUGHAR",
+    "AAROGYA MEDICAL STORES & HOSPI-SHUJALPUR",
+    "AAROGYA MEDICAL-UJJAIN",
+    "AAYUSHMAN MEDICAL STORES-AGAR",
+    "ADINATH MEDICAL STORES-SHAJAPUR"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "COSMOQ SKIN BRIGHT 30ML 1 -",
+    "COSMOQ SKIN BRIGHT 30ML 12 -",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "qty_total": 5168.5,
+  "amount_total": 737965.54,
+  "rate_total": 116800.21,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__DERMACOR.XLSX",
+  "route": "stock_xlsx",
+  "row_count": 28,
+  "warnings_count": 2,
+  "headers_detected_count": 17,
+  "detected_format": "marg_designer_compute_stock",
+  "product_count": 28,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 486.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

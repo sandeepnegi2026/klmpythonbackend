@@ -1,0 +1,19 @@
+{
+  "file": "PHARMA__PHARMA MAY 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 38,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "marg_opqty",
+  "product_count": 38,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 1739.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

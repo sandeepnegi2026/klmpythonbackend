@@ -5,7 +5,7 @@
   "warnings_count": 0,
   "headers_detected_count": 11,
   "detected_format": "stock_op_rec_iss_clos_grid",
-  "product_count": 42,
+  "product_count": 44,
   "sample_products": [
     "Appybush Syrup 200Ml",
     "Argicyne Sachets 6Gm",
@@ -14,5 +14,6 @@
     "Desosoft Cream 10 Gm"
   ],
   "closing_stock_total": 1575.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__MSEL10.RPT.XLS",
+  "route": "party_xlsx",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "GANESH MEDICAL STORES",
+    "JAIN MEDICAL STORES",
+    "MANDAL PHARMACY & SURGICALS",
+    "ROYAL  MEDICAL STORES",
+    "SHUBHAM MEDICAL  STORE"
+  ],
+  "sample_products": [
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml",
+    "Klm Fx 180 Tablets 1*10 Tablets"
+  ],
+  "qty_total": 60.0,
+  "amount_total": 8342.85,
+  "rate_total": 1926.62,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

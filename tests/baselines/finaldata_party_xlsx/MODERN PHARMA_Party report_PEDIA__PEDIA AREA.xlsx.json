@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__PEDIA AREA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_wise_sale_list",
+  "party_count": 6,
+  "area_count": 0,
+  "product_count": 10,
+  "sample_parties": [
+    "DR.KANCHANA SEETHA KANNUR",
+    "DR.SABIR.C MD PAPPINISSERI",
+    "H.N.C.MATTANNUR HOSPITAL PVT L MATTANNUR",
+    "JAYA PHARMA ANJARAKANDY",
+    "LIFE MEDICALS IRITTY"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klm D3 Nano Drops 30Ml",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 126.0,
+  "amount_total": 16699.19,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

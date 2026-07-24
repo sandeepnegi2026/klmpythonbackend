@@ -1,0 +1,30 @@
+{
+  "file": "KLMSTMT-JUNE26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1400,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 471,
+  "area_count": 465,
+  "product_count": 200,
+  "sample_parties": [
+    "8MEDS PHARMACY",
+    "A N MEDICAL AND GENERAL STORES",
+    "A TO Z PHARMACY & GEN.STORES",
+    "AADI PHARMACY",
+    "AADYA VIDHATHRI PHARMACY"
+  ],
+  "sample_products": [
+    "ARGICYNE ORANGE FLV SACHET",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 15483.0,
+  "amount_total": 2915851.49,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

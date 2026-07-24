@@ -92,6 +92,14 @@ def parse_marg_busy(rows):
     for raw_row in rows[header_idx + 1 :]:
         cells = raw_row + [""] * (max(qty_col, amount_col) + 2)
         qty = cell_text(cells[qty_col] if qty_col < len(cells) else "")
+        # A qty printed with a thousands separator ("1,234") coerces to NaN in the
+        # shared is_numeric_qty test, so the line would fall through to the party-band
+        # branch and its product text would overwrite current_party. Strip the grouping
+        # ONLY when the cell is a pure grouped-comma integer; comma-less values,
+        # decimals, party names and "Total" labels never match, so output is
+        # byte-identical (module-local; no shared code touched).
+        if re.fullmatch(r"\d{1,3}(?:,\d{3})+", qty):
+            qty = qty.replace(",", "")
         # Exclude a leading Packg column so it is not mistaken for the product/party.
         pre_qty = [cell_text(cells[i]) for i in range(min(qty_col, len(cells))) if i != pack_col]
         pre_nonempty = [text for text in pre_qty if text]

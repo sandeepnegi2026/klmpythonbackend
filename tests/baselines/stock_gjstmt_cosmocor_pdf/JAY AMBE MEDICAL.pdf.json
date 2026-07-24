@@ -1,0 +1,19 @@
+{
+  "file": "JAY AMBE MEDICAL.pdf",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "r15_jayambe_monthly_ss_balance",
+  "product_count": 7,
+  "sample_products": [
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niofine Tablet 1*7 Tablets",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Lotion 50Ml"
+  ],
+  "closing_stock_total": 60.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

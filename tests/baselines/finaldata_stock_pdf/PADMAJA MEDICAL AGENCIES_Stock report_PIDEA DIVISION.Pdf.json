@@ -1,0 +1,19 @@
+{
+  "file": "PIDEA DIVISION.Pdf",
+  "route": "stock_pdf",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_ss_statement_detailed",
+  "product_count": 27,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab"
+  ],
+  "closing_stock_total": 641.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

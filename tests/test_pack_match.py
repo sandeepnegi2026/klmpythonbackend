@@ -90,6 +90,30 @@ def run():
             failed += 1
             fails.append(f"[peel] {s!r} -> {got} (expected {exp})")
 
+    # ---- 4. Container-of dialect: size mid-string, FORM word kept in the name ----
+    # The size behind "TUBE OF"/"BOX OF"/"BOTTLE OF" is pulled as pack; the container
+    # filler is dropped; the trailing form word STAYS so downstream matching can pick
+    # the right form/size sibling. Trailing size (no container) is unaffected (§3).
+    container = {
+        "EPISERT TUBE OF 30GM CREAM": ("EPISERT CREAM", "30GM"),
+        "LULIZOL TUBE OF 20GM CREAM": ("LULIZOL CREAM", "20GM"),
+        "LULIZOL BOTTLE OF 20ML LOTION": ("LULIZOL LOTION", "20ML"),
+        "ZYDIP C BOTTLE OF 30ML LOTION": ("ZYDIP C LOTION", "30ML"),
+        "KENZ BOX OF 75GM SOAP": ("KENZ SOAP", "75GM"),
+        "NIOSALIC 6 TUBE OF 20GM OINTMENT": ("NIOSALIC 6 OINTMENT", "20GM"),
+        "EKRAN SPF 30 PLUS TUBE OF 50GM AQUA GEL": ("EKRAN SPF 30 PLUS AQUA GEL", "50GM"),
+        "GA 6 TUBE OF 30GM CREAM": ("GA 6 CREAM", "30GM"),
+        # dangling container with no size -> strip the filler, keep the name whole
+        "KLMKLIN AHA FACE WASH TUBE OF": ("KLMKLIN AHA FACE WASH", ""),
+    }
+    for s, exp in container.items():
+        got = ex(s)
+        if got == exp:
+            passed += 1
+        else:
+            failed += 1
+            fails.append(f"[container] {s!r} -> {got} (expected {exp})")
+
     print(f"pack_match: {passed} passed, {failed} failed"
           f"  (catalog population: {len(strings)} strings)")
     for f in fails:

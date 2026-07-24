@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMOCOR 06.PDF",
+  "route": "stock_pdf",
+  "row_count": 54,
+  "warnings_count": 1,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 49,
+  "sample_products": [
+    "Canrolfin-Xl Cream 50Gm",
+    "Eberfine Cream 30 Gm",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "closing_stock_total": 919.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

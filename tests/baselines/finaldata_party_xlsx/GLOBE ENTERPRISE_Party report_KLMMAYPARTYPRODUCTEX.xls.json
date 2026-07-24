@@ -1,0 +1,30 @@
+{
+  "file": "KLMMAYPARTYPRODUCTEX.xls",
+  "route": "party_xlsx",
+  "row_count": 1008,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 193,
+  "area_count": 0,
+  "product_count": 137,
+  "sample_parties": [
+    "A LIFE CARE PHARMACY",
+    "AADIL PHERMACY",
+    "ABEL MADICAL HALL",
+    "ABIR MEDICAL HALL",
+    "ADDYASAKTI MEDICAL HALL."
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet"
+  ],
+  "qty_total": 6454.0,
+  "amount_total": 971502.3,
+  "rate_total": 211600.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM JUNE STATEMENT 2026.XLS",
+  "route": "stock_xlsx",
+  "row_count": 244,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_stock_open_rcpt_issue_xls",
+  "product_count": 228,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "closing_stock_total": 3530.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

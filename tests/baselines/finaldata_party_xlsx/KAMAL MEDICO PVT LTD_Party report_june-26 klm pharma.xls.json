@@ -1,0 +1,30 @@
+{
+  "file": "june-26 klm pharma.xls",
+  "route": "party_xlsx",
+  "row_count": 500,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "partywise_band",
+  "party_count": 298,
+  "area_count": 53,
+  "product_count": 39,
+  "sample_parties": [
+    "A.K.SHREYA CHEMIST PRIVATE LIM",
+    "AADARSH MEDICAL & GEN. STORES",
+    "AAI MATA MEDICAL STORES",
+    "AAIJI FOREVER CHESMIST & DRUGG",
+    "AARADHYA MEDICAL & GEN STORES"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "qty_total": 1222.0,
+  "amount_total": 166348.88,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

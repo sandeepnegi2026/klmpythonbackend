@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA JUN.pdf",
+  "route": "stock_pdf",
+  "row_count": 18,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "medichem_ss_expiry",
+  "product_count": 17,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "NEVLON MOISTURIZING SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "closing_stock_total": 220.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

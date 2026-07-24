@@ -1,0 +1,30 @@
+{
+  "file": "klmmay26partywise.xls",
+  "route": "party_xlsx",
+  "row_count": 187,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "customer_product_banded",
+  "party_count": 49,
+  "area_count": 5,
+  "product_count": 72,
+  "sample_parties": [
+    "A.M.BHARTI MEDICAL HALL",
+    "ASHIRWAD MEDICAL",
+    "ASHOK MEDICAL HALL",
+    "AYUSH MEDICAL",
+    "BABA MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 1533.5,
+  "amount_total": 169227.91,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

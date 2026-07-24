@@ -1,0 +1,19 @@
+{
+  "file": "123-3.pdf",
+  "route": "stock_pdf",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_lmsale_receipts_age",
+  "product_count": 12,
+  "sample_products": [
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Soap 75G",
+    "Lulizol Cream 10 Gm",
+    "Lulizol Xl Cream 50 Gm"
+  ],
+  "closing_stock_total": 97.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

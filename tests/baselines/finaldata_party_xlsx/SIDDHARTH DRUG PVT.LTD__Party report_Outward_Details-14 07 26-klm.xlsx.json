@@ -1,0 +1,30 @@
+{
+  "file": "Outward_Details-14 07 26-klm.xlsx",
+  "route": "party_xlsx",
+  "row_count": 927,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "marg_outward_detail_partywise",
+  "party_count": 350,
+  "area_count": 12,
+  "product_count": 157,
+  "sample_parties": [
+    "A ONE MEDICAL",
+    "A ONE MEDICAL&",
+    "AADHYA MEDICO",
+    "AAIJI CHEMIST",
+    "AANGAN MEDICAL"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "qty_total": 2370.0,
+  "amount_total": 0.0,
+  "rate_total": 174260.9,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 6,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "ARIHANT MEDICALS              HUBLI",
+    "DR LAHARI KOLOLGI             HUBLI",
+    "JAIN MEDICAL & GEN STORES     GADAG",
+    "S K MEDICALS                  HUBLI",
+    "SHRI AMARESHWAR MED & GEN ST  GADAG"
+  ],
+  "sample_products": [
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "K-Dox Capsules 1*10",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "qty_total": 153.0,
+  "amount_total": 23437.15,
+  "rate_total": 6645.52,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

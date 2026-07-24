@@ -1,0 +1,19 @@
+{
+  "file": "MAYUR MEDICAL.xls",
+  "route": "stock_xlsx",
+  "row_count": 35,
+  "warnings_count": 3,
+  "headers_detected_count": 42,
+  "detected_format": "tabular",
+  "product_count": 31,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Folibild Tablets",
+    "Klm C 20 Serum 15Ml",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "closing_stock_total": 175.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

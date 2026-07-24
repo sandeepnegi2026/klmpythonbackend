@@ -1,0 +1,19 @@
+{
+  "file": "Product wise sale list For the period  01-05-2026 - 31-05-2026.xlsx.pdf",
+  "route": "stock_pdf",
+  "row_count": 232,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "jkmedico_stock_sales_statement",
+  "product_count": 230,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "closing_stock_total": 7239.0,
+  "rate_total": 48750.28,
+  "line_unexplained": 5
+}

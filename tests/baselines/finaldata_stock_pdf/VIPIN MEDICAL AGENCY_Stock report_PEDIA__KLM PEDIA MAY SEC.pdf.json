@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__KLM PEDIA MAY SEC.pdf",
+  "route": "stock_pdf",
+  "row_count": 56,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "value_pairs",
+  "product_count": 46,
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "closing_stock_total": 305.0,
+  "rate_total": 7067.05,
+  "line_unexplained": 0
+}

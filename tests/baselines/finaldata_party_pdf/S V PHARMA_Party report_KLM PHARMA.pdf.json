@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 51,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 14,
+  "area_count": 0,
+  "product_count": 20,
+  "sample_parties": [
+    "AAHNA PHARMACY",
+    "BON PHARMACY",
+    "DR. K . LAVANYA",
+    "ELLORA PHARMACY",
+    "ORCHARD PHARMACY"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules",
+    "Ga-12 Cream 30Gm"
+  ],
+  "qty_total": 1266.0,
+  "amount_total": 183951.98,
+  "rate_total": 8361.68,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

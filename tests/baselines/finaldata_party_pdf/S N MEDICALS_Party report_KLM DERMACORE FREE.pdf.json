@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMACORE FREE.pdf",
+  "route": "party_pdf",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 18,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "BALAJI MEDICALS (PEDAGANT",
+    "BINDIYA MEDICALS",
+    "BON PHARMACY",
+    "GUPTA MEDICAL&GENERAL STO",
+    "HEALTH CARE PHARMA( DANDU"
+  ],
+  "sample_products": [
+    "Extend Hair 1*30 Tablets",
+    "Extend Hair Tablet",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap",
+    "Klm Klin Face Wash 100 Ml"
+  ],
+  "qty_total": 172.5,
+  "amount_total": 40815.06,
+  "rate_total": 8986.74,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

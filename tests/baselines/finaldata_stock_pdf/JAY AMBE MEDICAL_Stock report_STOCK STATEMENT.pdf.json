@@ -1,0 +1,19 @@
+{
+  "file": "STOCK STATEMENT.pdf",
+  "route": "stock_pdf",
+  "row_count": 52,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_jayambe_monthly_ss_balance",
+  "product_count": 52,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 503.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

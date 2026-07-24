@@ -1,0 +1,19 @@
+{
+  "file": "DERMA DIVISION.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "profit_maker",
+  "product_count": 14,
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 60Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "closing_stock_total": 72.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

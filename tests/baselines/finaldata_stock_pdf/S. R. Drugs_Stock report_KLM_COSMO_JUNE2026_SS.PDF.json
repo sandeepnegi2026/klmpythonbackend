@@ -1,0 +1,19 @@
+{
+  "file": "KLM_COSMO_JUNE2026_SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 22,
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm"
+  ],
+  "closing_stock_total": 180.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

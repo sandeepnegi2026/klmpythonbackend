@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__DERMA JUNE.pdf",
+  "route": "stock_pdf",
+  "row_count": 41,
+  "warnings_count": 2,
+  "headers_detected_count": 9,
+  "detected_format": "stock_unit_op_purc_sale_cl",
+  "product_count": 37,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 760.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

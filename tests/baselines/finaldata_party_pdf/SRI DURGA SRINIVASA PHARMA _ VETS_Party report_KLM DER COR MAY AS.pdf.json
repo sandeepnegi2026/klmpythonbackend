@@ -1,0 +1,30 @@
+{
+  "file": "KLM DER COR MAY AS.pdf",
+  "route": "party_pdf",
+  "row_count": 73,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_customer_company_product",
+  "party_count": 37,
+  "area_count": 14,
+  "product_count": 20,
+  "sample_parties": [
+    "AYYAPPA MEDICAL STORES(PT",
+    "AYYAPPA MEDICALS",
+    "BALAJI MEDICALS (W/S&RET)",
+    "BHOGI GANGAYYA & SONS",
+    "DAY & NIGHT PHARMACY"
+  ],
+  "sample_products": [
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Kenz Cream 30 Gm",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "qty_total": 311.0,
+  "amount_total": 62147.09,
+  "rate_total": 16058.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

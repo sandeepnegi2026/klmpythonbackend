@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__DERMA 2 PARTYWISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "party_count": 8,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "BANDA PRAMOD G TADE",
+    "JANATA MEDICAL STORES",
+    "KANKAVLI HEALTHCARE MEDICAL STORE",
+    "KUDAL BHADRAKALI MEDI GEN STORES",
+    "MHAPSEKAR MEDICO AND LIFECARE KANKAVALI"
+  ],
+  "sample_products": [
+    "Kenz Soap",
+    "Klm C 20 Serum 15Ml",
+    "Klm Klin Face Wash 100 Ml",
+    "Lulizol Cream 20 Gm",
+    "Melapik Plus Cream 20Gm"
+  ],
+  "qty_total": 36.0,
+  "amount_total": 7984.7,
+  "rate_total": 2845.31,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

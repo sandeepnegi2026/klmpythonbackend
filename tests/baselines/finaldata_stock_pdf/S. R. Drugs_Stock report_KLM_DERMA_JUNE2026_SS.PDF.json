@@ -1,0 +1,19 @@
+{
+  "file": "KLM_DERMA_JUNE2026_SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 14,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 14,
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Klm Fx 120 Tablet",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "closing_stock_total": 188.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

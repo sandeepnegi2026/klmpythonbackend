@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__PARTY WISESALES DERMACOR-2.PDF",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 13,
+  "area_count": 11,
+  "product_count": 18,
+  "sample_parties": [
+    "A AND B MEDICAL",
+    "A TO Z PHARMACY",
+    "DR ANKIT YADAV",
+    "DR NARGISH ANSARI",
+    "HADI MEDICOSE"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 225.0,
+  "amount_total": 51858.91,
+  "rate_total": 8474.81,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

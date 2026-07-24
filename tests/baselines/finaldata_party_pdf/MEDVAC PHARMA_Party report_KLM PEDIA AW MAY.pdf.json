@@ -1,0 +1,29 @@
+{
+  "file": "KLM PEDIA AW MAY.pdf",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 9,
+  "area_count": 2,
+  "product_count": 4,
+  "sample_parties": [
+    "ANU MEDICAL&GEN STORES GADAG",
+    "DR BHAGYASHRI BASARIGIDAD GADAG",
+    "DR SHARNAPPA GANIGER MBBS PG DIP GAJENDRGADA",
+    "KOLOLGI HOSPITAL GADAG",
+    "R K MEDICAL & GEN STORES GADAG"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Sofibar Syndet Bar",
+    "Sofidew Cream 100Gm",
+    "Sofidew Lotion 100Ml"
+  ],
+  "qty_total": 44.0,
+  "amount_total": 5884.04,
+  "rate_total": 1541.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

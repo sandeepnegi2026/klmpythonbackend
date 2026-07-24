@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA PW MAY-26..xlsx",
+  "route": "party_xlsx",
+  "row_count": 48,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_banded",
+  "party_count": 28,
+  "area_count": 0,
+  "product_count": 18,
+  "sample_parties": [
+    "AVISHA HEALTHCARE",
+    "AYYAPPA MEDICAL AND GENAR",
+    "BHAGYA JYOTHI MEDICAL & G",
+    "BRIGHT PHARMACY",
+    "DR.AYESHA BANU"
+  ],
+  "sample_products": [
+    "Eberfine Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules",
+    "Ga-12 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 782.0,
+  "amount_total": 104532.08,
+  "rate_total": 9450.91,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

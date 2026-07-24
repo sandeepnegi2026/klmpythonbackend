@@ -1,0 +1,19 @@
+{
+  "file": "K.CHIMANLAL & CO..pdf",
+  "route": "stock_pdf",
+  "row_count": 28,
+  "warnings_count": 1,
+  "headers_detected_count": 19,
+  "detected_format": "marg_bordered",
+  "product_count": 27,
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "closing_stock_total": 390.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

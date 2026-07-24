@@ -1,0 +1,18 @@
+{
+  "file": "klm may-2026.pdf",
+  "route": "stock_pdf",
+  "row_count": 226,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "prompt_datewise_favourite",
+  "product_count": 215,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 4093.0,
+  "rate_total": 0.0
+}

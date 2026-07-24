@@ -1,0 +1,19 @@
+{
+  "file": "KLM MAY 2026 COSMO ST.xls",
+  "route": "stock_xlsx",
+  "row_count": 47,
+  "warnings_count": 2,
+  "headers_detected_count": 20,
+  "detected_format": "tabular",
+  "product_count": 46,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "EKRAN SOFT S.SC GEL         50GM",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G"
+  ],
+  "closing_stock_total": 368.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

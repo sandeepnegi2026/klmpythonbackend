@@ -101,9 +101,29 @@ def _scheme_pct_column(headers, header_map):
     return None
 
 
+def _adopt_scheme_free_qty(headers, detected):
+    """MediVision/KLM "Sale/DC claim" tabular exports (PRASU PHARMA) print the free-goods count in a
+    "Scm qty" / "Scheme Qty" column that core maps to raw_scm_qty ("Scm qty" scores 0.88 to `qty` via
+    the "qty" substring but loses the dedup to the real Qty column, so free_qty is lost) — and the
+    scheme-only lines (blank Qty, populated Scm qty) then drop out as value-less. When NO column
+    already resolves to free_qty, adopt the scheme-qty column as free_qty. Mirrors the proven
+    customer_product_banded `_scheme_qty_idx` (first scm/scheme + qty header, excludes the "Scm disc"
+    monetary column). Gated on free_qty being absent AND a scheme column existing, so files that
+    already map free_qty (or have no scheme column) keep their exact behaviour. Tabular reader only —
+    customer_product_banded resolves its own free and is never routed here."""
+    if "free_qty" in detected.values():
+        return
+    for header in headers:
+        t = str(header).lower()
+        if ("scm" in t or "scheme" in t) and ("qty" in t or "quantity" in t) and "disc" not in t:
+            detected[str(header)] = "free_qty"
+            return
+
+
 def records_from_mapped(headers, rows, header_idx):
     header_map = map_headers(headers, "party")
     detected = {raw: info["canonical"] for raw, info in header_map.items()}
+    _adopt_scheme_free_qty(headers, detected)
     sch_pct_idx = _scheme_pct_column(headers, header_map)
     records = []
     last_party = ""

@@ -1,0 +1,19 @@
+{
+  "file": "KLM COSMOCOR.PDF",
+  "route": "stock_pdf",
+  "row_count": 26,
+  "warnings_count": 2,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_month_urate",
+  "product_count": 26,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Melboost Tablets"
+  ],
+  "closing_stock_total": 881.0,
+  "rate_total": 5203.0,
+  "line_unexplained": 11
+}

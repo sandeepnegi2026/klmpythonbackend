@@ -1,0 +1,19 @@
+{
+  "file": "KLM3 PEDIA.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 37,
+  "warnings_count": 2,
+  "headers_detected_count": 13,
+  "detected_format": "klm_dstk_stock",
+  "product_count": 34,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "closing_stock_total": 653.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

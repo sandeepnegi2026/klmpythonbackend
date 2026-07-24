@@ -1,0 +1,30 @@
+{
+  "file": "KLM P-05.pdf",
+  "route": "party_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "company_party_product_sale",
+  "party_count": 10,
+  "area_count": 0,
+  "product_count": 25,
+  "sample_parties": [
+    "ARADHYA MEDICALS",
+    "DR SMRITI CHOUDHARY",
+    "DR. ANJULA",
+    "ESHWARI PHARMACEUTICALS",
+    "MAA PRABHAWATI MEDICAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Eberfine-Xl Cream 50 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kentruff Lotion 75 Ml"
+  ],
+  "qty_total": 235.0,
+  "amount_total": 40429.01,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO COR A.pdf",
+  "route": "party_pdf",
+  "row_count": 33,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 5,
+  "area_count": 0,
+  "product_count": 14,
+  "sample_parties": [
+    "AMULYA MEDICALS",
+    "PADMA MEDICALS",
+    "RAJU MEDICALS",
+    "SAI CHARAN MEDICALS",
+    "SHIVAM MEDICALS"
+  ],
+  "sample_products": [
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niofine Dusting Powder 75Gm"
+  ],
+  "qty_total": 288.0,
+  "amount_total": 27369.91,
+  "rate_total": 5373.06,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

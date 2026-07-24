@@ -1,0 +1,19 @@
+{
+  "file": "KLM_DERMA.XLS",
+  "route": "stock_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "tabular",
+  "product_count": 15,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "EKRAN 80 SPF 1`S",
+    "Hbsone Cream 30Gm",
+    "Kortuf-6",
+    "Mfsone Cream 30 Gm"
+  ],
+  "closing_stock_total": 227.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "report.pdf",
+  "route": "stock_pdf",
+  "row_count": 194,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 183,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CANROLFINE 30GR CREAM 30GR"
+  ],
+  "closing_stock_total": 3211.0,
+  "rate_total": 0.0,
+  "line_unexplained": 10
+}

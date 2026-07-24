@@ -1,5 +1,7 @@
 from extractors.stock_xlsx.header_fields import detect_header_row
 from extractors.stock_xlsx.layouts.klm_op_pi_sale_cl_value_xlsx import parse_klm_op_pi_sale_cl_value_xlsx
+from extractors.stock_xlsx.layouts.sm_stock_sales_analysis import parse_sm_stock_sales_analysis
+from extractors.stock_xlsx.layouts.raja_stock_oric_analysis import parse_raja_stock_oric_analysis
 from extractors.stock_xlsx.layouts.stock_sales_analysis_oic_xlsx import parse_stock_sales_analysis_oic_xlsx
 from extractors.stock_xlsx.layouts.stock_sales_analysis_wide_xlsx import parse_stock_sales_analysis_wide_xlsx
 from extractors.stock_xlsx.layouts.gs_stock_sales_wide27_xlsx import parse_gs_stock_sales_wide27_xlsx
@@ -71,6 +73,8 @@ from extractors.stock_xlsx.layouts.r15_klm_item_recd_issued_sreturn_preturn_free
 from extractors.stock_xlsx.layouts.r15_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls import parse_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls
 
 PARSERS = {
+    "sm_stock_sales_analysis": parse_sm_stock_sales_analysis,
+    "raja_stock_oric_analysis": parse_raja_stock_oric_analysis,
     # --- 15 July RED-cluster parsers (batch 2) ---
     "r15_klm_ss_pfree_purret_marapr_curstk_xls": parse_klm_ss_pfree_purret_marapr_curstk_xls,
     "prompt_dstk_salesfree_order_xls": parse_prompt_dstk_salesfree_order_xls,

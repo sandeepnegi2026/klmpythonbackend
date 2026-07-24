@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY 26 PARTY.xls",
+  "route": "party_xlsx",
+  "row_count": 68,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 41,
+  "area_count": 0,
+  "product_count": 41,
+  "sample_parties": [
+    "AFTAB MEDICAL AGENCEY",
+    "AMAR JYOTI CHEMIST",
+    "AMAR JYOTI MEDICAL STORE",
+    "ASTHA CHEMIST",
+    "ASTHA MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Desosoft Lotion 30 Ml",
+    "Ekran Lotion 50G",
+    "Episert Cream 30 Gm",
+    "Extend Capsules",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 121.0,
+  "amount_total": 22210.9,
+  "rate_total": 12412.93,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 126,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tabular",
+  "party_count": 61,
+  "area_count": 0,
+  "product_count": 44,
+  "sample_parties": [
+    "ALL WELL CHEMISTS",
+    "APNA MEDICAL STORE (NEW GST)",
+    "AREA MANAGER  ARKI (SOLAN)",
+    "AREA MANAGER  D.D.U.",
+    "AREA MANAGER I.G.M.C. SHOP (1) -SHIMLA"
+  ],
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 872.0,
+  "amount_total": 130837.21,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

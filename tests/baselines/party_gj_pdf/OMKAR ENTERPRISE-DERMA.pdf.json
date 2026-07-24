@@ -7,7 +7,7 @@
   "detected_format": "prompt_normal",
   "party_count": 4,
   "area_count": 1,
-  "product_count": 4,
+  "product_count": 5,
   "sample_parties": [
     "AMBICA MEDICAL STORE",
     "AUM MEDICINES",
@@ -17,11 +17,13 @@
   "sample_products": [
     "Nevlon Intense Moisturizing Lotion 150Ml",
     "Onitraz Capsules 1*10 Capsules",
+    "Onitraz Forte Capsules 1*10 Capsules",
     "Xerolene Max Cream 100 Gm",
     "Zoritraz Forte Capsule 1*10 Cap"
   ],
   "qty_total": 310.0,
   "amount_total": 55180.15,
   "rate_total": 3473.83,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

@@ -1,0 +1,19 @@
+{
+  "file": "KLM HO 1.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 257,
+  "warnings_count": 30,
+  "headers_detected_count": 13,
+  "detected_format": "klm_op_pi_clqty_xlsx",
+  "product_count": 232,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "closing_stock_total": 4346.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

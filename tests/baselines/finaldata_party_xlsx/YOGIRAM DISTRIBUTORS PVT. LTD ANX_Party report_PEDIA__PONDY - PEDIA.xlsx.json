@@ -1,0 +1,30 @@
+{
+  "file": "PEDIA__PONDY - PEDIA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 70,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "company_customer_itemwise_area",
+  "party_count": 50,
+  "area_count": 44,
+  "product_count": 11,
+  "sample_parties": [
+    "ABIRAMI MEDICALS (LAWSPET.)",
+    "ATLAS PHARMACY",
+    "AURO CARE PVT. LTD.,",
+    "BABA PHARMA",
+    "BALAGIRI HEALTH CARE LIMITED -ANEX 1"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Mupisoft Ointment 5 Gm",
+    "SOFIDEW BABY MOIST LOTION"
+  ],
+  "qty_total": 295.0,
+  "amount_total": 42673.16,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

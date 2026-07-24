@@ -1,0 +1,30 @@
+{
+  "file": "klm pw.xls",
+  "route": "party_xlsx",
+  "row_count": 461,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "customer_product_banded",
+  "party_count": 133,
+  "area_count": 0,
+  "product_count": 93,
+  "sample_parties": [
+    "ABC MEDICAL STORE, JAMNAGAR, JAMNAGAR",
+    "ADARSH MEDICAL STORE ST, JAMNAGAR, JAMNAGAR",
+    "AMBAR MEDICAL & PROVISION STORE, JAMNAGAR, JAMNAGAR",
+    "ANANT MEDICALS, JAMNAGAR, JAMNAGAR",
+    "ARIHANT MEDICAL AND GENERAL STORE, JAMNAGAR, JAMNAGAR"
+  ],
+  "sample_products": [
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Cutiheal Cream 15Gm",
+    "Dektop Cream 20Gm"
+  ],
+  "qty_total": 1577.5,
+  "amount_total": 281592.97,
+  "rate_total": 93344.05,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

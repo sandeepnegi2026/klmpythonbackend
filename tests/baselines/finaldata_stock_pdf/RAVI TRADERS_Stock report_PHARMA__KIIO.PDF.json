@@ -1,0 +1,19 @@
+{
+  "file": "PHARMA__KIIO.PDF",
+  "route": "stock_pdf",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 7,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "closing_stock_total": 31.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

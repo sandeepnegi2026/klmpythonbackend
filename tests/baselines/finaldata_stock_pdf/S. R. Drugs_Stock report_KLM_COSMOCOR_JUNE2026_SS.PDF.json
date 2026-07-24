@@ -1,0 +1,19 @@
+{
+  "file": "KLM_COSMOCOR_JUNE2026_SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 24,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Tablets",
+    "NIOSALIC-6 CREAM"
+  ],
+  "closing_stock_total": 538.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA-2.xlsx",
+  "route": "party_xlsx",
+  "row_count": 55,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 32,
+  "area_count": 8,
+  "product_count": 18,
+  "sample_parties": [
+    "-ALPHA PHARMACY",
+    "-AMAN MEDICAL HALL",
+    "-ARORA MEDICAL HALL(N)",
+    "-ASIJA MEDICOS.",
+    "-DR.NARESH BANSAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Caloe Lotion 60Ml"
+  ],
+  "qty_total": 1986.5,
+  "amount_total": 302195.47,
+  "rate_total": 10435.8,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

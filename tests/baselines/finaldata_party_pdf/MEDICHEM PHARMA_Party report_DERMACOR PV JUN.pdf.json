@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR PV JUN.pdf",
+  "route": "party_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "party_item_summary_nofree",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 5,
+  "sample_parties": [
+    "ASHICO PHARMACEUTICAL PVT. LTD.",
+    "DR NEHA SHARMA",
+    "HEALTH CARE SOCIETY OF DIOCESE",
+    "KAIVALYA MEDICALS",
+    "KANHA MEDICAL STORE."
+  ],
+  "sample_products": [
+    "Glutaderm Plus Tablets",
+    "Klm Klin Aha Face Wash 100 Ml",
+    "Klm Klin Face Wash 100 Ml",
+    "Sebozit Gel 30G",
+    "Tecum 0.1 % Ointment 10 Gm"
+  ],
+  "qty_total": 77.0,
+  "amount_total": 18314.16,
+  "rate_total": 2469.06,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

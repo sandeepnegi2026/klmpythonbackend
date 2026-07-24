@@ -1,0 +1,19 @@
+{
+  "file": "COSMO COR DIVISON.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "profit_maker",
+  "product_count": 16,
+  "sample_products": [
+    "Melboost Nxt Tablet",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niogenta F Cream 20 Gm",
+    "Niosalic 6 Lotion 50Ml"
+  ],
+  "closing_stock_total": 45.0,
+  "rate_total": 0.0,
+  "line_unexplained": 5
+}

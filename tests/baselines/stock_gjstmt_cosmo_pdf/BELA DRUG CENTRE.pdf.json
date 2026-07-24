@@ -1,0 +1,19 @@
+{
+  "file": "BELA DRUG CENTRE.pdf",
+  "route": "stock_pdf",
+  "row_count": 24,
+  "warnings_count": 19,
+  "headers_detected_count": 12,
+  "detected_format": "venus_stock_statement",
+  "product_count": 23,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Enzotret Tablet"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

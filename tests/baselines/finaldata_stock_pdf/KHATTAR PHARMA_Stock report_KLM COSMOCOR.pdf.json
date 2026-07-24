@@ -1,0 +1,19 @@
+{
+  "file": "KLM COSMOCOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "stock_open_pur_sale_amt",
+  "product_count": 31,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Episert Cream 10 Gm",
+    "Episert Cream 20 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Herpival-500 Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 786.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

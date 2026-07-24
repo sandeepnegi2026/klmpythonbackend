@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMOCOR.xls",
+  "route": "party_xlsx",
+  "row_count": 65,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "companywise_customerwise",
+  "party_count": 38,
+  "area_count": 19,
+  "product_count": 23,
+  "sample_parties": [
+    "ADARSH PHARMA",
+    "ANNAPOORNESWARI MEDICALS GEN STORES",
+    "ANUGRAHA MEDI & GEN STORES",
+    "AROGYA MEDICAL",
+    "BHARATH MEDICALS GEN STORES"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Tablets",
+    "Kenz Cream 30 Gm"
+  ],
+  "qty_total": 263.0,
+  "amount_total": 54907.43,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 7
+}

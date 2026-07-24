@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE SALES MAY 2026 KLM DERMA DIV _1_.pdf",
+  "route": "party_pdf",
+  "row_count": 39,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 23,
+  "area_count": 3,
+  "product_count": 15,
+  "sample_parties": [
+    "AIJEE MEDICAL STORE",
+    "ANAND MEDICOSE",
+    "BHAWANA MEDICAL CENTER PALI",
+    "DEWASI MEDICAL STORE (SOJAT)",
+    "GANESH MEDICAL AND GENERAL STORE SOJAT CITY"
+  ],
+  "sample_products": [
+    "HBSALIC CREAM",
+    "Hbsone Cream 30Gm",
+    "Klm C 20 Serum 15Ml",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 268.0,
+  "amount_total": 46216.26,
+  "rate_total": 7107.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

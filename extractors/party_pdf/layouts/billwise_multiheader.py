@@ -36,13 +36,21 @@ _FORM_WORDS = {
     "LOTION", "LOTIO", "CREAM", "OINTMENT", "OINT", "GEL", "SHAMPOO", "SYRUP",
     "SOAP", "POWDER", "DROPS", "SOLUTION", "SUSPENSION", "TABLET", "TABLETS",
     "CAPSULE", "CAPSULES", "WASH", "SERUM", "SPRAY", "BAR", "KIT", "TONIC",
-    "LIQUID", "SUNSCREEN", "FACE", "MOUTHWASH", "SCRUB", "MASK",
+    "LIQUID", "SUNSCREEN", "FACE", "MOUTHWASH", "SCRUB", "MASK", "OIL",
 }
 _PACK_LINE = re.compile(r"^\d+\s*(?:ML|GM|GMS|MG|G|TAB|TABS|CAP|CAPS|LTR|KG|GC|N|S)\.?$", re.I)
 
 
 def _is_continuation(s):
-    return bool(_PACK_LINE.match(s.strip())) or s.strip().rstrip(".").upper() in _FORM_WORDS
+    t = s.strip()
+    if _PACK_LINE.match(t) or t.rstrip(".").upper() in _FORM_WORDS:
+        return True
+    # A dotted-glue wrapped product tail (single space-less token whose last dotted
+    # segment is a dosage form, e.g. "MOISTURE.LOTION", "NEVLON.CREAM") is a data-row
+    # continuation, not a party heading.
+    if " " not in t and "." in t and t.rstrip(".").split(".")[-1].upper() in _FORM_WORDS:
+        return True
+    return False
 
 def parse_billwise(text):
     """Header-driven KLM billwise / itemwise parser -> (headers, rows).
@@ -84,7 +92,7 @@ def parse_billwise(text):
     def is_mfg(s):
         return s.upper().replace(' ', '').startswith("KLM")
 
-    def _recover_qfr_a(s, amt, nums):
+    def _recover_qfr_a(s, amt, nums, raw=None):
         """Layout A: recover (qty, free, rate) from the run after the bill date.
 
         Plain rows keep their integer tokens ("... 11/05/26 4 0 82.16 322.08").
@@ -94,6 +102,29 @@ def parse_billwise(text):
         split against qty*rate ~= amount (invoices discount up to ~6%). Returns
         blanks when no split is confident — exactly the previous behaviour.
         """
+        # Plain rows: _despace glues the two single-digit columns Qty+F.Qty
+        # ("4 0" -> "40"), so the space-separated `mp` path below fails and the
+        # glued path can only recover the split when qty*rate ~= amount. A
+        # DISCOUNTED row (amount far below qty*rate, e.g. "4 0 112.51 220.51")
+        # then loses qty/rate. Read the tail off the RAW (non-despaced) line
+        # where the digits are still separated — same trick layout C uses. Gated
+        # to the clean 2-decimal (Rate, Amount) shape: require the tail's Value to
+        # equal our amount, so a 3-decimal (Rate Amount Value) row can't misread
+        # Amount as Rate; letter-spaced rows fail this (their decimals carry
+        # spaces) and fall through to the glued path unchanged.
+        if raw is not None:
+            mt = _TAIL_C.search(raw.strip())
+            if mt:
+                try:
+                    if abs(float(mt.group("val").replace(",", "")) - amt) < 0.005:
+                        fr = mt.group("free")
+                        return (
+                            mt.group("qty"),
+                            "0" if fr == "-" else str(int(fr)),
+                            "%.2f" % float(mt.group("rate").replace(",", "")),
+                        )
+                except ValueError:
+                    pass
         md = re.search(r"\d{2}/\d{2}/\d{2}", s)
         if not md:
             return "", "", ""
@@ -132,7 +163,7 @@ def parse_billwise(text):
         return "", "", ""
 
     if layout == "A":
-        for s in lines:
+        for _i, s in enumerate(lines):
             if is_noise(s):
                 continue
             if s.startswith("Mfg.Total") or s.startswith("Total Value") or s.startswith("Product Name"):
@@ -150,7 +181,7 @@ def parse_billwise(text):
                 mi = re.search(r"([A-Z]/\s*\d+|M/\s*\d+)", s)
                 inv = mi.group(1).replace(' ', '') if mi else ""
                 md = re.search(r"\d{2}/\d{2}/\d{2}", s)
-                qty, free, rate = _recover_qfr_a(s, amt, nums)
+                qty, free, rate = _recover_qfr_a(s, amt, nums, raw_lines[_i])
                 rows.append([party, prod, inv, md.group(0) if md else "",
                              qty, free, rate, "%.2f" % amt])
             elif not is_mfg(s) and not nums:

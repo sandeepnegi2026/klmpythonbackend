@@ -1,0 +1,19 @@
+{
+  "file": "KLM COSMOC.PDF",
+  "route": "stock_pdf",
+  "row_count": 20,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 19,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niofine Forte Tablet 1*7 Tablets",
+    "Niofine Tablet 1*7 Tablets"
+  ],
+  "closing_stock_total": 333.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "klm4.pdf",
+  "route": "party_pdf",
+  "row_count": 60,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_company_customer_invoice",
+  "party_count": 22,
+  "area_count": 22,
+  "product_count": 17,
+  "sample_parties": [
+    "AAROGYA PHARMACY",
+    "ABHIRAM MEDICAL & GENERAL STORES",
+    "BALAJI MEDICAL STORES",
+    "BHADRAKALI PHARMACY",
+    "BHAVANI MEDICALS(WHOLESALE/RETAIL)"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Caloe Lotion 100Ml",
+    "Nevlon Cream 50Gm"
+  ],
+  "qty_total": 461.5,
+  "amount_total": 87237.71,
+  "rate_total": 11474.59,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

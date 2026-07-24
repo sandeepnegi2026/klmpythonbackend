@@ -1,0 +1,30 @@
+{
+  "file": "klm cosmo.xls",
+  "route": "party_xlsx",
+  "row_count": 187,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 74,
+  "area_count": 8,
+  "product_count": 29,
+  "sample_parties": [
+    "AANAND MED.&GEN.STORES (N. RAJENDRA) RYP",
+    "AJAY MEDICAL STORES",
+    "ANOOP MEDICAL STORES (SADAR) RAIPUR.",
+    "ARIHANT MEDICAL STORES (DAWRA) RAIPUR",
+    "AYANSH MEDICAL STORES GUDIYARI RYP"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 100Gm",
+    "Ekran Ms Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Ekran-80 Hydragel Sunscreen 50Gm"
+  ],
+  "qty_total": 1254.0,
+  "amount_total": 376478.79,
+  "rate_total": 63523.7,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

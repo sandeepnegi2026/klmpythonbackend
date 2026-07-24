@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__KLM DERMA 5 26SS.PDF",
+  "route": "stock_pdf",
+  "row_count": 16,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_open_pur_sale_amt",
+  "product_count": 16,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Caloe Lotion 100Ml"
+  ],
+  "closing_stock_total": 292.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

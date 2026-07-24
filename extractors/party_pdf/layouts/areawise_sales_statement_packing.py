@@ -51,6 +51,27 @@ _ROW = re.compile(
     r'([\d,]+\.\d+)\s*$'               # 11 Amount
 )
 
+# Same layout, but the Rep column is a bare NUMERIC rep code (CENTRAL AGENCIES
+# Calicut prints "07"/"01"/"10" here, not an alpha rep name), so _ROW's uppercase
+# rep group can't match and the row is silently dropped. This variant matches the
+# numeric rep and is tried ONLY as a fallback when _ROW fails, so every row _ROW
+# already parses (alpha reps like "DISC", the Kasaragod KLMA reference file) stays
+# byte-identical — this can only RECOVER currently-dropped rows. The product code
+# (>=4 digits) still anchors the product/pack split, so names stay clean.
+_ROW_NUMREP = re.compile(
+    r'^(\d+)\s+'                       # 1 BillNo
+    r'(\d{2}/\d{2}/\d{4})\s+'          # 2 Bill Date
+    r'(\d{4,7})\s+'                    # 3 Customer Code
+    r'(.*?)\s+'                        # 4 Customer Name (non-greedy, incl town)
+    r'(\d{1,3})\s+'                    # 5 Rep Code (numeric, e.g. "07")
+    r'(\d{4,})\s+'                     # 6 Product Code (anchors the split)
+    r'(.*?)\s+'                        # 7 Product Name (non-greedy)
+    r'(\S+)\s+'                        # 8 Packing
+    r'(\d+)\s+'                        # 9 Qty
+    r'(\d+)\s+'                        # 10 Free
+    r'([\d,]+\.\d+)\s*$'               # 11 Amount
+)
+
 
 def parse_areawise_sales_statement_packing(text):
     rows = []
@@ -63,7 +84,7 @@ def parse_areawise_sales_statement_packing(text):
         if loc:
             area = loc.group(1).strip()
             continue
-        m = _ROW.match(s)
+        m = _ROW.match(s) or _ROW_NUMREP.match(s)
         if m:
             (billno, date, _code, cust, _rep, _pcode,
              prod, _pack, qty, free, amt) = m.groups()

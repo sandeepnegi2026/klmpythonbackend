@@ -1,0 +1,19 @@
+{
+  "file": "KLM SALE CLOS.PDF",
+  "route": "stock_pdf",
+  "row_count": 310,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "marg_movement_detail_sparse",
+  "product_count": 278,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml"
+  ],
+  "closing_stock_total": 10131.0,
+  "rate_total": 62368.02,
+  "line_unexplained": 2
+}

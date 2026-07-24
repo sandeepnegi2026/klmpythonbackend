@@ -40,7 +40,11 @@ import re
 # byte-exact to the printed "Grand Total : 984.00  18.00  184480.99".
 
 _BAND = re.compile(r'Customer\s*:\s*(?P<party>.+?)\s+CITY\s*:\s*(?P<area>.*)$', re.I)
-_FOOTER = re.compile(r'^(tot.?al|grand)')          # 'total', watermark-merged 'totual'
+# 'total'; watermark-merged 'totual' (glyph mid-token) AND 'utotal' (glyph fused onto the
+# FRONT of 'Total:' -> a single tall token like 'UTotal:'). The optional leading [a-z]
+# absorbs that one fused watermark letter; no real product first-word starts total/grand.
+_FOOTER = re.compile(r'^[a-z]?(tot.?al|grand)')
+_NUMERIC_ONLY = re.compile(r'^[\d.,]+$')           # a pure-number "product" is a leaked total row
 _NOISE = re.compile(
     r'(?i)^\s*(Product\s+Name|From\s|COMPANY\s*:|Area\s+Wise|Page\s*:'
     r'|Generated|PURUSHOTHAM)'
@@ -126,6 +130,8 @@ def parse_profitmaker_area_customer_company_product(text, file_bytes=None):
                 product = " ".join(prod).strip()
                 if not product or not qty:
                     continue
+                if _NUMERIC_ONLY.match(product):   # e.g. a footer whose 'Total:' fused a
+                    continue                        # watermark glyph and slipped the _FOOTER gate
                 rows.append([party, area, product, qty, free, gross])
 
     return headers, rows

@@ -1,0 +1,28 @@
+{
+  "file": "COSMO__KLM DERMA.xls",
+  "route": "party_xlsx",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 7,
+  "sample_parties": [
+    "AROGYAM HEALTH SHOPEE",
+    "JANSEVA CHEMIST",
+    "SAIDEEP PHARMA"
+  ],
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Lotion 100Ml",
+    "Niosalic 6 Ointment 20 Gm",
+    "Niosalic Ointment 20 Gm"
+  ],
+  "qty_total": 72.0,
+  "amount_total": 11254.3,
+  "rate_total": 1425.04,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KCQ-Sales_Report-JUNE_2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 103,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded_grsamt",
+  "party_count": 82,
+  "area_count": 36,
+  "product_count": 11,
+  "sample_parties": [
+    "A 1 MEDICAL.",
+    "AASHIRWAD CHEMIST & GENERAL STORES",
+    "ADITYA MEDICAL.",
+    "AFFOLIFE RETAIL PRIVATE LIMITED",
+    "AIROLI DRUG HOUSE ."
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G"
+  ],
+  "qty_total": 166.0,
+  "amount_total": 70170.47,
+  "rate_total": 47185.47,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

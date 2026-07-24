@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMACOR.pdf",
+  "route": "stock_pdf",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_gdin",
+  "product_count": 34,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches"
+  ],
+  "closing_stock_total": 510.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

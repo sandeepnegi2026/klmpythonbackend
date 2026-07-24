@@ -1,0 +1,26 @@
+{
+  "file": "area wise klm pharma 02062026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tabular",
+  "party_count": 1,
+  "area_count": 0,
+  "product_count": 21,
+  "sample_parties": [
+    "WELLNESS FOREVER MEDICARE LTD."
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Total 1*15 Tab"
+  ],
+  "qty_total": 1644.0,
+  "amount_total": 327938.6,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

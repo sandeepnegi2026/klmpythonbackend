@@ -1,0 +1,19 @@
+{
+  "file": "COSMO__STOCK-SALES COSMOCORE.XLS",
+  "route": "stock_xlsx",
+  "row_count": 27,
+  "warnings_count": 4,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_stock",
+  "product_count": 25,
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "closing_stock_total": 814.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

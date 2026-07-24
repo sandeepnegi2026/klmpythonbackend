@@ -1,0 +1,30 @@
+{
+  "file": "RAPID MEDICO MAY 2026 PARTY WISE.xlsx",
+  "route": "party_xlsx",
+  "row_count": 967,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "customer_product_banded",
+  "party_count": 301,
+  "area_count": 0,
+  "product_count": 179,
+  "sample_parties": [
+    "AADHYA PHARMACY UMBERGAO, UMBERGAO",
+    "AARVI MEDICAL STORE , UMBERGAON",
+    "AASHIRWAD MEDICAL STORE PARDI, PARDI",
+    "AASHISH MEDICAL N PROVI STORE, ABRAMA",
+    "AASTHA MEDCAL N GEN STORE D, DAMAN"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "CETALORE M 60ML SYP",
+    "Canrolfin Cream 15 Gm"
+  ],
+  "qty_total": 5703.0,
+  "amount_total": 868462.93,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

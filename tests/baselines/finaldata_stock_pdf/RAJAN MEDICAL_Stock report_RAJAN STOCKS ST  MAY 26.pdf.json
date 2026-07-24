@@ -1,0 +1,19 @@
+{
+  "file": "RAJAN STOCKS ST  MAY 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 31,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 30,
+  "sample_products": [
+    "Episert Cream 20 Gm",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml"
+  ],
+  "closing_stock_total": 288.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

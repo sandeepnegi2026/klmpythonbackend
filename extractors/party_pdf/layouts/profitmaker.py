@@ -14,7 +14,7 @@ _CUST = re.compile(r"^Customer\s*:\s*(.+?)(?:\s+Area\s*:\s*(.+))?$")
 # fires ONLY when the line begins with "Company :" and carries "Customer :" after it.
 _COMPANY_CUST = re.compile(
     r"^Company\s*:\s*(.+?)\s+Customer\s*:\s*(.+?)(?:\s+Area\s*:\s*(.+))?$")
-_NUM_LEAD = re.compile(r"^[\d,]*\.?\d")
+_NUM_LEAD = re.compile(r"^-?[\d,]*\.?\d")
 
 # normalized header token -> (canonical key, is_numeric_column)
 _COLS = {
@@ -43,11 +43,16 @@ def _norm(tok):
 
 
 def _clean_num(tok):
-    """Strip stray OCR letters/commas; return a numeric string or None."""
-    cleaned = re.sub(r"[^\d.]", "", tok.replace(",", ""))
+    """Strip stray OCR letters/commas; return a numeric string or None. Keep a
+    leading minus so sales-return rows retain their negative value ('-288.00');
+    without it the sign is stripped and a return books as a positive sale. A clean
+    positive token is byte-for-byte unchanged (sign='')."""
+    body = tok.replace(",", "")
+    sign = "-" if body.lstrip().startswith("-") else ""
+    cleaned = re.sub(r"[^\d.]", "", body)
     try:
         float(cleaned)
-        return cleaned
+        return sign + cleaned
     except ValueError:
         return None
 

@@ -1,0 +1,19 @@
+{
+  "file": "1ff.PDF",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 20,
+  "headers_detected_count": 10,
+  "detected_format": "stock_simple_7col",
+  "product_count": 31,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Hbsalic Ointment 20Gm"
+  ],
+  "closing_stock_total": 810.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

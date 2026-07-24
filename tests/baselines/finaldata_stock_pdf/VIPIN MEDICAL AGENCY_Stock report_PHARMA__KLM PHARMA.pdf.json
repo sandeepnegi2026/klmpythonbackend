@@ -1,0 +1,19 @@
+{
+  "file": "PHARMA__KLM PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 26,
+  "sample_products": [
+    "COSMO Q SERIUM 1*15ML",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "closing_stock_total": 440.0,
+  "rate_total": 4610.4,
+  "line_unexplained": 0
+}

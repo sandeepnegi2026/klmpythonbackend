@@ -10,7 +10,7 @@
   "product_count": 5,
   "sample_parties": [
     "ARATI PHARMA",
-    "DR",
+    "DR,DHRUVIN A.JOSHI",
     "MADHAV MEDICAL AND PRO.STORES",
     "NINA MEDICINES",
     "POOJAN MEDICAL STORES"
@@ -25,5 +25,6 @@
   "qty_total": 77.0,
   "amount_total": 10454.02,
   "rate_total": 0.0,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

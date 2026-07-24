@@ -1,0 +1,30 @@
+{
+  "file": "KLM Partywise June_26.XLS",
+  "route": "party_xlsx",
+  "row_count": 2068,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "sales_detail_mf_customer_itemwise",
+  "party_count": 371,
+  "area_count": 17,
+  "product_count": 233,
+  "sample_parties": [
+    "AADITYA PHARMACY (VASNA)",
+    "AAGAM MEDICAL STORE (NARANPURA)",
+    "AAKASH MEDICARE (GOTA)",
+    "AAKASH MEDICINES (VASTRAPUR)",
+    "AAMIR MEDICAL (JAMALPUR)"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm"
+  ],
+  "qty_total": 23171.0,
+  "amount_total": 3779318.97,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 7
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM PEDIA MAY AS.pdf",
+  "route": "party_pdf",
+  "row_count": 125,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_customer_company_product",
+  "party_count": 42,
+  "area_count": 17,
+  "product_count": 29,
+  "sample_parties": [
+    "A ONE HOSPITALS-PHARMACY",
+    "AYYAPPA MEDICAL STORES(PT",
+    "BHOGI GANGAYYA & SONS",
+    "BINDU PHARMA GEN & STORIE",
+    "DAY & NIGHT PHARMACY"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 1260.0,
+  "amount_total": 139915.18,
+  "rate_total": 15728.76,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

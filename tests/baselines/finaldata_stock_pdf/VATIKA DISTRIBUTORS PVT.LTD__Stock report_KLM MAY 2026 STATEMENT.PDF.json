@@ -1,0 +1,19 @@
+{
+  "file": "KLM MAY 2026 STATEMENT.PDF",
+  "route": "stock_pdf",
+  "row_count": 270,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 251,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 1653.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

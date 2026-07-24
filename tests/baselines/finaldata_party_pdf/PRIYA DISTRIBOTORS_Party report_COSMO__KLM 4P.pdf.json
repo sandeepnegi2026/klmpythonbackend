@@ -1,0 +1,30 @@
+{
+  "file": "COSMO__KLM 4P.pdf",
+  "route": "party_pdf",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "billwise_multiheader",
+  "party_count": 20,
+  "area_count": 0,
+  "product_count": 19,
+  "sample_parties": [
+    "AAROGYA MEDICAL AND GENERAL STORES",
+    "CHAPSI SON S LATUR",
+    "CHARLI MEDICAL STORES",
+    "EFFERVESCENT TAB.",
+    "F.K. MEDICAL STORES LATUR"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets",
+    "KENZ 75GM.SOAP 75GM. G09-029",
+    "KENZ 75GM.SOAP 75GM. G09-029 10"
+  ],
+  "qty_total": 167.0,
+  "amount_total": 43468.02,
+  "rate_total": 8568.02,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

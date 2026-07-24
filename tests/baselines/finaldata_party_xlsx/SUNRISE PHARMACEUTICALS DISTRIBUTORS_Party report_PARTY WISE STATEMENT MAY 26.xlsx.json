@@ -1,0 +1,30 @@
+{
+  "file": "PARTY WISE STATEMENT MAY 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 126,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "product_customer_sale_dc_details",
+  "party_count": 66,
+  "area_count": 47,
+  "product_count": 54,
+  "sample_parties": [
+    "AADHAR MEDICAL-KHERDI",
+    "AAI KARANJESHWARI MEDICAL STORES",
+    "ABHAY MEDICALS-ABLOLI (NEW)",
+    "AL MAIRA MEDICAL",
+    "APPLE MEDICAL-MARKANDI"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 516.0,
+  "amount_total": 73684.12,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 26
+}

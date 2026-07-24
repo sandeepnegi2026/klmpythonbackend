@@ -1,0 +1,19 @@
+{
+  "file": "SAURASHTRA MEDISOLUTION-4.pdf",
+  "route": "stock_pdf",
+  "row_count": 30,
+  "warnings_count": 6,
+  "headers_detected_count": 16,
+  "detected_format": "saurashtra_monthly",
+  "product_count": 30,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Kalsid Tablets"
+  ],
+  "closing_stock_total": 812.0,
+  "rate_total": 4879.93,
+  "line_unexplained": 4
+}

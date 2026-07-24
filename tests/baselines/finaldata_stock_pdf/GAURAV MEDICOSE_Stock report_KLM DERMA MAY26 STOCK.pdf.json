@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA MAY26 STOCK.pdf",
+  "route": "stock_pdf",
+  "row_count": 10,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_open_pur_sale_amt",
+  "product_count": 10,
+  "sample_products": [
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON MOIST CREAM50GM",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Cream 100Gm"
+  ],
+  "closing_stock_total": 92.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

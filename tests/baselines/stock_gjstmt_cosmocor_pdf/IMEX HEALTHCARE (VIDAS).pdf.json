@@ -1,0 +1,15 @@
+{
+  "file": "IMEX HEALTHCARE (VIDAS).pdf",
+  "route": "stock_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "marg_opstk_statement",
+  "product_count": 1,
+  "sample_products": [
+    "A/415-416, DEV ATELIER, ANANDNAGAR CROSS ROAD, ,PRAHLADNAGAR, SATELLITE, AHMEDABAD - Ph:9106248147,"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 0.0,
+  "line_unexplained": 10
+}

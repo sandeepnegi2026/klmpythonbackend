@@ -2,7 +2,7 @@ import io
 import json
 import pandas as pd
 
-from core.canonical import CANONICAL_FIELDS
+from core.canonical import CANONICAL_FIELDS, numeric_fields
 
 # Columns that must never surface in the UI or exports.
 #   raw_division                 — internal pre-enrichment value
@@ -30,6 +30,19 @@ STOCK_OUTPUT_ORDER = [
 ]
 OUTPUT_ORDER = {"party": PARTY_OUTPUT_ORDER, "stock": STOCK_OUTPUT_ORDER}
 
+# Numeric fields that are per-unit RATES or PERCENTAGES — summing them down a
+# column is meaningless (a total of 232 products' MRPs, or of their GST%, is not a
+# number anyone wants). The export TOTAL row sums every OTHER numeric column
+# (quantities + money values) and leaves these blank.
+RATE_LIKE_FIELDS = {"mrp", "rate", "ptr", "purchase_rate", "gst_rate", "discount_percent"}
+
+
+def _additive_fields(report_type):
+    """Numeric canonical fields that are meaningful to sum (excludes rates/percents)."""
+    if not report_type or report_type not in CANONICAL_FIELDS:
+        return []
+    return [f for f in numeric_fields(report_type) if f not in RATE_LIKE_FIELDS]
+
 
 def rows_to_dataframe(rows, report_type=None):
     df = pd.DataFrame(rows or [])
@@ -50,13 +63,94 @@ def rows_to_dataframe(rows, report_type=None):
     return df
 
 
+def _to_number(value):
+    """Parse an export cell to float; None for blank/"-"/unparseable.
+
+    Mirrors core.triage._to_float but kept local so this low-level export module
+    stays decoupled from the analytics layer (avoids an import cycle risk)."""
+    if value is None:
+        return None
+    text = str(value).replace(",", "").strip()
+    if text in ("", "-"):
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def _distinct_count(series):
+    """Count of distinct non-empty values (trimmed, case-insensitive)."""
+    seen = set()
+    for value in series:
+        if value is None:
+            continue
+        text = str(value).strip().lower()
+        if text:
+            seen.add(text)
+    return len(seen)
+
+
+def _fmt_total(series):
+    """Sum a column's parseable cells → display string. Integer-valued sums lose
+    the decimals (23507), fractional sums keep two places (34,52,881.65 → 3452881.65)."""
+    total, seen = 0.0, False
+    for value in series:
+        number = _to_number(value)
+        if number is not None:
+            total += number
+            seen = True
+    if not seen:
+        return "0"
+    total = round(total, 2)
+    if total == int(total):
+        return str(int(total))
+    return f"{total:.2f}"
+
+
+def append_totals_row(df, report_type=None):
+    """Return `df` with one grand-total row appended (download-only).
+
+    Sums the additive numeric columns (quantities + money values); per-unit rate
+    and percentage columns stay blank. The first column carries the "TOTAL" label;
+    the party/product name columns carry the distinct party/product counts. When a
+    name column IS the first (label) column — stock's product_name — the label wins
+    and the count moves to the next column so "TOTAL" is never clobbered."""
+    if df is None or df.empty:
+        return df
+
+    columns = list(df.columns)
+    label_col = columns[0]
+    total_row = {col: "" for col in columns}
+    total_row[label_col] = "TOTAL"
+
+    additive = set(_additive_fields(report_type))
+    for col in columns:
+        if col in additive:
+            total_row[col] = _fmt_total(df[col])
+
+    if "party_name" in columns and "party_name" != label_col:
+        total_row["party_name"] = f"{_distinct_count(df['party_name'])} parties"
+    if "product_name" in columns:
+        product_count = _distinct_count(df["product_name"])
+        if "product_name" != label_col:
+            total_row["product_name"] = f"{product_count} products"
+        elif len(columns) > 1:
+            total_row[columns[1]] = f"{product_count} products"
+
+    totals_df = pd.DataFrame([total_row], columns=columns)
+    return pd.concat([df, totals_df], ignore_index=True)
+
+
 def build_csv(rows, report_type=None):
-    return rows_to_dataframe(rows, report_type).to_csv(index=False).encode("utf-8")
+    df = append_totals_row(rows_to_dataframe(rows, report_type), report_type)
+    return df.to_csv(index=False).encode("utf-8")
 
 
 def build_xlsx(rows, report_type=None):
     buffer = io.BytesIO()
-    rows_to_dataframe(rows, report_type).to_excel(buffer, index=False, engine="openpyxl")
+    df = append_totals_row(rows_to_dataframe(rows, report_type), report_type)
+    df.to_excel(buffer, index=False, engine="openpyxl")
     return buffer.getvalue()
 
 

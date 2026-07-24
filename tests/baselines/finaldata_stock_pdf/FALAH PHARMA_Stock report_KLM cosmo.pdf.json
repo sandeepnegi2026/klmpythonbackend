@@ -1,0 +1,17 @@
+{
+  "file": "KLM cosmo.pdf",
+  "route": "stock_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "central_stock_sales",
+  "product_count": 3,
+  "sample_products": [
+    "Ekran-80 Hydragel Sunscreen 50Gm",
+    "Histabil Tablet 1*10 Tab",
+    "Imxia Pro Serum 60Ml"
+  ],
+  "closing_stock_total": 103.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

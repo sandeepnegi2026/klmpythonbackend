@@ -1,5 +1,6 @@
 from core.header_match import map_headers
 from core.pack_match import extract_pack_from_product
+from core.party_filter import tag_generic_accounts
 from core.product_master import enrich_rows_with_master
 
 from extractors.party_pdf.pdf_io import extract_pdf
@@ -25,7 +26,15 @@ def extract(file_bytes, settings=None):
     headers = legacy.get("parsed_headers", []) or []
     rows = legacy.get("parsed_rows", []) or []
     canonical_rows, headers_detected = _canonicalize_rows(headers, rows)
-    
+    # TAG generic non-customer ledger accounts (CASH / COUNTER / WALK IN / STAFF / CASH MEMO
+    # / CASH COLLECTION <city> / ...) with is_generic_party=True instead of DROPPING them, so all
+    # rows are retained (totals stay complete) and party-wise reads exclude them at query time.
+    # Runs AFTER the line ledger (computed in pdf_io on the raw parser output). Name-anchored
+    # allowlist (core/party_filter): a real shop that merely contains a keyword ("CASH CHEMIST",
+    # "GENERAL MEDICAL STORES") is never tagged, so every file without such an account is
+    # byte-for-byte unchanged (the key is added ONLY to the generic rows).
+    canonical_rows, generic_tagged = tag_generic_accounts(canonical_rows)
+
     for record in canonical_rows:
         if "product_name" in record:
             raw_full_name = str(record["product_name"])
@@ -70,6 +79,8 @@ def extract(file_bytes, settings=None):
         "pages": pages,
         "raw_text": "\n".join(raw_parts),
         "warnings": warnings,
+        # computed in pdf_io on the RAW parser output (pre-canonicalization)
+        "line_audit": legacy.get("line_audit") or {"applicable": False},
         "elapsed_ms": legacy.get("runtime_ms", 0),
         "debug": {
             "parser": "party_pdf",
@@ -78,5 +89,6 @@ def extract(file_bytes, settings=None):
             "format_label": legacy.get("format_label"),
             "layout_label": legacy.get("format_label"),
             "row_count": len(canonical_rows),
+            "generic_party_rows_tagged": generic_tagged,
         },
     }

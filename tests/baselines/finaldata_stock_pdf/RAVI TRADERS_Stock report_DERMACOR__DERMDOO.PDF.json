@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__DERMDOO.PDF",
+  "route": "stock_pdf",
+  "row_count": 11,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 11,
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Folibild Tablets",
+    "KLM-AHA(B)",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap"
+  ],
+  "closing_stock_total": 41.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,22 @@
+{
+  "file": "klm dermacore div sale report in may-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 17,
+  "detected_format": "tabular",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "SHRI BALAJI MEDICAL"
+  ],
+  "sample_products": [
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 50.0,
+  "amount_total": 10095.0,
+  "rate_total": 201.9,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

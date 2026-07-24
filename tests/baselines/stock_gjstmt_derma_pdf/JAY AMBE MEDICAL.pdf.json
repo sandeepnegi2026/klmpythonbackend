@@ -1,0 +1,19 @@
+{
+  "file": "JAY AMBE MEDICAL.pdf",
+  "route": "stock_pdf",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_jayambe_monthly_ss_balance",
+  "product_count": 6,
+  "sample_products": [
+    "Hbsone Cream 30Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Nevlon Lotion 100Ml",
+    "ONITRAZ FORTE 1*10 STRIP 1*10STRIP"
+  ],
+  "closing_stock_total": 49.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

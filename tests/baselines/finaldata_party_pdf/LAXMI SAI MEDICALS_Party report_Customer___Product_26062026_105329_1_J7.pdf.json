@@ -1,0 +1,30 @@
+{
+  "file": "Customer___Product_26062026_105329_1_J7.pdf",
+  "route": "party_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 16,
+  "area_count": 0,
+  "product_count": 10,
+  "sample_parties": [
+    "ANVI PHARMACY Add :SIDDIPET",
+    "M/S ADHITYA PHARMACY Add :GAJWEL",
+    "M/S TELANAGANA PHARMACY & Add :SIDDIPET",
+    "M/S.LAKSHMI SAHASRA MEDIC Add :SIDDIPET",
+    "MANASA MEDICAL HALL Add :SIDDIPET F"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "SOFI DEW BABY LOTION",
+    "Sofibar Syndet Bar 100Gm",
+    "Sofidew Baby Massage Oil 100Ml",
+    "Sofidew Baby Powder 100G"
+  ],
+  "qty_total": 215.0,
+  "amount_total": 32919.07,
+  "rate_total": 4580.94,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

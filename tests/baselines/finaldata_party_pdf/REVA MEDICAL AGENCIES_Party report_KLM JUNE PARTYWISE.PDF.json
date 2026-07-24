@@ -1,0 +1,30 @@
+{
+  "file": "KLM JUNE PARTYWISE.PDF",
+  "route": "party_pdf",
+  "row_count": 317,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 131,
+  "area_count": 53,
+  "product_count": 89,
+  "sample_parties": [
+    "AGRAWAL DRUG CENTER",
+    "AGRAWAL MEDICAL HUB SHAHPURA",
+    "AMAR MEDICAL STORE",
+    "AMBEY MEDICAL STORE AYODHYA N.",
+    "AMBIKA MEDICAL STORE PIPLANI"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 560.0,
+  "amount_total": 93227.86,
+  "rate_total": 56125.04,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

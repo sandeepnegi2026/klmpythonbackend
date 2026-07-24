@@ -1,0 +1,18 @@
+{
+  "file": "klm statement.pdf",
+  "route": "stock_pdf",
+  "row_count": 129,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "prompt_dstk_free_pdf",
+  "product_count": 129,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 1978.0,
+  "rate_total": 0.0
+}

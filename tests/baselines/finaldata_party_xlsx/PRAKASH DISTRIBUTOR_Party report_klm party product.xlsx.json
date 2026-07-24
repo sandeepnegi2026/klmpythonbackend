@@ -1,0 +1,30 @@
+{
+  "file": "klm party product.xlsx",
+  "route": "party_xlsx",
+  "row_count": 87,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 71,
+  "area_count": 64,
+  "product_count": 35,
+  "sample_parties": [
+    "AARU PHARMA",
+    "AJIT MEDICAL & GEN. STORES",
+    "AMOL MED.& GEN.STORES",
+    "ANANT MEDICAL",
+    "APPLE CHEMIST"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran Aqua Gel 100Gm",
+    "Fentispor Capsule",
+    "Ga-6 Cream 30Gm"
+  ],
+  "qty_total": 180.0,
+  "amount_total": 29148.55,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

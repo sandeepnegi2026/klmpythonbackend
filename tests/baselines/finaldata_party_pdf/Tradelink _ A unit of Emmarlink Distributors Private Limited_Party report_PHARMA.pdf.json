@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA.pdf",
+  "route": "party_pdf",
+  "row_count": 64,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tradelink_customer_invoice_itemwise",
+  "party_count": 27,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "AASRAYA MEDICALS, PUTHIYATHERU PUTHIYUATHERU,KANNUR",
+    "AMALA MEDICALS KARUVANCHAL",
+    "AYISHA MEDICALS SREEKANDAPURAM",
+    "AZHIKODE MEDICAL CENTRE, AZHIKODE AZHIKODE",
+    "BEST MEDICALS KANNUR"
+  ],
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Eberfine-Xl Cream 50 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 271.0,
+  "amount_total": 43102.26,
+  "rate_total": 10534.63,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

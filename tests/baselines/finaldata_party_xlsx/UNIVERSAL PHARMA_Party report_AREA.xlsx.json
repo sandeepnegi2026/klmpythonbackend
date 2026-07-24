@@ -1,0 +1,29 @@
+{
+  "file": "AREA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 272,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "customer_product_banded",
+  "party_count": 50,
+  "area_count": 0,
+  "product_count": 52,
+  "sample_parties": [
+    "AKSHAY MEDICALS,PULLUVILA",
+    "AKSHAYA MEDICALS,NEYYATTINKARA",
+    "ANUGRAHA MEDICALS,MOONGODU,VPX1/83 B,MOONGODU P.O",
+    "ANUGRAHA MEDICALS.,PERUNTHANNI, VALLAKADAVU",
+    "ARYA MEDICALS,NEYYATINKARA"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Blemguard Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "qty_total": 1119.0,
+  "amount_total": 158991.4,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

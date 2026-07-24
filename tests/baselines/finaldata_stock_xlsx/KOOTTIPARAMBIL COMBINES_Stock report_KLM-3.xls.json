@@ -1,0 +1,19 @@
+{
+  "file": "KLM-3.xls",
+  "route": "stock_xlsx",
+  "row_count": 15,
+  "warnings_count": 8,
+  "headers_detected_count": 45,
+  "detected_format": "tabular",
+  "product_count": 15,
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

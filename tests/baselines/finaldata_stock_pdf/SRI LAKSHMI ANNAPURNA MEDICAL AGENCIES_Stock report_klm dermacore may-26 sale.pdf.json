@@ -1,0 +1,19 @@
+{
+  "file": "klm dermacore may-26 sale.pdf",
+  "route": "stock_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "klm_received_issued",
+  "product_count": 26,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair 1*30 Tablets",
+    "Extend Hair Tablet",
+    "Glutaderm C Effervescent Tablets"
+  ],
+  "closing_stock_total": 477.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

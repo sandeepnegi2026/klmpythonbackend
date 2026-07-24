@@ -1,0 +1,30 @@
+{
+  "file": "KDERMACOR-Sales_Report-JUNE_2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 674,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded_grsamt",
+  "party_count": 416,
+  "area_count": 69,
+  "product_count": 35,
+  "sample_parties": [
+    "AADARSH MEDICO",
+    "AARYA MEDICAL AND GENERAL STORES",
+    "AASHAPURA MEDICO",
+    "AASHIRWAD CHEMIST & GENERAL STORES",
+    "ACHARYA MEDICAL"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Folibild Tablets"
+  ],
+  "qty_total": 1113.0,
+  "amount_total": 223846.69,
+  "rate_total": 138904.17,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

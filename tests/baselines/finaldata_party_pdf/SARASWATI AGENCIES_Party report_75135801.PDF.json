@@ -1,0 +1,30 @@
+{
+  "file": "75135801.PDF",
+  "route": "party_pdf",
+  "row_count": 178,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "saraswati_freeissue",
+  "party_count": 17,
+  "area_count": 6,
+  "product_count": 69,
+  "sample_parties": [
+    "AGRAWAL MEDICAL",
+    "AYUSH MEDICAL STORES",
+    "COLORS MEDICALS",
+    "GAURAV MEDICALS",
+    "JAISHREE PRABHU MEDICAL"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Under Eye Serum 15Ml"
+  ],
+  "qty_total": 1585.0,
+  "amount_total": 306428.31,
+  "rate_total": 35610.42,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 13
+}

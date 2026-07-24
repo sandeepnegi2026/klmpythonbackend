@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTYWISE-1.pdf",
+  "route": "party_pdf",
+  "row_count": 199,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "klm_sales_detail_register",
+  "party_count": 51,
+  "area_count": 28,
+  "product_count": 71,
+  "sample_parties": [
+    "A. K. PHARMACY -NEW AT RAJAN MASJID",
+    "AGAM REMEDIES",
+    "ANANTA DERMATOLOGY AND COS. CLINIC",
+    "ANANTA PHARMACY",
+    "ARIHANT MEDI & GENERAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Ac-50 Sunscreen Gel 60gm",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "qty_total": 1242.0,
+  "amount_total": 187793.91,
+  "rate_total": 35157.57,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 7
+}

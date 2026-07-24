@@ -1,0 +1,18 @@
+{
+  "file": "STOCK_AND_SALES_STATEMENT_26 06 26_Sheetal.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 258,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "r15_klm_opstk_psch_in_ssch_out_stock_xls",
+  "product_count": 229,
+  "sample_products": [
+    "(AHA) FOMAING FEL",
+    "Amoclafix-625 Tablets",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 3277.0,
+  "rate_total": 0.0
+}

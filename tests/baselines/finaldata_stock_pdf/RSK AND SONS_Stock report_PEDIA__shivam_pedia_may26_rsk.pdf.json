@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__shivam_pedia_may26_rsk.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 29,
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend Vita Syrup 200Ml"
+  ],
+  "closing_stock_total": 573.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

@@ -49,7 +49,7 @@ _ITEM = re.compile(
     r"(\S+)\s+"                                                            # batch no
     r"(\d{1,2}/\d{4})\s+"                                                  # exp mm/yyyy
     r"(\d+)\s+(\d+)\s+"                                                    # qty, free
-    r"([\d,]+\.\d{2})\s+([\d,]+\.\d{2})$"                                  # rate, amount
+    r"(-?[\d,]+\.\d{2})\s+(-?[\d,]+\.\d{2})$"                              # rate, amount (signed for sales returns)
 )
 
 # Party heading: "** <numeric code> <NAME>".

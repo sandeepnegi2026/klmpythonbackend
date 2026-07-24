@@ -1,0 +1,22 @@
+{
+  "file": "COSMOQ__KLM COSMOQ 5 26 PW.PDF",
+  "route": "party_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "sale_register_consolidated",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "BAJAJ MEDICAL HALL ."
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 1.0,
+  "amount_total": 338.64,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

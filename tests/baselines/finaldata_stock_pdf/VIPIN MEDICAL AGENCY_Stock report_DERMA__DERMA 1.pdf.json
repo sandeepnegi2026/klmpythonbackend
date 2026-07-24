@@ -1,0 +1,19 @@
+{
+  "file": "DERMA__DERMA 1.pdf",
+  "route": "stock_pdf",
+  "row_count": 15,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 15,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Mfsone Cream 30 Gm",
+    "NEVLON SOAP",
+    "Nevlon Caloe Lotion 60Ml"
+  ],
+  "closing_stock_total": 189.0,
+  "rate_total": 2263.91,
+  "line_unexplained": 0
+}

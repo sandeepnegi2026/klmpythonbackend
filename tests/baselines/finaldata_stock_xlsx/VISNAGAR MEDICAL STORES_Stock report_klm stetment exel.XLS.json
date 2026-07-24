@@ -1,0 +1,19 @@
+{
+  "file": "klm stetment exel.XLS",
+  "route": "stock_xlsx",
+  "row_count": 173,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "venus_stock_excel",
+  "product_count": 169,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 7122.0,
+  "rate_total": 0.0,
+  "line_unexplained": 9
+}

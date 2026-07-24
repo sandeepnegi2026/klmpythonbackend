@@ -1,0 +1,30 @@
+{
+  "file": "Klm _Pedia_.xlsx",
+  "route": "party_xlsx",
+  "row_count": 50,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 21,
+  "area_count": 11,
+  "product_count": 13,
+  "sample_parties": [
+    "ABHI SAI MEDICAL HALL",
+    "AKSHYA MEDICAL AND GEN ST",
+    "B S PHARMACY",
+    "CITY MEDICAL HALL",
+    "DIVYA MEDICAL AND GENARAL"
+  ],
+  "sample_products": [
+    "Canrolfin-Xl Cream 50Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Fentispor Capsule",
+    "Sofibar Syndet Bar"
+  ],
+  "qty_total": 425.0,
+  "amount_total": 59933.55,
+  "rate_total": 7482.06,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

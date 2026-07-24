@@ -1,0 +1,15 @@
+{
+  "file": "COSMO__72160202.PDF",
+  "route": "stock_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "saraswati_lstsl",
+  "product_count": 1,
+  "sample_products": [
+    "Kojitin Emulgel 15Gm"
+  ],
+  "closing_stock_total": 1.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

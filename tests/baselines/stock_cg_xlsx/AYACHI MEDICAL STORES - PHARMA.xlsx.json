@@ -9,10 +9,11 @@
   "sample_products": [
     "Cetalore 10 Tablets 1*10 Tablets",
     "Cetalore Tablets 1*10 Tablets",
-    "Cetalore-M Suspension 60Ml",
+    "Cetalore-M Tablet",
     "Eberfine Cream 15 Gm",
     "Eberfine Cream 30 Gm"
   ],
   "closing_stock_total": 1178.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

@@ -1,0 +1,19 @@
+{
+  "file": "SS.KLM.pdf",
+  "route": "stock_pdf",
+  "row_count": 124,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_movement_detail",
+  "product_count": 120,
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm"
+  ],
+  "closing_stock_total": 1813.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

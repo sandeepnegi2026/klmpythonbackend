@@ -1,0 +1,28 @@
+{
+  "file": "cos.xlsx",
+  "route": "party_xlsx",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "customer_items_new_xlsx",
+  "party_count": 5,
+  "area_count": 5,
+  "product_count": 3,
+  "sample_parties": [
+    "MANASA MEDICAL AND GENERAL STORES",
+    "MEDHA MEDICALS",
+    "OM SRI MANIKANTA MEDICALS",
+    "SRI CHAKRA MEDICALS",
+    "SRI SAIRAM MEDICAL&GENERAL STORES"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 28.0,
+  "amount_total": 9341.28,
+  "rate_total": 2989.44,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

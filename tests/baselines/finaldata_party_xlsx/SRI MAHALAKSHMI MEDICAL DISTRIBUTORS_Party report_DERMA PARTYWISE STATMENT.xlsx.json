@@ -1,0 +1,30 @@
+{
+  "file": "DERMA PARTYWISE STATMENT.xlsx",
+  "route": "party_xlsx",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 13,
+  "area_count": 0,
+  "product_count": 8,
+  "sample_parties": [
+    "LAKSHMI GANAPATHI MEDICAL",
+    "MAHESH MEDICAL & FANCY ST",
+    "S.S.PHARMA HOUSE",
+    "SAIBABA & CO",
+    "SREE VASAVI MEDICAL&GENAR"
+  ],
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Nevlon Cream 100Gm",
+    "Nevlon Intense Moisturizing Lotion 150Ml",
+    "Onitraz Capsules 1*10 Capsules",
+    "Onitraz Forte Capsules 1*10 Capsules"
+  ],
+  "qty_total": 151.0,
+  "amount_total": 22390.79,
+  "rate_total": 5371.95,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

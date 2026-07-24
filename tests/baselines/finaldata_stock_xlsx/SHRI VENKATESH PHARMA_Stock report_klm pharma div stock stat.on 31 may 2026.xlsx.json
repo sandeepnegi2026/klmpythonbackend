@@ -1,0 +1,19 @@
+{
+  "file": "klm pharma div stock stat.on 31 may 2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 28,
+  "warnings_count": 0,
+  "headers_detected_count": 19,
+  "detected_format": "klm_stock_sale_gdout_xlsx",
+  "product_count": 26,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "closing_stock_total": 319.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

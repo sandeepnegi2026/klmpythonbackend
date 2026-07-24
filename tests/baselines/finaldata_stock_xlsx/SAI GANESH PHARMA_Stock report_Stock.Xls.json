@@ -1,0 +1,19 @@
+{
+  "file": "Stock.Xls",
+  "route": "stock_xlsx",
+  "row_count": 319,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_saleamt",
+  "product_count": 292,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm"
+  ],
+  "closing_stock_total": 7273.0,
+  "rate_total": 0.0,
+  "line_unexplained": 12
+}

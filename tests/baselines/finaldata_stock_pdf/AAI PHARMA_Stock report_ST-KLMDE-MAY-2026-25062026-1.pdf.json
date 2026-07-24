@@ -1,0 +1,19 @@
+{
+  "file": "ST-KLMDE-MAY-2026-25062026-1.pdf",
+  "route": "stock_pdf",
+  "row_count": 21,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "medica_stock_apr_mar",
+  "product_count": 21,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "NEVLON SOAP",
+    "Nevlon Ad Moisturizing Lotion 150Ml"
+  ],
+  "closing_stock_total": 235.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,19 @@
+{
+  "file": "DZ 2.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 43,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 43,
+  "sample_products": [
+    "ADAPCLEAR GEL",
+    "BACTNIL SOAP",
+    "BECLOVATE  LOTION",
+    "C ULTRA VITAMIN C SERUM",
+    "CALOZIN PLUS LOTION"
+  ],
+  "closing_stock_total": 946.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "sns_v2_b3_2026-07-03T17_10_56.620586_05_30.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 328,
+  "warnings_count": 51,
+  "headers_detected_count": 52,
+  "detected_format": "tabular",
+  "product_count": 269,
+  "sample_products": [
+    "ARGICYNE DELICIOUS ORANGE FLAVOUR SACHET OF 6GM ORAL POWDER",
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml"
+  ],
+  "closing_stock_total": 6854.0,
+  "rate_total": 0.0,
+  "line_unexplained": 21
+}

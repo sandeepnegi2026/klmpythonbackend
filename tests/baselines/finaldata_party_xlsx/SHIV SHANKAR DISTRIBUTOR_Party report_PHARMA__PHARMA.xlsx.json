@@ -1,0 +1,30 @@
+{
+  "file": "PHARMA__PHARMA.xlsx",
+  "route": "party_xlsx",
+  "row_count": 49,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "marg_busy",
+  "party_count": 32,
+  "area_count": 10,
+  "product_count": 12,
+  "sample_parties": [
+    "-ALPHA PHARMACY",
+    "-ARORA MEDICAL HALL(N)",
+    "-BHARAT MEDICAL STORE",
+    "-DR.ANU GUPTA",
+    "-DR.SHALLU MITTAL*"
+  ],
+  "sample_products": [
+    "Eberfine-Xl Cream 50 Gm",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml",
+    "Kenz Plus Lotion 100Ml"
+  ],
+  "qty_total": 513.0,
+  "amount_total": 89515.42,
+  "rate_total": 9363.56,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

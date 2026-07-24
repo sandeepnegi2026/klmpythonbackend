@@ -1,0 +1,19 @@
+{
+  "file": "NANDINI DISTRIBUTOR.xls",
+  "route": "stock_xlsx",
+  "row_count": 7,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_wide",
+  "product_count": 7,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Shampoo 200Ml",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm"
+  ],
+  "closing_stock_total": 47.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

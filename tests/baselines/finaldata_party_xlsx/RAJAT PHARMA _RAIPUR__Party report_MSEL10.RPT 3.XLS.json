@@ -1,0 +1,30 @@
+{
+  "file": "MSEL10.RPT 3.XLS",
+  "route": "party_xlsx",
+  "row_count": 50,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 27,
+  "area_count": 0,
+  "product_count": 9,
+  "sample_parties": [
+    "1.Laxmi Medical Stores  Warehouse",
+    "3 JAI MEDICALS SHASTRI CHOWK RAIPUR 9158",
+    "5 ANUP MEDICAL AND GEN STORES",
+    "6 laxmi medical hall  ware house",
+    "AKSHAY BORA HUF"
+  ],
+  "sample_products": [
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 106.0,
+  "amount_total": 49122.72,
+  "rate_total": 27629.58,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

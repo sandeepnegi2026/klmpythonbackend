@@ -1,0 +1,19 @@
+{
+  "file": "KKIK.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 88,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_stock_analysis_qv_dumpext",
+  "product_count": 88,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "AZACEA 20 CREAM",
+    "Canrolfin Cream 15 Gm",
+    "Dektop Cream 20Gm",
+    "Episert Cream 30 Gm"
+  ],
+  "closing_stock_total": 1494.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

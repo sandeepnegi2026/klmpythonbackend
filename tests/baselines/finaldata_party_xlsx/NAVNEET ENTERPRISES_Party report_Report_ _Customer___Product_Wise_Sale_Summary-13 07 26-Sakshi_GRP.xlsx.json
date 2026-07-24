@@ -1,0 +1,30 @@
+{
+  "file": "Report_ _Customer___Product_Wise_Sale_Summary-13 07 26-Sakshi_GRP.xlsx",
+  "route": "party_xlsx",
+  "row_count": 489,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "customer_product_banded_area_first",
+  "party_count": 260,
+  "area_count": 27,
+  "product_count": 130,
+  "sample_parties": [
+    "AAI MEDICAL & GENERAL STORES",
+    "AAIJEE CHIEMIST(MEDICAL & GEN STORES)",
+    "ADITYA MEDICAL & GEN.STORES.",
+    "ADVIK MEDICAL",
+    "AIROLI CHEMIST"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 932.0,
+  "amount_total": 151891.63,
+  "rate_total": 93841.84,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

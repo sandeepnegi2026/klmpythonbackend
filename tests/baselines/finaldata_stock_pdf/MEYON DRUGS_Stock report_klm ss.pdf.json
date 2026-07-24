@@ -1,0 +1,19 @@
+{
+  "file": "klm ss.pdf",
+  "route": "stock_pdf",
+  "row_count": 155,
+  "warnings_count": 1,
+  "headers_detected_count": 13,
+  "detected_format": "meyon_prevmonth_stock",
+  "product_count": 152,
+  "sample_products": [
+    "AZACEA 10 CREAM",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "closing_stock_total": 3175.0,
+  "rate_total": 41509.08,
+  "line_unexplained": 1
+}

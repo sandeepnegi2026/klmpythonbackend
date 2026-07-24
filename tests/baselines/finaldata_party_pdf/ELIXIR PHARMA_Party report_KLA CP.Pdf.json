@@ -1,0 +1,22 @@
+{
+  "file": "KLA CP.Pdf",
+  "route": "party_pdf",
+  "row_count": 1,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 1,
+  "area_count": 1,
+  "product_count": 1,
+  "sample_parties": [
+    "ABHIRAM PHARMACY"
+  ],
+  "sample_products": [
+    "Klmite Soap"
+  ],
+  "qty_total": 10.0,
+  "amount_total": 1016.9,
+  "rate_total": 101.69,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

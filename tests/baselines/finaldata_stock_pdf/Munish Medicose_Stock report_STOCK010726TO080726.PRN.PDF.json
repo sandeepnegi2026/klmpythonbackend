@@ -1,0 +1,19 @@
+{
+  "file": "STOCK010726TO080726.PRN.PDF",
+  "route": "stock_pdf",
+  "row_count": 86,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "stock_open_pur_sale_amt",
+  "product_count": 82,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Ekran 30 Silicon Sunscreen Gel 30G"
+  ],
+  "closing_stock_total": 1362.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "klm pedia.xls",
+  "route": "party_xlsx",
+  "row_count": 162,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "fawin_partywise",
+  "party_count": 54,
+  "area_count": 7,
+  "product_count": 31,
+  "sample_parties": [
+    "AANAND MED.&GEN.STORES (N. RAJENDRA) RYP",
+    "AARJAV MEDICAL STORES KHARORA",
+    "ALL CARE PHARMACY BALODA BAZAR",
+    "ALOK MEDICAL STORES (SANTOSHI) RYP",
+    "ARIHANT MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Appybush Syrup 200Ml",
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm"
+  ],
+  "qty_total": 648.0,
+  "amount_total": 92752.12,
+  "rate_total": 22808.44,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

@@ -1,0 +1,30 @@
+{
+  "file": "klm party wise.pdf",
+  "route": "party_pdf",
+  "row_count": 149,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "smartpharma_cust_company_url",
+  "party_count": 47,
+  "area_count": 11,
+  "product_count": 52,
+  "sample_parties": [
+    "ACHYUT MEDICAL AND GENERAL STORES",
+    "ADITYA MEDICAL & GENARAL STORES",
+    "ADITYA MEDICAL & GENERAL STORE",
+    "ALANKER MEDICAL & GENERAL STORE",
+    "AMMA PHARMACY WHOLESALE CUM RETAIL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cutiheal Cream 15Gm",
+    "Dektop Cream 20Gm",
+    "Desosoft Cream 10 Gm",
+    "Ekran Aqua Gel 100Gm"
+  ],
+  "qty_total": 961.0,
+  "amount_total": 167964.02,
+  "rate_total": 26246.84,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 37
+}

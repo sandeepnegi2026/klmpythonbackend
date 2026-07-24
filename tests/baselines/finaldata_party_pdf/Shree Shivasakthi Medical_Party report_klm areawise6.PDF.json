@@ -1,0 +1,29 @@
+{
+  "file": "klm areawise6.PDF",
+  "route": "party_pdf",
+  "row_count": 32,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "shivasakthi_areawise_billwise",
+  "party_count": 20,
+  "area_count": 16,
+  "product_count": 7,
+  "sample_parties": [
+    "AKSHANA MEDICALS 'C'",
+    "ALAGU PHARMA",
+    "ALAGU PHARMACY",
+    "ANNAI MEDICALS",
+    "AVR MEDICALS"
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Mupisoft Ointment 5 Gm",
+    "Sofibar Syndet Bar",
+    "Sofidew Cream 100Gm"
+  ],
+  "qty_total": 92.0,
+  "amount_total": 12585.87,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

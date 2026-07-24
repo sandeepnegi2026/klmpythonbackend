@@ -27,6 +27,8 @@ closing = opening + purchase_stock + purchase_free - sales_qty - sales_free.
 import io
 import re
 
+from extractors.stock_pdf.parse_common import _zero_row_is_product
+
 _NUM_RE = re.compile(r"-?\d+(?:\.\d+)?$")
 _ITEM_RE = re.compile(r"^I\d{3,}$")
 
@@ -220,8 +222,12 @@ def parse_pharmassist_stock_sale(text, file_bytes=None):
                 extras_out = lrec["SS"] + rrec.get("Db", 0.0)
                 bal = rrec.get("Bal", 0.0)
 
-                # drop all-zero phantom rows
-                if op == 0 and pur == 0 and sale == 0 and bal == 0 and extras_in == 0 and extras_out == 0:
+                # Keep genuine zero-activity catalog SKUs (a listed product with no
+                # movement, may still carry a closing/sales value); drop only a
+                # nameless / address phantom the positional pass mis-captured.
+                if (op == 0 and pur == 0 and sale == 0 and bal == 0
+                        and extras_in == 0 and extras_out == 0
+                        and not _zero_row_is_product(lrec["name"])):
                     continue
 
                 records.append({

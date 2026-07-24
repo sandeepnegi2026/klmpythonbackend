@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMOQ PARTY.xlsx",
+  "route": "party_xlsx",
+  "row_count": 9,
+  "warnings_count": 0,
+  "headers_detected_count": 6,
+  "detected_format": "tabular",
+  "party_count": 7,
+  "area_count": 0,
+  "product_count": 6,
+  "sample_parties": [
+    "DECENT MEDICOSE          ,AMBALACITY",
+    "DR RAVI SHANKER          ,AMBALACITY",
+    "GARIMA MEDICAL STORE     ,AMBALACITY",
+    "GUNJAN MEDICAL HALL      ,AMBALACANT",
+    "KRISHANA MEDICOSE   SKIN ,AMBALACANT"
+  ],
+  "sample_products": [
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Oc Moisturizing Gel 60G",
+    "Cosmoq Under Eye Serum 15Ml",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm"
+  ],
+  "qty_total": 23.0,
+  "amount_total": 14467.85,
+  "rate_total": 5662.09,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR__COSMO_C_ SALES REPORT MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 284,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 97,
+  "area_count": 53,
+  "product_count": 35,
+  "sample_parties": [
+    "ABHAY MED & GEN STORE (DEVANAHALLI)",
+    "AICONIC ADVANCED SKIN & HAIR CLINIC",
+    "ALPHACROWN MEDICAMENTS PVT LTD",
+    "ATHREYA MEDICALS",
+    "BEEYENS SKIN & LASER CLINIC"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet"
+  ],
+  "qty_total": 7667.0,
+  "amount_total": 910304.01,
+  "rate_total": 50340.33,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

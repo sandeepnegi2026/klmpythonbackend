@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA PW MAY-26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 215,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "customer_product_banded",
+  "party_count": 66,
+  "area_count": 0,
+  "product_count": 26,
+  "sample_parties": [
+    "ABHI MEDICAL HALL",
+    "ABHI MEDICALS",
+    "ADARSH MEDICAL STORES CHE",
+    "AIRA PHARMACY (INSIDE APO",
+    "ANOOS MEDICAL & GENERAL S"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm"
+  ],
+  "qty_total": 3605.0,
+  "amount_total": 718674.43,
+  "rate_total": 45028.33,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM MAY MONTH STATEMENT.pdf",
+  "route": "stock_pdf",
+  "row_count": 86,
+  "warnings_count": 7,
+  "headers_detected_count": 16,
+  "detected_format": "saurashtra_monthly",
+  "product_count": 81,
+  "sample_products": [
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cosmoq Brightening Serum 30Ml",
+    "Cosmoq Conditioner 150Gm",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Oc Moisturizing Gel 60G"
+  ],
+  "closing_stock_total": 730.0,
+  "rate_total": 20525.45,
+  "line_unexplained": 4
+}

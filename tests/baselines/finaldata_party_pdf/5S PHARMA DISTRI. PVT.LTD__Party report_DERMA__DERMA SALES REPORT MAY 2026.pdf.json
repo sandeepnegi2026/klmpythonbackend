@@ -1,0 +1,30 @@
+{
+  "file": "DERMA__DERMA SALES REPORT MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 314,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 114,
+  "area_count": 65,
+  "product_count": 32,
+  "sample_parties": [
+    "ALPHACROWN MEDICAMENTS PVT LTD",
+    "AMBER CLINIC",
+    "ATHREYA MEDICALS",
+    "AVYAAN SUPER SPECIALITY",
+    "AYUSH PHARMA (DR. NAVEEN DHARIWAL)"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "qty_total": 5728.0,
+  "amount_total": 1109958.07,
+  "rate_total": 65916.82,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

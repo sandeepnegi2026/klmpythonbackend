@@ -115,7 +115,7 @@ def parse_company_area_wise_sales(rows):
         # Sale line: needs a product and a numeric qty.
         product = at(cells, "product")
         qty = at(cells, "qty")
-        if not product or not qty.replace(",", "").replace(".", "").isdigit():
+        if not product or not qty.replace(",", "").replace(".", "").lstrip("-").isdigit():
             continue
         if not current_party:
             continue

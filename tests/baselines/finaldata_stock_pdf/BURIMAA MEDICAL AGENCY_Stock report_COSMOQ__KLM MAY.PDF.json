@@ -1,0 +1,19 @@
+{
+  "file": "COSMOQ__KLM MAY.PDF",
+  "route": "stock_pdf",
+  "row_count": 184,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_oric_pairs",
+  "product_count": 181,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Appybush Syrup 200Ml",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 4997.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

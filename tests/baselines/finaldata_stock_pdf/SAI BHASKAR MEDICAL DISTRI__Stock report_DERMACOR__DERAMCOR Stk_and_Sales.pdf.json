@@ -1,0 +1,19 @@
+{
+  "file": "DERMACOR__DERAMCOR Stk_and_Sales.pdf",
+  "route": "stock_pdf",
+  "row_count": 37,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "marg_stock_recd_issued",
+  "product_count": 37,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "closing_stock_total": 1589.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

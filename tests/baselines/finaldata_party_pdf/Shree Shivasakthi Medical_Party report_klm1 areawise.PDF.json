@@ -1,0 +1,29 @@
+{
+  "file": "klm1 areawise.PDF",
+  "route": "party_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "shivasakthi_areawise_billwise",
+  "party_count": 17,
+  "area_count": 10,
+  "product_count": 12,
+  "sample_parties": [
+    "ALAGU PHARMA",
+    "AVR MEDICALS",
+    "BARANI MEDICALS C",
+    "BAWAA MEDICALS",
+    "DEEPA MEDICALS"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Hbsone Cream 30Gm",
+    "Histabil 40Mg Tablets 1*10 Tab",
+    "Imxia 10"
+  ],
+  "qty_total": 66.0,
+  "amount_total": 20876.79,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0
+}

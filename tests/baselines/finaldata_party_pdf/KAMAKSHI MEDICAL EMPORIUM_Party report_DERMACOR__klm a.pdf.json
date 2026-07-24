@@ -1,0 +1,30 @@
+{
+  "file": "DERMACOR__klm a.pdf",
+  "route": "party_pdf",
+  "row_count": 72,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "klm_customer_vs_item_summary",
+  "party_count": 32,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "ANANTHA LAKSHMI MEDICALS",
+    "AYYAPPA MEDICAL&FANC",
+    "BASHA AND BROTHER MEDICAL AND",
+    "BHAGYALAKSHMI MEDICALS",
+    "BHARGAVI MEDICAL AGENCY"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet",
+    "Glutaderm Tablets"
+  ],
+  "qty_total": 729.0,
+  "amount_total": 124693.42,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 37
+}

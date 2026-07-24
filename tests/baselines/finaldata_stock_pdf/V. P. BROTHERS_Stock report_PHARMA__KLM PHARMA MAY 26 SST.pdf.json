@@ -1,0 +1,19 @@
+{
+  "file": "PHARMA__KLM PHARMA MAY 26 SST.pdf",
+  "route": "stock_pdf",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "value_pairs",
+  "product_count": 44,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Tablet",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm"
+  ],
+  "closing_stock_total": 155.0,
+  "rate_total": 5922.0,
+  "line_unexplained": 1
+}

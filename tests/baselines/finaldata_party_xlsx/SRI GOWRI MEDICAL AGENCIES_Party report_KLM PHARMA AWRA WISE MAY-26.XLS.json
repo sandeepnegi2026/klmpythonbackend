@@ -1,0 +1,30 @@
+{
+  "file": "KLM PHARMA AWRA WISE MAY-26.XLS",
+  "route": "party_xlsx",
+  "row_count": 45,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 21,
+  "area_count": 0,
+  "product_count": 15,
+  "sample_parties": [
+    "A-ONE MEDICAL & GENRAL STORE",
+    "ADARSH MEDICAL & GEN STORES (RAICHUR)",
+    "BEST ONE MEDICAL & GEN STORE(RAICHUR)",
+    "BHARATH MEDICAL & GEN STORE{MANVI}",
+    "DR ALABAKASH"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Eberfine-M Cream 15G",
+    "Ga-12 Cream 30Gm",
+    "Ga-6 Cream 30Gm",
+    "Imxia Plus Shampoo 150 Ml"
+  ],
+  "qty_total": 634.0,
+  "amount_total": 78232.19,
+  "rate_total": 6455.31,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

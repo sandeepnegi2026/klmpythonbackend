@@ -6,13 +6,13 @@
   "headers_detected_count": 8,
   "detected_format": "busy_tally",
   "party_count": 27,
-  "area_count": 3,
+  "area_count": 2,
   "product_count": 19,
   "sample_parties": [
     "ABHISHEK MEDICAL STORE",
     "ANU MEDICAL STORE",
     "ARUN MEDICAL STORES",
-    "AT",
+    "AT-AYU MEDICAL HALL",
     "GAURI DAWAI WALA"
   ],
   "sample_products": [
@@ -25,5 +25,6 @@
   "qty_total": 266.0,
   "amount_total": 30504.86,
   "rate_total": 4972.87,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
 }

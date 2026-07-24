@@ -7,7 +7,7 @@
   "detected_format": "logic_erp",
   "party_count": 81,
   "area_count": 52,
-  "product_count": 19,
+  "product_count": 18,
   "sample_parties": [
     "A ROY AND CO",
     "AAKASHDEEP CHEMIST",
@@ -17,13 +17,14 @@
   ],
   "sample_products": [
     "Extend Hair 1*30 Gummy Pouches",
-    "Extend Hair 1*30 Tablets",
     "Extend Hair Tablet",
     "Kenz Cream 30 Gm",
-    "Kenz Lotion 60 Ml"
+    "Kenz Lotion 60 Ml",
+    "Kenz Soap"
   ],
   "qty_total": 252.0,
   "amount_total": 48826.87,
   "rate_total": 27471.86,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 11
 }

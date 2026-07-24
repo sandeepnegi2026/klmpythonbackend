@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO DIV PARTY WISE JUNE 26.pdf",
+  "route": "party_pdf",
+  "row_count": 24,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "area_item_summary",
+  "party_count": 20,
+  "area_count": 3,
+  "product_count": 11,
+  "sample_parties": [
+    "ANAND MEDICOSE",
+    "BHAGYSHREE MEDICALS",
+    "GIRDHAR MEDICAL STORE",
+    "HARISH MEDICAL CENTRE",
+    "KAMLA MEDICAL & GENRAL STORE"
+  ],
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-1 G Tablets 1*3 Tablets",
+    "Histabil 40Mg Tablets 1*10 Tab",
+    "Histabil Tablet 1*10 Tab"
+  ],
+  "qty_total": 110.5,
+  "amount_total": 21529.48,
+  "rate_total": 6257.43,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

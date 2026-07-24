@@ -1,11 +1,11 @@
 {
   "file": "BHAWANI PHARMA - DERMACOR.Pdf",
   "route": "stock_pdf",
-  "row_count": 39,
+  "row_count": 41,
   "warnings_count": 0,
   "headers_detected_count": 9,
   "detected_format": "marg_lms_simple",
-  "product_count": 33,
+  "product_count": 35,
   "sample_products": [
     "Extend Capsules",
     "Extend Hair 1*30 Gummy Pouches",
@@ -13,6 +13,7 @@
     "Glutaderm Plus Tablets",
     "Glutaderm Tablets"
   ],
-  "closing_stock_total": 514.0,
-  "rate_total": 0.0
+  "closing_stock_total": 529.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

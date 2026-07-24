@@ -1,7 +1,7 @@
 {
   "file": "KRISHNA CARE-COSMOCOR.pdf",
   "route": "party_pdf",
-  "row_count": 11,
+  "row_count": 12,
   "warnings_count": 0,
   "headers_detected_count": 8,
   "detected_format": "busy_tally",
@@ -23,7 +23,8 @@
     "Zydip Lotion 100Ml"
   ],
   "qty_total": 22.0,
-  "amount_total": 3497.04,
+  "amount_total": 3497.03,
   "rate_total": 1722.02,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
 }

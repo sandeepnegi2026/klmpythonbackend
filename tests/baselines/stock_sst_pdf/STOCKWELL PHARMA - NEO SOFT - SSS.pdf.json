@@ -1,11 +1,11 @@
 {
   "file": "STOCKWELL PHARMA - NEO SOFT - SSS.pdf",
   "route": "stock_pdf",
-  "row_count": 45,
+  "row_count": 46,
   "warnings_count": 13,
   "headers_detected_count": 12,
   "detected_format": "marg_bordered",
-  "product_count": 37,
+  "product_count": 39,
   "sample_products": [
     "Canrolfin Cream 15 Gm",
     "Canrolfin Cream 30 Gm",
@@ -14,5 +14,6 @@
     "Klm C 20 Gel"
   ],
   "closing_stock_total": 209.0,
-  "rate_total": 0.0
+  "rate_total": 0.0,
+  "line_unexplained": 0
 }

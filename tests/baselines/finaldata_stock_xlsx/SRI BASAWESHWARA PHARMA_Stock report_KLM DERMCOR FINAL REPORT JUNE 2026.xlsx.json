@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMCOR FINAL REPORT JUNE 2026.xlsx",
+  "route": "stock_xlsx",
+  "row_count": 13,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 12,
+  "sample_products": [
+    "Extend Hair Tablet",
+    "Kenz Cream 30 Gm",
+    "Kenz Dusting Powder 100Gm",
+    "Kenz Lotion 60 Ml",
+    "Klm Klin Soap 75G"
+  ],
+  "closing_stock_total": 22.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

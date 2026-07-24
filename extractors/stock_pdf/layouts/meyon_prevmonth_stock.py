@@ -46,8 +46,14 @@ import re
 
 _NUM_RE = re.compile(r"^-?[\d,]+(?:\.\d+)?$")
 
-# header tokens that must ALL be present for a word-row to be the column header
-_HDR_REQUIRED = ("Items", "Op_Stk", "Rcpts", "Sales", "Cl_Stk", "Value")
+# header tokens that must ALL be present for a word-row to be the column header.
+# The 5 movement/value tokens below are a unique fingerprint of this layout; the
+# name-column header itself varies by vendor print ("Items" vs "Item") so it is NOT
+# required — demanding "Items" made the KANARA DISTRIBUTORS export (header "Item")
+# miss its header, return nothing, and fall back to generic (which mis-maps the
+# Value column into closing_stock). Only files already routed here by detect_layout
+# reach this code, so a looser header match cannot steal another layout's files.
+_HDR_REQUIRED = ("Op_Stk", "Rcpts", "Sales", "Cl_Stk", "Value")
 
 # printed left-to-right order; every column bucketed by header RIGHT edge (x1).
 # APR/MAY/Rate live on the wrapped prev-month/rate rows, resolved separately.

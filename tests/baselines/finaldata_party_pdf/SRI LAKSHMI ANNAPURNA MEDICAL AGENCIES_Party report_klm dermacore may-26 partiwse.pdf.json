@@ -1,0 +1,30 @@
+{
+  "file": "klm dermacore may-26 partiwse.pdf",
+  "route": "party_pdf",
+  "row_count": 36,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "klm_group_vs_customer",
+  "party_count": 5,
+  "area_count": 4,
+  "product_count": 17,
+  "sample_parties": [
+    "AKSHYA MEDICAL&FANCY",
+    "AL-SHIFA PHARAMACY",
+    "M P R MEDICALS",
+    "SAI REKHA MEDICALS",
+    "SRI SAI VENKATESWARA MEDICAL&FANCY"
+  ],
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets"
+  ],
+  "qty_total": 136.0,
+  "amount_total": 35215.87,
+  "rate_total": 12250.43,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 3
+}

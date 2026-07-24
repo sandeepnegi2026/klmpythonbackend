@@ -1,0 +1,27 @@
+{
+  "file": "klm derma may-26 partywise statement _1_.xlsx",
+  "route": "party_xlsx",
+  "row_count": 6,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "customer_product_banded",
+  "party_count": 3,
+  "area_count": 0,
+  "product_count": 4,
+  "sample_parties": [
+    "BHAVANI KASHETTY MEDICAL",
+    "CITY PHARMACY",
+    "MADHU PHARMACY"
+  ],
+  "sample_products": [
+    "Nevlon Moisturizing Cream Soap 75G",
+    "Onitraz Forte Capsules 1*10 Capsules",
+    "Sudif Cream 10 Gm",
+    "Xerolene Cream 50Gm"
+  ],
+  "qty_total": 60.0,
+  "amount_total": 9405.6,
+  "rate_total": 940.56,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

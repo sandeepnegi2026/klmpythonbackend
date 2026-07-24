@@ -1,0 +1,19 @@
+{
+  "file": "BELA DRUG CENTRE.pdf",
+  "route": "stock_pdf",
+  "row_count": 26,
+  "warnings_count": 20,
+  "headers_detected_count": 12,
+  "detected_format": "venus_stock_statement",
+  "product_count": 26,
+  "sample_products": [
+    "Episert Cream 30 Gm",
+    "Ezacne Sachet 30*5 Gm",
+    "Melboost Solution 2Ml",
+    "Melboost Solution 5Ml",
+    "Moxiview Eye Drops"
+  ],
+  "closing_stock_total": 0.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

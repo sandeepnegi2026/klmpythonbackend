@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY JUNE 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 51,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "company_party_product_xlsx",
+  "party_count": 20,
+  "area_count": 0,
+  "product_count": 28,
+  "sample_parties": [
+    "AJANTA MEDICAL",
+    "ANANDLOK MEDICAL",
+    "CITY MEDICAL",
+    "DR RAHUL PRASAD",
+    "DR. NIRAJ CHANDRA MBBS. DCH"
+  ],
+  "sample_products": [
+    "Argicyne Sachets 6Gm",
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Evaklin Medicated Wash"
+  ],
+  "qty_total": 959.0,
+  "amount_total": 140500.88,
+  "rate_total": 8063.26,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

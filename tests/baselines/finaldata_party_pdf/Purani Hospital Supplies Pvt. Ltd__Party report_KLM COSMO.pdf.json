@@ -1,0 +1,30 @@
+{
+  "file": "KLM COSMO.pdf",
+  "route": "party_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "backbone_mfr_sales_detail",
+  "party_count": 18,
+  "area_count": 11,
+  "product_count": 7,
+  "sample_parties": [
+    "ABIRAMI MEDICALS - B - GOBI",
+    "ABIRAMI MEDICALS - GOBI",
+    "BARANI MEDICALS - CHENNIMALAI",
+    "BAWAA MEDICALS - THIRUCHENCODE",
+    "DEEPAA MEDICALS - HO - ERODE"
+  ],
+  "sample_products": [
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Imxia 10",
+    "Imxia F",
+    "Imxia Yuth Solution 60 Ml"
+  ],
+  "qty_total": 32.0,
+  "amount_total": 12416.5,
+  "rate_total": 10272.74,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 24
+}

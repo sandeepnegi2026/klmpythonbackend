@@ -1,0 +1,19 @@
+{
+  "file": "PEDIA__pedia.PDF",
+  "route": "stock_pdf",
+  "row_count": 26,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_month_prv2",
+  "product_count": 26,
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Extend D3 Capsules"
+  ],
+  "closing_stock_total": 862.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLMN PARTY.PDF",
+  "route": "party_pdf",
+  "row_count": 279,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 82,
+  "area_count": 26,
+  "product_count": 79,
+  "sample_parties": [
+    "AANANDS PHARMACY",
+    "ADINATH MEDICAL STORES CHH",
+    "AHUJA MEDICAL STORE",
+    "AJAY MEDICAL STORE",
+    "AJAY MEDICAL STORES"
+  ],
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml"
+  ],
+  "qty_total": 770.0,
+  "amount_total": 128799.33,
+  "rate_total": 52426.76,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

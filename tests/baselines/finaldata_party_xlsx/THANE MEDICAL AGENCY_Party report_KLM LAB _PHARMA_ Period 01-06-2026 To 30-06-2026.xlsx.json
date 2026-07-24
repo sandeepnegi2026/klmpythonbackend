@@ -1,0 +1,30 @@
+{
+  "file": "KLM LAB _PHARMA_ Period 01-06-2026 To 30-06-2026.xlsx",
+  "route": "party_xlsx",
+  "row_count": 236,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "retailer_band_cgst_sgst",
+  "party_count": 109,
+  "area_count": 53,
+  "product_count": 36,
+  "sample_parties": [
+    "AARAV MEDICAL",
+    "APPLE CHEMIST & GENERAL STORES",
+    "ARUSH MEDICAL & GENERAL STORES",
+    "ASHAPURA MEDICAL AND GENERAL STORES",
+    "ASHOK   MEDICAL & GEN STRS"
+  ],
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Gold Soft Gelatin Capsules"
+  ],
+  "qty_total": 719.0,
+  "amount_total": 94434.78,
+  "rate_total": 36855.96,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

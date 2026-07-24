@@ -1,0 +1,19 @@
+{
+  "file": "Product wise sale list _Combined_ for the period  01-05-2026 - 31-05-2026.xlsx.pdf",
+  "route": "stock_pdf",
+  "row_count": 218,
+  "warnings_count": 7,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_combined_pdf",
+  "product_count": 205,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Argicyne Sachets 6Gm",
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Cetalore 10 Tablets 1*10 Tablets"
+  ],
+  "closing_stock_total": 6110.0,
+  "rate_total": 45280.68,
+  "line_unexplained": 30
+}

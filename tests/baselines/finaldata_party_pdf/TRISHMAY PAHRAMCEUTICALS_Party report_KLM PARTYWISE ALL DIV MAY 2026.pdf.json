@@ -1,0 +1,25 @@
+{
+  "file": "KLM PARTYWISE ALL DIV MAY 2026.pdf",
+  "route": "party_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally_itemwise",
+  "party_count": 2,
+  "area_count": 2,
+  "product_count": 3,
+  "sample_parties": [
+    "NAYAN HOME MEDICAL",
+    "VISHAL MEDICOS"
+  ],
+  "sample_products": [
+    "Ekran Ms Gel 50Gm",
+    "Keramate Hair Colour (Natural Black) 60Gm + 60Gm",
+    "Klm D3 Nano Drops 30Ml"
+  ],
+  "qty_total": 4.0,
+  "amount_total": 2297.36,
+  "rate_total": 1769.84,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

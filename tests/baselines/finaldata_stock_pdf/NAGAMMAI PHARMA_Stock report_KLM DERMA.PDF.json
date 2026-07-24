@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA.PDF",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 2,
+  "headers_detected_count": 11,
+  "detected_format": "klm_stock_sales_month_urate",
+  "product_count": 22,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "closing_stock_total": 1858.0,
+  "rate_total": 4043.0,
+  "line_unexplained": 12
+}

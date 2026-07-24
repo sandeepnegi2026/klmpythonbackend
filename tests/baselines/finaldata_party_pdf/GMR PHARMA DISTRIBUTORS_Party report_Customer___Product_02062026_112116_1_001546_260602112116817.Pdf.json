@@ -1,0 +1,30 @@
+{
+  "file": "Customer___Product_02062026_112116_1_001546_260602112116817.Pdf",
+  "route": "party_pdf",
+  "row_count": 38,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 11,
+  "area_count": 0,
+  "product_count": 11,
+  "sample_parties": [
+    "AARADAHYA MEDICAL AND GEN",
+    "BALAJI PHARMACY ( A UNIT",
+    "DANDU S PHARMACY T",
+    "JAYA MEDICAL AND GENERAL",
+    "KARTHIK PHARMACY"
+  ],
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Mupisoft Ointment 5 Gm",
+    "Sacctik Gg Sachets"
+  ],
+  "qty_total": 600.0,
+  "amount_total": 66737.08,
+  "rate_total": 5095.17,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,30 @@
+{
+  "file": "KLM 6 26.xlsx",
+  "route": "party_xlsx",
+  "row_count": 252,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 112,
+  "area_count": 0,
+  "product_count": 82,
+  "sample_parties": [
+    "AGGERWAL MEDICOS              -SUNAM",
+    "AMAR MEDICAL STORE            -LUDHIANA",
+    "AMBAY MEDICAL STORE           -LUDHIANA",
+    "AMBICA MEDICOS                -KHANNA",
+    "AMBICA PHARMACY               -KHANNA"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Blemguard-Tx Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Ac Sunscreen Gel 60G"
+  ],
+  "qty_total": 1151.0,
+  "amount_total": 0.0,
+  "rate_total": 0.0,
+  "purchase_rate_total": 51968.67,
+  "line_unexplained": 1
+}

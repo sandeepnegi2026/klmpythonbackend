@@ -1,4 +1,5 @@
 from extractors.party_xlsx.header_detect import detect_header_row
+from extractors.party_xlsx.layouts.raja_party_item_summary import parse_raja_party_item_summary
 from extractors.party_xlsx.layouts.area_item_sales_summary import parse_area_item_sales_summary
 from extractors.party_xlsx.layouts.item_item_sales_summary import parse_item_item_sales_summary
 from extractors.party_xlsx.layouts.item_item_sales_summary_text import parse_item_item_sales_summary_text
@@ -8,6 +9,8 @@ from extractors.party_xlsx.layouts.product_customer_wise_sales_xlsx import parse
 from extractors.party_xlsx.layouts.company_area_customer_product_wise import parse_company_area_customer_product_wise
 from extractors.party_xlsx.layouts.customer_product_banded_grsamt import parse_customer_product_banded_grsamt
 from extractors.party_xlsx.layouts.customer_product_banded_area_first import parse_customer_product_banded_area_first
+from extractors.party_xlsx.layouts.busy_list_of_sale_by_party import parse_busy_list_of_sale_by_party
+from extractors.party_xlsx.layouts.senthil_areawise_columnar import parse_senthil_areawise_columnar
 from extractors.party_xlsx.layouts.companywise_customerwise import parse_companywise_customerwise
 from extractors.party_xlsx.layouts.customer_company_itemwise import parse_customer_company_itemwise
 from extractors.party_xlsx.layouts.customer_product_banded import parse_customer_product_banded
@@ -15,6 +18,9 @@ from extractors.party_xlsx.layouts.customer_product_wise_band import parse_custo
 from extractors.party_xlsx.layouts.data_spec_sale_by_item import parse_data_spec_sale_by_item
 from extractors.party_xlsx.layouts.fawin_partywise import parse_fawin_partywise
 from extractors.party_xlsx.layouts.infosoft_bandwise import parse_infosoft_bandwise
+from extractors.party_xlsx.layouts.product_customer_sale_dc_details import parse_product_customer_sale_dc_details
+from extractors.party_xlsx.layouts.product_wise_sale_list import parse_product_wise_sale_list
+from extractors.party_xlsx.layouts.item_wise_summary_sale_by_party import parse_item_wise_summary_sale_by_party
 from extractors.party_xlsx.layouts.itemwise_party_column import parse_itemwise_party_column
 from extractors.party_xlsx.layouts.jaimini_partywise import parse_jaimini_partywise
 from extractors.party_xlsx.layouts.marg_busy import parse_marg_busy
@@ -40,6 +46,7 @@ from extractors.party_xlsx.layouts.company_customer_itemwise_banded import parse
 from extractors.party_xlsx.layouts.company_customer_itemwise_area import parse_company_customer_itemwise_area
 from extractors.party_xlsx.layouts.csquare_raw_invoice_dump import parse_csquare_raw_invoice_dump
 from extractors.party_xlsx.layouts.company_party_product_xlsx import parse_company_party_product_xlsx
+from extractors.party_xlsx.layouts.company_party_product_flat_xlsx import parse_company_party_product_flat_xlsx
 
 from extractors.party_xlsx.layouts.klm_customer_vs_groups_text import parse_klm_customer_vs_groups_text
 from extractors.party_xlsx.layouts.item_vs_parties_scheme_register import parse_item_vs_parties_scheme_register
@@ -74,6 +81,7 @@ from extractors.party_xlsx.layouts.r15_company_product_wise_sales_custband impor
 from extractors.party_xlsx.layouts.r15_product_customer_sale_dc_summary import parse_product_customer_sale_dc_summary
 
 PARSERS = {
+    "raja_party_item_summary": parse_raja_party_item_summary,
     # --- 15 July RED-cluster parsers (batch 2) ---
     "klm_item_party_sales_statement": parse_klm_item_party_sales_statement,
     "r15_ascent_warehouse_customer_sale_dump": parse_r15_ascent_warehouse_customer_sale_dump,
@@ -106,6 +114,7 @@ PARSERS = {
     "customer_product_banded_text": parse_customer_product_banded_text,
     "manufacturer_itemwise_secondary_xlsx": parse_manufacturer_itemwise_secondary_xlsx,
     "company_party_product_xlsx": parse_company_party_product_xlsx,
+    "company_party_product_flat_xlsx": parse_company_party_product_flat_xlsx,
     "customer_items_new_xlsx": parse_customer_items_new_xlsx,
     "company_customer_itemwise_banded": parse_company_customer_itemwise_banded,
     "company_customer_itemwise_area": parse_company_customer_itemwise_area,
@@ -121,11 +130,16 @@ PARSERS = {
     "marg_busy": parse_marg_busy,
     "marg_register_excel": parse_marg_register_excel,
     "infosoft_bandwise": parse_infosoft_bandwise,
+    "product_customer_sale_dc_details": parse_product_customer_sale_dc_details,
+    "product_wise_sale_list": parse_product_wise_sale_list,
+    "item_wise_summary_sale_by_party": parse_item_wise_summary_sale_by_party,
     "jaimini_partywise": parse_jaimini_partywise,
     "painkiller_partywise": parse_painkiller_partywise,
     "data_spec_sale_by_item": parse_data_spec_sale_by_item,
     "fawin_partywise": parse_fawin_partywise,
     "itemwise_party_column": parse_itemwise_party_column,
+    "busy_list_of_sale_by_party": parse_busy_list_of_sale_by_party,
+    "senthil_areawise_columnar": parse_senthil_areawise_columnar,
     "customer_product_banded": parse_customer_product_banded,
     "customer_company_itemwise": parse_customer_company_itemwise,
     "party_item_wise_sale": parse_party_item_wise_sale,

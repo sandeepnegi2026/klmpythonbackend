@@ -1,0 +1,19 @@
+{
+  "file": "NEW MEDICAL CORPORATION.xls",
+  "route": "stock_xlsx",
+  "row_count": 15,
+  "warnings_count": 3,
+  "headers_detected_count": 10,
+  "detected_format": "venus_stock_excel",
+  "product_count": 13,
+  "sample_products": [
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Melboost Nxt Tablet",
+    "Mfsone Cream 30 Gm",
+    "NEVLON SOAP",
+    "Nevlon Caloe Lotion 100Ml"
+  ],
+  "closing_stock_total": 130.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

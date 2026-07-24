@@ -12,8 +12,8 @@ from extractors.stock_pdf.parse_common import _skip_line, _split_product_pack
 # numbers, all captured from the flat text — so it holds with or without bytes.
 _ROW_RE = re.compile(
     r"^(?P<lead>.+?)\s+(?P<exp>\d{1,2}/\d{2,4})\s+"
-    r"(?P<opening>-?\d+)\s+(?P<receipts>-?\d+)\s+(?P<total>-?\d+)\s+"
-    r"(?P<sales>-?\d+)\s+(?P<closing>-?\d+)\s+(?P<clvalue>-?[\d,]+\.\d{2})$"
+    r"(?P<opening>-?[\d,]*\d)\s+(?P<receipts>-?[\d,]*\d)\s+(?P<total>-?[\d,]*\d)\s+"
+    r"(?P<sales>-?[\d,]*\d)\s+(?P<closing>-?[\d,]*\d)\s+(?P<clvalue>-?[\d,]+\.\d{2})$"
 )
 
 # Division band: 'Company Name : KLM(PHARMA DIVISION)' / 'KLM{COSMOCOR}' / 'KLM(COSMO Q)'

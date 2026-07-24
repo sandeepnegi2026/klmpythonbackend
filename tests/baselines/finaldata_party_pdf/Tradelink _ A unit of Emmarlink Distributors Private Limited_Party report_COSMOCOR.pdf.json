@@ -1,0 +1,30 @@
+{
+  "file": "COSMOCOR.pdf",
+  "route": "party_pdf",
+  "row_count": 89,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "tradelink_customer_invoice_itemwise",
+  "party_count": 36,
+  "area_count": 0,
+  "product_count": 17,
+  "sample_parties": [
+    "AASRAYA MEDICALS KUDUKKIMETTA ,KANNUR",
+    "AKG MEMORIAL CO-OP HOSPITAL KANNUR",
+    "AMALA MEDICALS KARUVANCHAL",
+    "ASHRAYA MEDICALS & SURGICALS IRITTY",
+    "AYNAS PHARMACY"
+  ],
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Nioclean Ad Gel 15 Gm",
+    "Nioclean Gel 20 Gm",
+    "Niogenta F Cream 20 Gm",
+    "Niosalic 6 Lotion 50Ml"
+  ],
+  "qty_total": 215.0,
+  "amount_total": 32143.48,
+  "rate_total": 13243.13,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 5
+}

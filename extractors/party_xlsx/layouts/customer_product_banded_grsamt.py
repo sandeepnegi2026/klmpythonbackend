@@ -111,10 +111,12 @@ def parse_customer_product_banded_grsamt(rows):
         cells = [cell_text(c) for c in raw]
         first = cells[0].strip() if cells else ""
         qty = cells[1] if len(cells) > 1 else ""
-        # cells[2] is the (always-blank here) Free column.
+        free = cells[2] if len(cells) > 2 else ""
         amount = cells[3] if len(cells) > 3 else ""
         area = cells[4] if len(cells) > 4 else ""
-        has_numbers = bool(qty.strip() or amount.strip())
+        # A free-goods-only line (Free filled, Qty/GrsAmt blank) is still a product
+        # line, not a party band, so the Free column also counts as a numeric figure.
+        has_numbers = bool(qty.strip() or free.strip() or amount.strip())
 
         if _FOOTER_RE.match(first):
             # GRAND TOTAL and everything after it (report-end / prepared-by / disclaimer).

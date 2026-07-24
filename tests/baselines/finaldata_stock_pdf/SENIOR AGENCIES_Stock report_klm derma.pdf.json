@@ -1,0 +1,19 @@
+{
+  "file": "klm derma.pdf",
+  "route": "stock_pdf",
+  "row_count": 43,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "stock_gdin",
+  "product_count": 40,
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Canrolfin-Xl Cream 50Gm",
+    "Cutiheal Cream 15Gm",
+    "EKRAN-70 CREAM (KLM D)"
+  ],
+  "closing_stock_total": 652.0,
+  "rate_total": 0.0,
+  "line_unexplained": 1
+}

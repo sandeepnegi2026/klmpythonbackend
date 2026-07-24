@@ -1,0 +1,17 @@
+{
+  "file": "RAVI PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 3,
+  "warnings_count": 3,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 3,
+  "sample_products": [
+    "Lulizol Cream 30 Gm",
+    "Sebozit Gel 30G",
+    "Tecum 0.1 % Ointment 10 Gm"
+  ],
+  "closing_stock_total": 18.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

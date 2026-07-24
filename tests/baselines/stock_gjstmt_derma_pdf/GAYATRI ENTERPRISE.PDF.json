@@ -1,0 +1,17 @@
+{
+  "file": "GAYATRI ENTERPRISE.PDF",
+  "route": "stock_pdf",
+  "row_count": 3,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "simple4",
+  "product_count": 3,
+  "sample_products": [
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "closing_stock_total": 12.0,
+  "rate_total": 0.0,
+  "line_unexplained": 9
+}

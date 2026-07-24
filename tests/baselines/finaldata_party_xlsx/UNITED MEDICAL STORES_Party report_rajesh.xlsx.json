@@ -1,0 +1,30 @@
+{
+  "file": "rajesh.xlsx",
+  "route": "party_xlsx",
+  "row_count": 139,
+  "warnings_count": 0,
+  "headers_detected_count": 10,
+  "detected_format": "customer_items_new_xlsx",
+  "party_count": 69,
+  "area_count": 44,
+  "product_count": 25,
+  "sample_parties": [
+    "ADITYA MED & GEN STORES",
+    "AMMA MEDICINE STORE",
+    "ANNAPOORNA MEDICAL STORES",
+    "ANUPAMA MEDICALS",
+    "BMR MED AND GEN STORES"
+  ],
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Dektop Lotion 50Ml",
+    "Extend Capsules",
+    "Extend Hair 1*30 Gummy Pouches",
+    "Extend Hair Tablet"
+  ],
+  "qty_total": 601.0,
+  "amount_total": 110104.79,
+  "rate_total": 28067.86,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

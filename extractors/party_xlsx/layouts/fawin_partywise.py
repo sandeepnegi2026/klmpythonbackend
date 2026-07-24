@@ -46,7 +46,10 @@ def parse_fawin_partywise(rows):
         qty = cell_text(raw_row[6] if len(raw_row) > 6 else "")
         if not product or not is_numeric_qty(qty) or not current_party:
             continue
-        party_name, party_area = split_party_area(current_party)
+        # Fawin bands mix ordinary "SHOP,CITY" with brand/doctor names whose leading
+        # title or short brand-stub hyphen is intra-name ("DR,MUKESH SONI", "MEDI-24
+        # ... RAIPUR"); band_brand keeps only those whole and still splits real cities.
+        party_name, party_area = split_party_area(current_party, band_brand=True)
         records.append(
             {
                 "party_name": party_name,

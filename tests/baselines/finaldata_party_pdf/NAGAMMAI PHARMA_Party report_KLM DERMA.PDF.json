@@ -1,0 +1,30 @@
+{
+  "file": "KLM DERMA.PDF",
+  "route": "party_pdf",
+  "row_count": 287,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "klm_nagammai_customer_purchase_divisionwise",
+  "party_count": 138,
+  "area_count": 0,
+  "product_count": 23,
+  "sample_parties": [
+    "ALAGU PHARMACY \"R\" PEELAMEDU",
+    "ALAGU PHARMACY \"S\" S.B.COLONY.",
+    "ALAGU PHARMACY\"G\" PEELAMEDU",
+    "ALAGU PHARMACY-`B GANDHIPURAM.",
+    "ALM MEDICALS (VADAVALLI)"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm"
+  ],
+  "qty_total": 1063.0,
+  "amount_total": 227949.15,
+  "rate_total": 62690.99,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

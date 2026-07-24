@@ -1,0 +1,30 @@
+{
+  "file": "20250603 Party-wise sales 2025.xlsx",
+  "route": "party_xlsx",
+  "row_count": 878,
+  "warnings_count": 0,
+  "headers_detected_count": 14,
+  "detected_format": "customer_product_banded",
+  "party_count": 175,
+  "area_count": 154,
+  "product_count": 147,
+  "sample_parties": [
+    "AAA REGENERATION CHEMIST&DRUG",
+    "AAI MEDICAL & GEN.STORES",
+    "AAIJEE CHEMIST MED&GEN STORES.",
+    "AARAMBH CHEMIST",
+    "ADVIK MEDICAL"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cetalore 10 Tablets 1*10 Tablets",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml"
+  ],
+  "qty_total": 102611.0,
+  "amount_total": 551195.7,
+  "rate_total": 204894.07,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

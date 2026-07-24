@@ -1,0 +1,30 @@
+{
+  "file": "DERMA.pdf",
+  "route": "party_pdf",
+  "row_count": 34,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "profitmaker",
+  "party_count": 9,
+  "area_count": 0,
+  "product_count": 12,
+  "sample_parties": [
+    "BON PHARMACY",
+    "DR. K. V. T . GOPALA",
+    "KANISHK MEDICALS",
+    "KANTHI MEDICALS",
+    "NEELAKANTA MEDICALS"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Hbsone Cream 30Gm",
+    "Mfsone Cream 30 Gm",
+    "Nevlon Ad Moisturizing Lotion 150Ml",
+    "Nevlon Intense Moisturizing Lotion 300Ml"
+  ],
+  "qty_total": 345.0,
+  "amount_total": 74846.2,
+  "rate_total": 8247.77,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

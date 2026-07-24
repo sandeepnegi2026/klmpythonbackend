@@ -1,0 +1,19 @@
+{
+  "file": "123-4.pdf",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "klm_lmsale_receipts_age",
+  "product_count": 23,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Klclav Ds",
+    "Klclav Es Oral Suspension 50Ml"
+  ],
+  "closing_stock_total": 477.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

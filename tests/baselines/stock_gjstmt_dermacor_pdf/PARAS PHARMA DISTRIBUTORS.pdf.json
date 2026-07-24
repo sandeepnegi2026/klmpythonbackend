@@ -1,0 +1,19 @@
+{
+  "file": "PARAS PHARMA DISTRIBUTORS.pdf",
+  "route": "stock_pdf",
+  "row_count": 22,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "r15_monthly_ss_inward_other_closing",
+  "product_count": 22,
+  "sample_products": [
+    "Extend Capsules",
+    "Extend Hair Tablet",
+    "Glutaderm Plus Tablets",
+    "Glutaderm Tablets",
+    "Kenz Sal Lotion 60 Ml"
+  ],
+  "closing_stock_total": 267.0,
+  "rate_total": 0.0,
+  "line_unexplained": 6
+}

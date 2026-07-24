@@ -1,0 +1,30 @@
+{
+  "file": "KLM PARTY.pdf",
+  "route": "party_pdf",
+  "row_count": 275,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_tally",
+  "party_count": 126,
+  "area_count": 18,
+  "product_count": 58,
+  "sample_parties": [
+    "ADINATH MEDICAL STORE(M/C)",
+    "AGARWAL MEDICAL STORE(F)",
+    "AGARWAL MEDICALS P/N",
+    "AGARWAL MEDICOS(NEW 2)",
+    "AHUJA MEDICALS."
+  ],
+  "sample_products": [
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Lotion 50G"
+  ],
+  "qty_total": 720.0,
+  "amount_total": 166432.47,
+  "rate_total": 68234.23,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 0
+}

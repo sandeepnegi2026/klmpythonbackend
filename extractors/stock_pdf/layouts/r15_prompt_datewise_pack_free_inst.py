@@ -40,8 +40,11 @@ def parse_prompt_datewise_pack_free_inst(text):
         s = line.strip()
         if not s or _skip_line(s):
             continue
-        # data rows start with a serial index
-        m = re.match(r"^\d+\s+(\D.*)$", s)
+        # data rows start with a serial index. Capture group is `.+` (not `\D.*`)
+        # so product names that begin with a digit ("5-HTP ...", "24 HR ...") are
+        # not rejected; the 8-number trailing-core gate (below) remains the real
+        # data-row discriminator, so this only RECOVERS otherwise-dropped rows.
+        m = re.match(r"^\d+\s+(.+)$", s)
         if not m:
             continue
         body = m.group(1).strip()

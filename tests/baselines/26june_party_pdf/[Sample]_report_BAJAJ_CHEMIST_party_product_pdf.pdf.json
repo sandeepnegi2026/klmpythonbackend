@@ -7,7 +7,7 @@
   "detected_format": "bajaj_salestatement",
   "party_count": 72,
   "area_count": 0,
-  "product_count": 52,
+  "product_count": 53,
   "sample_parties": [
     "AMAN MEDICAL STORES(B P)",
     "ANJALI MEDI&GEN STORES(P)",
@@ -25,5 +25,6 @@
   "qty_total": 204.0,
   "amount_total": 36689.47,
   "rate_total": 23550.8,
-  "purchase_rate_total": 0.0
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 22
 }

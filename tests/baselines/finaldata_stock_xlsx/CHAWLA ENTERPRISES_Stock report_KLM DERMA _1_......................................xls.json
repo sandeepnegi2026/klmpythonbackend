@@ -1,0 +1,19 @@
+{
+  "file": "KLM DERMA _1_......................................xls",
+  "route": "stock_xlsx",
+  "row_count": 12,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "marg_erp9_movement",
+  "product_count": 12,
+  "sample_products": [
+    "Hbsalic Ointment 20Gm",
+    "Mfsone Cream 30 Gm",
+    "Mfsudif Cream 10 Gm",
+    "Nevlon Caloe Lotion 60Ml",
+    "Nevlon Cream 50Gm"
+  ],
+  "closing_stock_total": 217.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

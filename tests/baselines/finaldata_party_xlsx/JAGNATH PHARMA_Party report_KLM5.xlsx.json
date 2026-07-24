@@ -1,0 +1,30 @@
+{
+  "file": "KLM5.xlsx",
+  "route": "party_xlsx",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 11,
+  "detected_format": "tabular",
+  "party_count": 13,
+  "area_count": 12,
+  "product_count": 12,
+  "sample_parties": [
+    "APPLE CHEMIST & DRUGGIST",
+    "ARIHANT MEDICAL STORE",
+    "GUPTA MEDICAL STORES",
+    "JAISWAL MEDICAL & GENERAL STORE",
+    "JAY TIRUPATI CHEMIST & GEN.STORES"
+  ],
+  "sample_products": [
+    "Folibild Tablets",
+    "Glutaderm C Effervescent Tablets",
+    "Glutaderm Plus Tablets",
+    "Kenz Sal Lotion 60 Ml",
+    "Kenz Soap"
+  ],
+  "qty_total": 122.0,
+  "amount_total": 22369.38,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 2
+}

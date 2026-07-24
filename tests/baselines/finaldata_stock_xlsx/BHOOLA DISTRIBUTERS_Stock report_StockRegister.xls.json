@@ -1,0 +1,19 @@
+{
+  "file": "StockRegister.xls",
+  "route": "stock_xlsx",
+  "row_count": 60,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "tabular",
+  "product_count": 46,
+  "sample_products": [
+    "SEBAMED ANTI AGE WRIKLE FILLER",
+    "SEBAMED ANTI AGEING Q10 PROTECTION",
+    "SEBAMED ANTI DAND SHAMPOO",
+    "SEBAMED ANTI HAIR LOSS SHAMPOO",
+    "SEBAMED ANTI STRECH MARK CREAM"
+  ],
+  "closing_stock_total": 3246.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

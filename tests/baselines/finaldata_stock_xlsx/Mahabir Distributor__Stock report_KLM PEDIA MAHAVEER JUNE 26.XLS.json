@@ -1,0 +1,19 @@
+{
+  "file": "KLM PEDIA MAHAVEER JUNE 26.XLS",
+  "route": "stock_xlsx",
+  "row_count": 5,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "marg_stock_analysis_qv_grid",
+  "product_count": 5,
+  "sample_products": [
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Sacctik Gg Sachets",
+    "Sofibar Syndet Bar",
+    "Sofirash Cream 30 Gm"
+  ],
+  "closing_stock_total": 116.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

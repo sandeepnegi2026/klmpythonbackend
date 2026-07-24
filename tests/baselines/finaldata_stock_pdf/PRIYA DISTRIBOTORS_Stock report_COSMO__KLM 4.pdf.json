@@ -1,0 +1,19 @@
+{
+  "file": "COSMO__KLM 4.pdf",
+  "route": "stock_pdf",
+  "row_count": 41,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "swastik_particulars",
+  "product_count": 38,
+  "sample_products": [
+    "Dektop Cream 20Gm",
+    "Extend Capsules",
+    "Extend D3 Capsules",
+    "Extend Hair Tablet",
+    "Folibild Tablets"
+  ],
+  "closing_stock_total": 460.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

@@ -1,0 +1,19 @@
+{
+  "file": "KLM PHARMA.pdf",
+  "route": "stock_pdf",
+  "row_count": 19,
+  "warnings_count": 0,
+  "headers_detected_count": 13,
+  "detected_format": "pharmassist_stock_sale_single",
+  "product_count": 19,
+  "sample_products": [
+    "Eberfine Cream 15 Gm",
+    "Eberfine Cream 30 Gm",
+    "Eberfine-M Cream 15G",
+    "Extend Total 1*15 Tab",
+    "Ga-6 Cream 30Gm"
+  ],
+  "closing_stock_total": 321.0,
+  "rate_total": 0.0,
+  "line_unexplained": 3
+}

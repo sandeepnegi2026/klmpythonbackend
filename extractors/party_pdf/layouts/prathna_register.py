@@ -13,7 +13,7 @@ def parse_prathna_register(text):
     H = ["Party Name", "Product Name", "Batch", "Qty", "Rate", "Amount"]
     rows, party = [], ""
     ITEM = re.compile(
-        r"^(\w[\w-]*)\s+(\d{2}-\d{2}-\d{4})\s+(.+?)\s+(\S+)\s+(-?\d+)\.\s+([\d,]+\.\d{2})$"
+        r"^(\w[\w-]*)\s+(\d{2}-\d{2}-\d{4})\s+(.+?)\s+(\S+)\s+(-?\d+)\.\s+(-?[\d,]+\.\d{2})$"
     )
     for raw in text.split("\n"):
         s = re.sub(r"\s+", " ", raw.strip())

@@ -1,0 +1,30 @@
+{
+  "file": "klm may 26 - pdf party_prod.pdf.xls.pdf",
+  "route": "party_pdf",
+  "row_count": 181,
+  "warnings_count": 0,
+  "headers_detected_count": 7,
+  "detected_format": "product_party_wise_totqty_gst",
+  "party_count": 85,
+  "area_count": 76,
+  "product_count": 85,
+  "sample_parties": [
+    "ABHINANDAN PHARMACY",
+    "ADITYA MEDICINE POINT 4,PRASANG APARTMENTCITY LIGHT MAIN ROADSURAT,",
+    "ARIHANT MEDICAL STORE",
+    "ASHOK CHEMIST & GENERAL STORE",
+    "ASHOK MEDI & GEN STORES"
+  ],
+  "sample_products": [
+    "Canrolfin Cream 15 Gm",
+    "Cetalore Tablets 1*10 Tablets",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G",
+    "Cosmoq Shampoo 200Ml"
+  ],
+  "qty_total": 373.0,
+  "amount_total": 54363.95,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 4
+}

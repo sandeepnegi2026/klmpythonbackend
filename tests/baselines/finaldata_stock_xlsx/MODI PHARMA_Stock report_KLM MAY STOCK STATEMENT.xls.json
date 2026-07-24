@@ -1,0 +1,18 @@
+{
+  "file": "KLM MAY STOCK STATEMENT.xls",
+  "route": "stock_xlsx",
+  "row_count": 84,
+  "warnings_count": 6,
+  "headers_detected_count": 10,
+  "detected_format": "tabular",
+  "product_count": 81,
+  "sample_products": [
+    "Cetalore Tablets 1*10 Tablets",
+    "Cetalore-M Suspension 60Ml",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Facewash Gel 100G",
+    "Cosmoq Moisturizing Cream 50G"
+  ],
+  "closing_stock_total": 152453.96,
+  "rate_total": 0.0
+}

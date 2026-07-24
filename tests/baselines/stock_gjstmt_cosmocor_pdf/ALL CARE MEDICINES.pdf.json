@@ -1,0 +1,19 @@
+{
+  "file": "ALL CARE MEDICINES.pdf",
+  "route": "stock_pdf",
+  "row_count": 29,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "prompt_datewise_pack_free_inst",
+  "product_count": 29,
+  "sample_products": [
+    "Amoclafix-625 Tablets",
+    "Ezacne Sachet 30*5 Gm",
+    "Klcepo 200 Tablets",
+    "Melboost Nxt Tablet",
+    "Melboost Solution 2Ml"
+  ],
+  "closing_stock_total": 379.0,
+  "rate_total": 0.0,
+  "line_unexplained": 0
+}

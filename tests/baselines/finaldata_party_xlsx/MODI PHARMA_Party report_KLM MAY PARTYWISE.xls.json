@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY PARTYWISE.xls",
+  "route": "party_xlsx",
+  "row_count": 112,
+  "warnings_count": 0,
+  "headers_detected_count": 8,
+  "detected_format": "busy_list_of_sale_by_party",
+  "party_count": 30,
+  "area_count": 0,
+  "product_count": 44,
+  "sample_parties": [
+    "ABHA MEDICAL STORES  BALGI",
+    "ASHU MEDICO  NIHARIKA",
+    "ASTHA MEDICAL  KOSABADI",
+    "ASTHA MEDICAL STORE  GEVRA BASTI",
+    "ASTHA PHARMACY  KUSMUNDA"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Cutiheal Cream 15Gm",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Eberfine Cream 15 Gm"
+  ],
+  "qty_total": 681.0,
+  "amount_total": 102162.81,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 5
+}

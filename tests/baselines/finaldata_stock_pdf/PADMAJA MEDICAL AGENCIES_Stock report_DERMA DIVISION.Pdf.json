@@ -1,0 +1,19 @@
+{
+  "file": "DERMA DIVISION.Pdf",
+  "route": "stock_pdf",
+  "row_count": 27,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "marg_ss_statement_detailed",
+  "product_count": 25,
+  "sample_products": [
+    "Canrolfin Cream 30 Gm",
+    "Episert Cream 20 Gm",
+    "Extend Capsules",
+    "Hbsalic Ointment 20Gm",
+    "Hbsone Cream 30Gm"
+  ],
+  "closing_stock_total": 510.0,
+  "rate_total": 0.0,
+  "line_unexplained": 2
+}

@@ -1,0 +1,30 @@
+{
+  "file": "Party_Product_Analysis_66.pdf",
+  "route": "party_pdf",
+  "row_count": 152,
+  "warnings_count": 0,
+  "headers_detected_count": 9,
+  "detected_format": "metro_orion_product_analysis",
+  "party_count": 88,
+  "area_count": 34,
+  "product_count": 28,
+  "sample_parties": [
+    "AJINKYA MEDICAL & STORE",
+    "AKSHAY MEDICAL AGENCY",
+    "AMBAJI MEDICAL&GEN STORE(AVINA)",
+    "AMBAJI MEDICAL(WEST)",
+    "ANAND MEDICAL STORES(SAT).L.B.T 235"
+  ],
+  "sample_products": [
+    "Cetalore-M Suspension 60Ml",
+    "Desosoft Cream 10 Gm",
+    "Desosoft Lotion 30 Ml",
+    "Essfol Tablet 1*10 Tab",
+    "Extend Vita Syrup 200Ml"
+  ],
+  "qty_total": 592.0,
+  "amount_total": 61350.7,
+  "rate_total": 0.0,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 18
+}

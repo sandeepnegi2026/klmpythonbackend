@@ -1,0 +1,30 @@
+{
+  "file": "KLM MAY 2026 PARTY WISE.xls",
+  "route": "party_xlsx",
+  "row_count": 344,
+  "warnings_count": 0,
+  "headers_detected_count": 5,
+  "detected_format": "party_item_summary",
+  "party_count": 56,
+  "area_count": 28,
+  "product_count": 109,
+  "sample_parties": [
+    "ADITYA MEDICAL STORE UR",
+    "AMBEY MEDICAL STORE",
+    "ANAND MEDICAL STORE",
+    "APNA MEDICAL STORE",
+    "AVYAN MEDICAL STORE"
+  ],
+  "sample_products": [
+    "Blemguard Face Serum 30Ml",
+    "Canrolfin Cream 15 Gm",
+    "Canrolfin Cream 30 Gm",
+    "Cosmoq Ac Sunscreen Gel 60G",
+    "Cosmoq Brightening Serum 30Ml"
+  ],
+  "qty_total": 3027.5,
+  "amount_total": 550863.29,
+  "rate_total": 72373.97,
+  "purchase_rate_total": 0.0,
+  "line_unexplained": 1
+}

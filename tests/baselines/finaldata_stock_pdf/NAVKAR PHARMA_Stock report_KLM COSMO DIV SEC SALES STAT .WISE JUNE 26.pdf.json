@@ -1,0 +1,19 @@
+{
+  "file": "KLM COSMO DIV SEC SALES STAT .WISE JUNE 26.pdf",
+  "route": "stock_pdf",
+  "row_count": 23,
+  "warnings_count": 0,
+  "headers_detected_count": 12,
+  "detected_format": "value_pairs",
+  "product_count": 22,
+  "sample_products": [
+    "EKRAN AQUA LOTION",
+    "Ekran 30 Silicon Sunscreen Gel 30G",
+    "Ekran Aqua Gel 50Gm",
+    "Ekran Soft Silicon Sunscreen Gel 50G",
+    "Herpival-500 Tablets 1*3 Tablets"
+  ],
+  "closing_stock_total": 112.0,
+  "rate_total": 6392.82,
+  "line_unexplained": 0
+}
