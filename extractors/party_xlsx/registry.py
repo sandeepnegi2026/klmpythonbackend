@@ -1,0 +1,167 @@
+from extractors.party_xlsx.header_detect import detect_header_row
+from extractors.party_xlsx.layouts.raja_party_item_summary import parse_raja_party_item_summary
+from extractors.party_xlsx.layouts.area_item_sales_summary import parse_area_item_sales_summary
+from extractors.party_xlsx.layouts.item_item_sales_summary import parse_item_item_sales_summary
+from extractors.party_xlsx.layouts.item_item_sales_summary_text import parse_item_item_sales_summary_text
+from extractors.party_xlsx.layouts.area_party_billwise import parse_area_party_billwise
+from extractors.party_xlsx.layouts.company_area_wise_sales import parse_company_area_wise_sales
+from extractors.party_xlsx.layouts.product_customer_wise_sales_xlsx import parse_product_customer_wise_sales_xlsx
+from extractors.party_xlsx.layouts.company_area_customer_product_wise import parse_company_area_customer_product_wise
+from extractors.party_xlsx.layouts.customer_product_banded_grsamt import parse_customer_product_banded_grsamt
+from extractors.party_xlsx.layouts.customer_product_banded_area_first import parse_customer_product_banded_area_first
+from extractors.party_xlsx.layouts.busy_list_of_sale_by_party import parse_busy_list_of_sale_by_party
+from extractors.party_xlsx.layouts.senthil_areawise_columnar import parse_senthil_areawise_columnar
+from extractors.party_xlsx.layouts.companywise_customerwise import parse_companywise_customerwise
+from extractors.party_xlsx.layouts.customer_company_itemwise import parse_customer_company_itemwise
+from extractors.party_xlsx.layouts.customer_product_banded import parse_customer_product_banded
+from extractors.party_xlsx.layouts.customer_product_wise_band import parse_customer_product_wise_band
+from extractors.party_xlsx.layouts.data_spec_sale_by_item import parse_data_spec_sale_by_item
+from extractors.party_xlsx.layouts.fawin_partywise import parse_fawin_partywise
+from extractors.party_xlsx.layouts.infosoft_bandwise import parse_infosoft_bandwise
+from extractors.party_xlsx.layouts.product_customer_sale_dc_details import parse_product_customer_sale_dc_details
+from extractors.party_xlsx.layouts.product_wise_sale_list import parse_product_wise_sale_list
+from extractors.party_xlsx.layouts.item_wise_summary_sale_by_party import parse_item_wise_summary_sale_by_party
+from extractors.party_xlsx.layouts.itemwise_party_column import parse_itemwise_party_column
+from extractors.party_xlsx.layouts.jaimini_partywise import parse_jaimini_partywise
+from extractors.party_xlsx.layouts.marg_busy import parse_marg_busy
+from extractors.party_xlsx.layouts.marg_register_excel import parse_marg_register_excel
+from extractors.party_xlsx.layouts.painkiller_partywise import parse_painkiller_partywise
+from extractors.party_xlsx.layouts.party_item_summary import parse_party_item_summary
+from extractors.party_xlsx.layouts.party_item_wise_sale import parse_party_item_wise_sale
+from extractors.party_xlsx.layouts.partywise_band import parse_partywise_band
+from extractors.party_xlsx.layouts.product_name_city import parse_product_name_city
+from extractors.party_xlsx.layouts.product_party_banded import parse_product_party_banded
+from extractors.party_xlsx.layouts.salesmen_partywise import parse_salesmen_partywise
+from extractors.party_xlsx.layouts.tabular import records_from_mapped
+from extractors.party_xlsx.layouts.tabular_party_product import parse_tabular_party_product
+
+from extractors.party_xlsx.layouts.areawise_partywise_summary_xlsx import parse_areawise_partywise_summary_xlsx
+from extractors.party_xlsx.layouts.marg_sales_analysis_xlsx import parse_marg_sales_analysis_xlsx
+from extractors.party_xlsx.layouts.party_product_net_sales_xlsx import parse_party_product_net_sales_xlsx
+
+from extractors.party_xlsx.layouts.product_areawise_pivot import parse_product_areawise_pivot
+
+from extractors.party_xlsx.layouts.customer_items_new_xlsx import parse_customer_items_new_xlsx
+from extractors.party_xlsx.layouts.company_customer_itemwise_banded import parse_company_customer_itemwise_banded
+from extractors.party_xlsx.layouts.company_customer_itemwise_area import parse_company_customer_itemwise_area
+from extractors.party_xlsx.layouts.csquare_raw_invoice_dump import parse_csquare_raw_invoice_dump
+from extractors.party_xlsx.layouts.company_party_product_xlsx import parse_company_party_product_xlsx
+from extractors.party_xlsx.layouts.company_party_product_flat_xlsx import parse_company_party_product_flat_xlsx
+
+from extractors.party_xlsx.layouts.klm_customer_vs_groups_text import parse_klm_customer_vs_groups_text
+from extractors.party_xlsx.layouts.item_vs_parties_scheme_register import parse_item_vs_parties_scheme_register
+from extractors.party_xlsx.layouts.customer_product_banded_text import parse_customer_product_banded_text
+from extractors.party_xlsx.layouts.manufacturer_itemwise_secondary_xlsx import parse_manufacturer_itemwise_secondary_xlsx
+from extractors.party_xlsx.layouts.customer_product_sale_dc_summary import parse_customer_product_sale_dc_summary
+from extractors.party_xlsx.layouts.customer_item_invoicewise_banded import parse_customer_item_invoicewise_banded
+from extractors.party_xlsx.layouts.item_customerwise_sale import parse_item_customerwise_sale
+from extractors.party_xlsx.layouts.areacity_wise_sale_pivot import parse_areacity_wise_sale_pivot
+from extractors.party_xlsx.layouts.party_discount_summary_xlsx import parse_party_discount_summary as parse_party_discount_summary_xlsx
+from extractors.party_xlsx.layouts.marg_outward_detail_partywise import parse_marg_outward_detail_partywise
+
+from extractors.party_xlsx.layouts.areawise_sales_statement import parse_areawise_sales_statement
+from extractors.party_xlsx.layouts.bhaskara_code_customer_banded import parse_bhaskara_code_customer_banded
+from extractors.party_xlsx.layouts.klm_order_form_xlsx import parse_klm_order_form_xlsx
+from extractors.party_xlsx.layouts.klm_warehouse_pincode_sale_dump import parse_klm_warehouse_pincode_sale_dump
+from extractors.party_xlsx.layouts.retailer_band_cgst_sgst import parse_retailer_band_cgst_sgst
+from extractors.party_xlsx.layouts.outward_detail_firm_partywise import parse_outward_detail_firm_partywise
+
+# --- 15 July RED-cluster parsers (batch 2) ---------------------------------
+from extractors.party_xlsx.layouts.r15_klm_item_party_sales_statement import parse_klm_item_party_sales_statement
+from extractors.party_xlsx.layouts.r15_ascent_warehouse_customer_sale_dump import parse_r15_ascent_warehouse_customer_sale_dump
+from extractors.party_xlsx.layouts.r15_klm_party_product_wise_sales_xlsx import parse_klm_party_product_wise_sales_xlsx
+from extractors.party_xlsx.layouts.r15_mfg_product_customer_wise_pcode import parse_mfg_product_customer_wise_pcode
+from extractors.party_xlsx.layouts.r15_customer_product_wise_sales_swil import parse_r15_customer_product_wise_sales_swil
+from extractors.party_xlsx.layouts.r15_sales_detail_mf_customer_itemwise import parse_sales_detail_mf_customer_itemwise
+from extractors.party_xlsx.layouts.r15_customer_product_analysis_split_batchtail import parse_r15_customer_product_analysis_split_batchtail
+from extractors.party_xlsx.layouts.r15_company_customer_monthwise_sales import parse_company_customer_monthwise_sales
+from extractors.party_xlsx.layouts.r15_party_product_wise_sales_klm import parse_party_product_wise_sales_klm
+from extractors.party_xlsx.layouts.r15_area_customer_company_product_sales import parse_area_customer_company_product_sales
+from extractors.party_xlsx.layouts.r15_company_product_wise_sales_custband import parse_company_product_wise_sales_custband
+from extractors.party_xlsx.layouts.r15_product_customer_sale_dc_summary import parse_product_customer_sale_dc_summary
+
+PARSERS = {
+    "raja_party_item_summary": parse_raja_party_item_summary,
+    # --- 15 July RED-cluster parsers (batch 2) ---
+    "klm_item_party_sales_statement": parse_klm_item_party_sales_statement,
+    "r15_ascent_warehouse_customer_sale_dump": parse_r15_ascent_warehouse_customer_sale_dump,
+    "r15_klm_party_product_wise_sales_xlsx": parse_klm_party_product_wise_sales_xlsx,
+    "mfg_product_customer_wise_pcode": parse_mfg_product_customer_wise_pcode,
+    "r15_customer_product_wise_sales_swil": parse_r15_customer_product_wise_sales_swil,
+    "sales_detail_mf_customer_itemwise": parse_sales_detail_mf_customer_itemwise,
+    "r15_customer_product_analysis_split_batchtail": parse_r15_customer_product_analysis_split_batchtail,
+    "company_customer_monthwise_sales": parse_company_customer_monthwise_sales,
+    "klm_party_product_wise_sales": parse_party_product_wise_sales_klm,
+    "r15_area_customer_company_product_sales": parse_area_customer_company_product_sales,
+    "r15_company_product_wise_sales_custband": parse_company_product_wise_sales_custband,
+    "product_customer_sale_dc_summary": parse_product_customer_sale_dc_summary,
+    "areawise_sales_statement": parse_areawise_sales_statement,
+    "bhaskara_code_customer_banded": parse_bhaskara_code_customer_banded,
+    "klm_order_form_xlsx": parse_klm_order_form_xlsx,
+    "klm_warehouse_pincode_sale_dump": parse_klm_warehouse_pincode_sale_dump,
+    "retailer_band_cgst_sgst": parse_retailer_band_cgst_sgst,
+    "outward_detail_firm_partywise": parse_outward_detail_firm_partywise,
+    "customer_item_invoicewise_banded": parse_customer_item_invoicewise_banded,
+    "item_customerwise_sale": parse_item_customerwise_sale,
+    "areacity_wise_sale_pivot": parse_areacity_wise_sale_pivot,
+    "party_discount_summary_xlsx": parse_party_discount_summary_xlsx,
+    "marg_outward_detail_partywise": parse_marg_outward_detail_partywise,
+    "customer_product_banded_grsamt": parse_customer_product_banded_grsamt,
+    "customer_product_banded_area_first": parse_customer_product_banded_area_first,
+    "customer_product_sale_dc_summary": parse_customer_product_sale_dc_summary,
+    "klm_customer_vs_groups_text": parse_klm_customer_vs_groups_text,
+    "item_vs_parties_scheme_register": parse_item_vs_parties_scheme_register,
+    "customer_product_banded_text": parse_customer_product_banded_text,
+    "manufacturer_itemwise_secondary_xlsx": parse_manufacturer_itemwise_secondary_xlsx,
+    "company_party_product_xlsx": parse_company_party_product_xlsx,
+    "company_party_product_flat_xlsx": parse_company_party_product_flat_xlsx,
+    "customer_items_new_xlsx": parse_customer_items_new_xlsx,
+    "company_customer_itemwise_banded": parse_company_customer_itemwise_banded,
+    "company_customer_itemwise_area": parse_company_customer_itemwise_area,
+    "csquare_raw_invoice": parse_csquare_raw_invoice_dump,
+    "area_item_sales_summary": parse_area_item_sales_summary,
+    "item_item_sales_summary": parse_item_item_sales_summary,
+    "item_item_sales_summary_text": parse_item_item_sales_summary_text,
+    "product_areawise_pivot": parse_product_areawise_pivot,
+    "areawise_partywise_summary_xlsx": parse_areawise_partywise_summary_xlsx,
+    "marg_sales_analysis_xlsx": parse_marg_sales_analysis_xlsx,
+    "party_product_net_sales_xlsx": parse_party_product_net_sales_xlsx,
+    "tabular_party_product": parse_tabular_party_product,
+    "marg_busy": parse_marg_busy,
+    "marg_register_excel": parse_marg_register_excel,
+    "infosoft_bandwise": parse_infosoft_bandwise,
+    "product_customer_sale_dc_details": parse_product_customer_sale_dc_details,
+    "product_wise_sale_list": parse_product_wise_sale_list,
+    "item_wise_summary_sale_by_party": parse_item_wise_summary_sale_by_party,
+    "jaimini_partywise": parse_jaimini_partywise,
+    "painkiller_partywise": parse_painkiller_partywise,
+    "data_spec_sale_by_item": parse_data_spec_sale_by_item,
+    "fawin_partywise": parse_fawin_partywise,
+    "itemwise_party_column": parse_itemwise_party_column,
+    "busy_list_of_sale_by_party": parse_busy_list_of_sale_by_party,
+    "senthil_areawise_columnar": parse_senthil_areawise_columnar,
+    "customer_product_banded": parse_customer_product_banded,
+    "customer_company_itemwise": parse_customer_company_itemwise,
+    "party_item_wise_sale": parse_party_item_wise_sale,
+    "partywise_band": parse_partywise_band,
+    "area_party_billwise": parse_area_party_billwise,
+    "company_area_wise_sales": parse_company_area_wise_sales,
+    "product_customer_wise_sales_xlsx": parse_product_customer_wise_sales_xlsx,
+    "company_area_customer_product_wise": parse_company_area_customer_product_wise,
+    "companywise_customerwise": parse_companywise_customerwise,
+    "salesmen_partywise": parse_salesmen_partywise,
+    "party_item_summary": parse_party_item_summary,
+    "product_name_city": parse_product_name_city,
+    "product_party_banded": parse_product_party_banded,
+    "customer_product_wise_band": parse_customer_product_wise_band,
+}
+
+
+def parse_rows(rows, layout):
+    if layout in PARSERS:
+        return PARSERS[layout](rows)
+    header_idx = detect_header_row(rows)
+    if header_idx is not None:
+        headers = [str(h) if h else f"col_{i}" for i, h in enumerate(rows[header_idx])]
+        return records_from_mapped(headers, rows, header_idx)
+    return [], {}

@@ -1,0 +1,78 @@
+import re
+
+SUBTOTAL_RE = re.compile(
+    r"^\s*(total|sub.?total|grand total|page total|print health qrcode|marg erp|"
+    r"opening value|closing value|sales value|receipt value|order value|last month sales|"
+    r"report date|sales$|mg\d+|"
+    r"qty\s+total|amount\s+total|qty\s+grand\s+total|amount\s+grand\s+total|"
+    r"for\s+\w|authorised|authorized)\b",
+    re.I,
+)
+
+
+
+LAYOUT_LABELS = {
+    "klm_mfac_group_wise_stock": "KLM C-Square PharmAssist Stock and Sales Mfac Group Wise Report (sparse positional Item/Op/Pur/SP/Sale/SS/Cr/Db/Adj/Bal/BVal/SVal) — ANNAPURNA",
+    "klm_opstk_apr_may_curstk_xls": "KLM Stock and Sales Statement per-division (Opstk/Pur/Apr/May/Sale/CurStk/StkVal, prior-month history dropped) — R.K. PHARMA",
+    "marg_designer_compute_stock": "Marg Report-Designer raw compute-column stock export (compute_NNNN movement + c_name_item names; reconcile-verified map) — BALAJI",
+    "klm_stock_sale_gdout_xlsx": "KLM Stock and Sale for Company (Op.Stk./PuScm/GD In/Trfr Out/GD OUT/Sl Scm/Cl Stk, per-division) — SHRI VENKATESH",
+    "marg_sale_closing_text_xlsx": "Marg Stock & Sales Analysis (reduced Sale/Closing qty+value, single-column text dump)",
+    "marg_stock_ss_full_movement_xls": "Marg Stock & Sales Analysis (full 15-col Opening/Purchase/Free/Total/Sales/Free/Balance + Rate/Value grid) — SHAH ENTERPRISES",
+    "klm_op_pi_sale_cl_value_xlsx": "KLM Stock & Sales (OP/PI/Sale/CLQty qty+value, no-OUT) — DHRUVI klm.xlsx",
+    "gs_stock_sales_wide27_xlsx": "G.S. DISTRIBUTORS — KLM Stock & Sales Statement (wide 28-col OPSTK/PURC/SALE/STOCK + PURCV/SALEV grid)",
+    "stock_sales_analysis_oic_xlsx": "KLM Stock & Sales Analysis (single-col Opening/Receipt/Issue/Closing) — AMETOMBI",
+    "stock_sales_analysis_wide_xlsx": "KLM Stock & Sales Analysis (single-col wide Open/Purchase/SaleRet/Total/Sales/PurchRet/Closing) — KRISHNA PHARMA",
+    "central_stock_and_sales_xls": "CENTRAL DISTRIBUTORS — KLM Stock And Sales Report (exact-header .xls)",
+    "klm_mfr_op_pq_clqty_xlsx": "KLM MFR Wise Stock & Sales (Op/PQ/Fr/SQ/Cl Qty, JAYANTHI)",
+    "purani_mfr_stock_sales": "PURANI HOSPITAL SUPPLIES — MFR Stock and Sales Report (18-col HTML-in-.xls, current-month per division)",
+    "klm_venus_opstk_crqty": "KLM Venus Stock & Sale (OpStk/CrQty scheme, banded)",
+    "marg_sale_closing_grid_xlsx": "Marg Stock & Sales Analysis (clean Sale/Closing qty+value grid, BALLRI)",
+    "marg_stock_analysis_wide_xlsx": "Marg Stock & Sales Analysis (spelled-out wide 2-row grid, arrow separators)",
+    "klm_sale_dtl_xlsx": "DEEPA/KLM SALE_DTL Stock & Sales (OP_BAL/CL_BAL abbrev headers)",
+    "klm_op_pi_clqty_xlsx": "KLM Stock & Sales (OP/PI/Sale/ST(Out)/CLQty, DHRUVI)",
+    "marg_sale_closing_xlsx": "Marg Stock & Sales Analysis (reduced Sale/Closing qty+value)",
+    "klm_sale_stock_stmt": "    \"klm_sale_stock_stmt\": \"KLM Sale & Stock Statement (OpStk/Branch Return/StkAdj, qty-only)\",",
+    "klm_stock_and_sale": "\"klm_stock_and_sale\": \"KLM Stock And Sale (SP/SS free + SRet/TRR/TRI + Cls.Stk)\",",
+    "klm_lifecare_stock": "\"klm_lifecare_stock\": \"KLM Stock And Sales Report(Month) (LIFE CARE / YOGIRAM)\",",
+    "medicine_klm_detailed": "\"medicine_klm_detailed\": \"SwilERP Sales & Stock Statement (MEDICINE TRADERS KLM, dual Free-Qty)\",",
+    "klm_op_pr_sl_stock": "    \"klm_op_pr_sl_stock\": \"KLM Stock Statement (OP_STK/PR_REC/TOT_REC/SL_ISS/CL_STK)\",",
+    "marg_monthly_ss_statement_xlsx": "\"marg_monthly_ss_statement_xlsx\": \"Marg Monthly Stock & Sales Statement (KLM Palanpur)\",",
+    "stock_open_rcpts_dualsales_xlsx": "\"stock_open_rcpts_dualsales_xlsx\": \"KLM Stock (Open/Rcpts/L.Sales/Cur.Sls + split Clos.Qty&Amt)\",",
+    "marg_stock_analysis_qv": "\"marg_stock_analysis_qv\": \"Marg Stock & Sales Analysis (single-column qty+value)\",",
+    "marg_stock_open_rcpt_issue_xls": "Marg Stock & Sales Analysis (single-column Open/Receipt/Issue/Closing qty+value, BURIMAA)",
+    "marg_stock_analysis_qv_grid": "Marg Stock & Sales Analysis (Open/Receipt/Issue/Closing+Dump qty+value grid, DERMA DISTRIBUTORS)",
+    "marg_stock_analysis_qv_dumpext": "Marg Stock & Sales Analysis (merged single-column Open/Receipt/Issue/Closing+Dump+extra, D.S.PHARMA)",
+    "klm_stock_sales_saleamt": "KLM Stock & Sales (NAME/OPEN/PURCHASE/SALES/SALEAMT/CLOSING/CLOSEAMT, TIRUPATI)",
+    "stock_op_rec_iss_clos_grid": "Stock Open/Receipt/Issue/Closing qty+value grid (op_stock/rec_qty/iss_qty/clos_qty, CHOUDHARY)",
+    "stock_op_pur_total_cl_xlsx": "Sales && Stock Statement (OP/PUR/Total=Sales/CL qty+amt grid, GARG)",
+    "marg_stock_sales_lms_xls": "Marg Stock and Sales Report (offset 2-row header, LMS/Opening/Purchase/Sales/Closing, CHAITANYA)",
+    "klm_stock_sales_combined_xlsx": "KLM Stock Sales Statement (Combined)",
+    "prompt_dstk_free_xlsx": "\"prompt_dstk_free_xlsx\": \"Prompt ERP Stock Statement (Datewise) \u2014 KLM\",",
+    "marg_stock_wide": "Marg ERP Wide Stock Report",
+    "venus_stock_excel": "Venus Stock Excel",
+    "marg_opstk_curstk": "Marg OpStk/CurStk Statement",
+    "html_stock": "HTML Stock Export",
+    "infosoft_stock": "Visual Infosoft Batch-wise Stock",
+    "profit_maker": "Profit Maker ERP Stock Statement",
+    "marg_erp9_movement": "Marg ERP 9+ Stock & Sales Analysis",
+    "marg_stock_sale_band": "Marg Wide Stock & Sales Band",
+    "klm_dstk_stock": "KLM DSTK Stock & Sales (OPSTK/PURC/STOCK)",
+    "marg_stock_analysis_text": "Marg Stock & Sales Analysis (single-column text)",
+    # --- 15 July RED-cluster parsers (batch 2) ---
+    "r15_klm_ss_pfree_purret_marapr_curstk_xls": "KLM Stock & Sales Statement (PFree/PurRet/SFree/SRetun/Adj, Mar/Apr history) — SENTHIL",
+    "prompt_dstk_salesfree_order_xls": "Prompt Stock Statement (Datewise) — Sales-Free + ClStk Qty/Amount (KLM)",
+    "marg_stock_wide_multival_xls": "Marg Wide Stock Report (Multi-Valuation Qty/MRP/PRate/LP/PTR)",
+    "r15_klm_opstk_psch_in_ssch_out_stock_xls": "KLM Stock & Sales Statement (OPSTK/PURC/PSCH/IN/SALE/SSCH/OUT/STOCK scheme+transfer grid) — HMRS",
+    "klm_ss_detail_unit1unit2_intransit_xls": "KLM Sales And Stock (Detail) Unit1/Unit2 wide xlsx — JEEVAN DEEP",
+    "r15_stock_receipt_issue_closing_grid_xls": "KLM STOCK & SALES ANALYSIS reduced Receipt/Issue/Closing grid (.xls)",
+    "r15_klm_ss_analysis_oic_dualclose_grid_xls": "KLM Stock & Sales Analysis 5-cell grid (CLOSING cell = qty+value glued) — KUSHAL",
+    "marg_sales_stock_summary_opstock_instock_outstock_xls": "Marg Sales And Stock (Summary) OpStock/In Stock/Out Stock movement grid — MANDAL",
+    "klm_monthly_ss_opening_inward_sales_other_closing_xls": "KLM Monthly Sales & Stock Statement (Opening/Inward/Sales/Other/Closing, per-division .rpt.xls) — PARAS",
+    "marg_normal_ss_open_recp_othr_sales_clsg_qtyonly_xls": "Marg Normal Stock Statement per-Company banded (split 2-row header, quantity-only) — RAPID MEDICO",
+    "klm_ss_pfree_purret_aprmay_sfree_adj_curstk_xls": "KLM Stock & Sales Statement (full-movement, PFree/PurRet/SFree/Adj, Apr|May history) — RATHNA",
+    "klm_ss_stmt_prod_desc": "KLM STOCK & SALES STATEMENT (PRODUCT DESCRIPTION / TOTAL RECEIVE / dual REPLACE+OTHERS) — SHIVA KRUPA",
+    "klm_ss_paired_opstk_pfree_sfree_curstk_xls": "KLM Stock and Sales Statement per-division, PAIRED inline free (Opstk/Pur/PFree/Sale/SFree/CurStk) — SHRI SAI SURGICAL",
+    "r15_klm_item_recd_issued_sreturn_preturn_free_xls": "KLM Stock & Sales Statement (Item/Opening/Received/Issued/Value/Closing/SReturn/PReturn/free) — SRI LAKSHMI ANNAPURNA",
+    "r15_klm_venus_op_pur_sp_sale_ss_cr_db_adj_cstk_xls": "KLM Venus Stock & Sales (Op./Pur/SP/Sale/SS/Cr./Db./Adj./C Stk, banded) — VENUS PHARMA",
+    "tabular": "Generic Tabular",
+}
